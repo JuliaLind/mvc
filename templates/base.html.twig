@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="{{ asset('img/glider.svg') }}">
+        <link rel="icon" href="{{ asset('img/leaf-single.svg') }}">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -13,14 +13,18 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body>
+    <body class={{ page }}>
         <nav class="topnav" id="myTopnav">
             <a {% if path(app.request.attributes.get('_route'))==path('home') %} class="active" {% endif %} href="{{ path('home') }}">Home</a>
             <a {% if path(app.request.attributes.get('_route'))==path('about') %} class="active" {% endif %} href="{{ path('about') }}">About</a>
             <a {% if path(app.request.attributes.get('_route'))==path('report') %} class="active" {% endif %} href="{{ path('report') }}">Report</a>
-            <a {% if path(app.request.attributes.get('_route'))==path('quote') %} class="active" {% endif %} href="{{ path('quote') }}">Quote and date</a>
-            <a {% if path(app.request.attributes.get('_route'))==path('lucky_number') %} class="active" {% endif %} href="{{ path('lucky_number') }}">Lucky Number</a>
-
+            <div class="subnav">
+                <a {% if path(app.request.attributes.get('_route'))==path('quote') or path(app.request.attributes.get('_route'))==path('lucky') %} class="active subnavbtn" {% else %} class="subnavbtn" {% endif %} href="{{ path('report') }}">kmom01 <i class="fa fa-caret-down"></i></a>
+                <div class="subnav-content">
+                    <a {% if path(app.request.attributes.get('_route'))==path('quote') %} class="active" {% endif %} href="{{ path('quote') }}">Quote and date</a>
+                    <a {% if path(app.request.attributes.get('_route'))==path('lucky') %} class="active" {% endif %} href="{{ path('lucky') }}">Lucky</a>
+                </div>
+            </div>
             <a class="nav-toggle" id="nav-toggle" title="Toggle Menu" role="button" aria-expanded="false"
                 tabindex="0">
             <span class="bar"></span>

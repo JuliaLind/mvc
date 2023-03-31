@@ -6,19 +6,29 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class MyController extends AbstractController
 {
-    #[Route("/lucky", name: "lucky_number")]
+    #[Route("/lucky", name: "lucky")]
     public function number(): Response
     {
         $number = random_int(0, 100);
 
+        $top = random_int(3, 25);
+        $left = random_int(1, 80);
+
+        $monkey = <<<EOD
+        <img class="monkey" id="monkey" src="img/monkey.png" style="margin-left: {$left}%; margin-top: {$top}%;" alt="apa">
+        EOD;
+
         $data = [
-            'number' => $number
+            'number' => $number,
+            'page' => "lucky",
+            'monkey' => $monkey,
         ];
 
-        return $this->render('lucky_number.html.twig', $data);
+        return $this->render('lucky.html.twig', $data);
     }
 
     #[Route("/", name: "home")]
@@ -29,7 +39,8 @@ class MyController extends AbstractController
         $filter   = new \Anax\TextFilter\TextFilter();
         $parsed   = $filter->parse($text, ["shortcode", "markdown"]);
         $data = [
-            'home' => $parsed->text
+            'home' => $parsed->text,
+            'page' => "home"
         ];
         return $this->render('home.html.twig', $data);
     }
@@ -42,7 +53,8 @@ class MyController extends AbstractController
         $filter   = new \Anax\TextFilter\TextFilter();
         $parsed   = $filter->parse($text, ["shortcode", "markdown"]);
         $data = [
-            'home' => $parsed->text
+            'about' => $parsed->text,
+            'page' => "about"
         ];
         return $this->render('about.html.twig', $data);
     }
@@ -78,6 +90,7 @@ class MyController extends AbstractController
             'kmom05' => $parsedTexts[4],
             'kmom06' => $parsedTexts[5],
             'kmom10' => $parsedTexts[6],
+            'page' => "report"
         ];
         return $this->render('report.html.twig', $data);
     }
@@ -103,11 +116,14 @@ class MyController extends AbstractController
             EOD
         ];
 
-        $number = random_int(0, count($quotes));
+        date_default_timezone_set('Europe/Stockholm');
+        
 
+        $number = random_int(0, count($quotes)-1);
+        $time = new \DateTime();
         $data = [
             'quote' => $quotes[$number],
-            'timestamp' => date('d-m-y h:i:s'),
+            'timestamp' => $time->format('H:i:s \O\n Y-m-d'),
         ];
 
         $response = new JsonResponse($data);

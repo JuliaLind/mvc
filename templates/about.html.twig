@@ -3,9 +3,16 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-    <h1>About</h1>
+    {# <h1>About</h1>
     <p>An image which can be clicked on.</p>
     <a href="{{ asset('img/glider.svg') }}">
         <img src="{{ asset('img/glider.svg') }}" alt="">
-    </a>
+    </a> #}
+    <div class="grid-container two-col golden-ratio">
+        <div class="col-2">
+            {{ about | raw }}
+        </div>
+        <div class="col-1 mvc-image" style="background-image: url({{ asset('img/about.jpg') }})">
+        </div>
+    </div>
 {% endblock %}
