@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="{{ asset('img/glider.svg') }}">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="topnav" id="myTopnav">
+            <a {% if path(app.request.attributes.get('_route'))==path('home') %} class="active" {% endif %} href="{{ path('home') }}">Home</a>
+            <a {% if path(app.request.attributes.get('_route'))==path('about') %} class="active" {% endif %} href="{{ path('about') }}">About</a>
+            <a {% if path(app.request.attributes.get('_route'))==path('report') %} class="active" {% endif %} href="{{ path('report') }}">Report</a>
+            <a {% if path(app.request.attributes.get('_route'))==path('quote') %} class="active" {% endif %} href="{{ path('quote') }}">Quote and date</a>
+            <a {% if path(app.request.attributes.get('_route'))==path('lucky_number') %} class="active" {% endif %} href="{{ path('lucky_number') }}">Lucky Number</a>
+
+            <a class="nav-toggle" id="nav-toggle" title="Toggle Menu" role="button" aria-expanded="false"
+                tabindex="0">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            </a>
+        </nav>
+        <header class="site-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{ asset('img/background.jpg') }})">
+            <span class="site-title">Min me-sida i kursen MVC</span>
+        </header>
+
+        <main>
+        {% block body %}
+        {% endblock %}
+
+        </main>
+        <footer>
+        <p>
+            &copy; Julia Lind 2023
+        </p>
+        </footer>
+    </body>
+</html>

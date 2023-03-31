@@ -1,0 +1,128 @@
+html {
+    height: 100%;
+}
+
+main {
+    padding: var(--magic-number);
+    padding-bottom: calc(var(--magic-number) * 3);
+    max-width: 65.4em;
+    margin: 0 auto;
+}
+
+h1,
+.site-title {
+    font-size: 2.686rem;
+}
+
+h1 {
+    margin-bottom: calc(1.4 * 1.1rem * 2);
+    display: inline-block;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+h1:before {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    bottom: 0;
+    /* left: 25%; */
+    border-bottom: 3px solid var(--left-dark);
+}
+
+h2 {
+    font-size: 2.148rem;
+    margin-bottom: calc(1.4 * 1.1rem);
+}
+
+h3 {
+    font-size: 1.719rem;
+    margin-bottom: calc(1.4 * 1.1rem);
+}
+
+/* h4 {
+    font-size: 1.375rem;
+} */
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: calc(1.4 * 1.1rem);
+}
+
+section {
+    margin-bottom: calc(1.4 * 1.1rem * 2);
+}
+
+@media (max-width: 750px) {
+    main {
+        padding: calc(var(--magic-number) * 0.5);
+        padding-bottom: calc(var(--magic-number) * 2.5);
+    }
+
+    h1,
+    .site-title {
+        font-size: 2.4rem;
+    }
+
+    h1 {
+        margin-bottom: 2.8rem;
+    }
+    
+    h2{
+        font-size: 2rem;
+        margin-bottom: 1.4rem;
+    }
+    
+    h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1.4rem;
+    }
+    
+    p {
+        font-size: 1rem;
+        margin-bottom: 1.4rem;
+    }
+
+    section {
+        margin-bottom: 2.8rem;
+    }
+}
+
+@media (min-width: 64em) {
+    /* html {
+        font-size: 112.5%;
+    } */
+
+    h1,
+    .site-title {
+        font-size: 3.052rem;
+    }
+
+    h1 {
+        margin-bottom: calc(1.4 * 1.25rem * 2);
+    }
+    
+    h2{
+        font-size: 2.441rem;
+        margin-bottom: calc(1.4 * 1.25rem);
+    }
+    
+    h3 {
+        font-size: 1.953em;
+        margin-bottom: calc(1.4 * 1.25rem);
+    }
+    
+    /* h4 {
+        font-size: 1.563rem;
+    } */
+    
+    p {
+        font-size: 1.25rem;
+        margin-bottom: calc(1.4 * 1.25rem);
+    }
+
+    section {
+        margin-bottom: calc(1.4 * 1.25rem * 2);
+    }
+}
