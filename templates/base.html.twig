@@ -18,9 +18,10 @@
         <nav class="topnav" id="myTopnav">
             <a {% if path(app.request.attributes.get('_route'))==path('home') %} class="active" {% endif %} href="{{ path('home') }}">Home</a>
             <a {% if path(app.request.attributes.get('_route'))==path('about') %} class="active" {% endif %} href="{{ path('about') }}">About</a>
-            <div class="subnav">
+            <a {% if path(app.request.attributes.get('_route'))==path('report') %} class="active mobile-only" {% else %} class="mobile-only" {% endif %} href="{{ path('report') }}">Report</a>
+            <div class="subnav desktop-only">
             {# <a {% if path(app.request.attributes.get('_route'))==path('report') %} class="active" {% endif %} href="{{ path('report') }}">Report <i class="fa fa-caret-down"></i></a> #}
-            <a {% if path(app.request.attributes.get('_route'))==path('report') %} class="active subnavbtn" {% else %} class="subnavbtn" {% endif %} href="{{ path('report') }}">Report <span class="desktop-only">&#x25BC;</span></a>
+            <a {% if path(app.request.attributes.get('_route'))==path('report') %} class="active subnavbtn" {% else %} class="subnavbtn" {% endif %} href="{{ path('report') }}">Report &#x25BC;</a>
                 <div class="subnav-content">
                     <a href="{{ path('report') }}#kmom01">kmom01</a>
                     <a href="{{ path('report') }}#kmom02">kmom02</a>
