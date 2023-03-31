@@ -123,7 +123,7 @@ class MyController extends AbstractController
         $time = new \DateTime();
         $data = [
             'quote' => $quotes[$number],
-            'timestamp' => $time->format('H:i:s \O\n Y-m-d'),
+            'timestamp' => $time->format('Y-m-d H:i:s'),
         ];
 
         $response = new JsonResponse($data);
