@@ -17,9 +17,21 @@
         <nav class="topnav" id="myTopnav">
             <a {% if path(app.request.attributes.get('_route'))==path('home') %} class="active" {% endif %} href="{{ path('home') }}">Home</a>
             <a {% if path(app.request.attributes.get('_route'))==path('about') %} class="active" {% endif %} href="{{ path('about') }}">About</a>
-            <a {% if path(app.request.attributes.get('_route'))==path('report') %} class="active" {% endif %} href="{{ path('report') }}">Report</a>
             <div class="subnav">
-                <a {% if path(app.request.attributes.get('_route'))==path('quote') or path(app.request.attributes.get('_route'))==path('lucky') %} class="active subnavbtn" {% else %} class="subnavbtn" {% endif %} href="{{ path('report') }}">kmom01 <i class="fa fa-caret-down"></i></a>
+            {# <a {% if path(app.request.attributes.get('_route'))==path('report') %} class="active" {% endif %} href="{{ path('report') }}">Report <i class="fa fa-caret-down"></i></a> #}
+            <a {% if path(app.request.attributes.get('_route'))==path('report') %} class="active subnavbtn" {% else %} class="subnavbtn" {% endif %} href="{{ path('report') }}">Report &#x25BC;</a>
+                <div class="subnav-content">
+                    <a href="{{ path('report') }}#kmom01">kmom01</a>
+                    <a href="{{ path('report') }}#kmom02">kmom02</a>
+                    <a href="{{ path('report') }}#kmom03">kmom03</a>
+                    <a href="{{ path('report') }}#kmom04">kmom04</a>
+                    <a href="{{ path('report') }}#kmom05">kmom05</a>
+                    <a href="{{ path('report') }}#kmom06">kmom06</a>
+                    <a href="{{ path('report') }}#kmom10">kmom10</a>
+                </div>
+            </div>
+            <div class="subnav">
+                <a {% if path(app.request.attributes.get('_route'))==path('quote') or path(app.request.attributes.get('_route'))==path('lucky') %} class="active subnavbtn" {% else %} class="subnavbtn" {% endif %} href="{{ path('report') }}">kmom01 &#x25BC;</a>
                 <div class="subnav-content">
                     <a {% if path(app.request.attributes.get('_route'))==path('quote') %} class="active" {% endif %} href="{{ path('quote') }}">Quote and date</a>
                     <a {% if path(app.request.attributes.get('_route'))==path('lucky') %} class="active" {% endif %} href="{{ path('lucky') }}">Lucky</a>
