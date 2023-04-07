@@ -57,8 +57,7 @@ class ApiController extends AbstractController
     #[Route('/api/deck', name: "jsonDeck", methods: ['GET'])]
     public function jsonDeck(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = new DeckOfCardsExt();
         // $deck->sort();
         $session->set("deck", $deck);
@@ -76,8 +75,7 @@ class ApiController extends AbstractController
     #[Route('/api/deck/shuffle', name: "jsonShuffle", methods: ['POST'])]
     public function jsonShuffle(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = new DeckOfCardsExt();
         $deck->shuffle();
         $session->set("deck", $deck);
@@ -95,9 +93,8 @@ class ApiController extends AbstractController
 
     #[Route('/api/deck/draw', name: "jsonDraw", methods: ['POST'])]
     public function jsonDraw(
-        SessionInterface $session        
-    ): Response
-    {
+        SessionInterface $session
+    ): Response {
         $deck = $session->get("deck") ?? new DeckOfCardsExt();
         $card = $deck->draw();
         $card = $card->getAsText();
@@ -116,9 +113,8 @@ class ApiController extends AbstractController
     #[Route('/api/deck/draw/{number<\d+>}', name: "jsonDrawMany", methods: ['POST'])]
     public function jsonDrawMany(
         SessionInterface $session,
-        int $number 
-    ): Response
-    {
+        int $number
+    ): Response {
         $hand = new CardHand();
         $deck = $session->get("deck") ?? new DeckOfCardsExt();
         for ($i = 1; $i <= $number; $i++) {
@@ -140,9 +136,8 @@ class ApiController extends AbstractController
     public function jsonDeal(
         SessionInterface $session,
         int $players,
-        int $cards 
-    ): Response
-    {
+        int $cards
+    ): Response {
         $deck = $session->get("deck") ?? new DeckOfCardsExt();
         $hands = [];
         for ($i = 1; $i <= $players; $i++) {

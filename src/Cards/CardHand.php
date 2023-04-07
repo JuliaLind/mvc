@@ -28,6 +28,6 @@ class CardHand
         foreach ($this->hand as $card) {
             $cards[] = $card->getAsText();
         }
-        return $cards;        
+        return $cards;
     }
 }

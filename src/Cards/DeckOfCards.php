@@ -4,7 +4,6 @@ namespace App\Cards;
 
 use App\Cards\CardGraphic;
 
-
 class DeckOfCards
 {
     private $deck = [];
@@ -51,22 +50,22 @@ class DeckOfCards
         foreach ($this->deck as $card) {
             $cards[] = $card->getAsText();
         }
-        return $cards;        
+        return $cards;
     }
 
     public function sortByColor(): void
     {
-        (usort($this->deck, fn($a, $b) => strcmp($a->getColor(), $b->getColor())));
+        (usort($this->deck, fn ($a, $b) => strcmp($a->getColor(), $b->getColor())));
     }
 
     public function sortByValue(): void
     {
-        (usort($this->deck, fn($a, $b) => $a->getSuit() > $b->getSuit()));
+        (usort($this->deck, fn ($a, $b) => $a->getSuit() > $b->getSuit()));
     }
 
     public function sortBySuit(): void
     {
-        (usort($this->deck, fn($a, $b) => strcmp($a->getSuit(), $b->getSuit())));
+        (usort($this->deck, fn ($a, $b) => strcmp($a->getSuit(), $b->getSuit())));
     }
 
     public function sort(): void

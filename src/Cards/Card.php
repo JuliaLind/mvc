@@ -58,22 +58,26 @@ class Card
         $this->color = $color;
     }
 
-    public function getIntValue(): int {
+    public function getIntValue(): int
+    {
         return $this->intValue;
     }
 
-    public function getSuit(): string {
+    public function getSuit(): string
+    {
         if ($this->suit === '') {
             return 'z';
         }
         return $this->suit;
     }
 
-    public function getColor(): string {
+    public function getColor(): string
+    {
         return $this->color;
     }
 
-    public function getAsText(): string {
+    public function getAsText(): string
+    {
         $rank = $this->rank;
         $suit = $this->suit;
         switch ($rank) {

@@ -93,8 +93,7 @@ class DiceGameController extends AbstractController
     public function initCallback(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $numDice = $request->request->get('num_dices');
 
         $hand = new DiceHand();
@@ -114,8 +113,7 @@ class DiceGameController extends AbstractController
     #[Route("/game/pig/play", name: "pig_play", methods: ['GET'])]
     public function play(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $dicehand = $session->get("pig_dicehand");
 
         $data = [
@@ -133,8 +131,7 @@ class DiceGameController extends AbstractController
     #[Route("/game/pig/roll", name: "pig_roll", methods: ['POST'])]
     public function roll(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
 
         $hand = $session->get("pig_dicehand");
         $hand->roll();
@@ -152,15 +149,14 @@ class DiceGameController extends AbstractController
         }
 
         $session->set("pig_round", $roundTotal + $round);
-        
+
         return $this->redirectToRoute('pig_play');
     }
 
     #[Route("/game/pig/save", name: "pig_save", methods: ['POST'])]
     public function save(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $roundTotal = $session->get("pig_round");
         $gameTotal = $session->get("pig_total");
 
