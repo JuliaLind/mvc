@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<h1>Kortspel</h1>
+<ul>
+    <li><a href="{{ path('deck') }}"></a></li>
+    <li><a href="{{ path('shuffle') }}"></a></li>
+    <li><a href="{{ path('draw') }}"></a></li>
+    <li><a href="{{ path('draw'), {number: 5} }}"></a></li>
+    <li><a href="{{ path('draw', , {players: 5}, {cards: 5}) }}"></a></li>
+</ul>
+
+{% endblock %}
