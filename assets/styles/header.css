@@ -15,3 +15,9 @@
     transform: translate(-50%, -50%);
     color: #fff;
 }
+
+@media (min-width: 1150px) {
+    .site-header {
+        background-attachment: fixed;
+    }
+}

@@ -26,6 +26,7 @@ class MyController extends AbstractController
             'number' => $number,
             'page' => "lucky",
             'monkey' => $monkey,
+            'url' => "/lucky",
         ];
 
         return $this->render('lucky.html.twig', $data);
@@ -40,7 +41,8 @@ class MyController extends AbstractController
         $parsed   = $filter->parse($text, ["shortcode", "markdown"]);
         $data = [
             'home' => $parsed->text,
-            'page' => "home"
+            'page' => "home",
+            'url' => "/",
         ];
         return $this->render('home.html.twig', $data);
     }
@@ -54,7 +56,8 @@ class MyController extends AbstractController
         $parsed   = $filter->parse($text, ["shortcode", "markdown"]);
         $data = [
             'about' => $parsed->text,
-            'page' => "about"
+            'page' => "about",
+            'url' => "/about",
         ];
         return $this->render('about.html.twig', $data);
     }
@@ -71,7 +74,7 @@ class MyController extends AbstractController
             "markdown/kmom06.md",
             "markdown/kmom10.md",
         ];
-    
+
         $parsedTexts = [];
 
         foreach ($texts as $filename) {
@@ -90,7 +93,8 @@ class MyController extends AbstractController
             'kmom05' => $parsedTexts[4],
             'kmom06' => $parsedTexts[5],
             'kmom10' => $parsedTexts[6],
-            'page' => "report"
+            'page' => "report",
+            'url' => "/report",
         ];
         return $this->render('report.html.twig', $data);
     }
@@ -100,24 +104,24 @@ class MyController extends AbstractController
     {
         $quotes = [
             <<<EOD
-            “Opportunities don't happen, you create them.” — Chris Grosser
+            "Opportunities don't happen, you create them." — Chris Grosser
             EOD,
             <<<EOD
-            “It is never too late to be what you might have been.” — George Eliot
+            "It is never too late to be what you might have been." — George Eliot
             EOD,
             <<<EOD
-            “Do the best you can. No one can do more than that.” — John Wooden
+            "Do the best you can. No one can do more than that.” — John Wooden
             EOD,
             <<<EOD
-            “Do what you can, with what you have, where you are.” — Theodore Roosevelt
+            "Do what you can, with what you have, where you are." — Theodore Roosevelt
             EOD,
             <<<EOD
-            “If you can dream it, you can do it.” — Walt Disney
+            "If you can dream it, you can do it." — Walt Disney
             EOD
         ];
 
         date_default_timezone_set('Europe/Stockholm');
-        
+
 
         $number = random_int(0, count($quotes)-1);
         $time = new \DateTime();

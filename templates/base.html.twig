@@ -16,12 +16,11 @@
     </head>
     <body class={{ page }}>
         <nav class="topnav" id="myTopnav">
-            <a {% if path(app.request.attributes.get('_route'))==path('home') %} class="active" {% endif %} href="{{ path('home') }}">Home</a>
-            <a {% if path(app.request.attributes.get('_route'))==path('about') %} class="active" {% endif %} href="{{ path('about') }}">About</a>
-            <a {% if path(app.request.attributes.get('_route'))==path('report') %} class="active mobile-only" {% else %} class="mobile-only" {% endif %} href="{{ path('report') }}">Report</a>
+            <a {% if url == path('home') %} class="active" {% endif %} href="{{ path('home') }}">Home</a>
+            <a {% if url == path('about') %} class="active" {% endif %} href="{{ path('about') }}">About</a>
+            <a {% if url == path('report') %} class="active mobile-only" {% else %} class="mobile-only" {% endif %} href="{{ path('report') }}">Report</a>
             <div class="subnav desktop-only">
-            {# <a {% if path(app.request.attributes.get('_route'))==path('report') %} class="active" {% endif %} href="{{ path('report') }}">Report <i class="fa fa-caret-down"></i></a> #}
-            <a {% if path(app.request.attributes.get('_route'))==path('report') %} class="active subnavbtn" {% else %} class="subnavbtn" {% endif %} href="{{ path('report') }}">Report &#x25BC;</a>
+            <a {% if url == path('report') %} class="active subnavbtn" {% else %} class="subnavbtn" {% endif %} href="{{ path('report') }}">Report &#x25BC;</a>
                 <div class="subnav-content">
                     <a href="{{ path('report') }}#kmom01">kmom01</a>
                     <a href="{{ path('report') }}#kmom02">kmom02</a>
@@ -32,13 +31,13 @@
                     <a href="{{ path('report') }}#kmom10">kmom10</a>
                 </div>
             </div>
-            <a {% if path(app.request.attributes.get('_route'))==path('quote') %} class="active mobile-only" {% else %} class="mobile-only" {% endif %} href="{{ path('quote') }}">Quote and date</a>
-            <a {% if path(app.request.attributes.get('_route'))==path('lucky') %} class="active mobile-only" {% else %} class="mobile-only" {% endif %} href="{{ path('lucky') }}">Lucky</a>
+            <a {% if url == path('quote') %} class="active mobile-only" {% else %} class="mobile-only" {% endif %} href="{{ path('quote') }}">Quote and date</a>
+            <a {% if url == path('lucky') %} class="active mobile-only" {% else %} class="mobile-only" {% endif %} href="{{ path('lucky') }}">Lucky</a>
             <div class="subnav desktop-only">
-                <a {% if path(app.request.attributes.get('_route'))==path('quote') or path(app.request.attributes.get('_route'))==path('lucky') %} class="active subnavbtn" {% else %} class="subnavbtn" {% endif %} href="{{ path('report') }}">kmom01 &#x25BC;</a>
+                <a {% if url == path('quote') or url == path('lucky') %} class="active subnavbtn" {% else %} class="subnavbtn" {% endif %} href="{{ path('report') }}">kmom01 &#x25BC;</a>
                 <div class="subnav-content">
-                    <a {% if path(app.request.attributes.get('_route'))==path('quote') %} class="active" {% endif %} href="{{ path('quote') }}">Quote and date</a>
-                    <a {% if path(app.request.attributes.get('_route'))==path('lucky') %} class="active" {% endif %} href="{{ path('lucky') }}">Lucky</a>
+                    <a {% if url == path('quote') %} class="active" {% endif %} href="{{ path('quote') }}">Quote and date</a>
+                    <a {% if url == path('lucky') %} class="active" {% endif %} href="{{ path('lucky') }}">Lucky</a>
                 </div>
             </div>
             <a class="nav-toggle" id="nav-toggle" title="Toggle Menu" role="button" aria-expanded="false"
