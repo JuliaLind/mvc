@@ -31,7 +31,11 @@
                     <a href="{{ path('report') }}#kmom10">kmom10</a>
                 </div>
             </div>
-            <a {% if url == path('quote') %} class="active mobile-only" {% else %} class="mobile-only" {% endif %} href="{{ path('quote') }}">Quote and date</a>
+            <a {% if url == path('lucky') %} class="active" {% endif %} href="{{ path('lucky') }}">Lucky</a>
+            <a {% if url == path('api') %} class="active" {% endif %} href="{{ path('api') }}">Json routes</a>
+
+
+            {# <a {% if url == path('quote') %} class="active mobile-only" {% else %} class="mobile-only" {% endif %} href="{{ path('quote') }}">Quote and date</a>
             <a {% if url == path('lucky') %} class="active mobile-only" {% else %} class="mobile-only" {% endif %} href="{{ path('lucky') }}">Lucky</a>
             <div class="subnav desktop-only">
                 <a {% if url == path('quote') or url == path('lucky') %} class="active subnavbtn" {% else %} class="subnavbtn" {% endif %} href="{{ path('report') }}">kmom01 &#x25BC;</a>
@@ -39,7 +43,7 @@
                     <a {% if url == path('quote') %} class="active" {% endif %} href="{{ path('quote') }}">Quote and date</a>
                     <a {% if url == path('lucky') %} class="active" {% endif %} href="{{ path('lucky') }}">Lucky</a>
                 </div>
-            </div>
+            </div> #}
             <a class="nav-toggle" id="nav-toggle" title="Toggle Menu" role="button" aria-expanded="false"
                 tabindex="0">
             <span class="bar"></span>
