@@ -1,4 +1,4 @@
-.landing td input[type="submit"] {
+.landing table:first-of-type td input[type="submit"] {
     background: none;
     border: none;
     color: rgb(0, 102, 204);
@@ -8,7 +8,7 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-.landing td a:visited {
+.landing table:first-of-type td a:visited {
     color: rgb(0, 102, 204);
 }
 
