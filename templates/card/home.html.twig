@@ -4,12 +4,31 @@
 
 {% block body %}
 <h1>Kortspel</h1>
-<ul>
-    <li><a href="{{ path('deck') }}"></a></li>
-    <li><a href="{{ path('shuffle') }}"></a></li>
-    <li><a href="{{ path('draw') }}"></a></li>
-    <li><a href="{{ path('draw'), {number: 5} }}"></a></li>
-    <li><a href="{{ path('draw', , {players: 5}, {cards: 5}) }}"></a></li>
-</ul>
+<table>
+    <tr><th>Route</th><th>Method</th></tr>
+{% for route in cardRoutes %}
+    <tr><td>
+        {% if route.method != "GET" %}
+            {% if route.link == "drawMany" %}
+                <form action="{{ path(route.link, {number: 5}) }}" {% if route.method %} method={{ route.method }} {% endif %}>
+                <input type="submit" value={{ path(route.link, {number: 5}) }}>
+            {% elseif route.link == "deal" %}
+                <form action="{{ path(route.link, {players: 3, cards: 5}) }}" {% if route.method %} method={{ route.method }} {% endif %}>
+                <input type="submit" value={{ path(route.link, {players: 3, cards: 5}) }}>
+            {% else %}
+                <form action="{{ path(route.link) }}" {% if route.method %} method={{ route.method }} {% endif %}>
+                <input type="submit" value={{ path(route.link) }}>
+            {% endif %}
+        </form>
+        {% else %}
+            <a href="{{ path(route.link) }}">{{ path(route.link) }}</a>
+        {% endif %}
+        </td>
+        <td>
+            {{ route.method }}
+        </td>        
+    </tr>
+{% endfor %}
+</table>
 
 {% endblock %}
