@@ -3,12 +3,21 @@
     max-width: 97vw;
 }
 
-.all-cards {
+.all-cards,
+.multi-player {
     display: grid;
+    width: auto;
+    column-gap: 0.7rem;
+    row-gap: 2.1rem;
+}
+
+.all-cards {
     grid-template-columns: repeat(13, 1fr);
     grid-template-rows: repeat(5, auto);
-    width: auto;
-    gap: 0.7rem;
+}
+
+.multi-player {
+    grid-template-columns: 200px auto;
 }
 
 .card img {
@@ -17,3 +26,37 @@
     object-fit: contain;
     height: auto;
 }
+
+.card-deck {
+    grid-column: 1 / span 1;
+    /* grid-row: 1 / span 1; */
+    background-color: grey;
+    width: 200px;
+    height: 300px;
+    text-align: center;
+}
+
+.card-deck p,
+.drawn-cards p {
+    width: 200px;
+    background-color: var(--almost-white);
+    border: 1px solid var(--right-dark);
+    padding: 0.7rem;
+    margin-bottom: 0.7rem;
+}
+
+.drawn-cards {
+    background-color: grey;
+    padding: 0.7rem;
+    width: 100%;
+}
+
+.draw.card img {
+    width: 150px;
+}
+
+.drawn-cards {
+    grid-column: 2 / span 1;
+    /* grid-row: 1 / span 1; */
+}
+
