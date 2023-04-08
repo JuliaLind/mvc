@@ -43,6 +43,10 @@ img.me {
     padding: 0;
 }
 
+table {
+    margin-bottom: 1.4rem;
+}
+
 @media (max-width: 450px) {
     img.me {
         float: none;
