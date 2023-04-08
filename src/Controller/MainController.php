@@ -10,28 +10,6 @@ use Symfony\Component\Validator\Constraints\DateTime;
 
 class MainController extends AbstractController
 {
-    #[Route("/lucky", name: "lucky")]
-    public function number(): Response
-    {
-        $number = random_int(0, 100);
-
-        $top = random_int(3, 25);
-        $left = random_int(1, 80);
-
-        $monkey = <<<EOD
-        <img class="monkey" id="monkey" src="img/monkey.png" style="margin-left: {$left}%; margin-top: {$top}%;" alt="apa">
-        EOD;
-
-        $data = [
-            'number' => $number,
-            'page' => "lucky",
-            'monkey' => $monkey,
-            'url' => "/lucky",
-        ];
-
-        return $this->render('lucky.html.twig', $data);
-    }
-
     #[Route("/", name: "home")]
     public function home(): Response
     {
@@ -45,49 +23,6 @@ class MainController extends AbstractController
             'url' => "/",
         ];
         return $this->render('home.html.twig', $data);
-    }
-
-    #[Route("/api", name: "api")]
-    public function apis(): Response
-    {
-        $data = [
-            'page' => "api",
-            'url' => "/api",
-            'title' => "Json routes overview",
-            'jsonRoutes' => [
-                [
-                    'link' => "quote",
-                    'descr' => "Displays a motivational quote and date and time the site was rendered",
-                    'method' => '',
-                ],
-                [
-                    'link' => "jsonDeck",
-                    'descr' => "Displays a json-text representation of all cards in deck sorted by color and value",
-                    'method' => '',
-                ],
-                [
-                    'link' => "jsonShuffle",
-                    'descr' => "Post route that returnes a shuffled json-text representation of all cards in deck",
-                    'method' => 'POST',
-                ],
-                [
-                    'link' => "jsonDraw",
-                    'descr' => "Post route that 'draws' and displays the top-card from deck and also the count of cards remaining",
-                    'method' => 'POST',
-                ],
-                [
-                    'link' => "jsonDrawMany",
-                    'descr' => "Post route that 'draws' and displays a number of cards from deck top and also the count of cards remaining",
-                    'method' => 'POST',
-                ],
-                [
-                    'link' => "jsonDeal",
-                    'descr' => "Post route that 'draws' and displays a number of cards for a number of players and also the count of cards remaining",
-                    'method' => 'POST',
-                ],
-            ],
-        ];
-        return $this->render('landing.html.twig', $data);
     }
 
     #[Route("/about", name: "about")]
@@ -142,41 +77,99 @@ class MainController extends AbstractController
         return $this->render('report.html.twig', $data);
     }
 
-    // #[Route('/api/quote', name: "quote")]
-    // public function jsonQuote(): Response
-    // {
-    //     $quotes = [
-    //         <<<EOD
-    //         "Opportunities don't happen, you create them." — Chris Grosser
-    //         EOD,
-    //         <<<EOD
-    //         "It is never too late to be what you might have been." — George Eliot
-    //         EOD,
-    //         <<<EOD
-    //         "Do the best you can. No one can do more than that.” — John Wooden
-    //         EOD,
-    //         <<<EOD
-    //         "Do what you can, with what you have, where you are." — Theodore Roosevelt
-    //         EOD,
-    //         <<<EOD
-    //         "If you can dream it, you can do it." — Walt Disney
-    //         EOD
-    //     ];
+    #[Route("/lucky", name: "lucky")]
+    public function number(): Response
+    {
+        $number = random_int(0, 100);
 
-    //     date_default_timezone_set('Europe/Stockholm');
+        $top = random_int(3, 25);
+        $left = random_int(1, 80);
 
+        $monkey = <<<EOD
+        <img class="monkey" id="monkey" src="img/monkey.png" style="margin-left: {$left}%; margin-top: {$top}%;" alt="apa">
+        EOD;
 
-    //     $number = random_int(0, count($quotes)-1);
-    //     $time = new \DateTime();
-    //     $data = [
-    //         'quote' => $quotes[$number],
-    //         'timestamp' => $time->format('Y-m-d H:i:s'),
-    //     ];
+        $data = [
+            'number' => $number,
+            'page' => "lucky",
+            'monkey' => $monkey,
+            'url' => "/lucky",
+        ];
 
-    //     $response = new JsonResponse($data);
-    //     $response->setEncodingOptions(
-    //         $response->getEncodingOptions() | JSON_PRETTY_PRINT
-    //     );
-    //     return $response;
-    // }
+        return $this->render('lucky.html.twig', $data);
+    }
+
+    #[Route("/api", name: "api")]
+    public function apis(): Response
+    {
+        $data = [
+            'page' => "landing",
+            'url' => "/api",
+            'jsonRoutes' => [
+                [
+                    'link' => "quote",
+                    'descr' => "Displays a motivational quote and date and time the site was rendered",
+                    'method' => '',
+                ],
+                [
+                    'link' => "jsonDeck",
+                    'descr' => "Displays a json-text representation of all cards in deck sorted by color and value",
+                    'method' => '',
+                ],
+                [
+                    'link' => "jsonShuffle",
+                    'descr' => "Post route that returnes a shuffled json-text representation of all cards in deck",
+                    'method' => 'POST',
+                ],
+                [
+                    'link' => "jsonDraw",
+                    'descr' => "Post route that 'draws' and displays the top-card from deck and also the count of cards remaining",
+                    'method' => 'POST',
+                ],
+                [
+                    'link' => "jsonDrawMany",
+                    'descr' => "Post route that 'draws' and displays a number of cards from deck top and also the count of cards remaining",
+                    'method' => 'POST',
+                ],
+                [
+                    'link' => "jsonDeal",
+                    'descr' => "Post route that 'draws' and displays a number of cards for a number of players and also the count of cards remaining",
+                    'method' => 'POST',
+                ],
+            ],
+        ];
+        return $this->render('landing_json.html.twig', $data);
+    }
+
+    #[Route("/card", name: "card")]
+    public function card(): Response
+    {
+        $data = [
+            'page' => "landing",
+            'url' => "/card",
+            'cardRoutes' => [
+                [
+                    'link' => "deck",
+                    'method' => 'GET',
+                ],
+                [
+                    'link' => "shuffle",
+                    'method' => 'POST',
+                ],
+                [
+                    'link' => "draw",
+                    'method' => 'POST',
+                ],
+                [
+                    'link' => "drawMany",
+                    'method' => 'POST',
+                ],
+                [
+                    'link' => "deal",
+                    'method' => 'POST',
+                ],
+            ],
+        ];
+        return $this->render('card/home.html.twig', $data);
+    }
 }
