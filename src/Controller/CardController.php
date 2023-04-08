@@ -55,12 +55,21 @@ class CardController extends AbstractController
         SessionInterface $session
     ): Response {
         $deck = $session->get("deck") ?? new DeckOfCardsExt();
-        $card = $deck->draw();
+        $players = [];
+        if ($deck->getCardCount() > 0) {
+            $card = $deck->draw();
+            $card = $card->getAsString();
+            $cards = [$card];
+        } else {
+            $cards = [];
+        }
+
+        $players[]['cards'] = $cards;
         $data = [
-            'cards' => [
-                $card->getAsString(),
-            ],
-            'cards left in deck' => $deck->getCardCount(),
+            'title' => "Draw 1 card",
+            // 'cards' => $cards,
+            'players' => $players,
+            'cardsLeft' => $deck->getCardCount(),
             'page' => "draw card",
             'url' => "/card",
         ];
@@ -73,14 +82,28 @@ class CardController extends AbstractController
         SessionInterface $session,
         int $number
     ): Response {
-        $hand = new CardHand();
+        $originalNr = $number;
         $deck = $session->get("deck") ?? new DeckOfCardsExt();
-        for ($i = 1; $i <= $number; $i++) {
-            $hand->add($deck->draw());
+        if ($number > $deck->getCardCount()) {
+            $number = $deck->getCardCount();
         }
+        $players = [];
+        if ($number > 0) {
+            $hand = new CardHand();
+            for ($i = 1; $i <= $number; $i++) {
+                $hand->add($deck->draw());
+            }
+            $cards = $hand->getString();
+        } else {
+            $cards = [];
+        }
+        $players[]['cards'] = $cards;
+
         $data = [
-            'cards' => $hand->getString(),
-            'cards left in deck' => $deck->getCardCount(),
+            'title' => "Draw {$originalNr} cards",
+            'players' => $players,
+            // 'cards' => $cards,
+            'cardsLeft' => $deck->getCardCount(),
             'page' => "draw card",
             'url' => "/card",
         ];
@@ -94,25 +117,36 @@ class CardController extends AbstractController
         int $players,
         int $cards
     ): Response {
+        $originalNr = $cards;
         $deck = $session->get("deck") ?? new DeckOfCardsExt();
         $hands = [];
         for ($i = 1; $i <= $players; $i++) {
-            $hand = new CardHand();
             if ($cards > $deck->getCardCount()) {
                 $cards = $deck->getCardCount();
             }
-            for ($j = 1; $j <= $cards; $j++) {
-                $hand->add($deck->draw());
+            if ($cards > 0) {
+                $hand = new CardHand();
+                for ($j = 1; $j <= $cards; $j++) {
+                    $hand->add($deck->draw());
+                }
+                $hand = $hand->getString();
+            } else {
+                $hand = [];
             }
-            $hands[] = $hand->getString();
+            $hands[] = [
+                'playerName' => "player {$i}",
+                'cards' => $hand,
+            ];
+
         };
         $data = [
+            'title' => "Draw {$originalNr} cards for {$players} players",
             'players' => $hands,
-            'cards left in deck' => $deck->getCardCount(),
+            'cardsLeft' => $deck->getCardCount(),
             'page' => "draw many card",
             'url' => "/card",
         ];
 
-        return $this->render('card/draw_multiplayer.html.twig', $data);
+        return $this->render('card/draw.html.twig', $data);
     }
 }
