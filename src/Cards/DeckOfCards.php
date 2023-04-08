@@ -68,11 +68,11 @@ class DeckOfCards
         (usort($this->deck, fn ($a, $b) => strcmp($a->getSuit(), $b->getSuit())));
     }
 
-    public function sort(): void
-    {
-        $this->sortBySuit();
-        $this->sortByValue();
-    }
+    // public function sort(): void
+    // {
+    //     $this->sortBySuit();
+    //     $this->sortByValue();
+    // }
 
     public function shuffle(): void
     {
