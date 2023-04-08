@@ -1,0 +1,19 @@
+.card main {
+    width: 1500px;
+    max-width: 97vw;
+}
+
+.all-cards {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(5, auto);
+    width: auto;
+    gap: 0.7rem;
+}
+
+.card img {
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    height: auto;
+}
