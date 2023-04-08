@@ -97,8 +97,10 @@ class JsonController extends AbstractController
     public function jsonDraw(
         SessionInterface $session
     ): Response {
-        $deck = $session->get("deck") ?? new DeckOfCardsExt();
+        // $deck = $session->get("deck") ?? new DeckOfCardsExt();
+        $deck = $session->get("deck") ?? new DeckOfCards();
         $card = $deck->draw();
+        $session->set("deck", $deck);
         $card = $card->getAsText();
         $data = [
             'card' => $card,
@@ -118,10 +120,12 @@ class JsonController extends AbstractController
         int $number
     ): Response {
         $hand = new CardHand();
-        $deck = $session->get("deck") ?? new DeckOfCardsExt();
+        // $deck = $session->get("deck") ?? new DeckOfCardsExt();
+        $deck = $session->get("deck") ?? new DeckOfCards();
         for ($i = 1; $i <= $number; $i++) {
             $hand->add($deck->draw());
         }
+        $session->set("deck", $deck);
         $data = [
             'cards' => $hand->getTextRepresentation(),
             'cards left in deck' => $deck->getCardCount(),
@@ -140,7 +144,8 @@ class JsonController extends AbstractController
         int $players,
         int $cards
     ): Response {
-        $deck = $session->get("deck") ?? new DeckOfCardsExt();
+        // $deck = $session->get("deck") ?? new DeckOfCardsExt();
+        $deck = $session->get("deck") ?? new DeckOfCards();
         $hands = [];
         for ($i = 1; $i <= $players; $i++) {
             $hand = new CardHand();
@@ -152,6 +157,7 @@ class JsonController extends AbstractController
             }
             $hands[] = $hand->getTextRepresentation();
         };
+        $session->set("deck", $deck);
         $data = [
             'players' => $hands,
             'cards left in deck' => $deck->getCardCount(),

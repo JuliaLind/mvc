@@ -54,7 +54,8 @@ class CardController extends AbstractController
     public function draw(
         SessionInterface $session
     ): Response {
-        $deck = $session->get("deck") ?? new DeckOfCardsExt();
+        // $deck = $session->get("deck") ?? new DeckOfCardsExt();
+        $deck = $session->get("deck") ?? new DeckOfCards();
         $players = [];
         if ($deck->getCardCount() > 0) {
             $card = $deck->draw();
@@ -63,8 +64,11 @@ class CardController extends AbstractController
         } else {
             $cards = [];
         }
-
-        $players[]['cards'] = $cards;
+        $session->set("deck", $deck);
+        $players[] = [
+            'cards' => $cards,
+            'playerName' => "player 1"
+        ];
         $data = [
             'title' => "Draw 1 card",
             // 'cards' => $cards,
@@ -83,7 +87,8 @@ class CardController extends AbstractController
         int $number
     ): Response {
         $originalNr = $number;
-        $deck = $session->get("deck") ?? new DeckOfCardsExt();
+        // $deck = $session->get("deck") ?? new DeckOfCardsExt();
+        $deck = $session->get("deck") ?? new DeckOfCards();
         if ($number > $deck->getCardCount()) {
             $number = $deck->getCardCount();
         }
@@ -97,7 +102,11 @@ class CardController extends AbstractController
         } else {
             $cards = [];
         }
-        $players[]['cards'] = $cards;
+        $session->set("deck", $deck);
+        $players[] = [
+            'cards' => $cards,
+            'playerName' => "player 1"
+        ];
 
         $data = [
             'title' => "Draw {$originalNr} cards",
@@ -118,7 +127,8 @@ class CardController extends AbstractController
         int $cards
     ): Response {
         $originalNr = $cards;
-        $deck = $session->get("deck") ?? new DeckOfCardsExt();
+        // $deck = $session->get("deck") ?? new DeckOfCardsExt();
+        $deck = $session->get("deck") ?? new DeckOfCards();
         $hands = [];
         for ($i = 1; $i <= $players; $i++) {
             if ($cards > $deck->getCardCount()) {
@@ -137,8 +147,8 @@ class CardController extends AbstractController
                 'playerName' => "player {$i}",
                 'cards' => $hand,
             ];
-
         };
+        $session->set("deck", $deck);
         $data = [
             'title' => "Draw {$originalNr} cards for {$players} players",
             'players' => $hands,
