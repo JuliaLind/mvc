@@ -14,7 +14,7 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body class={{ page }}>
+    <body class="{{ page }}">
         <nav class="topnav" id="myTopnav">
             <a {% if url == path('home') %} class="active" {% endif %} href="{{ path('home') }}">Home</a>
             <a {% if url == path('about') %} class="active" {% endif %} href="{{ path('about') }}">About</a>
@@ -32,7 +32,9 @@
                 </div>
             </div>
             <a {% if url == path('lucky') %} class="active" {% endif %} href="{{ path('lucky') }}">Lucky</a>
+            <a {% if url == path('card') %} class="active" {% endif %} href="{{ path('card') }}">Kortspel</a>
             <a {% if url == path('api') %} class="active" {% endif %} href="{{ path('api') }}">Json routes</a>
+
 
 
             {# <a {% if url == path('quote') %} class="active mobile-only" {% else %} class="mobile-only" {% endif %} href="{{ path('quote') }}">Quote and date</a>
