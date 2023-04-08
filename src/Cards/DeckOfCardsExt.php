@@ -13,7 +13,9 @@ class DeckOfCardsExt extends DeckOfCards
         parent::__construct();
         $this->add(new CardGraphic('', 15));
         $this->add(new CardGraphic('', 16));
-        $this->sort();
-        $this->sortByColor();
+        // $this->sort();
+        // $this->sortBySuit();
+        // $this->sortByValue();
+        // $this->sortByColor();
     }
 }
