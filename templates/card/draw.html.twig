@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Draw{% endblock %}
+
+{% block body %}
+<h1>{{ title }}</h1>
+<div class="multi-player" style="grid-template-rows: repeat({{ players|length}}, 1fr);">
+<div class="card-deck">
+<p>Cards left: {{ cardsLeft }}</p>
+{% if (cardsLeft > 0) %}
+    <img class="card" src="../../../../img/cards/back.svg" alt="card deck">
+{% endif %}
+</div>
+{% for player in players %}
+    <div class="drawn-cards">
+    {% if (player['playerName']) %}
+    <p>{{ player['playerName'] }}</p>
+        {% if (player['cards']|length > 0) %}
+            {% for card in player['cards'] %}
+                <img class="card" src="../../../../img/cards{{ asset(card) }}" alt="{{ card }}">
+            {% endfor %}
+        {% endif %}
+    {% endif %}
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}
