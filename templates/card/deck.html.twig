@@ -6,15 +6,10 @@
 <h1>{{ title }}</h1>
 <div class="all-cards">
 
-{% if (title == "Shuffled deck") %}
-    {% for card in cards %}
-        <img class="card" src="{{ asset(card) }}" alt="{{ card }}">
-    {% endfor %}
-{% else %}
-    {% for card in cards %}
-        <img class="card" src="{{ asset(card) }}" alt="{{ card }}">
-    {% endfor %}
-{% endif %}
+
+{% for card in cards %}
+    <img class="card" src="{{ asset(card) }}" alt="{{ card }}">
+{% endfor %}
 
 </div>
 

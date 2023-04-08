@@ -13,14 +13,14 @@
 </div>
 {% for player in players %}
     <div class="drawn-cards">
-    {% if (player['playerName']) %}
+    {# {% if (player['playerName']) %} #}
     <p>{{ player['playerName'] }}</p>
         {% if (player['cards']|length > 0) %}
             {% for card in player['cards'] %}
                 <img class="card" src="{{ asset(card) }}" alt="{{ card }}">
             {% endfor %}
         {% endif %}
-    {% endif %}
+    {# {% endif %} #}
     </div>
 {% endfor %}
 </div>
