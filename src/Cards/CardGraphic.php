@@ -11,6 +11,6 @@ class CardGraphic extends Card
 
     public function getAsString(): string
     {
-        return ($this->rank . $this->suit . ".svg");
+        return ("img/cards/" . $this->rank . $this->suit . ".svg");
     }
 }
