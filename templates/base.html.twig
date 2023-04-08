@@ -16,11 +16,11 @@
     </head>
     <body class="{{ page }}">
         <nav class="topnav" id="myTopnav">
-            <a {% if url == path('home') %} class="active" {% endif %} href="{{ path('home') }}">Home</a>
-            <a {% if url == path('about') %} class="active" {% endif %} href="{{ path('about') }}">About</a>
-            <a {% if url == path('report') %} class="active mobile-only" {% else %} class="mobile-only" {% endif %} href="{{ path('report') }}">Report</a>
+            <a {% if url == '/' %} class="active" {% endif %} href="{{ path('home') }}">Home</a>
+            <a {% if url == '/about' %} class="active" {% endif %} href="{{ path('about') }}">About</a>
+            <a {% if url == '/report' %} class="active mobile-only" {% else %} class="mobile-only" {% endif %} href="{{ path('report') }}">Report</a>
             <div class="subnav desktop-only">
-            <a {% if url == path('report') %} class="active subnavbtn" {% else %} class="subnavbtn" {% endif %} href="{{ path('report') }}">Report &#x25BC;</a>
+            <a {% if url == '/report' %} class="active subnavbtn" {% else %} class="subnavbtn" {% endif %} href="{{ path('report') }}">Report &#x25BC;</a>
                 <div class="subnav-content">
                     <a href="{{ path('report') }}#kmom01">kmom01</a>
                     <a href="{{ path('report') }}#kmom02">kmom02</a>
@@ -31,9 +31,9 @@
                     <a href="{{ path('report') }}#kmom10">kmom10</a>
                 </div>
             </div>
-            <a {% if url == path('lucky') %} class="active" {% endif %} href="{{ path('lucky') }}">Lucky</a>
-            <a {% if url == path('card') %} class="active" {% endif %} href="{{ path('card') }}">Kortspel</a>
-            <a {% if url == path('api') %} class="active" {% endif %} href="{{ path('api') }}">Json routes</a>
+            <a {% if url == '/lucky' %} class="active" {% endif %} href="{{ path('lucky') }}">Lucky</a>
+            <a {% if url == '/card' %} class="active" {% endif %} href="{{ path('card') }}">Kortspel</a>
+            <a {% if url == '/api' %} class="active" {% endif %} href="{{ path('api') }}">Json routes</a>
 
 
 
