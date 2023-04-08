@@ -11,10 +11,11 @@ use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-use App\Cards\DeckOfCardsExt;
+// use App\Cards\DeckOfCardsExt;
+use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
-class ApiController extends AbstractController
+class JsonController extends AbstractController
 {
     #[Route('/api/quote', name: "quote")]
     public function jsonQuote(): Response
@@ -58,8 +59,8 @@ class ApiController extends AbstractController
     public function jsonDeck(
         SessionInterface $session
     ): Response {
-        $deck = new DeckOfCardsExt();
-        // $deck->sort();
+        // $deck = new DeckOfCardsExt();
+        $deck = new DeckOfCards();
         $session->set("deck", $deck);
         $cards = $deck->getTextRepresentation();
         $data = [
@@ -76,7 +77,8 @@ class ApiController extends AbstractController
     public function jsonShuffle(
         SessionInterface $session
     ): Response {
-        $deck = new DeckOfCardsExt();
+        // $deck = new DeckOfCardsExt();
+        $deck = new DeckOfCards();
         $deck->shuffle();
         $session->set("deck", $deck);
         $cards = $deck->getTextRepresentation();
