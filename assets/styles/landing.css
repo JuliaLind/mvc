@@ -1,0 +1,42 @@
+.landing td input[type="submit"] {
+    background: none;
+    border: none;
+    color: rgb(0, 102, 204);
+    text-decoration: underline;
+    cursor: pointer;
+    /* size: 1rem; */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.landing td a:visited {
+    color: rgb(0, 102, 204);
+}
+
+
+
+.landing table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+.landing td,
+.landing th {
+    border: 1px solid var(--left-light);
+    padding: 8px;
+}
+  
+.landing tr:nth-child(even){
+    background-color: var(--almost-white);
+}
+  
+/* .landing tr:hover {
+    background-color: var(--left-light);
+} */
+  
+.landing th {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: left;
+    background-color: var(--main);
+    color: #fff;
+}
