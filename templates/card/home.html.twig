@@ -31,4 +31,13 @@
 {% endfor %}
 </table>
 
+<table>
+<tr><th>Klass</th><th>Beskrivning</th></tr>
+<tr><td>Card</td><td>Basklassen för ett spelkort. Innehåller bla information om kortets rank, suit, color (röd/svart) och värde i integer.</td></tr>
+<tr><td>CardGraphic</td><td>Ärver från basklassen Card. Har en metod för att hämta bildlänk till svg representation av kortet. SVG bilderna för korten är skapade av Adrian Kennard och kan laddas ner härifrån <a href="https://www.me.uk/cards/" target="_blank">https://www.me.uk/cards/</a></td></tr>
+<tr><td>DeckOfCards</td><td>Innehåller 52 kort (instanser av CardGraphic). Det är denna kortleken som för närvarande används på webbplatsen. Relationen mellan CardGraphic och DeckOfCards är komposition då korten skapas inuti DeckOfCards.</td></tr>
+<tr><td>DeckOfCardsExt</td><td>Ärver från basklassen DeckOfCards. Innehåller 54 kort. Överlagrar Construct metoden från basklassen för att lägga till två kort - en röd respektive en svart joker. Används för närvarande inte på webbplatsen.</td></tr>
+<tr><td>CardHand</td><td>Representerar en spelares hand. Plockar kort från DeckOfCards. Relationen melllan CardHand och DeckOfCards är association. Relationen mellan CardHand och Card/CardGraphic är aggregation då korten inte skapas inuti handen utan skapas utanför (i kortleken) och skickas in till handen via add-metoden. </td></tr>
+</table>
+
 {% endblock %}
