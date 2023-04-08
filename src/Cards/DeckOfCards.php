@@ -16,7 +16,7 @@ class DeckOfCards
                 $this->deck[] = new CardGraphic($suit, $i);
             }
         }
-        $this->sort();
+        // $this->sort();
     }
 
     public function add(CardGraphic $card): void
@@ -72,7 +72,6 @@ class DeckOfCards
     {
         $this->sortBySuit();
         $this->sortByValue();
-        $this->sortByColor();
     }
 
     public function shuffle(): void
