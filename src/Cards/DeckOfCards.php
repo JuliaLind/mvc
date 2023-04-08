@@ -35,20 +35,20 @@ class DeckOfCards
         return count($this->deck);
     }
 
-    public function getString(): array
+    public function getImgLinks(): array
     {
         $cards = [];
         foreach ($this->deck as $card) {
-            $cards[] = $card->getAsString();
+            $cards[] = $card->getImgLink();
         }
         return $cards;
     }
 
-    public function getTextRepresentation(): array
+    public function getAsString(): array
     {
         $cards = [];
         foreach ($this->deck as $card) {
-            $cards[] = $card->getAsText();
+            $cards[] = $card->getAsString();
         }
         return $cards;
     }

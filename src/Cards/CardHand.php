@@ -14,20 +14,20 @@ class CardHand
         $this->hand[] = $card;
     }
 
-    public function getString(): array
+    public function getImgLinks(): array
     {
         $cards = [];
         foreach ($this->hand as $card) {
-            $cards[] = $card->getAsString();
+            $cards[] = $card->getImgLink();
         }
         return $cards;
     }
 
-    public function getTextRepresentation(): array
+    public function getAsString(): array
     {
         $cards = [];
         foreach ($this->hand as $card) {
-            $cards[] = $card->getAsText();
+            $cards[] = $card->getAsString();
         }
         return $cards;
     }

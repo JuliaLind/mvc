@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Cards\CardGraphic;
 use App\Cards\CardHand;
-// use App\Cards\DeckOfCardsExt;
 use App\Cards\DeckOfCards;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -20,12 +19,11 @@ class CardController extends AbstractController
     public function deck(
         SessionInterface $session
     ): Response {
-        // $deck = new DeckOfCardsExt();
         $deck = new DeckOfCards();
         $session->set("deck", $deck);
         $data = [
             'title' => "Sorted deck",
-            'cards' => $deck->getString(),
+            'cards' => $deck->getImgLinks(),
             'page' => "deck card",
             'url' => "/card",
         ];
@@ -36,13 +34,12 @@ class CardController extends AbstractController
     public function shuffle(
         SessionInterface $session
     ): Response {
-        // $deck = new DeckOfCardsExt();
         $deck = new DeckOfCards();
         $deck->shuffle();
         $session->set("deck", $deck);
         $data = [
             'title' => "Shuffled deck",
-            'cards' => $deck->getString(),
+            'cards' => $deck->getImgLinks(),
             'page' => "deck card",
             'url' => "/card",
         ];
@@ -54,12 +51,11 @@ class CardController extends AbstractController
     public function draw(
         SessionInterface $session
     ): Response {
-        // $deck = $session->get("deck") ?? new DeckOfCardsExt();
         $deck = $session->get("deck") ?? new DeckOfCards();
         $players = [];
         if ($deck->getCardCount() > 0) {
             $card = $deck->draw();
-            $card = $card->getAsString();
+            $card = $card->getImgLink();
             $cards = [$card];
         } else {
             $cards = [];
@@ -71,7 +67,6 @@ class CardController extends AbstractController
         ];
         $data = [
             'title' => "Draw 1 card",
-            // 'cards' => $cards,
             'players' => $players,
             'cardsLeft' => $deck->getCardCount(),
             'page' => "draw card",
@@ -87,7 +82,6 @@ class CardController extends AbstractController
         int $number
     ): Response {
         $originalNr = $number;
-        // $deck = $session->get("deck") ?? new DeckOfCardsExt();
         $deck = $session->get("deck") ?? new DeckOfCards();
         if ($number > $deck->getCardCount()) {
             $number = $deck->getCardCount();
@@ -98,7 +92,7 @@ class CardController extends AbstractController
             for ($i = 1; $i <= $number; $i++) {
                 $hand->add($deck->draw());
             }
-            $cards = $hand->getString();
+            $cards = $hand->getImgLinks();
         } else {
             $cards = [];
         }
@@ -111,7 +105,6 @@ class CardController extends AbstractController
         $data = [
             'title' => "Draw {$originalNr} cards",
             'players' => $players,
-            // 'cards' => $cards,
             'cardsLeft' => $deck->getCardCount(),
             'page' => "draw card",
             'url' => "/card",
@@ -127,7 +120,6 @@ class CardController extends AbstractController
         int $cards
     ): Response {
         $originalNr = $cards;
-        // $deck = $session->get("deck") ?? new DeckOfCardsExt();
         $deck = $session->get("deck") ?? new DeckOfCards();
         $hands = [];
         for ($i = 1; $i <= $players; $i++) {
@@ -139,7 +131,7 @@ class CardController extends AbstractController
                 for ($j = 1; $j <= $cards; $j++) {
                     $hand->add($deck->draw());
                 }
-                $hand = $hand->getString();
+                $hand = $hand->getImgLinks();
             } else {
                 $hand = [];
             }

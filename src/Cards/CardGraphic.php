@@ -9,7 +9,7 @@ class CardGraphic extends Card
         parent::__construct($suit, $intValue);
     }
 
-    public function getAsString(): string
+    public function getImgLink(): string
     {
         return ("img/cards/" . $this->rank . $this->suit . ".svg");
     }

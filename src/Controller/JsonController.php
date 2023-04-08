@@ -59,10 +59,9 @@ class JsonController extends AbstractController
     public function jsonDeck(
         SessionInterface $session
     ): Response {
-        // $deck = new DeckOfCardsExt();
         $deck = new DeckOfCards();
         $session->set("deck", $deck);
-        $cards = $deck->getTextRepresentation();
+        $cards = $deck->getAsString();
         $data = [
             'cards' => $cards,
         ];
@@ -81,7 +80,7 @@ class JsonController extends AbstractController
         $deck = new DeckOfCards();
         $deck->shuffle();
         $session->set("deck", $deck);
-        $cards = $deck->getTextRepresentation();
+        $cards = $deck->getAsString();
         $data = [
             'cards' => $cards,
         ];
@@ -127,7 +126,7 @@ class JsonController extends AbstractController
         }
         $session->set("deck", $deck);
         $data = [
-            'cards' => $hand->getTextRepresentation(),
+            'cards' => $hand->getAsString(),
             'cards left in deck' => $deck->getCardCount(),
         ];
 
@@ -155,7 +154,7 @@ class JsonController extends AbstractController
             for ($j = 1; $j <= $cards; $j++) {
                 $hand->add($deck->draw());
             }
-            $hands[] = $hand->getTextRepresentation();
+            $hands[] = $hand->getAsString();
         };
         $session->set("deck", $deck);
         $data = [

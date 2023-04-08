@@ -76,7 +76,7 @@ class Card
         return $this->color;
     }
 
-    public function getAsText(): string
+    public function getAsString(): string
     {
         $rank = $this->rank;
         $suit = $this->suit;
