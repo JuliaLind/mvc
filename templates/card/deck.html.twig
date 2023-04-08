@@ -8,11 +8,11 @@
 
 {% if (title == "Shuffled deck") %}
     {% for card in cards %}
-        <img class="card" src="../../img/cards{{ asset(card) }}" alt="{{ card }}">
+        <img class="card" src="{{ asset(card) }}" alt="{{ card }}">
     {% endfor %}
 {% else %}
     {% for card in cards %}
-        <img class="card" src="../img/cards{{ asset(card) }}" alt="{{ card }}">
+        <img class="card" src="{{ asset(card) }}" alt="{{ card }}">
     {% endfor %}
 {% endif %}
 

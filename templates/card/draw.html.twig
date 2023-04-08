@@ -8,7 +8,7 @@
 <div class="card-deck">
 <p>Cards left: {{ cardsLeft }}</p>
 {% if (cardsLeft > 0) %}
-    <img class="card" src="../../../../img/cards/back.svg" alt="card deck">
+        <img class="card" src="{{ asset('img/cards/back.svg') }}" alt="card deck">
 {% endif %}
 </div>
 {% for player in players %}
@@ -17,7 +17,7 @@
     <p>{{ player['playerName'] }}</p>
         {% if (player['cards']|length > 0) %}
             {% for card in player['cards'] %}
-                <img class="card" src="../../../../img/cards{{ asset(card) }}" alt="{{ card }}">
+                <img class="card" src="{{ asset(card) }}" alt="{{ card }}">
             {% endfor %}
         {% endif %}
     {% endif %}
