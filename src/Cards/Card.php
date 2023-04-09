@@ -8,7 +8,8 @@ class Card
     protected $suit;
     protected $intValue;
     protected $color;
-    protected $ranks = [
+    // protected $ranks = [
+    protected const RANKS = [
         '2' => '2',
         '3' => '3',
         '4' => '4',
@@ -30,7 +31,8 @@ class Card
     {
         $this->suit = $suit;
         $this->intValue = $intValue;
-        $this->rank = $this->ranks[strval($intValue)];
+        // $this->rank = $this->ranks[strval($intValue)];
+        $this->rank = self::RANKS[strval($intValue)];
         switch($suit) {
             case 'S':
                 $color = 'black';
