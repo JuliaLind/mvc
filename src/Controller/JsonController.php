@@ -100,7 +100,7 @@ class JsonController extends AbstractController
         $deck = $session->get("deck") ?? new DeckOfCards();
         $card = $deck->draw();
         $session->set("deck", $deck);
-        $card = $card->getAsText();
+        $card = $card->getAsString();
         $data = [
             'card' => $card,
             'cards left in deck' => $deck->getCardCount(),
