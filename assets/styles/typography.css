@@ -36,6 +36,7 @@ h1:before {
 h2 {
     font-size: 2.148rem;
     margin-bottom: calc(1.4 * 1.1rem);
+    text-align: center;
 }
 
 h3,

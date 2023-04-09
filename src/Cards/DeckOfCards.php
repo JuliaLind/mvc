@@ -12,11 +12,16 @@ class DeckOfCards
     {
 
         foreach (['D', 'H', 'C', 'S'] as $suit) {
-            for ($i = 2; $i <= 14; $i++) {
+            // for ($i = 2; $i <= 14; $i++) {
+            //     $this->deck[] = new CardGraphic($suit, $i);
+            // }
+            for ($i = 2; $i <= 10; $i++) {
                 $this->deck[] = new CardGraphic($suit, $i);
             }
+            foreach (['J', 'Q', 'K', 'A'] as $rank) {
+                $this->deck[] = new CardGraphic($suit, $rank);
+            }
         }
-        // $this->sort();
     }
 
     public function add(CardGraphic $card): void

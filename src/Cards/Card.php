@@ -9,30 +9,50 @@ class Card
     protected $intValue;
     protected $color;
     // protected $ranks = [
-    protected const RANKS = [
-        '2' => '2',
-        '3' => '3',
-        '4' => '4',
-        '5' => '5',
-        '6' => '6',
-        '7' => '7',
-        '8' => '8',
-        '9' => '9',
-        '10' => '10',
-        '11' => 'J',
-        '12' => 'Q',
-        '13' => 'K',
-        '14' => 'A',
-        '15' => 'jokerB',
-        '16' => 'jokerR',
+    // protected const RANKS = [
+    //     '2' => '2',
+    //     '3' => '3',
+    //     '4' => '4',
+    //     '5' => '5',
+    //     '6' => '6',
+    //     '7' => '7',
+    //     '8' => '8',
+    //     '9' => '9',
+    //     '10' => '10',
+    //     '11' => 'J',
+    //     '12' => 'Q',
+    //     '13' => 'K',
+    //     '14' => 'A',
+    //     '15' => 'jokerB',
+    //     '16' => 'jokerR',
+    // ];
+    protected const RANKVALUES = [
+        '2' => 2,
+        '3' => 3,
+        '4' => 4,
+        '5' => 5,
+        '6' => 6,
+        '7' => 7,
+        '8' => 8,
+        '9' => 9,
+        '10' => 10,
+        'J' => 11,
+        'Q' => 12,
+        'K' => 13,
+        'A' => 14,
+        'jokerB' => 15,
+        'jokerR' => 16,
     ];
 
-    public function __construct(String $suit, Int $intValue)
+    // public function __construct(String $suit, Int $intValue)
+    public function __construct(String $suit, String $rank)
     {
         $this->suit = $suit;
-        $this->intValue = $intValue;
+        $this->rank = $rank;
+        $this->intValue = self::RANKVALUES[$rank];
+        // $this->intValue = $intValue;
         // $this->rank = $this->ranks[strval($intValue)];
-        $this->rank = self::RANKS[strval($intValue)];
+        // $this->rank = self::RANKS[strval($intValue)];
         switch($suit) {
             case 'S':
                 $color = 'black';

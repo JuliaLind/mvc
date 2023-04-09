@@ -44,7 +44,7 @@ img.me {
 }
 
 table {
-    margin-bottom: 1.4rem;
+    margin-bottom: calc(var(--magic-number) * 2);
 }
 
 @media (max-width: 450px) {
