@@ -96,14 +96,13 @@ class JsonController extends AbstractController
     public function jsonDraw(
         SessionInterface $session
     ): Response {
-        // $deck = $session->get("deck") ?? new DeckOfCardsExt();
         $deck = $session->get("deck") ?? new DeckOfCards();
-        $card = $deck->draw();
+        $hand = new CardHand($deck, 1, '');
         $session->set("deck", $deck);
-        $card = $card->getAsString();
+
         $data = [
-            'card' => $card,
-            'cards left in deck' => $deck->getCardCount(),
+            'cards' => $hand->getAsString(),
+            'cardsLeft' => $deck->getCardCount(),
         ];
 
         $response = new JsonResponse($data);
@@ -118,13 +117,10 @@ class JsonController extends AbstractController
         SessionInterface $session,
         int $number
     ): Response {
-        $hand = new CardHand();
-        // $deck = $session->get("deck") ?? new DeckOfCardsExt();
         $deck = $session->get("deck") ?? new DeckOfCards();
-        for ($i = 1; $i <= $number; $i++) {
-            $hand->add($deck->draw());
-        }
+        $hand = new CardHand($deck, $number, '');
         $session->set("deck", $deck);
+
         $data = [
             'cards' => $hand->getAsString(),
             'cards left in deck' => $deck->getCardCount(),
@@ -143,18 +139,15 @@ class JsonController extends AbstractController
         int $players,
         int $cards
     ): Response {
-        // $deck = $session->get("deck") ?? new DeckOfCardsExt();
         $deck = $session->get("deck") ?? new DeckOfCards();
         $hands = [];
+
         for ($i = 1; $i <= $players; $i++) {
-            $hand = new CardHand();
-            if ($cards > $deck->getCardCount()) {
-                $cards = $deck->getCardCount();
-            }
-            for ($j = 1; $j <= $cards; $j++) {
-                $hand->add($deck->draw());
-            }
-            $hands[] = $hand->getAsString();
+            $hand = new CardHand($deck, $cards, "player {$i}");
+            $hands[] = [
+                'cards' => $hand->getImgLinks(),
+                'playerName' => $hand->getPlayerName(),
+            ];
         };
         $session->set("deck", $deck);
         $data = [

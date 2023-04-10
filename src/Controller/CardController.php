@@ -53,17 +53,11 @@ class CardController extends AbstractController
     ): Response {
         $deck = $session->get("deck") ?? new DeckOfCards();
         $players = [];
-        if ($deck->getCardCount() > 0) {
-            $card = $deck->draw();
-            $card = $card->getImgLink();
-            $cards = [$card];
-        } else {
-            $cards = [];
-        }
+        $hand = new CardHand($deck, 1, 'Player 1');
         $session->set("deck", $deck);
         $players[] = [
-            'cards' => $cards,
-            'playerName' => "player 1"
+            'cards' => $hand->getImgLinks(),
+            'playerName' => $hand->getPlayerName(),
         ];
         $data = [
             'title' => "Draw 1 card",
@@ -81,29 +75,17 @@ class CardController extends AbstractController
         SessionInterface $session,
         int $number
     ): Response {
-        $originalNr = $number;
         $deck = $session->get("deck") ?? new DeckOfCards();
-        if ($number > $deck->getCardCount()) {
-            $number = $deck->getCardCount();
-        }
         $players = [];
-        if ($number > 0) {
-            $hand = new CardHand();
-            for ($i = 1; $i <= $number; $i++) {
-                $hand->add($deck->draw());
-            }
-            $cards = $hand->getImgLinks();
-        } else {
-            $cards = [];
-        }
+        $hand = new CardHand($deck, $number, 'Player 1');
         $session->set("deck", $deck);
         $players[] = [
-            'cards' => $cards,
-            'playerName' => "player 1"
+            'cards' => $hand->getImgLinks(),
+            'playerName' => $hand->getPlayerName(),
         ];
 
         $data = [
-            'title' => "Draw {$originalNr} cards",
+            'title' => "Draw {$number} cards",
             'players' => $players,
             'cardsLeft' => $deck->getCardCount(),
             'page' => "draw card",
@@ -119,30 +101,19 @@ class CardController extends AbstractController
         int $players,
         int $cards
     ): Response {
-        $originalNr = $cards;
         $deck = $session->get("deck") ?? new DeckOfCards();
         $hands = [];
+
         for ($i = 1; $i <= $players; $i++) {
-            if ($cards > $deck->getCardCount()) {
-                $cards = $deck->getCardCount();
-            }
-            if ($cards > 0) {
-                $hand = new CardHand();
-                for ($j = 1; $j <= $cards; $j++) {
-                    $hand->add($deck->draw());
-                }
-                $hand = $hand->getImgLinks();
-            } else {
-                $hand = [];
-            }
+            $hand = new CardHand($deck, $cards, "player {$i}");
             $hands[] = [
-                'playerName' => "player {$i}",
-                'cards' => $hand,
+                'cards' => $hand->getImgLinks(),
+                'playerName' => $hand->getPlayerName(),
             ];
         };
         $session->set("deck", $deck);
         $data = [
-            'title' => "Draw {$originalNr} cards for {$players} players",
+            'title' => "Draw {$cards} cards for {$players} players",
             'players' => $hands,
             'cardsLeft' => $deck->getCardCount(),
             'page' => "draw many card",
