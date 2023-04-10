@@ -8,17 +8,16 @@
     <tr><th>Route</th><th>Description</th></tr>
 {% for route in jsonRoutes %}
     <tr>
-        {# <td><a href="{{ path(route.link) }}">{{ path(route.link) }}</a></td><td>route.descr</td> #}
         <td>
         {% if route.method %}
             {% if route.link == "jsonDrawMany" %}
-                <form action="{{ path(route.link, {number: 5}) }}" {% if route.method %} method={{ route.method }} {% endif %}>
+                <form action="{{ path(route.link, {number: 5}) }}" method={{ route.method }}>
                 <input type="submit" value={{ path(route.link, {number: 5}) }}>
             {% elseif route.link == "jsonDeal" %}
-                <form action="{{ path(route.link, {players: 3, cards: 5}) }}" {% if route.method %} method={{ route.method }} {% endif %}>
+                <form action="{{ path(route.link, {players: 3, cards: 5}) }}" method={{ route.method }}>
                 <input type="submit" value={{ path(route.link, {players: 3, cards: 5}) }}>
             {% else %}
-                <form action="{{ path(route.link) }}" {% if route.method %} method={{ route.method }} {% endif %}>
+                <form action="{{ path(route.link) }}" method={{ route.method }}>
                 <input type="submit" value={{ path(route.link) }}>
             {% endif %}
         </form>

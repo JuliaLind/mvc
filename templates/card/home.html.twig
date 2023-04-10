@@ -12,13 +12,13 @@
     <tr><td>
         {% if route.method != "GET" %}
             {% if route.link == "drawMany" %}
-                <form action="{{ path(route.link, {number: 5}) }}" {% if route.method %} method={{ route.method }} {% endif %}>
+                <form action="{{ path(route.link, {number: 5}) }}" method={{ route.method }}>
                 <input type="submit" value={{ path(route.link, {number: 5}) }}>
             {% elseif route.link == "deal" %}
-                <form action="{{ path(route.link, {players: 3, cards: 5}) }}" {% if route.method %} method={{ route.method }} {% endif %}>
+                <form action="{{ path(route.link, {players: 3, cards: 5}) }}" method={{ route.method }}>
                 <input type="submit" value={{ path(route.link, {players: 3, cards: 5}) }}>
             {% else %}
-                <form action="{{ path(route.link) }}" {% if route.method %} method={{ route.method }} {% endif %}>
+                <form action="{{ path(route.link) }}" method={{ route.method }}>
                 <input type="submit" value={{ path(route.link) }}>
             {% endif %}
         </form>
@@ -40,7 +40,8 @@
 <tr><td>CardGraphic</td><td>Ärver från basklassen Card. Har en metod för att hämta bildlänk till svg representation av kortet. SVG bilderna för korten är skapade av Adrian Kennard och kan laddas ner härifrån <a href="https://www.me.uk/cards/" target="_blank">https://www.me.uk/cards/</a></td></tr>
 <tr><td>DeckOfCards</td><td>Innehåller 52 kort (instanser av CardGraphic). Det är denna kortleken som för närvarande används på webbplatsen. DeckOfCards skapar instanser av CardGraphic. Det finns en metod i DeckOfCards för att plocka ut ett kort varefter CardGraphic kan fortsätta existera på egen hand utanför DeckOfCards. </td></tr>
 <tr><td>DeckOfCardsExt</td><td>Ärver från basklassen DeckOfCards. Innehåller 54 kort. Överlagrar Construct metoden från basklassen för att lägga till två kort - en röd respektive en svart joker. Används för närvarande inte på webbplatsen.</td></tr>
-<tr><td>CardHand</td><td>Representerar en spelares hand. En hand skapas tom och instanser av Card/CardGraphic läggs därefter till utifrån. När korten väl skickats in i handen är deras existens beroende av CardHand's fortsatta existens. </td></tr>
+<tr><td>CardHand</td><td>Representerar en spelares hand. Instanser av CardGraphic hämtas från kortleken och läggs till i handen i samband med att instansen skapas. 
+ </td></tr>
 </table>
 
 <h2>UML klassdiagram</h2>
