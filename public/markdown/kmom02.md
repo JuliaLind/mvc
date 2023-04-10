@@ -1,8 +1,5 @@
 ## kmom02
 
-Här kommer snart redovisningstexten
-
-
 Arv används när vi behöver utöka eller specialisera en basklass. Basklass kallas också för superklass. I PHP kan kan man ifrån subklasssen (så kallas en klass som ärver från basklassen) komma åt de attribut som är protected men inte de som är private. Utanför klassen är det ingen skillnad på privat och protected. När vi överlagrar en metod eller attribut i subklassen kan vi gör den mer öppen, tex kan vi göra en protected metod till publik, men vi kan inte göra åt andra hållet - göra en protected metod till privat. Tanken är att en subklass ska på alla ställen kunna ersätta basklassen.
 
 I PHP kan en klass inte ärva från flera klasser och det är här Trait kommer in i bilden. En trait består av metoder och attribut som kan användas för att utöka funktionaliteten hos en klass - när en klass använder (use) en trait så får klassen en kopia/uppsättning av alla metoder och medlemsvariabler i traiten. En klass kan använda sig av flera Traits. Och flera olika klasser kan använda en och samma trait.
@@ -25,13 +22,20 @@ Såhär långt skulle jag säga att jag är nöjd med kodstrukturen. Jag misstä
 
  Jag använde mig inte av pseudokod när jag gjorde uppgiften, utan klass-beskrivningarna på landningssidan och UML-diagrammet skapade jag först när jag var klar med resten. Av tidigare erfarenhet från både OOPython och Databas-kurserna har jag kommit fram till att för min del är såväl klass-diagram som sekvens-diagram bra för att:  
 
- - förklara min kod för någon annan
- - få bättre förståelse av hur den slutliga koden ska se ut när vi ska skriva kod helt eller delvis efter instruktioner
- - analysera min egna kod i efterhand för att se möjligheter till förbättringar
+ - förklara min kod för någon annan  
+
+ - få bättre förståelse av hur den slutliga koden ska se ut när vi ska skriva kod helt eller delvis efter instruktioner  
+
+ - analysera min egna kod i efterhand för att se möjligheter till förbättringar  
+
  
  Däremot fungerar det bättre för mig att "skissa" koden direkt som kod och att "planera" på det sättet. Jag skulle tro att detta kan ändras längre fram när jag fått mer erfarenhet kring vilka konstruktioner i koden som faktiskt fungerar och vilka som inte gör, men just nu känns det som att det inte blir värt tiden att lägga för mycket tid, när jar arbetar ensam, på att planera kring något som jag inte ens vet förrän efteråt om det kommer att fungera eller inte.
 
- Mina TIL från detta kursmoment är:
- - syntaxen för att komma åt medlemsvariabler i den ena instansen/klassen respektive förälderklassen 
- - hur man går tillväxa för att skapa klass som ärver från en annan klass
- - skapa routes (vi gjorde det även i föregående kursmoment men det var först i detta moment som jag verkligen förstått hur man gör och även hur man kan dela upp dessa på flera filer genom att använda samma namespace)
+ Mina TIL från detta kursmoment är:  
+
+ - syntaxen för att komma åt medlemsvariabler i den ena instansen/klassen respektive förälderklassen  
+
+ - hur man går tillväxa för att skapa klass som ärver från en annan klass  
+
+ - dela upp routes över flera filer genom att använda samma namespace  
+

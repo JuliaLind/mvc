@@ -37,6 +37,18 @@ class CardHand
         return $cards;
     }
 
+    public function getImgLinksAndDescr(): array
+    {
+        $cards = [];
+        foreach ($this->hand as $card) {
+            $cards[] = [
+                'link' => $card->getImgLink(),
+                'descr' => $card->getAsString(),
+            ];
+        }
+        return $cards;
+    }
+
     public function getAsString(): array
     {
         $cards = [];

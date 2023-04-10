@@ -145,8 +145,8 @@ class JsonController extends AbstractController
         for ($i = 1; $i <= $players; $i++) {
             $hand = new CardHand($deck, $cards, "player {$i}");
             $hands[] = [
-                'cards' => $hand->getImgLinks(),
                 'playerName' => $hand->getPlayerName(),
+                'cards' => $hand->getAsString(),
             ];
         };
         $session->set("deck", $deck);

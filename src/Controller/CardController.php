@@ -56,8 +56,8 @@ class CardController extends AbstractController
         $hand = new CardHand($deck, 1, 'Player 1');
         $session->set("deck", $deck);
         $players[] = [
-            'cards' => $hand->getImgLinks(),
             'playerName' => $hand->getPlayerName(),
+            'cards' => $hand->getImgLinksAndDescr(),
         ];
         $data = [
             'title' => "Draw 1 card",
@@ -80,8 +80,8 @@ class CardController extends AbstractController
         $hand = new CardHand($deck, $number, 'Player 1');
         $session->set("deck", $deck);
         $players[] = [
-            'cards' => $hand->getImgLinks(),
             'playerName' => $hand->getPlayerName(),
+            'cards' => $hand->getImgLinksAndDescr(),
         ];
 
         $data = [
@@ -107,8 +107,8 @@ class CardController extends AbstractController
         for ($i = 1; $i <= $players; $i++) {
             $hand = new CardHand($deck, $cards, "player {$i}");
             $hands[] = [
-                'cards' => $hand->getImgLinks(),
                 'playerName' => $hand->getPlayerName(),
+                'cards' => $hand->getImgLinksAndDescr(),
             ];
         };
         $session->set("deck", $deck);
