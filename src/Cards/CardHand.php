@@ -3,11 +3,18 @@
 namespace App\Cards;
 
 use App\Cards\DeckOfCards;
-use App\Cards\Card;
+use App\Cards\CardGraphic;
 
 class CardHand
 {
+    /**
+     * @var array<CardGraphic|null> $hand The hand holding the cards.
+     */
     private $hand = [];
+
+    /**
+     * @var string $playerName Name of the player the hand belongs to.
+     */
     protected $playerName;
 
     public function __construct(DeckOfCards $deck, int $number, string $playerName)
@@ -23,37 +30,60 @@ class CardHand
         }
     }
 
-    public function add(Card $card): void
+    public function add(CardGraphic $card): void
     {
         $this->hand[] = $card;
     }
 
+    /**
+     * Returns array with paths to card images.
+     *
+     * @return array<string>
+     */
     public function getImgLinks(): array
     {
         $cards = [];
         foreach ($this->hand as $card) {
-            $cards[] = $card->getImgLink();
+            if ($card) {
+                $cards[] = $card->getImgLink();
+            }
         }
         return $cards;
     }
 
+    /**
+     * Returns array with arrays comtaining
+     * paths to card image and description for each card.
+     *
+     * @return array<array<string>>
+     */
     public function getImgLinksAndDescr(): array
     {
         $cards = [];
         foreach ($this->hand as $card) {
-            $cards[] = [
-                'link' => $card->getImgLink(),
-                'descr' => $card->getAsString(),
-            ];
+            if ($card) {
+                $cards[] = [
+                    'link' => $card->getImgLink(),
+                    'descr' => $card->getAsString(),
+                ];
+            }
         }
         return $cards;
     }
 
+    /**
+     * Returns array with description of each card.
+     *
+     * @return array<string>
+     */
     public function getAsString(): array
     {
         $cards = [];
         foreach ($this->hand as $card) {
-            $cards[] = $card->getAsString();
+            if ($card) {
+                $cards[] = $card->getAsString();
+            }
+
         }
         return $cards;
     }

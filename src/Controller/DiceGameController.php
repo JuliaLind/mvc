@@ -13,6 +13,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
+use Exception;
+
 class DiceGameController extends AbstractController
 {
     #[Route("/game/pig", name: "pig_start")]
@@ -30,7 +32,7 @@ class DiceGameController extends AbstractController
     public function testRollDices(int $num): Response
     {
         if ($num > 99) {
-            throw new \Exception("Can not roll more than 99 dices!");
+            throw new Exception("Can not roll more than 99 dices!");
         }
 
         $diceRoll = [];
@@ -55,16 +57,16 @@ class DiceGameController extends AbstractController
     public function testDiceHand(int $num): Response
     {
         if ($num > 99) {
-            throw new \Exception("Can not roll more than 99 dices!");
+            throw new Exception("Can not roll more than 99 dices!");
         }
 
         $hand = new DiceHand();
         for ($i = 1; $i <= $num; $i++) {
+            $die = new Dice();
             if ($i % 2 === 1) {
-                $hand->add(new DiceGraphic());
-            } else {
-                $hand->add(new Dice());
+                $die = new DiceGraphic();
             }
+            $hand->add($die);
         }
 
         $hand->roll();
@@ -114,6 +116,9 @@ class DiceGameController extends AbstractController
     public function play(
         SessionInterface $session
     ): Response {
+        /**
+         * @var DiceHand $dicehand The hand holding the dice.
+         */
         $dicehand = $session->get("pig_dicehand");
 
         $data = [
@@ -133,6 +138,9 @@ class DiceGameController extends AbstractController
         SessionInterface $session
     ): Response {
 
+        /**
+         * @var DiceHand $hand The hand holding the dice.
+         */
         $hand = $session->get("pig_dicehand");
         $hand->roll();
 
@@ -165,18 +173,4 @@ class DiceGameController extends AbstractController
 
         return $this->redirectToRoute('pig_play');
     }
-
-    // #[Route("/game/pig/test/roll", name: "test_roll_dice")]
-    // public function testRollDice(): Response
-    // {
-    //     $die = new Dice();
-
-    //     $data = [
-    //         "dice" => $die->roll(),
-    //         "diceString" => $die->getAsString(),
-    //         'page' => "roll",
-    //     ];
-
-    //     return $this->render('pig/test/roll.html.twig', $data);
-    // }
 }

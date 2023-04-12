@@ -4,10 +4,10 @@ namespace App\Cards;
 
 class Card
 {
-    protected $rank;
-    protected $suit;
-    protected $intValue;
-    protected $color;
+    protected string $rank;
+    protected string $suit;
+    protected int $intValue;
+    protected string $color;
 
     protected const RANKVALUES = [
         '2' => 2,
@@ -33,6 +33,7 @@ class Card
         $this->suit = $suit;
         $this->rank = $rank;
         $this->intValue = self::RANKVALUES[$rank];
+        $color = "";
         switch($suit) {
             case 'S':
                 $color = 'black';
@@ -79,10 +80,9 @@ class Card
         return $this->color;
     }
 
-    public function getAsString(): string
+    public function rankExt(): string
     {
         $rank = $this->rank;
-        $suit = $this->suit;
         switch ($rank) {
             case 'J':
                 $rank = 'Jack';
@@ -103,7 +103,12 @@ class Card
                 $rank = 'Joker Red';
                 break;
         };
+        return $rank;
+    }
 
+    public function suitExt(): string
+    {
+        $suit = $this->suit;
         switch ($suit) {
             case 'S':
                 $suit = ' Spades';
@@ -118,7 +123,50 @@ class Card
                 $suit = ' Clubs';
                 break;
         };
+        return $suit;
+    }
 
-        return $rank . $suit;
+    public function getAsString(): string
+    {
+        // $rank = $this->rank;
+        // $suit = $this->suit;
+        // switch ($rank) {
+        //     case 'J':
+        //         $rank = 'Jack';
+        //         break;
+        //     case 'Q':
+        //         $rank = 'Queen';
+        //         break;
+        //     case 'K':
+        //         $rank = 'King';
+        //         break;
+        //     case 'A':
+        //         $rank = 'Ace';
+        //         break;
+        //     case 'jokerB':
+        //         $rank = 'Joker Black';
+        //         break;
+        //     case 'jokerR':
+        //         $rank = 'Joker Red';
+        //         break;
+        // };
+
+        // switch ($suit) {
+        //     case 'S':
+        //         $suit = ' Spades';
+        //         break;
+        //     case 'D':
+        //         $suit = ' Diamonds';
+        //         break;
+        //     case 'H':
+        //         $suit = ' Hearts';
+        //         break;
+        //     case 'C':
+        //         $suit = ' Clubs';
+        //         break;
+        // };
+
+        // return $rank . $suit;
+        return $this->rankExt() . $this->suitExt();
     }
 }

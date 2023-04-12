@@ -6,12 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Validator\Constraints\DateTime;
+// use Symfony\Component\Validator\Constraints\DateTime;
+use Datetime;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-// use App\Cards\DeckOfCardsExt;
 use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
@@ -42,7 +42,7 @@ class JsonController extends AbstractController
 
 
         $number = random_int(0, count($quotes)-1);
-        $time = new \DateTime();
+        $time = new DateTime();
         $data = [
             'quote' => $quotes[$number],
             'timestamp' => $time->format('Y-m-d H:i:s'),
@@ -76,7 +76,6 @@ class JsonController extends AbstractController
     public function jsonShuffle(
         SessionInterface $session
     ): Response {
-        // $deck = new DeckOfCardsExt();
         $deck = new DeckOfCards();
         $deck->shuffle();
         $session->set("deck", $deck);
@@ -96,6 +95,9 @@ class JsonController extends AbstractController
     public function jsonDraw(
         SessionInterface $session
     ): Response {
+        /**
+         * @var DeckOfCards $deck The deck of cards.
+         */
         $deck = $session->get("deck") ?? new DeckOfCards();
         $hand = new CardHand($deck, 1, '');
         $session->set("deck", $deck);
@@ -117,6 +119,9 @@ class JsonController extends AbstractController
         SessionInterface $session,
         int $number
     ): Response {
+        /**
+         * @var DeckOfCards $deck The deck of cards.
+         */
         $deck = $session->get("deck") ?? new DeckOfCards();
         $hand = new CardHand($deck, $number, '');
         $session->set("deck", $deck);
@@ -139,6 +144,9 @@ class JsonController extends AbstractController
         int $players,
         int $cards
     ): Response {
+        /**
+         * @var DeckOfCards $deck The deck of cards.
+         */
         $deck = $session->get("deck") ?? new DeckOfCards();
         $hands = [];
 

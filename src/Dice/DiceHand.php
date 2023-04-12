@@ -6,7 +6,10 @@ use App\Dice\Dice;
 
 class DiceHand
 {
-    private $hand = [];
+    /**
+     * @var array<Dice|null> $hand The hand holding the dice.
+     */
+    private array $hand = [];
 
     public function add(Dice $die): void
     {
@@ -16,7 +19,9 @@ class DiceHand
     public function roll(): void
     {
         foreach ($this->hand as $die) {
-            $die->roll();
+            if ($die) {
+                $die->roll();
+            }
         }
     }
 
@@ -25,20 +30,34 @@ class DiceHand
         return count($this->hand);
     }
 
+    /**
+     * Returns array with integer values of dice.
+     *
+     * @return array<mixed>
+     */
     public function getValues(): array
     {
         $values = [];
         foreach ($this->hand as $die) {
-            $values[] = $die->getValue();
+            if ($die) {
+                $values[] = $die->getValue();
+            }
         }
         return $values;
     }
 
+    /**
+     * Returns array with string representation of dice.
+     *
+     * @return array<string>
+     */
     public function getString(): array
     {
         $values = [];
         foreach ($this->hand as $die) {
-            $values[] = $die->getAsString();
+            if ($die) {
+                $values[] = $die->getAsString();
+            }
         }
         return $values;
     }

@@ -51,6 +51,9 @@ class CardController extends AbstractController
     public function draw(
         SessionInterface $session
     ): Response {
+        /**
+         * @var DeckOfCards $deck The deck of cards.
+         */
         $deck = $session->get("deck") ?? new DeckOfCards();
         $players = [];
         $hand = new CardHand($deck, 1, 'Player 1');
@@ -75,6 +78,9 @@ class CardController extends AbstractController
         SessionInterface $session,
         int $number
     ): Response {
+        /**
+         * @var DeckOfCards $deck The deck of cards.
+         */
         $deck = $session->get("deck") ?? new DeckOfCards();
         $players = [];
         $hand = new CardHand($deck, $number, 'Player 1');
@@ -101,6 +107,9 @@ class CardController extends AbstractController
         int $players,
         int $cards
     ): Response {
+        /**
+         * @var DeckOfCards $deck The deck of cards.
+         */
         $deck = $session->get("deck") ?? new DeckOfCards();
         $hands = [];
 

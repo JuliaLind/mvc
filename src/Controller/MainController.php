@@ -8,17 +8,18 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\DateTime;
 
+use Anax\TextFilter\TextFilter;
+use App\Markdown\MdParser;
+
 class MainController extends AbstractController
 {
     #[Route("/", name: "home")]
     public function home(): Response
     {
         $filename = "markdown/home.md";
-        $text     = file_get_contents($filename);
-        $filter   = new \Anax\TextFilter\TextFilter();
-        $parsed   = $filter->parse($text, ["shortcode", "markdown"]);
+        $parsedText = new MdParser($filename);
         $data = [
-            'home' => $parsed->text,
+            'home' => $parsedText->getParsedText(),
             'page' => "home",
             'url' => "/",
         ];
@@ -29,11 +30,9 @@ class MainController extends AbstractController
     public function about(): Response
     {
         $filename = "markdown/about.md";
-        $text     = file_get_contents($filename);
-        $filter   = new \Anax\TextFilter\TextFilter();
-        $parsed   = $filter->parse($text, ["shortcode", "markdown"]);
+        $parsedText = new MdParser($filename);
         $data = [
-            'about' => $parsed->text,
+            'about' => $parsedText->getParsedText(),
             'page' => "about",
             'url' => "/about",
         ];
@@ -43,37 +42,16 @@ class MainController extends AbstractController
     #[Route("/report", name: "report")]
     public function report(): Response
     {
-        $texts = [
-            "markdown/kmom01.md",
-            "markdown/kmom02.md",
-            "markdown/kmom03.md",
-            "markdown/kmom04.md",
-            "markdown/kmom05.md",
-            "markdown/kmom06.md",
-            "markdown/kmom10.md",
-        ];
-
-        $parsedTexts = [];
-
-        foreach ($texts as $filename) {
-            $text     = file_get_contents($filename);
-            $filter   = new \Anax\TextFilter\TextFilter();
-            $parsed   = $filter->parse($text, ["shortcode", "markdown"]);
-            $parsedText = $parsed->text;
-            array_push($parsedTexts, $parsedText);
-        }
-
         $data = [
-            'kmom01' => $parsedTexts[0],
-            'kmom02' => $parsedTexts[1],
-            'kmom03' => $parsedTexts[2],
-            'kmom04' => $parsedTexts[3],
-            'kmom05' => $parsedTexts[4],
-            'kmom06' => $parsedTexts[5],
-            'kmom10' => $parsedTexts[6],
             'page' => "report",
             'url' => "/report",
         ];
+        for ($i = 1; $i <= 7; $i++) {
+            $filename = "markdown/kmom0{$i}.md";
+            $parsedText = new MdParser($filename);
+            $data["kmom0{$i}"] = $parsedText->getParsedText();
+        }
+
         return $this->render('report.html.twig', $data);
     }
 
