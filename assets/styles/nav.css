@@ -33,7 +33,9 @@
 
 .subnav-content {
   display: none;
-  /* position: absolute; */
+  position: absolute;
+
+
   left: 0;
   width: 100%;
   z-index: 999999;
@@ -43,9 +45,13 @@
 
 .subnav a,
 .subnav-content a {
-    float: none;
+    /* float: none; */
     display: block;
     text-align: left;
+}
+
+.subnav-content a {
+    float: left;
 }
 
 .subnav:hover .subnav-content {
