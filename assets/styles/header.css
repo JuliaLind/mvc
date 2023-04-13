@@ -16,6 +16,11 @@
     color: #fff;
 }
 
+.no-header .site-header {
+    display: none;
+}
+
+
 @media (min-width: 1150px) {
     .site-header {
         background-attachment: fixed;
