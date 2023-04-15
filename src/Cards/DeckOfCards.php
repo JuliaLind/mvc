@@ -89,6 +89,20 @@ class DeckOfCards
     //     $this->sortByValue();
     // }
 
+    /**
+     * Returns array with each cards integer value.
+     *
+     * @return array<int>
+     */
+    public function getValues(): array
+    {
+        $cards = [];
+        foreach ($this->deck as $card) {
+            $cards[] = $card->getIntValue();
+        }
+        return $cards;
+    }
+
     public function shuffle(): void
     {
         shuffle($this->deck);

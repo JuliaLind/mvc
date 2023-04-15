@@ -6,6 +6,8 @@ use App\Cards\CardGraphic;
 use App\Cards\CardHand;
 use App\Cards\DeckOfCards;
 
+use App\Game\Player;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,7 +26,7 @@ class CardController extends AbstractController
         $data = [
             'title' => "Sorted deck",
             'cards' => $deck->getImgLinks(),
-            'page' => "deck card",
+            'page' => "deck card no-header",
             'url' => "/card",
         ];
         return $this->render('card/deck.html.twig', $data);
@@ -40,7 +42,7 @@ class CardController extends AbstractController
         $data = [
             'title' => "Shuffled deck",
             'cards' => $deck->getImgLinks(),
-            'page' => "deck card",
+            'page' => "deck card no-header",
             'url' => "/card",
         ];
 
@@ -56,17 +58,20 @@ class CardController extends AbstractController
          */
         $deck = $session->get("deck") ?? new DeckOfCards();
         $players = [];
-        $hand = new CardHand($deck, 1, 'Player 1');
+
+        $player = new Player('Player 1');
+        $player->draw($deck);
+
         $session->set("deck", $deck);
         $players[] = [
-            'playerName' => $hand->getPlayerName(),
-            'cards' => $hand->getImgLinksAndDescr(),
+            'playerName' => $player->getName(),
+            'cards' => $player->showHandGraphic(),
         ];
         $data = [
             'title' => "Draw 1 card",
             'players' => $players,
             'cardsLeft' => $deck->getCardCount(),
-            'page' => "draw card",
+            'page' => "draw card no-header",
             'url' => "/card",
         ];
 
@@ -83,18 +88,20 @@ class CardController extends AbstractController
          */
         $deck = $session->get("deck") ?? new DeckOfCards();
         $players = [];
-        $hand = new CardHand($deck, $number, 'Player 1');
+        $player = new Player('Player 1');
+        $player->drawMany($deck, $number);
+
         $session->set("deck", $deck);
         $players[] = [
-            'playerName' => $hand->getPlayerName(),
-            'cards' => $hand->getImgLinksAndDescr(),
+            'playerName' => $player->getName(),
+            'cards' => $player->showHandGraphic(),
         ];
 
         $data = [
             'title' => "Draw {$number} cards",
             'players' => $players,
             'cardsLeft' => $deck->getCardCount(),
-            'page' => "draw card",
+            'page' => "draw card no-header",
             'url' => "/card",
         ];
 
@@ -114,10 +121,11 @@ class CardController extends AbstractController
         $hands = [];
 
         for ($i = 1; $i <= $players; $i++) {
-            $hand = new CardHand($deck, $cards, "player {$i}");
+            $player = new Player("player {$i}");
+            $player->drawMany($deck, $cards);
             $hands[] = [
-                'playerName' => $hand->getPlayerName(),
-                'cards' => $hand->getImgLinksAndDescr(),
+                'playerName' => $player->getName(),
+                'cards' => $player->showHandGraphic(),
             ];
         };
         $session->set("deck", $deck);
@@ -125,7 +133,7 @@ class CardController extends AbstractController
             'title' => "Draw {$cards} cards for {$players} players",
             'players' => $hands,
             'cardsLeft' => $deck->getCardCount(),
-            'page' => "draw many card",
+            'page' => "draw card no-header",
             'url' => "/card",
         ];
 

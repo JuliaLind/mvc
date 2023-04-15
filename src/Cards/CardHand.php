@@ -12,14 +12,8 @@ class CardHand
      */
     private $hand = [];
 
-    /**
-     * @var string $playerName Name of the player the hand belongs to.
-     */
-    protected $playerName;
-
-    public function __construct(DeckOfCards $deck, int $number, string $playerName)
+    public function add(DeckOfCards $deck, int $number): void
     {
-        $this->playerName = $playerName;
         if ($number > $deck->getCardCount()) {
             $number = $deck->getCardCount();
         }
@@ -28,11 +22,6 @@ class CardHand
                 $this->hand[] = $deck->draw();
             }
         }
-    }
-
-    public function add(CardGraphic $card): void
-    {
-        $this->hand[] = $card;
     }
 
     /**
@@ -52,7 +41,7 @@ class CardHand
     }
 
     /**
-     * Returns array with arrays comtaining
+     * Returns array with arrays containing
      * paths to card image and description for each card.
      *
      * @return array<array<string>>
@@ -88,8 +77,25 @@ class CardHand
         return $cards;
     }
 
-    public function getPlayerName(): string
+    /**
+     * Returns array with each cards integer value.
+     *
+     * @return array<int>
+     */
+    public function getValues(): array
     {
-        return $this->playerName;
+        $cards = [];
+        foreach ($this->hand as $card) {
+            if ($card) {
+                $cards[] = $card->getIntValue();
+            }
+
+        }
+        return $cards;
+    }
+
+    public function getCardCount(): int
+    {
+        return count($this->hand);
     }
 }
