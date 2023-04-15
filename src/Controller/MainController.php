@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\DateTime;
 
-use Anax\TextFilter\TextFilter;
+// use Anax\TextFilter\TextFilter;
 use App\Markdown\MdParser;
 
 class MainController extends AbstractController
@@ -113,6 +113,11 @@ class MainController extends AbstractController
                     'link' => "jsonDeal",
                     'descr' => "Post route that 'draws' and displays a number of cards for a number of players and also the count of cards remaining",
                     'method' => 'POST',
+                ],
+                [
+                    'link' => "jsonGame",
+                    'descr' => "Shows current status of game 21",
+                    'method' => 'GET',
                 ],
             ],
         ];
