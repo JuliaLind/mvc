@@ -31,14 +31,14 @@
     grid-column: 1 / span 1;
     /* grid-row: 1 / span 1; */
     background-color: grey;
-    width: 200px;
-    height: 300px;
+    width: 150px;
+    height: 225px;
     text-align: center;
 }
 
 .card-deck p,
 .drawn-cards p {
-    width: 200px;
+    width: 150px;
     background-color: var(--almost-white);
     border: 1px solid var(--right-dark);
     padding: 0.7rem;
@@ -52,7 +52,8 @@
 }
 
 .draw.card img {
-    width: 150px;
+    width: 100px;
+    height: auto;
 }
 
 .drawn-cards {
