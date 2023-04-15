@@ -9,6 +9,9 @@ use Symfony\Component\Routing\Annotation\Route;
 // use Symfony\Component\Validator\Constraints\DateTime;
 use Datetime;
 
+use App\Game\Player;
+use App\Game\Game21;
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
@@ -99,11 +102,12 @@ class JsonController extends AbstractController
          * @var DeckOfCards $deck The deck of cards.
          */
         $deck = $session->get("deck") ?? new DeckOfCards();
-        $hand = new CardHand($deck, 1, '');
+        $player = new Player('');
+        $player->draw($deck);
         $session->set("deck", $deck);
 
         $data = [
-            'cards' => $hand->getAsString(),
+            'cards' => $player->showHandAsString(),
             'cardsLeft' => $deck->getCardCount(),
         ];
 
@@ -123,11 +127,13 @@ class JsonController extends AbstractController
          * @var DeckOfCards $deck The deck of cards.
          */
         $deck = $session->get("deck") ?? new DeckOfCards();
-        $hand = new CardHand($deck, $number, '');
+        $player = new Player('');
+        $player->drawMany($deck, $number);
+
         $session->set("deck", $deck);
 
         $data = [
-            'cards' => $hand->getAsString(),
+            'cards' => $player->showHandAsString(),
             'cards left in deck' => $deck->getCardCount(),
         ];
 
@@ -151,10 +157,11 @@ class JsonController extends AbstractController
         $hands = [];
 
         for ($i = 1; $i <= $players; $i++) {
-            $hand = new CardHand($deck, $cards, "player {$i}");
+            $player = new Player("player {$i}");
+            $player->drawMany($deck, $cards);
             $hands[] = [
-                'playerName' => $hand->getPlayerName(),
-                'cards' => $hand->getAsString(),
+                'playerName' => $player->getName(),
+                'cards' => $player->showHandAsString(),
             ];
         };
         $session->set("deck", $deck);
@@ -163,6 +170,29 @@ class JsonController extends AbstractController
             'cards left in deck' => $deck->getCardCount(),
         ];
 
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route('/api/game', name: "jsonGame", methods: ['GET'])]
+    public function jsonGame(
+        SessionInterface $session
+    ): Response {
+        $gameStatus = "No game started";
+        /**
+         * @var game21Easy|Game21Med|Game21Hard $game The current game of 21.
+         */
+        $game = $session->get("game21") ?? null;
+        if ($game) {
+            $gameStatus = $game->getGameStatus();
+        }
+
+        $data = [
+            'status' => $gameStatus,
+        ];
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
