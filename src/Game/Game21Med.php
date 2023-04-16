@@ -4,23 +4,52 @@ namespace App\Game;
 
 class Game21Med extends Game21
 {
-    public function deal(): int
+    public function estimateRisk(): float
     {
-        $currentPlayer = $this->players[$this->current];
-        $evaluate = -1;
-        switch($currentPlayer->getType()) {
-            case 'player':
-                parent::deal();
-                break;
-            case 'bank':
-                $risk = 0;
-                while (($risk < 0.5) && ($this->cardsLeft() > 1)) {
-                    parent::deal();
-                    $risk = $this->estimateRisk();
-                }
-                break;
+        // For player this is no change as player always draws first.
+        // In the hard version bank is cheating,
+        // bank's statistic is also based  only on cards
+        // left in deck even though bank draw's card second and
+        // is not aware of player's cards
+        $badCards = 0;
+        $currentPlayer = $this->currentPlayer();
+        $currentPoints = $currentPlayer->getMinPoints();
+        $cardsLeft = $this->deck->getCardCount();
+        $possibleCards = $this->deck->getValues();
+        $risk = 0;
+
+        foreach($this->players as $player) {
+            if($player !== $currentPlayer) {
+                $cardsLeft += $player->getCardCount();
+                $possibleCards = array_merge($possibleCards, $player->getCardValues());
+            }
         }
-        $evaluate = $this->evaluate();
+
+        if ($cardsLeft != 0) {
+            foreach ($possibleCards as $value) {
+                if ($value === 14) {
+                    $value = 1;
+                }
+                if ($currentPoints + $value > self::GOAL) {
+                    $badCards += 1;
+                }
+            }
+            $risk = $badCards / $cardsLeft;
+        }
+
+        return $risk;
+    }
+
+    public function dealBank(): int
+    {
+        $currentPlayer = $this->bank;
+        $evaluate = -1;
+        $risk = 0;
+        while (($risk < 0.5) && ($this->cardsLeft() > 1)) {
+            $currentPlayer->draw($this->deck);
+            $risk = $this->estimateRisk();
+        }
+        $evaluate = $this->evaluateBank();
         return $evaluate;
     }
 

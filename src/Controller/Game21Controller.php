@@ -123,17 +123,16 @@ class Game21Controller extends AbstractController
         return $this->redirectToRoute('play');
     }
 
-    #[Route('/game/next-player', name: "nextPlayer", methods: ['POST'])]
-    public function nextPlayer(
+    #[Route('/game/bank-playing', name: "bankPlaying", methods: ['POST'])]
+    public function bankPlaying(
         SessionInterface $session
     ): Response {
         /**
          * @var game21Easy|Game21Med|Game21Hard $game The current game of 21.
          */
         $game = $session->get("game21");
-        $game->nextPlayer();
-        $nextStep = $game->deal();
-        // $nextStep = $game->evaluate();
+        $game->bankPlaying = true;
+        $nextStep = $game->dealBank();
         $session->set("game21", $game);
         $winner = $game->getWinner();
         switch($nextStep) {
@@ -151,8 +150,6 @@ class Game21Controller extends AbstractController
                 break;
         }
         return $this->redirectToRoute('play');
-        // $session->set("game21", $game);
-        // return $this->redirectToRoute('draw');
     }
 
 

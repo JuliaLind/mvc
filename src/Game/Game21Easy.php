@@ -4,28 +4,19 @@ namespace App\Game;
 
 class Game21Easy extends Game21
 {
-    public function deal(): int
+    public function dealBank(): int
     {
-        $currentPlayer = $this->players[$this->current];
+        $currentPlayer = $this->bank;
         $evaluate = -1;
-        switch($currentPlayer->getType()) {
-            case 'player':
-                parent::deal();
-                break;
-            case 'bank':
-                $currentPoints = $currentPlayer->getMinPoints();
-                while (($currentPoints < 17) && ($this->cardsLeft() > 1)) {
-                    parent::deal();
-                    $currentPoints = $currentPlayer->getMinPoints();
-                    if ($currentPoints >= 17) {
-                        break;
-                    }
-                }
-                break;
+        $currentPoints = $currentPlayer->getMinPoints();
+        while (($currentPoints < 17) && ($this->cardsLeft() > 0)) {
+            $currentPlayer->draw($this->deck);
+            $currentPoints = $currentPlayer->getMinPoints();
         }
-        $evaluate = $this->evaluate();
+        $evaluate = $this->evaluateBank();
         return $evaluate;
     }
+
 
     /**
      * Returns all current data for game
