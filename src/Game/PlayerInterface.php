@@ -27,13 +27,13 @@ interface PlayerInterface
     /**
      * Get the money amount
      *
-     * @return int 
+     * @return int
      */
     public function getMoney();
 
     /**
      *
-     * @return void 
+     * @return void
      */
     public function incrMoney(int $money);
 
@@ -41,7 +41,7 @@ interface PlayerInterface
      * Decreases player's money and returns
      * the amount
      *
-     * @return int 
+     * @return int
      */
     public function decrMoney(int $money);
 

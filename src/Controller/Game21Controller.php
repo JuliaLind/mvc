@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
-use App\Game\Game21Easy;
+// use App\Game\Game21Easy;
 use App\Game\Game21Med;
 use App\Game\Game21Hard;
+use App\Game\Game21Easy;
 
 use App\Markdown\MdParser;
 
@@ -24,7 +25,7 @@ class Game21Controller extends AbstractController
         $filename = "markdown/game21.md";
         $parsedText = new MdParser($filename);
         /**
-         * @var game21Easy|Game21Med|Game21Hard|null $game The current game of 21.
+         * @var Game21Easy|Game21Med|Game21Hard|null $game The current game of 21.
          */
         $game = $session->get("game21") ?? null;
         $finished = true;
@@ -40,6 +41,21 @@ class Game21Controller extends AbstractController
 
         return $this->render('game21/home.html.twig', $data);
     }
+
+    #[Route('/game/doc', name: "gameDoc", methods: ['GET'])]
+    public function gameDoc(): Response
+    {
+        $filename = "markdown/doc.md";
+        $parsedText = new MdParser($filename);
+        $data = [
+            'about' => $parsedText->getParsedText(),
+            'page' => "game doc",
+            'url' => "/game"
+        ];
+
+        return $this->render('game21/doc.html.twig', $data);
+    }
+
 
     #[Route('/game/init/{level<\d+>}', name: "init", methods: ['POST'])]
     public function init(
@@ -65,7 +81,7 @@ class Game21Controller extends AbstractController
         SessionInterface $session
     ): Response {
         /**
-         * @var game21Easy|Game21Med|Game21Hard $game The current game of 21.
+         * @var Game21Easy|Game21Med|Game21Hard $game The current game of 21.
          */
         $game = $session->get("game21");
         $game->nextRound();
@@ -86,7 +102,7 @@ class Game21Controller extends AbstractController
         int $amount
     ): Response {
         /**
-         * @var game21Easy|Game21Med|Game21Hard $game The current game of 21.
+         * @var Game21Easy|Game21Med|Game21Hard $game The current game of 21.
          */
         $game = $session->get("game21");
         $game->addToMoneyPot($amount);
@@ -99,7 +115,7 @@ class Game21Controller extends AbstractController
         SessionInterface $session
     ): Response {
         /**
-         * @var game21Easy|Game21Med|Game21Hard $game The current game of 21.
+         * @var Game21Easy|Game21Med|Game21Hard $game The current game of 21.
          */
         $game = $session->get("game21");
         $nextStep = $game->deal();
@@ -128,7 +144,7 @@ class Game21Controller extends AbstractController
         SessionInterface $session
     ): Response {
         /**
-         * @var game21Easy|Game21Med|Game21Hard $game The current game of 21.
+         * @var Game21Easy|Game21Med|Game21Hard $game The current game of 21.
          */
         $game = $session->get("game21");
         $game->bankPlaying = true;
@@ -158,7 +174,7 @@ class Game21Controller extends AbstractController
         SessionInterface $session
     ): Response {
         /**
-         * @var game21Easy|Game21Med|Game21Hard $game The current game of 21.
+         * @var Game21Easy|Game21Med|Game21Hard $game The current game of 21.
          */
         $game = $session->get("game21");
         $pageData = [
