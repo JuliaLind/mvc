@@ -2,7 +2,7 @@
 
 namespace App\Game;
 
-class Game21Med extends Game21
+class Game21Med extends Game21SinglePlayer
 {
     public function estimateRisk(): float
     {
@@ -18,11 +18,10 @@ class Game21Med extends Game21
         $possibleCards = $this->deck->getValues();
         $risk = 0;
 
-        foreach($this->players as $player) {
-            if($player !== $currentPlayer) {
-                $cardsLeft += $player->getCardCount();
-                $possibleCards = array_merge($possibleCards, $player->getCardValues());
-            }
+        if ($currentPlayer === $this->bank) {
+            $otherPlayer = $this->player;
+            $cardsLeft += $otherPlayer->getCardCount();
+            $possibleCards = array_merge($possibleCards, $otherPlayer->getCardValues());
         }
 
         if ($cardsLeft != 0) {
@@ -42,11 +41,11 @@ class Game21Med extends Game21
 
     public function dealBank(): int
     {
-        $currentPlayer = $this->bank;
+        $bank = $this->bank;
         $evaluate = -1;
         $risk = 0;
-        while (($risk < 0.5) && ($this->cardsLeft() > 1)) {
-            $currentPlayer->draw($this->deck);
+        while (($risk <= 0.5) && ($this->cardsLeft() > 0)) {
+            $bank->draw($this->deck);
             $risk = $this->estimateRisk();
         }
         $evaluate = $this->evaluateBank();

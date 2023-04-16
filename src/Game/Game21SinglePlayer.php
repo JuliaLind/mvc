@@ -5,62 +5,48 @@ namespace App\Game;
 use App\Game\Player21;
 use App\Cards\DeckOfCards;
 
-class Game21 extends GameMultiPlayer
+class Game21SinglePlayer extends GameSinglePlayer
 {
-    /**
-     * @var int $currentRound.
-     */
-    public $currentRound;
-
     /**
      * @var int $GOAL the goal points to reach.
      */
     protected const GOAL = 21;
 
-    /**
-     * @var bool $roundOver.
-     */
-    public $roundOver;
+    public bool $roundOver;
+    public bool $bankPlaying;
+    protected Player21 $bank;
+    public int $currentRound;
 
-    /**
-     * @var bool $bankPlaying.
-     */
-    public $bankPlaying;
+    public string $winner;
+    protected int $moneyPot;
 
-    /**
-     * @var Player21 $bank.
-     */
-    public $bank;
-
-    /**
-     * @var array<Player21> $players.
-     */
-    protected $players;
-
-    /**
-     * @param array<Player21> $players
-     */
-    public function __construct(array $players=[new Player21('You')], DeckOfCards $deck=new DeckOfCards())
+    public function __construct(PlayerInterface $player=new Player21('You'), DeckOfCards $deck=new DeckOfCards())
     {
         $startingMoney = 100;
-        parent::__construct($deck, $players);
-        foreach($this->players as $player) {
-            $player->incrMoney($startingMoney);
-        }
+        parent::__construct($deck, $player);
+        $this->player->incrMoney($startingMoney);
         $this->currentRound = 0;
         $this->roundOver = false;
         $this->bankPlaying = false;
         $this->bank = new Player21('Bank', 'bank');
         $this->bank->incrMoney($startingMoney);
+        $this->winner = "";
+        $this->moneyPot = 0;
     }
 
-    public function currentPlayer(): Player21
+    protected function currentPlayer(): PlayerInterface
     {
-        $currentPlayer = $this->bank;
-        if ($this->bankPlaying === false) {
-            $currentPlayer = $this->players[$this->current];
+        $currentPlayer = $this->player;
+        if ($this->bankPlaying === true) {
+            $currentPlayer = $this->bank;
         }
         return $currentPlayer;
+    }
+
+    public function moneyToWinner(PlayerInterface $player): void
+    {
+        $player->incrMoney($this->moneyPot);
+        $this->moneyPot = 0;
     }
 
     public function estimateRisk(): float
@@ -71,36 +57,30 @@ class Game21 extends GameMultiPlayer
         $cardsLeft = $this->deck->getCardCount();
         $possibleCards = $this->deck->getValues();
         $risk = 0;
-
         if ($cardsLeft != 0) {
             foreach ($possibleCards as $value) {
                 if ($value === 14) {
                     $value = 1;
                 }
-
                 if ($currentPoints + $value > self::GOAL) {
                     $badCards += 1;
                 }
             }
             $risk = $badCards / $cardsLeft;
         }
-
         return $risk;
     }
 
     public function nextRound(): void
     {
         $this->currentRound = $this->currentRound + 1;
-        $this->current = 0;
         $this->roundOver = false;
-        foreach ($this->players as $player) {
-            $player->emptyHand();
-        }
+        $this->player->emptyHand();
         $this->bank->emptyHand();
         $this->bankPlaying = false;
     }
 
-    public function endRound(Player21 $winner): int
+    public function endRound(PlayerInterface $winner): int
     {
         $roundOver = 0;
         $gameOver = 1;
@@ -117,46 +97,43 @@ class Game21 extends GameMultiPlayer
     public function evaluate(): int
     {
         $continue = -1;
+        $player = $this->player;
+        $bank = $this->bank;
 
-        $currentPlayer = $this->players[$this->current];
-        $otherPlayer = $this->bank;
+        $winner = $player;
+        $playerPoints = $player->getPoints();
 
-        $winner = $currentPlayer;
-        $currentPlayerPoints = $currentPlayer->getPoints();
-
-        if ($currentPlayerPoints > self::GOAL) {
-            $winner = $otherPlayer;
+        if ($playerPoints > self::GOAL) {
+            $winner = $bank;
         } elseif ($this->cardsLeft() > 0) {
             return $continue;
         }
-
         return $this->endRound($winner);
     }
 
     public function evaluateBank(): int
     {
-        $currentPlayer = $this->bank;
-        $otherPlayer = $this->players[$this->current];
+        $bank = $this->bank;
+        $player = $this->player;
 
-        $currentPlayerPoints = $currentPlayer->getPoints();
-        $otherPlayerPoints = $otherPlayer->getPoints();
+        $bankPoints = $bank->getPoints();
+        $playerPoints = $player->getPoints();
 
-        $winner = $otherPlayer;
+        $winner = $player;
 
-        if (($currentPlayerPoints === self::GOAL) || ($currentPlayerPoints === $otherPlayerPoints)) {
-            $winner = $currentPlayer;
-        } elseif ($currentPlayerPoints < self::GOAL) {
-            $diff1 = self::GOAL - $currentPlayerPoints;
-            $diff2 = self::GOAL - $otherPlayerPoints;
-            if ($diff1 < $diff2) {
-                $winner = $currentPlayer;
+        if (($bankPoints === self::GOAL) || ($bankPoints === $playerPoints)) {
+            $winner = $bank;
+        } elseif ($bankPoints < self::GOAL) {
+            $diffBank = self::GOAL - $bankPoints;
+            $diffPlayer = self::GOAL - $playerPoints;
+            if ($diffBank < $diffPlayer) {
+                $winner = $bank;
             }
         }
         return $this->endRound($winner);
     }
 
     /**
-     * Returns data for each player.
      *
      * @return array<int<0,max>,array<string,array<array<string>>|int|string>>
      */
@@ -176,7 +153,7 @@ class Game21 extends GameMultiPlayer
 
     public function getInvestLimit(): int
     {
-        $limit = $this->players[$this->current]->getMoney();
+        $limit = $this->player->getMoney();
         $money = $this->bank->getMoney();
         if ($money < $limit) {
             $limit = $money;
@@ -191,9 +168,26 @@ class Game21 extends GameMultiPlayer
             $amount = $limit;
         }
         $this->moneyPot += $this->bank->decrMoney($amount);
-        $this->moneyPot += $this->players[$this->current]->decrMoney($amount);
+        $this->moneyPot += $this->player->decrMoney($amount);
     }
 
+    /**
+     * Returns player data
+     *
+     * @return array<int<0,max>,array<string,array<array<string>>|int|string>>
+     */
+    public function getPlayerData(): array
+    {
+        $players = [];
+        $players[] = [
+            'name' => $this->bank->getName(),
+            'cards' => $this->bank->showHandGraphic(),
+            'money' => $this->bank->getMoney(),
+            'points' => $this->bank->getPoints(),
+        ];
+        $players = array_merge($players, parent::getPlayerData());
+        return $players;
+    }  
 
     /**
      * Returns all current data for game
@@ -203,14 +197,13 @@ class Game21 extends GameMultiPlayer
     public function getGameStatus(): array
     {
         $risk = strVal(round($this->estimateRisk() * 100));
-        $players = array_merge($this->getBankData(), $this->getPlayerData());
-
+        $players = $this->getPlayerData();
         $data = [
             'players'=>$players,
             'bankPlaying'=>$this->bankPlaying,
             'winner'=>$this->winner,
             'cardsLeft'=>$this->cardsLeft(),
-            'statistics'=> $risk . ' %',
+            'risk'=> $risk . ' %',
             'finished'=>$this->finished,
             'currentRound'=>$this->currentRound,
             'moneyPot'=>$this->moneyPot,

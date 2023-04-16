@@ -72,7 +72,7 @@ class Game21Controller extends AbstractController
         $session->set("game21", $game);
         $data = [
             'limit' => $game->getInvestLimit(),
-            'money' => $game->currentPlayerMoney(),
+            'money' => $game->playerMoney(),
             'round' => $game->currentRound,
             'page' => "game no-header card",
             'url' => "/game",
@@ -94,8 +94,8 @@ class Game21Controller extends AbstractController
         return $this->redirectToRoute('play');
     }
 
-    #[Route('/game/draw', name: "draw", methods: ['POST'])]
-    public function draw(
+    #[Route('/game/draw', name: "playerDraw", methods: ['POST'])]
+    public function playerDraw(
         SessionInterface $session
     ): Response {
         /**
@@ -105,7 +105,7 @@ class Game21Controller extends AbstractController
         $nextStep = $game->deal();
         // $nextStep = $game->evaluate();
         $session->set("game21", $game);
-        $winner = $game->getWinner();
+        $winner = $game->winner;
         switch($nextStep) {
             case 0:
                 $this->addFlash(
@@ -134,7 +134,7 @@ class Game21Controller extends AbstractController
         $game->bankPlaying = true;
         $nextStep = $game->dealBank();
         $session->set("game21", $game);
-        $winner = $game->getWinner();
+        $winner = $game->winner;
         switch($nextStep) {
             case 0:
                 $this->addFlash(

@@ -2,16 +2,16 @@
 
 namespace App\Game;
 
-class Game21Easy extends Game21
+class Game21Easy extends Game21SinglePlayer
 {
     public function dealBank(): int
     {
-        $currentPlayer = $this->bank;
         $evaluate = -1;
-        $currentPoints = $currentPlayer->getMinPoints();
+        $bank = $this->bank;
+        $currentPoints = $bank->getMinPoints();
         while (($currentPoints < 17) && ($this->cardsLeft() > 0)) {
-            $currentPlayer->draw($this->deck);
-            $currentPoints = $currentPlayer->getMinPoints();
+            $bank->draw($this->deck);
+            $currentPoints = $bank->getMinPoints();
         }
         $evaluate = $this->evaluateBank();
         return $evaluate;

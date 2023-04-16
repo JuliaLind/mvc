@@ -5,7 +5,7 @@ namespace App\Game;
 use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
-class Player
+class Player implements PlayerInterface
 {
     /**
      * @var string $name Name of the player the hand belongs to.

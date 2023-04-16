@@ -23,7 +23,7 @@
 .game input {
     background: transparent;
     padding: 1em;
-    margin-bottom: 2em;
+    /* margin-bottom: 2em; */
     border-radius: 5000px;
     backdrop-filter: blur(5px);
     box-shadow: 4px 4px 60px rgba(0,0,0,0.2);

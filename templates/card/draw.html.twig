@@ -5,11 +5,13 @@
 {% block body %}
 <h1>{{ title }}</h1>
 <div class="multi-player" style="grid-template-rows: repeat({{ players|length}}, 1fr);">
+<div class="left-side">
 <div class="card-deck">
 <p>Cards left: {{ cardsLeft }}</p>
 {% if (cardsLeft > 0) %}
         <img class="card" src="{{ asset('img/cards/back.svg') }}" alt="card deck">
 {% endif %}
+</div>
 </div>
 {% for player in players %}
     <div class="drawn-cards">

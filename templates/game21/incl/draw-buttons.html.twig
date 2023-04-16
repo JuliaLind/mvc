@@ -1,12 +1,9 @@
 <form method="post" action="">
     <p>
         <input type="submit" value="Draw a card"
-            onClick="this.form.action='{{ path('draw') }}';"
-        >
-        
+            onClick="this.form.action='{{ path('playerDraw') }}';">
         <input type="submit" value="Done"
-            onClick="this.form.action='{{ path('bankPlaying') }}';"
-        >
+            onClick="this.form.action='{{ path('bankPlaying') }}';">
     </p>
 </form>
-<p>Risk att bli tjock vid nästa kort {{ statistics }}</p>
+<p>Sannolikhet att bli tjock vid nästa kort {{ risk }}</p>
