@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+<h1>Game 21</h1>
+<p>Beskrivning kommer inom kort</p>
+{# {{ about | raw }} #}
+
+{% include 'game21/incl/start-buttons.html.twig' %}
+
+{% if finished == false %}
+<p>Klicka på denna knapp för att återgå till pågående spel:</p>
+{% include 'game21/incl/return-to-current-game-btn.html.twig' %}
+{% endif %}
+{% endblock %}

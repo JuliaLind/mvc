@@ -4,6 +4,7 @@
     --main: #537260;
     --right-light: #bf6c65;
     --right-dark: #735654;
-    --magic-number: 1.4rem;
+    /* --magic-number: 1.4rem; */
+    --magic-number: calc(1.4 * 1.1rem);
     --almost-white: #f2f2f2;
 }

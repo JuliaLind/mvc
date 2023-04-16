@@ -4,9 +4,9 @@ html {
 
 main,
 .about .col-2 {
-    padding: var(--magic-number);
+    padding: calc(var(--magic-number) * 2);
     padding-bottom: calc(var(--magic-number) * 3);
-    max-width: 65.4em;
+    max-width: 66.8em;
     margin: 0 auto;
     height: 100%;
 }

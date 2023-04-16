@@ -9,7 +9,7 @@ class DeckOfCards
     /**
      * @var array<CardGraphic> $deck The deck containing cards.
      */
-    private array $deck = [];
+    protected array $deck = [];
 
     public function __construct()
     {

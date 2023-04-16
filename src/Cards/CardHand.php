@@ -24,6 +24,11 @@ class CardHand
         }
     }
 
+    public function emptyHand(): void
+    {
+        $this->hand = [];
+    }
+
     /**
      * Returns array with paths to card images.
      *

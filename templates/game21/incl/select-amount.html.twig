@@ -1,0 +1,19 @@
+<form method="post" id="betForm" action="{{ path('bet', {amount: 1}) }}">
+<p>Välj belopp du vill betta i denna runda. Du har totalt {{ money }}. Du kan investera max {{ limit }}</p>
+    <p> 
+        <input type="number" id="betAmount" name="amount" step="10" max="{{ limit }}" min="10" required="required" value="10">
+        <input type="submit" id="bet" name="bet" value="Betta">
+    </p>
+</form>
+<script>
+    let betForm = document.getElementById("betForm");
+    let betAmount = document.getElementById("betAmount");
+    let btn = document.getElementById("bet");
+    let chosenAmount;
+    btn.addEventListener("click", function () {
+        chosenAmount = betAmount.value;
+        let url = betForm.action;
+        url = url.substring(0,url.length-1);
+        betForm.action = url + chosenAmount;
+    })
+</script>

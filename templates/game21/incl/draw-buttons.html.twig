@@ -1,0 +1,12 @@
+<form method="post" action="">
+    <p>
+        <input type="submit" value="Draw a card"
+            onClick="this.form.action='{{ path('draw') }}';"
+        >
+        
+        <input type="submit" value="Done"
+            onClick="this.form.action='{{ path('nextPlayer') }}';"
+        >
+    </p>
+</form>
+<p>Risk att bli tjock vid nästa kort {{ statistics }}</p>

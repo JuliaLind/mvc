@@ -3,7 +3,8 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
+<h1>Spelomgång nr {{ round }}</h1>
 
-{{ home | raw }}
-{# <img class="me" src="{{ asset('img/home.jpg') }}" alt="bild på mig"> #}
+{% include 'game21/incl/select-amount.html.twig' %}
+
 {% endblock %}
