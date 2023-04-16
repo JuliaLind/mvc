@@ -128,45 +128,6 @@ class Card
 
     public function getAsString(): string
     {
-        // $rank = $this->rank;
-        // $suit = $this->suit;
-        // switch ($rank) {
-        //     case 'J':
-        //         $rank = 'Jack';
-        //         break;
-        //     case 'Q':
-        //         $rank = 'Queen';
-        //         break;
-        //     case 'K':
-        //         $rank = 'King';
-        //         break;
-        //     case 'A':
-        //         $rank = 'Ace';
-        //         break;
-        //     case 'jokerB':
-        //         $rank = 'Joker Black';
-        //         break;
-        //     case 'jokerR':
-        //         $rank = 'Joker Red';
-        //         break;
-        // };
-
-        // switch ($suit) {
-        //     case 'S':
-        //         $suit = ' Spades';
-        //         break;
-        //     case 'D':
-        //         $suit = ' Diamonds';
-        //         break;
-        //     case 'H':
-        //         $suit = ' Hearts';
-        //         break;
-        //     case 'C':
-        //         $suit = ' Clubs';
-        //         break;
-        // };
-
-        // return $rank . $suit;
         return $this->rankExt() . $this->suitExt();
     }
 }
