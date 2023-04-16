@@ -2,7 +2,7 @@
 
 namespace App\Game;
 
-class Game21Med extends Game21SinglePlayer
+class Game21Med extends Game21Easy
 {
     public function estimateRisk(): float
     {
