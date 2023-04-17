@@ -16,6 +16,12 @@ class Game21Hard extends Game21Easy
         return $data;
     }
 
+    /**
+     * Deals cards to the bank and returns indicator
+     * of if the round is over or if the game is over
+     *
+     * @return int
+     */
     public function dealBank(): int
     {
         $bank = $this->bank;

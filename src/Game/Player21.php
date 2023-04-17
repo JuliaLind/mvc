@@ -4,7 +4,18 @@ namespace App\Game;
 
 class Player21 extends Player
 {
-    public function getPoints(): int
+    /**
+     * @var string $type Bank or player
+     */
+    protected string $type;
+
+    public function __construct(string $name="You", string $type="player")
+    {
+        parent::__construct($name);
+        $this->type = $type;
+    }
+
+    public function handValue(): int
     {
         $values = $this->hand->getValues();
         asort($values);
@@ -18,7 +29,7 @@ class Player21 extends Player
         return $pointSum;
     }
 
-    public function getMinPoints(): int
+    public function minHandValue(): int
     {
         $values = $this->hand->getValues();
         asort($values);
@@ -30,5 +41,16 @@ class Player21 extends Player
             $pointSum += $value;
         }
         return $pointSum;
+    }
+
+
+    /**
+     * Returns type of player - bank or player
+     *
+     * @return string
+     */    
+    public function getType(): string
+    {
+        return $this->type;
     }
 }

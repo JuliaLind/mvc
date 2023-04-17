@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-// use App\Game\Game21Easy;
 use App\Game\Game21Med;
 use App\Game\Game21Hard;
 use App\Game\Game21Easy;

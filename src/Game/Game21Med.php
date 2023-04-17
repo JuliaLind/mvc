@@ -4,16 +4,17 @@ namespace App\Game;
 
 class Game21Med extends Game21Easy
 {
+    /**
+     * Returns the risk of current player getting
+     * above 21 with next drawn card
+     *
+     * @return float
+     */
     protected function estimateRisk(): float
     {
-        // For player this is no change as player always draws first.
-        // In the hard version bank is cheating,
-        // bank's statistic is also based  only on cards
-        // left in deck even though bank draw's card second and
-        // is not aware of player's cards
         $badCards = 0;
         $currentPlayer = $this->currentPlayer();
-        $currentPoints = $currentPlayer->getMinPoints();
+        $currentPoints = $currentPlayer->minHandValue();
         $cardsLeft = $this->deck->getCardCount();
         $possibleCards = $this->deck->getValues();
         $risk = 0;
@@ -39,6 +40,12 @@ class Game21Med extends Game21Easy
         return $risk;
     }
 
+    /**
+     * Deals cards to the bank and returns indicator
+     * of if the round is over or if the game is over
+     *
+     * @return int
+     */
     public function dealBank(): int
     {
         $bank = $this->bank;

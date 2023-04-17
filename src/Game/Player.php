@@ -5,43 +5,22 @@ namespace App\Game;
 use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
-class Player implements PlayerInterface
+class Player
 {
     /**
-     * @var string $name Name of the player the hand belongs to.
-     */
-    protected $name;
-
-    /**
+     * @var string $name
      * @var int $money
+     * @var CardHand $hand 
      */
-    protected $money;
+    protected string $name;
+    protected int $money;
+    protected CardHand $hand;
 
-    /**
-     * @var string $type
-     */
-    protected $type;
-
-    /**
-     * @var CardHand $hand hand holding cards
-     */
-    protected $hand;
-
-    public function __construct(string $name, string $type="player")
+    public function __construct(string $name)
     {
         $this->name = $name;
         $this->hand = new CardHand();
-        $this->type = $type;
-    }
-
-    public function drawMany(DeckOfCards $deck, int $number): void
-    {
-        $this->hand->add($deck, $number);
-    }
-
-    public function draw(DeckOfCards $deck): void
-    {
-        $this->hand->add($deck, 1);
+        $this->money = 0;
     }
 
     public function getName(): string
@@ -54,28 +33,50 @@ class Player implements PlayerInterface
         return $this->money;
     }
 
+
+    /**
+     * Draw 1 card from deck and add to hand
+     *
+     * @param DeckOfCards $deck the card-deck to draw cards from
+     * @return void
+     */
+    public function draw(DeckOfCards $deck): void
+    {
+        $this->hand->add($deck, 1);
+    }
+
+    /**
+     * Draw numner of cards from deck and add to hand
+     *
+     * @param DeckOfCards $deck the card-deck to draw cards from
+     * @param int $number numner of cards to draw
+     * @return void
+     */
+    public function drawMany(DeckOfCards $deck, int $number): void
+    {
+        $this->hand->add($deck, $number);
+    }
+
+    /**
+     * Adds money to player
+     *
+     * @param int $money the amount of money to add
+     * @return void
+     */
     public function incrMoney(int $money): void
     {
         $this->money += $money;
     }
 
+    /**
+     * Removes money from player
+     *
+     * @return int the amount of money that was removed
+     */
     public function decrMoney(int $money): int
     {
         $this->money -= $money;
         return $money;
-    }
-
-    public function getMinPoints(): int
-    {
-        $values = $this->hand->getValues();
-        return array_sum($values);
-    }
-
-
-    public function getPoints(): int
-    {
-        $values = $this->hand->getValues();
-        return array_sum($values);
     }
 
     /**
@@ -109,18 +110,24 @@ class Player implements PlayerInterface
         return $this->hand->getAsString();
     }
 
+    /**
+     * Returns the number of cards in hand.
+     *
+     * @return int
+     */
     public function getCardCount(): int
     {
         return $this->hand->getCardCount();
     }
 
+    /**
+     * Removes all cards from hand
+     *
+     * @return void
+     */
     public function emptyHand(): void
     {
         $this->hand->emptyHand();
     }
 
-    public function getType(): string
-    {
-        return $this->type;
-    }
 }

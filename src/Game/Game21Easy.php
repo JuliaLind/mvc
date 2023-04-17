@@ -5,25 +5,34 @@ namespace App\Game;
 use App\Game\Player21;
 use App\Cards\DeckOfCards;
 
-class Game21Easy extends GameSinglePlayer
+class Game21Easy extends Game
 {
     /**
      * @var int $GOAL the goal points to reach.
      */
     protected const GOAL = 21;
 
+    /**
+     * @var Player21 $player
+     */
+    protected $player;
     public bool $roundOver;
     public bool $bankPlaying;
     protected Player21 $bank;
     public int $currentRound;
-
     public string $winner;
     protected int $moneyPot;
 
-    public function __construct(PlayerInterface $player=new Player21('You'), DeckOfCards $deck=new DeckOfCards())
+    /**
+     * Constructor
+     * @param DeckOfCards $deck
+     * @param Player21 $player
+     */
+    public function __construct(Player21 $player=new Player21(), DeckOfCards $deck=new DeckOfCards())
     {
         $startingMoney = 100;
-        parent::__construct($deck, $player);
+        parent::__construct($deck);
+        $this->player = $player;
         $this->player->incrMoney($startingMoney);
         $this->currentRound = 0;
         $this->roundOver = false;
@@ -34,7 +43,11 @@ class Game21Easy extends GameSinglePlayer
         $this->moneyPot = 0;
     }
 
-    protected function currentPlayer(): PlayerInterface
+    /**
+     * Returns the currently plaing party - player or bank
+     * @return Player21
+     */
+    protected function currentPlayer(): Player21
     {
         $currentPlayer = $this->player;
         if ($this->bankPlaying === true) {
@@ -43,6 +56,11 @@ class Game21Easy extends GameSinglePlayer
         return $currentPlayer;
     }
 
+    /**
+     * Increases number of currenRound attribute by 1
+     * and resets for next round
+     * @return void
+     */
     public function nextRound(): void
     {
         $this->currentRound = $this->currentRound + 1;
@@ -52,6 +70,11 @@ class Game21Easy extends GameSinglePlayer
         $this->bankPlaying = false;
     }
 
+    /**
+     * Returns the lower of money of what
+     * the bank or the player has
+     * @return int
+     */
     public function getInvestLimit(): int
     {
         $limit = $this->player->getMoney();
@@ -62,6 +85,12 @@ class Game21Easy extends GameSinglePlayer
         return $limit;
     }
 
+    /**
+     * Moves the $amount of money for each of player and bank
+     * to the moneypot
+     * @param int $amount
+     * @return void
+     */
     public function addToMoneyPot(int $amount): void
     {
         $limit = $this->getInvestLimit();
@@ -72,11 +101,17 @@ class Game21Easy extends GameSinglePlayer
         $this->moneyPot += $this->player->decrMoney($amount);
     }
 
+    /**
+     * Returns the risk of current player getting
+     * above 21 with next drawn card
+     *
+     * @return float
+     */
     protected function estimateRisk(): float
     {
         $badCards = 0;
         $currentPlayer = $this->currentPlayer();
-        $currentPoints = $currentPlayer->getMinPoints();
+        $currentPoints = $currentPlayer->minHandValue();
         $cardsLeft = $this->deck->getCardCount();
         $possibleCards = $this->deck->getValues();
         $risk = 0;
@@ -94,13 +129,25 @@ class Game21Easy extends GameSinglePlayer
         return $risk;
     }
 
+    /**
+     * Deals a card to the player,
+     * returns indicator if player can continue to draw or if the round is over
+     *
+     * @return int
+     */
     public function deal(): int
     {
-        $evaluate = parent::deal();
+        $this->player->draw($this->deck);
         $evaluate = $this->evaluate();
         return $evaluate;
     }
 
+    /**
+     * Called after the player has picked a card
+     * and checks if the round is over/value of hand is above 21
+     *
+     * @return int
+     */    
     protected function evaluate(): int
     {
         $continue = -1;
@@ -108,7 +155,7 @@ class Game21Easy extends GameSinglePlayer
         $bank = $this->bank;
 
         $winner = $player;
-        $playerPoints = $player->getPoints();
+        $playerPoints = $player->handValue();
 
         if ($playerPoints > self::GOAL) {
             $winner = $bank;
@@ -118,26 +165,37 @@ class Game21Easy extends GameSinglePlayer
         return $this->endRound($winner);
     }
 
+    /**
+     * Deals cards to the bank and returns indicator
+     * of if the round is over or if the game is over
+     *
+     * @return int
+     */
     public function dealBank(): int
     {
-        $evaluate = -1;
         $bank = $this->bank;
-        $currentPoints = $bank->getPoints();
+        $currentPoints = $bank->handValue();
         while (($currentPoints < 17) && ($this->cardsLeft() > 0)) {
             $bank->draw($this->deck);
-            $currentPoints = $bank->getPoints();
+            $currentPoints = $bank->handValue();
         }
-        $evaluate = $this->evaluateBank();
-        return $evaluate;
+ 
+        return $this->evaluateBank();
     }
 
+    /**
+     * Called after the bank is finished with drawing cards
+     * and determins the winner of the round.
+     *
+     * @return int
+     */
     protected function evaluateBank(): int
     {
         $bank = $this->bank;
         $player = $this->player;
 
-        $bankPoints = $bank->getPoints();
-        $playerPoints = $player->getPoints();
+        $bankPoints = $bank->handValue();
+        $playerPoints = $player->handValue();
 
         $winner = $player;
 
@@ -153,7 +211,15 @@ class Game21Easy extends GameSinglePlayer
         return $this->endRound($winner);
     }
 
-    protected function endRound(PlayerInterface $winner): int
+    /**
+     * End the round. Returns an indicator of
+     * if only the round is over or if the whole
+     * game is over
+     * @param Player21 $winner
+     *
+     * @return int
+     */
+    protected function endRound(Player21 $winner): int
     {
         $roundOver = 0;
         $gameOver = 1;
@@ -167,27 +233,17 @@ class Game21Easy extends GameSinglePlayer
         return $roundOver;
     }
 
-    
-    public function moneyToWinner(PlayerInterface $player): void
-    {
-        $player->incrMoney($this->moneyPot);
-        $this->moneyPot = 0;
-    }
 
     /**
+     * Moves money from game pot to winner
+     * @param Player21 $winner
      *
-     * @return array<int<0,max>,array<string,array<array<string>>|int|string>>
+     * @return void
      */
-    protected function getBankData(): array
+    public function moneyToWinner(Player21 $winner): void
     {
-        $bankData = [];
-        $bankData[] = [
-            'name' => $this->bank->getName(),
-            'cards' => $this->bank->showHandGraphic(),
-            'money' => $this->bank->getMoney(),
-            'points' => $this->bank->getPoints(),
-        ];
-        return $bankData;
+        $winner->incrMoney($this->moneyPot);
+        $this->moneyPot = 0;
     }
 
     /**
@@ -197,7 +253,23 @@ class Game21Easy extends GameSinglePlayer
      */
     public function getPlayerData(): array
     {
-        $players = array_merge($this->getBankData(), parent::getPlayerData());
+        // $players = array_merge($this->getBankData(), parent::getPlayerData());
+
+        $players = [];
+        $player = $this->player;
+        $bank = $this->bank;
+        $players[] = [
+            'name' => $bank->getName(),
+            'cards' => $bank->showHandGraphic(),
+            'money' => $bank->getMoney(),
+            'handValue' => $bank->handValue(),
+        ];
+        $players[] = [
+            'name' => $player->getName(),
+            'cards' => $player->showHandGraphic(),
+            'money' => $player->getMoney(),
+            'handValue' => $player->handValue(),
+        ];   
         return $players;
     }
 
@@ -208,7 +280,7 @@ class Game21Easy extends GameSinglePlayer
      */
     public function getGameStatus(): array
     {
-        $risk = strVal(round($this->estimateRisk() * 100));
+        $risk = strVal(round($this->estimateRisk() * 100, 2));
         $players = $this->getPlayerData();
         $data = [
             'players'=>$players,
@@ -223,5 +295,14 @@ class Game21Easy extends GameSinglePlayer
             'level' => 'easy',
         ];
         return $data;
+    }
+
+    /**
+     * Returns the amount of money the player has left
+     * @return int
+     */
+    public function playerMoney(): int
+    {
+        return $this->player->getMoney();
     }
 }

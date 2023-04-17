@@ -76,5 +76,4 @@ class MainController extends AbstractController
 
         return $this->render('lucky.html.twig', $data);
     }
-
 }
