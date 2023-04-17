@@ -48,7 +48,7 @@ class Game21Controller extends AbstractController
         $parsedText = new MdParser($filename);
         $data = [
             'about' => $parsedText->getParsedText(),
-            'page' => "game doc",
+            'page' => "landing doc",
             'url' => "/game"
         ];
 
@@ -118,7 +118,6 @@ class Game21Controller extends AbstractController
          */
         $game = $session->get("game21");
         $nextStep = $game->deal();
-        // $nextStep = $game->evaluate();
         $session->set("game21", $game);
         $winner = $game->winner;
         switch($nextStep) {

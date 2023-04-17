@@ -10,29 +10,17 @@ class Player
     /**
      * @var string $name
      * @var int $money
-     * @var CardHand $hand 
+     * @var CardHand $hand
      */
-    protected string $name;
-    protected int $money;
+    public string $name;
+    public int $money=0;
     protected CardHand $hand;
 
     public function __construct(string $name)
     {
         $this->name = $name;
         $this->hand = new CardHand();
-        $this->money = 0;
     }
-
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    public function getMoney(): int
-    {
-        return $this->money;
-    }
-
 
     /**
      * Draw 1 card from deck and add to hand
@@ -43,18 +31,6 @@ class Player
     public function draw(DeckOfCards $deck): void
     {
         $this->hand->add($deck, 1);
-    }
-
-    /**
-     * Draw numner of cards from deck and add to hand
-     *
-     * @param DeckOfCards $deck the card-deck to draw cards from
-     * @param int $number numner of cards to draw
-     * @return void
-     */
-    public function drawMany(DeckOfCards $deck, int $number): void
-    {
-        $this->hand->add($deck, $number);
     }
 
     /**

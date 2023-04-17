@@ -4,15 +4,9 @@ namespace App\Game;
 
 class Player21 extends Player
 {
-    /**
-     * @var string $type Bank or player
-     */
-    protected string $type;
-
-    public function __construct(string $name="You", string $type="player")
+    public function __construct(string $name="You")
     {
         parent::__construct($name);
-        $this->type = $type;
     }
 
     public function handValue(): int
@@ -41,16 +35,5 @@ class Player21 extends Player
             $pointSum += $value;
         }
         return $pointSum;
-    }
-
-
-    /**
-     * Returns type of player - bank or player
-     *
-     * @return string
-     */    
-    public function getType(): string
-    {
-        return $this->type;
     }
 }

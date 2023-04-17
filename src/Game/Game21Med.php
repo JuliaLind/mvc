@@ -24,7 +24,6 @@ class Game21Med extends Game21Easy
         if ($currentPlayer === $this->bank) {
             $otherPlayer = $this->player;
             $cardsLeft += $otherPlayer->getCardCount();
-            // $currentPoints = $currentPlayer->handValue();
             $possibleCards = array_merge($possibleCards, $otherPlayer->getCardValues());
         }
 
