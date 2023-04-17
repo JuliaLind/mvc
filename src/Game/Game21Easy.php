@@ -43,34 +43,6 @@ class Game21Easy extends GameSinglePlayer
         return $currentPlayer;
     }
 
-    public function moneyToWinner(PlayerInterface $player): void
-    {
-        $player->incrMoney($this->moneyPot);
-        $this->moneyPot = 0;
-    }
-
-    public function estimateRisk(): float
-    {
-        $badCards = 0;
-        $currentPlayer = $this->currentPlayer();
-        $currentPoints = $currentPlayer->getMinPoints();
-        $cardsLeft = $this->deck->getCardCount();
-        $possibleCards = $this->deck->getValues();
-        $risk = 0;
-        if ($cardsLeft != 0) {
-            foreach ($possibleCards as $value) {
-                if ($value === 14) {
-                    $value = 1;
-                }
-                if ($currentPoints + $value > self::GOAL) {
-                    $badCards += 1;
-                }
-            }
-            $risk = $badCards / $cardsLeft;
-        }
-        return $risk;
-    }
-
     public function nextRound(): void
     {
         $this->currentRound = $this->currentRound + 1;
@@ -78,75 +50,6 @@ class Game21Easy extends GameSinglePlayer
         $this->player->emptyHand();
         $this->bank->emptyHand();
         $this->bankPlaying = false;
-    }
-
-    public function endRound(PlayerInterface $winner): int
-    {
-        $roundOver = 0;
-        $gameOver = 1;
-        $this->moneyToWinner($winner);
-        $this->winner = $winner->getName();
-        $this->roundOver = true;
-        if (($this->getInvestLimit() === 0 && $this->moneyPot === 0) || $this->cardsLeft() === 0) {
-            $this->finished = true;
-            return $gameOver;
-        }
-        return $roundOver;
-    }
-
-    public function evaluate(): int
-    {
-        $continue = -1;
-        $player = $this->player;
-        $bank = $this->bank;
-
-        $winner = $player;
-        $playerPoints = $player->getPoints();
-
-        if ($playerPoints > self::GOAL) {
-            $winner = $bank;
-        } elseif ($this->cardsLeft() > 0) {
-            return $continue;
-        }
-        return $this->endRound($winner);
-    }
-
-    public function evaluateBank(): int
-    {
-        $bank = $this->bank;
-        $player = $this->player;
-
-        $bankPoints = $bank->getPoints();
-        $playerPoints = $player->getPoints();
-
-        $winner = $player;
-
-        if (($bankPoints === self::GOAL) || ($bankPoints === $playerPoints)) {
-            $winner = $bank;
-        } elseif ($bankPoints < self::GOAL) {
-            $diffBank = self::GOAL - $bankPoints;
-            $diffPlayer = self::GOAL - $playerPoints;
-            if ($diffBank < $diffPlayer) {
-                $winner = $bank;
-            }
-        }
-        return $this->endRound($winner);
-    }
-
-    /**
-     *
-     * @return array<int<0,max>,array<string,array<array<string>>|int|string>>
-     */
-    public function getBankData(): array
-    {
-        $bankData = [];
-        $bankData[] = [
-            'name' => $this->bank->getName(),
-            'cards' => $this->bank->showHandGraphic(),
-            'money' => $this->bank->getMoney(),
-            'points' => $this->bank->getPoints(),
-        ];
-        return $bankData;
     }
 
     public function getInvestLimit(): int
@@ -169,6 +72,124 @@ class Game21Easy extends GameSinglePlayer
         $this->moneyPot += $this->player->decrMoney($amount);
     }
 
+    protected function estimateRisk(): float
+    {
+        $badCards = 0;
+        $currentPlayer = $this->currentPlayer();
+        $currentPoints = $currentPlayer->getMinPoints();
+        $cardsLeft = $this->deck->getCardCount();
+        $possibleCards = $this->deck->getValues();
+        $risk = 0;
+        if ($cardsLeft != 0) {
+            foreach ($possibleCards as $value) {
+                if ($value === 14) {
+                    $value = 1;
+                }
+                if ($currentPoints + $value > self::GOAL) {
+                    $badCards += 1;
+                }
+            }
+            $risk = $badCards / $cardsLeft;
+        }
+        return $risk;
+    }
+
+    public function deal(): int
+    {
+        $evaluate = parent::deal();
+        $evaluate = $this->evaluate();
+        return $evaluate;
+    }
+
+    protected function evaluate(): int
+    {
+        $continue = -1;
+        $player = $this->player;
+        $bank = $this->bank;
+
+        $winner = $player;
+        $playerPoints = $player->getPoints();
+
+        if ($playerPoints > self::GOAL) {
+            $winner = $bank;
+        } elseif ($this->cardsLeft() > 0) {
+            return $continue;
+        }
+        return $this->endRound($winner);
+    }
+
+    public function dealBank(): int
+    {
+        $evaluate = -1;
+        $bank = $this->bank;
+        $currentPoints = $bank->getPoints();
+        while (($currentPoints < 17) && ($this->cardsLeft() > 0)) {
+            $bank->draw($this->deck);
+            $currentPoints = $bank->getPoints();
+        }
+        $evaluate = $this->evaluateBank();
+        return $evaluate;
+    }
+
+    protected function evaluateBank(): int
+    {
+        $bank = $this->bank;
+        $player = $this->player;
+
+        $bankPoints = $bank->getPoints();
+        $playerPoints = $player->getPoints();
+
+        $winner = $player;
+
+        if (($bankPoints === self::GOAL) || ($bankPoints === $playerPoints)) {
+            $winner = $bank;
+        } elseif ($bankPoints < self::GOAL) {
+            $diffBank = self::GOAL - $bankPoints;
+            $diffPlayer = self::GOAL - $playerPoints;
+            if ($diffBank < $diffPlayer) {
+                $winner = $bank;
+            }
+        }
+        return $this->endRound($winner);
+    }
+
+    protected function endRound(PlayerInterface $winner): int
+    {
+        $roundOver = 0;
+        $gameOver = 1;
+        $this->moneyToWinner($winner);
+        $this->winner = $winner->getName();
+        $this->roundOver = true;
+        if (($this->getInvestLimit() === 0 && $this->moneyPot === 0) || $this->cardsLeft() === 0) {
+            $this->finished = true;
+            return $gameOver;
+        }
+        return $roundOver;
+    }
+
+    
+    public function moneyToWinner(PlayerInterface $player): void
+    {
+        $player->incrMoney($this->moneyPot);
+        $this->moneyPot = 0;
+    }
+
+    /**
+     *
+     * @return array<int<0,max>,array<string,array<array<string>>|int|string>>
+     */
+    protected function getBankData(): array
+    {
+        $bankData = [];
+        $bankData[] = [
+            'name' => $this->bank->getName(),
+            'cards' => $this->bank->showHandGraphic(),
+            'money' => $this->bank->getMoney(),
+            'points' => $this->bank->getPoints(),
+        ];
+        return $bankData;
+    }
+
     /**
      * Returns player data
      *
@@ -176,14 +197,7 @@ class Game21Easy extends GameSinglePlayer
      */
     public function getPlayerData(): array
     {
-        $players = [];
-        $players[] = [
-            'name' => $this->bank->getName(),
-            'cards' => $this->bank->showHandGraphic(),
-            'money' => $this->bank->getMoney(),
-            'points' => $this->bank->getPoints(),
-        ];
-        $players = array_merge($players, parent::getPlayerData());
+        $players = array_merge($this->getBankData(), parent::getPlayerData());
         return $players;
     }
 
@@ -209,25 +223,5 @@ class Game21Easy extends GameSinglePlayer
             'level' => 'easy',
         ];
         return $data;
-    }
-
-    public function deal(): int
-    {
-        $evaluate = parent::deal();
-        $evaluate = $this->evaluate();
-        return $evaluate;
-    }
-
-    public function dealBank(): int
-    {
-        $evaluate = -1;
-        $bank = $this->bank;
-        $currentPoints = $bank->getMinPoints();
-        while (($currentPoints < 17) && ($this->cardsLeft() > 0)) {
-            $bank->draw($this->deck);
-            $currentPoints = $bank->getMinPoints();
-        }
-        $evaluate = $this->evaluateBank();
-        return $evaluate;
     }
 }

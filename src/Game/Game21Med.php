@@ -4,7 +4,7 @@ namespace App\Game;
 
 class Game21Med extends Game21Easy
 {
-    public function estimateRisk(): float
+    protected function estimateRisk(): float
     {
         // For player this is no change as player always draws first.
         // In the hard version bank is cheating,
