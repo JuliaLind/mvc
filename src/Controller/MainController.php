@@ -123,36 +123,4 @@ class MainController extends AbstractController
         ];
         return $this->render('landing_json.html.twig', $data);
     }
-
-    #[Route("/card", name: "card")]
-    public function card(): Response
-    {
-        $data = [
-            'page' => "landing",
-            'url' => "/card",
-            'cardRoutes' => [
-                [
-                    'link' => "deck",
-                    'method' => 'GET',
-                ],
-                [
-                    'link' => "shuffle",
-                    'method' => 'POST',
-                ],
-                [
-                    'link' => "draw",
-                    'method' => 'POST',
-                ],
-                [
-                    'link' => "drawMany",
-                    'method' => 'POST',
-                ],
-                [
-                    'link' => "deal",
-                    'method' => 'POST',
-                ],
-            ],
-        ];
-        return $this->render('card/home.html.twig', $data);
-    }
 }

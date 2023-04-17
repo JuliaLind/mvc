@@ -17,6 +17,38 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class CardController extends AbstractController
 {
+    #[Route("/card", name: "card")]
+    public function card(): Response
+    {
+        $data = [
+            'page' => "landing",
+            'url' => "/card",
+            'cardRoutes' => [
+                [
+                    'link' => "deck",
+                    'method' => 'GET',
+                ],
+                [
+                    'link' => "shuffle",
+                    'method' => 'POST',
+                ],
+                [
+                    'link' => "draw",
+                    'method' => 'POST',
+                ],
+                [
+                    'link' => "drawMany",
+                    'method' => 'POST',
+                ],
+                [
+                    'link' => "deal",
+                    'method' => 'POST',
+                ],
+            ],
+        ];
+        return $this->render('card/home.html.twig', $data);
+    }
+
     #[Route('/card/deck', name: "deck", methods: ['GET'])]
     public function deck(
         SessionInterface $session
