@@ -9,8 +9,6 @@ use Symfony\Component\Routing\Annotation\Route;
 // use Symfony\Component\Validator\Constraints\DateTime;
 use Datetime;
 
-use App\Game\Player;
-// use App\Game\Game21Easy;
 use App\Game\Game21Med;
 use App\Game\Game21Hard;
 use App\Game\Game21Easy;
@@ -20,6 +18,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
+use App\Cards\Player;
 
 class JsonController extends AbstractController
 {
@@ -210,7 +209,7 @@ class JsonController extends AbstractController
             $player = new Player("player {$i}");
             $player->drawMany($deck, $cards);
             $hands[] = [
-                'playerName' => $player->getName(),
+                'playerName' => $player->name,
                 'cards' => $player->showHandAsString(),
             ];
         };

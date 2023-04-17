@@ -6,7 +6,7 @@ use App\Cards\CardGraphic;
 use App\Cards\CardHand;
 use App\Cards\DeckOfCards;
 
-use App\Game\Player;
+use App\Cards\Player;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -96,7 +96,7 @@ class CardController extends AbstractController
 
         $session->set("deck", $deck);
         $players[] = [
-            'playerName' => $player->getName(),
+            'playerName' => $player->name,
             'cards' => $player->showHandGraphic(),
         ];
         $data = [
@@ -125,7 +125,7 @@ class CardController extends AbstractController
 
         $session->set("deck", $deck);
         $players[] = [
-            'playerName' => $player->getName(),
+            'playerName' => $player->name,
             'cards' => $player->showHandGraphic(),
         ];
 
@@ -156,7 +156,7 @@ class CardController extends AbstractController
             $player = new Player("player {$i}");
             $player->drawMany($deck, $cards);
             $hands[] = [
-                'playerName' => $player->getName(),
+                'playerName' => $player->name,
                 'cards' => $player->showHandGraphic(),
             ];
         };
