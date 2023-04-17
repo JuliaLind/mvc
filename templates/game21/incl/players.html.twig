@@ -1,6 +1,6 @@
 {% for player in players %}
     <div class="drawn-cards">
-    <p>{{ player['name'] }} | Money: {{ player['money'] }} | Points: {{ player['points'] }} </p>
+    <p>{{ player['name'] }} | Money: {{ player['money'] }} | Hand value: {{ player['points'] }} </p>
         {% if (player['cards']|length > 0) %}
             {% for card in player['cards'] %}
                 <img class="card" src="{{ asset(card['link']) }}" alt="{{ card['descr'] }}">
