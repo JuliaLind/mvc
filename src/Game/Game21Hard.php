@@ -4,6 +4,8 @@ namespace App\Game;
 
 class Game21Hard extends Game21Easy
 {
+    use DealBankTrait;
+
     /**
      * Returns all current data for game
      *
@@ -14,24 +16,5 @@ class Game21Hard extends Game21Easy
         $data = parent::getGameStatus();
         $data['level'] = 'hard';
         return $data;
-    }
-
-    /**
-     * Deals cards to the bank and returns indicator
-     * of if the round is over or if the game is over
-     *
-     * @return int
-     */
-    public function dealBank(): int
-    {
-        $bank = $this->bank;
-        $evaluate = -1;
-        $risk = 0;
-        while (($risk <= 0.5) && ($this->cardsLeft() > 0)) {
-            $bank->draw($this->deck);
-            $risk = $this->estimateRisk();
-        }
-        $evaluate = $this->evaluateBank();
-        return $evaluate;
     }
 }

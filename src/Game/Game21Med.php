@@ -4,6 +4,8 @@ namespace App\Game;
 
 class Game21Med extends Game21Easy
 {
+    use DealBankTrait;
+
     /**
      * Returns the risk of current player getting
      * above 21 with next drawn card
@@ -22,6 +24,7 @@ class Game21Med extends Game21Easy
         if ($currentPlayer === $this->bank) {
             $otherPlayer = $this->player;
             $cardsLeft += $otherPlayer->getCardCount();
+            // $currentPoints = $currentPlayer->handValue();
             $possibleCards = array_merge($possibleCards, $otherPlayer->getCardValues());
         }
 
@@ -40,24 +43,6 @@ class Game21Med extends Game21Easy
         return $risk;
     }
 
-    /**
-     * Deals cards to the bank and returns indicator
-     * of if the round is over or if the game is over
-     *
-     * @return int
-     */
-    public function dealBank(): int
-    {
-        $bank = $this->bank;
-        $evaluate = -1;
-        $risk = 0;
-        while (($risk <= 0.5) && ($this->cardsLeft() > 0)) {
-            $bank->draw($this->deck);
-            $risk = $this->estimateRisk();
-        }
-        $evaluate = $this->evaluateBank();
-        return $evaluate;
-    }
 
     /**
      * Returns all current data for game
