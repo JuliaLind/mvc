@@ -80,7 +80,7 @@ class Card
         return $this->color;
     }
 
-    public function rankExt(): string
+    protected function rankExt(): string
     {
         $rank = $this->rank;
         switch ($rank) {
@@ -106,7 +106,7 @@ class Card
         return $rank;
     }
 
-    public function suitExt(): string
+    protected function suitExt(): string
     {
         $suit = $this->suit;
         switch ($suit) {

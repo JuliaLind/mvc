@@ -195,10 +195,8 @@ class Game21Easy extends Game implements Game21Interface
      */
     protected function endRound(Player21 $winner): void
     {
-        // $this->moneyToWinner($winner);
         $this->moneyPot->moneyToWinner($winner);
         $this->roundOver = true;
-        // if (($this->getInvestLimit() === 0 && $this->moneyPot === 0) || $this->cardsLeft() === 0) {
         if (($this->getInvestLimit() === 0 && $this->moneyPot->currentAmount() === 0) || $this->cardsLeft() === 0) {
             $this->finished = true;
             $player = $this->player;
@@ -235,7 +233,7 @@ class Game21Easy extends Game implements Game21Interface
      *
      * @return array<int<0,max>,array<string,array<array<string>>|int|string>>
      */
-    public function getPlayerData(): array
+    protected function getPlayerData(): array
     {
         $players = [];
         $player = $this->player;
@@ -272,7 +270,6 @@ class Game21Easy extends Game implements Game21Interface
             'risk'=> $risk . ' %',
             'finished'=>$this->finished,
             'currentRound'=>$this->currentRound,
-            // 'moneyPot'=>$this->moneyPot,
             'moneyPot'=>$this->moneyPot->currentAmount(),
             'roundOver'=>$this->roundOver,
             'level' => 'easy',

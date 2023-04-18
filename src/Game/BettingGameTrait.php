@@ -7,7 +7,6 @@ use App\Game\Player21;
 
 trait BettingGameTrait
 {
-    // protected int $moneyPot=0;
     protected MoneyPot $moneyPot;
     protected Player21 $player;
     protected Player21 $bank;
@@ -40,19 +39,5 @@ trait BettingGameTrait
             $amount = $limit;
         }
         $this->moneyPot->addMoney($amount, [$this->player, $this->bank]);
-        // $this->moneyPot += $this->bank->decrMoney($amount);
-        // $this->moneyPot += $this->player->decrMoney($amount);
     }
-
-    // /**
-    //  * Moves money from game pot to winner
-    //  * @param Player21 $winner
-    //  *
-    //  * @return void
-    //  */
-    // public function moneyToWinner(Player21 $winner): void
-    // {
-    //     $winner->incrMoney($this->moneyPot);
-    //     $this->moneyPot = 0;
-    // }
 }

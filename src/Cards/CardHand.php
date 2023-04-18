@@ -10,7 +10,7 @@ class CardHand
     /**
      * @var array<CardGraphic|null> $hand The hand holding the cards.
      */
-    private $hand = [];
+    protected $hand = [];
 
     public function add(DeckOfCards $deck, int $number): void
     {

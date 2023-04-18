@@ -5,17 +5,18 @@
 {% block body %}
 
 <h1>Game 21</h1>
-
+<h2>Dokumentation</h2>
 <p><a {% if url == '/' %} class="active" {% endif %} href="{{ path('gameDoc') }}">Länk till dokumentationen.</a></p>
-{# <p>Beskrivning kommer inom kort</p> #}
+
 {{ about | raw }}
 
+<div style="text-align: center;">
 {% include 'game21/incl/start-buttons.html.twig' %}
 
 {% if finished == false %}
-<p>Klicka på denna knapp för att återgå till pågående spel:</p>
+<p>Klicka på denna knapp för att återgå till pågående spel</p>
 {% include 'game21/incl/return-to-current-game-btn.html.twig' %}
 {% endif %}
 
-
+</div>
 {% endblock %}
