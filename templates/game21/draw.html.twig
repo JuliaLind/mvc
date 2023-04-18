@@ -15,7 +15,7 @@
 {% if finished == true %}
     <p>Spela en omgång till?</p>
     {% include 'game21/incl/start-buttons.html.twig' %}
-{% elseif (bankPlaying == false) and (roundOver == false) %}
+{% elseif roundOver == false %}
     {% include 'game21/incl/draw-buttons.html.twig' %}
 {% else %}
     {% include 'game21/incl/next-round-button.html.twig' %}
