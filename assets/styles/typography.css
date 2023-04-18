@@ -52,12 +52,14 @@ h3 {
     font-size: 1.375rem;
 } */
 
+h4,
 p,
 td,
 li {
     font-size: 1.1rem;
 }
 
+h4,
 p {
     margin-bottom: calc(1.4 * 1.1rem);
 }
