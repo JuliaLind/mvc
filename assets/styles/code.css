@@ -1,0 +1,9 @@
+pre {
+    color: #444;
+    background: #f0f0f0;
+    display: block;
+    overflow-x: auto;
+    padding: calc(var(--magic-number) * 0.5);
+    margin-bottom: var(--magic-number);
+    white-space: pre;
+}
