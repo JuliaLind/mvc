@@ -7,23 +7,20 @@ trait DealBankTrait
     protected Player21 $bank;
 
     /**
-     * Deals cards to the bank and returns indicator
-     * of if the round is over or if the game is over
+     * Deals cards to the bank and returns data for setting flashmessage
      *
-     * @return int
+     * @return array<string>
      */
-    public function dealBank(): int
+    public function dealBank(): array
     {
+        $this->bankPlaying = true;
         $bank = $this->bank;
-        $handValue = $bank->handValue();
-        $evaluate = -1;
         $risk = 0;
-        while (($risk <= 0.5) && ($this->cardsLeft() > 0) && $handValue < 21) {
+        while (($risk <= 0.5) && ($this->cardsLeft() > 0) && $bank->handValue() < 21) {
             $bank->draw($this->deck);
             $risk = $this->estimateRisk();
-            $handValue = $bank->handValue();
         }
-        $evaluate = $this->evaluateBank();
-        return $evaluate;
+        $this->evaluateBank();
+        return $this->generateFlash();
     }
 }

@@ -24,7 +24,7 @@ trait BettingGameTrait
     }
 
     /**
-     * Moves the $amount of money for each of player and bank
+     * Moves the $amount of money from player and bank
      * to the moneypot
      * @param int $amount
      * @return void
@@ -49,14 +49,5 @@ trait BettingGameTrait
     {
         $winner->incrMoney($this->moneyPot);
         $this->moneyPot = 0;
-    }
-
-    /**
-     * Returns the amount of money the player has left
-     * @return int
-     */
-    public function playerMoney(): int
-    {
-        return $this->player->money;
     }
 }

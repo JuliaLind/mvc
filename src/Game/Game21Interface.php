@@ -27,16 +27,16 @@ interface Game21Interface
     public function addToMoneyPot(int $amount);
 
     /**
-     * Deals a card to the player and returns some additional data
+     * Deals a card to the player and returns data for setting flashmessage
      *
-     * @return array<string,int|string>
+     * @return array<string>
      */
     public function deal();
 
 
     /**
-     * Deals cards to the bank and returns some additional data
-     * @return array<string,int|string>
+     * Deals cards to the bank and returns data for setting flashmessage
+     * @return array<string>
      */
     public function dealBank();
 

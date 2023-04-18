@@ -5,7 +5,7 @@ namespace App\Game;
 use App\Game\Player21;
 use App\Cards\DeckOfCards;
 
-class Game21Easy extends Game
+class Game21Easy extends Game implements Game21Interface
 {
     use BettingGameTrait;
 
@@ -17,10 +17,11 @@ class Game21Easy extends Game
     protected Player21 $player;
     protected Player21 $bank;
 
-    public bool $roundOver=false;
-    public bool $bankPlaying=false;
-    public int $currentRound=0;
-    public string $winner="";
+    protected bool $roundOver=false;
+    protected bool $bankPlaying=false;
+
+    protected int $currentRound=0;
+    protected string $winner="";
 
     /**
      * Constructor
@@ -54,16 +55,25 @@ class Game21Easy extends Game
 
     /**
      * Increases number of currenRound attribute by 1
-     * and resets for next round
-     * @return void
+     * and resets for next round.
+     * Returns an associative array with investment
+     * limit, player's money and nr of next round
+     * @return array<int>
      */
-    public function nextRound(): void
+    public function nextRound(): array
     {
         $this->currentRound = $this->currentRound + 1;
         $this->roundOver = false;
+        $this->bankPlaying = false;
         $this->player->emptyHand();
         $this->bank->emptyHand();
-        $this->bankPlaying = false;
+
+        $nextRoundData = [
+            'limit' => $this->getInvestLimit(),
+            'money' => $this->player->money,
+            'round' => $this->currentRound,
+        ];
+        return $nextRoundData;
     }
 
     /**
@@ -74,18 +84,18 @@ class Game21Easy extends Game
      */
     protected function estimateRisk(): float
     {
-        $badCards = 0;
         $currentPlayer = $this->currentPlayer();
-        $currentPoints = $currentPlayer->minHandValue();
+        $minHandValue = $currentPlayer->minHandValue();
         $cardsLeft = $this->deck->getCardCount();
         $possibleCards = $this->deck->getValues();
+        $badCards = 0;
         $risk = 0;
         if ($cardsLeft != 0) {
             foreach ($possibleCards as $value) {
                 if ($value === 14) {
                     $value = 1;
                 }
-                if ($currentPoints + $value > self::GOAL) {
+                if ($minHandValue + $value > self::GOAL) {
                     $badCards += 1;
                 }
             }
@@ -95,108 +105,125 @@ class Game21Easy extends Game
     }
 
     /**
-     * Deals a card to the player,
-     * returns indicator if player can continue to draw or if the round is over
+     * Deals a card to the player and returns some additional data
      *
-     * @return int
+     * @return array<string>
      */
-    public function deal(): int
+    public function deal(): array
     {
         $this->player->draw($this->deck);
-        return $this->evaluate();
+        $this->evaluate();
+        return $this->generateFlash();
     }
 
     /**
      * Called after the player has picked a card
      * and checks if the round is over/value of hand is above 21
      *
-     * @return int
+     * @return void
      */
-    protected function evaluate(): int
+    protected function evaluate(): void
     {
-        $continue = -1;
         $player = $this->player;
-        $bank = $this->bank;
+        $handValue = $player->handValue();
 
         $winner = $player;
-        $playerPoints = $player->handValue();
-
-        if ($playerPoints > self::GOAL) {
-            $winner = $bank;
+        if ($handValue > self::GOAL) {
+            $winner = $this->bank;
         } elseif ($this->cardsLeft() > 0) {
-            return $continue;
+            if ($handValue === self::GOAL) {
+                $this->bankPlaying = true;
+            }
+            return;
         }
-        return $this->endRound($winner);
+        $this->endRound($winner);
     }
 
     /**
-     * Deals cards to the bank and returns indicator
-     * of if the round is over or if the game is over
+     * Deals cards to the bank and returns data for setting flashmessage
      *
-     * @return int
+     * @return array<string>
      */
-    public function dealBank(): int
+    public function dealBank(): array
     {
+        $this->bankPlaying = true;
         $bank = $this->bank;
-        $currentPoints = $bank->handValue();
-        while (($currentPoints < 17) && ($this->cardsLeft() > 0)) {
-            $bank->draw($this->deck);
-            $currentPoints = $bank->handValue();
-        }
 
-        return $this->evaluateBank();
+        while (($bank->handValue() < 17) && ($this->cardsLeft() > 0)) {
+            $bank->draw($this->deck);
+        }
+        $this->evaluateBank();
+        return $this->generateFlash();
     }
 
     /**
      * Called after the bank is finished with drawing cards
-     * and determins the winner of the round.
+     * returns data for setting flashmessage
      *
-     * @return int
+     * @return void
      */
-    protected function evaluateBank(): int
+    protected function evaluateBank(): void
     {
         $bank = $this->bank;
         $player = $this->player;
 
-        $bankPoints = $bank->handValue();
-        $playerPoints = $player->handValue();
+        $bankHandValue = $bank->handValue();
+        $playerHandValue = $player->handValue();
 
         $winner = $player;
 
-        if (($bankPoints === self::GOAL) || ($bankPoints === $playerPoints)) {
+        if (($bankHandValue === self::GOAL) || ($bankHandValue === $playerHandValue)) {
             $winner = $bank;
-        } elseif ($bankPoints < self::GOAL) {
-            $diffBank = self::GOAL - $bankPoints;
-            $diffPlayer = self::GOAL - $playerPoints;
+        } elseif ($bankHandValue < self::GOAL) {
+            $diffBank = self::GOAL - $bankHandValue;
+            $diffPlayer = self::GOAL - $playerHandValue;
             if ($diffBank < $diffPlayer) {
                 $winner = $bank;
             }
         }
-        return $this->endRound($winner);
+        $this->endRound($winner);
     }
 
     /**
-     * End the round. Returns an indicator of
-     * if only the round is over or if the whole
-     * game is over
+     * End the round. Returns data for setting flashmessage
      * @param Player21 $winner
      *
-     * @return int
+     * @return void
      */
-    protected function endRound(Player21 $winner): int
+    protected function endRound(Player21 $winner): void
     {
-        $roundOver = 0;
-        $gameOver = 1;
         $this->moneyToWinner($winner);
-        $this->winner = $winner->name;
         $this->roundOver = true;
         if (($this->getInvestLimit() === 0 && $this->moneyPot === 0) || $this->cardsLeft() === 0) {
             $this->finished = true;
-            return $gameOver;
+            $player = $this->player;
+            $bank = $this->bank;
+            $winner = $bank;
+            if ($player->money > $bank->money) {
+                $winner = $player;
+            }
         }
-        return $roundOver;
+        $this->winner = $winner->name;
     }
 
+    /**
+     * Returns array with flash message class and the message
+     *
+     * @return array<string>
+     */
+    protected function generateFlash(): array
+    {
+        $type = "";
+        $message = "";
+        if ($this->finished === true) {
+            $type = "warning";
+            $message = "Game over, {$this->winner} won!";
+        } elseif ($this->roundOver === true) {
+            $type = "warning";
+            $message = "Round over, {$this->winner} won!";
+        }
+        return [$type, $message];
+    }
 
     /**
      * Returns player data

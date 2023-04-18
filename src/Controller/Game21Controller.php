@@ -116,26 +116,9 @@ class Game21Controller extends AbstractController
          * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
-        $nextStep = $game->deal();
+        $flash = $game->deal();
+        $this->addFlash(...$flash);
         $session->set("game21", $game);
-        if (count($nextStep) === 2) {
-            $winner = $nextStep['winner'];
-            switch($nextStep['case']) {
-                case 0:
-                    $this->addFlash(
-                        'warning',
-                        "Round over, {$winner} won!"
-                    );
-                    break;
-                case 1:
-                    $this->addFlash(
-                        'warning',
-                        "Game over, {$winner} won!"
-                    );
-                    break;
-            }
-        }
-
         return $this->redirectToRoute('play');
     }
 
@@ -147,25 +130,9 @@ class Game21Controller extends AbstractController
          * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
-        $nextStep = $game->dealBank();
+        $flash = $game->dealBank();
         $session->set("game21", $game);
-        if (count($nextStep) === 2) {
-            $winner = $nextStep['winner'];
-            switch($nextStep['case']) {
-                case 0:
-                    $this->addFlash(
-                        'warning',
-                        "Round over, {$winner} won!"
-                    );
-                    break;
-                case 1:
-                    $this->addFlash(
-                        'warning',
-                        "Game over, {$winner} won!"
-                    );
-                    break;
-            }
-        }
+        $this->addFlash(...$flash);
         return $this->redirectToRoute('play');
     }
 
