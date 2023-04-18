@@ -11,7 +11,7 @@ class Game
      * @var bool $finished inidicator if the whole game is finished
      */
     protected DeckOfCards $deck;
-    public bool $finished;
+    protected bool $finished;
 
     /**
      * Constructor
@@ -31,5 +31,14 @@ class Game
     public function cardsLeft(): int
     {
         return $this->deck->getCardCount();
+    }
+
+    /**
+     * Returns indicator if game is over or not
+     * @return bool the number of cards in deck
+     */
+    public function gameOver(): bool
+    {
+        return $this->finished;
     }
 }
