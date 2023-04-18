@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Game\Game21Med;
 use App\Game\Game21Hard;
 use App\Game\Game21Easy;
+use App\Game\Game21Interface;
 
 use App\Markdown\MdParser;
 
@@ -24,12 +25,12 @@ class Game21Controller extends AbstractController
         $filename = "markdown/game21.md";
         $parsedText = new MdParser($filename);
         /**
-         * @var Game21Easy|Game21Med|Game21Hard|null $game The current game of 21.
+         * @var Game21Interface|null $game The current game of 21.
          */
         $game = $session->get("game21") ?? null;
         $finished = true;
-        if ($game && $game->finished === false) {
-            $finished = $game->finished;
+        if ($game && $game->gameOver() === false) {
+            $finished = false;
         }
         $data = [
             'about' => $parsedText->getParsedText(),
@@ -80,18 +81,16 @@ class Game21Controller extends AbstractController
         SessionInterface $session
     ): Response {
         /**
-         * @var Game21Easy|Game21Med|Game21Hard $game The current game of 21.
+         * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
-        $game->nextRound();
+        $nextRoundData = $game->nextRound();
         $session->set("game21", $game);
         $data = [
-            'limit' => $game->getInvestLimit(),
-            'money' => $game->playerMoney(),
-            'round' => $game->currentRound,
             'page' => "game no-header card",
             'url' => "/game",
         ];
+        $data = array_merge($nextRoundData, $data);
         return $this->render('game21/select-amount.html.twig', $data);
     }
 
@@ -101,7 +100,7 @@ class Game21Controller extends AbstractController
         int $amount
     ): Response {
         /**
-         * @var Game21Easy|Game21Med|Game21Hard $game The current game of 21.
+         * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
         $game->addToMoneyPot($amount);
@@ -114,26 +113,29 @@ class Game21Controller extends AbstractController
         SessionInterface $session
     ): Response {
         /**
-         * @var Game21Easy|Game21Med|Game21Hard $game The current game of 21.
+         * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
         $nextStep = $game->deal();
         $session->set("game21", $game);
-        $winner = $game->winner;
-        switch($nextStep) {
-            case 0:
-                $this->addFlash(
-                    'warning',
-                    "Round over, {$winner} won!"
-                );
-                break;
-            case 1:
-                $this->addFlash(
-                    'warning',
-                    "Game over, {$winner} won!"
-                );
-                break;
+        if (count($nextStep) === 2) {
+            $winner = $nextStep['winner'];
+            switch($nextStep['case']) {
+                case 0:
+                    $this->addFlash(
+                        'warning',
+                        "Round over, {$winner} won!"
+                    );
+                    break;
+                case 1:
+                    $this->addFlash(
+                        'warning',
+                        "Game over, {$winner} won!"
+                    );
+                    break;
+            }
         }
+
         return $this->redirectToRoute('play');
     }
 
@@ -142,26 +144,27 @@ class Game21Controller extends AbstractController
         SessionInterface $session
     ): Response {
         /**
-         * @var Game21Easy|Game21Med|Game21Hard $game The current game of 21.
+         * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
-        $game->bankPlaying = true;
         $nextStep = $game->dealBank();
         $session->set("game21", $game);
-        $winner = $game->winner;
-        switch($nextStep) {
-            case 0:
-                $this->addFlash(
-                    'warning',
-                    "Round over, {$winner} won!"
-                );
-                break;
-            case 1:
-                $this->addFlash(
-                    'warning',
-                    "Game over, {$winner} won!"
-                );
-                break;
+        if (count($nextStep) === 2) {
+            $winner = $nextStep['winner'];
+            switch($nextStep['case']) {
+                case 0:
+                    $this->addFlash(
+                        'warning',
+                        "Round over, {$winner} won!"
+                    );
+                    break;
+                case 1:
+                    $this->addFlash(
+                        'warning',
+                        "Game over, {$winner} won!"
+                    );
+                    break;
+            }
         }
         return $this->redirectToRoute('play');
     }
@@ -172,7 +175,7 @@ class Game21Controller extends AbstractController
         SessionInterface $session
     ): Response {
         /**
-         * @var Game21Easy|Game21Med|Game21Hard $game The current game of 21.
+         * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
         $pageData = [
