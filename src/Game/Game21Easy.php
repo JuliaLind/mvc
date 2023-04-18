@@ -4,6 +4,7 @@ namespace App\Game;
 
 use App\Game\Player21;
 use App\Cards\DeckOfCards;
+use App\Game\MoneyPot;
 
 class Game21Easy extends Game implements Game21Interface
 {
@@ -38,6 +39,8 @@ class Game21Easy extends Game implements Game21Interface
         $startingMoney = 100;
         $this->player->incrMoney($startingMoney);
         $this->bank->incrMoney($startingMoney);
+
+        $this->moneyPot = new MoneyPot();
     }
 
     /**
@@ -192,9 +195,11 @@ class Game21Easy extends Game implements Game21Interface
      */
     protected function endRound(Player21 $winner): void
     {
-        $this->moneyToWinner($winner);
+        // $this->moneyToWinner($winner);
+        $this->moneyPot->moneyToWinner($winner);
         $this->roundOver = true;
-        if (($this->getInvestLimit() === 0 && $this->moneyPot === 0) || $this->cardsLeft() === 0) {
+        // if (($this->getInvestLimit() === 0 && $this->moneyPot === 0) || $this->cardsLeft() === 0) {
+        if (($this->getInvestLimit() === 0 && $this->moneyPot->currentAmount() === 0) || $this->cardsLeft() === 0) {
             $this->finished = true;
             $player = $this->player;
             $bank = $this->bank;
@@ -267,7 +272,8 @@ class Game21Easy extends Game implements Game21Interface
             'risk'=> $risk . ' %',
             'finished'=>$this->finished,
             'currentRound'=>$this->currentRound,
-            'moneyPot'=>$this->moneyPot,
+            // 'moneyPot'=>$this->moneyPot,
+            'moneyPot'=>$this->moneyPot->currentAmount(),
             'roundOver'=>$this->roundOver,
             'level' => 'easy',
         ];
