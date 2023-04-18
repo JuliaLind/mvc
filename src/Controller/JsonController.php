@@ -12,6 +12,7 @@ use Datetime;
 use App\Game\Game21Med;
 use App\Game\Game21Hard;
 use App\Game\Game21Easy;
+use App\Game\Game21Interface;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -232,7 +233,7 @@ class JsonController extends AbstractController
     ): Response {
         $gameStatus = "No game started";
         /**
-         * @var Game21Easy|Game21Med|Game21Hard $game The current game of 21.
+         * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21") ?? null;
         if ($game != null) {
