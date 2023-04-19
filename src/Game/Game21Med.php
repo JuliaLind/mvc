@@ -44,7 +44,7 @@ class Game21Med extends Game21Easy
 
 
     /**
-     * Returns all current data for game
+     * Returns all data for current game
      *
      * @return array<array<int<0,max>,array<string,array<array<string>>|int|string>>|string|int>
      */

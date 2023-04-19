@@ -9,7 +9,7 @@ trait DealBankTrait
     /**
      * Deals cards to the bank and returns data for setting flashmessage
      *
-     * @return array<string>
+     * @return array<string> array where first string is flash message type and second is the message
      */
     public function dealBank(): array
     {

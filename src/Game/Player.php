@@ -23,7 +23,7 @@ class Player
     }
 
     /**
-     * Draw 1 card from deck and add to hand
+     * Draws 1 card from deck and adds to hand
      *
      * @param DeckOfCards $deck the card-deck to draw cards from
      * @return void
@@ -66,8 +66,9 @@ class Player
     }
 
     /**
-     * Returns array with arrays containing
-     * paths to card image and description for each card.
+     * Returns array with arrays - one containing
+     * paths to card images and the other - descriptions for each card
+     * (to use for the alt text).
      *
      * @return array<array<string>>
      */

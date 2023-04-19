@@ -108,7 +108,10 @@ class Game21Easy extends Game implements Game21Interface
     }
 
     /**
-     * Deals a card to the player and returns some additional data
+     * Deals a card to the player and returns data for generating
+     * a flash message (array with type and message) if round over or
+     * game over, otherwise returns
+     * an array with two empty strings
      *
      * @return array<string>
      */
@@ -145,7 +148,8 @@ class Game21Easy extends Game implements Game21Interface
     /**
      * Deals cards to the bank and returns data for setting flashmessage
      *
-     * @return array<string>
+     * @return array<string> array with two strings - first type of the message,
+     * second - the message
      */
     public function dealBank(): array
     {
@@ -161,7 +165,6 @@ class Game21Easy extends Game implements Game21Interface
 
     /**
      * Called after the bank is finished with drawing cards
-     * returns data for setting flashmessage
      *
      * @return void
      */
@@ -188,7 +191,7 @@ class Game21Easy extends Game implements Game21Interface
     }
 
     /**
-     * End the round. Returns data for setting flashmessage
+     * End the round
      * @param Player21 $winner
      *
      * @return void
@@ -210,7 +213,7 @@ class Game21Easy extends Game implements Game21Interface
     }
 
     /**
-     * Returns array with flash message class and the message
+     * Returns array with flash message type and the message
      *
      * @return array<string>
      */
@@ -219,17 +222,18 @@ class Game21Easy extends Game implements Game21Interface
         $type = "";
         $message = "";
         if ($this->finished === true) {
-            $type = "warning";
+            $type = "notice";
             $message = "Game over, {$this->winner} won!";
         } elseif ($this->roundOver === true) {
-            $type = "warning";
+            $type = "notice";
             $message = "Round over, {$this->winner} won!";
         }
         return [$type, $message];
     }
 
     /**
-     * Returns player data
+     * Returns name, graphic representation, money amount and current
+     * value of hand for player and bank
      *
      * @return array<int<0,max>,array<string,array<array<string>>|int|string>>
      */
@@ -254,7 +258,7 @@ class Game21Easy extends Game implements Game21Interface
     }
 
     /**
-     * Returns all current data for game
+     * Returns all data for current game
      *
      * @return array<mixed>
      */

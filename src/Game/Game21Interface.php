@@ -6,12 +6,12 @@ interface Game21Interface
 {
     /**
      * Returns indicator if game is over or not
-     * @return bool the number of cards in deck
+     * @return bool
      */
     public function gameOver();
 
     /**
-     * Increases number of currenRound attribute by 1
+     * Increases number of currenRound attribute by 1.
      * Returns an associative array with investment
      * limit, player's money and nr of next round
      * @return array<int>
@@ -41,7 +41,7 @@ interface Game21Interface
     public function dealBank();
 
     /**
-     * Returns all current data for game
+     * Returns all data for current game
      *
      * @return array<mixed>
      */

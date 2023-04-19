@@ -35,7 +35,7 @@ class MoneyPot
     }
 
     /**
-     * Getter for current amount in moneyout
+     * Getter for current amount in moneypot
      *
      * @return int
      */

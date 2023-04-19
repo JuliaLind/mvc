@@ -9,6 +9,14 @@ class Player21 extends Player
         parent::__construct($name);
     }
 
+    /**
+     * Returns the current hand value.
+     * Ace is valued as 14 unless the hand value
+     * is above 21, then ace is valued at 1. Each
+     * ace is valued separately
+     *
+     * @return int
+     */
     public function handValue(): int
     {
         $values = $this->hand->getValues();
@@ -23,6 +31,13 @@ class Player21 extends Player
         return $pointSum;
     }
 
+    /**
+     * Returns the current min hand value.
+     * Used for calculating risk for getting fat
+     * Ace is always valued at 1
+     *
+     * @return int
+     */
     public function minHandValue(): int
     {
         $values = $this->hand->getValues();

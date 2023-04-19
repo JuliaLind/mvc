@@ -35,7 +35,7 @@ class Game
 
     /**
      * Returns indicator if game is over or not
-     * @return bool the number of cards in deck
+     * @return bool true if the game is finished
      */
     public function gameOver(): bool
     {

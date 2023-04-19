@@ -1,19 +1,19 @@
-.flash-notice {
+/* .flash-notice {
     padding: 0.5em;
     color: #004085;
     background-color: #cce5ff;
     border-color: #b8daff;
-}
+} */
 .flash-notice:before {
     content: "ⓘ";
 }
 
-.flash-warning {
+/* .flash-warning {
     padding: 0.5em;
     color: #856404;
     background-color: #fff3cd;
     border-color: #ffeeba;
-}
+} */
 .flash-warning:before {
     content: "⚠";
 }
@@ -22,4 +22,11 @@
 .flash-warning {
     margin-bottom: var(--magic-number);
     font-size: 1.1rem;
+}
+
+.flash-notice {
+    padding: 0.5em;
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
 }
