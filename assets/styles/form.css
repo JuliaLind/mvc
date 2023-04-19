@@ -23,6 +23,7 @@
 .game input {
     background: transparent;
     padding: 1em;
+    font-size: 1rem;
     /* margin-bottom: 2em; */
     border-radius: 5000px;
     backdrop-filter: blur(5px);
@@ -39,6 +40,10 @@
     border: 1px solid var(--left-dark);
 } */
       
+.game input[type="number"] {
+    text-align: center;
+} 
+
 .game input[type="submit"] {
     margin-top: 10px;
     width: 150px;

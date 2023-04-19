@@ -221,13 +221,32 @@ class Game21Easy extends Game implements Game21Interface
     {
         $type = "";
         $message = "";
-        if ($this->finished === true) {
+        $winner = $this->winner;
+
+        if ($this->roundOver === true) {
             $type = "notice";
-            $message = "Game over, {$this->winner} won!";
-        } elseif ($this->roundOver === true) {
-            $type = "notice";
-            $message = "Round over, {$this->winner} won!";
+            if ($winner === "Bank") {
+                $type = "warning";
+            }
+            $message = "Round over, {$winner} won!";
         }
+        if ($this->finished === true) {
+            $message = "Game over, {$winner} won!";
+        }
+
+        // if ($this->finished === true) {
+        //     $type = "notice";
+        //     if ($winner === "Bank") {
+        //         $type = "warning";
+        //     }
+        //     $message = "Game over, {$this->winner} won!";
+        // } elseif ($this->roundOver === true) {
+        //     $type = "notice";
+        //     if ($winner === "Bank") {
+        //         $type = "warning";
+        //     }
+        //     $message = "Round over, {$this->winner} won!";
+        // }
         return [$type, $message];
     }
 
