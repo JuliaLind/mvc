@@ -73,7 +73,7 @@ class Game21Easy extends Game implements Game21Interface
 
         $nextRoundData = [
             'limit' => $this->getInvestLimit(),
-            'money' => $this->player->money,
+            'money' => $this->player->getMoney(),
             'round' => $this->currentRound,
         ];
         return $nextRoundData;
@@ -205,11 +205,11 @@ class Game21Easy extends Game implements Game21Interface
             $player = $this->player;
             $bank = $this->bank;
             $winner = $bank;
-            if ($player->money > $bank->money) {
+            if ($player->getMoney() > $bank->getMoney()) {
                 $winner = $player;
             }
         }
-        $this->winner = $winner->name;
+        $this->winner = $winner->getName();
     }
 
     /**
@@ -248,15 +248,15 @@ class Game21Easy extends Game implements Game21Interface
         $player = $this->player;
         $bank = $this->bank;
         $players[] = [
-            'name' => $bank->name,
+            'name' => $bank->getName(),
             'cards' => $bank->showHandGraphic(),
-            'money' => $bank->money,
+            'money' => $bank->getMoney(),
             'handValue' => $bank->handValue(),
         ];
         $players[] = [
-            'name' => $player->name,
+            'name' => $player->getName(),
             'cards' => $player->showHandGraphic(),
-            'money' => $player->money,
+            'money' => $player->getMoney(),
             'handValue' => $player->handValue(),
         ];
         return $players;

@@ -18,8 +18,8 @@ trait BettingGameTrait
      */
     public function getInvestLimit(): int
     {
-        $limit = $this->player->money;
-        $money = $this->bank->money;
+        $limit = $this->player->getMoney();
+        $money = $this->bank->getMoney();
         if ($money < $limit) {
             $limit = $money;
         }

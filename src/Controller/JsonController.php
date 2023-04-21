@@ -210,7 +210,7 @@ class JsonController extends AbstractController
             $player = new Player("player {$i}");
             $player->drawMany($deck, $cards);
             $hands[] = [
-                'playerName' => $player->name,
+                'playerName' => $player->getName(),
                 'cards' => $player->showHandAsString(),
             ];
         };

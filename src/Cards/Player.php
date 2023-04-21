@@ -11,13 +11,18 @@ class Player
      * @var string $name
      * @var CardHand $hand
      */
-    public string $name;
+    protected string $name;
     protected CardHand $hand;
 
     public function __construct(string $name)
     {
         $this->name = $name;
         $this->hand = new CardHand();
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
     }
 
     /**

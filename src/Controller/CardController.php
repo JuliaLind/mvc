@@ -96,7 +96,7 @@ class CardController extends AbstractController
 
         $session->set("deck", $deck);
         $players[] = [
-            'playerName' => $player->name,
+            'playerName' => $player->getName(),
             'cards' => $player->showHandGraphic(),
         ];
         $data = [
@@ -125,7 +125,7 @@ class CardController extends AbstractController
 
         $session->set("deck", $deck);
         $players[] = [
-            'playerName' => $player->name,
+            'playerName' => $player->getName(),
             'cards' => $player->showHandGraphic(),
         ];
 
@@ -156,7 +156,7 @@ class CardController extends AbstractController
             $player = new Player("player {$i}");
             $player->drawMany($deck, $cards);
             $hands[] = [
-                'playerName' => $player->name,
+                'playerName' => $player->getName(),
                 'cards' => $player->showHandGraphic(),
             ];
         };

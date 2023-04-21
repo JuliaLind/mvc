@@ -12,14 +12,24 @@ class Player
      * @var int $money
      * @var CardHand $hand
      */
-    public string $name;
-    public int $money=0;
+    protected string $name;
+    protected int $money=0;
     protected CardHand $hand;
 
     public function __construct(string $name)
     {
         $this->name = $name;
         $this->hand = new CardHand();
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getMoney(): int
+    {
+        return $this->money;
     }
 
     /**
