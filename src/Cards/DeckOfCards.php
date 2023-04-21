@@ -3,6 +3,7 @@
 namespace App\Cards;
 
 use App\Cards\CardGraphic;
+use App\Exceptions\NoCardsLeftException;
 
 class DeckOfCards
 {
@@ -29,9 +30,13 @@ class DeckOfCards
         $this->deck[] = $card;
     }
 
-    public function draw(): CardGraphic | null
+
+    public function draw(): CardGraphic
     {
         $pickedCard = array_pop($this->deck);
+        if ($pickedCard === null) {
+            throw new NoCardsLeftException();
+        }
         return $pickedCard;
     }
 

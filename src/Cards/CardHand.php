@@ -4,6 +4,7 @@ namespace App\Cards;
 
 use App\Cards\DeckOfCards;
 use App\Cards\CardGraphic;
+use App\Exceptions\NoCardsLeftException;
 
 class CardHand
 {
@@ -14,12 +15,11 @@ class CardHand
 
     public function add(DeckOfCards $deck, int $number): void
     {
-        if ($number > $deck->getCardCount()) {
-            $number = $deck->getCardCount();
-        }
-        if ($number > 0) {
-            for ($i = 1; $i <= $number; $i++) {
+        for ($i = 1; $i <= $number; $i++) {
+            try {
                 $this->hand[] = $deck->draw();
+            } catch (NoCardsLeftException) {
+                break;
             }
         }
     }
