@@ -23,8 +23,7 @@ class Card
         'Q' => 12,
         'K' => 13,
         'A' => 14,
-        'jokerB' => 15,
-        'jokerR' => 16,
+        'joker' => 15,
     ];
 
 
@@ -33,32 +32,15 @@ class Card
         $this->suit = $suit;
         $this->rank = $rank;
         $this->intValue = self::RANKVALUES[$rank];
-        $color = "";
-        switch($suit) {
-            case 'S':
-                $color = 'black';
-                break;
-            case 'C':
-                $color = 'black';
-                break;
-            case 'H':
-                $color = 'red';
-                break;
-            case 'D':
-                $color = 'red';
-                break;
-            case '':
-                switch(substr($this->rank, -1)) {
-                    case 'B':
-                        $color = 'black';
-                        break;
-                    case 'R':
-                        $color = 'red';
-                        break;
-                }
-                break;
-        }
-        $this->color = $color;
+        $conversionArray = [
+            'S'=>'black',
+            'D'=>'red',
+            'H'=>'red',
+            'C'=>'black',
+            'B'=>'black',
+            'R'=>'red',
+        ];
+        $this->color = $conversionArray[$suit];
     }
 
     public function getIntValue(): int
@@ -68,9 +50,6 @@ class Card
 
     public function getSuit(): string
     {
-        if ($this->suit === '') {
-            return 'z';
-        }
         return $this->suit;
     }
 
@@ -83,47 +62,31 @@ class Card
     protected function rankExt(): string
     {
         $rank = $this->rank;
-        switch ($rank) {
-            case 'J':
-                $rank = 'Jack';
-                break;
-            case 'Q':
-                $rank = 'Queen';
-                break;
-            case 'K':
-                $rank = 'King';
-                break;
-            case 'A':
-                $rank = 'Ace';
-                break;
-            case 'jokerB':
-                $rank = 'Joker Black';
-                break;
-            case 'jokerR':
-                $rank = 'Joker Red';
-                break;
-        };
+        $conversionArray = [
+            'J'=>'Jack',
+            'Q'=>'Queen',
+            'K'=>'King',
+            'A'=>'Ace',
+            'joker'=>'Joker',
+        ];
+        if (array_key_exists($rank, $conversionArray)) {
+            return $conversionArray[$rank];
+        }
         return $rank;
     }
 
     protected function suitExt(): string
     {
         $suit = $this->suit;
-        switch ($suit) {
-            case 'S':
-                $suit = ' Spades';
-                break;
-            case 'D':
-                $suit = ' Diamonds';
-                break;
-            case 'H':
-                $suit = ' Hearts';
-                break;
-            case 'C':
-                $suit = ' Clubs';
-                break;
-        };
-        return $suit;
+        $conversionArray = [
+            'S'=>' Spades',
+            'D'=>' Diamonds',
+            'H'=>' Hearts',
+            'C'=>' Clubs',
+            'B'=>' Black',
+            'R'=>' Red',
+        ];
+        return $conversionArray[$suit];
     }
 
     public function getAsString(): string

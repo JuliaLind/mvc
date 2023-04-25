@@ -14,7 +14,6 @@ class DeckOfCards
 
     public function __construct()
     {
-
         foreach (['D', 'H', 'C', 'S'] as $suit) {
             for ($i = 2; $i <= 10; $i++) {
                 $this->deck[] = new CardGraphic($suit, strval($i));
@@ -24,12 +23,6 @@ class DeckOfCards
             }
         }
     }
-
-    public function add(CardGraphic $card): void
-    {
-        $this->deck[] = $card;
-    }
-
 
     public function draw(): CardGraphic
     {
@@ -73,26 +66,21 @@ class DeckOfCards
         return $cards;
     }
 
-    public function sortByColor(): void
-    {
-        usort($this->deck, fn ($card1, $card2) => strcmp($card1->getColor(), $card2->getColor()));
-    }
-
-    public function sortByValue(): void
-    {
-        usort($this->deck, fn ($card1, $card2) => ($card1->getIntValue() - $card2->getIntValue()));
-    }
-
-    public function sortBySuit(): void
-    {
-        (usort($this->deck, fn ($card1, $card2) => strcmp($card1->getSuit(), $card2->getSuit())));
-    }
-
-    // public function sort(): void
+    // public function sortByColor(): void
     // {
-    //     $this->sortBySuit();
-    //     $this->sortByValue();
+    //     usort($this->deck, fn ($card1, $card2) => strcmp($card1->getColor(), $card2->getColor()));
     // }
+
+    // public function sortByValue(): void
+    // {
+    //     usort($this->deck, fn ($card1, $card2) => ($card1->getIntValue() - $card2->getIntValue()));
+    // }
+
+    // public function sortBySuit(): void
+    // {
+    //     (usort($this->deck, fn ($card1, $card2) => strcmp($card1->getSuit(), $card2->getSuit())));
+    // }
+
 
     /**
      * Returns array with each cards integer value.
