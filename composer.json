@@ -1,4 +1,6 @@
 {
+    "name": "juli22/report",
+    "description": "Me-page for course MVC.",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
@@ -47,7 +49,8 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5",
+        "php": "^8.1",
+        "phpunit/phpunit": "^10",
         "symfony/browser-kit": "6.1.*",
         "symfony/css-selector": "6.1.*",
         "symfony/debug-bundle": "6.1.*",
@@ -92,6 +95,12 @@
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
+        "clean": "rm -rf build .phpunit.result.cache",
+        "clean-all": [
+            "@clean",
+            "rm -rf vendor composer.lock"
+        ],
+        "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit",
         "post-install-cmd": [
             "@auto-scripts"
         ],
