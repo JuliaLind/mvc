@@ -6,6 +6,9 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 use App\Cards\DeckOfCards;
 
+/**
+ * Class representing the easy version of the 21 card game
+ */
 class Game21Easy extends Game implements Game21Interface
 {
     use BettingGameTrait;

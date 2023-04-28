@@ -23,8 +23,14 @@ use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 use App\Cards\Player;
 
+/**
+ * Controller for json routes
+ */
 class JsonController extends AbstractController
 {
+    /**
+     * Contains links to and descriptions of all json routes
+     */
     #[Route("/api", name: "api")]
     public function apis(): Response
     {
@@ -72,6 +78,10 @@ class JsonController extends AbstractController
         return $this->render('landing_json.html.twig', $data);
     }
 
+    /**
+     * Displays a randomly selected quote and date+time when the selection
+     * took place
+     */
     #[Route('/api/quote', name: "quote")]
     public function jsonQuote(): Response
     {
@@ -110,6 +120,10 @@ class JsonController extends AbstractController
         return $response;
     }
 
+    /**
+     * Creates and shows json representation of a deck of cards
+     * in sorted order
+     */
     #[Route('/api/deck', name: "jsonDeck", methods: ['GET'])]
     public function jsonDeck(
         SessionInterface $session
@@ -127,6 +141,11 @@ class JsonController extends AbstractController
         return $response;
     }
 
+
+    /**
+     * Creates and shows json representation of a deck of cards
+     * in shuffled order
+     */
     #[Route('/api/deck/shuffle', name: "jsonShuffle", methods: ['POST'])]
     public function jsonShuffle(
         SessionInterface $session
@@ -146,6 +165,11 @@ class JsonController extends AbstractController
         return $response;
     }
 
+    /**
+     * Route where one card at a time is drawn and displayed
+     * from the deck of cards that was created in the 'shuffle' route
+     * or in the 'deck' route
+     */
     #[Route('/api/deck/draw', name: "jsonDraw", methods: ['POST'])]
     public function jsonDraw(
         SessionInterface $session
@@ -170,6 +194,11 @@ class JsonController extends AbstractController
         return $response;
     }
 
+    /**
+     * Route where a number of cards at a time is drawn and displayed
+     * from the deck of cards that was created in the 'shuffle' route
+     * or in the 'deck' route
+     */
     #[Route('/api/deck/draw/{number<\d+>}', name: "jsonDrawMany", methods: ['POST'])]
     public function jsonDrawMany(
         SessionInterface $session,
@@ -196,6 +225,11 @@ class JsonController extends AbstractController
         return $response;
     }
 
+    /**
+     * Route where a number of cards is dealt to a number of players
+     * from the deck of cards that was created in the 'shuffle' route
+     * or in the 'deck' route
+     */
     #[Route('/api/deck/deal/{players<\d+>}/{cards<\d+>}', name: "jsonDeal", methods: ['POST'])]
     public function jsonDeal(
         SessionInterface $session,
@@ -229,6 +263,9 @@ class JsonController extends AbstractController
         return $response;
     }
 
+    /**
+     * Route displays current game/game-status as json object
+     */
     #[Route('/api/game', name: "jsonGame", methods: ['GET'])]
     public function jsonGame(
         SessionInterface $session

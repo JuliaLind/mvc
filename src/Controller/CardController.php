@@ -17,6 +17,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
+/**
+ * Controller for routes where cards are displayed
+ */
 class CardController extends AbstractController
 {
     #[Route("/card", name: "card")]
@@ -51,6 +54,10 @@ class CardController extends AbstractController
         return $this->render('card/home.html.twig', $data);
     }
 
+    /**
+     * Route where a new Deck of Cards object is created and
+     * displayed in sorted order
+     */
     #[Route('/card/deck', name: "deck", methods: ['GET'])]
     public function deck(
         SessionInterface $session
@@ -66,6 +73,10 @@ class CardController extends AbstractController
         return $this->render('card/deck.html.twig', $data);
     }
 
+    /**
+     * Route where a new Deck of Cards object is created and
+     * displayed in shuffled order
+     */
     #[Route('/card/deck/shuffle', name: "shuffle", methods: ['POST'])]
     public function shuffle(
         SessionInterface $session
@@ -83,6 +94,11 @@ class CardController extends AbstractController
         return $this->render('card/deck.html.twig', $data);
     }
 
+    /**
+     * Route where one card at a time is drawn and displayed
+     * from the deck of cards that was created in the 'shuffle' route
+     * or in the 'deck' route
+     */
     #[Route('/card/deck/draw', name: "draw", methods: ['POST'])]
     public function draw(
         SessionInterface $session
@@ -112,6 +128,11 @@ class CardController extends AbstractController
         return $this->render('card/draw.html.twig', $data);
     }
 
+    /**
+     * Route where a number of cards at a time is drawn and displayed
+     * from the deck of cards that was created in the 'shuffle' route
+     * or in the 'deck' route
+     */
     #[Route('/card/deck/draw/{number<\d+>}', name: "drawMany", methods: ['POST'])]
     public function drawMany(
         SessionInterface $session,
@@ -142,6 +163,11 @@ class CardController extends AbstractController
         return $this->render('card/draw.html.twig', $data);
     }
 
+    /**
+     * Route where a number of cards is dealt to a number of players
+     * from the deck of cards that was created in the 'shuffle' route
+     * or in the 'deck' route
+     */
     #[Route('/card/deck/deal/{players<\d+>}/{cards<\d+>}', name: "deal", methods: ['POST'])]
     public function deal(
         SessionInterface $session,

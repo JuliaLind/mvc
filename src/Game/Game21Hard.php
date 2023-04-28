@@ -2,6 +2,9 @@
 
 namespace App\Game;
 
+/**
+ * Class representing the hard version of the 21 card game
+ */
 class Game21Hard extends Game21Easy
 {
     /**

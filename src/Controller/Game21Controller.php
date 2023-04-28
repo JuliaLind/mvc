@@ -18,8 +18,15 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
+/**
+ * Controller class for the 21 card game
+ */
 class Game21Controller extends AbstractController
 {
+    /**
+     * Main route. Contains description of the game and buttons
+     * for starting/resuming the game
+     */
     #[Route('/game', name: "gameMain", methods: ['GET'])]
     public function main(
         SessionInterface $session
@@ -47,6 +54,10 @@ class Game21Controller extends AbstractController
         return $this->render('game21/home.html.twig', $data);
     }
 
+    /**
+     * Documentation route. Contains docmentation for
+     * the initial version of the game
+     */
     #[Route('/game/doc', name: "gameDoc", methods: ['GET'])]
     public function gameDoc(): Response
     {
@@ -61,7 +72,11 @@ class Game21Controller extends AbstractController
         return $this->render('game21/doc.html.twig', $data);
     }
 
-
+    /**
+     * Route forinitiating the game. Creates an object of class
+     * Game21Easy or Game21Hard, samves to session and redirects
+     * to route for selecting amount to bet
+     */
     #[Route('/game/init/{level<\d+>}', name: "init", methods: ['POST'])]
     public function init(
         SessionInterface $session,
@@ -78,6 +93,10 @@ class Game21Controller extends AbstractController
         return $this->redirectToRoute('selectAmount');
     }
 
+    /**
+     * Route for selecting amount to bet in the current round.
+     * Initiates the current round.
+     */
     #[Route('/game/select-amount', name: "selectAmount", methods: ['GET'])]
     public function selectAmount(
         SessionInterface $session
@@ -96,6 +115,11 @@ class Game21Controller extends AbstractController
         return $this->render('game21/select-amount.html.twig', $data);
     }
 
+    /**
+     * In this route the selected amount is moved from
+     * each bank and player to the moneypot. Redirects to the
+     * play route
+     */
     #[Route('/game/bet/{amount<\d+>}', name: "bet", methods: ['POST'])]
     public function bet(
         SessionInterface $session,
@@ -110,6 +134,10 @@ class Game21Controller extends AbstractController
         return $this->redirectToRoute('play');
     }
 
+    /**
+     * Route where a card is drawn by the player.
+     * Redirects to play-route
+     */
     #[Route('/game/draw', name: "playerDraw", methods: ['POST'])]
     public function playerDraw(
         SessionInterface $session
@@ -129,6 +157,10 @@ class Game21Controller extends AbstractController
         return $this->redirectToRoute('play');
     }
 
+    /**
+     * Route where cards are drawn by the bank
+     * Redirets to play-route
+     */
     #[Route('/game/bank-playing', name: "bankPlaying", methods: ['POST'])]
     public function bankPlaying(
         SessionInterface $session
@@ -148,7 +180,10 @@ class Game21Controller extends AbstractController
         return $this->redirectToRoute('play');
     }
 
-
+    /**
+     * Route where the current game is displayed.
+     * Shows buttons for the user to choose next action
+     */
     #[Route('/game/play', name: "play", methods: ['GET'])]
     public function play(
         SessionInterface $session

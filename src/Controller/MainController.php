@@ -13,8 +13,14 @@ use Symfony\Component\Validator\Constraints\DateTime;
 // use Anax\TextFilter\TextFilter;
 use App\Markdown\MdParser;
 
+/**
+ * The main controller class
+ */
 class MainController extends AbstractController
 {
+    /**
+     * Home route
+     */
     #[Route("/", name: "home")]
     public function home(): Response
     {
@@ -28,6 +34,9 @@ class MainController extends AbstractController
         return $this->render('home.html.twig', $data);
     }
 
+    /**
+     * Route that contains information about the course MVC
+     */
     #[Route("/about", name: "about")]
     public function about(): Response
     {
@@ -41,6 +50,9 @@ class MainController extends AbstractController
         return $this->render('about.html.twig', $data);
     }
 
+    /**
+     * Report route, contains reports of each kmom
+     */
     #[Route("/report", name: "report")]
     public function report(): Response
     {
@@ -57,6 +69,11 @@ class MainController extends AbstractController
         return $this->render('report.html.twig', $data);
     }
 
+    /**
+     * Route displays a forest with monkey where
+     * the monkeys location in the forest randomly changes
+     * each time page is loaded/re-loaded
+     */
     #[Route("/lucky", name: "lucky")]
     public function number(): Response
     {

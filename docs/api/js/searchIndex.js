@@ -218,7 +218,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\CardController",
             "name": "CardController",
-            "summary": "",
+            "summary": "Controller\u0020for\u0020routes\u0020where\u0020cards\u0020are\u0020displayed",
             "url": "classes/App-Controller-CardController.html"
         },                {
             "fqsen": "\\App\\Controller\\CardController\u003A\u003Acard\u0028\u0029",
@@ -228,142 +228,142 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\CardController\u003A\u003Adeck\u0028\u0029",
             "name": "deck",
-            "summary": "",
+            "summary": "Route\u0020where\u0020a\u0020new\u0020Deck\u0020of\u0020Cards\u0020object\u0020is\u0020created\u0020and\ndisplayed\u0020in\u0020sorted\u0020order",
             "url": "classes/App-Controller-CardController.html#method_deck"
         },                {
             "fqsen": "\\App\\Controller\\CardController\u003A\u003Ashuffle\u0028\u0029",
             "name": "shuffle",
-            "summary": "",
+            "summary": "Route\u0020where\u0020a\u0020new\u0020Deck\u0020of\u0020Cards\u0020object\u0020is\u0020created\u0020and\ndisplayed\u0020in\u0020shuffled\u0020order",
             "url": "classes/App-Controller-CardController.html#method_shuffle"
         },                {
             "fqsen": "\\App\\Controller\\CardController\u003A\u003Adraw\u0028\u0029",
             "name": "draw",
-            "summary": "",
+            "summary": "Route\u0020where\u0020one\u0020card\u0020at\u0020a\u0020time\u0020is\u0020drawn\u0020and\u0020displayed\nfrom\u0020the\u0020deck\u0020of\u0020cards\u0020that\u0020was\u0020created\u0020in\u0020the\u0020\u0027shuffle\u0027\u0020route\nor\u0020in\u0020the\u0020\u0027deck\u0027\u0020route",
             "url": "classes/App-Controller-CardController.html#method_draw"
         },                {
             "fqsen": "\\App\\Controller\\CardController\u003A\u003AdrawMany\u0028\u0029",
             "name": "drawMany",
-            "summary": "",
+            "summary": "Route\u0020where\u0020a\u0020number\u0020of\u0020cards\u0020at\u0020a\u0020time\u0020is\u0020drawn\u0020and\u0020displayed\nfrom\u0020the\u0020deck\u0020of\u0020cards\u0020that\u0020was\u0020created\u0020in\u0020the\u0020\u0027shuffle\u0027\u0020route\nor\u0020in\u0020the\u0020\u0027deck\u0027\u0020route",
             "url": "classes/App-Controller-CardController.html#method_drawMany"
         },                {
             "fqsen": "\\App\\Controller\\CardController\u003A\u003Adeal\u0028\u0029",
             "name": "deal",
-            "summary": "",
+            "summary": "Route\u0020where\u0020a\u0020number\u0020of\u0020cards\u0020is\u0020dealt\u0020to\u0020a\u0020number\u0020of\u0020players\nfrom\u0020the\u0020deck\u0020of\u0020cards\u0020that\u0020was\u0020created\u0020in\u0020the\u0020\u0027shuffle\u0027\u0020route\nor\u0020in\u0020the\u0020\u0027deck\u0027\u0020route",
             "url": "classes/App-Controller-CardController.html#method_deal"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller",
             "name": "Game21Controller",
-            "summary": "",
+            "summary": "Controller\u0020class\u0020for\u0020the\u002021\u0020card\u0020game",
             "url": "classes/App-Controller-Game21Controller.html"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller\u003A\u003Amain\u0028\u0029",
             "name": "main",
-            "summary": "",
+            "summary": "Main\u0020route.\u0020Contains\u0020description\u0020of\u0020the\u0020game\u0020and\u0020buttons\nfor\u0020starting\/resuming\u0020the\u0020game",
             "url": "classes/App-Controller-Game21Controller.html#method_main"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller\u003A\u003AgameDoc\u0028\u0029",
             "name": "gameDoc",
-            "summary": "",
+            "summary": "Documentation\u0020route.\u0020Contains\u0020docmentation\u0020for\nthe\u0020initial\u0020version\u0020of\u0020the\u0020game",
             "url": "classes/App-Controller-Game21Controller.html#method_gameDoc"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller\u003A\u003Ainit\u0028\u0029",
             "name": "init",
-            "summary": "",
+            "summary": "Route\u0020forinitiating\u0020the\u0020game.\u0020Creates\u0020an\u0020object\u0020of\u0020class\nGame21Easy\u0020or\u0020Game21Hard,\u0020samves\u0020to\u0020session\u0020and\u0020redirects\nto\u0020route\u0020for\u0020selecting\u0020amount\u0020to\u0020bet",
             "url": "classes/App-Controller-Game21Controller.html#method_init"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller\u003A\u003AselectAmount\u0028\u0029",
             "name": "selectAmount",
-            "summary": "",
+            "summary": "Route\u0020for\u0020selecting\u0020amount\u0020to\u0020bet\u0020in\u0020the\u0020current\u0020round.",
             "url": "classes/App-Controller-Game21Controller.html#method_selectAmount"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller\u003A\u003Abet\u0028\u0029",
             "name": "bet",
-            "summary": "",
+            "summary": "In\u0020this\u0020route\u0020the\u0020selected\u0020amount\u0020is\u0020moved\u0020from\neach\u0020bank\u0020and\u0020player\u0020to\u0020the\u0020moneypot.\u0020Redirects\u0020to\u0020the\nplay\u0020route",
             "url": "classes/App-Controller-Game21Controller.html#method_bet"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller\u003A\u003AplayerDraw\u0028\u0029",
             "name": "playerDraw",
-            "summary": "",
+            "summary": "Route\u0020where\u0020a\u0020card\u0020is\u0020drawn\u0020by\u0020the\u0020player.",
             "url": "classes/App-Controller-Game21Controller.html#method_playerDraw"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller\u003A\u003AbankPlaying\u0028\u0029",
             "name": "bankPlaying",
-            "summary": "",
+            "summary": "Route\u0020where\u0020cards\u0020are\u0020drawn\u0020by\u0020the\u0020bank\nRedirets\u0020to\u0020play\u002Droute",
             "url": "classes/App-Controller-Game21Controller.html#method_bankPlaying"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller\u003A\u003Aplay\u0028\u0029",
             "name": "play",
-            "summary": "",
+            "summary": "Route\u0020where\u0020the\u0020current\u0020game\u0020is\u0020displayed.",
             "url": "classes/App-Controller-Game21Controller.html#method_play"
         },                {
             "fqsen": "\\App\\Controller\\JsonController",
             "name": "JsonController",
-            "summary": "",
+            "summary": "Controller\u0020for\u0020json\u0020routes",
             "url": "classes/App-Controller-JsonController.html"
         },                {
             "fqsen": "\\App\\Controller\\JsonController\u003A\u003Aapis\u0028\u0029",
             "name": "apis",
-            "summary": "",
+            "summary": "Contains\u0020links\u0020to\u0020and\u0020descriptions\u0020of\u0020all\u0020json\u0020routes",
             "url": "classes/App-Controller-JsonController.html#method_apis"
         },                {
             "fqsen": "\\App\\Controller\\JsonController\u003A\u003AjsonQuote\u0028\u0029",
             "name": "jsonQuote",
-            "summary": "",
+            "summary": "Displays\u0020a\u0020randomly\u0020selected\u0020quote\u0020and\u0020date\u002Btime\u0020when\u0020the\u0020selection\ntook\u0020place",
             "url": "classes/App-Controller-JsonController.html#method_jsonQuote"
         },                {
             "fqsen": "\\App\\Controller\\JsonController\u003A\u003AjsonDeck\u0028\u0029",
             "name": "jsonDeck",
-            "summary": "",
+            "summary": "Creates\u0020and\u0020shows\u0020json\u0020representation\u0020of\u0020a\u0020deck\u0020of\u0020cards\nin\u0020sorted\u0020order",
             "url": "classes/App-Controller-JsonController.html#method_jsonDeck"
         },                {
             "fqsen": "\\App\\Controller\\JsonController\u003A\u003AjsonShuffle\u0028\u0029",
             "name": "jsonShuffle",
-            "summary": "",
+            "summary": "Creates\u0020and\u0020shows\u0020json\u0020representation\u0020of\u0020a\u0020deck\u0020of\u0020cards\nin\u0020shuffled\u0020order",
             "url": "classes/App-Controller-JsonController.html#method_jsonShuffle"
         },                {
             "fqsen": "\\App\\Controller\\JsonController\u003A\u003AjsonDraw\u0028\u0029",
             "name": "jsonDraw",
-            "summary": "",
+            "summary": "Route\u0020where\u0020one\u0020card\u0020at\u0020a\u0020time\u0020is\u0020drawn\u0020and\u0020displayed\nfrom\u0020the\u0020deck\u0020of\u0020cards\u0020that\u0020was\u0020created\u0020in\u0020the\u0020\u0027shuffle\u0027\u0020route\nor\u0020in\u0020the\u0020\u0027deck\u0027\u0020route",
             "url": "classes/App-Controller-JsonController.html#method_jsonDraw"
         },                {
             "fqsen": "\\App\\Controller\\JsonController\u003A\u003AjsonDrawMany\u0028\u0029",
             "name": "jsonDrawMany",
-            "summary": "",
+            "summary": "Route\u0020where\u0020a\u0020number\u0020of\u0020cards\u0020at\u0020a\u0020time\u0020is\u0020drawn\u0020and\u0020displayed\nfrom\u0020the\u0020deck\u0020of\u0020cards\u0020that\u0020was\u0020created\u0020in\u0020the\u0020\u0027shuffle\u0027\u0020route\nor\u0020in\u0020the\u0020\u0027deck\u0027\u0020route",
             "url": "classes/App-Controller-JsonController.html#method_jsonDrawMany"
         },                {
             "fqsen": "\\App\\Controller\\JsonController\u003A\u003AjsonDeal\u0028\u0029",
             "name": "jsonDeal",
-            "summary": "",
+            "summary": "Route\u0020where\u0020a\u0020number\u0020of\u0020cards\u0020is\u0020dealt\u0020to\u0020a\u0020number\u0020of\u0020players\nfrom\u0020the\u0020deck\u0020of\u0020cards\u0020that\u0020was\u0020created\u0020in\u0020the\u0020\u0027shuffle\u0027\u0020route\nor\u0020in\u0020the\u0020\u0027deck\u0027\u0020route",
             "url": "classes/App-Controller-JsonController.html#method_jsonDeal"
         },                {
             "fqsen": "\\App\\Controller\\JsonController\u003A\u003AjsonGame\u0028\u0029",
             "name": "jsonGame",
-            "summary": "",
+            "summary": "Route\u0020displays\u0020current\u0020game\/game\u002Dstatus\u0020as\u0020json\u0020object",
             "url": "classes/App-Controller-JsonController.html#method_jsonGame"
         },                {
             "fqsen": "\\App\\Controller\\MainController",
             "name": "MainController",
-            "summary": "",
+            "summary": "The\u0020main\u0020controller\u0020class",
             "url": "classes/App-Controller-MainController.html"
         },                {
             "fqsen": "\\App\\Controller\\MainController\u003A\u003Ahome\u0028\u0029",
             "name": "home",
-            "summary": "",
+            "summary": "Home\u0020route",
             "url": "classes/App-Controller-MainController.html#method_home"
         },                {
             "fqsen": "\\App\\Controller\\MainController\u003A\u003Aabout\u0028\u0029",
             "name": "about",
-            "summary": "",
+            "summary": "Route\u0020that\u0020contains\u0020information\u0020about\u0020the\u0020course\u0020MVC",
             "url": "classes/App-Controller-MainController.html#method_about"
         },                {
             "fqsen": "\\App\\Controller\\MainController\u003A\u003Areport\u0028\u0029",
             "name": "report",
-            "summary": "",
+            "summary": "Report\u0020route,\u0020contains\u0020reports\u0020of\u0020each\u0020kmom",
             "url": "classes/App-Controller-MainController.html#method_report"
         },                {
             "fqsen": "\\App\\Controller\\MainController\u003A\u003Anumber\u0028\u0029",
             "name": "number",
-            "summary": "",
+            "summary": "Route\u0020displays\u0020a\u0020forest\u0020with\u0020monkey\u0020where\nthe\u0020monkeys\u0020location\u0020in\u0020the\u0020forest\u0020randomly\u0020changes\neach\u0020time\u0020page\u0020is\u0020loaded\/re\u002Dloaded",
             "url": "classes/App-Controller-MainController.html#method_number"
         },                {
             "fqsen": "\\App\\Exceptions\\GameException",
@@ -438,7 +438,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Game21Easy",
             "name": "Game21Easy",
-            "summary": "",
+            "summary": "Class\u0020representing\u0020the\u0020easy\u0020version\u0020of\u0020the\u002021\u0020card\u0020game",
             "url": "classes/App-Game-Game21Easy.html"
         },                {
             "fqsen": "\\App\\Game\\Game21Easy\u003A\u003A__construct\u0028\u0029",
@@ -533,7 +533,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Game21Hard",
             "name": "Game21Hard",
-            "summary": "",
+            "summary": "Class\u0020representing\u0020the\u0020hard\u0020version\u0020of\u0020the\u002021\u0020card\u0020game",
             "url": "classes/App-Game-Game21Hard.html"
         },                {
             "fqsen": "\\App\\Game\\Game21Hard\u003A\u003AgetGameStatus\u0028\u0029",
