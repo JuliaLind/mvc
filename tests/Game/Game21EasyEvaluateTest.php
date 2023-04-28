@@ -29,8 +29,7 @@ class Game21EasyEvaluateTest extends TestCase
         $deck->method('getCardCount')->willReturn(1);
 
         $game = new Game21Easy($player, $deck, $bank);
-        $res = $game->evaluate();
-        $this->assertFalse($res);
+        $game->evaluate();
 
         $res = $game->getGameStatus();
         $exp = [
@@ -62,10 +61,7 @@ class Game21EasyEvaluateTest extends TestCase
         $deck->method('getCardCount')->willReturn(1);
 
         $game = new Game21Easy($player, $deck, $bank);
-
-        $res = $game->evaluate();
-        $exp = true;
-        $this->assertTrue($res);
+        $game->evaluate();
 
         $res = $game->getGameStatus();
         $exp = [
@@ -96,8 +92,7 @@ class Game21EasyEvaluateTest extends TestCase
         $deck->method('getCardCount')->willReturn(1);
 
         $game = new Game21Easy($player, $deck, $bank);
-        $res = $game->evaluate();
-        $this->assertFalse($res);
+        $game->evaluate();
 
         $res = $game->getGameStatus();
         $exp = [
@@ -128,8 +123,7 @@ class Game21EasyEvaluateTest extends TestCase
         $deck->method('getCardCount')->willReturn(0);
 
         $game = new Game21Easy($player, $deck, $bank);
-        $res = $game->evaluate();
-        $this->assertTrue($res);
+        $game->evaluate();
 
         $res = $game->getGameStatus();
         $exp = [

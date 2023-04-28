@@ -26,14 +26,17 @@ class Game21Controller extends AbstractController
     ): Response {
         $filename = "markdown/game21.md";
         $parsedText = new MdParser($filename);
+
         /**
          * @var Game21Interface|null $game The current game of 21.
          */
         $game = $session->get("game21") ?? null;
+
         $finished = true;
         if ($game && $game->gameOver() === false) {
             $finished = false;
         }
+
         $data = [
             'about' => $parsedText->getParsedText(),
             'page' => "game",
@@ -116,10 +119,8 @@ class Game21Controller extends AbstractController
          */
         $game = $session->get("game21");
         $game->deal();
-        $roundOver = $game->evaluate();
-        if ($roundOver) {
-            $game->endRound();
-        }
+        $game->evaluate();
+        $game->endRound();
 
         $flash = $game->generateFlash();
         $this->addFlash(...$flash);

@@ -39,7 +39,7 @@ interface Game21Interface
     /**
      * Called after a card has been dealed to the player
      *
-     * @return bool
+     * @return void
      */
     public function evaluate();
 

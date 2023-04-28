@@ -97,12 +97,10 @@ class Game21Easy extends Game implements Game21Interface
 
     /**
      * Called after the player has picked a card.
-     * Returns false if it's player's turn
-     * again, otherwise returns false
      *
-     * @return bool
+     * @return void
      */
-    public function evaluate(): bool
+    public function evaluate(): void
     {
         $player = $this->player;
         $handValue = $player->handValue();
@@ -114,11 +112,10 @@ class Game21Easy extends Game implements Game21Interface
             if ($handValue === self::GOAL) {
                 $this->bankPlaying = true;
             }
-            return false;
+            return;
         }
         $this->winner = $winner;
         $this->roundOver = true;
-        return true;
     }
 
     /**
