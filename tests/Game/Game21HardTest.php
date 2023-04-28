@@ -9,7 +9,7 @@ use App\Cards\CardGraphic;
 use App\Exceptions\NoCardsLeftException;
 
 /**
- * Test cases for class Game.
+ * Test cases for class Game21Hard class.
  */
 class Game21HardTest extends TestCase
 {
@@ -52,7 +52,14 @@ class Game21HardTest extends TestCase
             $cards[] = $card;
         }
 
-        $deckValues = [[13, 3, 3, 7, 2, 7], [3, 3, 7, 2, 7], [3, 7, 2, 7], [7, 2, 7], [2, 7], [7]];
+        $deckValues = [
+            $cardValues,
+            array_slice($cardValues, 1),
+            array_slice($cardValues, 2),
+            array_slice($cardValues, 3),
+            array_slice($cardValues, 4),
+            array_slice($cardValues, 5)
+        ];
 
 
         $deck->method('draw')->will($this->onConsecutiveCalls(...$cards));
@@ -71,7 +78,7 @@ class Game21HardTest extends TestCase
         $this->assertEquals($exp, $res);
 
         $res = $game->getGameStatus()['bankPlaying'];
-        $exp = true;
-        $this->assertEquals($exp, $res);
+
+        $this->assertTrue($res);
     }
 }

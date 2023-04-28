@@ -49,7 +49,6 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
-        "php": "^8.1",
         "phpunit/phpunit": "^10",
         "symfony/browser-kit": "6.1.*",
         "symfony/css-selector": "6.1.*",
@@ -114,7 +113,8 @@
         "lint": [
             "@phpmd",
             "@phpstan"
-        ]
+        ],
+        "phpdoc": "tools/phpdoc/phpdoc"
     },
     "conflict": {
         "symfony/symfony": "*"

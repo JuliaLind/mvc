@@ -11,7 +11,7 @@ use App\Cards\CardGraphic;
 use App\Exceptions\NoCardsLeftException;
 
 /**
- * Test cases for class Game.
+ * Test cases for class Game21Easy generateFlash() method
  */
 class Game21EasyGenerateFlashTest extends TestCase
 {

@@ -6,39 +6,55 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 use App\Exceptions\NoCardsLeftException;
 
+/**
+ * Class representing a hand that can hold cards
+ */
 class CardHand
 {
     /**
-     * @var array<CardGraphic|null> $hand The hand holding the cards.
+     * @var array<CardGraphic|null> $cards Array for holding cards.
      */
-    protected $hand = [];
+    private $cards = [];
 
+    /**
+     * Draws a number of cards from the deck and adds to the
+     * hand
+     *
+     * @param int $number - the number of cards to draw from the deck
+     * @param DeckOfCards $deck - the deck to draw cards from
+     * @return void
+     */
     public function add(DeckOfCards $deck, int $number): void
     {
         for ($i = 1; $i <= $number; $i++) {
             try {
-                $this->hand[] = $deck->draw();
+                $this->cards[] = $deck->draw();
             } catch (NoCardsLeftException) {
                 break;
             }
         }
     }
 
+    /**
+     * Empties the hand
+     *
+     * @return void
+     */
     public function emptyHand(): void
     {
-        $this->hand = [];
+        $this->cards = [];
     }
 
     /**
      * Returns array with arrays containing
-     * paths to card image and description for each card.
+     * relative paths to cards' images and description for each card.
      *
      * @return array<array<string>>
      */
     public function getImgLinksAndDescr(): array
     {
         $cards = [];
-        foreach ($this->hand as $card) {
+        foreach ($this->cards as $card) {
             if ($card) {
                 $cards[] = [
                     'link' => $card->getImgLink(),
@@ -57,7 +73,7 @@ class CardHand
     public function getAsString(): array
     {
         $cards = [];
-        foreach ($this->hand as $card) {
+        foreach ($this->cards as $card) {
             if ($card) {
                 $cards[] = $card->getAsString();
             }
@@ -67,14 +83,14 @@ class CardHand
     }
 
     /**
-     * Returns array with each cards integer value.
+     * Returns array with each card's integer value.
      *
      * @return array<int>
      */
     public function getValues(): array
     {
         $cards = [];
-        foreach ($this->hand as $card) {
+        foreach ($this->cards as $card) {
             if ($card) {
                 $cards[] = $card->getIntValue();
             }
@@ -83,8 +99,14 @@ class CardHand
         return $cards;
     }
 
+    /**
+     * Returns the count of cards the hand is currently
+     * holding
+     *
+     * @return int
+     */
     public function getCardCount(): int
     {
-        return count($this->hand);
+        return count($this->cards);
     }
 }

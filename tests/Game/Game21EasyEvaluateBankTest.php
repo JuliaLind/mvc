@@ -11,7 +11,7 @@ use App\Cards\CardGraphic;
 use App\Exceptions\NoCardsLeftException;
 
 /**
- * Test cases for class Game.
+ * Test cases for class Game21Easy evaluateBank() metod.
  */
 class Game21EasyEvaluateBankTest extends TestCase
 {
@@ -22,10 +22,14 @@ class Game21EasyEvaluateBankTest extends TestCase
     {
         $player = $this->createMock(Player21::class);
         $bank = clone $player;
-        $player->method('handValue')->willReturn(21);
-        $bank->method('handValue')->willReturn(21);
+
         $player->method('getName')->willReturn('Player');
+        $player->method('handValue')->willReturn(21);
+
         $bank->method('getName')->willReturn('Bank');
+        $bank->method('handValue')->willReturn(21);
+
+
         $deck = $this->createMock(DeckOfCards::class);
 
         $game = new Game21Easy($player, $deck, $bank);
@@ -53,10 +57,13 @@ class Game21EasyEvaluateBankTest extends TestCase
     {
         $player = $this->createMock(Player21::class);
         $bank = clone $player;
-        $player->method('handValue')->willReturn(20);
-        $bank->method('handValue')->willReturn(19);
+
         $player->method('getName')->willReturn('Player');
+        $player->method('handValue')->willReturn(20);
+
+        $bank->method('handValue')->willReturn(19);
         $bank->method('getName')->willReturn('Bank');
+
         $deck = $this->createMock(DeckOfCards::class);
 
         $game = new Game21Easy($player, $deck, $bank);
@@ -84,10 +91,13 @@ class Game21EasyEvaluateBankTest extends TestCase
     {
         $player = $this->createMock(Player21::class);
         $bank = clone $player;
-        $player->method('handValue')->willReturn(1);
-        $bank->method('handValue')->willReturn(22);
+
         $player->method('getName')->willReturn('Player');
+        $player->method('handValue')->willReturn(1);
+
+        $bank->method('handValue')->willReturn(22);
         $bank->method('getName')->willReturn('Bank');
+
         $deck = $this->createMock(DeckOfCards::class);
 
         $game = new Game21Easy($player, $deck, $bank);
@@ -116,10 +126,13 @@ class Game21EasyEvaluateBankTest extends TestCase
     {
         $player = $this->createMock(Player21::class);
         $bank = clone $player;
-        $player->method('handValue')->willReturn(18);
-        $bank->method('handValue')->willReturn(19);
+
         $player->method('getName')->willReturn('Player');
+        $player->method('handValue')->willReturn(18);
+
         $bank->method('getName')->willReturn('Bank');
+        $bank->method('handValue')->willReturn(19);
+
         $deck = $this->createMock(DeckOfCards::class);
 
         $game = new Game21Easy($player, $deck, $bank);
@@ -139,5 +152,4 @@ class Game21EasyEvaluateBankTest extends TestCase
         ];
         $this->assertEquals($exp, $res);
     }
-
 }

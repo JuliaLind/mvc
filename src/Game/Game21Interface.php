@@ -2,18 +2,21 @@
 
 namespace App\Game;
 
+/**
+ * Interface to be implemented by the classes Game21Easy and Game21Hard
+ */
 interface Game21Interface
 {
     /**
-     * Returns indicator if game is over or not
-     * @return bool
+     * Returns bool indicator if game is over or not
+     * @return bool true if game is over
      */
     public function gameOver();
 
     /**
-     * Increases number of currenRound attribute by 1.
+     * Increases the number of curren round attribute by 1.
      * Returns an associative array with investment
-     * limit, player's money and nr of next round
+     * limit, player's money and number of next round
      * @return array<int>
      */
     public function nextRound();
@@ -34,9 +37,7 @@ interface Game21Interface
     public function deal();
 
     /**
-     * Called after a card has been dealed to the player,
-     * cards, calculates if the round is over and if over -
-     * who the winner is
+     * Called after a card has been dealed to the player
      *
      * @return bool
      */
@@ -50,8 +51,7 @@ interface Game21Interface
 
 
     /**
-     * Called after tha bank is finished drawing cards,
-     * calculates the winner
+     * Called after the bank is finished drawing cards
      *
      * @return void
      */
@@ -72,9 +72,9 @@ interface Game21Interface
     public function getGameStatus();
 
     /**
-     * Returns data for each player
+     * Returns current data for each player
      *
-     * @return array<int<0,max>,array<string,array<array<string>>|int|string>>
+     * @return array<array<mixed>>
      */
     public function getPlayerData();
 

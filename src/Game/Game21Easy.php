@@ -15,24 +15,23 @@ class Game21Easy extends Game implements Game21Interface
      */
     protected const GOAL = 21;
 
-    protected Player21 $player;
-    protected Player21 $bank;
-
-    protected bool $roundOver=false;
-    protected bool $bankPlaying=false;
-
-    protected int $currentRound=0;
-
     /**
      * @var Player21|null $winner.
      */
     protected $winner=null;
 
+    protected Player21 $player;
+    protected Player21 $bank;
+    protected bool $roundOver=false;
+    protected bool $bankPlaying=false;
+    protected int $currentRound=0;
 
     /**
      * Constructor
-     * @param DeckOfCards $deck
+     *
      * @param Player21 $player
+     * @param DeckOfCards $deck
+     * @param Player21 $bank
      */
     public function __construct(Player21 $player=new Player21(), DeckOfCards $deck=new DeckOfCards(), Player21 $bank=new Player21('Bank'))
     {
@@ -97,11 +96,9 @@ class Game21Easy extends Game implements Game21Interface
 
 
     /**
-     * Called after the player has picked a card
-     * and checks if the round is over/value of
-     * hand is above 21. If below 21 returns false,
-     * otherwise true
-     *
+     * Called after the player has picked a card.
+     * Returns false if it's player's turn
+     * again, otherwise returns false
      *
      * @return bool
      */
@@ -125,7 +122,8 @@ class Game21Easy extends Game implements Game21Interface
     }
 
     /**
-     * Deals cards to the bank
+     * Deals cards to the bank until the value of bank's hand is at
+     * or above 17 or there are no cards left in deck
      *
      * @return void
      */
@@ -140,7 +138,8 @@ class Game21Easy extends Game implements Game21Interface
     }
 
     /**
-     * Called after the bank is finished with drawing cards
+     * Called after the bank is finished with drawing cards.
+     * Determines the winner of the round.
      *
      * @return void
      */
@@ -169,7 +168,9 @@ class Game21Easy extends Game implements Game21Interface
     }
 
     /**
-     * End the round
+     * Moves money from the money pot to the winner.
+     * Determines if the game is finished,
+     * and if it is - who the final winner is
      *
      * @return void
      */
@@ -226,26 +227,30 @@ class Game21Easy extends Game implements Game21Interface
 
     /**
      * Returns name, graphic representation, money amount and current
-     * value of hand for player and bank
+     * value of hand for each of player and bank
      *
-     * @return array<int<0,max>,array<string,array<array<string>>|int|string>>
+     * @return array<array<mixed>>
      */
     public function getPlayerData(): array
     {
         $players = [];
         foreach ([$this->bank, $this->player] as $player) {
+            $name = $player->getName();
+            $cards = $player->showHandGraphic();
+            $money = $player->getMoney();
+            $handValue = $player->handValue();
             $players[] = [
-                'name' => $player->getName(),
-                'cards' => $player->showHandGraphic(),
-                'money' => $player->getMoney(),
-                'handValue' => $player->handValue(),
+                'name' => $name,
+                'cards' => $cards,
+                'money' => $money,
+                'handValue' => $handValue,
             ];
         }
         return $players;
     }
 
     /**
-     * Returns all data for current game
+     * Returns status data for current game
      *
      * @return  array<mixed>
      */
@@ -259,7 +264,6 @@ class Game21Easy extends Game implements Game21Interface
 
         $data = [
             'bankPlaying'=>$this->bankPlaying,
-            // 'winner'=>$this->winner,
             'winner'=>$winner,
             'cardsLeft'=>$this->cardsLeft(),
             'risk'=> $risk . ' %',

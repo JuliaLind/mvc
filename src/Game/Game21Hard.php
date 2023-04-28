@@ -5,9 +5,9 @@ namespace App\Game;
 class Game21Hard extends Game21Easy
 {
     /**
-     * Returns all data for current game
+     * Returns status data for current game
      *
-     * @return array<array<int<0,max>,array<string,array<array<string>>|int|string>>|string|int>
+     * @return array<mixed>
      */
     public function getGameStatus(): array
     {
@@ -17,8 +17,10 @@ class Game21Hard extends Game21Easy
     }
 
     /**
-     * Deals cards to the bank
-     *
+     * Deals cards to the bank. Stops when risk of bank getting "fat" is
+     * at or above 50% or hand value is 21 or above or there are
+     * no cards left
+     * @return void
      */
     public function dealBank(): void
     {

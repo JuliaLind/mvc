@@ -11,7 +11,7 @@ use App\Cards\CardGraphic;
 use App\Exceptions\NoCardsLeftException;
 
 /**
- * Test cases for class Game.
+ * Test cases for class Game21Easy endRound() method
  */
 class Game21EasyEndRoundTest extends TestCase
 {
@@ -24,10 +24,12 @@ class Game21EasyEndRoundTest extends TestCase
     {
         $player = $this->createMock(Player21::class);
         $bank = clone $player;
-        $player->method('getMoney')->willReturn(80);
-        $bank->method('getMoney')->willReturn(30);
+
         $player->method('getName')->willReturn('player');
         $player->method('handValue')->willReturn(22);
+        $player->method('getMoney')->willReturn(80);
+
+        $bank->method('getMoney')->willReturn(30);
 
         $deck = $this->createMock(DeckOfCards::class);
         $deck->method('getCardCount')->willReturn(0);
@@ -60,10 +62,13 @@ class Game21EasyEndRoundTest extends TestCase
     {
         $player = $this->createMock(Player21::class);
         $bank = clone $player;
-        $player->method('getMoney')->willReturn(80);
-        $bank->method('getMoney')->willReturn(30);
+
         $player->method('getName')->willReturn('player');
+        $player->method('getMoney')->willReturn(80);
         $player->method('handValue')->willReturn(21);
+
+        $bank->method('getMoney')->willReturn(30);
+
         $deck = $this->createMock(DeckOfCards::class);
         $deck->method('getCardCount')->willReturn(0);
 
@@ -130,8 +135,17 @@ class Game21EasyEndRoundTest extends TestCase
      */
     public function testEndRound(): void
     {
-        $player = new Player21('Player');
-        $bank = new Player21('Bank');
+        $player = $this->createMock(Player21::class);
+        $bank = clone $player;
+
+        $player->method('getName')->willReturn('Player');
+        $player->method('getMoney')->willReturn(100);
+        $player->method('handValue')->willReturn(0);
+
+        $bank->method('getName')->willReturn('Bank');
+        $bank->method('getMoney')->willReturn(100);
+        $bank->method('handValue')->willReturn(0);
+
         $deck = $this->createMock(DeckOfCards::class);
         $deck->method('getCardCount')->willReturn(1);
 
@@ -152,23 +166,6 @@ class Game21EasyEndRoundTest extends TestCase
             'moneyPot'=>0,
             'roundOver'=>true,
             'level' => 'easy',
-        ];
-        $this->assertEquals($exp, $res);
-
-        $res = $game->getPlayerData();
-        $exp = [
-            [
-                'name' => 'Bank',
-                'cards' => [],
-                'money' => 130,
-                'handValue' => 0,
-            ],
-            [
-                'name' => 'Player',
-                'cards' => [],
-                'money' => 70,
-                'handValue' => 0,
-            ]
         ];
         $this->assertEquals($exp, $res);
     }

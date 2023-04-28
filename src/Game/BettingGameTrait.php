@@ -4,9 +4,6 @@ namespace App\Game;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-// use App\Game\MoneyPot;
-// use App\Game\Player21;
-
 trait BettingGameTrait
 {
     protected MoneyPot $moneyPot;

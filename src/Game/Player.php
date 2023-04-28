@@ -5,6 +5,9 @@ namespace App\Game;
 use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
+/**
+ * Class representing a Player
+ */
 class Player
 {
     /**
@@ -16,26 +19,40 @@ class Player
     protected int $money=0;
     protected CardHand $hand;
 
+    /**
+     * Constructor
+     * @param string $name - Name of the player
+     */
     public function __construct(string $name)
     {
         $this->name = $name;
         $this->hand = new CardHand();
     }
 
+    /**
+     * Getter of player's name
+     *
+     * @return string
+     */
     public function getName(): string
     {
         return $this->name;
     }
 
+    /**
+     * Getter of the amount of money the player currently has
+     *
+     * @return int
+     */
     public function getMoney(): int
     {
         return $this->money;
     }
 
     /**
-     * Draws 1 card from deck and adds to hand
+     * Draws 1 card from deck and adds to the player's hand
      *
-     * @param DeckOfCards $deck the card-deck to draw cards from
+     * @param DeckOfCards $deck the card-deck to draw card from
      * @return void
      */
     public function draw(DeckOfCards $deck): void
@@ -44,7 +61,7 @@ class Player
     }
 
     /**
-     * Adds money to player
+     * Increases player's money
      *
      * @param int $money the amount of money to add
      * @return void
@@ -55,9 +72,9 @@ class Player
     }
 
     /**
-     * Removes money from player
+     * Decreases player's money and returns the corresponding amount
      *
-     * @return int the amount of money that was removed
+     * @return int the amount of money that was substracted
      */
     public function decrMoney(int $money): int
     {
@@ -66,7 +83,7 @@ class Player
     }
 
     /**
-     * Returns array with card values.
+     * Returns array with cards' integer values
      *
      * @return array<int>
      */
@@ -76,8 +93,8 @@ class Player
     }
 
     /**
-     * Returns array with arrays - one containing
-     * paths to card images and the other - descriptions for each card
+     * Returns array with associative arrays containing two strings - relative
+     * svg-image path and description for each card
      * (to use for the alt text).
      *
      * @return array<array<string>>
@@ -98,7 +115,7 @@ class Player
     }
 
     /**
-     * Returns the number of cards in hand.
+     * Returns the count of cards in player's hand.
      *
      * @return int
      */
@@ -108,7 +125,7 @@ class Player
     }
 
     /**
-     * Removes all cards from hand
+     * Removes all cards from player's hand
      *
      * @return void
      */
@@ -116,5 +133,4 @@ class Player
     {
         $this->hand->emptyHand();
     }
-
 }

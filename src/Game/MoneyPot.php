@@ -4,6 +4,9 @@ namespace App\Game;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
+/**
+ * Class representing a money pot
+ */
 class MoneyPot
 {
     protected int $money=0;
@@ -35,7 +38,7 @@ class MoneyPot
     }
 
     /**
-     * Getter for current amount in moneypot
+     * Getter for current amount of money in the pot
      *
      * @return int
      */

@@ -4,6 +4,9 @@ namespace App\Game;
 
 use App\Cards\DeckOfCards;
 
+/**
+ * Class representing a Player in the 21 game
+ */
 class Player21 extends Player
 {
     /**
@@ -11,6 +14,10 @@ class Player21 extends Player
      */
     protected const GOAL = 21;
 
+    /**
+     * Constructor
+     * @param string $name - Name of the player, defaults to 'You'
+     */
     public function __construct(string $name="You")
     {
         parent::__construct($name);
@@ -62,6 +69,7 @@ class Player21 extends Player
     /**
      * Returns the risk of current player getting
      * above 21 with next drawn card
+     * @return float the risk of getting "fat" with next card 0-1
      */
     public function estimateRisk(DeckOfCards $deck): float
     {
