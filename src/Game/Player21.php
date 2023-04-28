@@ -2,8 +2,15 @@
 
 namespace App\Game;
 
+use App\Cards\DeckOfCards;
+
 class Player21 extends Player
 {
+    /**
+     * @var int $GOAL the goal points to reach.
+     */
+    protected const GOAL = 21;
+
     public function __construct(string $name="You")
     {
         parent::__construct($name);
@@ -23,7 +30,7 @@ class Player21 extends Player
         asort($values);
         $pointSum = 0;
         foreach ($values as $value) {
-            if ($value === 14 && $pointSum + $value > 21) {
+            if ($value === 14 && $pointSum + $value > self::GOAL) {
                 $value = 1;
             }
             $pointSum += $value;
@@ -50,5 +57,30 @@ class Player21 extends Player
             $pointSum += $value;
         }
         return $pointSum;
+    }
+
+    /**
+     * Returns the risk of current player getting
+     * above 21 with next drawn card
+     */
+    public function estimateRisk(DeckOfCards $deck): float
+    {
+        $minHandValue = $this->minHandValue();
+        $cardsLeft = $deck->getCardCount();
+        $possibleCards = $deck->getValues();
+        $badCards = 0;
+        $risk = 0;
+        if ($cardsLeft != 0) {
+            foreach ($possibleCards as $value) {
+                if ($value === 14) {
+                    $value = 1;
+                }
+                if ($minHandValue + $value > self::GOAL) {
+                    $badCards += 1;
+                }
+            }
+            $risk = $badCards / $cardsLeft;
+        }
+        return $risk;
     }
 }

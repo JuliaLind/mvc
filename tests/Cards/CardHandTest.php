@@ -6,36 +6,37 @@ use PHPUnit\Framework\TestCase;
 use App\Exceptions\NoCardsLeftException;
 
 /**
- * Test cases for class Guess.
+ * Test cases for class CardHand.
  */
 class CardHandTest extends TestCase
 {
+    private CardHand $cardHand;
+
+    protected function setUp(): void
+    {
+        $this->cardHand = new CardHand();
+    }
     /**
      * Construct empty CardHand and check that all metods return empty arrays and card count method
      * returns 0
      */
     public function testCreateObject(): void
     {
-        $cardHand = new CardHand();
-        $this->assertInstanceOf("\App\Cards\CardHand", $cardHand);
+        $this->assertInstanceOf("\App\Cards\CardHand", $this->cardHand);
 
-        $res = $cardHand->getImgLinks();
+        $res = $this->cardHand->getImgLinksAndDescr();
         $exp = [];
         $this->assertEquals($exp, $res);
 
-        $res = $cardHand->getImgLinksAndDescr();
+        $res = $this->cardHand->getAsString();
         $exp = [];
         $this->assertEquals($exp, $res);
 
-        $res = $cardHand->getAsString();
+        $res = $this->cardHand->getValues();
         $exp = [];
         $this->assertEquals($exp, $res);
 
-        $res = $cardHand->getValues();
-        $exp = [];
-        $this->assertEquals($exp, $res);
-
-        $res = $cardHand->getCardCount();
+        $res = $this->cardHand->getCardCount();
         $exp = 0;
         $this->assertEquals($exp, $res);
     }
@@ -46,33 +47,32 @@ class CardHandTest extends TestCase
      */
     public function testAddOneCardOk(): void
     {
+        $card = $this->createMock(CardGraphic::class);
+        $card->method('getAsString')->willReturn('I am a mock');
+        $card->method('getImgLink')->willReturn('linkToMock');
+        $card->method('getIntValue')->willReturn(11);
+
         $deck = $this->createMock(DeckOfCards::class);
-        $card = new CardGraphic("S", "J");
         $deck->method('draw')->willReturn($card);
 
-        $cardHand = new CardHand();
-        $cardHand->add($deck, 1);
+        $this->cardHand->add($deck, 1);
 
-        $res = $cardHand->getImgLinks();
-        $exp = ["img/cards/JS.svg"];
-        $this->assertEquals($exp, $res);
-
-        $res = $cardHand->getImgLinksAndDescr();
+        $res = $this->cardHand->getImgLinksAndDescr();
         $exp = [[
-            'link'=>"img/cards/JS.svg",
-            'descr'=>"Jack Spades",
+            'link'=>"linkToMock",
+            'descr'=>"I am a mock",
         ]];
         $this->assertEquals($exp, $res);
 
-        $res = $cardHand->getAsString();
-        $exp = ["Jack Spades"];
+        $res = $this->cardHand->getAsString();
+        $exp = ["I am a mock"];
         $this->assertEquals($exp, $res);
 
-        $res = $cardHand->getValues();
+        $res = $this->cardHand->getValues();
         $exp = [11];
         $this->assertEquals($exp, $res);
 
-        $res = $cardHand->getCardCount();
+        $res = $this->cardHand->getCardCount();
         $exp = 1;
         $this->assertEquals($exp, $res);
     }
@@ -82,62 +82,41 @@ class CardHandTest extends TestCase
      */
     public function testAddManyCardsOk(): void
     {
+        $cardMocks = [];
+        $exp1 = [];
+        $exp2 = [];
+        $exp3 = [];
+
+        for ($i = 1; $i <= 5; $i++) {
+            $card = $this->createMock(CardGraphic::class);
+            $card->method('getAsString')->willReturn("mock {$i}");
+            $card->method('getImgLink')->willReturn("linkToMock{$i}");
+            $card->method('getIntValue')->willReturn($i+1);
+            $cardMocks[] = $card;
+
+            $exp1[] = [
+                'link'=>"linkToMock{$i}",
+                'descr'=>"mock {$i}",
+            ];
+            $exp2[] = "mock {$i}";
+            $exp3[] = $i+1;
+        }
+
         $deck = $this->createMock(DeckOfCards::class);
-        $card = new CardGraphic("S", "J");
-        $card2 = new CardGraphic("D", "2");
-        $card3 = new CardGraphic("H", "A");
-        $card4 = new CardGraphic("C", "K");
-        $card5 = new CardGraphic("S", "A");
-        $deck->method('draw')->will($this->onConsecutiveCalls($card, $card2, $card3, $card4, $card5));
+        $deck->method('draw')->will($this->onConsecutiveCalls(...$cardMocks));
 
-        $cardHand = new CardHand();
-        $cardHand->add($deck, 5);
+        $this->cardHand->add($deck, 5);
 
-        $res = $cardHand->getImgLinks();
-        $exp = [
-            "img/cards/JS.svg",
-            "img/cards/2D.svg",
-            "img/cards/AH.svg",
-            "img/cards/KC.svg",
-            "img/cards/AS.svg",
-        ];
-        $this->assertEquals($exp, $res);
+        $res = $this->cardHand->getImgLinksAndDescr();
+        $this->assertEquals($exp1, $res);
 
-        $res = $cardHand->getImgLinksAndDescr();
-        $exp = [
-            [
-            'link'=>"img/cards/JS.svg",
-            'descr'=>"Jack Spades",
-            ],
-            [
-                'link'=>"img/cards/2D.svg",
-                'descr'=>"2 Diamonds",
-            ],
-            [
-                'link'=>"img/cards/AH.svg",
-                'descr'=>"Ace Hearts",
-            ],
-            [
-                'link'=>"img/cards/KC.svg",
-                'descr'=>"King Clubs",
-            ],
-            [
-                'link'=>"img/cards/AS.svg",
-                'descr'=>"Ace Spades",
-            ],
+        $res = $this->cardHand->getAsString();
+        $this->assertEquals($exp2, $res);
 
-        ];
-        $this->assertEquals($exp, $res);
+        $res = $this->cardHand->getValues();
+        $this->assertEquals($exp3, $res);
 
-        $res = $cardHand->getAsString();
-        $exp = ["Jack Spades", "2 Diamonds", "Ace Hearts", "King Clubs", "Ace Spades"];
-        $this->assertEquals($exp, $res);
-
-        $res = $cardHand->getValues();
-        $exp = [11, 2, 14, 13, 14];
-        $this->assertEquals($exp, $res);
-
-        $res = $cardHand->getCardCount();
+        $res = $this->cardHand->getCardCount();
         $exp = 5;
         $this->assertEquals($exp, $res);
     }
@@ -148,32 +127,32 @@ class CardHandTest extends TestCase
     public function testAddManyCardsNotOk(): void
     {
         $deck = $this->createMock(DeckOfCards::class);
-        $card = new CardGraphic("S", "J");
+        $card = $this->createMock(CardGraphic::class);
+        $card->method('getAsString')->willReturn('I am a mock');
+        $card->method('getImgLink')->willReturn('linkToMock');
+        $card->method('getIntValue')->willReturn(11);
+
         $deck->method('draw')->will($this->onConsecutiveCalls($card, $this->throwException(new NoCardsLeftException()), $this->throwException(new NoCardsLeftException()), $this->throwException(new NoCardsLeftException()), $this->throwException(new NoCardsLeftException())));
 
-        $cardHand = new CardHand();
-        $cardHand->add($deck, 5);
 
-        $res = $cardHand->getImgLinks();
-        $exp = ["img/cards/JS.svg"];
-        $this->assertEquals($exp, $res);
+        $this->cardHand->add($deck, 5);
 
-        $res = $cardHand->getImgLinksAndDescr();
+        $res = $this->cardHand->getImgLinksAndDescr();
         $exp = [[
-            'link'=>"img/cards/JS.svg",
-            'descr'=>"Jack Spades",
+            'link'=>"linkToMock",
+            'descr'=>"I am a mock",
         ]];
         $this->assertEquals($exp, $res);
 
-        $res = $cardHand->getAsString();
-        $exp = ["Jack Spades"];
+        $res = $this->cardHand->getAsString();
+        $exp = ["I am a mock"];
         $this->assertEquals($exp, $res);
 
-        $res = $cardHand->getValues();
+        $res = $this->cardHand->getValues();
         $exp = [11];
         $this->assertEquals($exp, $res);
 
-        $res = $cardHand->getCardCount();
+        $res = $this->cardHand->getCardCount();
         $exp = 1;
         $this->assertEquals($exp, $res);
     }
@@ -183,41 +162,43 @@ class CardHandTest extends TestCase
     /**
      * Draws 5 cards, emtpies hand and checks the expected returns from methods
      */
-    public function testRemoveOk(): void
+    public function testEmptyHandOk(): void
     {
-        $deck = $this->createMock(DeckOfCards::class);
-        $card = new CardGraphic("S", "J");
-        $card2 = new CardGraphic("D", "2");
-        $card3 = new CardGraphic("H", "A");
-        $card4 = new CardGraphic("C", "K");
-        $card5 = new CardGraphic("S", "A");
-        $deck->method('draw')->will($this->onConsecutiveCalls($card, $card2, $card3, $card4, $card5));
+        $cardMocks = [];
 
-        $cardHand = new CardHand();
-        $cardHand->add($deck, 5);
-        $res = $cardHand->getCardCount();
+        for ($i = 1; $i <= 5; $i++) {
+            $card = $this->createMock(CardGraphic::class);
+            $card->method('getAsString')->willReturn("mock {$i}");
+            $card->method('getImgLink')->willReturn("linkToMock{$i}");
+            $card->method('getIntValue')->willReturn($i+1);
+            $cardMocks[] = $card;
+        }
+
+        $deck = $this->createMock(DeckOfCards::class);
+        $deck->method('draw')->will($this->onConsecutiveCalls(...$cardMocks));
+
+        $this->cardHand->add($deck, 5);
+
+        $res = $this->cardHand->getCardCount();
         $exp = 5;
         $this->assertEquals($exp, $res);
 
-        $cardHand->emptyHand();
+        $this->cardHand->emptyHand();
 
-        $res = $cardHand->getImgLinks();
+
+        $res = $this->cardHand->getImgLinksAndDescr();
         $exp = [];
         $this->assertEquals($exp, $res);
 
-        $res = $cardHand->getImgLinksAndDescr();
+        $res = $this->cardHand->getAsString();
         $exp = [];
         $this->assertEquals($exp, $res);
 
-        $res = $cardHand->getAsString();
+        $res = $this->cardHand->getValues();
         $exp = [];
         $this->assertEquals($exp, $res);
 
-        $res = $cardHand->getValues();
-        $exp = [];
-        $this->assertEquals($exp, $res);
-
-        $res = $cardHand->getCardCount();
+        $res = $this->cardHand->getCardCount();
         $exp = 0;
         $this->assertEquals($exp, $res);
     }

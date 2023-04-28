@@ -2,8 +2,8 @@
 
 namespace App\Cards;
 
-use App\Cards\DeckOfCards;
-use App\Cards\CardGraphic;
+require __DIR__ . "/../../vendor/autoload.php";
+
 use App\Exceptions\NoCardsLeftException;
 
 class CardHand
@@ -27,22 +27,6 @@ class CardHand
     public function emptyHand(): void
     {
         $this->hand = [];
-    }
-
-    /**
-     * Returns array with paths to card images.
-     *
-     * @return array<string>
-     */
-    public function getImgLinks(): array
-    {
-        $cards = [];
-        foreach ($this->hand as $card) {
-            if ($card) {
-                $cards[] = $card->getImgLink();
-            }
-        }
-        return $cards;
     }
 
     /**

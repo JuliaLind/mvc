@@ -27,23 +27,61 @@ interface Game21Interface
     public function addToMoneyPot(int $amount);
 
     /**
-     * Deals a card to the player and returns data for setting flashmessage
+     * Deals a card to the player
      *
-     * @return array<string>
+     * @return void
      */
     public function deal();
 
+    /**
+     * Called after a card has been dealed to the player,
+     * cards, calculates if the round is over and if over -
+     * who the winner is
+     *
+     * @return bool
+     */
+    public function evaluate();
 
     /**
-     * Deals cards to the bank and returns data for setting flashmessage
-     * @return array<string>
+     * Deals cards to the bank
+     * @return void
      */
     public function dealBank();
 
+
     /**
-     * Returns all data for current game
+     * Called after tha bank is finished drawing cards,
+     * calculates the winner
+     *
+     * @return void
+     */
+    public function evaluateBank();
+
+    /**
+     * Generates a flash message
+     *
+     * @return array<string>
+     */
+    public function generateFlash();
+
+    /**
+     * Returns status-data for current game
      *
      * @return array<mixed>
      */
     public function getGameStatus();
+
+    /**
+     * Returns data for each player
+     *
+     * @return array<int<0,max>,array<string,array<array<string>>|int|string>>
+     */
+    public function getPlayerData();
+
+    /**
+     * Ends current round
+     *
+     * @return void
+     */
+    public function endRound();
 }

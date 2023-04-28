@@ -2,8 +2,7 @@
 
 namespace App\Cards;
 
-use App\Cards\DeckOfCards;
-use App\Cards\CardHand;
+require __DIR__ . "/../../vendor/autoload.php";
 
 class Player
 {

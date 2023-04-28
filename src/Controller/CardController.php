@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+require __DIR__ . "/../../vendor/autoload.php";
+
 use App\Cards\CardGraphic;
 use App\Cards\CardHand;
 use App\Cards\DeckOfCards;

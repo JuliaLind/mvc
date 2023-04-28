@@ -2,8 +2,10 @@
 
 namespace App\Game;
 
-use App\Game\MoneyPot;
-use App\Game\Player21;
+require __DIR__ . "/../../vendor/autoload.php";
+
+// use App\Game\MoneyPot;
+// use App\Game\Player21;
 
 trait BettingGameTrait
 {

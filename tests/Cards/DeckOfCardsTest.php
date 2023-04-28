@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 use App\Exceptions\NoCardsLeftException;
 
 /**
- * Test cases for class Guess.
+ * Test cases for class DeckOfCards.
  */
 class DeckOfCardsTest extends TestCase
 {

@@ -2,9 +2,9 @@
 
 namespace App\Game;
 
-use App\Game\Player21;
+require __DIR__ . "/../../vendor/autoload.php";
+
 use App\Cards\DeckOfCards;
-use App\Game\MoneyPot;
 
 class Game21Easy extends Game implements Game21Interface
 {
@@ -22,19 +22,24 @@ class Game21Easy extends Game implements Game21Interface
     protected bool $bankPlaying=false;
 
     protected int $currentRound=0;
-    protected string $winner="";
+
+    /**
+     * @var Player21|null $winner.
+     */
+    protected $winner=null;
+
 
     /**
      * Constructor
      * @param DeckOfCards $deck
      * @param Player21 $player
      */
-    public function __construct(Player21 $player=new Player21(), DeckOfCards $deck=new DeckOfCards())
+    public function __construct(Player21 $player=new Player21(), DeckOfCards $deck=new DeckOfCards(), Player21 $bank=new Player21('Bank'))
     {
         parent::__construct($deck);
 
         $this->player = $player;
-        $this->bank = new Player21('Bank');
+        $this->bank = $bank;
 
         $startingMoney = 100;
         $this->player->incrMoney($startingMoney);
@@ -44,7 +49,7 @@ class Game21Easy extends Game implements Game21Interface
     }
 
     /**
-     * Returns the currently plaing party - player or bank
+     * Returns the currently playing party - player or bank
      * @return Player21
      */
     protected function currentPlayer(): Player21
@@ -79,56 +84,28 @@ class Game21Easy extends Game implements Game21Interface
         return $nextRoundData;
     }
 
-    /**
-     * Returns the risk of current player getting
-     * above 21 with next drawn card
-     *
-     * @return float
-     */
-    protected function estimateRisk(): float
-    {
-        $currentPlayer = $this->currentPlayer();
-        $minHandValue = $currentPlayer->minHandValue();
-        $cardsLeft = $this->deck->getCardCount();
-        $possibleCards = $this->deck->getValues();
-        $badCards = 0;
-        $risk = 0;
-        if ($cardsLeft != 0) {
-            foreach ($possibleCards as $value) {
-                if ($value === 14) {
-                    $value = 1;
-                }
-                if ($minHandValue + $value > self::GOAL) {
-                    $badCards += 1;
-                }
-            }
-            $risk = $badCards / $cardsLeft;
-        }
-        return $risk;
-    }
 
     /**
-     * Deals a card to the player and returns data for generating
-     * a flash message (array with type and message) if round over or
-     * game over, otherwise returns
-     * an array with two empty strings
-     *
-     * @return array<string>
-     */
-    public function deal(): array
-    {
-        $this->player->draw($this->deck);
-        $this->evaluate();
-        return $this->generateFlash();
-    }
-
-    /**
-     * Called after the player has picked a card
-     * and checks if the round is over/value of hand is above 21
+     * Deals a card to the player
      *
      * @return void
      */
-    protected function evaluate(): void
+    public function deal(): void
+    {
+        $this->player->draw($this->deck);
+    }
+
+
+    /**
+     * Called after the player has picked a card
+     * and checks if the round is over/value of
+     * hand is above 21. If below 21 returns false,
+     * otherwise true
+     *
+     *
+     * @return bool
+     */
+    public function evaluate(): bool
     {
         $player = $this->player;
         $handValue = $player->handValue();
@@ -140,18 +117,19 @@ class Game21Easy extends Game implements Game21Interface
             if ($handValue === self::GOAL) {
                 $this->bankPlaying = true;
             }
-            return;
+            return false;
         }
-        $this->endRound($winner);
+        $this->winner = $winner;
+        $this->roundOver = true;
+        return true;
     }
 
     /**
-     * Deals cards to the bank and returns data for setting flashmessage
+     * Deals cards to the bank
      *
-     * @return array<string> array with two strings - first type of the message,
-     * second - the message
+     * @return void
      */
-    public function dealBank(): array
+    public function dealBank(): void
     {
         $this->bankPlaying = true;
         $bank = $this->bank;
@@ -159,8 +137,6 @@ class Game21Easy extends Game implements Game21Interface
         while (($bank->handValue() < 17) && ($this->cardsLeft() > 0)) {
             $bank->draw($this->deck);
         }
-        $this->evaluateBank();
-        return $this->generateFlash();
     }
 
     /**
@@ -168,7 +144,7 @@ class Game21Easy extends Game implements Game21Interface
      *
      * @return void
      */
-    protected function evaluateBank(): void
+    public function evaluateBank(): void
     {
         $bank = $this->bank;
         $player = $this->player;
@@ -187,29 +163,38 @@ class Game21Easy extends Game implements Game21Interface
                 $winner = $bank;
             }
         }
-        $this->endRound($winner);
+
+        $this->winner = $winner;
+        $this->roundOver = true;
     }
 
     /**
      * End the round
-     * @param Player21 $winner
      *
      * @return void
      */
-    protected function endRound(Player21 $winner): void
+    public function endRound(): void
     {
-        $this->moneyPot->moneyToWinner($winner);
-        $this->roundOver = true;
-        if (($this->getInvestLimit() === 0 && $this->moneyPot->currentAmount() === 0) || $this->cardsLeft() === 0) {
-            $this->finished = true;
-            $player = $this->player;
-            $bank = $this->bank;
-            $winner = $bank;
-            if ($player->getMoney() > $bank->getMoney()) {
-                $winner = $player;
+        $winner = $this->winner;
+
+        if ($winner) {
+            $this->moneyPot->moneyToWinner($winner);
+
+            if (($this->getInvestLimit() === 0 && $this->moneyPot->currentAmount() === 0) || $this->cardsLeft() === 0) {
+                $this->finished = true;
             }
+            if ($this->cardsLeft() === 0) {
+                $player = $this->player;
+                $bank = $this->bank;
+
+                $winner = $bank;
+                if ($player->getMoney() > $bank->getMoney()) {
+                    $winner = $player;
+                }
+            }
+
+            $this->winner = $winner;
         }
-        $this->winner = $winner->getName();
     }
 
     /**
@@ -217,11 +202,14 @@ class Game21Easy extends Game implements Game21Interface
      *
      * @return array<string>
      */
-    protected function generateFlash(): array
+    public function generateFlash(): array
     {
         $type = "";
         $message = "";
-        $winner = $this->winner;
+        $winner = "";
+        if ($this->winner) {
+            $winner = $this->winner->getName();
+        }
 
         if ($this->roundOver === true) {
             $type = "notice";
@@ -242,39 +230,37 @@ class Game21Easy extends Game implements Game21Interface
      *
      * @return array<int<0,max>,array<string,array<array<string>>|int|string>>
      */
-    protected function getPlayerData(): array
+    public function getPlayerData(): array
     {
         $players = [];
-        $player = $this->player;
-        $bank = $this->bank;
-        $players[] = [
-            'name' => $bank->getName(),
-            'cards' => $bank->showHandGraphic(),
-            'money' => $bank->getMoney(),
-            'handValue' => $bank->handValue(),
-        ];
-        $players[] = [
-            'name' => $player->getName(),
-            'cards' => $player->showHandGraphic(),
-            'money' => $player->getMoney(),
-            'handValue' => $player->handValue(),
-        ];
+        foreach ([$this->bank, $this->player] as $player) {
+            $players[] = [
+                'name' => $player->getName(),
+                'cards' => $player->showHandGraphic(),
+                'money' => $player->getMoney(),
+                'handValue' => $player->handValue(),
+            ];
+        }
         return $players;
     }
 
     /**
      * Returns all data for current game
      *
-     * @return array<mixed>
+     * @return  array<mixed>
      */
     public function getGameStatus(): array
     {
-        $risk = strVal(round($this->estimateRisk() * 100, 2));
-        $players = $this->getPlayerData();
+        $risk = strVal(round($this->currentPlayer()->estimateRisk($this->deck) * 100, 2));
+        $winner = "";
+        if ($this->winner) {
+            $winner = $this->winner->getName();
+        }
+
         $data = [
-            'players'=>$players,
             'bankPlaying'=>$this->bankPlaying,
-            'winner'=>$this->winner,
+            // 'winner'=>$this->winner,
+            'winner'=>$winner,
             'cardsLeft'=>$this->cardsLeft(),
             'risk'=> $risk . ' %',
             'finished'=>$this->finished,

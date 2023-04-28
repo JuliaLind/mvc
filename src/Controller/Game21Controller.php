@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+require __DIR__ . "/../../vendor/autoload.php";
+
 use App\Game\Game21Med;
 use App\Game\Game21Hard;
 use App\Game\Game21Easy;
@@ -64,9 +66,6 @@ class Game21Controller extends AbstractController
     ): Response {
         $game = new Game21Easy();
         switch($level) {
-            case 1:
-                $game = new Game21Med();
-                break;
             case 2:
                 $game = new Game21Hard();
                 break;
@@ -116,8 +115,15 @@ class Game21Controller extends AbstractController
          * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
-        $flash = $game->deal();
+        $game->deal();
+        $roundOver = $game->evaluate();
+        if ($roundOver) {
+            $game->endRound();
+        }
+
+        $flash = $game->generateFlash();
         $this->addFlash(...$flash);
+
         $session->set("game21", $game);
         return $this->redirectToRoute('play');
     }
@@ -130,8 +136,13 @@ class Game21Controller extends AbstractController
          * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
-        $flash = $game->dealBank();
+
+        $game->dealBank();
+        $game->evaluateBank();
+        $game->endRound();
         $session->set("game21", $game);
+
+        $flash = $game->generateFlash();
         $this->addFlash(...$flash);
         return $this->redirectToRoute('play');
     }
@@ -150,7 +161,7 @@ class Game21Controller extends AbstractController
             'url' => "/game",
             'title' => 'Game 21'
         ];
-        $data = array_merge($game->getGameStatus(), $pageData);
+        $data = array_merge($game->getPlayerData(), $game->getGameStatus(), $pageData);
         return $this->render('game21/draw.html.twig', $data);
     }
 }

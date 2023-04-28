@@ -4,8 +4,6 @@ namespace App\Game;
 
 class Game21Hard extends Game21Easy
 {
-    use DealBankTrait;
-
     /**
      * Returns all data for current game
      *
@@ -16,5 +14,18 @@ class Game21Hard extends Game21Easy
         $data = parent::getGameStatus();
         $data['level'] = 'hard';
         return $data;
+    }
+
+    /**
+     * Deals cards to the bank
+     *
+     */
+    public function dealBank(): void
+    {
+        $this->bankPlaying = true;
+        $bank = $this->bank;
+        while (($bank->estimateRisk($this->deck) < 0.5) && ($this->cardsLeft() > 0) && $bank->handValue() < 21) {
+            $bank->draw($this->deck);
+        }
     }
 }

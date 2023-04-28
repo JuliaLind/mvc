@@ -2,7 +2,8 @@
 
 namespace App\Cards;
 
-use App\Cards\CardGraphic;
+require __DIR__ . "/../../vendor/autoload.php";
+
 use App\Exceptions\NoCardsLeftException;
 
 class DeckOfCards

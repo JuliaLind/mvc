@@ -2,7 +2,7 @@
 
 namespace App\Game;
 
-use App\Game\Player;
+require __DIR__ . "/../../vendor/autoload.php";
 
 class MoneyPot
 {

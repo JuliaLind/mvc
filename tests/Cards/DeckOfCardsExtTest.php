@@ -5,7 +5,7 @@ namespace App\Cards;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Test cases for class Guess.
+ * Test cases for class DeckOfCardsExt.
  */
 class DeckOfCardsExtTest extends TestCase
 {
