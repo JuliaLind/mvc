@@ -28,7 +28,11 @@ class Game21EasyEvaluateTest extends TestCase
         $deck = $this->createMock(DeckOfCards::class);
         $deck->method('getCardCount')->willReturn(1);
 
-        $game = new Game21Easy($player, $deck, $bank);
+        $pot = $this->createMock(MoneyPot::class);
+
+        $game = new Game21Easy($player, $deck);
+        $game->setBank($bank);
+        $game->setMoneyPot($pot);
         $game->evaluate();
 
         $res = $game->getGameStatus();
@@ -36,7 +40,6 @@ class Game21EasyEvaluateTest extends TestCase
             'bankPlaying'=>false,
             'winner'=>'',
             'cardsLeft'=>1,
-            'risk'=> '0 %',
             'finished'=>false,
             'currentRound'=>0,
             'moneyPot'=>0,
@@ -60,7 +63,12 @@ class Game21EasyEvaluateTest extends TestCase
         $deck = $this->createMock(DeckOfCards::class);
         $deck->method('getCardCount')->willReturn(1);
 
-        $game = new Game21Easy($player, $deck, $bank);
+        $pot = $this->createMock(MoneyPot::class);
+
+        $game = new Game21Easy($player, $deck);
+        $game->setBank($bank);
+        $game->setMoneyPot($pot);
+
         $game->evaluate();
 
         $res = $game->getGameStatus();
@@ -68,11 +76,10 @@ class Game21EasyEvaluateTest extends TestCase
             'bankPlaying'=>false,
             'winner'=>'Bank',
             'cardsLeft'=>1,
-            'risk'=> '0 %',
             'finished'=>false,
             'currentRound'=>0,
             'moneyPot'=>0,
-            'roundOver'=>true,
+            'roundOver'=>false,
             'level' => 'easy',
         ];
         $this->assertEquals($exp, $res);
@@ -91,7 +98,13 @@ class Game21EasyEvaluateTest extends TestCase
         $deck = $this->createMock(DeckOfCards::class);
         $deck->method('getCardCount')->willReturn(1);
 
-        $game = new Game21Easy($player, $deck, $bank);
+        $pot = $this->createMock(MoneyPot::class);
+
+        $game = new Game21Easy($player, $deck);
+        $game->setBank($bank);
+        $game->setMoneyPot($pot);
+
+
         $game->evaluate();
 
         $res = $game->getGameStatus();
@@ -99,7 +112,6 @@ class Game21EasyEvaluateTest extends TestCase
             'bankPlaying'=>true,
             'winner'=>'',
             'cardsLeft'=>1,
-            'risk'=> '0 %',
             'finished'=>false,
             'currentRound'=>0,
             'moneyPot'=>0,
@@ -122,7 +134,13 @@ class Game21EasyEvaluateTest extends TestCase
         $deck = $this->createMock(DeckOfCards::class);
         $deck->method('getCardCount')->willReturn(0);
 
-        $game = new Game21Easy($player, $deck, $bank);
+        $pot = $this->createMock(MoneyPot::class);
+
+        $game = new Game21Easy($player, $deck);
+
+        $game->setBank($bank);
+        $game->setMoneyPot($pot);
+
         $game->evaluate();
 
         $res = $game->getGameStatus();
@@ -130,11 +148,10 @@ class Game21EasyEvaluateTest extends TestCase
             'bankPlaying'=>false,
             'winner'=>'Player',
             'cardsLeft'=>0,
-            'risk'=> '0 %',
             'finished'=>false,
             'currentRound'=>0,
             'moneyPot'=>0,
-            'roundOver'=>true,
+            'roundOver'=>false,
             'level' => 'easy',
         ];
         $this->assertEquals($exp, $res);

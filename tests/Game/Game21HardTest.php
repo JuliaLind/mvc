@@ -28,7 +28,6 @@ class Game21HardTest extends TestCase
             'bankPlaying' => false,
             'winner' => '',
             'cardsLeft' => 52,
-            'risk'=> '0 %',
             'finished'=> false,
             'currentRound'=> 0,
             'moneyPot' => 0,
@@ -41,44 +40,48 @@ class Game21HardTest extends TestCase
     /**
      * Tests the dealBank method, bank picks as long as risk is below 50% and stops when 50%
      */
-    public function testDealBankCardsLeftNotOk(): void
+    public function testDealBank(): void
     {
         $deck = $this->createMock(DeckOfCards::class);
-        $cardValues = [13, 3, 3, 7, 2, 7];
-        $cards = [];
-        foreach($cardValues as $value) {
-            $card = $this->createMock(CardGraphic::class);
-            $card->method('getIntValue')->willReturn($value);
-            $cards[] = $card;
-        }
-
-        $deckValues = [
-            $cardValues,
-            array_slice($cardValues, 1),
-            array_slice($cardValues, 2),
-            array_slice($cardValues, 3),
-            array_slice($cardValues, 4),
-            array_slice($cardValues, 5)
-        ];
-
-
-        $deck->method('draw')->will($this->onConsecutiveCalls(...$cards));
-        $deck->method('getValues')->will($this->onConsecutiveCalls(...$deckValues));
-        $deck->method('getCardCount')->will($this->onConsecutiveCalls(6, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1, 0));
+        $deck->method('getCardCount')->willReturn(1);
 
         $player = $this->createMock(Player21::class);
+        $bank = $this->createMock(Player21::class);
+        $bank->method('estimateRisk')->will($this->onConsecutiveCalls(0, 0.3, 0.49, 0.5, 0.7));
+        $bank->expects($this->exactly(3))
+                ->method('draw')
+                ->with($this->equalTo($deck));
 
-        $bank = new Player21('Bank');
-        $game = new Game21Hard($player, $deck, $bank);
-
+        $game = new Game21Hard($player, $deck);
+        $game->setBank($bank);
         $game->dealBank();
-        $res = $bank->getCardValues();
-        $exp = [13, 3];
 
-        $this->assertEquals($exp, $res);
 
-        $res = $game->getGameStatus()['bankPlaying'];
+        $res = $game->isBankPlaying();
+        $this->assertTrue($res);
+    }
 
+    /**
+     * Tests the dealBank method, bank picks as long as risk is below 50% but stops when nu cards left in deck
+     */
+    public function testDealBankNoCardsLeft(): void
+    {
+        $deck = $this->createMock(DeckOfCards::class);
+        $deck->method('getCardCount')->will($this->onConsecutiveCalls(1, 1, 0));
+
+        $player = $this->createMock(Player21::class);
+        $bank = $this->createMock(Player21::class);
+        $bank->method('estimateRisk')->will($this->onConsecutiveCalls(0, 0.3, 0.49, 0.5, 0.7));
+        $bank->expects($this->exactly(2))
+                ->method('draw')
+                ->with($this->equalTo($deck));
+
+        $game = new Game21Hard($player, $deck);
+        $game->setBank($bank);
+        $game->dealBank();
+
+
+        $res = $game->isBankPlaying();
         $this->assertTrue($res);
     }
 }

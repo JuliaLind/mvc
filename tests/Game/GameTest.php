@@ -16,7 +16,7 @@ class GameTest extends TestCase
      */
     public function testCreateObject(): void
     {
-        $game = new Game(new DeckOfCards());
+        $game = new Game();
         $this->assertInstanceOf("\App\Game\Game", $game);
 
         $res = $game->gameOver();

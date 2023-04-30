@@ -26,16 +26,22 @@ class Game21EasyEndRoundTest extends TestCase
         $bank = clone $player;
 
         $player->method('getName')->willReturn('player');
-        $player->method('handValue')->willReturn(22);
         $player->method('getMoney')->willReturn(80);
-
         $bank->method('getMoney')->willReturn(30);
 
         $deck = $this->createMock(DeckOfCards::class);
         $deck->method('getCardCount')->willReturn(0);
 
-        $game = new Game21Easy($player, $deck, $bank);
-        $game->evaluate();
+        $pot = $this->createMock(MoneyPot::class);
+        $pot->expects($this->once())
+            ->method('moneyToWinner')
+            ->with($this->equalTo($bank));
+
+        $game = new Game21Easy($player, $deck);
+        $game->setBank($bank);
+        $game->setMoneyPot($pot);
+        $game->setWinner($bank);
+
         $game->endRound();
 
         $res = $game->getGameStatus();
@@ -43,7 +49,6 @@ class Game21EasyEndRoundTest extends TestCase
             'bankPlaying'=>false,
             'winner'=>'player',
             'cardsLeft'=>0,
-            'risk'=> '0 %',
             'finished'=>true,
             'currentRound'=>0,
             'moneyPot'=>0,
@@ -65,15 +70,23 @@ class Game21EasyEndRoundTest extends TestCase
 
         $player->method('getName')->willReturn('player');
         $player->method('getMoney')->willReturn(80);
-        $player->method('handValue')->willReturn(21);
 
         $bank->method('getMoney')->willReturn(30);
 
         $deck = $this->createMock(DeckOfCards::class);
         $deck->method('getCardCount')->willReturn(0);
 
-        $game = new Game21Easy($player, $deck, $bank);
-        $game->evaluate();
+        $pot = $this->createMock(MoneyPot::class);
+        $pot->expects($this->once())
+            ->method('moneyToWinner')
+            ->with($this->equalTo($player));
+
+        $game = new Game21Easy($player, $deck);
+
+        $game->setBank($bank);
+        $game->setWinner($player);
+        $game->setMoneyPot($pot);
+
         $game->endRound();
 
         $res = $game->getGameStatus();
@@ -81,7 +94,6 @@ class Game21EasyEndRoundTest extends TestCase
             'bankPlaying'=>false,
             'winner'=>'player',
             'cardsLeft'=>0,
-            'risk'=> '0 %',
             'finished'=>true,
             'currentRound'=>0,
             'moneyPot'=>0,
@@ -98,11 +110,10 @@ class Game21EasyEndRoundTest extends TestCase
     public function testEndRoundNoMoney(): void
     {
         $player = $this->createMock(Player21::class);
-        $player->method('handValue')->willReturn(21);
         $player->method('getName')->willReturn('Player');
 
         $bank = $this->createMock(Player21::class);
-        $bank->method('handValue')->willReturn(18);
+
 
         $player->method('getMoney')->willReturn(80);
         $bank->method('getMoney')->willReturn(0);
@@ -110,8 +121,17 @@ class Game21EasyEndRoundTest extends TestCase
         $deck = $this->createMock(DeckOfCards::class);
         $deck->method('getCardCount')->willReturn(1);
 
-        $game = new Game21Easy($player, $deck, $bank);
-        $game->evaluateBank();
+        $pot = $this->createMock(MoneyPot::class);
+        $pot->expects($this->once())
+            ->method('moneyToWinner')
+            ->with($this->equalTo($player));
+
+        $game = new Game21Easy($player, $deck);
+
+        $game->setBank($bank);
+        $game->setWinner($player);
+        $game->setMoneyPot($pot);
+
         $game->endRound();
 
         $res = $game->getGameStatus();
@@ -119,7 +139,6 @@ class Game21EasyEndRoundTest extends TestCase
             'bankPlaying'=>false,
             'winner'=>'Player',
             'cardsLeft'=>1,
-            'risk'=> '0 %',
             'finished'=>true,
             'currentRound'=>0,
             'moneyPot'=>0,
@@ -139,20 +158,25 @@ class Game21EasyEndRoundTest extends TestCase
         $bank = clone $player;
 
         $player->method('getName')->willReturn('Player');
-        $player->method('getMoney')->willReturn(100);
-        $player->method('handValue')->willReturn(0);
+        $player->method('getMoney')->willReturn(1);
 
         $bank->method('getName')->willReturn('Bank');
-        $bank->method('getMoney')->willReturn(100);
-        $bank->method('handValue')->willReturn(0);
+        $bank->method('getMoney')->willReturn(1);
 
         $deck = $this->createMock(DeckOfCards::class);
         $deck->method('getCardCount')->willReturn(1);
 
-        $game = new Game21Easy($player, $deck, $bank);
-        $game->addToMoneyPot(30);
+        $game = new Game21Easy($player, $deck);
+        $game->setBank($bank);
+        $game->setWinner($bank);
 
-        $game->evaluateBank();
+
+        $pot = $this->createMock(MoneyPot::class);
+        $pot->expects($this->once())
+                 ->method('moneyToWinner')
+                 ->with($this->equalTo($bank));
+
+        $game->setMoneyPot($pot);
         $game->endRound();
 
         $res = $game->getGameStatus();
@@ -160,7 +184,6 @@ class Game21EasyEndRoundTest extends TestCase
             'bankPlaying'=>false,
             'winner'=>'Bank',
             'cardsLeft'=>1,
-            'risk'=> '0 %',
             'finished'=>false,
             'currentRound'=>0,
             'moneyPot'=>0,

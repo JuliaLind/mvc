@@ -28,7 +28,6 @@ class Game21EasyTest extends TestCase
             'bankPlaying' => false,
             'winner' => '',
             'cardsLeft' => 52,
-            'risk'=> '0 %',
             'finished'=> false,
             'currentRound'=> 0,
             'moneyPot' => 0,
@@ -53,6 +52,10 @@ class Game21EasyTest extends TestCase
             ]
             ];
         $this->assertEquals($exp, $res);
+
+        $res = $game->getRisk();
+        $exp = '0 %';
+        $this->assertEquals($exp, $res);
     }
 
     /**
@@ -60,112 +63,92 @@ class Game21EasyTest extends TestCase
      */
     public function testDeal(): void
     {
-        $card = $this->createMock(CardGraphic::class);
-        $card->method('getIntValue')->willReturn(10);
-        $card->method('getAsString')->willReturn('mocked card');
-        $card->method('getImgLink')->willReturn('linkToMockedCard');
-
         $deck = $this->createMock(DeckOfCards::class);
-        $deck->method('draw')->willReturn($card);
+        $player = $this->createMock(Player21::class);
+        $player->expects($this->once())
+                ->method('draw')
+                ->with($this->equalTo($deck));
 
-        $game = new Game21Easy(new Player21('You'), $deck);
+        $game = new Game21Easy($player, $deck);
         $game->deal();
-        $res = $game->getPlayerData();
-        $exp = [
-                [
-                    'name' => 'Bank',
-                    'cards' => [],
-                    'money' => 100,
-                    'handValue' => 0,
-                ],
-                [
-                    'name' => 'You',
-                    'cards' => [[
-                        'link' => 'linkToMockedCard',
-                        'descr' => 'mocked card',
-                    ]],
-                    'money' => 100,
-                    'handValue' => 10,
-                ]
-            ];
+    }
+
+    /**
+     * Tests the dealBank method stops dealing when
+     * value in hand is 17 pr above
+     */
+    public function testDealBankCardsLeft(): void
+    {
+        $deck = $this->createMock(DeckOfCards::class);
+        $deck->method('getCardCount')->willReturn(1);
+
+        $player = $this->createMock(Player21::class);
+        $bank = $this->createMock(Player21::class);
+        $bank->method('handValue')->will($this->onConsecutiveCalls(0, 10, 16, 17, 19));
+
+        $bank->expects($this->exactly(3))
+                ->method('draw')
+                ->with($this->equalTo($deck));
+
+        $game = new Game21Easy($player, $deck);
+        $game->setBank($bank);
+        $game->dealBank();
+    }
+
+    /**
+     * Tests that dealBank method stops dealing when no
+     * cards left
+     */
+    public function testDealBankNoCardsLeft(): void
+    {
+        $deck = $this->createMock(DeckOfCards::class);
+        $player = $this->createMock(Player21::class);
+        $bank = $this->createMock(Player21::class);
+        $bank->method('handValue')->willReturn(10);
+        $deck->method('getCardCount')->will($this->onConsecutiveCalls(1, 0));
+        $bank->expects($this->once())
+                ->method('draw')
+                ->with($this->equalTo($deck));
+        $game = new Game21Easy($player, $deck);
+        $game->setBank($bank);
+        $game->dealBank();
+    }
+
+
+    /**
+     * Tests the getRisk() method that correct values are
+     * returned when player it's player's turn
+     */
+    public function testGetRiskPlayer(): void
+    {
+        $player = $this->createMock(Player21::class);
+        $player->method('estimateRisk')->willReturn(0.6758);
+        $game = new Game21Easy($player);
+        $res = $game->getRisk();
+        $exp = '67.58 %';
         $this->assertEquals($exp, $res);
     }
 
     /**
-     * Tests the dealBank method
+     * Tests the getRisk() method that correct values are
+     * returned when player it's bank's turn
      */
-    public function testDealBank(): void
+    public function testGetRiskBank(): void
     {
         $deck = $this->createMock(DeckOfCards::class);
-        $card = $this->createMock(CardGraphic::class);
-        $card2 = clone $card;
-        $card3 = clone $card;
-        $card4 = clone $card;
-        $card5 = clone $card;
-        $card6 = clone $card;
-        $card7 = clone $card;
-        $card->method('getIntValue')->willReturn(14);
-        $card2->method('getIntValue')->willReturn(3);
-        $card3->method('getIntValue')->willReturn(14);
-        $card4->method('getIntValue')->willReturn(14);
-        $card5->method('getIntValue')->willReturn(14);
-        $card6->method('getIntValue')->willReturn(3);
-        $card7->method('getIntValue')->willReturn(7);
+        $player = $this->createMock(Player21::class);
+        $bank = clone $player;
 
-        $deck->method('draw')->will($this->onConsecutiveCalls($card, $card2, $card3, $card4, $card5, $card6, $card7));
-        $deck->method('getCardCount')->will($this->onConsecutiveCalls(7, 6, 5, 4, 3, 2, 1, 0));
+        $player->method('estimateRisk')->willReturn(0.6758);
+        $bank->method('estimateRisk')->willReturn(0.3389);
 
-        $game = new Game21Easy(new Player21('You'), $deck);
-        $game->dealBank();
-        $res = $game->getPlayerData()[0]['handValue'];
-        $exp = 14 + 3;
+        $game = new Game21Easy($player, $deck);
+        $game->setBank($bank);
+        $game->setBankPlaying(true);
+
+        $res = $game->getRisk();
+        $exp = '33.89 %';
         $this->assertEquals($exp, $res);
-
-        $game = new Game21Easy(new Player21('You'), $deck);
-        $game->dealBank();
-        $res = $game->getPlayerData()[0]['handValue'];
-        $exp = 14 + 1 + 1 + 3;
-        $this->assertEquals($exp, $res);
-
-        $game = new Game21Easy(new Player21('You'), $deck);
-        $game->dealBank();
-        $res = $game->getPlayerData()[0]['handValue'];
-        $exp = 7;
-        $this->assertEquals($exp, $res);
-    }
-
-    /**
-     * Tests the nextRound method that properties are updated correctly
-     */
-    public function testNextRoundUpdates(): void
-    {
-        $game = new Game21Easy();
-        $game->deal();
-        $game->dealBank();
-
-        $playerData = $game->getPlayerData();
-        $gameStatus = $game->getGameStatus();
-
-
-        $bankHandValue = $playerData[0]['handValue'];
-        $playerHandValue = $playerData[1]['handValue'];
-        $this->assertGreaterThan(0, $bankHandValue);
-        $this->assertGreaterThan(0, $playerHandValue);
-        $this->assertTrue($gameStatus['bankPlaying']);
-
-        $game->nextRound();
-        $gameStatus = $game->getGameStatus();
-        $playerData = $game->getPlayerData();
-        $bankHandValue = $playerData[0]['handValue'];
-        $playerHandValue = $playerData[1]['handValue'];
-        $this->assertEquals(0, $bankHandValue);
-        $this->assertEquals(0, $playerHandValue);
-        $this->assertEquals(1, $gameStatus['currentRound']);
-        $this->assertFalse($gameStatus['bankPlaying']);
-
-        $game->nextRound();
-        $gameStatus = $game->getGameStatus();
-        $this->assertEquals(2, $gameStatus['currentRound']);
     }
 
     /**
@@ -187,5 +170,59 @@ class Game21EasyTest extends TestCase
         $this->assertEquals(2, $returned['round']);
         $this->assertEquals(80, $returned['money']);
         $this->assertEquals(80, $returned['limit']);
+    }
+
+    /**
+     * Tests the nextRound method that properties are updated correctly
+     */
+    public function testNextRoundUpdates(): void
+    {
+        $deck = $this->createMock(DeckOfCards::class);
+        $player = $this->createMock(Player21::class);
+        $player->method('getName')->willReturn("the player");
+
+        $bank = $this->createMock(Player21::class);
+        $player->expects($this->once())
+                ->method('emptyHand');
+        $bank->expects($this->once())
+                ->method('emptyHand');
+
+        $winner = $player;
+
+
+        $game = new Game21Easy($player, $deck);
+        $game->setBank($bank);
+        $game->setBankPlaying(true);
+        $game->setRoundOver(true);
+        $game->setWinner($winner);
+
+        $res = $game->getGameStatus();
+        $exp = [
+            'bankPlaying' => true,
+            'winner' => 'the player',
+            'cardsLeft' => 0,
+            'finished'=> false,
+            'currentRound'=> 0,
+            'moneyPot' => 0,
+            'roundOver' => true,
+            'level' => 'easy',
+        ];
+        $this->assertEquals($exp, $res);
+
+        $game->nextRound();
+
+        $res = $game->getGameStatus();
+        $exp = [
+            'bankPlaying' => false,
+            'winner' => '',
+            'cardsLeft' => 0,
+            'finished'=> false,
+            'currentRound'=> 1,
+            'moneyPot' => 0,
+            'roundOver' => false,
+            'level' => 'easy',
+        ];
+        $this->assertEquals($exp, $res);
+
     }
 }

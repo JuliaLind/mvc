@@ -4,6 +4,7 @@ namespace App\Game;
 
 use PHPUnit\Framework\TestCase;
 use App\Cards\CardGraphic;
+use App\Cards\CardHand;
 use App\Cards\DeckOfCards;
 
 /**
@@ -11,51 +12,16 @@ use App\Cards\DeckOfCards;
  */
 class Player21Test extends TestCase
 {
-    private Player21 $player;
-    private DeckOfCards $deck;
-
-    protected function setUp(): void
-    {
-        $this->player = new Player21();
-        $this->deck = $this->createMock(DeckOfCards::class);
-        $card = $this->createMock(CardGraphic::class);
-        $card2 = clone $card;
-        $card3 = clone $card;
-        $card4 = clone $card;
-        $card5 = clone $card;
-        $card6 = clone $card;
-        $card7 = clone $card;
-        $card->method('getIntValue')->willReturn(14);
-        $card2->method('getIntValue')->willReturn(14);
-        $card3->method('getIntValue')->willReturn(6);
-        $card4->method('getIntValue')->willReturn(14);
-        $card5->method('getIntValue')->willReturn(11);
-        $card6->method('getIntValue')->willReturn(13);
-        $card7->method('getIntValue')->willReturn(14);
-
-        $this->deck->method('draw')->will($this->onConsecutiveCalls($card, $card2, $card3, $card4, $card5, $card6, $card7));
-        $this->deck->method('getCardCount')->will($this->onConsecutiveCalls(6, 4, 3, 2, 1, 0));
-        $this->deck->method('getValues')->will(
-            $this->onConsecutiveCalls(
-                [ 14, 6, 14, 11, 13, 14 ],
-                [ 14, 11, 13, 14 ],
-                [ 11, 13, 14 ],
-                [ 13, 14 ],
-                [ 14 ]
-            )
-        );
-    }
-
     /**
      * Construct object and check that all metods return
      * expected properties
      */
     public function testCreateObject(): void
     {
-        // $player = new Player('Julia');
-        $this->assertInstanceOf("\App\Game\Player21", $this->player);
+        $player = new Player21();
+        $this->assertInstanceOf("\App\Game\Player21", $player);
 
-        $res = $this->player->getName();
+        $res = $player->getName();
         $exp = 'You';
         $this->assertEquals($exp, $res);
     }
@@ -67,12 +33,12 @@ class Player21Test extends TestCase
      */
     public function testHandValue(): void
     {
-        $loops = 3;
-        while (--$loops >= 0) {
-            $this->player->draw($this->deck);
-        }
+        $hand = $this->createMock(CardHand::class);
+        $hand->method('getValues')->willReturn([14, 14, 6]);
+        $player = new Player21('', $hand);
 
-        $res = $this->player->handValue();
+
+        $res = $player->handValue();
         $exp = 14 + 1 + 6;
         $this->assertEquals($exp, $res);
     }
@@ -83,12 +49,11 @@ class Player21Test extends TestCase
      */
     public function testMinHandValue(): void
     {
-        $loops = 3;
-        while (--$loops >= 0) {
-            $this->player->draw($this->deck);
-        }
+        $hand = $this->createMock(CardHand::class);
+        $hand->method('getValues')->willReturn([14, 14, 6]);
+        $player = new Player21('', $hand);
 
-        $res = $this->player->minHandValue();
+        $res = $player->minHandValue();
         $exp = 1 + 1 + 6;
         $this->assertEquals($exp, $res);
     }
@@ -98,39 +63,57 @@ class Player21Test extends TestCase
      */
     public function testEstimateRisk(): void
     {
-        $this->player->draw($this->deck);
-        $res = $this->player->estimateRisk($this->deck);
-        // min value of hand is 1 (14)
+        $hand = $this->createMock(CardHand::class);
+        $hand->method('getValues')->will(
+            $this->onConsecutiveCalls(
+                [14],
+                [14, 14, 6],
+                [14, 14, 6, 14],
+                [14, 14, 6, 14, 11],
+                [14, 14, 6, 14, 11, 13],
+            )
+        );
+
+        $deck = $this->createMock(DeckOfCards::class);
+        $deck->method('getCardCount')->will(
+            $this->onConsecutiveCalls(6, 4, 3, 2, 1, 0)
+        );
+
+        $deck->method('getValues')->will(
+            $this->onConsecutiveCalls(
+                [14, 6, 14, 11, 13, 14],
+                [14, 11, 13, 14],
+                [11, 13, 14],
+                [13, 14],
+                [14]
+            )
+        );
+
+        $player = new Player21('', $hand);
+        $res = $player->estimateRisk($deck);
         $exp = 0;
         $this->assertEquals($exp, $res);
 
-        $this->player->draw($this->deck);
-        $this->player->draw($this->deck);
-        $res = $this->player->estimateRisk($this->deck);
-        // min value of hand is 8 (14 + 14 + 6)
+
+        $res = $player->estimateRisk($deck);
         $exp = 0;
         $this->assertEquals($exp, $res);
 
-        $this->player->draw($this->deck);
-        $res = $this->player->estimateRisk($this->deck);
-        // min value of hand is 9 (14 + 14 + 6 + 14)
-        // left in deck is 11, 13, 14
+
+        $res = $player->estimateRisk($deck);
         $possibleCards = 3;
         $badCards = 1;
         $exp = $badCards/$possibleCards;
         $this->assertEquals($exp, $res);
 
-        $this->player->draw($this->deck);
-        $res = $this->player->estimateRisk($this->deck);
-        // min value of hand is 20
+
+        $res = $player->estimateRisk($deck);
         $possibleCards = 2;
         $badCards = 1;
         $exp = $badCards/$possibleCards;
         $this->assertEquals($exp, $res);
 
-        $this->player->draw($this->deck);
-        $res = $this->player->estimateRisk($this->deck);
-        // min value of hand is above 21
+        $res = $player->estimateRisk($deck);
         $exp = 1;
         $this->assertEquals($exp, $res);
     }

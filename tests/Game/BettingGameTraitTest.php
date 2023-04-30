@@ -47,52 +47,35 @@ class BettingGameTraitTest extends TestCase
     /**
      * Tests the addToMoneyPot method
      */
-    public function testAddToMoneyPotMockPlayers(): void
+    public function testAddToMoneyPotOk(): void
     {
-        $this->addToMoneyPot(30);
-        $res = $this->moneyPot->currentAmount();
-        $exp = 30;
-        $this->assertEquals($exp, $res);
+        $pot = $this->createMock(MoneyPot::class);
+        $pot->expects($this->once())
+            ->method('addMoney')
+            ->with($this->equalTo(10), $this->equalTo([$this->player, $this->bank]));
 
-        $this->addToMoneyPot(30);
-        $res = $this->moneyPot->currentAmount();
-        $exp = 50;
-        $this->assertEquals($exp, $res);
-
-        $this->addToMoneyPot(30);
-        $res = $this->moneyPot->currentAmount();
-        $exp = 50;
-        $this->assertEquals($exp, $res);
-    }
-
-    /**
-     * Tests the addToMoneyPot method with amount at limit
-     */
-    public function testAddToMoneyPotActualPlayersOk(): void
-    {
-        $this->bank = new Player21();
-        $this->bank->incrMoney(130);
-        $this->player = new Player21();
-        $this->player->incrMoney(50);
-
-        $this->addToMoneyPot(50);
-        $res = $this->moneyPot->currentAmount();
-        $exp = 100;
-        $this->assertEquals($exp, $res);
+        $this->moneyPot = $pot;
+        $this->addToMoneyPot(10);
     }
 
     /**
      * Tests the addToMoneyPot method with amount higher than limit
      */
-    public function testAddToMoneyPotActualPlayersNotOk(): void
+    public function testAddToMoneyPotNotOk(): void
     {
-        $this->bank = new Player21();
-        $this->bank->incrMoney(130);
-        $this->player = new Player21();
-        $this->player->incrMoney(50);
-        $this->addToMoneyPot(130);
-        $res = $this->moneyPot->currentAmount();
-        $exp = 100;
-        $this->assertEquals($exp, $res);
+        $pot = $this->createMock(MoneyPot::class);
+        $pot->expects($this->once())
+            ->method('addMoney')
+            ->with($this->equalTo(15), $this->equalTo([$this->player, $this->bank]));
+
+        $this->moneyPot = $pot;
+        $this->addToMoneyPot(25);
+
+        $pot = $this->createMock(MoneyPot::class);
+        $pot->expects($this->once())
+            ->method('addMoney')
+            ->with($this->equalTo(10), $this->equalTo([$this->player, $this->bank]));
+        $this->moneyPot = $pot;
+        $this->addToMoneyPot(35);
     }
 }

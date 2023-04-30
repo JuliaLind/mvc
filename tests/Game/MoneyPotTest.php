@@ -52,15 +52,12 @@ class MoneyPotTest extends TestCase
     {
         $player = $this->createMock(Player::class);
         $player->method('decrMoney')->willReturn(30);
-
         $this->moneyPot->addMoney(30, [$player, $player, $player]);
 
-        $player = new Player('');
+        $player->expects($this->once())
+        ->method('incrMoney')
+        ->with($this->equalTo(90));
         $this->moneyPot->moneyToWinner($player);
-
-        $res = $player->getMoney();
-        $exp = 90;
-        $this->assertEquals($exp, $res);
 
         $res = $this->moneyPot->currentAmount();
         $exp = 0;
