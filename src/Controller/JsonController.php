@@ -277,11 +277,14 @@ class JsonController extends AbstractController
         $game = $session->get("game21") ?? null;
         if ($game != null) {
             $gameStatus = $game->getGameStatus();
+            $gameStatus['risk'] = $game->getRisk();
         }
 
         $data = [
+            'players' => $game->getPlayerData(),
             'status' => $gameStatus,
         ];
+
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT

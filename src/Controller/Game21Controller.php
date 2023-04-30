@@ -192,12 +192,15 @@ class Game21Controller extends AbstractController
          * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
+
         $pageData = [
+            'players' => $game->getPlayerData(),
+            'risk'=> $game->getRisk(),
             'page' => "game no-header card",
             'url' => "/game",
             'title' => 'Game 21'
         ];
-        $data = array_merge($game->getPlayerData(), $game->getGameStatus(), $pageData);
+        $data = array_merge($game->getGameStatus(), $pageData);
         return $this->render('game21/draw.html.twig', $data);
     }
 }
