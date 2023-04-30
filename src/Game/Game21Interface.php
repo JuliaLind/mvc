@@ -84,4 +84,11 @@ interface Game21Interface
      * @return void
      */
     public function endRound();
+
+    /**
+     * Returns the risk as string for the currently playing
+     * party
+     * @return string
+     */
+    public function getRisk();
 }

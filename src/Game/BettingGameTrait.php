@@ -4,6 +4,10 @@ namespace App\Game;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
+/**
+ * Trait to be used in betting games
+ * between a player and a bank
+ */
 trait BettingGameTrait
 {
     protected MoneyPot $moneyPot;

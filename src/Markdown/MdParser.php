@@ -4,6 +4,11 @@ namespace App\Markdown;
 
 use Anax\TextFilter\TextFilter;
 
+/**
+ * Class that reads content from a markdown file and
+ * uses TextFilter class to return the content coverted
+ * to html
+ */
 class MdParser
 {
     private string $parsedText;

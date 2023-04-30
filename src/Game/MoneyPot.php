@@ -33,7 +33,7 @@ class MoneyPot
      */
     public function moneyToWinner(Player $winner): void
     {
-        $winner->incrMoney($this->money);
+        $winner->incrMoney($this->currentAmount());
         $this->money = 0;
     }
 

@@ -3,6 +3,7 @@
 namespace App\Game;
 
 use App\Cards\DeckOfCards;
+use App\Cards\CardHand;
 
 /**
  * Class representing a Player in the 21 game
@@ -18,9 +19,9 @@ class Player21 extends Player
      * Constructor
      * @param string $name - Name of the player, defaults to 'You'
      */
-    public function __construct(string $name="You")
+    public function __construct(string $name="You", CardHand $hand=new CardHand())
     {
-        parent::__construct($name);
+        parent::__construct($name, $hand);
     }
 
     /**

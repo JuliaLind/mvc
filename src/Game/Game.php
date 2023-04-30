@@ -4,6 +4,9 @@ namespace App\Game;
 
 use App\Cards\DeckOfCards;
 
+/**
+ * Base class for a card game
+ */
 class Game
 {
     /**
@@ -11,17 +14,17 @@ class Game
      * @var bool $finished inidicator if the whole game is finished
      */
     protected DeckOfCards $deck;
-    protected bool $finished;
+    protected bool $finished=false;
 
     /**
      * Constructor
      * @param DeckOfCards $deck
      */
-    public function __construct(DeckOfCards $deck)
+    public function __construct(DeckOfCards $deck=new DeckOfCards())
     {
         $this->deck = $deck;
         $this->deck->shuffle();
-        $this->finished = false;
+        // $this->finished = false;
     }
 
     /**

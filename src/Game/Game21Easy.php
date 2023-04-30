@@ -12,6 +12,7 @@ use App\Cards\DeckOfCards;
 class Game21Easy extends Game implements Game21Interface
 {
     use BettingGameTrait;
+    use GameTestingTrait;
 
     /**
      * @var int $GOAL the goal points to reach.
@@ -34,14 +35,13 @@ class Game21Easy extends Game implements Game21Interface
      *
      * @param Player21 $player
      * @param DeckOfCards $deck
-     * @param Player21 $bank
      */
-    public function __construct(Player21 $player=new Player21(), DeckOfCards $deck=new DeckOfCards(), Player21 $bank=new Player21('Bank'))
+    public function __construct(Player21 $player=new Player21(), DeckOfCards $deck=new DeckOfCards())
     {
         parent::__construct($deck);
 
         $this->player = $player;
-        $this->bank = $bank;
+        $this->bank = new Player21('Bank');
 
         $startingMoney = 100;
         $this->player->incrMoney($startingMoney);
@@ -64,6 +64,17 @@ class Game21Easy extends Game implements Game21Interface
     }
 
     /**
+     * Returns the risk of getting "fat" with
+     * next card for currently playing party - player or bank
+     * @return string
+     */
+    public function getRisk(): string
+    {
+        $risk = strVal(round($this->currentPlayer()->estimateRisk($this->deck) * 100, 2));
+        return $risk . ' %';
+    }
+
+    /**
      * Increases number of currenRound attribute by 1
      * and resets for next round.
      * Returns an associative array with investment
@@ -77,6 +88,7 @@ class Game21Easy extends Game implements Game21Interface
         $this->bankPlaying = false;
         $this->player->emptyHand();
         $this->bank->emptyHand();
+        $this->winner = null;
 
         $nextRoundData = [
             'limit' => $this->getInvestLimit(),
@@ -118,7 +130,6 @@ class Game21Easy extends Game implements Game21Interface
             return;
         }
         $this->winner = $winner;
-        $this->roundOver = true;
     }
 
     /**
@@ -164,7 +175,6 @@ class Game21Easy extends Game implements Game21Interface
         }
 
         $this->winner = $winner;
-        $this->roundOver = true;
     }
 
     /**
@@ -179,6 +189,7 @@ class Game21Easy extends Game implements Game21Interface
         $winner = $this->winner;
 
         if ($winner) {
+            $this->roundOver = true;
             $this->moneyPot->moneyToWinner($winner);
 
             if (($this->getInvestLimit() === 0 && $this->moneyPot->currentAmount() === 0) || $this->cardsLeft() === 0) {
@@ -256,7 +267,6 @@ class Game21Easy extends Game implements Game21Interface
      */
     public function getGameStatus(): array
     {
-        $risk = strVal(round($this->currentPlayer()->estimateRisk($this->deck) * 100, 2));
         $winner = "";
         if ($this->winner) {
             $winner = $this->winner->getName();
@@ -266,7 +276,6 @@ class Game21Easy extends Game implements Game21Interface
             'bankPlaying'=>$this->bankPlaying,
             'winner'=>$winner,
             'cardsLeft'=>$this->cardsLeft(),
-            'risk'=> $risk . ' %',
             'finished'=>$this->finished,
             'currentRound'=>$this->currentRound,
             'moneyPot'=>$this->moneyPot->currentAmount(),
