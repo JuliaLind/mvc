@@ -156,6 +156,11 @@ Search.appendIndex(
             "summary": "Randomly\u0020shuffles\u0020the\u0020ramining\u0020cards\u0020in\u0020the\u0020deck",
             "url": "classes/App-Cards-DeckOfCards.html#method_shuffle"
         },                {
+            "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003AsetCards\u0028\u0029",
+            "name": "setCards",
+            "summary": "Use\u0020for\u0020testing\u0020purposes,\u0020sests\u0020a\u0020custom\ncard\u0020array\u0020to\u0020the\u0020cards\u002Dattribute",
+            "url": "classes/App-Cards-DeckOfCards.html#method_setCards"
+        },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003A\u0024cards",
             "name": "cards",
             "summary": "",
@@ -373,12 +378,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Exceptions\\NoCardsLeftException",
             "name": "NoCardsLeftException",
-            "summary": "Exception\u0020class\u0020for\u0020Game",
+            "summary": "Exception\u0020class\u0020thown\u0020when\u0020there\u0020are\u0020no\u0020cards\nleft\u0020do\u0020draw",
             "url": "classes/App-Exceptions-NoCardsLeftException.html"
         },                {
             "fqsen": "\\App\\Game\\BettingGameTrait",
             "name": "BettingGameTrait",
-            "summary": "",
+            "summary": "Trait\u0020to\u0020be\u0020used\u0020in\u0020betting\u0020games\nbetween\u0020a\u0020player\u0020and\u0020a\u0020bank",
             "url": "classes/App-Game-BettingGameTrait.html"
         },                {
             "fqsen": "\\App\\Game\\BettingGameTrait\u003A\u003AgetInvestLimit\u0028\u0029",
@@ -408,7 +413,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Game",
             "name": "Game",
-            "summary": "",
+            "summary": "Base\u0020class\u0020for\u0020a\u0020card\u0020game",
             "url": "classes/App-Game-Game.html"
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003A__construct\u0028\u0029",
@@ -450,6 +455,11 @@ Search.appendIndex(
             "name": "currentPlayer",
             "summary": "Returns\u0020the\u0020currently\u0020playing\u0020party\u0020\u002D\u0020player\u0020or\u0020bank",
             "url": "classes/App-Game-Game21Easy.html#method_currentPlayer"
+        },                {
+            "fqsen": "\\App\\Game\\Game21Easy\u003A\u003AgetRisk\u0028\u0029",
+            "name": "getRisk",
+            "summary": "Returns\u0020the\u0020risk\u0020of\u0020getting\u0020\u0022fat\u0022\u0020with\nnext\u0020card\u0020for\u0020currently\u0020playing\u0020party\u0020\u002D\u0020player\u0020or\u0020bank",
+            "url": "classes/App-Game-Game21Easy.html#method_getRisk"
         },                {
             "fqsen": "\\App\\Game\\Game21Easy\u003A\u003AnextRound\u0028\u0029",
             "name": "nextRound",
@@ -606,6 +616,11 @@ Search.appendIndex(
             "summary": "Ends\u0020current\u0020round",
             "url": "classes/App-Game-Game21Interface.html#method_endRound"
         },                {
+            "fqsen": "\\App\\Game\\Game21Interface\u003A\u003AgetRisk\u0028\u0029",
+            "name": "getRisk",
+            "summary": "Returns\u0020the\u0020risk\u0020as\u0020string\u0020for\u0020the\u0020currently\u0020playing\nparty",
+            "url": "classes/App-Game-Game21Interface.html#method_getRisk"
+        },                {
             "fqsen": "\\App\\Game\\MoneyPot",
             "name": "MoneyPot",
             "summary": "Class\u0020representing\u0020a\u0020money\u0020pot",
@@ -743,7 +758,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Markdown\\MdParser",
             "name": "MdParser",
-            "summary": "",
+            "summary": "Class\u0020that\u0020reads\u0020content\u0020from\u0020a\u0020markdown\u0020file\u0020and\nuses\u0020TextFilter\u0020class\u0020to\u0020return\u0020the\u0020content\u0020coverted\nto\u0020html",
             "url": "classes/App-Markdown-MdParser.html"
         },                {
             "fqsen": "\\App\\Markdown\\MdParser\u003A\u003A__construct\u0028\u0029",
@@ -760,6 +775,81 @@ Search.appendIndex(
             "name": "parsedText",
             "summary": "",
             "url": "classes/App-Markdown-MdParser.html#property_parsedText"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait",
+            "name": "GameTestingTrait",
+            "summary": "Trait\u0020has\u0020setter\u0020and\u0020getter\u0020methods\nto\u0020facilitate\u0020testing\u0020of\u0020the\u0020Game21Easy\nand\u0020Game21Hard\u0020classes",
+            "url": "classes/App-Game-GameTestingTrait.html"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AsetMoneyPot\u0028\u0029",
+            "name": "setMoneyPot",
+            "summary": "Setter\u0020method\u0020for\u0020moneypot",
+            "url": "classes/App-Game-GameTestingTrait.html#method_setMoneyPot"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AsetBank\u0028\u0029",
+            "name": "setBank",
+            "summary": "Setter\u0020method\u0020for\u0020bank",
+            "url": "classes/App-Game-GameTestingTrait.html#method_setBank"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AsetWinner\u0028\u0029",
+            "name": "setWinner",
+            "summary": "Setter\u0020method\u0020for\u0020winner",
+            "url": "classes/App-Game-GameTestingTrait.html#method_setWinner"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AgetWinner\u0028\u0029",
+            "name": "getWinner",
+            "summary": "Getter\u0020method\u0020for\u0020winner",
+            "url": "classes/App-Game-GameTestingTrait.html#method_getWinner"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AsetRoundOver\u0028\u0029",
+            "name": "setRoundOver",
+            "summary": "Setter\u0020method\u0020for\u0020roundOver",
+            "url": "classes/App-Game-GameTestingTrait.html#method_setRoundOver"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AisRoundOver\u0028\u0029",
+            "name": "isRoundOver",
+            "summary": "Getter\u0020method\u0020for\u0020roundOver",
+            "url": "classes/App-Game-GameTestingTrait.html#method_isRoundOver"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AisBankPlaying\u0028\u0029",
+            "name": "isBankPlaying",
+            "summary": "Getter\u0020method\u0020for\u0020bankPlaying",
+            "url": "classes/App-Game-GameTestingTrait.html#method_isBankPlaying"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AsetBankPlaying\u0028\u0029",
+            "name": "setBankPlaying",
+            "summary": "Setter\u0020method\u0020for\u0020bankPlaying",
+            "url": "classes/App-Game-GameTestingTrait.html#method_setBankPlaying"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AsetFinished\u0028\u0029",
+            "name": "setFinished",
+            "summary": "Setter\u0020method\u0020for\u0020finished",
+            "url": "classes/App-Game-GameTestingTrait.html#method_setFinished"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003A\u0024bank",
+            "name": "bank",
+            "summary": "",
+            "url": "classes/App-Game-GameTestingTrait.html#property_bank"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003A\u0024winner",
+            "name": "winner",
+            "summary": "",
+            "url": "classes/App-Game-GameTestingTrait.html#property_winner"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003A\u0024roundOver",
+            "name": "roundOver",
+            "summary": "",
+            "url": "classes/App-Game-GameTestingTrait.html#property_roundOver"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003A\u0024bankPlaying",
+            "name": "bankPlaying",
+            "summary": "",
+            "url": "classes/App-Game-GameTestingTrait.html#property_bankPlaying"
+        },                {
+            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003A\u0024finished",
+            "name": "finished",
+            "summary": "",
+            "url": "classes/App-Game-GameTestingTrait.html#property_finished"
         },                {
             "fqsen": "\\",
             "name": "\\",
