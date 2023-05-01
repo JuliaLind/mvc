@@ -29,12 +29,11 @@ class PlayerTest extends TestCase
         $this->assertEquals($exp, $res);
 
         $res = $this->player->showHandGraphic();
-        $exp = [];
-        $this->assertEquals($exp, $res);
+        $this->assertEmpty($res);
+        ;
 
         $res = $this->player->showHandAsString();
-        $exp = [];
-        $this->assertEquals($exp, $res);
+        $this->assertEmpty($res);
     }
 
     /**
@@ -43,26 +42,18 @@ class PlayerTest extends TestCase
      */
     public function testDrawOk(): void
     {
-        $card = $this->createMock(CardGraphic::class);
-        $card->method('getAsString')->willReturn('I am a mock');
-        $card->method('getImgLink')->willReturn('linkToMock');
-
+        # arrange
         $deck = $this->createMock(DeckOfCards::class);
-        $deck->method('draw')->willReturn($card);
+        $hand = $this->createMock(CardHand::class);
+        $player = new Player('', $hand);
 
+        #assert
+        $hand->expects($this->once())
+                ->method('add')
+                ->with($this->equalTo($deck), $this->equalTo(1));
 
-        $this->player->draw($deck);
-
-        $res = $this->player->showHandAsString();
-        $exp = ['I am a mock'];
-        $this->assertEquals($exp, $res);
-
-        $res = $this->player->showHandGraphic();
-        $exp = [[
-            'link'=>'linkToMock',
-            'descr'=>'I am a mock',
-        ]];
-        $this->assertEquals($exp, $res);
+        #act
+        $player->draw($deck);
     }
 
     /**
@@ -70,33 +61,18 @@ class PlayerTest extends TestCase
      */
     public function testDrawManyOk(): void
     {
-
-        $cardMocks = [];
-        $exp1 = [];
-        $exp2 = [];
-
-        for ($i = 1; $i <= 5; $i++) {
-            $card = $this->createMock(CardGraphic::class);
-            $card->method('getAsString')->willReturn("mock {$i}");
-            $card->method('getImgLink')->willReturn("linkToMock{$i}");
-            $cardMocks[] = $card;
-
-            $exp1[] = "mock {$i}";
-            $exp2[] = [
-                'link'=>"linkToMock{$i}",
-                'descr'=>"mock {$i}",
-            ];
-        }
-
+        # Arrange
         $deck = $this->createMock(DeckOfCards::class);
-        $deck->method('draw')->will($this->onConsecutiveCalls(...$cardMocks));
-        $this->player->drawMany($deck, 5);
+        $hand = $this->createMock(CardHand::class);
+        $player = new Player('', $hand);
 
-        $res = $this->player->showHandAsString();
-        $this->assertEquals($exp1, $res);
+        # Assert
+        $hand->expects($this->once())
+            ->method('add')
+            ->with($this->equalTo($deck), $this->equalTo(5));
 
-        $res = $this->player->showHandGraphic();
-        $this->assertEquals($exp2, $res);
+        # Act
+        $player->drawMany($deck, 5);
     }
 
     /**
@@ -106,23 +82,18 @@ class PlayerTest extends TestCase
     public function testDrawManyNotOk(): void
     {
         $card = $this->createMock(CardGraphic::class);
-        $card->method('getAsString')->willReturn('I am a mock');
-        $card->method('getImgLink')->willReturn('linkToMock');
+
 
         $deck = $this->createMock(DeckOfCards::class);
-        $deck->method('draw')->will($this->onConsecutiveCalls($card, $this->throwException(new NoCardsLeftException()), $this->throwException(new NoCardsLeftException()), $this->throwException(new NoCardsLeftException()), $this->throwException(new NoCardsLeftException())));
+        $deck->method('draw')->will($this->onConsecutiveCalls($card, $this->throwException(new NoCardsLeftException())));
+        $hand = $this->createMock(CardHand::class);
+        $player = new Player('', $hand);
 
-        $this->player->drawMany($deck, 5);
+        # Assert
+        $hand->expects($this->once())
+            ->method('add')
+            ->with($this->equalTo($deck), $this->equalTo(5));
 
-        $res = $this->player->showHandGraphic();
-        $exp = [[
-            'link'=>"linkToMock",
-            'descr'=>"I am a mock",
-        ]];
-        $this->assertEquals($exp, $res);
-
-        $res = $this->player->showHandAsString();
-        $exp = ["I am a mock"];
-        $this->assertEquals($exp, $res);
+        $player->drawMany($deck, 5);
     }
 }

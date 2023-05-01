@@ -32,6 +32,9 @@ class DeckOfCardsTest extends TestCase
             }
         }
         $this->assertEquals($exp, $res);
+
+        $card = $deck->draw();
+        $this->assertInstanceOf("\App\Cards\CardGraphic", $card);
     }
 
     /**
@@ -39,10 +42,19 @@ class DeckOfCardsTest extends TestCase
      */
     public function testDrawOk(): void
     {
+        # Arrange
         $deck = new DeckOfCards();
+        $card = $this->createMock(CardGraphic::class);
+        $card2 = $this->createMock(CardGraphic::class);
+        $card3 = $this->createMock(CardGraphic::class);
+        $deck->setCards([$card, $card2, $card3]);
+
+        # Act
         $res = $deck->draw();
-        $exp = new CardGraphic('S', 'A');
-        $this->assertEquals($exp, $res);
+
+        #Assert
+        $exp = $card3;
+        $this->assertSame($exp, $res);
     }
 
     /**
@@ -72,11 +84,12 @@ class DeckOfCardsTest extends TestCase
     public function testCardCountOk(): void
     {
         $deck = new DeckOfCards();
-        $loops = 7;
-        while (--$loops >= 0) {
-            $deck->draw();
-        }
-        $exp = 45;
+        $card = $this->createMock(CardGraphic::class);
+        $card2 = $this->createMock(CardGraphic::class);
+        $card3 = $this->createMock(CardGraphic::class);
+        $deck->setCards([$card, $card2, $card3]);
+
+        $exp = 3;
         $res = $deck->getCardCount();
         $this->assertEquals($exp, $res);
     }
@@ -87,18 +100,23 @@ class DeckOfCardsTest extends TestCase
      */
     public function testGetAsStringOk(): void
     {
+        # Arrange
         $deck = new DeckOfCards();
-        $exp = [];
-        foreach ([' Diamonds', ' Hearts', ' Clubs', ' Spades'] as $suit) {
-            for ($i = 2; $i <= 10; $i++) {
-                $exp[] = strval($i) . $suit;
-            }
-            foreach (['Jack', 'Queen', 'King', 'Ace'] as $rank) {
-                $exp[] = $rank . $suit;
-            }
+        $cardMocks = [];
+        $count = 5;
+        while (--$count >= 0) {
+            $card = $this->createMock(CardGraphic::class);
+
+            # Assert
+            $card->expects($this->once())
+                ->method('getAsString');
+
+            $cardMocks[] = $card;
         }
-        $res = $deck->getAsString();
-        $this->assertEquals($exp, $res);
+        $deck->setCards($cardMocks);
+
+        # Act
+        $deck->getAsString();
     }
 
     /**
@@ -108,13 +126,14 @@ class DeckOfCardsTest extends TestCase
     public function testGetAsStringNotOk(): void
     {
         $deck = new DeckOfCards();
+
         $loops = 52;
         while (--$loops >= 0) {
             $deck->draw();
         }
-        $exp = [];
+
         $res = $deck->getAsString();
-        $this->assertEquals($exp, $res);
+        $this->assertEmpty($res);
     }
 
     /**
@@ -123,18 +142,24 @@ class DeckOfCardsTest extends TestCase
      */
     public function testGetImgLinksOk(): void
     {
+        # Arrange
         $deck = new DeckOfCards();
-        $exp = [];
-        foreach (['D', 'H', 'C', 'S'] as $suit) {
-            for ($i = 2; $i <= 10; $i++) {
-                $exp[] = "img/cards/" . strval($i) . $suit . ".svg";
-            }
-            foreach (['J', 'Q', 'K', 'A'] as $rank) {
-                $exp[] = "img/cards/" . $rank . $suit . ".svg";
-            }
+        $cardMocks = [];
+        $count = 5;
+        while (--$count >= 0) {
+            $card = $this->createMock(CardGraphic::class);
+
+            # Assert
+            $card->expects($this->once())
+                ->method('getImgLink');
+
+            $cardMocks[] = $card;
         }
-        $res = $deck->getImgLinks();
-        $this->assertEquals($exp, $res);
+        $deck->setCards($cardMocks);
+
+        # Act
+        $deck->getImgLinks();
+
     }
 
     /**
@@ -148,9 +173,9 @@ class DeckOfCardsTest extends TestCase
         while (--$loops >= 0) {
             $deck->draw();
         }
-        $exp = [];
+
         $res = $deck->getImgLinks();
-        $this->assertEquals($exp, $res);
+        $this->assertEmpty($res);
     }
 
     /**

@@ -36,13 +36,11 @@ class PlayerTest extends TestCase
 
         # Assert
         $res = $this->player->showHandGraphic();
-        $exp = [];
-        $this->assertEquals($exp, $res);
+        $this->assertEmpty($res);
 
         # Assert
         $res = $this->player->showHandAsString();
-        $exp = [];
-        $this->assertEquals($exp, $res);
+        $this->assertEmpty($res);
 
         # Assert
         $res = $this->player->getMoney();
@@ -56,8 +54,7 @@ class PlayerTest extends TestCase
 
         # Assert
         $res = $this->player->getCardValues();
-        $exp = [];
-        $this->assertEquals($exp, $res);
+        $this->assertEmpty($res);
     }
 
     /**

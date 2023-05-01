@@ -105,6 +105,18 @@ class DeckOfCards
         shuffle($this->cards);
     }
 
+    /**
+     * Use for testing purposes, sests a custom
+     * card array to the cards-attribute
+     *
+     * @param array<CardGraphic> $cards
+     * @return void
+     */
+    public function setCards(array $cards): void
+    {
+        $this->cards = $cards;
+    }
+
     // public function sortByColor(): void
     // {
     //     usort($this->card, fn ($card1, $card2) => strcmp($card1->getColor(), $card2->getColor()));
