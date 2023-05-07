@@ -8,6 +8,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\BookRepository;
+
 // use Symfony\Component\Validator\Constraints\DateTime;
 use Datetime;
 
@@ -72,6 +74,16 @@ class JsonController extends AbstractController
                     'link' => "jsonGame",
                     'descr' => "Shows current status of game 21",
                     'method' => 'GET',
+                ],
+                [
+                    'link' => "books_json",
+                    'descr' => "Shows all books in the library",
+                    'method' => '',
+                ],
+                [
+                    'link' => "single_book_json",
+                    'descr' => "Shows one book in the library",
+                    'method' => '',
                 ],
             ],
         ];
@@ -290,5 +302,33 @@ class JsonController extends AbstractController
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
         return $response;
+    }
+
+    /**
+     * Displays all books in the library
+     */
+    #[Route('/api/library/books', name: "books_json")]
+    public function showAllBooks(
+        BookRepository $bookRepository
+    ): Response {
+        $books = $bookRepository
+            ->findAll();
+
+        $response = $this->json($books);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route('api/library/book/{isbn}', name: 'single_book_json')]
+    public function showProductById(
+        BookRepository $bookRepository,
+        string $isbn
+    ): Response {
+        $book = $bookRepository
+            ->findOneByIsbn($isbn);
+
+        return $this->json($book);
     }
 }

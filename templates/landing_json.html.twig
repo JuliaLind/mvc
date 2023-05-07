@@ -21,8 +21,10 @@
                 <input type="submit" value={{ path(route.link) }}>
             {% endif %}
         </form>
+        {% elseif route.link == "single_book_json" %}
+            <a href="{{ path(route.link, {isbn: "9781492053514"}) }}">{{ path(route.link, {isbn: "9781492053514"}) }}</a>
         {% else %}
-        <a href="{{ path(route.link) }}">{{ path(route.link) }}</a>
+            <a href="{{ path(route.link) }}">{{ path(route.link) }}</a>
         {% endif %}
         </td><td>{{ route.descr }}</td>
     </tr>

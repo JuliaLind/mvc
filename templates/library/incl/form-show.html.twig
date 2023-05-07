@@ -1,0 +1,55 @@
+<h1>Detaljer för bok '{{ book.title }}'</h1>
+
+{{ include('flash.html.twig') }}
+
+<div class="container">
+    <a class="close" href="{{ path('read_many') }}">&times;</a>
+    <div class="flex-row">
+    <div class="image-container">
+    <img src="{{ book.img }}" alt="Bild på bok '{{ book.title }}'" id="photo">
+    </div>
+        <form method="post" action="{{ path('book_delete_by_isbn', {isbn: book.isbn}) }}">
+            <div class="inputbox">
+            <input id="title" name="title" type="text" required="required" minlength="1" maxlength="255" readonly="readonly" value="{{ book.title }}" class="is-filled">
+            <span>Titel</span>
+            </div>
+
+            <div class="inputbox">
+            <input id="isbn" name="isbn" type="text" required="required" maxlength="13" required pattern="[0-9]{13}" value="{{ book.isbn }}" readonly="readonly" class="is-filled">
+            <span>ISBN</span>
+            </div>
+
+            <div class="inputbox">
+            <input id="author" name="author" type="text" required="required" minlength="1" maxlength="255" value="{{ book.author }}" readonly="readonly" class="is-filled">
+            <span>Författare</span>
+            </div>
+
+            <div class="inputbox">
+            <input id="image" name="image" type="url" required="required" minlength="1" maxlength="255" value="{{ book.img }}" readonly="readonly" class="is-filled">
+            <span>Url länk till bild</span>
+            </div>
+
+            <a class="btn" href="{{ path('update_form', {isbn: book.isbn}) }}">Redigera</a>
+            <input type="submit" class="btn alternative" value="Radera" name="do">
+
+        </form>
+    </div>
+  </div>
+
+<span display="hidden" id="placeholder-img">{{ asset('img/placeholder.png') }}</span>
+
+<script>
+const placeholder = document.getElementById("placeholder-img");
+const imagePath = placeholder.innerText;
+placeholder.remove();
+const image = document.getElementById('photo');
+
+
+image.addEventListener('error', function handleError() {
+    image.src = imagePath;
+    image.alt = 'placeholder image';
+});
+
+
+
+</script>

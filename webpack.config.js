@@ -14,6 +14,9 @@ Encore
     // only needed for CDN's or subdirectory deploy
     //.setManifestKeyPrefix('build/')
 
+    // for talewindcss - added 20230505/JL
+    .enablePostCssLoader()
+
     /*
      * ENTRY CONFIG
      *

@@ -7,4 +7,7 @@
     /* --magic-number: 1.4rem; */
     --magic-number: calc(1.4 * 1.1rem);
     --almost-white: #f2f2f2;
+
+    --right-light-clear: #bf6d65a8;
+    --left-dark-clear: #78bf96a6;
 }
