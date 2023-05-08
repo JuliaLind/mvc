@@ -107,7 +107,8 @@
     /* width: 200px;
     height: 264px; */
     object-fit: contain;
-    padding: 2em;
+    /* padding: 2em; */
+    border: 1px solid rgba(0,0,0,0.1);
 }
 
 .container .close {
