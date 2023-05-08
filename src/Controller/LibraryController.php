@@ -166,12 +166,13 @@ class LibraryController extends AbstractController
     /**
      * Deletes a book
      */
-    #[Route('/library/delete', name: 'book_delete_by_isbn', methods: ['POST'])]
+    #[Route('/library/delete/{isbn}', name: 'book_delete_by_isbn', methods: ['POST'])]
     public function deleteBookByIsbn(
-        Request $request,
+        // Request $request,
+        string $isbn,
         BookRepository $bookRepository,
     ): Response {
-        $isbn = strval($request->get('isbn'));
+        // $isbn = strval($request->get('isbn'));
         /**
          * @var Book $book
          */
