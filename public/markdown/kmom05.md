@@ -63,3 +63,5 @@ Veckans TIL är:
 
 2. Att man kan göra om objekt till Array och skicka in den arrayen i twig template - det ger tydligen möjlighet att läsa av värden även på privata attribut utan getters. Varför har jag inte känt till detta i tidigare kursmoment? Skulle sparat både kodrader och tid :) 
 
+3. Plocka bort pointer-events med hjälp av css för att objekt som är framför interaktiva element inte hindrar dessa från att bli klickade
+
