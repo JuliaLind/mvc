@@ -39,7 +39,7 @@ Nackdelen med att jobba via Symfony gav sig som sagt till känna när jag skulle
 
 1. dumpa innehållet till sql fil och läsa in från den  
 
-2.  kopiera databasen till annan db fil och läsa in data från den.  
+2.  kopiera databasen till annan db fil och restora data från den.  
 
 3. Skriva ner all SQL som behövs för att återskapa databasen och läsa in den  
 
@@ -50,7 +50,7 @@ Till slut så hittade jag (eller rättare sagt googlade mig till) hur man kan h�
 
 Jag är inte helt säker på varför dessa kommandon inte fungerade men misstänker att detta har att göra med "connection" som jag använt mig av eftersom lintern klagade över det också, men det var det enda sättet som jag kunde hitta och det var som sagt otroligt svårt att försöka förstå sig på den omfattande underliggande koden för att på egen hand hitta vad jag behöver göra annorlunda.
 
-Hur som helst så fick jag motvilligt använda mig utav det tredje alternativet och dessutom hårdkoda in datan som skulle in i tabellerna istället för att läsa in från csv.
+Hur som helst så fick jag motvilligt använda mig utav det tredje alternativet och dessutom hårdkoda in datan som skulle in i tabellerna istället för att läsa in från csv. Iochmed att jag ändå kunde bestämma vilka delar som skulle vara i SQL filen (istället för om jag skulle återställt hela databasen från backup fil) så har jag valt att filen enbart innehåller det som behövs för att reseta book-tabellen, inga andra tabeller som finns i databasen (i nuläget "product-tabellen" från övningen) kommer att påverkas - vilket iofs kan vara en fördel.
 
 En annan svårighet som jag upplevde var att jag i samband med framförallt den autogenererade koden, men även koden som kom från instruktionerna, fick en massa fel i linterna. Dessa fel tyckte jag var mycket svårare att förstå och jag hade inte heller tiden att sätta mig in i så jag har valt att kommentera bort stora delar av felaktigheterna i phpstan och i phpmd, men det tog emot att göra så eftersom det känns lite som att fuska - jag vill ju egentligen att min kod ska vara "ren" på riktigt, inte bara dölja delar som inte är ok.  Med det sagt så tycker inte jag att lintern alltid har rätt kring vad som är snygg kod - detta med korta variabelnamn är exemeplvis ett konstigt påpekande iochmed att även korta namn såsom "id" kan vara beskrivande och att det känns vettigt att döpa variabeln/attributet "id" och inte "bookId" om det är ett attribut i Book-klassen eftersom det är underförstått att id:t syftar till bokens id och inte något annat.
 
