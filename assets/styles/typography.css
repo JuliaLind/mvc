@@ -60,7 +60,8 @@ li {
 }
 
 h4,
-p {
+p,
+li {
     margin-bottom: calc(1.4 * 1.1rem);
 }
 
