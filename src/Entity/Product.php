@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
+use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @SuppressWarnings(PHPMD)
  */
+#[CodeCoverageIgnore]
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 class Product
 {

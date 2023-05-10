@@ -2,6 +2,7 @@
 
 namespace App\Markdown;
 
+use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
 use Anax\TextFilter\TextFilter;
 
 /**
@@ -9,6 +10,7 @@ use Anax\TextFilter\TextFilter;
  * uses TextFilter class to return the content coverted
  * to html
  */
+#[CodeCoverageIgnore]
 class MdParser
 {
     private string $parsedText;

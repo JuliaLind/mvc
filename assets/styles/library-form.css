@@ -150,10 +150,20 @@
     width: 183.93px;
     height: 264px;
     object-fit: fill;
+    /* width: 400px !important;
+    height: 500px !important;
+    object-fit: contain; */
 }
 
 img.no-border {
-    border: unset;
+    border: unset !important;
+    width: 400px !important;
+    height: 500px !important;
+    object-fit: fill;
+}
+
+.image-container {
+    overflow: hidden;
 }
 /* .library .container .inputbox {
     width: 32rem;
