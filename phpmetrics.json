@@ -3,7 +3,9 @@
         "src/Cards",
         "src/Controller",
         "src/Exceptions",
-        "src/Game"
+        "src/Game",
+        "src/Entity",
+        "src/Repository"
     ],
     "exclude": [
       "test[s]?"

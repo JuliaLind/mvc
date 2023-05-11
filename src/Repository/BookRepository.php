@@ -5,7 +5,8 @@ namespace App\Repository;
 use App\Entity\Book;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
+
+// use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
 
 /**
  * @extends ServiceEntityRepository<Book>
@@ -16,7 +17,7 @@ use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
  * @method Book[]    findAll()
  * @method Book[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-#[CodeCoverageIgnore]
+// #[CodeCoverageIgnore]
 class BookRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)

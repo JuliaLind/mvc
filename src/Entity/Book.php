@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
+// use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
 use App\Repository\BookRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @SuppressWarnings(PHPMD)
  */
-#[CodeCoverageIgnore]
+// #[CodeCoverageIgnore]
 #[ORM\Entity(repositoryClass: BookRepository::class)]
 class Book
 {

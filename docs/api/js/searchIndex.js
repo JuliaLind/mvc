@@ -911,41 +911,6 @@ Search.appendIndex(
             "summary": "Resets\u0020database",
             "url": "classes/App-Controller-LibraryController.html#method_resetBook"
         },                {
-            "fqsen": "\\App\\Controller\\ProductController",
-            "name": "ProductController",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003Aindex\u0028\u0029",
-            "name": "index",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_index"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AcreateProduct\u0028\u0029",
-            "name": "createProduct",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_createProduct"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AshowAllProduct\u0028\u0029",
-            "name": "showAllProduct",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_showAllProduct"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AshowProductById\u0028\u0029",
-            "name": "showProductById",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_showProductById"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AdeleteProductById\u0028\u0029",
-            "name": "deleteProductById",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_deleteProductById"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AupdateProduct\u0028\u0029",
-            "name": "updateProduct",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_updateProduct"
-        },                {
             "fqsen": "\\App\\Entity\\Book",
             "name": "Book",
             "summary": "",
@@ -1021,51 +986,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-Book.html#property_img"
         },                {
-            "fqsen": "\\App\\Entity\\Product",
-            "name": "Product",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetId\u0028\u0029",
-            "name": "getId",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_getId"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetName\u0028\u0029",
-            "name": "getName",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_getName"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AsetName\u0028\u0029",
-            "name": "setName",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_setName"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetValue\u0028\u0029",
-            "name": "getValue",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_getValue"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AsetValue\u0028\u0029",
-            "name": "setValue",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_setValue"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#property_id"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024name",
-            "name": "name",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#property_name"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024value",
-            "name": "value",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#property_value"
-        },                {
             "fqsen": "\\App\\Exceptions\\IsbnAlreadyInUseException",
             "name": "IsbnAlreadyInUseException",
             "summary": "Exception\u0020class\u0020trhown\u0020when\u0020isbn\u0020number\u0020is\u0020alerady\u0020in\u0020use",
@@ -1120,26 +1040,6 @@ Search.appendIndex(
             "name": "findOneByIsbn",
             "summary": "",
             "url": "classes/App-Repository-BookRepository.html#method_findOneByIsbn"
-        },                {
-            "fqsen": "\\App\\Repository\\ProductRepository",
-            "name": "ProductRepository",
-            "summary": "",
-            "url": "classes/App-Repository-ProductRepository.html"
-        },                {
-            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/App-Repository-ProductRepository.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003Asave\u0028\u0029",
-            "name": "save",
-            "summary": "",
-            "url": "classes/App-Repository-ProductRepository.html#method_save"
-        },                {
-            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003Aremove\u0028\u0029",
-            "name": "remove",
-            "summary": "",
-            "url": "classes/App-Repository-ProductRepository.html#method_remove"
         },                {
             "fqsen": "\\",
             "name": "\\",

@@ -16,12 +16,12 @@ use App\Helpers\SqlFileLoader;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
+// use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
 
 /**
  * Class for the library controller
  */
-#[CodeCoverageIgnore]
+// #[CodeCoverageIgnore]
 class LibraryController extends AbstractController
 {
     /**
