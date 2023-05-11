@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683816578">
-  <project timestamp="1683816578">
+<coverage generated="1683817185">
+  <project timestamp="1683817185">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -620,7 +620,7 @@
       <line num="226" type="stmt" count="0"/>
       <line num="227" type="stmt" count="0"/>
       <line num="228" type="stmt" count="0"/>
-      <metrics loc="231" ncloc="167" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="64" coveredstatements="0" elements="73" coveredelements="0"/>
+      <metrics loc="231" ncloc="168" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="64" coveredstatements="0" elements="73" coveredelements="0"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Controller/MainController.php">
       <class name="App\Controller\MainController" namespace="global">
@@ -1070,6 +1070,6 @@
       <line num="74" type="stmt" count="0"/>
       <metrics loc="102" ncloc="62" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="25" coveredelements="0"/>
     </file>
-    <metrics files="30" loc="2845" ncloc="1977" classes="22" methods="127" coveredmethods="75" conditionals="0" coveredconditionals="0" statements="765" coveredstatements="287" elements="892" coveredelements="362"/>
+    <metrics files="30" loc="2845" ncloc="1978" classes="22" methods="127" coveredmethods="75" conditionals="0" coveredconditionals="0" statements="765" coveredstatements="287" elements="892" coveredelements="362"/>
   </project>
 </coverage>

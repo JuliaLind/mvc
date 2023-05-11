@@ -221,7 +221,7 @@ class LibraryController extends AbstractController
         /**
          * @var Connection $conn
          */
-        $conn = $doctrine->getManager()->getConnection(); //@phpstan-ignore-line
+        $conn = $doctrine->getConnection();
         $loader = new SqlFileLoader($conn);
         $loader->load("sql/reset-book.sql");
         $this->addFlash("notice", "Databasen är återställd");
