@@ -2,7 +2,7 @@ imports:
     - php
 
 filter:
-    excluded_paths: [vendor/*, tests/*, src/Markdown/*, src/Kernel, src/php-cs-fixer.dist]
+    excluded_paths: [vendor/*, tests/*, src/Kernel, src/php-cs-fixer.dist]
 
     # excluded_paths: [vendor/*, tests/*, src/Helpers/*, src/Entity/*, src/Repository/*, src/Markdown/*, src/Controller/LibraryController, src/Kernel, src/Controller/ProductController, src/php-cs-fixer.dist]
 
