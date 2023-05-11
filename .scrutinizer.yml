@@ -2,7 +2,7 @@ imports:
     - php
 
 filter:
-    excluded_paths: [vendor/*, test/*, src/Helpers/*, src/Entity/*, src/Repository/*, src/Markdown/*, src/Controller/LibraryController, src/Kernel, src/Controller/ProductController, src/php-cs-fixer.dist]
+    excluded_paths: [vendor/*, tests/*, src/Helpers/*, src/Entity/*, src/Repository/*, src/Markdown/*, src/Controller/LibraryController, src/Kernel, src/Controller/ProductController, src/php-cs-fixer.dist]
 
 build:
     image: default-bionic
