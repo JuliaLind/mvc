@@ -30,6 +30,6 @@ class SqlFileLoader
         if ($sql == null) {
             $sql = "";
         }
-        $conn->exec($sql);
+        $conn->executeStatement($sql);
     }
 }

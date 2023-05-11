@@ -16,6 +16,8 @@ use App\Helpers\SqlFileLoader;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
+use Doctrine\DBAL\Connection;
+
 // use App\Exceptions\BookNotFoundException;
 
 // use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
@@ -216,6 +218,9 @@ class LibraryController extends AbstractController
     public function resetBook(
         ManagerRegistry $doctrine,
     ): Response {
+        /**
+         * @var Connection $conn
+         */
         $conn = $doctrine->getManager()->getConnection(); //@phpstan-ignore-line
         $loader = new SqlFileLoader($conn);
         $loader->load("sql/reset-book.sql");
