@@ -13,9 +13,6 @@ use App\Repository\BookRepository;
 // use Symfony\Component\Validator\Constraints\DateTime;
 use Datetime;
 
-use App\Game\Game21Med;
-use App\Game\Game21Hard;
-use App\Game\Game21Easy;
 use App\Game\Game21Interface;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -99,7 +96,8 @@ class JsonController extends AbstractController
     {
         $quotes = [
             <<<EOD
-            "Opportunities don't happen, you create them." — Chris Grosser
+            "Any fool can write code that a computer can understand. 
+            Good programmers write code that humans can understand." — Martin Fowler
             EOD,
             <<<EOD
             "It is never too late to be what you might have been." — George Eliot
