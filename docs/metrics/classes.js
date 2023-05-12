@@ -201,7 +201,7 @@ var classes = [
         "totalDataComplexity": 17,
         "totalSystemComplexity": 45,
         "package": "App\\Cards\\",
-        "pageRank": 0.2,
+        "pageRank": 0.21,
         "afferentCoupling": 1,
         "efferentCoupling": 0,
         "instability": 0,
@@ -298,10 +298,10 @@ var classes = [
         "totalDataComplexity": 5.2,
         "totalSystemComplexity": 101.2,
         "package": "App\\Cards\\",
-        "pageRank": 0.06,
-        "afferentCoupling": 3,
+        "pageRank": 0.05,
+        "afferentCoupling": 2,
         "efferentCoupling": 1,
-        "instability": 0.25,
+        "instability": 0.33,
         "violations": {}
     },
     {
@@ -1863,6 +1863,127 @@ var classes = [
         "violations": {}
     },
     {
+        "name": "App\\Game\\PlayerTrait",
+        "interface": false,
+        "abstract": true,
+        "final": false,
+        "methods": [
+            {
+                "name": "getName",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getMoney",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "draw",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "incrMoney",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "decrMoney",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getCardValues",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "showHandGraphic",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "showHandAsString",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getCardCount",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "emptyHand",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 10,
+        "nbMethods": 8,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 8,
+        "nbMethodsGetter": 2,
+        "nbMethodsSetters": 0,
+        "wmc": 8,
+        "ccn": 1,
+        "ccnMethodMax": 1,
+        "externals": [
+            "App\\Cards\\DeckOfCards"
+        ],
+        "parents": [],
+        "implements": [],
+        "lcom": 1,
+        "length": 28,
+        "vocabulary": 8,
+        "volume": 84,
+        "difficulty": 5.7,
+        "effort": 478.8,
+        "level": 0.18,
+        "bugs": 0.03,
+        "time": 27,
+        "intelligentContent": 14.74,
+        "number_operators": 9,
+        "number_operands": 19,
+        "number_operators_unique": 3,
+        "number_operands_unique": 5,
+        "cloc": 73,
+        "loc": 120,
+        "lloc": 48,
+        "mi": 96.47,
+        "mIwoC": 49.72,
+        "commentWeight": 46.75,
+        "kanDefect": 0.15,
+        "relativeStructuralComplexity": 36,
+        "relativeDataComplexity": 1.04,
+        "relativeSystemComplexity": 37.04,
+        "totalStructuralComplexity": 360,
+        "totalDataComplexity": 10.43,
+        "totalSystemComplexity": 370.43,
+        "package": "App\\Game\\",
+        "pageRank": 0.01,
+        "afferentCoupling": 0,
+        "efferentCoupling": 1,
+        "instability": 1,
+        "violations": {}
+    },
+    {
         "name": "App\\Game\\Player21",
         "interface": false,
         "abstract": false,
@@ -1907,47 +2028,44 @@ var classes = [
         "ccn": 10,
         "ccnMethodMax": 5,
         "externals": [
-            "App\\Game\\Player",
             "App\\Cards\\CardHand",
             "App\\Cards\\CardHand",
             "App\\Cards\\DeckOfCards"
         ],
-        "parents": [
-            "App\\Game\\Player"
-        ],
+        "parents": [],
         "implements": [],
-        "lcom": 2,
-        "length": 97,
+        "lcom": 1,
+        "length": 101,
         "vocabulary": 27,
-        "volume": 461.22,
-        "difficulty": 18.53,
-        "effort": 8546.21,
+        "volume": 480.24,
+        "difficulty": 19.12,
+        "effort": 9181.13,
         "level": 0.05,
-        "bugs": 0.15,
-        "time": 475,
-        "intelligentContent": 24.89,
-        "number_operators": 34,
-        "number_operands": 63,
+        "bugs": 0.16,
+        "time": 510,
+        "intelligentContent": 25.12,
+        "number_operators": 36,
+        "number_operands": 65,
         "number_operators_unique": 10,
         "number_operands_unique": 17,
         "cloc": 30,
-        "loc": 85,
-        "lloc": 55,
-        "mi": 81.83,
-        "mIwoC": 42.04,
-        "commentWeight": 39.79,
+        "loc": 87,
+        "lloc": 57,
+        "mi": 81.04,
+        "mIwoC": 41.58,
+        "commentWeight": 39.47,
         "kanDefect": 1.19,
-        "relativeStructuralComplexity": 16,
-        "relativeDataComplexity": 0.75,
-        "relativeSystemComplexity": 16.75,
-        "totalStructuralComplexity": 64,
-        "totalDataComplexity": 3,
-        "totalSystemComplexity": 67,
+        "relativeStructuralComplexity": 9,
+        "relativeDataComplexity": 0.94,
+        "relativeSystemComplexity": 9.94,
+        "totalStructuralComplexity": 36,
+        "totalDataComplexity": 3.75,
+        "totalSystemComplexity": 39.75,
         "package": "App\\Game\\",
-        "pageRank": 0.03,
-        "afferentCoupling": 2,
-        "efferentCoupling": 3,
-        "instability": 0.6,
+        "pageRank": 0.05,
+        "afferentCoupling": 3,
+        "efferentCoupling": 2,
+        "instability": 0.4,
         "violations": {}
     },
     {
@@ -2089,7 +2207,7 @@ var classes = [
         "ccn": 2,
         "ccnMethodMax": 2,
         "externals": [
-            "App\\Game\\Player"
+            "App\\Game\\Player21"
         ],
         "parents": [],
         "implements": [],
@@ -2124,136 +2242,6 @@ var classes = [
         "pageRank": 0.01,
         "afferentCoupling": 1,
         "efferentCoupling": 1,
-        "instability": 0.5,
-        "violations": {}
-    },
-    {
-        "name": "App\\Game\\Player",
-        "interface": false,
-        "abstract": false,
-        "final": false,
-        "methods": [
-            {
-                "name": "__construct",
-                "role": null,
-                "public": true,
-                "private": false,
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
-                "name": "getName",
-                "role": "getter",
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
-                "name": "getMoney",
-                "role": "getter",
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
-                "name": "draw",
-                "role": null,
-                "public": true,
-                "private": false,
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
-                "name": "incrMoney",
-                "role": null,
-                "public": true,
-                "private": false,
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
-                "name": "decrMoney",
-                "role": null,
-                "public": true,
-                "private": false,
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
-                "name": "getCardValues",
-                "role": null,
-                "public": true,
-                "private": false,
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
-                "name": "showHandGraphic",
-                "role": null,
-                "public": true,
-                "private": false,
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
-                "name": "showHandAsString",
-                "role": null,
-                "public": true,
-                "private": false,
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
-                "name": "getCardCount",
-                "role": null,
-                "public": true,
-                "private": false,
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
-                "name": "emptyHand",
-                "role": null,
-                "public": true,
-                "private": false,
-                "_type": "Hal\\Metric\\FunctionMetric"
-            }
-        ],
-        "nbMethodsIncludingGettersSetters": 11,
-        "nbMethods": 9,
-        "nbMethodsPrivate": 0,
-        "nbMethodsPublic": 9,
-        "nbMethodsGetter": 2,
-        "nbMethodsSetters": 0,
-        "wmc": 9,
-        "ccn": 1,
-        "ccnMethodMax": 1,
-        "externals": [
-            "App\\Cards\\CardHand",
-            "App\\Cards\\CardHand",
-            "App\\Cards\\DeckOfCards"
-        ],
-        "parents": [],
-        "implements": [],
-        "lcom": 1,
-        "length": 36,
-        "vocabulary": 11,
-        "volume": 124.54,
-        "difficulty": 7.14,
-        "effort": 889.57,
-        "level": 0.14,
-        "bugs": 0.04,
-        "time": 49,
-        "intelligentContent": 17.44,
-        "number_operators": 11,
-        "number_operands": 25,
-        "number_operators_unique": 4,
-        "number_operands_unique": 7,
-        "cloc": 67,
-        "loc": 120,
-        "lloc": 53,
-        "mi": 93.37,
-        "mIwoC": 47.58,
-        "commentWeight": 45.79,
-        "kanDefect": 0.15,
-        "relativeStructuralComplexity": 36,
-        "relativeDataComplexity": 1.06,
-        "relativeSystemComplexity": 37.06,
-        "totalStructuralComplexity": 396,
-        "totalDataComplexity": 11.71,
-        "totalSystemComplexity": 407.71,
-        "package": "App\\Game\\",
-        "pageRank": 0.03,
-        "afferentCoupling": 2,
-        "efferentCoupling": 2,
         "instability": 0.5,
         "violations": {}
     },

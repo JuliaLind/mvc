@@ -21,6 +21,8 @@ trait GameTestingTrait
     protected bool $bankPlaying=false;
     protected bool $finished=false;
 
+    protected MoneyPot $moneyPot;
+
     /**
      * Setter method for moneypot
      * @param MoneyPot $moneyPot

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683853582">
-  <project timestamp="1683853582">
+<coverage generated="1683854014">
+  <project timestamp="1683854014">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -952,27 +952,27 @@
       <class name="App\Game\GameTestingTrait" namespace="global">
         <metrics complexity="10" methods="9" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="20" coveredelements="20"/>
       </class>
-      <line num="29" type="method" name="setMoneyPot" visibility="public" complexity="1" crap="1" count="13"/>
-      <line num="31" type="stmt" count="13"/>
-      <line num="39" type="method" name="setBank" visibility="public" complexity="1" crap="1" count="19"/>
-      <line num="41" type="stmt" count="19"/>
-      <line num="49" type="method" name="setWinner" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="51" type="stmt" count="8"/>
-      <line num="58" type="method" name="getWinner" visibility="public" complexity="2" crap="2" count="2"/>
-      <line num="60" type="stmt" count="2"/>
-      <line num="61" type="stmt" count="1"/>
+      <line num="31" type="method" name="setMoneyPot" visibility="public" complexity="1" crap="1" count="13"/>
+      <line num="33" type="stmt" count="13"/>
+      <line num="41" type="method" name="setBank" visibility="public" complexity="1" crap="1" count="19"/>
+      <line num="43" type="stmt" count="19"/>
+      <line num="51" type="method" name="setWinner" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="53" type="stmt" count="8"/>
+      <line num="60" type="method" name="getWinner" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="62" type="stmt" count="2"/>
       <line num="63" type="stmt" count="1"/>
-      <line num="71" type="method" name="setRoundOver" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="73" type="stmt" count="4"/>
-      <line num="80" type="method" name="isRoundOver" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="82" type="stmt" count="1"/>
-      <line num="89" type="method" name="isBankPlaying" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="91" type="stmt" count="3"/>
-      <line num="98" type="method" name="setBankPlaying" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="100" type="stmt" count="3"/>
-      <line num="108" type="method" name="setFinished" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="110" type="stmt" count="2"/>
-      <metrics loc="122" ncloc="65" classes="1" methods="9" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="20" coveredelements="20"/>
+      <line num="65" type="stmt" count="1"/>
+      <line num="73" type="method" name="setRoundOver" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="75" type="stmt" count="4"/>
+      <line num="82" type="method" name="isRoundOver" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="84" type="stmt" count="1"/>
+      <line num="91" type="method" name="isBankPlaying" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="93" type="stmt" count="3"/>
+      <line num="100" type="method" name="setBankPlaying" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="102" type="stmt" count="3"/>
+      <line num="110" type="method" name="setFinished" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="112" type="stmt" count="2"/>
+      <metrics loc="124" ncloc="67" classes="1" methods="9" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="20" coveredelements="20"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Game/MoneyPot.php">
       <class name="App\Game\MoneyPot" namespace="global">
@@ -1114,6 +1114,6 @@
       <line num="74" type="stmt" count="0"/>
       <metrics loc="102" ncloc="62" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="25" coveredelements="0"/>
     </file>
-    <metrics files="32" loc="2961" ncloc="2049" classes="24" methods="134" coveredmethods="78" conditionals="0" coveredconditionals="0" statements="790" coveredstatements="329" elements="924" coveredelements="407"/>
+    <metrics files="32" loc="2963" ncloc="2051" classes="24" methods="134" coveredmethods="78" conditionals="0" coveredconditionals="0" statements="790" coveredstatements="329" elements="924" coveredelements="407"/>
   </project>
 </coverage>
