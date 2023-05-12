@@ -57,7 +57,6 @@ class CardController extends AbstractController
         CardHandler $cardHandler=new CardHandler(),
         DeckOfCards $deck=new DeckOfCards()
     ): Response {
-        $deck = new DeckOfCards();
         $deck->shuffle();
         $data = $cardHandler->getDeckRouteData($deck);
         $session->set("deck", $deck);

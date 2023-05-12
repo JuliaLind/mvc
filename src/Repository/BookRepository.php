@@ -37,6 +37,13 @@ class BookRepository extends ServiceEntityRepository
                 throw new IsbnAlreadyInUseException();
             }
         } catch (BookNotFoundException) {
+            /**
+             * If exception is raised it means no ther book
+             * exists with same ISBN. Same goes for if the
+             * exception is not raised but the found book is the
+             * same one that is being updated
+             */
+
         }
         $this->getEntityManager()->persist($entity);
 
