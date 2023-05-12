@@ -178,4 +178,58 @@ class PlayerTraitTest extends TestCase
         // $player->emptyHand();
         $this->emptyHand();
     }
+
+    /**
+     * Tests getCardValue method
+     */
+    public function testGetCardValues(): void
+    {
+        # arrange
+        $hand = $this->createMock(CardHand::class);
+        $this->hand = $hand;
+
+        #assert
+        $hand->expects($this->once())
+                ->method('getValues');
+
+        # Act
+        // $player->emptyHand();
+        $this->getCardValues();
+    }
+
+    /**
+     * Tests showHandAsString method
+     */
+    public function testShowHandAsString(): void
+    {
+        # arrange
+        $hand = $this->createMock(CardHand::class);
+        $this->hand = $hand;
+
+        #assert
+        $hand->expects($this->once())
+                ->method('getAsString');
+
+        # Act
+        // $player->emptyHand();
+        $this->showHandAsString();
+    }
+
+    /**
+     * Tests getCardCount method
+     */
+    public function testGetCardCount(): void
+    {
+        # arrange
+        $hand = $this->createMock(CardHand::class);
+        $this->hand = $hand;
+
+        #assert
+        $hand->expects($this->once())
+                ->method('getCardCount');
+
+        # Act
+        // $player->emptyHand();
+        $this->getCardCount();
+    }
 }

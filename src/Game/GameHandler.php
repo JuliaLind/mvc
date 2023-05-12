@@ -94,4 +94,23 @@ class GameHandler
         $data = array_merge($game->getGameStatus(), $pageData);
         return $data;
     }
+
+    /**
+     * Returns data for the Json route where current game is idsplayed
+     * @return array<mixed> with current game status
+     */
+    public function jsonGame(Game21Interface $game): array
+    {
+        $gameStatus = "No game started";
+        if ($game != null) {
+            $gameStatus = $game->getGameStatus();
+            $gameStatus['risk'] = $game->getRisk();
+        }
+
+        $data = [
+            'players' => $game->getPlayerData(),
+            'status' => $gameStatus,
+        ];
+        return $data;
+    }
 }
