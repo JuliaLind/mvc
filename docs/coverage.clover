@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683920700">
-  <project timestamp="1683920700">
+<coverage generated="1683922126">
+  <project timestamp="1683922126">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -449,7 +449,7 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Controller/JsonController.php">
       <class name="App\Controller\JsonController" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="12" coveredelements="0"/>
+        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="13" coveredelements="0"/>
       </class>
       <line num="5" type="stmt" count="0"/>
       <line num="25" type="method" name="apis" visibility="public" complexity="1" crap="2" count="0"/>
@@ -459,12 +459,13 @@
       <line num="37" type="method" name="jsonQuote" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="39" type="stmt" count="0"/>
       <line num="41" type="stmt" count="0"/>
+      <line num="42" type="stmt" count="0"/>
       <line num="43" type="stmt" count="0"/>
       <line num="44" type="stmt" count="0"/>
       <line num="45" type="stmt" count="0"/>
       <line num="46" type="stmt" count="0"/>
       <line num="47" type="stmt" count="0"/>
-      <metrics loc="50" ncloc="40" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="13" coveredelements="0"/>
+      <metrics loc="50" ncloc="40" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="14" coveredelements="0"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Controller/JsonGame21Controller.php">
       <class name="App\Controller\JsonGame21Controller" namespace="global">
@@ -1034,7 +1035,7 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Helpers/JsonHandler.php">
       <class name="App\Helpers\JsonHandler" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="70" coveredstatements="51" elements="72" coveredelements="52"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="68" coveredstatements="68" elements="70" coveredelements="70"/>
       </class>
       <line num="5" type="stmt" count="1"/>
       <line num="18" type="method" name="getLandingData" visibility="public" complexity="1" crap="1" count="1"/>
@@ -1089,27 +1090,25 @@
       <line num="68" type="stmt" count="1"/>
       <line num="69" type="stmt" count="1"/>
       <line num="70" type="stmt" count="1"/>
-      <line num="77" type="method" name="generateQuote" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="79" type="stmt" count="0"/>
-      <line num="80" type="stmt" count="0"/>
-      <line num="83" type="stmt" count="0"/>
-      <line num="84" type="stmt" count="0"/>
-      <line num="86" type="stmt" count="0"/>
-      <line num="87" type="stmt" count="0"/>
-      <line num="89" type="stmt" count="0"/>
-      <line num="90" type="stmt" count="0"/>
-      <line num="92" type="stmt" count="0"/>
-      <line num="93" type="stmt" count="0"/>
-      <line num="95" type="stmt" count="0"/>
-      <line num="96" type="stmt" count="0"/>
-      <line num="98" type="stmt" count="0"/>
-      <line num="101" type="stmt" count="0"/>
-      <line num="102" type="stmt" count="0"/>
-      <line num="103" type="stmt" count="0"/>
-      <line num="104" type="stmt" count="0"/>
-      <line num="105" type="stmt" count="0"/>
-      <line num="106" type="stmt" count="0"/>
-      <metrics loc="111" ncloc="100" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="71" coveredstatements="52" elements="73" coveredelements="53"/>
+      <line num="77" type="method" name="generateQuote" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="80" type="stmt" count="1"/>
+      <line num="81" type="stmt" count="1"/>
+      <line num="84" type="stmt" count="1"/>
+      <line num="85" type="stmt" count="1"/>
+      <line num="87" type="stmt" count="1"/>
+      <line num="88" type="stmt" count="1"/>
+      <line num="90" type="stmt" count="1"/>
+      <line num="91" type="stmt" count="1"/>
+      <line num="93" type="stmt" count="1"/>
+      <line num="94" type="stmt" count="1"/>
+      <line num="96" type="stmt" count="1"/>
+      <line num="97" type="stmt" count="1"/>
+      <line num="99" type="stmt" count="1"/>
+      <line num="100" type="stmt" count="1"/>
+      <line num="101" type="stmt" count="1"/>
+      <line num="102" type="stmt" count="1"/>
+      <line num="103" type="stmt" count="1"/>
+      <metrics loc="108" ncloc="97" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="69" coveredstatements="69" elements="71" coveredelements="71"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Kernel.php">
       <class name="App\Kernel" namespace="global">
@@ -1234,6 +1233,6 @@
       <line num="78" type="stmt" count="0"/>
       <metrics loc="106" ncloc="62" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="25" coveredelements="0"/>
     </file>
-    <metrics files="42" loc="3359" ncloc="2328" classes="33" methods="154" coveredmethods="102" conditionals="0" coveredconditionals="0" statements="833" coveredstatements="509" elements="987" coveredelements="611"/>
+    <metrics files="42" loc="3356" ncloc="2325" classes="33" methods="154" coveredmethods="103" conditionals="0" coveredconditionals="0" statements="832" coveredstatements="526" elements="986" coveredelements="629"/>
   </project>
 </coverage>

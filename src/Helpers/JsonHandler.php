@@ -74,8 +74,9 @@ class JsonHandler
      * Returns a daily quote and the date, time when the page was loaded
      * @return array<string>
      */
-    public function generateQuote(): array
-    {
+    public function generateQuote(
+        DateTime  $time = new DateTime()
+    ): array {
         $quotes = [
             <<<EOD
             "Any fool can write code that a computer can understand. 
@@ -95,11 +96,7 @@ class JsonHandler
             EOD
         ];
 
-        date_default_timezone_set('Europe/Stockholm');
-
-
         $number = random_int(0, count($quotes)-1);
-        $time = new DateTime();
         return [
             'quote' => $quotes[$number],
             'timestamp' => $time->format('Y-m-d H:i:s'),

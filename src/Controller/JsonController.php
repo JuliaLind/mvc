@@ -38,8 +38,8 @@ class JsonController extends AbstractController
     public function jsonQuote(
         JsonHandler $handler = new JsonHandler()
     ): Response {
+        date_default_timezone_set('Europe/Stockholm');
         $data = $handler->generateQuote();
-
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
