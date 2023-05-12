@@ -67,7 +67,7 @@ class LibraryController extends AbstractController
         switch ($wentWell) {
             case true:
                 return $this->redirectToRoute("read_one", array('isbn'=>$book->getIsbn()));
-            case false:
+            default:
                 return $this->redirectToRoute("create_form");
         }
     }
@@ -113,7 +113,7 @@ class LibraryController extends AbstractController
         switch ($wentWell) {
             case true:
                 return $this->redirectToRoute('read_one', array('isbn'=>$book->getIsbn()));
-            case false:
+            default:
                 return $this->redirectToRoute("update_form", array('isbn'=>$request->get('original_isbn')));
         }
     }

@@ -22,8 +22,10 @@ class GameTestingTraitTest extends TestCase
     protected function setUp(): void
     {
         $this->bank = $this->createMock(Player21::class);
-        $this->moneyPot = $this->createMock(MoneyPot::class);
-        $this->moneyPot->method('currentAmount')->willReturn(130);
+
+        $pot = $this->createMock(MoneyPot::class);
+        $pot->method('currentAmount')->willReturn(130);
+        $this->moneyPot = $pot;
         $this->winner = $this->createMock(Player21::class);
     }
 

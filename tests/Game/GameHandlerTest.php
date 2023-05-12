@@ -106,7 +106,7 @@ class GameHandlerTest extends TestCase
             ->willReturn(false);
         $game->expects($this->never())
             ->method('endRound');
-        $res = $gameHandler->playerDraw($game);
+        $gameHandler->playerDraw($game);
     }
 
     /**
