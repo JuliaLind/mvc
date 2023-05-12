@@ -5,8 +5,8 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 
-use App\Game\Game21Hard;
-use App\Game\Game21Easy;
+use App\Game\GameHandler;
+use App\Game\GameHandlerLanding;
 use App\Game\Game21Interface;
 
 use App\Markdown\MdParser;
@@ -29,27 +29,16 @@ class Game21Controller extends AbstractController
      */
     #[Route('/game', name: "gameMain", methods: ['GET'])]
     public function main(
-        SessionInterface $session
+        SessionInterface $session,
+        GameHandlerLanding $gameHandler=new GameHandlerLanding()
     ): Response {
         $filename = "markdown/game21.md";
-        $parsedText = new MdParser($filename);
-
+        $parser = new MdParser($filename);
         /**
          * @var Game21Interface|null $game The current game of 21.
          */
         $game = $session->get("game21") ?? null;
-
-        $finished = true;
-        if ($game && $game->gameOver() === false) {
-            $finished = false;
-        }
-
-        $data = [
-            'about' => $parsedText->getParsedText(),
-            'page' => "game",
-            'url' => "/game",
-            'finished' => $finished,
-        ];
+        $data = $gameHandler->main($parser, $game);
 
         return $this->render('game21/home.html.twig', $data);
     }
@@ -59,35 +48,28 @@ class Game21Controller extends AbstractController
      * the initial version of the game
      */
     #[Route('/game/doc', name: "gameDoc", methods: ['GET'])]
-    public function gameDoc(): Response
-    {
+    public function gameDoc(
+        GameHandlerLanding $gameHandler=new GameHandlerLanding()
+    ): Response {
         $filename = "markdown/doc.md";
-        $parsedText = new MdParser($filename);
-        $data = [
-            'about' => $parsedText->getParsedText(),
-            'page' => "landing doc",
-            'url' => "/game"
-        ];
+        $parser = new MdParser($filename);
+        $data = $gameHandler->doc($parser);
 
         return $this->render('game21/doc.html.twig', $data);
     }
 
     /**
-     * Route forinitiating the game. Creates an object of class
+     * Route for initiating the game. Creates an object of class
      * Game21Easy or Game21Hard, samves to session and redirects
      * to route for selecting amount to bet
      */
     #[Route('/game/init/{level<\d+>}', name: "init", methods: ['POST'])]
     public function init(
         SessionInterface $session,
-        int $level=0
+        int $level=0,
+        GameHandler $gameHandler=new GameHandler()
     ): Response {
-        $game = new Game21Easy();
-        switch($level) {
-            case 2:
-                $game = new Game21Hard();
-                break;
-        }
+        $game = $gameHandler->init($level);
         $session->set("game21", $game);
 
         return $this->redirectToRoute('selectAmount');
@@ -99,19 +81,16 @@ class Game21Controller extends AbstractController
      */
     #[Route('/game/select-amount', name: "selectAmount", methods: ['GET'])]
     public function selectAmount(
-        SessionInterface $session
+        SessionInterface $session,
+        GameHandler $gameHandler=new GameHandler()
     ): Response {
         /**
          * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
-        $nextRoundData = $game->nextRound();
+        $data = $gameHandler->selectAmount($game);
         $session->set("game21", $game);
-        $data = [
-            'page' => "game no-header card",
-            'url' => "/game",
-        ];
-        $data = array_merge($nextRoundData, $data);
+
         return $this->render('game21/select-amount.html.twig', $data);
     }
 
@@ -123,13 +102,14 @@ class Game21Controller extends AbstractController
     #[Route('/game/bet/{amount<\d+>}', name: "bet", methods: ['POST'])]
     public function bet(
         SessionInterface $session,
-        int $amount
+        int $amount,
+        GameHandler $gameHandler=new GameHandler()
     ): Response {
         /**
          * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
-        $game->addToMoneyPot($amount);
+        $gameHandler->bet($amount, $game);
         $session->set("game21", $game);
         return $this->redirectToRoute('play');
     }
@@ -140,17 +120,14 @@ class Game21Controller extends AbstractController
      */
     #[Route('/game/draw', name: "playerDraw", methods: ['POST'])]
     public function playerDraw(
-        SessionInterface $session
+        SessionInterface $session,
+        GameHandler $gameHandler=new GameHandler()
     ): Response {
         /**
          * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
-        $game->deal();
-        $game->evaluate();
-        $game->endRound();
-
-        $flash = $game->generateFlash();
+        $flash = $gameHandler->playerDraw($game);
         $this->addFlash(...$flash);
 
         $session->set("game21", $game);
@@ -163,19 +140,16 @@ class Game21Controller extends AbstractController
      */
     #[Route('/game/bank-playing', name: "bankPlaying", methods: ['POST'])]
     public function bankPlaying(
-        SessionInterface $session
+        SessionInterface $session,
+        GameHandler $gameHandler=new GameHandler()
     ): Response {
         /**
          * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
-
-        $game->dealBank();
-        $game->evaluateBank();
-        $game->endRound();
+        $flash = $gameHandler->bankDraw($game);
         $session->set("game21", $game);
 
-        $flash = $game->generateFlash();
         $this->addFlash(...$flash);
         return $this->redirectToRoute('play');
     }
@@ -186,21 +160,14 @@ class Game21Controller extends AbstractController
      */
     #[Route('/game/play', name: "play", methods: ['GET'])]
     public function play(
-        SessionInterface $session
+        SessionInterface $session,
+        GameHandler $gameHandler=new GameHandler()
     ): Response {
         /**
          * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
-
-        $pageData = [
-            'players' => $game->getPlayerData(),
-            'risk'=> $game->getRisk(),
-            'page' => "game no-header card",
-            'url' => "/game",
-            'title' => 'Game 21'
-        ];
-        $data = array_merge($game->getGameStatus(), $pageData);
+        $data = $gameHandler->play($game);
         return $this->render('game21/draw.html.twig', $data);
     }
 }

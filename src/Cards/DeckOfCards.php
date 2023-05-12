@@ -4,7 +4,6 @@ namespace App\Cards;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-// use App\cards\NoCardsLeftException;
 
 /**
  * Class representing a deck of cards with no jokers
