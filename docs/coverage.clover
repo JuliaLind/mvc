@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683922126">
-  <project timestamp="1683922126">
+<coverage generated="1683924823">
+  <project timestamp="1683924823">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -511,7 +511,7 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Controller/LibraryController.php">
       <class name="App\Controller\LibraryController" namespace="global">
-        <metrics complexity="14" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="65" coveredstatements="0" elements="74" coveredelements="0"/>
+        <metrics complexity="14" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="64" coveredstatements="0" elements="73" coveredelements="0"/>
       </class>
       <line num="33" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="36" type="stmt" count="0"/>
@@ -582,12 +582,11 @@
       <line num="182" type="stmt" count="0"/>
       <line num="188" type="method" name="resetBook" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="195" type="stmt" count="0"/>
-      <line num="199" type="stmt" count="0"/>
       <line num="200" type="stmt" count="0"/>
       <line num="201" type="stmt" count="0"/>
       <line num="202" type="stmt" count="0"/>
       <line num="203" type="stmt" count="0"/>
-      <metrics loc="206" ncloc="164" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="65" coveredstatements="0" elements="74" coveredelements="0"/>
+      <metrics loc="206" ncloc="163" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="64" coveredstatements="0" elements="73" coveredelements="0"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Controller/MainController.php">
       <class name="App\Controller\MainController" namespace="global">
@@ -1187,14 +1186,15 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Library/SqlFileLoader.php">
       <class name="App\Library\SqlFileLoader" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
       </class>
       <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="21" type="stmt" count="2"/>
       <line num="24" type="method" name="load" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="26" type="stmt" count="1"/>
-      <line num="27" type="stmt" count="1"/>
-      <metrics loc="30" ncloc="22" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+      <line num="29" type="stmt" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <line num="31" type="stmt" count="1"/>
+      <metrics loc="34" ncloc="23" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Markdown/MdParser.php">
       <class name="App\Markdown\MdParser" namespace="global">
@@ -1233,6 +1233,6 @@
       <line num="78" type="stmt" count="0"/>
       <metrics loc="106" ncloc="62" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="25" coveredelements="0"/>
     </file>
-    <metrics files="42" loc="3356" ncloc="2325" classes="33" methods="154" coveredmethods="103" conditionals="0" coveredconditionals="0" statements="832" coveredstatements="526" elements="986" coveredelements="629"/>
+    <metrics files="42" loc="3360" ncloc="2325" classes="33" methods="154" coveredmethods="103" conditionals="0" coveredconditionals="0" statements="832" coveredstatements="527" elements="986" coveredelements="630"/>
   </project>
 </coverage>

@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-05-12 19:37:34        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-05-12 20:52:50        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -404,9 +404,7 @@
     {
         "name": "\\App\\Markdown\\MdParser",
         "size": 3000,
-        "relations": [
-            "\\Anax\\TextFilter\\TextFilter"
-        ]
+        "relations": []
     },
     {
         "name": "\\App\\Controller\\JsonGame21Controller",
@@ -451,7 +449,9 @@
     {
         "name": "\\App\\Helpers\\JsonHandler",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\Datetime"
+        ]
     },
     {
         "name": "\\App\\Controller\\JsonCardController",
@@ -497,6 +497,59 @@
             "\\App\\Cards\\DeckOfCards",
             "\\App\\Cards\\Player"
         ]
+    },
+    {
+        "name": "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Library\\IsbnAlreadyInUseException",
+        "size": 3000,
+        "relations": [
+            "\\App\\Library\\LibraryException"
+        ]
+    },
+    {
+        "name": "\\App\\Library\\BookNotFoundException",
+        "size": 3000,
+        "relations": [
+            "\\App\\Library\\LibraryException"
+        ]
+    },
+    {
+        "name": "\\Anax\\TextFilter\\TextFilter",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Library\\LibraryException",
+        "size": 3000,
+        "relations": [
+            "\\Exception"
+        ]
+    },
+    {
+        "name": "\\Doctrine\\DBAL\\Connection",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Datetime",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Kernel",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Component\\HttpKernel\\Kernel"
+        ]
+    },
+    {
+        "name": "\\Symfony\\Component\\HttpKernel\\Kernel",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Game\\BettingGameTrait",
@@ -545,47 +598,16 @@
         ]
     },
     {
+        "name": "\\App\\Game\\GamblingPlayerInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Game\\GameTestingTrait",
         "size": 3000,
         "relations": [
             "\\App\\Game\\Player21"
         ]
-    },
-    {
-        "name": "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Library\\IsbnAlreadyInUseException",
-        "size": 3000,
-        "relations": [
-            "\\App\\Library\\LibraryException"
-        ]
-    },
-    {
-        "name": "\\App\\Library\\BookNotFoundException",
-        "size": 3000,
-        "relations": [
-            "\\App\\Library\\LibraryException"
-        ]
-    },
-    {
-        "name": "\\App\\Library\\LibraryException",
-        "size": 3000,
-        "relations": [
-            "\\Exception"
-        ]
-    },
-    {
-        "name": "\\Doctrine\\DBAL\\Connection",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Anax\\TextFilter\\TextFilter",
-        "size": 3000,
-        "relations": []
     }
 ];
 

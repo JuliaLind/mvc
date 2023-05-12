@@ -193,12 +193,12 @@ class LibraryController extends AbstractController
          * @var Connection $conn
          */
         $conn = $doctrine->getConnection();
-        /**
-         * @var string $sql
-         */
-        $sql = file_get_contents("sql/reset-book.sql");
+        // /**
+        //  * @var string $sql
+        //  */
+        // $sql = file_get_contents("sql/reset-book.sql");
         $loader = new SqlFileLoader($conn);
-        $loader->load($sql);
+        $loader->load("sql/reset-book.sql");
         $this->addFlash("notice", "Databasen är återställd");
         return $this->redirectToRoute('read_many');
     }

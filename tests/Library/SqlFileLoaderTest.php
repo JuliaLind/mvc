@@ -6,6 +6,15 @@ use PHPUnit\Framework\TestCase;
 use Doctrine\DBAL\Connection;
 
 /**
+ * To mock the builtin function file_get_contents
+ * @SuppressWarnings(PHPMD)
+ */
+function file_get_contents(string $filename): string
+{
+    return "This is some text";
+}
+
+/**
  * Test cases for class FlashGenerator.
  */
 class SqlFileLoaderTest extends TestCase
@@ -28,10 +37,10 @@ class SqlFileLoaderTest extends TestCase
     {
         $conn = $this->createMock(Connection::class);
         $loader = new SqlFileLoader($conn);
-        $sql = "This is some text";
+        // $sql = "This is some text";
         $conn->expects($this->once())
             ->method('executeStatement')
             ->with($this->equalTo("This is some text"));
-        $loader->load($sql);
+        $loader->load("sql/reset-book.sql");
     }
 }

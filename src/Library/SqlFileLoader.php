@@ -21,8 +21,12 @@ class SqlFileLoader
         $this->conn = $connection;
     }
 
-    public function load(string $sql): void
+    public function load(string $filename): void
     {
+        /**
+         * @var string $sql
+         */
+        $sql = file_get_contents($filename);
         $conn = $this->conn;
         $conn->executeStatement($sql);
     }

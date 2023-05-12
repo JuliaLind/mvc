@@ -102,5 +102,4 @@ class LibraryHandlerTest extends TestCase
             ->with($book, true);
         $libraryHandler->removeBook($bookRepository, $book);
     }
-
 }

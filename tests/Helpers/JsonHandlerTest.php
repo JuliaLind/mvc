@@ -8,9 +8,9 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * To mock the builtin random function
- * @SuppressWarnings(PHPMD)
+ * @scrutinizer ignore-unused
  */
-function random_int($min, $max): int
+function random_int(int $min, int $max): int
 {
     return 0;
 }

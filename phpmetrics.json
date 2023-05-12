@@ -1,12 +1,6 @@
 {
     "includes": [
-        "src/Cards",
-        "src/Controller",
-        "src/Game",
-        "src/Entity",
-        "src/Repository",
-        "src/Library",
-        "src/Markdown"
+        "src/"
     ],
     "exclude": [
       "test[s]?"
