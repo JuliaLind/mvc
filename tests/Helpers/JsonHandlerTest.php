@@ -7,7 +7,9 @@ use Datetime;
 use PHPUnit\Framework\TestCase;
 
 /**
- * To mock the builtin random function
+ * To mock the builtin random function.
+ * Even though the params are not used
+ * they are needed to resemble the "mocked" function
  * @scrutinizer ignore-unused
  * @SuppressWarnings(PHPMD)
  */

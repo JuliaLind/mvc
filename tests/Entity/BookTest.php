@@ -20,9 +20,21 @@ class BookTest extends TestCase
         $book = new Book();
         $this->assertInstanceOf("\App\Entity\Book", $book);
 
+        /**
+         * @var string $title
+         */
         $title = "Test titel";
+        /**
+         * @var string $isbn
+         */
         $isbn = "1234567890123";
+        /**
+         * @var string $author
+         */
         $author = "Test Testsson";
+        /**
+         * @var string $img
+         */
         $img = "https://notavalidpath.com";
         $book->setTitle($title);
         $book->setIsbn($isbn);
