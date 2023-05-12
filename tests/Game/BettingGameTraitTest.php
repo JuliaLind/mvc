@@ -16,18 +16,8 @@ class BettingGameTraitTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->player = $this->getMockBuilder("\App\Game\Player21")
-                ->onlyMethods(['getMoney', 'decrMoney'])
-                ->addMethods(['addMoney'])
-                ->getMock();
-        $this->bank = $this->getMockBuilder("\App\Game\Player21")
-                ->onlyMethods(['getMoney', 'decrMoney'])
-                ->addMethods(['addMoney'])
-                ->getMock();
-
-
-        // $this->player = $this->createMock(Player21::class);
-        // $this->bank = $this->createMock(Player21::class);
+        $this->player = $this->createMock(Player21::class);
+        $this->bank = $this->createMock(Player21::class);
         $this->player->method('getMoney')->will($this->onConsecutiveCalls(30, 10, 10));
         $this->bank->method('getMoney')->will($this->onConsecutiveCalls(15, 35, 0));
         $this->player->method('decrMoney')->will($this->onConsecutiveCalls(15, 10, 0));

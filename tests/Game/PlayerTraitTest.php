@@ -3,7 +3,7 @@
 namespace App\Game;
 
 use PHPUnit\Framework\TestCase;
-use App\Exceptions\NoCardsLeftException;
+use App\Cards\NoCardsLeftException;
 use App\Cards\CardGraphic;
 use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
