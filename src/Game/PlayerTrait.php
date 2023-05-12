@@ -6,9 +6,9 @@ use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
 /**
- * Class representing a Player
+ * Trate for bas methods for a player
  */
-class Player
+trait PlayerTrait
 {
     /**
      * @var string $name
@@ -19,16 +19,16 @@ class Player
     protected int $money=0;
     protected CardHand $hand;
 
-    /**
-     * Constructor
-     * @param string $name - Name of the player
-     * @param CardHand $hand
-     */
-    public function __construct(string $name, CardHand $hand=new CardHand())
-    {
-        $this->name = $name;
-        $this->hand = $hand;
-    }
+    // /**
+    //  * Constructor
+    //  * @param string $name - Name of the player
+    //  * @param CardHand $hand
+    //  */
+    // public function __construct(string $name, CardHand $hand=new CardHand())
+    // {
+    //     $this->name = $name;
+    //     $this->hand = $hand;
+    // }
 
     /**
      * Getter of player's name

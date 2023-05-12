@@ -36,7 +36,7 @@ class MoneyPotTest extends TestCase
      */
     public function testAddMoneyOk(): void
     {
-        $player = $this->createMock(Player::class);
+        $player = $this->createMock(Player21::class);
         $player->method('decrMoney')->willReturn(30);
 
         $this->moneyPot->addMoney(30, [$player, $player, $player]);
@@ -50,7 +50,7 @@ class MoneyPotTest extends TestCase
      */
     public function testMoneyToWinnerOk(): void
     {
-        $player = $this->createMock(Player::class);
+        $player = $this->createMock(Player21::class);
         $player->method('decrMoney')->willReturn(30);
         $this->moneyPot->addMoney(30, [$player, $player, $player]);
 

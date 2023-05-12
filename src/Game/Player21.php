@@ -8,8 +8,10 @@ use App\Cards\CardHand;
 /**
  * Class representing a Player in the 21 game
  */
-class Player21 extends Player
+class Player21
 {
+    use PlayerTrait;
+
     /**
      * @var int $GOAL the goal points to reach.
      */
@@ -21,7 +23,8 @@ class Player21 extends Player
      */
     public function __construct(string $name="You", CardHand $hand=new CardHand())
     {
-        parent::__construct($name, $hand);
+        $this->name = $name;
+        $this->hand = $hand;
     }
 
     /**
