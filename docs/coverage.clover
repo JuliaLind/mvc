@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683852184">
-  <project timestamp="1683852184">
+<coverage generated="1683852443">
+  <project timestamp="1683852443">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -925,7 +925,7 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Game/GameHandlerLanding.php">
       <class name="App\Game\GameHandlerLanding" namespace="global">
-        <metrics complexity="4" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="10" elements="18" coveredelements="11"/>
+        <metrics complexity="4" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="16" elements="18" coveredelements="18"/>
       </class>
       <line num="5" type="stmt" count="1"/>
       <line num="17" type="method" name="main" visibility="public" complexity="3" crap="3" count="3"/>
@@ -939,14 +939,14 @@
       <line num="28" type="stmt" count="3"/>
       <line num="29" type="stmt" count="3"/>
       <line num="31" type="stmt" count="3"/>
-      <line num="38" type="method" name="doc" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="40" type="stmt" count="0"/>
-      <line num="41" type="stmt" count="0"/>
-      <line num="42" type="stmt" count="0"/>
-      <line num="43" type="stmt" count="0"/>
-      <line num="44" type="stmt" count="0"/>
-      <line num="46" type="stmt" count="0"/>
-      <metrics loc="49" ncloc="38" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="11" elements="19" coveredelements="12"/>
+      <line num="38" type="method" name="doc" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="40" type="stmt" count="1"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="42" type="stmt" count="1"/>
+      <line num="43" type="stmt" count="1"/>
+      <line num="44" type="stmt" count="1"/>
+      <line num="46" type="stmt" count="1"/>
+      <metrics loc="49" ncloc="38" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="19" coveredelements="19"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Game/GameTestingTrait.php">
       <class name="App\Game\GameTestingTrait" namespace="global">
@@ -1116,6 +1116,6 @@
       <line num="74" type="stmt" count="0"/>
       <metrics loc="102" ncloc="62" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="25" coveredelements="0"/>
     </file>
-    <metrics files="32" loc="2958" ncloc="2051" classes="24" methods="135" coveredmethods="81" conditionals="0" coveredconditionals="0" statements="791" coveredstatements="327" elements="926" coveredelements="408"/>
+    <metrics files="32" loc="2958" ncloc="2051" classes="24" methods="135" coveredmethods="82" conditionals="0" coveredconditionals="0" statements="791" coveredstatements="333" elements="926" coveredelements="415"/>
   </project>
 </coverage>

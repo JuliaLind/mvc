@@ -79,4 +79,23 @@ class GameHandlerLandingTest extends TestCase
         ];
         $this->assertEquals($exp, $res);
     }
+
+    /**
+     * Tests doc method
+     */
+    public function testDoc(): void
+    {
+        $parser = $this->createMock(MdParser::class);
+        $parser->method('getParsedText')->willReturn("This is a test");
+
+
+        $gameHandler = new GameHandlerLanding();
+        $res = $gameHandler->doc($parser);
+        $exp = [
+            'about' => "This is a test",
+            'page' => "landing doc",
+            'url' => "/game"
+        ];
+        $this->assertEquals($exp, $res);
+    }
 }
