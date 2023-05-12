@@ -2,22 +2,29 @@
 
 namespace App\Helpers;
 
-require __DIR__ . "/../../vendor/autoload.php";
-
-use Datetime;
+use PHPUnit\Framework\TestCase;
 
 /**
- * Helper class to handle the routes in JsonController
+ * Test cases for class JsonHandler.
  */
-class JsonHandler
+class JsonHandlerTest extends TestCase
 {
     /**
-     * Returns an array with data json landing page
-     * @return  array<string,array<int,array<string,string>>|string>
+     * Construct object and check
      */
-    public function getLandingData(): array
+    public function testCreateObject(): void
     {
-        return [
+        $handler = new JsonHandler();
+        $this->assertInstanceOf("\App\Helpers\JsonHandler", $handler);
+    }
+
+    /**
+     * Tests that getLandingData method returns correct data
+     */
+    public function testGetLandingData(): void
+    {
+        $handler = new JsonHandler();
+        $exp = [
             'page' => "landing",
             'url' => "/api",
             'jsonRoutes' => [
@@ -66,45 +73,12 @@ class JsonHandler
                     'descr' => "Shows one book in the library",
                     'method' => '',
                 ],
-            ]
+            ],
         ];
+        $res = $handler->getLandingData();
+        $this->assertEquals($exp, $res);
     }
 
-    /**
-     * Returns a daily quote and the date, time when the page was loaded
-     * @return array<string>
-     */
-    public function generateQuote(): array
-    {
-        $quotes = [
-            <<<EOD
-            "Any fool can write code that a computer can understand. 
-            Good programmers write code that humans can understand." — Martin Fowler
-            EOD,
-            <<<EOD
-            "It is never too late to be what you might have been." — George Eliot
-            EOD,
-            <<<EOD
-            "Do the best you can. No one can do more than that.” — John Wooden
-            EOD,
-            <<<EOD
-            "Do what you can, with what you have, where you are." — Theodore Roosevelt
-            EOD,
-            <<<EOD
-            "If you can dream it, you can do it." — Walt Disney
-            EOD
-        ];
-
-        date_default_timezone_set('Europe/Stockholm');
-
-
-        $number = random_int(0, count($quotes)-1);
-        $time = new DateTime();
-        return [
-            'quote' => $quotes[$number],
-            'timestamp' => $time->format('Y-m-d H:i:s'),
-        ];
-    }
 
 
 }

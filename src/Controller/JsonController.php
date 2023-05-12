@@ -10,9 +10,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-use Datetime;
-
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Helpers\JsonHandler;
@@ -28,8 +25,7 @@ class JsonController extends AbstractController
     #[Route("/api", name: "api")]
     public function apis(
         JsonHandler $handler = new JsonHandler()
-    ): Response
-    {
+    ): Response {
         $data = $handler->getLandingData();
         return $this->render('landing_json.html.twig', $data);
     }
@@ -41,8 +37,7 @@ class JsonController extends AbstractController
     #[Route('/api/quote', name: "quote")]
     public function jsonQuote(
         JsonHandler $handler = new JsonHandler()
-    ): Response
-    {
+    ): Response {
         $data = $handler->generateQuote();
 
         $response = new JsonResponse($data);
