@@ -62,23 +62,4 @@ class FlashGenerator
             "Boken '{$book->getTitle()}' har raderats"
         ];
     }
-
-    /**
-     * Generates class and text for flashmessage
-     * for the flash message
-     * @return array<string>
-     */
-    public function generateFlash(string $action, Book $book, bool $wentWell): array
-    {
-        switch ($action) {
-            case 'new':
-                return $this->newFlash($wentWell, $book);
-            case 'update':
-                return $this->updateFlash($wentWell, $book);
-            case 'remove':
-                return $this->removeFlash($book);
-            default:
-                return ["", ""];
-        }
-    }
 }

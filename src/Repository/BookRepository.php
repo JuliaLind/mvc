@@ -33,15 +33,15 @@ class BookRepository extends ServiceEntityRepository
         $isbn = $entity->getIsbn();
         try {
             $book = $this->findOneByIsbn($isbn);
-            if ($book->getId() != $entity->getId()) {
+            if ($book->getId() !== $entity->getId()) {
                 throw new IsbnAlreadyInUseException();
             }
         } catch (BookNotFoundException) {
-            $this->getEntityManager()->persist($entity);
+        }
+        $this->getEntityManager()->persist($entity);
 
-            if ($flush) {
-                $this->getEntityManager()->flush();
-            }
+        if ($flush) {
+            $this->getEntityManager()->flush();
         }
     }
 

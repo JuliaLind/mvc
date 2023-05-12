@@ -7,8 +7,10 @@ require __DIR__ . "/../../vendor/autoload.php";
 use App\Cards\CardGraphic;
 use App\Cards\CardHand;
 use App\Cards\DeckOfCards;
-
 use App\Cards\Player;
+
+use App\Cards\CardLandingHandler;
+use App\Cards\CardHandler;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,34 +25,10 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class CardController extends AbstractController
 {
     #[Route("/card", name: "card")]
-    public function card(): Response
-    {
-        $data = [
-            'page' => "landing",
-            'url' => "/card",
-            'cardRoutes' => [
-                [
-                    'link' => "deck",
-                    'method' => 'GET',
-                ],
-                [
-                    'link' => "shuffle",
-                    'method' => 'POST',
-                ],
-                [
-                    'link' => "draw",
-                    'method' => 'POST',
-                ],
-                [
-                    'link' => "drawMany",
-                    'method' => 'POST',
-                ],
-                [
-                    'link' => "deal",
-                    'method' => 'POST',
-                ],
-            ],
-        ];
+    public function card(
+        CardLandingHandler $cardHandler=new CardLandingHandler()
+    ): Response {
+        $data = $cardHandler->getMainData();
         return $this->render('card/home.html.twig', $data);
     }
 
@@ -60,16 +38,12 @@ class CardController extends AbstractController
      */
     #[Route('/card/deck', name: "deck", methods: ['GET'])]
     public function deck(
-        SessionInterface $session
+        SessionInterface $session,
+        CardHandler $cardHandler=new CardHandler(),
+        DeckOfCards $deck=new DeckOfCards()
     ): Response {
-        $deck = new DeckOfCards();
+        $data = $cardHandler->getDeckRouteData($deck);
         $session->set("deck", $deck);
-        $data = [
-            'title' => "Sorted deck",
-            'cards' => $deck->getImgLinks(),
-            'page' => "deck card no-header",
-            'url' => "/card",
-        ];
         return $this->render('card/deck.html.twig', $data);
     }
 
@@ -79,17 +53,14 @@ class CardController extends AbstractController
      */
     #[Route('/card/deck/shuffle', name: "shuffle", methods: ['POST'])]
     public function shuffle(
-        SessionInterface $session
+        SessionInterface $session,
+        CardHandler $cardHandler=new CardHandler(),
+        DeckOfCards $deck=new DeckOfCards()
     ): Response {
         $deck = new DeckOfCards();
         $deck->shuffle();
+        $data = $cardHandler->getDeckRouteData($deck);
         $session->set("deck", $deck);
-        $data = [
-            'title' => "Shuffled deck",
-            'cards' => $deck->getImgLinks(),
-            'page' => "deck card no-header",
-            'url' => "/card",
-        ];
 
         return $this->render('card/deck.html.twig', $data);
     }
@@ -101,29 +72,16 @@ class CardController extends AbstractController
      */
     #[Route('/card/deck/draw', name: "draw", methods: ['POST'])]
     public function draw(
-        SessionInterface $session
+        SessionInterface $session,
+        CardHandler $cardHandler=new CardHandler(),
+        Player $player=new Player()
     ): Response {
         /**
          * @var DeckOfCards $deck The deck of cards.
          */
         $deck = $session->get("deck") ?? new DeckOfCards();
-        $players = [];
-
-        $player = new Player('Player 1');
-        $player->draw($deck);
-
+        $data = $cardHandler->getDataForDraw($deck, [$player]);
         $session->set("deck", $deck);
-        $players[] = [
-            'playerName' => $player->getName(),
-            'cards' => $player->showHandGraphic(),
-        ];
-        $data = [
-            'title' => "Draw 1 card",
-            'players' => $players,
-            'cardsLeft' => $deck->getCardCount(),
-            'page' => "draw card no-header",
-            'url' => "/card",
-        ];
 
         return $this->render('card/draw.html.twig', $data);
     }
@@ -136,29 +94,17 @@ class CardController extends AbstractController
     #[Route('/card/deck/draw/{number<\d+>}', name: "drawMany", methods: ['POST'])]
     public function drawMany(
         SessionInterface $session,
-        int $number
+        int $number,
+        CardHandler $cardHandler=new CardHandler(),
+        Player $player=new Player()
     ): Response {
         /**
          * @var DeckOfCards $deck The deck of cards.
          */
         $deck = $session->get("deck") ?? new DeckOfCards();
-        $players = [];
-        $player = new Player('Player 1');
-        $player->drawMany($deck, $number);
+        $data = $cardHandler->getDataForDraw($deck, [$player], $number);
 
         $session->set("deck", $deck);
-        $players[] = [
-            'playerName' => $player->getName(),
-            'cards' => $player->showHandGraphic(),
-        ];
-
-        $data = [
-            'title' => "Draw {$number} cards",
-            'players' => $players,
-            'cardsLeft' => $deck->getCardCount(),
-            'page' => "draw card no-header",
-            'url' => "/card",
-        ];
 
         return $this->render('card/draw.html.twig', $data);
     }
@@ -172,30 +118,25 @@ class CardController extends AbstractController
     public function deal(
         SessionInterface $session,
         int $players,
-        int $cards
+        int $cards,
+        CardHandler $cardHandler=new CardHandler(),
     ): Response {
         /**
          * @var DeckOfCards $deck The deck of cards.
          */
         $deck = $session->get("deck") ?? new DeckOfCards();
-        $hands = [];
 
+        /**
+         * @var array<Player> $arr with player objects
+         */
+        $arr = [];
         for ($i = 1; $i <= $players; $i++) {
             $player = new Player("player {$i}");
-            $player->drawMany($deck, $cards);
-            $hands[] = [
-                'playerName' => $player->getName(),
-                'cards' => $player->showHandGraphic(),
-            ];
+            $arr[] = $player;
         };
+        $data = $cardHandler->getDataForDraw($deck, $arr, $cards);
+
         $session->set("deck", $deck);
-        $data = [
-            'title' => "Draw {$cards} cards for {$players} players",
-            'players' => $hands,
-            'cardsLeft' => $deck->getCardCount(),
-            'page' => "draw card no-header",
-            'url' => "/card",
-        ];
 
         return $this->render('card/draw.html.twig', $data);
     }

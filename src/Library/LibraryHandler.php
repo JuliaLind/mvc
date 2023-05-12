@@ -9,7 +9,7 @@ use App\Repository\BookRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-use Doctrine\DBAL\Connection;
+// use Doctrine\DBAL\Connection;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
