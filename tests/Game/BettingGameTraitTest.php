@@ -21,13 +21,8 @@ class BettingGameTraitTest extends TestCase
         $this->bank = $this->createMock(Player21::class);
         $this->player->method('getMoney')->will($this->onConsecutiveCalls(30, 10, 10));
         $this->bank->method('getMoney')->will($this->onConsecutiveCalls(15, 35, 0));
-        $this->player->method('decrMoney')->will($this->onConsecutiveCalls(15, 10, 0));
-        $this->bank->method('decrMoney')->will($this->onConsecutiveCalls(15, 10, 0));
-
         $this->moneyPot = new MoneyPot();
         $this->winner = $this->createMock(Player21::class);
-        $this->winner->method('getName')->willReturn('');
-
     }
 
     /**
@@ -93,8 +88,6 @@ class BettingGameTraitTest extends TestCase
 
     public function testIsWinnerNotOk(): void
     {
-        // $winner = $this->createMock(Player21::class);
-        // $player->method('getName')->willReturn("real winner");
         $res = $this->isWinner();
         $this->assertFalse($res);
     }
