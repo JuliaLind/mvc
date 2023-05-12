@@ -6,7 +6,10 @@ use PHPUnit\Framework\TestCase;
 use Doctrine\DBAL\Connection;
 
 /**
- * To mock the builtin function file_get_contents
+ * To mock the builtin function file_get_contents.
+ * Even though the params are not used
+ * they are needed to resemble the "mocked" function
+ * @scrutinizer ignore-unused
  * @SuppressWarnings(PHPMD)
  */
 function file_get_contents(string $filename): string
