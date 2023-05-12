@@ -18,12 +18,7 @@ class Game21Easy extends Game implements Game21Interface
      * @var int $GOAL the goal points to reach.
      */
     protected const GOAL = 21;
-
-    /**
-     * @var Player21|null $winner.
-     */
-    protected $winner=null;
-
+    protected Player21 $winner;
     protected Player21 $player;
     protected Player21 $bank;
     protected bool $roundOver=false;
@@ -46,7 +41,7 @@ class Game21Easy extends Game implements Game21Interface
         $startingMoney = 100;
         $this->player->incrMoney($startingMoney);
         $this->bank->incrMoney($startingMoney);
-
+        $this->winner = new Player21('');
         $this->moneyPot = new MoneyPot();
     }
 
@@ -88,7 +83,7 @@ class Game21Easy extends Game implements Game21Interface
         $this->bankPlaying = false;
         $this->player->emptyHand();
         $this->bank->emptyHand();
-        $this->winner = null;
+        $this->winner = new Player21('');
 
         $nextRoundData = [
             'limit' => $this->getInvestLimit(),
@@ -113,23 +108,25 @@ class Game21Easy extends Game implements Game21Interface
     /**
      * Called after the player has picked a card.
      *
-     * @return void
+     * @return bool true if player lost otherwise
+     * false
      */
-    public function evaluate(): void
+    public function evaluate(): bool
     {
         $player = $this->player;
         $handValue = $player->handValue();
 
-        $winner = $player;
+        // $winner = $player;
         if ($handValue > self::GOAL) {
-            $winner = $this->bank;
+            $this->winner = $this->bank;
+            return true;
         } elseif ($this->cardsLeft() > 0) {
             if ($handValue === self::GOAL) {
                 $this->bankPlaying = true;
             }
-            return;
+            return false;
         }
-        $this->winner = $winner;
+        return true;
     }
 
     /**
@@ -177,6 +174,23 @@ class Game21Easy extends Game implements Game21Interface
         $this->winner = $winner;
     }
 
+    protected function finishGame(): void
+    {
+        if (($this->getInvestLimit() === 0 && $this->moneyPot->currentAmount() === 0) || $this->cardsLeft() === 0) {
+            $this->finished = true;
+        }
+    }
+
+    protected function determineWinner(Player21 $player, Player21 $bank): Player21
+    {
+        $winner = $bank;
+        if ($player->getMoney() > $bank->getMoney()) {
+            $winner = $player;
+        }
+
+        return $winner;
+    }
+
     /**
      * Moves money from the money pot to the winner.
      * Determines if the game is finished,
@@ -187,26 +201,28 @@ class Game21Easy extends Game implements Game21Interface
     public function endRound(): void
     {
         $winner = $this->winner;
+        $this->roundOver = true;
+        $this->moneyPot->moneyToWinner($winner);
 
-        if ($winner) {
-            $this->roundOver = true;
-            $this->moneyPot->moneyToWinner($winner);
+        $this->finishGame();
 
-            if (($this->getInvestLimit() === 0 && $this->moneyPot->currentAmount() === 0) || $this->cardsLeft() === 0) {
-                $this->finished = true;
-            }
-            if ($this->cardsLeft() === 0) {
-                $player = $this->player;
-                $bank = $this->bank;
+        // if ($this->cardsLeft() === 0) {
+        //     $player = $this->player;
+        //     $bank = $this->bank;
 
-                $winner = $bank;
-                if ($player->getMoney() > $bank->getMoney()) {
-                    $winner = $player;
-                }
-            }
+        //     $winner = $bank;
+        //     if ($player->getMoney() > $bank->getMoney()) {
+        //         $winner = $player;
+        //     }
+        // }
 
-            $this->winner = $winner;
+        // $this->winner = $winner;
+        if ($this->cardsLeft() === 0) {
+            $winner = $this->determineWinner($this->player, $this->bank);
         }
+
+        $this->winner = $winner;
+
     }
 
     /**
@@ -218,10 +234,7 @@ class Game21Easy extends Game implements Game21Interface
     {
         $type = "";
         $message = "";
-        $winner = "";
-        if ($this->winner) {
-            $winner = $this->winner->getName();
-        }
+        $winner = $this->winner->getName();
 
         if ($this->roundOver === true) {
             $type = "notice";
@@ -267,10 +280,9 @@ class Game21Easy extends Game implements Game21Interface
      */
     public function getGameStatus(): array
     {
-        $winner = "";
-        if ($this->winner) {
-            $winner = $this->winner->getName();
-        }
+
+        $winner = $this->winner->getName();
+
 
         $data = [
             'bankPlaying'=>$this->bankPlaying,

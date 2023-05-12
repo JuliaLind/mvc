@@ -13,6 +13,7 @@ trait BettingGameTrait
     protected MoneyPot $moneyPot;
     protected Player21 $player;
     protected Player21 $bank;
+    protected Player21 $winner;
 
     /**
      * Returns the lower of money of what
@@ -42,5 +43,16 @@ trait BettingGameTrait
             $amount = $limit;
         }
         $this->moneyPot->addMoney($amount, [$this->player, $this->bank]);
+    }
+
+    /**
+     * Check if there is a winner
+     */
+    public function isWinner(): bool
+    {
+        if ($this->winner->getName() === '') {
+            return false;
+        }
+        return true;
     }
 }

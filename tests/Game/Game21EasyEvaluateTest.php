@@ -131,6 +131,7 @@ class Game21EasyEvaluateTest extends TestCase
         $bank = clone $player;
         $player->method('handValue')->willReturn(1);
         $player->method('getName')->willReturn('Player');
+
         $deck = $this->createMock(DeckOfCards::class);
         $deck->method('getCardCount')->willReturn(0);
 
@@ -141,19 +142,7 @@ class Game21EasyEvaluateTest extends TestCase
         $game->setBank($bank);
         $game->setMoneyPot($pot);
 
-        $game->evaluate();
-
-        $res = $game->getGameStatus();
-        $exp = [
-            'bankPlaying'=>false,
-            'winner'=>'Player',
-            'cardsLeft'=>0,
-            'finished'=>false,
-            'currentRound'=>0,
-            'moneyPot'=>0,
-            'roundOver'=>false,
-            'level' => 'easy',
-        ];
-        $this->assertEquals($exp, $res);
+        $res = $game->evaluate();
+        $this->assertTrue($res);
     }
 }

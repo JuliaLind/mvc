@@ -74,14 +74,15 @@ class GameHandlerTest extends TestCase
     /**
      * Tests the playerDraw method
      */
-    public function testPlayerDraw(): void
+    public function testPlayerDrawRoundOver(): void
     {
         $gameHandler = new GameHandler();
         $game = $this->createMock(Game21Easy::class);
         $game->expects($this->once())
             ->method('deal');
         $game->expects($this->once())
-            ->method('evaluate');
+            ->method('evaluate')
+            ->willReturn(true);
         $game->expects($this->once())
             ->method('endRound');
 
@@ -89,6 +90,23 @@ class GameHandlerTest extends TestCase
         $exp = ["custom", "testing playerDraw"];
         $res = $gameHandler->playerDraw($game);
         $this->assertEquals($exp, $res);
+    }
+
+        /**
+     * Tests the playerDraw method
+     */
+    public function testPlayerDrawRoundNotOver(): void
+    {
+        $gameHandler = new GameHandler();
+        $game = $this->createMock(Game21Easy::class);
+        $game->expects($this->once())
+            ->method('deal');
+        $game->expects($this->once())
+            ->method('evaluate')
+            ->willReturn(false);
+        $game->expects($this->never())
+            ->method('endRound');
+        $res = $gameHandler->playerDraw($game);
     }
 
     /**

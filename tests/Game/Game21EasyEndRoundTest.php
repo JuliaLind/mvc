@@ -26,6 +26,7 @@ class Game21EasyEndRoundTest extends TestCase
         $bank = clone $player;
 
         $player->method('getName')->willReturn('player');
+        $bank->method('getName')->willReturn('bank');
         $player->method('getMoney')->willReturn(80);
         $bank->method('getMoney')->willReturn(30);
 

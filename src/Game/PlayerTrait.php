@@ -15,7 +15,7 @@ trait PlayerTrait
      * @var int $money
      * @var CardHand $hand
      */
-    protected string $name;
+    protected string $name='';
     protected int $money=0;
     protected CardHand $hand;
 

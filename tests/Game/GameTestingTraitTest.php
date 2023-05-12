@@ -13,10 +13,7 @@ class GameTestingTraitTest extends TestCase
 
     protected MoneyPot $moneyPot;
     protected Player21 $bank;
-    /**
-     * @var Player21 $winner.
-     */
-    protected $winner;
+    protected Player21 $winner;
 
     protected bool $roundOver=false;
     protected bool $bankPlaying=false;
@@ -24,13 +21,10 @@ class GameTestingTraitTest extends TestCase
 
     protected function setUp(): void
     {
-        // $this->winner = $this->createMock(Player21::class);
-        // $this->winner->method('getName')->willReturn("I'm a winner");
-
         $this->bank = $this->createMock(Player21::class);
-
         $this->moneyPot = $this->createMock(MoneyPot::class);
         $this->moneyPot->method('currentAmount')->willReturn(130);
+        $this->winner = $this->createMock(Player21::class);
     }
 
     /**

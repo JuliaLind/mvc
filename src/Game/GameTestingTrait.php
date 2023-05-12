@@ -12,10 +12,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait GameTestingTrait
 {
     protected Player21 $bank;
-    /**
-     * @var Player21 $winner.
-     */
-    protected $winner=null;
+    protected Player21 $winner;
 
     protected bool $roundOver=false;
     protected bool $bankPlaying=false;
@@ -59,9 +56,6 @@ trait GameTestingTrait
      */
     public function getWinner(): Player21
     {
-        if ($this->winner === null) {
-            return new Player21('');
-        }
         return $this->winner;
     }
 

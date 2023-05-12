@@ -57,9 +57,10 @@ class GameHandler
     public function playerDraw(Game21Interface $game): array
     {
         $game->deal();
-        $game->evaluate();
-        $game->endRound();
-
+        $roundOver = $game->evaluate();
+        if ($roundOver === true) {
+            $game->endRound();
+        }
         $flash = $game->generateFlash();
         return $flash;
     }
