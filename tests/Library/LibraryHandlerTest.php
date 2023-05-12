@@ -37,8 +37,6 @@ class LibraryHandlerTest extends TestCase
         ->method('get')
         ->will($this->onConsecutiveCalls('bok-titel', '0123456543210', 'Anna Karin', 'https://bildlank.se'));
 
-        // $request->method('get')->will($this->onConsecutiveCalls('bok-titel', '0123456543210', 'Anna Karin', 'https://bildlank.se'));
-
         $book = $this->createMock(Book::class);
 
         $book->expects($this->once())
@@ -55,6 +53,54 @@ class LibraryHandlerTest extends TestCase
             ->with('https://bildlank.se');
 
         $libraryHandler->updateBook($request, $book);
+    }
+
+    /**
+     * Tests the updateBook method with ok ISBN
+     */
+    public function testSaveBookOk(): void
+    {
+        $libraryHandler = new LibraryHandler();
+        $book = $this->createMock(Book::class);
+        $bookRepository = $this->createMock(BookRepository::class);
+        $bookRepository->expects($this->once())
+            ->method('save')
+            ->with($book, true);
+
+        $res = $libraryHandler->saveBook($bookRepository, $book);
+        $this->assertTrue($res);
+    }
+
+    /**
+     * Tests the updateBook method with ISBN
+     * already used for another book
+     */
+    public function testSaveBookNotOk(): void
+    {
+        $libraryHandler = new LibraryHandler();
+        $book = $this->createMock(Book::class);
+        $bookRepository = $this->createMock(BookRepository::class);
+        $bookRepository->expects($this->once())
+            ->method('save')
+            ->with($book, true)
+            ->will($this->throwException(new IsbnAlreadyInUseException()));
+
+        $res = $libraryHandler->saveBook($bookRepository, $book);
+        $this->assertFalse($res);
+    }
+
+    /**
+     * Tests the removeBook method
+     */
+    public function testRemoveBook(): void
+    {
+        $libraryHandler = new LibraryHandler();
+        $book = $this->createMock(Book::class);
+        $bookRepository = $this->createMock(BookRepository::class);
+        $bookRepository->expects($this->once())
+            ->method('remove')
+            ->with($book, true);
+        $libraryHandler->removeBook($bookRepository, $book);
     }
 
 }

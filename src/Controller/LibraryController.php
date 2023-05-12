@@ -10,6 +10,7 @@ use App\Library\LibraryHandler;
 use App\Library\SqlFileLoader;
 use App\Library\IsbnAlreadyInUseException;
 use App\Library\BookNotFoundException;
+use App\Library\FlashGenerator;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -57,12 +58,13 @@ class LibraryController extends AbstractController
     public function createBook(
         BookRepository $bookRepository,
         Request $request,
-        LibraryHandler $libraryHandler = new LibraryHandler()
+        LibraryHandler $libraryHandler = new LibraryHandler(),
+        FlashGenerator $flashGenerator = new FlashGenerator()
     ): Response {
         $book = new Book();
         $libraryHandler->updateBook($request, $book);
         $wentWell = $libraryHandler->saveBook($bookRepository, $book);
-        $flash = $libraryHandler->generateFlash('new', $book, $wentWell);
+        $flash = $flashGenerator->newFlash($wentWell, $book);
         $this->addFlash(...$flash);
         switch ($wentWell) {
             case true:
@@ -97,7 +99,8 @@ class LibraryController extends AbstractController
     public function updateBook(
         BookRepository $bookRepository,
         Request $request,
-        LibraryHandler $libraryHandler=new LibraryHandler()
+        LibraryHandler $libraryHandler=new LibraryHandler(),
+        FlashGenerator $flashGenerator = new FlashGenerator()
     ): Response {
         $bookId = $request->get('book_id');
         /**
@@ -107,7 +110,7 @@ class LibraryController extends AbstractController
 
         $libraryHandler->updateBook($request, $book);
         $wentWell = $libraryHandler->saveBook($bookRepository, $book);
-        $flash = $libraryHandler->generateFlash('update', $book, $wentWell);
+        $flash = $flashGenerator->updateFlash($wentWell, $book);
         $this->addFlash(...$flash);
 
         switch ($wentWell) {
@@ -166,14 +169,15 @@ class LibraryController extends AbstractController
     public function deleteBookByIsbn(
         string $isbn,
         BookRepository $bookRepository,
-        LibraryHandler $libraryHandler=new LibraryHandler()
+        LibraryHandler $libraryHandler=new LibraryHandler(),
+        FlashGenerator $flashGenerator = new FlashGenerator()
     ): Response {
         /**
          * @var Book $book
          */
         $book = $bookRepository->findOneByIsbn($isbn);
         $libraryHandler->removeBook($bookRepository, $book);
-        $flash = $libraryHandler->generateFlash('remove', $book, true);
+        $flash = $flashGenerator->removeFlash($book);
         $this->addFlash(...$flash);
         return $this->redirectToRoute('read_many');
     }
