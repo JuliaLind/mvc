@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683920114">
-  <project timestamp="1683920114">
+<coverage generated="1683920700">
+  <project timestamp="1683920700">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -686,6 +686,9 @@
       <line num="56" type="stmt" count="1"/>
       <metrics loc="59" ncloc="41" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
     </file>
+    <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Game/GamblingPlayerInterface.php">
+      <metrics loc="33" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Game/Game.php">
       <class name="App\Game\Game" namespace="global">
         <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
@@ -1231,6 +1234,6 @@
       <line num="78" type="stmt" count="0"/>
       <metrics loc="106" ncloc="62" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="25" coveredelements="0"/>
     </file>
-    <metrics files="41" loc="3326" ncloc="2314" classes="33" methods="154" coveredmethods="102" conditionals="0" coveredconditionals="0" statements="833" coveredstatements="509" elements="987" coveredelements="611"/>
+    <metrics files="42" loc="3359" ncloc="2328" classes="33" methods="154" coveredmethods="102" conditionals="0" coveredconditionals="0" statements="833" coveredstatements="509" elements="987" coveredelements="611"/>
   </project>
 </coverage>

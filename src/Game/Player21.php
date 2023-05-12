@@ -8,7 +8,7 @@ use App\Cards\CardHand;
 /**
  * Class representing a Player in the 21 game
  */
-class Player21
+class Player21 implements GamblingPlayerInterface
 {
     use PlayerTrait;
 
