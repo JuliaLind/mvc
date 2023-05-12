@@ -4,8 +4,6 @@ namespace App\Cards;
 
 use PHPUnit\Framework\TestCase;
 
-// use App\Exceptions\NoCardsLeftException;
-
 /**
  * Test cases for class Player.
  */

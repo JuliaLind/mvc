@@ -10,11 +10,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\BookRepository;
 
-// use Symfony\Component\Validator\Constraints\DateTime;
 use Datetime;
 
-use App\Game\Game21Interface;
-use App\Game\GameHandler;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -272,64 +269,5 @@ class JsonController extends AbstractController
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
         return $response;
-    }
-
-    /**
-     * Route displays current game/game-status as json object
-     */
-    #[Route('/api/game', name: "jsonGame", methods: ['GET'])]
-    public function jsonGame(
-        SessionInterface $session,
-        GameHandler $gameHandler=new GameHandler()
-    ): Response {
-        // $gameStatus = "No game started";
-        /**
-         * @var Game21Interface $game The current game of 21.
-         */
-        $game = $session->get("game21") ?? null;
-
-        // if ($game != null) {
-        //     $gameStatus = $game->getGameStatus();
-        //     $gameStatus['risk'] = $game->getRisk();
-        // }
-
-        // $data = [
-        //     'players' => $game->getPlayerData(),
-        //     'status' => $gameStatus,
-        // ];
-        $data = $gameHandler->jsonGame($game);
-        $response = new JsonResponse($data);
-        $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_PRETTY_PRINT
-        );
-        return $response;
-    }
-
-    /**
-     * Displays all books in the library
-     */
-    #[Route('/api/library/books', name: "books_json")]
-    public function showAllBooks(
-        BookRepository $bookRepository
-    ): Response {
-        $books = $bookRepository
-            ->findAll();
-
-        $response = $this->json($books);
-        $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_PRETTY_PRINT
-        );
-        return $response;
-    }
-
-    #[Route('api/library/book/{isbn}', name: 'single_book_json')]
-    public function showProductById(
-        BookRepository $bookRepository,
-        string $isbn
-    ): Response {
-        $book = $bookRepository
-            ->findOneByIsbn($isbn);
-
-        return $this->json($book);
     }
 }

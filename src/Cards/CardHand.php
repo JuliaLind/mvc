@@ -4,7 +4,6 @@ namespace App\Cards;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-// use App\Cards\NoCardsLeftException;
 
 /**
  * Class representing a hand that can hold cards

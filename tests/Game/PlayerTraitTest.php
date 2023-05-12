@@ -9,74 +9,25 @@ use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
 /**
- * Test cases for class Player.
+ * Test cases for PlayerTrait.
  */
 class PlayerTraitTest extends TestCase
 {
     use PlayerTrait;
-
-    // private Player $player;
-
-    // protected function setUp(): void
-    // {
-    //     # Arrange
-    //     $this->player = new Player('Julia');
-    // }
-    // /**
-    //  * Construct object and check that all metods return
-    //  * expected properties
-    //  */
-    // public function testCreateObject(): void
-    // {
-    //     # Assert
-    //     $this->assertInstanceOf("\App\Game\Player", $this->player);
-
-    //     # Assert
-    //     $res = $this->player->getName();
-    //     $exp = 'Julia';
-    //     $this->assertEquals($exp, $res);
-
-    //     # Assert
-    //     $res = $this->player->showHandGraphic();
-    //     $this->assertEmpty($res);
-
-    //     # Assert
-    //     $res = $this->player->showHandAsString();
-    //     $this->assertEmpty($res);
-
-    //     # Assert
-    //     $res = $this->player->getMoney();
-    //     $exp = 0;
-    //     $this->assertEquals($exp, $res);
-
-    //     # Assert
-    //     $res = $this->player->getCardCount();
-    //     $exp = 0;
-    //     $this->assertEquals($exp, $res);
-
-    //     # Assert
-    //     $res = $this->player->getCardValues();
-    //     $this->assertEmpty($res);
-    // }
 
     /**
      * Tests the draw method
      */
     public function testDraw(): void
     {
-        # arrange
         $deck = $this->createMock(DeckOfCards::class);
         $hand = $this->createMock(CardHand::class);
-        // $player = new Player('', $hand);
         $this->hand = $hand;
 
-        #assert
         $hand->expects($this->once())
                 ->method('add')
                 ->with($this->equalTo($deck), $this->equalTo(1));
 
-        #act
-        // $player->draw($deck);
         $this->draw($deck);
     }
 
@@ -85,32 +36,14 @@ class PlayerTraitTest extends TestCase
      */
     public function testIncrMoneyOk(): void
     {
-        // # Act
-        // $this->player->incrMoney(20);
-
-        // # Assert
-        // $res = $this->player->getMoney();
-        // $exp = 20;
-        // $this->assertEquals($exp, $res);
-
-        // # Act
-        // $this->player->incrMoney(15);
-
-        // # Assert
-        // $res = $this->player->getMoney();
-
-        # Act
         $this->incrMoney(20);
 
-        # Assert
         $res = $this->getMoney();
         $exp = 20;
         $this->assertEquals($exp, $res);
 
-        # Act
         $this->incrMoney(15);
 
-        # Assert
         $res = $this->getMoney();
 
         $exp = 35;
@@ -122,38 +55,16 @@ class PlayerTraitTest extends TestCase
      */
     public function testDecrMoneyOk(): void
     {
-        // # Act
-        // $this->player->decrMoney(20);
-
-        // # Assert
-        // $res = $this->player->getMoney();
-        // $exp = -20;
-        // $this->assertEquals($exp, $res);
-
-        // # Arrange
-        // $this->player->incrMoney(100);
-
-        // # Act
-        // $this->player->decrMoney(15);
-
-        // # Assert
-        // $res = $this->player->getMoney();
-
-        # Act
         $this->decrMoney(20);
 
-        # Assert
         $res = $this->getMoney();
         $exp = -20;
         $this->assertEquals($exp, $res);
 
-        # Arrange
         $this->incrMoney(100);
 
-        # Act
         $this->decrMoney(15);
 
-        # Assert
         $res = $this->getMoney();
 
         $exp = 65;
@@ -165,17 +76,12 @@ class PlayerTraitTest extends TestCase
      */
     public function testEmptyHandOk(): void
     {
-        # arrange
         $hand = $this->createMock(CardHand::class);
-        // $player = new Player('', $hand);
         $this->hand = $hand;
 
-        #assert
         $hand->expects($this->once())
                 ->method('emptyHand');
 
-        # Act
-        // $player->emptyHand();
         $this->emptyHand();
     }
 
@@ -184,16 +90,12 @@ class PlayerTraitTest extends TestCase
      */
     public function testGetCardValues(): void
     {
-        # arrange
         $hand = $this->createMock(CardHand::class);
         $this->hand = $hand;
 
-        #assert
         $hand->expects($this->once())
                 ->method('getValues');
 
-        # Act
-        // $player->emptyHand();
         $this->getCardValues();
     }
 
@@ -202,16 +104,12 @@ class PlayerTraitTest extends TestCase
      */
     public function testShowHandAsString(): void
     {
-        # arrange
         $hand = $this->createMock(CardHand::class);
         $this->hand = $hand;
 
-        #assert
         $hand->expects($this->once())
                 ->method('getAsString');
 
-        # Act
-        // $player->emptyHand();
         $this->showHandAsString();
     }
 
@@ -220,16 +118,12 @@ class PlayerTraitTest extends TestCase
      */
     public function testGetCardCount(): void
     {
-        # arrange
         $hand = $this->createMock(CardHand::class);
         $this->hand = $hand;
 
-        #assert
         $hand->expects($this->once())
                 ->method('getCardCount');
 
-        # Act
-        // $player->emptyHand();
         $this->getCardCount();
     }
 }

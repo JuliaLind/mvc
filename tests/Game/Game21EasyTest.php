@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 use App\Cards\DeckOfCards;
 use App\Cards\CardGraphic;
-use App\Exceptions\NoCardsLeftException;
+use App\Cards\NoCardsLeftException;
 
 /**
  * Test cases for class Game.

@@ -6,10 +6,8 @@ use App\Entity\Book;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-use App\Exceptions\BookNotFoundException;
-use App\Exceptions\IsbnAlreadyInUseException;
-
-// use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
+use App\Library\BookNotFoundException;
+use App\Library\IsbnAlreadyInUseException;
 
 /**
  * @extends ServiceEntityRepository<Book>
@@ -20,7 +18,6 @@ use App\Exceptions\IsbnAlreadyInUseException;
  * @method Book[]    findAll()
  * @method Book[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-// #[CodeCoverageIgnore]
 class BookRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
@@ -68,7 +65,7 @@ class BookRepository extends ServiceEntityRepository
           ->getQuery()
           ->getOneOrNullResult()
        ;
-       if (is_a($book, "App\Entity\Book")) {
+       if (!is_a($book, "App\Entity\Book")) {
            throw new BookNotFoundException();
        }
        return $book;

@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 use App\Markdown\MdParser;
 
 /**
- * Test cases for class Game.
+ * Test cases for class GameHandler.
  */
 class GameHandlerTest extends TestCase
 {

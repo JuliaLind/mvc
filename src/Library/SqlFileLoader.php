@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Helpers;
+namespace App\Library;
 
-// use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
 use Doctrine\DBAL\Connection;
 
 /**
  * Resets database from file
  */
-// #[CodeCoverageIgnore]
 class SqlFileLoader
 {
     /**

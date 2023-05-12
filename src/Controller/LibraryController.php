@@ -6,26 +6,24 @@ use App\Entity\Book;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Repository\BookRepository;
 
-use App\Exceptions\IsbnAlreadyInUseException;
+use App\Library\LibraryHandler;
+use App\Library\SqlFileLoader;
+use App\Library\IsbnAlreadyInUseException;
+use App\Library\BookNotFoundException;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-use App\Helpers\SqlFileLoader;
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Doctrine\DBAL\Connection;
 
-// use App\Exceptions\BookNotFoundException;
-
-// use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
-
 /**
  * Class for the library controller
  */
-// #[CodeCoverageIgnore]
 class LibraryController extends AbstractController
 {
     /**
@@ -57,41 +55,21 @@ class LibraryController extends AbstractController
      */
     #[Route('/library/create_new', name: 'book_create', methods: ['POST'])]
     public function createBook(
-        // ManagerRegistry $doctrine,
         BookRepository $bookRepository,
-        Request $request
+        Request $request,
+        LibraryHandler $libraryHandler = new LibraryHandler()
     ): Response {
-        // $entityManager = $doctrine->getManager();
-        $isbn = strval($request->get('isbn'));
-
-        // if ($check) {
-        //     $this->addFlash("warning", "En bok med isbn '{$isbn}' finns redan i systemet. ISBN nummer måste vara unik");
-        //     return $this->redirectToRoute("create_form");
-        // }
-        $title = strval($request->get('title'));
-
-
         $book = new Book();
-        $book->setTitle($title);
-        $book->setIsbn($isbn);
-        $book->setAuthor(strval($request->get('author')));
-        $book->setImg(strval($request->get('image')));
-
-        try {
-            $bookRepository->save($book, true);
-            $this->addFlash("notice", "Boken '{$title}' är registrerad. Klicka på kryset till höger för att gå till översikten");
-            return $this->redirectToRoute("read_one", array('isbn'=>$isbn));
-        } catch (IsbnAlreadyInUseException) {
-            $this->addFlash("warning", "En bok med isbn '{$isbn}' finns redan i systemet. ISBN nummer måste vara unik");
-            return $this->redirectToRoute("create_form");
+        $libraryHandler->updateBook($request, $book);
+        $wentWell = $libraryHandler->saveBook($bookRepository, $book);
+        $flash = $libraryHandler->generateFlash('new', $book, $wentWell);
+        $this->addFlash(...$flash);
+        switch ($wentWell) {
+            case true:
+                return $this->redirectToRoute("read_one", array('isbn'=>$book->getIsbn()));
+            case false:
+                return $this->redirectToRoute("create_form");
         }
-
-        // // tell Doctrine you want to (eventually) save the Book
-        // // (no queries yet)
-        // $entityManager->persist($book);
-
-        // // actually executes the queries (i.e. the INSERT query)
-        // $entityManager->flush();
     }
 
     /**
@@ -118,38 +96,26 @@ class LibraryController extends AbstractController
     #[Route('/library/update_one', name: 'book_update', methods: ['POST'])]
     public function updateBook(
         BookRepository $bookRepository,
-        Request $request
+        Request $request,
+        LibraryHandler $libraryHandler=new LibraryHandler()
     ): Response {
         $bookId = $request->get('book_id');
-        /**
-         * @var string $isbn
-         */
-        $isbn = strval($request->get('isbn'));
         /**
          * @var Book $book
          */
         $book = $bookRepository->find($bookId);
-        // $check = $bookRepository->findOneByIsbn($isbn);
 
+        $libraryHandler->updateBook($request, $book);
+        $wentWell = $libraryHandler->saveBook($bookRepository, $book);
+        $flash = $libraryHandler->generateFlash('update', $book, $wentWell);
+        $this->addFlash(...$flash);
 
-        // if ($check && ($check->getId() != $bookId)) {
-        //     $this->addFlash("warning", "Another book with isbn '{$isbn}' already exists in the system");
-        //     return $this->redirectToRoute("update_form", array('isbn'=>$request->get('original_isbn')));
-        // }
-
-        $book->setTitle(strval($request->get('title')));
-        $book->setIsbn($isbn);
-        $book->setAuthor(strval($request->get('author')));
-        $book->setImg(strval($request->get('image')));
-
-        try {
-            $bookRepository->save($book, true);
-            return $this->redirectToRoute('read_one', array('isbn'=>$isbn));
-        } catch (IsbnAlreadyInUseException) {
-            $this->addFlash("warning", "Another book with isbn '{$isbn}' already exists in the system");
-            return $this->redirectToRoute("update_form", array('isbn'=>$request->get('original_isbn')));
+        switch ($wentWell) {
+            case true:
+                return $this->redirectToRoute('read_one', array('isbn'=>$book->getIsbn()));
+            case false:
+                return $this->redirectToRoute("update_form", array('isbn'=>$request->get('original_isbn')));
         }
-
     }
 
     /**
@@ -160,8 +126,13 @@ class LibraryController extends AbstractController
         BookRepository $bookRepository,
         string $isbn
     ): Response {
-        $book= $bookRepository
+        try {
+            $book= $bookRepository
             ->findOneByIsbn($isbn);
+        } catch (BookNotFoundException) {
+            return $this->redirectToRoute('read_many');
+        }
+
 
         $data = [
             'url' => 'library',
@@ -193,21 +164,17 @@ class LibraryController extends AbstractController
      */
     #[Route('/library/delete/{isbn}', name: 'book_delete_by_isbn', methods: ['POST'])]
     public function deleteBookByIsbn(
-        // Request $request,
         string $isbn,
         BookRepository $bookRepository,
+        LibraryHandler $libraryHandler=new LibraryHandler()
     ): Response {
-        // $isbn = strval($request->get('isbn'));
         /**
          * @var Book $book
          */
         $book = $bookRepository->findOneByIsbn($isbn);
-        $title = $book->getTitle();
-        $bookRepository->remove($book, true);
-
-        $this->addFlash("warning", "Boken '{$title}' har raderats");
-
-
+        $libraryHandler->removeBook($bookRepository, $book);
+        $flash = $libraryHandler->generateFlash('remove', $book, true);
+        $this->addFlash(...$flash);
         return $this->redirectToRoute('read_many');
     }
 

@@ -19,17 +19,6 @@ trait PlayerTrait
     protected int $money=0;
     protected CardHand $hand;
 
-    // /**
-    //  * Constructor
-    //  * @param string $name - Name of the player
-    //  * @param CardHand $hand
-    //  */
-    // public function __construct(string $name, CardHand $hand=new CardHand())
-    // {
-    //     $this->name = $name;
-    //     $this->hand = $hand;
-    // }
-
     /**
      * Getter of player's name
      *

@@ -8,7 +8,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 use App\Cards\DeckOfCards;
 use App\Cards\CardGraphic;
-use App\Exceptions\NoCardsLeftException;
+use App\Cards\NoCardsLeftException;
 
 /**
  * Test cases for class Game21Easy endRound() method

@@ -9,6 +9,8 @@ use App\Game\GameHandler;
 use App\Game\GameHandlerLanding;
 use App\Game\Game21Interface;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 use App\Markdown\MdParser;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
