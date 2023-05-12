@@ -16,7 +16,7 @@ class GameTestingTraitTest extends TestCase
     /**
      * @var Player21 $winner.
      */
-    protected $winner=null;
+    protected $winner;
 
     protected bool $roundOver=false;
     protected bool $bankPlaying=false;
