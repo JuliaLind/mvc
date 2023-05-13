@@ -27,6 +27,48 @@ class Player21Test extends TestCase
     }
 
     /**
+     * Tests the incrMoney method
+     */
+    public function testIncrMoneyOk(): void
+    {
+        $player = new Player21();
+        $player->incrMoney(20);
+
+        $res = $player->getMoney();
+        $exp = 20;
+        $this->assertEquals($exp, $res);
+
+        $player->incrMoney(15);
+
+        $res = $player->getMoney();
+
+        $exp = 35;
+        $this->assertEquals($exp, $res);
+    }
+
+    /**
+     * Tests the decrMoney method
+     */
+    public function testDecrMoneyOk(): void
+    {
+        $player = new Player21();
+        $player->decrMoney(20);
+
+        $res = $player->getMoney();
+        $exp = -20;
+        $this->assertEquals($exp, $res);
+
+        $player->incrMoney(100);
+
+        $player->decrMoney(15);
+
+        $res = $player->getMoney();
+
+        $exp = 65;
+        $this->assertEquals($exp, $res);
+    }
+
+    /**
      * Tests the handVlaue method by checking
      * that Ace counts as 14 up to total of 21
      * and above 21 as 1

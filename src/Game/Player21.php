@@ -8,7 +8,7 @@ use App\Cards\CardHand;
 /**
  * Class representing a Player in the 21 game
  */
-class Player21 implements GamblingPlayerInterface
+class Player21
 {
     use PlayerTrait;
 
@@ -16,6 +16,7 @@ class Player21 implements GamblingPlayerInterface
      * @var int $GOAL the goal points to reach.
      */
     protected const GOAL = 21;
+    protected int $money=0;
 
     /**
      * Constructor
@@ -25,6 +26,38 @@ class Player21 implements GamblingPlayerInterface
     {
         $this->name = $name;
         $this->hand = $hand;
+    }
+
+    /**
+     * Getter of the amount of money the player currently has
+     *
+     * @return int
+     */
+    public function getMoney(): int
+    {
+        return $this->money;
+    }
+
+        /**
+     * Increases player's money
+     *
+     * @param int $money the amount of money to add
+     * @return void
+     */
+    public function incrMoney(int $money): void
+    {
+        $this->money += $money;
+    }
+
+    /**
+     * Decreases player's money and returns the corresponding amount
+     *
+     * @return int the amount of money that was substracted
+     */
+    public function decrMoney(int $money): int
+    {
+        $this->money -= $money;
+        return $money;
     }
 
     /**

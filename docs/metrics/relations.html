@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-05-12 23:02:20        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-05-13 01:50:14        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -398,13 +398,15 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Markdown\\MdParser"
+            "\\App\\Helpers\\MainControllerHelper"
         ]
     },
     {
-        "name": "\\App\\Markdown\\MdParser",
+        "name": "\\App\\Helpers\\MainControllerHelper",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\App\\Markdown\\MdParser"
+        ]
     },
     {
         "name": "\\App\\Controller\\JsonGame21Controller",
@@ -474,7 +476,6 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\Game\\GameHandlerLanding",
-            "\\App\\Markdown\\MdParser",
             "\\App\\Game\\GameHandler"
         ]
     },
@@ -516,6 +517,11 @@
         "relations": [
             "\\App\\Library\\LibraryException"
         ]
+    },
+    {
+        "name": "\\App\\Markdown\\MdParser",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\Anax\\TextFilter\\TextFilter",
@@ -596,11 +602,6 @@
         "relations": [
             "\\App\\Cards\\DeckOfCards"
         ]
-    },
-    {
-        "name": "\\App\\Game\\GamblingPlayerInterface",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\App\\Game\\GameTestingTrait",
