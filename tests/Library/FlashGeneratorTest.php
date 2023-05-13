@@ -86,7 +86,7 @@ class FlashGeneratorTest extends TestCase
         $res = $flashgenerator->updateFlash(false, $book);
         $exp = [
             "warning",
-            "Another book with isbn '01234567890123' already exists in the system"
+            "En annan bok med isbn '01234567890123' finns redan i systemet"
         ];
         $this->assertEquals($exp, $res);
     }

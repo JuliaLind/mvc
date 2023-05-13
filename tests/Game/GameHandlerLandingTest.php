@@ -25,10 +25,10 @@ class GameHandlerLandingTest extends TestCase
     public function testMainNoGame(): void
     {
         $parser = $this->createMock(MdParser::class);
-        $parser->method('getParsedText')->willReturn("This is a test");
+        $parser->expects($this->once())->method('getParsedText')->with($this->equalTo("markdown/game21.md"))->willReturn("This is a test");
 
         $gameHandler = new GameHandlerLanding();
-        $res = $gameHandler->main($parser, null);
+        $res = $gameHandler->main(null, $parser);
         $exp = [
             'about' => "This is a test",
             'page' => "game",
@@ -44,12 +44,12 @@ class GameHandlerLandingTest extends TestCase
     public function testMainGameFinished(): void
     {
         $parser = $this->createMock(MdParser::class);
-        $parser->method('getParsedText')->willReturn("This is a test");
+        $parser->expects($this->once())->method('getParsedText')->with($this->equalTo("markdown/game21.md"))->willReturn("This is a test");
         $game = $this->createMock(Game21Easy::class);
         $game->method('gameOver')->willReturn(true);
 
         $gameHandler = new GameHandlerLanding();
-        $res = $gameHandler->main($parser, $game);
+        $res = $gameHandler->main($game, $parser);
         $exp = [
             'about' => "This is a test",
             'page' => "game",
@@ -65,12 +65,12 @@ class GameHandlerLandingTest extends TestCase
     public function testMainGameNotFinished(): void
     {
         $parser = $this->createMock(MdParser::class);
-        $parser->method('getParsedText')->willReturn("This is a test");
+        $parser->expects($this->once())->method('getParsedText')->with($this->equalTo("markdown/game21.md"))->willReturn("This is a test");
         $game = $this->createMock(Game21Easy::class);
         $game->method('gameOver')->willReturn(false);
 
         $gameHandler = new GameHandlerLanding();
-        $res = $gameHandler->main($parser, $game);
+        $res = $gameHandler->main($game, $parser);
         $exp = [
             'about' => "This is a test",
             'page' => "game",
@@ -86,7 +86,7 @@ class GameHandlerLandingTest extends TestCase
     public function testDoc(): void
     {
         $parser = $this->createMock(MdParser::class);
-        $parser->method('getParsedText')->willReturn("This is a test");
+        $parser->expects($this->once())->method('getParsedText')->with($this->equalTo("markdown/doc.md"))->willReturn("This is a test");
 
 
         $gameHandler = new GameHandlerLanding();

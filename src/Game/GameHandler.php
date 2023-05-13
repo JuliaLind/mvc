@@ -11,7 +11,7 @@ use App\Markdown\MdParser;
 class GameHandler
 {
     /**
-     * Returns either a Grane21Easy or a Game21Hard object
+     * Returns either a Game21Easy or a Game21Hard object
      * @return Game21Interface $game
      */
     public function init(int $level): Game21Interface

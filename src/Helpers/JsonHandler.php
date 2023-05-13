@@ -79,10 +79,6 @@ class JsonHandler
     ): array {
         $quotes = [
             <<<EOD
-            "Any fool can write code that a computer can understand. 
-            Good programmers write code that humans can understand." — Martin Fowler
-            EOD,
-            <<<EOD
             "It is never too late to be what you might have been." — George Eliot
             EOD,
             <<<EOD
@@ -93,6 +89,10 @@ class JsonHandler
             EOD,
             <<<EOD
             "If you can dream it, you can do it." — Walt Disney
+            EOD,
+            <<<EOD
+            "Any fool can write code that a computer can understand. 
+            Good programmers write code that humans can understand." — Martin Fowler
             EOD
         ];
 

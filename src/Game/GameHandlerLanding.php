@@ -14,35 +14,31 @@ class GameHandlerLanding
      * Returns associative array with data for the /game route
      * @return array<string,bool|string>
      */
-    public function main(MdParser $parser, Game21Interface|null $game): array
+    public function main(Game21Interface|null $game, MdParser $parser = new MdParser(), string $filename = "markdown/game21.md"): array
     {
         $finished = true;
         if ($game && $game->gameOver() === false) {
             $finished = false;
         }
 
-        $data = [
-            'about' => $parser->getParsedText(),
+        return [
+            'about' => $parser->getParsedText($filename),
             'page' => "game",
             'url' => "/game",
             'finished' => $finished,
         ];
-
-        return $data;
     }
 
     /**
      * Returns associative array with data for the /game /doc route
      * @return array<string,bool|string>
      */
-    public function doc(MdParser $parser): array
+    public function doc(MdParser $parser = new MdParser(), string $filename = "markdown/doc.md"): array
     {
-        $data = [
-            'about' => $parser->getParsedText(),
+        return [
+            'about' => $parser->getParsedText($filename),
             'page' => "landing doc",
             'url' => "/game"
         ];
-
-        return $data;
     }
 }

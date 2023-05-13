@@ -24,7 +24,7 @@ class FlashGenerator
                     "notice",
                     "Boken '{$book->getTitle()}' är registrerad. Klicka på kryset till höger för att gå till översikten"
                 ];
-            case false:
+            default:
                 return  [
                     "warning",
                     "En bok med isbn '{$book->getIsbn()}' finns redan i systemet. ISBN nummer måste vara unik"
@@ -43,7 +43,7 @@ class FlashGenerator
             case false:
                 return [
                     "warning",
-                    "Another book with isbn '{$book->getIsbn()}' already exists in the system"
+                    "En annan bok med isbn '{$book->getIsbn()}' finns redan i systemet"
                 ];
             default:
                 return ["", ""];

@@ -10,7 +10,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\DateTime;
 
-// use Anax\TextFilter\TextFilter;
+use App\Helpers\MainControllerHelper;
+
 use App\Markdown\MdParser;
 
 /**
@@ -22,15 +23,17 @@ class MainController extends AbstractController
      * Home route
      */
     #[Route("/", name: "home")]
-    public function home(): Response
-    {
-        $filename = "markdown/home.md";
-        $parsedText = new MdParser($filename);
-        $data = [
-            'home' => $parsedText->getParsedText(),
-            'page' => "home",
-            'url' => "/",
-        ];
+    public function home(
+        MainControllerHelper $helper=new MainControllerHelper()
+    ): Response {
+        // $filename = "markdown/home.md";
+        // $parsedText = new MdParser($filename);
+        // $data = [
+        //     'home' => $parsedText->getParsedText(),
+        //     'page' => "home",
+        //     'url' => "/",
+        // ];
+        $data = $helper->homeData();
         return $this->render('home.html.twig', $data);
     }
 
@@ -38,15 +41,17 @@ class MainController extends AbstractController
      * Route that contains information about the course MVC
      */
     #[Route("/about", name: "about")]
-    public function about(): Response
-    {
-        $filename = "markdown/about.md";
-        $parsedText = new MdParser($filename);
-        $data = [
-            'about' => $parsedText->getParsedText(),
-            'page' => "about",
-            'url' => "/about",
-        ];
+    public function about(
+        MainControllerHelper $helper=new MainControllerHelper()
+    ): Response {
+        // $filename = "markdown/about.md";
+        // $parsedText = new MdParser($filename);
+        // $data = [
+        //     'about' => $parsedText->getParsedText(),
+        //     'page' => "about",
+        //     'url' => "/about",
+        // ];
+        $data = $helper->aboutData();
         return $this->render('about.html.twig', $data);
     }
 
@@ -54,17 +59,19 @@ class MainController extends AbstractController
      * Report route, contains reports of each kmom
      */
     #[Route("/report", name: "report")]
-    public function report(): Response
-    {
-        $data = [
-            'page' => "report",
-            'url' => "/report",
-        ];
-        for ($i = 1; $i <= 7; $i++) {
-            $filename = "markdown/kmom0{$i}.md";
-            $parsedText = new MdParser($filename);
-            $data["kmom0{$i}"] = $parsedText->getParsedText();
-        }
+    public function report(
+        MainControllerHelper $helper=new MainControllerHelper()
+    ): Response {
+        // $data = [
+        //     'page' => "report",
+        //     'url' => "/report",
+        // ];
+        // for ($i = 1; $i <= 7; $i++) {
+        //     $filename = "markdown/kmom0{$i}.md";
+        //     $parsedText = new MdParser($filename);
+        //     $data["kmom0{$i}"] = $parsedText->getParsedText();
+        // }
+        $data = $helper->reportData();
 
         return $this->render('report.html.twig', $data);
     }
@@ -75,23 +82,23 @@ class MainController extends AbstractController
      * each time page is loaded/re-loaded
      */
     #[Route("/lucky", name: "lucky")]
-    public function number(): Response
-    {
-        $number = random_int(0, 100);
+    public function number(
+        MainControllerHelper $helper=new MainControllerHelper()
+    ): Response {
 
-        $top = random_int(3, 25);
-        $left = random_int(1, 80);
+        // $top = random_int(3, 25);
+        // $left = random_int(1, 80);
 
-        $monkey = <<<EOD
-        <img class="monkey" id="monkey" src="img/monkey.png" style="margin-left: {$left}%; margin-top: {$top}%;" alt="apa">
-        EOD;
+        // $monkey = <<<EOD
+        // <img class="monkey" id="monkey" src="img/monkey.png" style="margin-left: {$left}%; margin-top: {$top}%;" alt="apa">
+        // EOD;
 
-        $data = [
-            'number' => $number,
-            'page' => "lucky",
-            'monkey' => $monkey,
-            'url' => "/lucky",
-        ];
+        // $data = [
+        //     'page' => "lucky",
+        //     'monkey' => $monkey,
+        //     'url' => "/lucky",
+        // ];
+        $data = $helper->luckyData();
 
         return $this->render('lucky.html.twig', $data);
     }

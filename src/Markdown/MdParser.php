@@ -10,24 +10,16 @@ use Anax\TextFilter\TextFilter;
  * uses TextFilter class to return the content coverted
  * to html
  */
-#[CodeCoverageIgnore]
+// #[CodeCoverageIgnore]
 class MdParser
 {
-    private string $parsedText;
-
-    public function __construct(String $filename)
+    public function getParsedText(String $filename, TextFilter $filter=new Textfilter()): string
     {
         /**
          * @var string $content The content of the markdown file.
          */
-        $content     = file_get_contents($filename);
-        $filter = new TextFilter();
+        $content = file_get_contents($filename);
         $parsedContent = $filter->parse($content, ["markdown"]);
-        $this->parsedText = $parsedContent->text; // @phpstan-ignore-line
-    }
-
-    public function getParsedText(): string
-    {
-        return $this->parsedText;
+        return $parsedContent->text; // @phpstan-ignore-line
     }
 }

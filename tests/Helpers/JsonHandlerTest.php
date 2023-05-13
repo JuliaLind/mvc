@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
  */
 function random_int(int $min, int $max): int
 {
-    return 0;
+    return 4;
 }
 
 

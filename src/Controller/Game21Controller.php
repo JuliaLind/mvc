@@ -34,13 +34,13 @@ class Game21Controller extends AbstractController
         SessionInterface $session,
         GameHandlerLanding $gameHandler=new GameHandlerLanding()
     ): Response {
-        $filename = "markdown/game21.md";
-        $parser = new MdParser($filename);
+        // $filename = "markdown/game21.md";
+        // $parser = new MdParser($filename);
         /**
          * @var Game21Interface|null $game The current game of 21.
          */
         $game = $session->get("game21") ?? null;
-        $data = $gameHandler->main($parser, $game);
+        $data = $gameHandler->main($game);
 
         return $this->render('game21/home.html.twig', $data);
     }
@@ -53,9 +53,9 @@ class Game21Controller extends AbstractController
     public function gameDoc(
         GameHandlerLanding $gameHandler=new GameHandlerLanding()
     ): Response {
-        $filename = "markdown/doc.md";
-        $parser = new MdParser($filename);
-        $data = $gameHandler->doc($parser);
+        // $filename = "markdown/doc.md";
+        // $parser = new MdParser($filename);
+        $data = $gameHandler->doc();
 
         return $this->render('game21/doc.html.twig', $data);
     }
