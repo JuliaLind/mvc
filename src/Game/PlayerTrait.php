@@ -12,11 +12,9 @@ trait PlayerTrait
 {
     /**
      * @var string $name
-     * @var int $money
      * @var CardHand $hand
      */
     protected string $name='';
-    protected int $money=0;
     protected CardHand $hand;
 
     /**
@@ -29,16 +27,6 @@ trait PlayerTrait
         return $this->name;
     }
 
-    // /**
-    //  * Getter of the amount of money the player currently has
-    //  *
-    //  * @return int
-    //  */
-    // public function getMoney(): int
-    // {
-    //     return $this->money;
-    // }
-
     /**
      * Draws 1 card from deck and adds to the player's hand
      *
@@ -49,28 +37,6 @@ trait PlayerTrait
     {
         $this->hand->add($deck, 1);
     }
-
-    // /**
-    //  * Increases player's money
-    //  *
-    //  * @param int $money the amount of money to add
-    //  * @return void
-    //  */
-    // public function incrMoney(int $money): void
-    // {
-    //     $this->money += $money;
-    // }
-
-    // /**
-    //  * Decreases player's money and returns the corresponding amount
-    //  *
-    //  * @return int the amount of money that was substracted
-    //  */
-    // public function decrMoney(int $money): int
-    // {
-    //     $this->money -= $money;
-    //     return $money;
-    // }
 
     /**
      * Returns array with cards' integer values

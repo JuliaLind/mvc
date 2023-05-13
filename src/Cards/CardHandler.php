@@ -26,6 +26,19 @@ class CardHandler
     }
 
     /**
+     * @return array<Player> an array with players
+     */
+    public function createPlayers(int $number): array
+    {
+        $players = [];
+        for ($i = 1; $i <= $number; $i++) {
+            $player = new Player("player {$i}");
+            array_push($players, $player);
+        };
+        return $players;
+    }
+
+    /**
      * Returns an array with data for /card/deck route
      * @param array<Player> $players
      * @return array<string,array<int,array<string,array<array<string>>|string>>|int|string>

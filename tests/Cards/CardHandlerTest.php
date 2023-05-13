@@ -104,4 +104,21 @@ class CardHandlerTest extends TestCase
 
         $cardHandler->getDataForDraw($deck, $players, 10);
     }
+
+    /**
+     * Tests the createPlayers method
+     */
+    public function testCreatePlayers(): void
+    {
+        $cardHandler = new CardHandler();
+        $players = $cardHandler->createPlayers(3);
+
+        $res = count($players);
+        $exp = 3;
+        $this->assertEquals($exp, $res);
+
+        foreach($players as $player) {
+            $this->assertInstanceOf("\App\Cards\Player", $player);
+        }
+    }
 }

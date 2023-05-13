@@ -8,7 +8,6 @@ use App\Repository\BookRepository;
 
 use App\Library\LibraryHandler;
 use App\Library\SqlFileLoader;
-use App\Library\IsbnAlreadyInUseException;
 use App\Library\BookNotFoundException;
 use App\Library\FlashGenerator;
 
@@ -18,7 +17,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Doctrine\DBAL\Connection;
 
@@ -193,10 +191,6 @@ class LibraryController extends AbstractController
          * @var Connection $conn
          */
         $conn = $doctrine->getConnection();
-        // /**
-        //  * @var string $sql
-        //  */
-        // $sql = file_get_contents("sql/reset-book.sql");
         $loader = new SqlFileLoader($conn);
         $loader->load("sql/reset-book.sql");
         $this->addFlash("notice", "Databasen är återställd");

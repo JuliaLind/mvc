@@ -128,11 +128,12 @@ class CardController extends AbstractController
         /**
          * @var array<Player> $arr with player objects
          */
-        $arr = [];
-        for ($i = 1; $i <= $players; $i++) {
-            $player = new Player("player {$i}");
-            $arr[] = $player;
-        };
+        // $arr = [];
+        // for ($i = 1; $i <= $players; $i++) {
+        //     $player = new Player("player {$i}");
+        //     $arr[] = $player;
+        // };
+        $arr = $cardHandler->createPlayers($players);
         $data = $cardHandler->getDataForDraw($deck, $arr, $cards);
 
         $session->set("deck", $deck);

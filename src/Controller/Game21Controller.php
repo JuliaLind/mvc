@@ -9,10 +9,6 @@ use App\Game\GameHandler;
 use App\Game\GameHandlerLanding;
 use App\Game\Game21Interface;
 
-use Symfony\Component\HttpFoundation\JsonResponse;
-
-use App\Markdown\MdParser;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -34,8 +30,6 @@ class Game21Controller extends AbstractController
         SessionInterface $session,
         GameHandlerLanding $gameHandler=new GameHandlerLanding()
     ): Response {
-        // $filename = "markdown/game21.md";
-        // $parser = new MdParser($filename);
         /**
          * @var Game21Interface|null $game The current game of 21.
          */
@@ -53,8 +47,6 @@ class Game21Controller extends AbstractController
     public function gameDoc(
         GameHandlerLanding $gameHandler=new GameHandlerLanding()
     ): Response {
-        // $filename = "markdown/doc.md";
-        // $parser = new MdParser($filename);
         $data = $gameHandler->doc();
 
         return $this->render('game21/doc.html.twig', $data);

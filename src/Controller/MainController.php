@@ -26,13 +26,6 @@ class MainController extends AbstractController
     public function home(
         MainControllerHelper $helper=new MainControllerHelper()
     ): Response {
-        // $filename = "markdown/home.md";
-        // $parsedText = new MdParser($filename);
-        // $data = [
-        //     'home' => $parsedText->getParsedText(),
-        //     'page' => "home",
-        //     'url' => "/",
-        // ];
         $data = $helper->homeData();
         return $this->render('home.html.twig', $data);
     }
@@ -44,13 +37,6 @@ class MainController extends AbstractController
     public function about(
         MainControllerHelper $helper=new MainControllerHelper()
     ): Response {
-        // $filename = "markdown/about.md";
-        // $parsedText = new MdParser($filename);
-        // $data = [
-        //     'about' => $parsedText->getParsedText(),
-        //     'page' => "about",
-        //     'url' => "/about",
-        // ];
         $data = $helper->aboutData();
         return $this->render('about.html.twig', $data);
     }
@@ -62,15 +48,6 @@ class MainController extends AbstractController
     public function report(
         MainControllerHelper $helper=new MainControllerHelper()
     ): Response {
-        // $data = [
-        //     'page' => "report",
-        //     'url' => "/report",
-        // ];
-        // for ($i = 1; $i <= 7; $i++) {
-        //     $filename = "markdown/kmom0{$i}.md";
-        //     $parsedText = new MdParser($filename);
-        //     $data["kmom0{$i}"] = $parsedText->getParsedText();
-        // }
         $data = $helper->reportData();
 
         return $this->render('report.html.twig', $data);
@@ -86,18 +63,6 @@ class MainController extends AbstractController
         MainControllerHelper $helper=new MainControllerHelper()
     ): Response {
 
-        // $top = random_int(3, 25);
-        // $left = random_int(1, 80);
-
-        // $monkey = <<<EOD
-        // <img class="monkey" id="monkey" src="img/monkey.png" style="margin-left: {$left}%; margin-top: {$top}%;" alt="apa">
-        // EOD;
-
-        // $data = [
-        //     'page' => "lucky",
-        //     'monkey' => $monkey,
-        //     'url' => "/lucky",
-        // ];
         $data = $helper->luckyData();
 
         return $this->render('lucky.html.twig', $data);

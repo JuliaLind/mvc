@@ -12,9 +12,7 @@ use App\Repository\BookRepository;
 
 use App\Library\BookNotFoundException;
 
-
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
  * Controller for json routes
