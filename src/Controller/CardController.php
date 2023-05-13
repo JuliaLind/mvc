@@ -9,8 +9,9 @@ use App\Cards\CardHand;
 use App\Cards\DeckOfCards;
 use App\Cards\Player;
 
-use App\Cards\CardLandingHandler;
 use App\Cards\CardHandler;
+use App\Cards\CardDeckHandler;
+use App\Cards\PlayerCreator;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,14 +25,6 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
  */
 class CardController extends AbstractController
 {
-    #[Route("/card", name: "card")]
-    public function card(
-        CardLandingHandler $cardHandler=new CardLandingHandler()
-    ): Response {
-        $data = $cardHandler->getMainData();
-        return $this->render('card/home.html.twig', $data);
-    }
-
     /**
      * Route where a new Deck of Cards object is created and
      * displayed in sorted order
@@ -39,7 +32,7 @@ class CardController extends AbstractController
     #[Route('/card/deck', name: "deck", methods: ['GET'])]
     public function deck(
         SessionInterface $session,
-        CardHandler $cardHandler=new CardHandler(),
+        CardDeckHandler $cardHandler=new CardDeckHandler(),
         DeckOfCards $deck=new DeckOfCards()
     ): Response {
         $data = $cardHandler->getDeckRouteData($deck);
@@ -54,7 +47,7 @@ class CardController extends AbstractController
     #[Route('/card/deck/shuffle', name: "shuffle", methods: ['POST'])]
     public function shuffle(
         SessionInterface $session,
-        CardHandler $cardHandler=new CardHandler(),
+        CardDeckHandler $cardHandler=new CardDeckHandler(),
         DeckOfCards $deck=new DeckOfCards()
     ): Response {
         $deck->shuffle();
@@ -118,7 +111,8 @@ class CardController extends AbstractController
         SessionInterface $session,
         int $players,
         int $cards,
-        CardHandler $cardHandler=new CardHandler(),
+        CardHandler $cardHandler = new CardHandler(),
+        PlayerCreator $creator = new PlayerCreator()
     ): Response {
         /**
          * @var DeckOfCards $deck The deck of cards.
@@ -128,12 +122,7 @@ class CardController extends AbstractController
         /**
          * @var array<Player> $arr with player objects
          */
-        // $arr = [];
-        // for ($i = 1; $i <= $players; $i++) {
-        //     $player = new Player("player {$i}");
-        //     $arr[] = $player;
-        // };
-        $arr = $cardHandler->createPlayers($players);
+        $arr = $creator->createPlayers($players);
         $data = $cardHandler->getDataForDraw($deck, $arr, $cards);
 
         $session->set("deck", $deck);

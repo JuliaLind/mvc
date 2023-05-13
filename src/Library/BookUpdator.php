@@ -3,11 +3,12 @@
 namespace App\Library;
 
 use App\Entity\Book;
-use Doctrine\Persistence\ManagerRegistry;
-use App\Repository\BookRepository;
+// use Doctrine\Persistence\ManagerRegistry;
+// use App\Repository\BookRepository;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
+
+// use Symfony\Component\HttpFoundation\JsonResponse;
 
 // use Doctrine\DBAL\Connection;
 
@@ -17,7 +18,7 @@ require __DIR__ . "/../../vendor/autoload.php";
  * Helper class to handle som of the
  * funcitonality in the LibraryController
  */
-class LibraryHandler
+class BookUpdator
 {
     /**
      * Updates details of a book object
@@ -47,25 +48,4 @@ class LibraryHandler
         $book->setImg($imgLink);
     }
 
-    /**
-     * Returns true if everything was ok or false if not
-     * @return bool
-     */
-    public function saveBook(BookRepository $bookRepository, Book $book): bool
-    {
-        try {
-            $bookRepository->save($book, true);
-            return true;
-        } catch (IsbnAlreadyInUseException) {
-            return false;
-        }
-    }
-
-    /**
-     * Removes book
-     */
-    public function removeBook(BookRepository $bookRepository, Book $book): void
-    {
-        $bookRepository->remove($book, true);
-    }
 }

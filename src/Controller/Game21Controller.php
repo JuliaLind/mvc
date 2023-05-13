@@ -8,7 +8,10 @@ require __DIR__ . "/../../vendor/autoload.php";
 use App\Game\GameHandler;
 use App\Game\GameMoneyHandler;
 use App\Game\GameHandlerLanding;
+use App\Game\BanksTurnHandler;
+use App\Game\GameInitiator;
 use App\Game\Game21Interface;
+use App\Game\PlayerTurnHandler;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -62,7 +65,7 @@ class Game21Controller extends AbstractController
     public function init(
         SessionInterface $session,
         int $level=0,
-        GameHandler $gameHandler=new GameHandler()
+        GameInitiator $gameHandler=new GameInitiator()
     ): Response {
         $game = $gameHandler->init($level);
         $session->set("game21", $game);
@@ -116,7 +119,7 @@ class Game21Controller extends AbstractController
     #[Route('/game/draw', name: "playerDraw", methods: ['POST'])]
     public function playerDraw(
         SessionInterface $session,
-        GameHandler $gameHandler=new GameHandler()
+        PlayerTurnHandler $gameHandler=new PlayerTurnHandler()
     ): Response {
         /**
          * @var Game21Interface $game The current game of 21.
@@ -136,7 +139,7 @@ class Game21Controller extends AbstractController
     #[Route('/game/bank-playing', name: "bankPlaying", methods: ['POST'])]
     public function bankPlaying(
         SessionInterface $session,
-        GameHandler $gameHandler=new GameHandler()
+        BanksTurnHandler $gameHandler=new BanksTurnHandler()
     ): Response {
         /**
          * @var Game21Interface $game The current game of 21.

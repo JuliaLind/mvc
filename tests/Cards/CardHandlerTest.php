@@ -20,26 +20,6 @@ class CardHandlerTest extends TestCase
     }
 
     /**
-     * Tests that getRouteData method returns correct data
-     */
-    public function testGetDeckRouteData(): void
-    {
-        $cardHandler = new CardHandler();
-        $deck = $this->createMock(DeckOfCards::class);
-        $deck->expects($this->once())
-            ->method('getImgLinks')
-            ->willReturn(['alink.png', 'anotherlink.png']);
-        $exp = [
-            'title' => "Sorted deck",
-            'cards' => ['alink.png', 'anotherlink.png'],
-            'page' => "deck card no-header",
-            'url' => "/card",
-        ];
-        $res = $cardHandler->getDeckRouteData($deck);
-        $this->assertEquals($exp, $res);
-    }
-
-    /**
      * Tests that getDataForDraw method returns correct data
      * when one card is drawn
      */
@@ -103,22 +83,5 @@ class CardHandlerTest extends TestCase
         }
 
         $cardHandler->getDataForDraw($deck, $players, 10);
-    }
-
-    /**
-     * Tests the createPlayers method
-     */
-    public function testCreatePlayers(): void
-    {
-        $cardHandler = new CardHandler();
-        $players = $cardHandler->createPlayers(3);
-
-        $res = count($players);
-        $exp = 3;
-        $this->assertEquals($exp, $res);
-
-        foreach($players as $player) {
-            $this->assertInstanceOf("\App\Cards\Player", $player);
-        }
     }
 }

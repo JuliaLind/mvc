@@ -75,23 +75,4 @@ class MainControllerHelperTest extends TestCase
 
         $this->assertEquals($exp, $res);
     }
-
-    /**
-     * Tests that luckyData method returns
-     * expected Data
-     */
-    public function testLuckyData(): void
-    {
-        $handler = new MainControllerHelper();
-        $monkey = <<<EOD
-        <img class="monkey" id="monkey" src="img/monkey.png" style="margin-left: 4%; margin-top: 4%;" alt="apa">
-        EOD;
-        $exp = [
-            'page' => "lucky",
-            'monkey' => $monkey,
-            'url' => "/lucky",
-        ];
-        $res = $handler->luckyData();
-        $this->assertEquals($exp, $res);
-    }
 }

@@ -119,6 +119,14 @@ class Player21
         return $pointSum;
     }
 
+    protected function checkIfBad(int $minHandValue, int $value): int
+    {
+        if ($minHandValue + $value > self::GOAL) {
+            return 1;
+        }
+        return 0;
+    }
+
     /**
      * Returns the risk of current player getting
      * above 21 with next drawn card
@@ -133,12 +141,8 @@ class Player21
         $risk = 0;
         if ($cardsLeft != 0) {
             foreach ($possibleCards as $value) {
-                if ($value === 14) {
-                    $value = 1;
-                }
-                if ($minHandValue + $value > self::GOAL) {
-                    $badCards += 1;
-                }
+                $value = $this->adjAceValueToOne($value);
+                $badCards += $this->checkIfBad($minHandValue, $value);
             }
             $risk = $badCards / $cardsLeft;
         }

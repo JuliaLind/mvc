@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\DateTime;
 
 use App\Helpers\MainControllerHelper;
+use App\Helpers\LuckyRouteData;
 
 use App\Markdown\MdParser;
 
@@ -62,7 +63,7 @@ class MainController extends AbstractController
      */
     #[Route("/lucky", name: "lucky")]
     public function number(
-        MainControllerHelper $helper=new MainControllerHelper()
+        LuckyRouteData $helper=new LuckyRouteData()
     ): Response {
 
         $data = $helper->luckyData();

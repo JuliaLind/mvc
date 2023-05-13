@@ -3,41 +3,13 @@
 namespace App\Cards;
 
 require __DIR__ . "/../../vendor/autoload.php";
-use App\Markdown\MdParser;
+
 
 /**
  * Helper class to handle the routes in CardController
  */
 class CardHandler
 {
-    /**
-     * Returns an array with data for /card/deck route
-     * @return array<string,string|array<string>>
-     */
-    public function getDeckRouteData(DeckOfCards $deck): array
-    {
-        $data = [
-            'title' => "Sorted deck",
-            'cards' => $deck->getImgLinks(),
-            'page' => "deck card no-header",
-            'url' => "/card",
-        ];
-        return $data;
-    }
-
-    /**
-     * @return array<Player> an array with players
-     */
-    public function createPlayers(int $number): array
-    {
-        $players = [];
-        for ($i = 1; $i <= $number; $i++) {
-            $player = new Player("player {$i}");
-            array_push($players, $player);
-        };
-        return $players;
-    }
-
     /**
      * Returns an array with data for /card/deck route
      * @param array<Player> $players
@@ -51,10 +23,6 @@ class CardHandler
         }
         $count = count($players);
 
-        // $players[] = [
-        //     'playerdrawName' => $player->getName(),
-        //     'cards' => $player->showHandGraphic(),
-        // ];
         $data = [
             'title' => "Draw {$number} cards for {$count} players",
             'players' => $playerData,

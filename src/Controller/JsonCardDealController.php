@@ -16,62 +16,13 @@ use App\Cards\JsonCardHandler;
 use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 use App\Cards\Player;
+use App\Cards\PlayerCreator;
 
 /**
  * Controller for json routes
  */
 class JsonCardDealController extends AbstractController
 {
-    /**
-     * Route where one card at a time is drawn and displayed
-     * from the deck of cards that was created in the 'shuffle' route
-     * or in the 'deck' route
-     */
-    #[Route('/api/deck/draw', name: "jsonDraw", methods: ['POST'])]
-    public function jsonDraw(
-        SessionInterface $session,
-        Player $player=new Player(),
-        JsonCardHandler $cardHandler = new JsonCardHandler()
-    ): Response {
-        /**
-         * @var DeckOfCards $deck The deck of cards.
-         */
-        $deck = $session->get("deck") ?? new DeckOfCards();
-        $data = $cardHandler->getDataForDraw($deck, [$player]);
-        $session->set("deck", $deck);
-
-        $response = new JsonResponse($data);
-        $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_PRETTY_PRINT
-        );
-        return $response;
-    }
-
-    /**
-     * Route where a number of cards at a time is drawn and displayed
-     * from the deck of cards that was created in the 'shuffle' route
-     * or in the 'deck' route
-     */
-    #[Route('/api/deck/draw/{number<\d+>}', name: "jsonDrawMany", methods: ['POST'])]
-    public function jsonDrawMany(
-        SessionInterface $session,
-        int $number,
-        Player $player=new Player(),
-        JsonCardHandler $cardHandler = new JsonCardHandler()
-    ): Response {
-        /**
-         * @var DeckOfCards $deck The deck of cards.
-         */
-        $deck = $session->get("deck") ?? new DeckOfCards();
-        $session->set("deck", $deck);
-        $data = $cardHandler->getDataForDraw($deck, [$player], $number);
-        $response = new JsonResponse($data);
-        $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_PRETTY_PRINT
-        );
-        return $response;
-    }
-
     /**
      * Route where a number of cards is dealt to a number of players
      * from the deck of cards that was created in the 'shuffle' route
@@ -82,7 +33,8 @@ class JsonCardDealController extends AbstractController
         SessionInterface $session,
         int $players,
         int $cards,
-        JsonCardHandler $cardHandler = new JsonCardHandler()
+        JsonCardHandler $cardHandler = new JsonCardHandler(),
+        PlayerCreator $creator = new PlayerCreator()
     ): Response {
         /**
          * @var DeckOfCards $deck The deck of cards.
@@ -91,11 +43,7 @@ class JsonCardDealController extends AbstractController
         /**
          * @var array<Player> $arr with player objects
          */
-        $arr = [];
-        for ($i = 1; $i <= $players; $i++) {
-            $player = new Player("player {$i}");
-            $arr[] = $player;
-        };
+        $arr = $creator->createPlayers($players);
         $data = $cardHandler->getDataForDraw($deck, $arr, $cards);
 
         $response = new JsonResponse($data);

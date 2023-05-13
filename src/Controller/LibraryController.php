@@ -6,10 +6,13 @@ use App\Entity\Book;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Repository\BookRepository;
 
-use App\Library\LibraryHandler;
+use App\Library\BookRemover;
+use App\Library\BookUpdator;
+use App\Library\BookSaver;
 use App\Library\SqlFileLoader;
 use App\Library\BookNotFoundException;
-use App\Library\FlashGenerator;
+use App\Library\RemoveFlashGenerator;
+use App\Library\NewFlashGenerator;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -56,12 +59,13 @@ class LibraryController extends AbstractController
     public function createBook(
         BookRepository $bookRepository,
         Request $request,
-        LibraryHandler $libraryHandler = new LibraryHandler(),
-        FlashGenerator $flashGenerator = new FlashGenerator()
+        BookSaver $saver = new BookSaver(),
+        BookUpdator $updator = new BookUpdator(),
+        NewFlashGenerator $flashGenerator = new NewFlashGenerator()
     ): Response {
         $book = new Book();
-        $libraryHandler->updateBook($request, $book);
-        $wentWell = $libraryHandler->saveBook($bookRepository, $book);
+        $updator->updateBook($request, $book);
+        $wentWell = $saver->saveBook($bookRepository, $book);
         $flash = $flashGenerator->newFlash($wentWell, $book);
         $this->addFlash(...$flash);
         switch ($wentWell) {
@@ -69,53 +73,6 @@ class LibraryController extends AbstractController
                 return $this->redirectToRoute("read_one", array('isbn'=>$book->getIsbn()));
             default:
                 return $this->redirectToRoute("create_form");
-        }
-    }
-
-    /**
-     * Form for editing details of a book
-     */
-    #[Route('/library/update/{isbn}', name: 'update_form')]
-    public function updateBookForm(
-        BookRepository $bookRepository,
-        string $isbn
-    ): Response {
-        $book= $bookRepository
-            ->findOneByIsbn($isbn);
-
-        $data = [
-            'url' => 'library',
-            'book' => $book,
-        ];
-        return $this->render('library/update_book.html.twig', $data);
-    }
-
-    /**
-     * Saves updated information to database
-     */
-    #[Route('/library/update_one', name: 'book_update', methods: ['POST'])]
-    public function updateBook(
-        BookRepository $bookRepository,
-        Request $request,
-        LibraryHandler $libraryHandler=new LibraryHandler(),
-        FlashGenerator $flashGenerator = new FlashGenerator()
-    ): Response {
-        $bookId = $request->get('book_id');
-        /**
-         * @var Book $book
-         */
-        $book = $bookRepository->find($bookId);
-
-        $libraryHandler->updateBook($request, $book);
-        $wentWell = $libraryHandler->saveBook($bookRepository, $book);
-        $flash = $flashGenerator->updateFlash($wentWell, $book);
-        $this->addFlash(...$flash);
-
-        switch ($wentWell) {
-            case true:
-                return $this->redirectToRoute('read_one', array('isbn'=>$book->getIsbn()));
-            default:
-                return $this->redirectToRoute("update_form", array('isbn'=>$request->get('original_isbn')));
         }
     }
 
@@ -167,8 +124,8 @@ class LibraryController extends AbstractController
     public function deleteBookByIsbn(
         string $isbn,
         BookRepository $bookRepository,
-        LibraryHandler $libraryHandler=new LibraryHandler(),
-        FlashGenerator $flashGenerator = new FlashGenerator()
+        BookRemover $libraryHandler=new BookRemover(),
+        RemoveFlashGenerator $flashGenerator = new RemoveFlashGenerator()
     ): Response {
         /**
          * @var Book $book
