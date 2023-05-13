@@ -40,7 +40,7 @@ class MdParserTest extends TestCase
     public function testGetParsedText(): void
     {
         $filter = $this->createMock(TextFilter::class);
-        $content = new \stdClass();
+        $content = new stdClass();
         $content->text = "parsed text";
 
         $filter->expects($this->once())->method('parse')

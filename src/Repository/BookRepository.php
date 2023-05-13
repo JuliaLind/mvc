@@ -11,7 +11,7 @@ use App\Library\IsbnAlreadyInUseException;
 
 /**
  * @extends ServiceEntityRepository<Book>
- * @SuppressWarnings(PHPMD)
+ * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  *
  * @method Book|null find($id, $lockMode = null, $lockVersion = null)
  * @method Book|null findOneBy(array $criteria, array $orderBy = null)

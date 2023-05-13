@@ -61,6 +61,28 @@ class Player21
     }
 
     /**
+     * Adjusts if ace should be valued at 14 or at 1
+     */
+    protected function adjAceValue(int $pointSum, int $value): int
+    {
+        if ($value === 14 && $pointSum + $value > self::GOAL) {
+            $value = 1;
+        }
+        return $value;
+    }
+
+    /**
+     * Adjusts ace-value to 1
+     */
+    protected function adjAceValueToOne(int $value): int
+    {
+        if ($value === 14) {
+            $value = 1;
+        }
+        return $value;
+    }
+
+    /**
      * Returns the current hand value.
      * Ace is valued as 14 unless the hand value
      * is above 21, then ace is valued at 1. Each
@@ -74,10 +96,11 @@ class Player21
         asort($values);
         $pointSum = 0;
         foreach ($values as $value) {
-            if ($value === 14 && $pointSum + $value > self::GOAL) {
-                $value = 1;
-            }
-            $pointSum += $value;
+            $pointSum += $this->adjAceValue($pointSum, $value);
+            // if ($value === 14 && $pointSum + $value > self::GOAL) {
+            //     $value = 1;
+            // }
+            // $pointSum += $value;
         }
         return $pointSum;
     }
@@ -95,10 +118,11 @@ class Player21
         asort($values);
         $pointSum = 0;
         foreach ($values as $value) {
-            if ($value === 14) {
-                $value = 1;
-            }
-            $pointSum += $value;
+            $pointSum += $this->adjAceValueToOne($value);
+            // if ($value === 14) {
+            //     $value = 1;
+            // }
+            // $pointSum += $value;
         }
         return $pointSum;
     }

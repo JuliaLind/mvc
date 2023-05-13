@@ -10,6 +10,7 @@ use PHPUnit\Framework\TestCase;
 class BettingGameTraitTest extends TestCase
 {
     use BettingGameTrait;
+
     protected MoneyPot $moneyPot;
     protected Player21 $player;
     protected Player21 $bank;
@@ -17,12 +18,14 @@ class BettingGameTraitTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->player = $this->createMock(Player21::class);
-        $this->bank = $this->createMock(Player21::class);
-        $this->player->method('getMoney')->will($this->onConsecutiveCalls(30, 10, 10));
-        $this->bank->method('getMoney')->will($this->onConsecutiveCalls(15, 35, 0));
+        $player = $this->createMock(Player21::class);
+        $bank = $this->createMock(Player21::class);
+        $player->method('getMoney')->will($this->onConsecutiveCalls(30, 10, 10));
+        $bank->method('getMoney')->will($this->onConsecutiveCalls(15, 35, 0));
         $this->moneyPot = new MoneyPot();
         $this->winner = $this->createMock(Player21::class);
+        $this->player = $player;
+        $this->bank = $bank;
     }
 
     /**
