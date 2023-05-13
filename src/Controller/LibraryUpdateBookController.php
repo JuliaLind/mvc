@@ -3,9 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Book;
-
-// use Doctrine\Persistence\ManagerRegistry;
-;
 use App\Repository\BookRepository;
 
 use App\Library\BookUpdator;
@@ -19,8 +16,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 use Symfony\Component\HttpFoundation\Request;
-
-// use Doctrine\DBAL\Connection;
 
 /**
  * Class for the library controller

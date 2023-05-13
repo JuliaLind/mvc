@@ -3,7 +3,6 @@
 namespace App\Library;
 
 use App\Entity\Book;
-// use Doctrine\Persistence\ManagerRegistry;
 use App\Repository\BookRepository;
 
 use Symfony\Component\HttpFoundation\Request;
