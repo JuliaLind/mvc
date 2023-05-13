@@ -5,6 +5,7 @@ namespace App\Markdown;
 use PHPUnit\Framework\TestCase;
 // use App\Markdown\MdParser;
 use Anax\TextFilter\TextFilter;
+use stdClass;
 
 /**
  * To mock the builtin function file_get_contents.
@@ -33,15 +34,21 @@ class MdParserTest extends TestCase
     }
 
 
-    // /**
-    //  * Tests the getParsedText method
-    //  */
-    // public function testGetParsedText(): void
-    // {
-    //     $filter = $this->createMock("Anax\TextFilter\TextFilter");
-    //     $filter->expects($this->once())->method('parse')
-    //     ->with($this->equalTo("This is some text"), $this->equalTo(["markdown"]));
-    //     $parser = new MdParser();
-    //     $parser->getParsedText("filnamn", $filter);
-    // }
+    /**
+     * Tests the getParsedText method
+     */
+    public function testGetParsedText(): void
+    {
+        $filter = $this->createMock(TextFilter::class);
+        $content = new \stdClass();
+        $content->text = "parsed text";
+
+        $filter->expects($this->once())->method('parse')
+        ->with($this->equalTo("This is some text"), $this->equalTo(["markdown"]))
+        ->willReturn($content);
+        $parser = new MdParser();
+        $res = $parser->getParsedText("filnamn", $filter);
+        $exp = "parsed text";
+        $this->assertEquals($exp, $res);
+    }
 }

@@ -82,6 +82,6 @@ class MainController extends AbstractController
 
         $data = $helper->standardData('metrics');
 
-        return $this->render('metrics.html.twig', $data);
+        return $this->render('standard.html.twig', $data);
     }
 }
