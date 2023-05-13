@@ -83,8 +83,9 @@ class BettingGameTraitTest extends TestCase
 
     public function testIsWinnerOk(): void
     {
-        $this->winner = $this->createMock(Player21::class);
-        $this->winner->method('getName')->willReturn("real winner");
+        $winner = $this->createMock(Player21::class);
+        $winner->method('getName')->willReturn("real winner");
+        $this->winner = $winner;
         $res = $this->isWinner();
         $this->assertTrue($res);
     }

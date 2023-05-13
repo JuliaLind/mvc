@@ -97,10 +97,6 @@ class Player21
         $pointSum = 0;
         foreach ($values as $value) {
             $pointSum += $this->adjAceValue($pointSum, $value);
-            // if ($value === 14 && $pointSum + $value > self::GOAL) {
-            //     $value = 1;
-            // }
-            // $pointSum += $value;
         }
         return $pointSum;
     }
@@ -119,10 +115,6 @@ class Player21
         $pointSum = 0;
         foreach ($values as $value) {
             $pointSum += $this->adjAceValueToOne($value);
-            // if ($value === 14) {
-            //     $value = 1;
-            // }
-            // $pointSum += $value;
         }
         return $pointSum;
     }

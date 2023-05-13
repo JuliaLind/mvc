@@ -31,46 +31,6 @@ class PlayerTraitTest extends TestCase
         $this->draw($deck);
     }
 
-    // /**
-    //  * Tests the incrMoney method
-    //  */
-    // public function testIncrMoneyOk(): void
-    // {
-    //     $this->incrMoney(20);
-
-    //     $res = $this->getMoney();
-    //     $exp = 20;
-    //     $this->assertEquals($exp, $res);
-
-    //     $this->incrMoney(15);
-
-    //     $res = $this->getMoney();
-
-    //     $exp = 35;
-    //     $this->assertEquals($exp, $res);
-    // }
-
-    // /**
-    //  * Tests the decrMoney method
-    //  */
-    // public function testDecrMoneyOk(): void
-    // {
-    //     $this->decrMoney(20);
-
-    //     $res = $this->getMoney();
-    //     $exp = -20;
-    //     $this->assertEquals($exp, $res);
-
-    //     $this->incrMoney(100);
-
-    //     $this->decrMoney(15);
-
-    //     $res = $this->getMoney();
-
-    //     $exp = 65;
-    //     $this->assertEquals($exp, $res);
-    // }
-
     /**
      * Draws 5 cards, emtpies hand and checks the expected returns from methods
      */
