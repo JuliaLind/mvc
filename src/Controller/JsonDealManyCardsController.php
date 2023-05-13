@@ -20,7 +20,7 @@ use App\Cards\Player;
 /**
  * Controller for json routes
  */
-class JsonCardDealController extends AbstractController
+class JsonDealManyCardsController extends AbstractController
 {
     /**
      * Route where a number of cards at a time is drawn and displayed
