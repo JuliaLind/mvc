@@ -34,44 +34,6 @@ class GameHandlerTest extends TestCase
     }
 
     /**
-     * Tests the selectAmount method
-     */
-    public function testSelectAmount(): void
-    {
-        $gameHandler = new GameHandler();
-        $game = $this->createMock(Game21Easy::class);
-        $game->method('nextRound')->willReturn([
-            'limit' => 50,
-            'money' => 40,
-            'round' => 5,
-        ]);
-
-        $exp = [
-            'limit' => 50,
-            'money' => 40,
-            'round' => 5,
-            'page' => "game no-header card",
-            'url' => "/game",
-        ];
-
-        $res = $gameHandler->selectAmount($game);
-        $this->assertEquals($exp, $res);
-    }
-
-    /**
-     * Tests the bet method
-     */
-    public function testBet(): void
-    {
-        $gameHandler = new GameHandler();
-        $game = $this->createMock(Game21Easy::class);
-        $game->expects($this->once())
-            ->method('addToMoneyPot')
-            ->with($this->equalTo(30));
-        $gameHandler->bet(30, $game);
-    }
-
-    /**
      * Tests the playerDraw method
      */
     public function testPlayerDrawRoundOver(): void

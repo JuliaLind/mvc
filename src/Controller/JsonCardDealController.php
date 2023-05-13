@@ -20,48 +20,8 @@ use App\Cards\Player;
 /**
  * Controller for json routes
  */
-class JsonCardController extends AbstractController
+class JsonCardDealController extends AbstractController
 {
-    /**
-    * Creates and shows json representation of a deck of cards
-    * in sorted order
-    */
-    #[Route('/api/deck', name: "jsonDeck", methods: ['GET'])]
-    public function jsonDeck(
-        SessionInterface $session,
-        JsonCardHandler $cardHandler = new JsonCardHandler()
-    ): Response {
-        $deck = new DeckOfCards();
-        $session->set("deck", $deck);
-        $data = $cardHandler->getDeckRouteData($deck);
-        $response = new JsonResponse($data);
-        $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_PRETTY_PRINT
-        );
-        return $response;
-    }
-
-
-    /**
-     * Creates and shows json representation of a deck of cards
-     * in shuffled order
-     */
-    #[Route('/api/deck/shuffle', name: "jsonShuffle", methods: ['POST'])]
-    public function jsonShuffle(
-        SessionInterface $session,
-        JsonCardHandler $cardHandler = new JsonCardHandler()
-    ): Response {
-        $deck = new DeckOfCards();
-        $deck->shuffle();
-        $session->set("deck", $deck);
-        $data = $cardHandler->getDeckRouteData($deck);
-        $response = new JsonResponse($data);
-        $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_PRETTY_PRINT
-        );
-        return $response;
-    }
-
     /**
      * Route where one card at a time is drawn and displayed
      * from the deck of cards that was created in the 'shuffle' route

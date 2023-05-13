@@ -6,6 +6,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 
 use App\Game\GameHandler;
+use App\Game\GameMoneyHandler;
 use App\Game\GameHandlerLanding;
 use App\Game\Game21Interface;
 
@@ -76,7 +77,7 @@ class Game21Controller extends AbstractController
     #[Route('/game/select-amount', name: "selectAmount", methods: ['GET'])]
     public function selectAmount(
         SessionInterface $session,
-        GameHandler $gameHandler=new GameHandler()
+        GameMoneyHandler $gameHandler=new GameMoneyHandler()
     ): Response {
         /**
          * @var Game21Interface $game The current game of 21.
@@ -97,7 +98,7 @@ class Game21Controller extends AbstractController
     public function bet(
         SessionInterface $session,
         int $amount,
-        GameHandler $gameHandler=new GameHandler()
+        GameMoneyHandler $gameHandler=new GameMoneyHandler()
     ): Response {
         /**
          * @var Game21Interface $game The current game of 21.

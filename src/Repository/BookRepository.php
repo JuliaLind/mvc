@@ -25,6 +25,23 @@ class BookRepository extends ServiceEntityRepository
         parent::__construct($registry, Book::class);
     }
 
+    public function compareId(Book $book, Book $otherBook): void
+    {
+        $bookId = $book->getId();
+        $otherBookId = $otherBook->getId();
+
+        if ($bookId !== $otherBookId) {
+            throw new IsbnAlreadyInUseException();
+        }
+    }
+
+    public function saveToDB(bool $flush): void
+    {
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
     public function save(Book $entity, bool $flush = false): void
     {
         /**
@@ -33,9 +50,7 @@ class BookRepository extends ServiceEntityRepository
         $isbn = $entity->getIsbn();
         try {
             $book = $this->findOneByIsbn($isbn);
-            if ($book->getId() !== $entity->getId()) {
-                throw new IsbnAlreadyInUseException();
-            }
+            $this->compareId($book, $entity);
         } catch (BookNotFoundException) {
             /**
              * If exception is raised it means no ther book
@@ -46,19 +61,13 @@ class BookRepository extends ServiceEntityRepository
 
         }
         $this->getEntityManager()->persist($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
+        $this->saveToDB($flush);
     }
 
     public function remove(Book $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
+        $this->saveToDB($flush);
     }
 
    public function findOneByIsbn(string $isbn): Book

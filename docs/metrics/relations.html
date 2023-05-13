@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-05-13 13:51:24        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-05-13 15:25:47        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -409,6 +409,29 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\JsonCardDealController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Cards\\Player",
+            "\\App\\Cards\\JsonCardHandler",
+            "\\App\\Cards\\DeckOfCards",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+        ]
+    },
+    {
+        "name": "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Controller\\JsonGame21Controller",
         "size": 3000,
         "relations": [
@@ -420,11 +443,6 @@
         ]
     },
     {
-        "name": "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\Game\\JsonGameHandler",
         "size": 3000,
         "relations": [
@@ -432,9 +450,16 @@
         ]
     },
     {
-        "name": "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
+        "name": "\\App\\Controller\\JsonCardDeckController",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Cards\\JsonCardHandler",
+            "\\App\\Cards\\DeckOfCards",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+        ]
     },
     {
         "name": "\\App\\Controller\\JsonController",
@@ -454,19 +479,6 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\JsonCardController",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Cards\\JsonCardHandler",
-            "\\App\\Cards\\DeckOfCards",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
-            "\\App\\Cards\\Player"
-        ]
-    },
-    {
         "name": "\\App\\Controller\\Game21Controller",
         "size": 3000,
         "relations": [
@@ -474,7 +486,8 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\Game\\GameHandlerLanding",
-            "\\App\\Game\\GameHandler"
+            "\\App\\Game\\GameHandler",
+            "\\App\\Game\\GameMoneyHandler"
         ]
     },
     {
@@ -491,6 +504,13 @@
             "\\App\\Game\\Game21Interface",
             "\\App\\Game\\Game21Easy",
             "\\App\\Game\\Game21Hard"
+        ]
+    },
+    {
+        "name": "\\App\\Game\\GameMoneyHandler",
+        "size": 3000,
+        "relations": [
+            "\\App\\Game\\Game21Interface"
         ]
     },
     {

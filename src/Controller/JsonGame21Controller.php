@@ -30,7 +30,6 @@ class JsonGame21Controller extends AbstractController
         SessionInterface $session,
         JsonGameHandler $gameHandler=new JsonGameHandler()
     ): Response {
-        // $gameStatus = "No game started";
         /**
          * @var Game21Interface $game The current game of 21.
          */
