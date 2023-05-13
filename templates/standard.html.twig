@@ -1,9 +1,9 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 {% block body %}
 
-{{ home | raw }}
+{{ text | raw }}
 {# <img class="me" src="{{ asset('img/home.jpg') }}" alt="bild på mig"> #}
 {% endblock %}

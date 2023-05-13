@@ -26,8 +26,9 @@ class MainController extends AbstractController
     public function home(
         MainControllerHelper $helper=new MainControllerHelper()
     ): Response {
-        $data = $helper->homeData();
-        return $this->render('home.html.twig', $data);
+        // $data = $helper->homeData();
+        $data = $helper->standardData('home');
+        return $this->render('standard.html.twig', $data);
     }
 
     /**
@@ -37,7 +38,8 @@ class MainController extends AbstractController
     public function about(
         MainControllerHelper $helper=new MainControllerHelper()
     ): Response {
-        $data = $helper->aboutData();
+        // $data = $helper->aboutData();
+        $data = $helper->standardData('about');
         return $this->render('about.html.twig', $data);
     }
 
@@ -66,5 +68,20 @@ class MainController extends AbstractController
         $data = $helper->luckyData();
 
         return $this->render('lucky.html.twig', $data);
+    }
+
+    /**
+     * Route displays a forest with monkey where
+     * the monkeys location in the forest randomly changes
+     * each time page is loaded/re-loaded
+     */
+    #[Route("/metrics", name: "metrics")]
+    public function metrics(
+        MainControllerHelper $helper=new MainControllerHelper()
+    ): Response {
+
+        $data = $helper->standardData('metrics');
+
+        return $this->render('metrics.html.twig', $data);
     }
 }

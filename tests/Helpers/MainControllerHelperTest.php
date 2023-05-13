@@ -20,13 +20,14 @@ class MainControllerHelperTest extends TestCase
     }
 
     /**
-     * Testa homeData method
+     * Testa standardData method
      */
-    public function testHomeData(): void
+    public function testStandardData(): void
     {
         $helper = new MainControllerHelper();
-        $filename = "markdown/home.md";
+        $page = "home";
         $parser = $this->createMock(MdParser::class);
+        $filename = "markdown/{$page}.md";
 
         $parser->expects($this->once())
         ->method('getParsedText')
@@ -34,35 +35,12 @@ class MainControllerHelperTest extends TestCase
         ->willReturn("Test");
 
         $exp = [
-            'home' => "Test",
+            'title' => 'Home',
+            'text' => "Test",
             'page' => "home",
             'url' => "/",
         ];
-        $res = $helper->homeData($parser);
-
-        $this->assertEquals($exp, $res);
-    }
-
-    /**
-     * Testa homeData method
-     */
-    public function testAboutData(): void
-    {
-        $helper = new MainControllerHelper();
-        $filename = "markdown/about.md";
-        $parser = $this->createMock(MdParser::class);
-
-        $parser->expects($this->once())
-        ->method('getParsedText')
-        ->with($filename)
-        ->willReturn("Test");
-
-        $exp = [
-            'home' => "Test",
-            'page' => "about",
-            'url' => "/about",
-        ];
-        $res = $helper->aboutData($parser);
+        $res = $helper->standardData($page, $parser);
 
         $this->assertEquals($exp, $res);
     }

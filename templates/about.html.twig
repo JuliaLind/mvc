@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}About{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 {% block body %}
     {# 
@@ -10,7 +10,7 @@
     </a> #}
     <div class="grid-container two-col golden-ratio">
         <div class="col-2">
-            {{ about | raw }}
+            {{ text | raw }}
         </div>
         <div class="col-1 mvc-image" style="background-image: url({{ asset('img/about.jpg') }})">
         </div>

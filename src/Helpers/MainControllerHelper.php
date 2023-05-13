@@ -14,27 +14,22 @@ class MainControllerHelper
     /**
      * @return array<string,string>
      */
-    public function homeData(MdParser $parser = new MdParser(), string $filename = "markdown/home.md"): array
+    public function standardData(string $page, MdParser $parser = new MdParser()): array
     {
+        $filename = "markdown/{$page}.md";
         $parsedText = $parser->getParsedText($filename);
-        return [
-            'home' => $parsedText,
-            'page' => "home",
-            'url' => "/",
+        $data = [
+            'title' => ucfirst($page),
+            'text' => $parsedText,
+            'page' => "{$page}",
+            'url' => "{$page}",
         ];
-    }
 
-    /**
-     * @return array<string,string>
-     */
-    public function aboutData(MdParser $parser = new MdParser(), string $filename = "markdown/about.md"): array
-    {
-        $parsedText = $parser->getParsedText($filename);
-        return [
-            'home' => $parsedText,
-            'page' => "about",
-            'url' => "/about",
-        ];
+        if ($page === "home") {
+            $data['url'] = "/";
+        }
+
+        return $data;
     }
 
     /**
