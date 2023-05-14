@@ -3,7 +3,6 @@
 namespace App\Game;
 
 use PHPUnit\Framework\TestCase;
-use App\Markdown\MdParser;
 
 /**
  * Test cases for class GameMoneyHandler.
@@ -25,12 +24,21 @@ class GameMoneyHandlerTest extends TestCase
     public function testSelectAmount(): void
     {
         $gameHandler = new GameMoneyHandler();
+        $roundHandler = $this->createMock(RoundHandler::class);
         $game = $this->createMock(Game21Easy::class);
-        $game->method('nextRound')->willReturn([
-            'limit' => 50,
-            'money' => 40,
-            'round' => 5,
-        ]);
+        $roundHandler->expects($this->once())
+            ->method('nextRound')->with($this->identicalTo($game))
+            ->willReturn([
+                'limit' => 50,
+                'money' => 40,
+                'round' => 5,
+            ]);
+
+        // $game->method('nextRound')->willReturn([
+        //     'limit' => 50,
+        //     'money' => 40,
+        //     'round' => 5,
+        // ]);
 
         $exp = [
             'limit' => 50,
@@ -40,7 +48,7 @@ class GameMoneyHandlerTest extends TestCase
             'url' => "/game",
         ];
 
-        $res = $gameHandler->selectAmount($game);
+        $res = $gameHandler->selectAmount($game, $roundHandler);
         $this->assertEquals($exp, $res);
     }
 

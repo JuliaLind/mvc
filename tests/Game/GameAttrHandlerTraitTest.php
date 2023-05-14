@@ -5,15 +5,15 @@ namespace App\Game;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Test cases for trait GameTestingTrait.
+ * Test cases for trait GameAttrHandlerTrait.
  */
-class GameTestingTraitTest extends TestCase
+class GameAttrHandlerTraitTest extends TestCase
 {
-    use GameTestingTrait;
+    use GameAttrHandlerTrait;
 
     protected MoneyPot $moneyPot;
     protected Player21 $bank;
-    protected Player21 $winner;
+
 
     protected bool $roundOver=false;
     protected bool $bankPlaying=false;
@@ -26,7 +26,6 @@ class GameTestingTraitTest extends TestCase
         $pot = $this->createMock(MoneyPot::class);
         $pot->method('currentAmount')->willReturn(130);
         $this->moneyPot = $pot;
-        $this->winner = $this->createMock(Player21::class);
     }
 
     /**
@@ -42,52 +41,13 @@ class GameTestingTraitTest extends TestCase
         $this->assertEquals($exp, $res);
     }
 
-    /**
-     * Tests the setter for bank
-     */
-    public function testSetBank(): void
+    public function testGetMoneyPot(): void
     {
-        $bank = $this->createMock(Player21::class);
-        $bank->method('getName')->willReturn("I'm the bank");
-        $this->setBank($bank);
-        $res = $this->bank->getName();
-        $exp = "I'm the bank";
-        $this->assertEquals($exp, $res);
-    }
-
-    /**
-     * Tests the setter for winner
-     */
-    public function testSetWinner(): void
-    {
-        $winner = $this->createMock(Player21::class);
-        $winner->method('getName')->willReturn("a winner");
-        $this->setWinner($winner);
-        $res = $this->winner->getName();
-        $exp = "a winner";
-        $this->assertEquals($exp, $res);
-    }
-
-    /**
-     * Tests the getter for winner
-     */
-    public function testGetWinnerOk(): void
-    {
-        $winner = $this->createMock(Player21::class);
-        $winner->method('getName')->willReturn("I'm a winner");
-        $this->winner = $winner;
-        $res = $this->getWinner()->getName();
-        $exp = "I'm a winner";
-        $this->assertEquals($exp, $res);
-    }
-
-    /**
-     * Tests the getter for winner
-     */
-    public function testGetWinnerNotOk(): void
-    {
-        $res = $this->getWinner()->getName();
-        $exp = "";
+        $pot = $this->createMock(MoneyPot::class);
+        $pot->method('currentAmount')->willReturn(30);
+        $this->setMoneyPot($pot);
+        $res = $this->getMoneyPot()->currentAmount();
+        $exp = 30;
         $this->assertEquals($exp, $res);
     }
 

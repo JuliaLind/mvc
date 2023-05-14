@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-05-13 18:51:59        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-05-14 14:12:17        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -428,14 +428,14 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\JsonCardDealController",
+        "name": "\\App\\Controller\\JsonDealManyCardsController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Cards\\Player",
             "\\App\\Cards\\JsonCardHandler",
-            "\\App\\Cards\\PlayerCreator",
             "\\App\\Cards\\DeckOfCards",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
@@ -471,6 +471,19 @@
         "name": "\\App\\Helpers\\LuckyRouteData",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\App\\Controller\\JsonCardDealController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Cards\\JsonCardHandler",
+            "\\App\\Cards\\PlayerCreator",
+            "\\App\\Cards\\DeckOfCards",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+        ]
     },
     {
         "name": "\\App\\Controller\\JsonDealOneCardController",
@@ -576,21 +589,24 @@
         "name": "\\App\\Game\\GameMoneyHandler",
         "size": 3000,
         "relations": [
-            "\\App\\Game\\Game21Interface"
+            "\\App\\Game\\Game21Easy",
+            "\\App\\Game\\RoundHandler"
         ]
     },
     {
         "name": "\\App\\Game\\PlayerTurnHandler",
         "size": 3000,
         "relations": [
-            "\\App\\Game\\Game21Interface"
+            "\\App\\Game\\RoundHandler",
+            "\\App\\Game\\Game21Easy"
         ]
     },
     {
         "name": "\\App\\Game\\BanksTurnHandler",
         "size": 3000,
         "relations": [
-            "\\App\\Game\\Game21Interface"
+            "\\App\\Game\\RoundHandler",
+            "\\App\\Game\\Game21Easy"
         ]
     },
     {
@@ -727,7 +743,19 @@
         ]
     },
     {
+        "name": "\\App\\Game\\GameAttrHandlerTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\Game\\MoneyPot"
+        ]
+    },
+    {
         "name": "\\App\\Game\\Game21Hard",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Game\\RoundHandler",
         "size": 3000,
         "relations": []
     },
@@ -739,7 +767,7 @@
         ]
     },
     {
-        "name": "\\App\\Game\\GameTestingTrait",
+        "name": "\\App\\Game\\GameAttrHandler2Trait",
         "size": 3000,
         "relations": [
             "\\App\\Game\\Player21"

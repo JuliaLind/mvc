@@ -9,11 +9,8 @@ require __DIR__ . "/../../vendor/autoload.php";
  * to facilitate testing of the Game21Easy
  * and Game21Hard classes
  */
-trait GameTestingTrait
+trait GameAttrHandlerTrait
 {
-    protected Player21 $bank;
-    protected Player21 $winner;
-
     protected bool $roundOver=false;
     protected bool $bankPlaying=false;
     protected bool $finished=false;
@@ -31,32 +28,11 @@ trait GameTestingTrait
     }
 
     /**
-     * Setter method for bank
-     * @param Player21 $bank
-     * @return void
+     * @return MoneyPot
      */
-    public function setBank($bank): void
+    public function getMoneyPot(): MoneyPot
     {
-        $this->bank = $bank;
-    }
-
-    /**
-     * Setter method for winner
-     * @param Player21 $winner
-     * @return void
-     */
-    public function setWinner($winner): void
-    {
-        $this->winner = $winner;
-    }
-
-    /**
-     * Getter method for winner
-     * @return Player21
-     */
-    public function getWinner(): Player21
-    {
-        return $this->winner;
+        return $this->moneyPot;
     }
 
     /**
@@ -105,13 +81,4 @@ trait GameTestingTrait
     {
         $this->finished = $bool;
     }
-
-    // /**
-    //  * Getter method for finished
-    //  * @return bool
-    //  */
-    // public function isFinished(): bool
-    // {
-    //     return $this->finished;
-    // }
 }

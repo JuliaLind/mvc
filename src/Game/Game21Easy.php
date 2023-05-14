@@ -12,7 +12,8 @@ use App\Cards\DeckOfCards;
 class Game21Easy extends Game implements Game21Interface
 {
     use BettingGameTrait;
-    use GameTestingTrait;
+    use GameAttrHandlerTrait;
+    use GameAttrHandler2Trait;
 
     /**
      * @var int $GOAL the goal points to reach.
@@ -69,29 +70,29 @@ class Game21Easy extends Game implements Game21Interface
         return $risk . ' %';
     }
 
-    /**
-     * Increases number of currenRound attribute by 1
-     * and resets for next round.
-     * Returns an associative array with investment
-     * limit, player's money and nr of next round
-     * @return array<int>
-     */
-    public function nextRound(): array
-    {
-        $this->currentRound = $this->currentRound + 1;
-        $this->roundOver = false;
-        $this->bankPlaying = false;
-        $this->player->emptyHand();
-        $this->bank->emptyHand();
-        $this->winner = new Player21('');
+    // /**
+    //  * Increases number of currenRound attribute by 1
+    //  * and resets for next round.
+    //  * Returns an associative array with investment
+    //  * limit, player's money and nr of next round
+    //  * @return array<int>
+    //  */
+    // public function nextRound(): array
+    // {
+    //     $this->currentRound = $this->currentRound + 1;
+    //     $this->roundOver = false;
+    //     $this->bankPlaying = false;
+    //     $this->player->emptyHand();
+    //     $this->bank->emptyHand();
+    //     $this->winner = new Player21('');
 
-        $nextRoundData = [
-            'limit' => $this->getInvestLimit(),
-            'money' => $this->player->getMoney(),
-            'round' => $this->currentRound,
-        ];
-        return $nextRoundData;
-    }
+    //     $nextRoundData = [
+    //         'limit' => $this->getInvestLimit(),
+    //         'money' => $this->player->getMoney(),
+    //         'round' => $this->currentRound,
+    //     ];
+    //     return $nextRoundData;
+    // }
 
 
     /**
@@ -203,47 +204,47 @@ class Game21Easy extends Game implements Game21Interface
         return;
     }
 
-    protected function finishGame(): void
-    {
-        if (($this->getInvestLimit() === 0 && $this->moneyPot->currentAmount() === 0) || $this->cardsLeft() === 0) {
-            $this->finished = true;
-        }
-    }
+    // protected function finishGame(): void
+    // {
+    //     if (($this->getInvestLimit() === 0 && $this->moneyPot->currentAmount() === 0) || $this->cardsLeft() === 0) {
+    //         $this->finished = true;
+    //     }
+    // }
 
-    protected function determineWinner(Player21 $player, Player21 $bank): Player21
-    {
-        $winner = $bank;
-        if ($player->getMoney() > $bank->getMoney()) {
-            $winner = $player;
-        }
+    // protected function determineWinner(Player21 $player, Player21 $bank): Player21
+    // {
+    //     $winner = $bank;
+    //     if ($player->getMoney() > $bank->getMoney()) {
+    //         $winner = $player;
+    //     }
 
-        return $winner;
-    }
+    //     return $winner;
+    // }
 
-    /**
-     * Moves money from the money pot to the winner.
-     * Determines if the game is finished,
-     * and if it is - who the final winner is
-     *
-     * @return void
-     */
-    public function endRound(): void
-    {
-        $winner = $this->winner;
-        $this->roundOver = true;
-        $this->moneyPot->moneyToWinner($winner);
+    // /**
+    //  * Moves money from the money pot to the winner.
+    //  * Determines if the game is finished,
+    //  * and if it is - who the final winner is
+    //  *
+    //  * @return void
+    //  */
+    // public function endRound(): void
+    // {
+    //     $winner = $this->winner;
+    //     $this->roundOver = true;
+    //     $this->moneyPot->moneyToWinner($winner);
 
-        $this->finishGame();
+    //     $this->finishGame();
 
-        if ($this->cardsLeft() === 0) {
+    //     if ($this->cardsLeft() === 0) {
 
-            $winner = $this->determineWinner($this->player, $this->bank);
+    //         $winner = $this->determineWinner($this->player, $this->bank);
 
-        }
+    //     }
 
-        $this->winner = $winner;
+    //     $this->winner = $winner;
 
-    }
+    // }
 
     /**
      * Returns array with flash message type and the message

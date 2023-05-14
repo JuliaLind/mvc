@@ -10,14 +10,25 @@ require __DIR__ . "/../../vendor/autoload.php";
 class BanksTurnHandler
 {
     /**
+     * @var RoundHandler $handler
+     */
+    private $handler;
+
+    public function __construct(RoundHandler $handler=new RoundHandler())
+    {
+        $this->handler = $handler;
+    }
+
+    /**
      * Handles bank's turn to draw
      * @return array<string> with class and message for flashmessage
      */
-    public function bankDraw(Game21Interface $game): array
+    public function bankDraw(Game21Easy $game): array
     {
         $game->dealBank();
         $game->evaluateBank();
-        $game->endRound();
+        $this->handler->endRound($game);
+        // $game->endRound();
 
         $flash = $game->generateFlash();
         return $flash;

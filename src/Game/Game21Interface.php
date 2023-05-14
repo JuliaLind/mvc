@@ -13,13 +13,13 @@ interface Game21Interface
      */
     public function gameOver();
 
-    /**
-     * Increases the number of curren round attribute by 1.
-     * Returns an associative array with investment
-     * limit, player's money and number of next round
-     * @return array<int>
-     */
-    public function nextRound();
+    // /**
+    //  * Increases the number of curren round attribute by 1.
+    //  * Returns an associative array with investment
+    //  * limit, player's money and number of next round
+    //  * @return array<int>
+    //  */
+    // public function nextRound();
 
     /**
      * Moves the $amount of money from player and bank
@@ -78,12 +78,12 @@ interface Game21Interface
      */
     public function getPlayerData();
 
-    /**
-     * Ends current round
-     *
-     * @return void
-     */
-    public function endRound();
+    // /**
+    //  * Ends current round
+    //  *
+    //  * @return void
+    //  */
+    // public function endRound();
 
     /**
      * Returns the risk as string for the currently playing

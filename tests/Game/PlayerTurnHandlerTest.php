@@ -23,16 +23,20 @@ class PlayerTurnHandlerTest extends TestCase
      */
     public function testPlayerDrawRoundOver(): void
     {
-        $gameHandler = new PlayerTurnHandler();
         $game = $this->createMock(Game21Easy::class);
         $game->expects($this->once())
             ->method('deal');
         $game->expects($this->once())
             ->method('evaluate')
             ->willReturn(true);
-        $game->expects($this->once())
-            ->method('endRound');
+        // $game->expects($this->once())
+        //     ->method('endRound');
 
+        $handler = $this->createMock(RoundHandler::class);
+        $handler->expects($this->once())
+            ->method('endRound')
+            ->with($this->equalTo($game));
+        $gameHandler = new PlayerTurnHandler($handler);
         $game->method('generateFlash')->willReturn(["custom", "testing playerDraw"]);
         $exp = ["custom", "testing playerDraw"];
         $res = $gameHandler->playerDraw($game);
@@ -44,15 +48,17 @@ class PlayerTurnHandlerTest extends TestCase
      */
     public function testPlayerDrawRoundNotOver(): void
     {
-        $gameHandler = new PlayerTurnHandler();
         $game = $this->createMock(Game21Easy::class);
         $game->expects($this->once())
             ->method('deal');
         $game->expects($this->once())
             ->method('evaluate')
             ->willReturn(false);
-        $game->expects($this->never())
-            ->method('endRound');
+
+        $handler = $this->createMock(RoundHandler::class);
+        $handler->expects($this->never())
+             ->method('endRound');
+        $gameHandler = new PlayerTurnHandler($handler);
         $gameHandler->playerDraw($game);
     }
 }

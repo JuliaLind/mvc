@@ -24,14 +24,19 @@ class BanksTurnHandlerTest extends TestCase
      */
     public function testBankDraw(): void
     {
-        $gameHandler = new BanksTurnHandler();
         $game = $this->createMock(Game21Easy::class);
         $game->expects($this->once())
             ->method('dealBank');
         $game->expects($this->once())
             ->method('evaluateBank');
-        $game->expects($this->once())
-            ->method('endRound');
+        $handler = $this->createMock(RoundHandler::class);
+        $handler->expects($this->once())
+            ->method('endRound')
+            ->with($this->equalTo($game));
+        $gameHandler = new BanksTurnHandler($handler);
+
+
+
 
         $game->method('generateFlash')->willReturn(["custom", "testing bankDraw"]);
         $exp = ["custom", "testing bankDraw"];

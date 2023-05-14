@@ -3,7 +3,6 @@
 namespace App\Game;
 
 require __DIR__ . "/../../vendor/autoload.php";
-use App\Markdown\MdParser;
 
 /**
  * Helper class to handle game in the Game21Controller
@@ -15,9 +14,9 @@ class GameMoneyHandler
      * for the route's template
      * @return array<int|string>
      */
-    public function selectAmount(Game21Interface $game): array
+    public function selectAmount(Game21Easy $game, RoundHandler $handler = new RoundHandler()): array
     {
-        $nextRoundData = $game->nextRound();
+        $nextRoundData = $handler->nextRound($game);
         $data = [
             'page' => "game no-header card",
             'url' => "/game",
@@ -30,7 +29,7 @@ class GameMoneyHandler
      * Updates the amount of money in the game obejcts moneypot
      * @return void
      */
-    public function bet(int $amount, Game21Interface $game): void
+    public function bet(int $amount, Game21Easy $game): void
     {
         $game->addToMoneyPot($amount);
     }

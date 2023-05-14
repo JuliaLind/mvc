@@ -10,8 +10,10 @@ use App\Game\GameMoneyHandler;
 use App\Game\GameHandlerLanding;
 use App\Game\BanksTurnHandler;
 use App\Game\GameInitiator;
-use App\Game\Game21Interface;
+// use App\Game\Game21Easy;
+use App\Game\Game21Easy;
 use App\Game\PlayerTurnHandler;
+use App\Game\RoundHandler;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -35,7 +37,7 @@ class Game21Controller extends AbstractController
         GameHandlerLanding $gameHandler=new GameHandlerLanding()
     ): Response {
         /**
-         * @var Game21Interface|null $game The current game of 21.
+         * @var Game21Easy|null $game The current game of 21.
          */
         $game = $session->get("game21") ?? null;
         $data = $gameHandler->main($game);
@@ -83,7 +85,7 @@ class Game21Controller extends AbstractController
         GameMoneyHandler $gameHandler=new GameMoneyHandler()
     ): Response {
         /**
-         * @var Game21Interface $game The current game of 21.
+         * @var Game21Easy $game The current game of 21.
          */
         $game = $session->get("game21");
         $data = $gameHandler->selectAmount($game);
@@ -104,7 +106,7 @@ class Game21Controller extends AbstractController
         GameMoneyHandler $gameHandler=new GameMoneyHandler()
     ): Response {
         /**
-         * @var Game21Interface $game The current game of 21.
+         * @var Game21Easy $game The current game of 21.
          */
         $game = $session->get("game21");
         $gameHandler->bet($amount, $game);
@@ -122,7 +124,7 @@ class Game21Controller extends AbstractController
         PlayerTurnHandler $gameHandler=new PlayerTurnHandler()
     ): Response {
         /**
-         * @var Game21Interface $game The current game of 21.
+         * @var Game21Easy $game The current game of 21.
          */
         $game = $session->get("game21");
         $flash = $gameHandler->playerDraw($game);
@@ -142,7 +144,7 @@ class Game21Controller extends AbstractController
         BanksTurnHandler $gameHandler=new BanksTurnHandler()
     ): Response {
         /**
-         * @var Game21Interface $game The current game of 21.
+         * @var Game21Easy $game The current game of 21.
          */
         $game = $session->get("game21");
         $flash = $gameHandler->bankDraw($game);
@@ -162,7 +164,7 @@ class Game21Controller extends AbstractController
         GameHandler $gameHandler=new GameHandler()
     ): Response {
         /**
-         * @var Game21Interface $game The current game of 21.
+         * @var Game21Easy $game The current game of 21.
          */
         $game = $session->get("game21");
         $data = $gameHandler->play($game);
