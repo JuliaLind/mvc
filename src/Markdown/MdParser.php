@@ -10,7 +10,6 @@ use Anax\TextFilter\TextFilter;
  * uses TextFilter class to return the content coverted
  * to html
  */
-// #[CodeCoverageIgnore]
 class MdParser
 {
     public function getParsedText(String $filename, TextFilter $filter=new Textfilter()): string

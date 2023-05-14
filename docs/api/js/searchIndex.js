@@ -226,11 +226,6 @@ Search.appendIndex(
             "summary": "Controller\u0020for\u0020routes\u0020where\u0020cards\u0020are\u0020displayed",
             "url": "classes/App-Controller-CardController.html"
         },                {
-            "fqsen": "\\App\\Controller\\CardController\u003A\u003Acard\u0028\u0029",
-            "name": "card",
-            "summary": "",
-            "url": "classes/App-Controller-CardController.html#method_card"
-        },                {
             "fqsen": "\\App\\Controller\\CardController\u003A\u003Adeck\u0028\u0029",
             "name": "deck",
             "summary": "Route\u0020where\u0020a\u0020new\u0020Deck\u0020of\u0020Cards\u0020object\u0020is\u0020created\u0020and\ndisplayed\u0020in\u0020sorted\u0020order",
@@ -273,7 +268,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller\u003A\u003Ainit\u0028\u0029",
             "name": "init",
-            "summary": "Route\u0020forinitiating\u0020the\u0020game.\u0020Creates\u0020an\u0020object\u0020of\u0020class\nGame21Easy\u0020or\u0020Game21Hard,\u0020samves\u0020to\u0020session\u0020and\u0020redirects\nto\u0020route\u0020for\u0020selecting\u0020amount\u0020to\u0020bet",
+            "summary": "Route\u0020for\u0020initiating\u0020the\u0020game.\u0020Creates\u0020an\u0020object\u0020of\u0020class\nGame21Easy\u0020or\u0020Game21Hard,\u0020samves\u0020to\u0020session\u0020and\u0020redirects\nto\u0020route\u0020for\u0020selecting\u0020amount\u0020to\u0020bet",
             "url": "classes/App-Controller-Game21Controller.html#method_init"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller\u003A\u003AselectAmount\u0028\u0029",
@@ -316,46 +311,6 @@ Search.appendIndex(
             "summary": "Displays\u0020a\u0020randomly\u0020selected\u0020quote\u0020and\u0020date\u002Btime\u0020when\u0020the\u0020selection\ntook\u0020place",
             "url": "classes/App-Controller-JsonController.html#method_jsonQuote"
         },                {
-            "fqsen": "\\App\\Controller\\JsonController\u003A\u003AjsonDeck\u0028\u0029",
-            "name": "jsonDeck",
-            "summary": "Creates\u0020and\u0020shows\u0020json\u0020representation\u0020of\u0020a\u0020deck\u0020of\u0020cards\nin\u0020sorted\u0020order",
-            "url": "classes/App-Controller-JsonController.html#method_jsonDeck"
-        },                {
-            "fqsen": "\\App\\Controller\\JsonController\u003A\u003AjsonShuffle\u0028\u0029",
-            "name": "jsonShuffle",
-            "summary": "Creates\u0020and\u0020shows\u0020json\u0020representation\u0020of\u0020a\u0020deck\u0020of\u0020cards\nin\u0020shuffled\u0020order",
-            "url": "classes/App-Controller-JsonController.html#method_jsonShuffle"
-        },                {
-            "fqsen": "\\App\\Controller\\JsonController\u003A\u003AjsonDraw\u0028\u0029",
-            "name": "jsonDraw",
-            "summary": "Route\u0020where\u0020one\u0020card\u0020at\u0020a\u0020time\u0020is\u0020drawn\u0020and\u0020displayed\nfrom\u0020the\u0020deck\u0020of\u0020cards\u0020that\u0020was\u0020created\u0020in\u0020the\u0020\u0027shuffle\u0027\u0020route\nor\u0020in\u0020the\u0020\u0027deck\u0027\u0020route",
-            "url": "classes/App-Controller-JsonController.html#method_jsonDraw"
-        },                {
-            "fqsen": "\\App\\Controller\\JsonController\u003A\u003AjsonDrawMany\u0028\u0029",
-            "name": "jsonDrawMany",
-            "summary": "Route\u0020where\u0020a\u0020number\u0020of\u0020cards\u0020at\u0020a\u0020time\u0020is\u0020drawn\u0020and\u0020displayed\nfrom\u0020the\u0020deck\u0020of\u0020cards\u0020that\u0020was\u0020created\u0020in\u0020the\u0020\u0027shuffle\u0027\u0020route\nor\u0020in\u0020the\u0020\u0027deck\u0027\u0020route",
-            "url": "classes/App-Controller-JsonController.html#method_jsonDrawMany"
-        },                {
-            "fqsen": "\\App\\Controller\\JsonController\u003A\u003AjsonDeal\u0028\u0029",
-            "name": "jsonDeal",
-            "summary": "Route\u0020where\u0020a\u0020number\u0020of\u0020cards\u0020is\u0020dealt\u0020to\u0020a\u0020number\u0020of\u0020players\nfrom\u0020the\u0020deck\u0020of\u0020cards\u0020that\u0020was\u0020created\u0020in\u0020the\u0020\u0027shuffle\u0027\u0020route\nor\u0020in\u0020the\u0020\u0027deck\u0027\u0020route",
-            "url": "classes/App-Controller-JsonController.html#method_jsonDeal"
-        },                {
-            "fqsen": "\\App\\Controller\\JsonController\u003A\u003AjsonGame\u0028\u0029",
-            "name": "jsonGame",
-            "summary": "Route\u0020displays\u0020current\u0020game\/game\u002Dstatus\u0020as\u0020json\u0020object",
-            "url": "classes/App-Controller-JsonController.html#method_jsonGame"
-        },                {
-            "fqsen": "\\App\\Controller\\JsonController\u003A\u003AshowAllBooks\u0028\u0029",
-            "name": "showAllBooks",
-            "summary": "Displays\u0020all\u0020books\u0020in\u0020the\u0020library",
-            "url": "classes/App-Controller-JsonController.html#method_showAllBooks"
-        },                {
-            "fqsen": "\\App\\Controller\\JsonController\u003A\u003AshowProductById\u0028\u0029",
-            "name": "showProductById",
-            "summary": "",
-            "url": "classes/App-Controller-JsonController.html#method_showProductById"
-        },                {
             "fqsen": "\\App\\Controller\\MainController",
             "name": "MainController",
             "summary": "The\u0020main\u0020controller\u0020class",
@@ -381,15 +336,10 @@ Search.appendIndex(
             "summary": "Route\u0020displays\u0020a\u0020forest\u0020with\u0020monkey\u0020where\nthe\u0020monkeys\u0020location\u0020in\u0020the\u0020forest\u0020randomly\u0020changes\neach\u0020time\u0020page\u0020is\u0020loaded\/re\u002Dloaded",
             "url": "classes/App-Controller-MainController.html#method_number"
         },                {
-            "fqsen": "\\App\\Exceptions\\GameException",
-            "name": "GameException",
-            "summary": "Exception\u0020class\u0020for\u0020Game",
-            "url": "classes/App-Exceptions-GameException.html"
-        },                {
-            "fqsen": "\\App\\Exceptions\\NoCardsLeftException",
-            "name": "NoCardsLeftException",
-            "summary": "Exception\u0020class\u0020thown\u0020when\u0020there\u0020are\u0020no\u0020cards\nleft\u0020do\u0020draw",
-            "url": "classes/App-Exceptions-NoCardsLeftException.html"
+            "fqsen": "\\App\\Controller\\MainController\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
+            "summary": "Route\u0020displays\u0020a\u0020forest\u0020with\u0020monkey\u0020where\nthe\u0020monkeys\u0020location\u0020in\u0020the\u0020forest\u0020randomly\u0020changes\neach\u0020time\u0020page\u0020is\u0020loaded\/re\u002Dloaded",
+            "url": "classes/App-Controller-MainController.html#method_metrics"
         },                {
             "fqsen": "\\App\\Game\\BettingGameTrait",
             "name": "BettingGameTrait",
@@ -406,6 +356,11 @@ Search.appendIndex(
             "summary": "Moves\u0020the\u0020\u0024amount\u0020of\u0020money\u0020from\u0020player\u0020and\u0020bank\nto\u0020the\u0020moneypot",
             "url": "classes/App-Game-BettingGameTrait.html#method_addToMoneyPot"
         },                {
+            "fqsen": "\\App\\Game\\BettingGameTrait\u003A\u003AisWinner\u0028\u0029",
+            "name": "isWinner",
+            "summary": "Check\u0020if\u0020there\u0020is\u0020a\u0020winner",
+            "url": "classes/App-Game-BettingGameTrait.html#method_isWinner"
+        },                {
             "fqsen": "\\App\\Game\\BettingGameTrait\u003A\u003A\u0024moneyPot",
             "name": "moneyPot",
             "summary": "",
@@ -420,6 +375,11 @@ Search.appendIndex(
             "name": "bank",
             "summary": "",
             "url": "classes/App-Game-BettingGameTrait.html#property_bank"
+        },                {
+            "fqsen": "\\App\\Game\\BettingGameTrait\u003A\u003A\u0024winner",
+            "name": "winner",
+            "summary": "",
+            "url": "classes/App-Game-BettingGameTrait.html#property_winner"
         },                {
             "fqsen": "\\App\\Game\\Game",
             "name": "Game",
@@ -471,11 +431,6 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020risk\u0020of\u0020getting\u0020\u0022fat\u0022\u0020with\nnext\u0020card\u0020for\u0020currently\u0020playing\u0020party\u0020\u002D\u0020player\u0020or\u0020bank",
             "url": "classes/App-Game-Game21Easy.html#method_getRisk"
         },                {
-            "fqsen": "\\App\\Game\\Game21Easy\u003A\u003AnextRound\u0028\u0029",
-            "name": "nextRound",
-            "summary": "Increases\u0020number\u0020of\u0020currenRound\u0020attribute\u0020by\u00201\nand\u0020resets\u0020for\u0020next\u0020round.",
-            "url": "classes/App-Game-Game21Easy.html#method_nextRound"
-        },                {
             "fqsen": "\\App\\Game\\Game21Easy\u003A\u003Adeal\u0028\u0029",
             "name": "deal",
             "summary": "Deals\u0020a\u0020card\u0020to\u0020the\u0020player",
@@ -491,15 +446,25 @@ Search.appendIndex(
             "summary": "Deals\u0020cards\u0020to\u0020the\u0020bank\u0020until\u0020the\u0020value\u0020of\u0020bank\u0027s\u0020hand\u0020is\u0020at\nor\u0020above\u002017\u0020or\u0020there\u0020are\u0020no\u0020cards\u0020left\u0020in\u0020deck",
             "url": "classes/App-Game-Game21Easy.html#method_dealBank"
         },                {
+            "fqsen": "\\App\\Game\\Game21Easy\u003A\u003AbankWinsOnEqual\u0028\u0029",
+            "name": "bankWinsOnEqual",
+            "summary": "",
+            "url": "classes/App-Game-Game21Easy.html#method_bankWinsOnEqual"
+        },                {
+            "fqsen": "\\App\\Game\\Game21Easy\u003A\u003AhasBankMoreThan21\u0028\u0029",
+            "name": "hasBankMoreThan21",
+            "summary": "",
+            "url": "classes/App-Game-Game21Easy.html#method_hasBankMoreThan21"
+        },                {
+            "fqsen": "\\App\\Game\\Game21Easy\u003A\u003AhasBankBestScore\u0028\u0029",
+            "name": "hasBankBestScore",
+            "summary": "",
+            "url": "classes/App-Game-Game21Easy.html#method_hasBankBestScore"
+        },                {
             "fqsen": "\\App\\Game\\Game21Easy\u003A\u003AevaluateBank\u0028\u0029",
             "name": "evaluateBank",
             "summary": "Called\u0020after\u0020the\u0020bank\u0020is\u0020finished\u0020with\u0020drawing\u0020cards.",
             "url": "classes/App-Game-Game21Easy.html#method_evaluateBank"
-        },                {
-            "fqsen": "\\App\\Game\\Game21Easy\u003A\u003AendRound\u0028\u0029",
-            "name": "endRound",
-            "summary": "Moves\u0020money\u0020from\u0020the\u0020money\u0020pot\u0020to\u0020the\u0020winner.",
-            "url": "classes/App-Game-Game21Easy.html#method_endRound"
         },                {
             "fqsen": "\\App\\Game\\Game21Easy\u003A\u003AgenerateFlash\u0028\u0029",
             "name": "generateFlash",
@@ -576,11 +541,6 @@ Search.appendIndex(
             "summary": "Returns\u0020bool\u0020indicator\u0020if\u0020game\u0020is\u0020over\u0020or\u0020not",
             "url": "classes/App-Game-Game21Interface.html#method_gameOver"
         },                {
-            "fqsen": "\\App\\Game\\Game21Interface\u003A\u003AnextRound\u0028\u0029",
-            "name": "nextRound",
-            "summary": "Increases\u0020the\u0020number\u0020of\u0020curren\u0020round\u0020attribute\u0020by\u00201.",
-            "url": "classes/App-Game-Game21Interface.html#method_nextRound"
-        },                {
             "fqsen": "\\App\\Game\\Game21Interface\u003A\u003AaddToMoneyPot\u0028\u0029",
             "name": "addToMoneyPot",
             "summary": "Moves\u0020the\u0020\u0024amount\u0020of\u0020money\u0020from\u0020player\u0020and\u0020bank\nto\u0020the\u0020moneypot",
@@ -621,11 +581,6 @@ Search.appendIndex(
             "summary": "Returns\u0020current\u0020data\u0020for\u0020each\u0020player",
             "url": "classes/App-Game-Game21Interface.html#method_getPlayerData"
         },                {
-            "fqsen": "\\App\\Game\\Game21Interface\u003A\u003AendRound\u0028\u0029",
-            "name": "endRound",
-            "summary": "Ends\u0020current\u0020round",
-            "url": "classes/App-Game-Game21Interface.html#method_endRound"
-        },                {
             "fqsen": "\\App\\Game\\Game21Interface\u003A\u003AgetRisk\u0028\u0029",
             "name": "getRisk",
             "summary": "Returns\u0020the\u0020risk\u0020as\u0020string\u0020for\u0020the\u0020currently\u0020playing\nparty",
@@ -656,81 +611,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Game-MoneyPot.html#property_money"
         },                {
-            "fqsen": "\\App\\Game\\Player",
-            "name": "Player",
-            "summary": "Class\u0020representing\u0020a\u0020Player",
-            "url": "classes/App-Game-Player.html"
-        },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor",
-            "url": "classes/App-Game-Player.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003AgetName\u0028\u0029",
-            "name": "getName",
-            "summary": "Getter\u0020of\u0020player\u0027s\u0020name",
-            "url": "classes/App-Game-Player.html#method_getName"
-        },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003AgetMoney\u0028\u0029",
-            "name": "getMoney",
-            "summary": "Getter\u0020of\u0020the\u0020amount\u0020of\u0020money\u0020the\u0020player\u0020currently\u0020has",
-            "url": "classes/App-Game-Player.html#method_getMoney"
-        },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003Adraw\u0028\u0029",
-            "name": "draw",
-            "summary": "Draws\u00201\u0020card\u0020from\u0020deck\u0020and\u0020adds\u0020to\u0020the\u0020player\u0027s\u0020hand",
-            "url": "classes/App-Game-Player.html#method_draw"
-        },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003AincrMoney\u0028\u0029",
-            "name": "incrMoney",
-            "summary": "Increases\u0020player\u0027s\u0020money",
-            "url": "classes/App-Game-Player.html#method_incrMoney"
-        },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003AdecrMoney\u0028\u0029",
-            "name": "decrMoney",
-            "summary": "Decreases\u0020player\u0027s\u0020money\u0020and\u0020returns\u0020the\u0020corresponding\u0020amount",
-            "url": "classes/App-Game-Player.html#method_decrMoney"
-        },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003AgetCardValues\u0028\u0029",
-            "name": "getCardValues",
-            "summary": "Returns\u0020array\u0020with\u0020cards\u0027\u0020integer\u0020values",
-            "url": "classes/App-Game-Player.html#method_getCardValues"
-        },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003AshowHandGraphic\u0028\u0029",
-            "name": "showHandGraphic",
-            "summary": "Returns\u0020array\u0020with\u0020associative\u0020arrays\u0020containing\u0020two\u0020strings\u0020\u002D\u0020relative\nsvg\u002Dimage\u0020path\u0020and\u0020description\u0020for\u0020each\u0020card\n\u0028to\u0020use\u0020for\u0020the\u0020alt\u0020text\u0029.",
-            "url": "classes/App-Game-Player.html#method_showHandGraphic"
-        },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003AshowHandAsString\u0028\u0029",
-            "name": "showHandAsString",
-            "summary": "Returns\u0020array\u0020with\u0020description\u0020of\u0020each\u0020card.",
-            "url": "classes/App-Game-Player.html#method_showHandAsString"
-        },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003AgetCardCount\u0028\u0029",
-            "name": "getCardCount",
-            "summary": "Returns\u0020the\u0020count\u0020of\u0020cards\u0020in\u0020player\u0027s\u0020hand.",
-            "url": "classes/App-Game-Player.html#method_getCardCount"
-        },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003AemptyHand\u0028\u0029",
-            "name": "emptyHand",
-            "summary": "Removes\u0020all\u0020cards\u0020from\u0020player\u0027s\u0020hand",
-            "url": "classes/App-Game-Player.html#method_emptyHand"
-        },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003A\u0024name",
-            "name": "name",
-            "summary": "",
-            "url": "classes/App-Game-Player.html#property_name"
-        },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003A\u0024money",
-            "name": "money",
-            "summary": "",
-            "url": "classes/App-Game-Player.html#property_money"
-        },                {
-            "fqsen": "\\App\\Game\\Player\u003A\u003A\u0024hand",
-            "name": "hand",
-            "summary": "",
-            "url": "classes/App-Game-Player.html#property_hand"
-        },                {
             "fqsen": "\\App\\Game\\Player21",
             "name": "Player21",
             "summary": "Class\u0020representing\u0020a\u0020Player\u0020in\u0020the\u002021\u0020game",
@@ -740,6 +620,31 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "Constructor",
             "url": "classes/App-Game-Player21.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Game\\Player21\u003A\u003AgetMoney\u0028\u0029",
+            "name": "getMoney",
+            "summary": "Getter\u0020of\u0020the\u0020amount\u0020of\u0020money\u0020the\u0020player\u0020currently\u0020has",
+            "url": "classes/App-Game-Player21.html#method_getMoney"
+        },                {
+            "fqsen": "\\App\\Game\\Player21\u003A\u003AincrMoney\u0028\u0029",
+            "name": "incrMoney",
+            "summary": "Increases\u0020player\u0027s\u0020money",
+            "url": "classes/App-Game-Player21.html#method_incrMoney"
+        },                {
+            "fqsen": "\\App\\Game\\Player21\u003A\u003AdecrMoney\u0028\u0029",
+            "name": "decrMoney",
+            "summary": "Decreases\u0020player\u0027s\u0020money\u0020and\u0020returns\u0020the\u0020corresponding\u0020amount",
+            "url": "classes/App-Game-Player21.html#method_decrMoney"
+        },                {
+            "fqsen": "\\App\\Game\\Player21\u003A\u003AadjAceValue\u0028\u0029",
+            "name": "adjAceValue",
+            "summary": "Adjusts\u0020if\u0020ace\u0020should\u0020be\u0020valued\u0020at\u002014\u0020or\u0020at\u00201",
+            "url": "classes/App-Game-Player21.html#method_adjAceValue"
+        },                {
+            "fqsen": "\\App\\Game\\Player21\u003A\u003AadjAceValueToOne\u0028\u0029",
+            "name": "adjAceValueToOne",
+            "summary": "Adjusts\u0020ace\u002Dvalue\u0020to\u00201",
+            "url": "classes/App-Game-Player21.html#method_adjAceValueToOne"
         },                {
             "fqsen": "\\App\\Game\\Player21\u003A\u003AhandValue\u0028\u0029",
             "name": "handValue",
@@ -751,6 +656,11 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020current\u0020min\u0020hand\u0020value.",
             "url": "classes/App-Game-Player21.html#method_minHandValue"
         },                {
+            "fqsen": "\\App\\Game\\Player21\u003A\u003AcheckIfBad\u0028\u0029",
+            "name": "checkIfBad",
+            "summary": "",
+            "url": "classes/App-Game-Player21.html#method_checkIfBad"
+        },                {
             "fqsen": "\\App\\Game\\Player21\u003A\u003AestimateRisk\u0028\u0029",
             "name": "estimateRisk",
             "summary": "Returns\u0020the\u0020risk\u0020of\u0020current\u0020player\u0020getting\nabove\u002021\u0020with\u0020next\u0020drawn\u0020card",
@@ -760,6 +670,11 @@ Search.appendIndex(
             "name": "GOAL",
             "summary": "",
             "url": "classes/App-Game-Player21.html#constant_GOAL"
+        },                {
+            "fqsen": "\\App\\Game\\Player21\u003A\u003A\u0024money",
+            "name": "money",
+            "summary": "",
+            "url": "classes/App-Game-Player21.html#property_money"
         },                {
             "fqsen": "\\App\\Kernel",
             "name": "Kernel",
@@ -771,95 +686,10 @@ Search.appendIndex(
             "summary": "Class\u0020that\u0020reads\u0020content\u0020from\u0020a\u0020markdown\u0020file\u0020and\nuses\u0020TextFilter\u0020class\u0020to\u0020return\u0020the\u0020content\u0020coverted\nto\u0020html",
             "url": "classes/App-Markdown-MdParser.html"
         },                {
-            "fqsen": "\\App\\Markdown\\MdParser\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/App-Markdown-MdParser.html#method___construct"
-        },                {
             "fqsen": "\\App\\Markdown\\MdParser\u003A\u003AgetParsedText\u0028\u0029",
             "name": "getParsedText",
             "summary": "",
             "url": "classes/App-Markdown-MdParser.html#method_getParsedText"
-        },                {
-            "fqsen": "\\App\\Markdown\\MdParser\u003A\u003A\u0024parsedText",
-            "name": "parsedText",
-            "summary": "",
-            "url": "classes/App-Markdown-MdParser.html#property_parsedText"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait",
-            "name": "GameTestingTrait",
-            "summary": "Trait\u0020has\u0020setter\u0020and\u0020getter\u0020methods\nto\u0020facilitate\u0020testing\u0020of\u0020the\u0020Game21Easy\nand\u0020Game21Hard\u0020classes",
-            "url": "classes/App-Game-GameTestingTrait.html"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AsetMoneyPot\u0028\u0029",
-            "name": "setMoneyPot",
-            "summary": "Setter\u0020method\u0020for\u0020moneypot",
-            "url": "classes/App-Game-GameTestingTrait.html#method_setMoneyPot"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AsetBank\u0028\u0029",
-            "name": "setBank",
-            "summary": "Setter\u0020method\u0020for\u0020bank",
-            "url": "classes/App-Game-GameTestingTrait.html#method_setBank"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AsetWinner\u0028\u0029",
-            "name": "setWinner",
-            "summary": "Setter\u0020method\u0020for\u0020winner",
-            "url": "classes/App-Game-GameTestingTrait.html#method_setWinner"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AgetWinner\u0028\u0029",
-            "name": "getWinner",
-            "summary": "Getter\u0020method\u0020for\u0020winner",
-            "url": "classes/App-Game-GameTestingTrait.html#method_getWinner"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AsetRoundOver\u0028\u0029",
-            "name": "setRoundOver",
-            "summary": "Setter\u0020method\u0020for\u0020roundOver",
-            "url": "classes/App-Game-GameTestingTrait.html#method_setRoundOver"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AisRoundOver\u0028\u0029",
-            "name": "isRoundOver",
-            "summary": "Getter\u0020method\u0020for\u0020roundOver",
-            "url": "classes/App-Game-GameTestingTrait.html#method_isRoundOver"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AisBankPlaying\u0028\u0029",
-            "name": "isBankPlaying",
-            "summary": "Getter\u0020method\u0020for\u0020bankPlaying",
-            "url": "classes/App-Game-GameTestingTrait.html#method_isBankPlaying"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AsetBankPlaying\u0028\u0029",
-            "name": "setBankPlaying",
-            "summary": "Setter\u0020method\u0020for\u0020bankPlaying",
-            "url": "classes/App-Game-GameTestingTrait.html#method_setBankPlaying"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003AsetFinished\u0028\u0029",
-            "name": "setFinished",
-            "summary": "Setter\u0020method\u0020for\u0020finished",
-            "url": "classes/App-Game-GameTestingTrait.html#method_setFinished"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003A\u0024bank",
-            "name": "bank",
-            "summary": "",
-            "url": "classes/App-Game-GameTestingTrait.html#property_bank"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003A\u0024winner",
-            "name": "winner",
-            "summary": "",
-            "url": "classes/App-Game-GameTestingTrait.html#property_winner"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003A\u0024roundOver",
-            "name": "roundOver",
-            "summary": "",
-            "url": "classes/App-Game-GameTestingTrait.html#property_roundOver"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003A\u0024bankPlaying",
-            "name": "bankPlaying",
-            "summary": "",
-            "url": "classes/App-Game-GameTestingTrait.html#property_bankPlaying"
-        },                {
-            "fqsen": "\\App\\Game\\GameTestingTrait\u003A\u003A\u0024finished",
-            "name": "finished",
-            "summary": "",
-            "url": "classes/App-Game-GameTestingTrait.html#property_finished"
         },                {
             "fqsen": "\\App\\Controller\\LibraryController",
             "name": "LibraryController",
@@ -880,16 +710,6 @@ Search.appendIndex(
             "name": "createBook",
             "summary": "Saves\u0020new\u0020book\u0020to\u0020database",
             "url": "classes/App-Controller-LibraryController.html#method_createBook"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AupdateBookForm\u0028\u0029",
-            "name": "updateBookForm",
-            "summary": "Form\u0020for\u0020editing\u0020details\u0020of\u0020a\u0020book",
-            "url": "classes/App-Controller-LibraryController.html#method_updateBookForm"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AupdateBook\u0028\u0029",
-            "name": "updateBook",
-            "summary": "Saves\u0020updated\u0020information\u0020to\u0020database",
-            "url": "classes/App-Controller-LibraryController.html#method_updateBook"
         },                {
             "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AshowBookByIsbn\u0028\u0029",
             "name": "showBookByIsbn",
@@ -986,36 +806,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-Book.html#property_img"
         },                {
-            "fqsen": "\\App\\Exceptions\\IsbnAlreadyInUseException",
-            "name": "IsbnAlreadyInUseException",
-            "summary": "Exception\u0020class\u0020trhown\u0020when\u0020isbn\u0020number\u0020is\u0020alerady\u0020in\u0020use",
-            "url": "classes/App-Exceptions-IsbnAlreadyInUseException.html"
-        },                {
-            "fqsen": "\\App\\Exceptions\\LibraryException",
-            "name": "LibraryException",
-            "summary": "Exception\u0020class\u0020for\u0020Library",
-            "url": "classes/App-Exceptions-LibraryException.html"
-        },                {
-            "fqsen": "\\App\\Helpers\\SqlFileLoader",
-            "name": "SqlFileLoader",
-            "summary": "Resets\u0020database\u0020from\u0020file",
-            "url": "classes/App-Helpers-SqlFileLoader.html"
-        },                {
-            "fqsen": "\\App\\Helpers\\SqlFileLoader\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/App-Helpers-SqlFileLoader.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Helpers\\SqlFileLoader\u003A\u003Aload\u0028\u0029",
-            "name": "load",
-            "summary": "",
-            "url": "classes/App-Helpers-SqlFileLoader.html#method_load"
-        },                {
-            "fqsen": "\\App\\Helpers\\SqlFileLoader\u003A\u003A\u0024conn",
-            "name": "conn",
-            "summary": "Holds\u0020instance\u0020of\u0020the\u0020Doctrine\u0020connection\u0020for\u0020the\u0020resetter.",
-            "url": "classes/App-Helpers-SqlFileLoader.html#property_conn"
-        },                {
             "fqsen": "\\App\\Repository\\BookRepository",
             "name": "BookRepository",
             "summary": "",
@@ -1025,6 +815,16 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/App-Repository-BookRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\BookRepository\u003A\u003AcompareId\u0028\u0029",
+            "name": "compareId",
+            "summary": "",
+            "url": "classes/App-Repository-BookRepository.html#method_compareId"
+        },                {
+            "fqsen": "\\App\\Repository\\BookRepository\u003A\u003AsaveToDB\u0028\u0029",
+            "name": "saveToDB",
+            "summary": "",
+            "url": "classes/App-Repository-BookRepository.html#method_saveToDB"
         },                {
             "fqsen": "\\App\\Repository\\BookRepository\u003A\u003Asave\u0028\u0029",
             "name": "save",
@@ -1040,6 +840,611 @@ Search.appendIndex(
             "name": "findOneByIsbn",
             "summary": "",
             "url": "classes/App-Repository-BookRepository.html#method_findOneByIsbn"
+        },                {
+            "fqsen": "\\App\\Cards\\CardDeckHandler",
+            "name": "CardDeckHandler",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020the\u0020routes\u0020in\u0020CardController",
+            "url": "classes/App-Cards-CardDeckHandler.html"
+        },                {
+            "fqsen": "\\App\\Cards\\CardDeckHandler\u003A\u003AgetDeckRouteData\u0028\u0029",
+            "name": "getDeckRouteData",
+            "summary": "Returns\u0020an\u0020array\u0020with\u0020data\u0020for\u0020\/card\/deck\u0020route",
+            "url": "classes/App-Cards-CardDeckHandler.html#method_getDeckRouteData"
+        },                {
+            "fqsen": "\\App\\Cards\\CardHandler",
+            "name": "CardHandler",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020the\u0020routes\u0020in\u0020CardController",
+            "url": "classes/App-Cards-CardHandler.html"
+        },                {
+            "fqsen": "\\App\\Cards\\CardHandler\u003A\u003AgetDataForDraw\u0028\u0029",
+            "name": "getDataForDraw",
+            "summary": "Returns\u0020an\u0020array\u0020with\u0020data\u0020for\u0020\/card\/deck\u0020route",
+            "url": "classes/App-Cards-CardHandler.html#method_getDataForDraw"
+        },                {
+            "fqsen": "\\App\\Cards\\CardHandler\u003A\u003Adeal\u0028\u0029",
+            "name": "deal",
+            "summary": "Returns\u0020an\u0020array\u0020with\u0020player\u0020data\u0020after\u0020a\u0020draw",
+            "url": "classes/App-Cards-CardHandler.html#method_deal"
+        },                {
+            "fqsen": "\\App\\Cards\\CardLandingHandler",
+            "name": "CardLandingHandler",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020the\u0020landing\u0020routes\u0020in\u0020CardController",
+            "url": "classes/App-Cards-CardLandingHandler.html"
+        },                {
+            "fqsen": "\\App\\Cards\\CardLandingHandler\u003A\u003AgetMainData\u0028\u0029",
+            "name": "getMainData",
+            "summary": "",
+            "url": "classes/App-Cards-CardLandingHandler.html#method_getMainData"
+        },                {
+            "fqsen": "\\App\\Cards\\GameException",
+            "name": "GameException",
+            "summary": "Exception\u0020class\u0020for\u0020Game",
+            "url": "classes/App-Cards-GameException.html"
+        },                {
+            "fqsen": "\\App\\Cards\\JsonCardHandler",
+            "name": "JsonCardHandler",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020the\u0020routes\u0020in\u0020CardController",
+            "url": "classes/App-Cards-JsonCardHandler.html"
+        },                {
+            "fqsen": "\\App\\Cards\\JsonCardHandler\u003A\u003AgetDeckRouteData\u0028\u0029",
+            "name": "getDeckRouteData",
+            "summary": "Returns\u0020an\u0020array\u0020with\u0020data\u0020for\u0020\/card\/deck\u0020route",
+            "url": "classes/App-Cards-JsonCardHandler.html#method_getDeckRouteData"
+        },                {
+            "fqsen": "\\App\\Cards\\JsonCardHandler\u003A\u003AgetDataForDraw\u0028\u0029",
+            "name": "getDataForDraw",
+            "summary": "Returns\u0020an\u0020array\u0020with\u0020data\u0020for\u0020\/card\/deck\u0020route",
+            "url": "classes/App-Cards-JsonCardHandler.html#method_getDataForDraw"
+        },                {
+            "fqsen": "\\App\\Cards\\JsonCardHandler\u003A\u003Adeal\u0028\u0029",
+            "name": "deal",
+            "summary": "Returns\u0020an\u0020array\u0020with\u0020player\u0020data\u0020after\u0020a\u0020draw",
+            "url": "classes/App-Cards-JsonCardHandler.html#method_deal"
+        },                {
+            "fqsen": "\\App\\Cards\\NoCardsLeftException",
+            "name": "NoCardsLeftException",
+            "summary": "Exception\u0020class\u0020thown\u0020when\u0020there\u0020are\u0020no\u0020cards\nleft\u0020do\u0020draw",
+            "url": "classes/App-Cards-NoCardsLeftException.html"
+        },                {
+            "fqsen": "\\App\\Cards\\PlayerCreator",
+            "name": "PlayerCreator",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020the\u0020routes\u0020in\u0020CardController",
+            "url": "classes/App-Cards-PlayerCreator.html"
+        },                {
+            "fqsen": "\\App\\Cards\\PlayerCreator\u003A\u003AcreatePlayers\u0028\u0029",
+            "name": "createPlayers",
+            "summary": "",
+            "url": "classes/App-Cards-PlayerCreator.html#method_createPlayers"
+        },                {
+            "fqsen": "\\App\\Controller\\CardLandingController",
+            "name": "CardLandingController",
+            "summary": "Controller\u0020for\u0020routes\u0020where\u0020cards\u0020are\u0020displayed",
+            "url": "classes/App-Controller-CardLandingController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\CardLandingController\u003A\u003Acard\u0028\u0029",
+            "name": "card",
+            "summary": "",
+            "url": "classes/App-Controller-CardLandingController.html#method_card"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonCardDealController",
+            "name": "JsonCardDealController",
+            "summary": "Controller\u0020for\u0020json\u0020routes",
+            "url": "classes/App-Controller-JsonCardDealController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonCardDealController\u003A\u003AjsonDeal\u0028\u0029",
+            "name": "jsonDeal",
+            "summary": "Route\u0020where\u0020a\u0020number\u0020of\u0020cards\u0020is\u0020dealt\u0020to\u0020a\u0020number\u0020of\u0020players\nfrom\u0020the\u0020deck\u0020of\u0020cards\u0020that\u0020was\u0020created\u0020in\u0020the\u0020\u0027shuffle\u0027\u0020route\nor\u0020in\u0020the\u0020\u0027deck\u0027\u0020route",
+            "url": "classes/App-Controller-JsonCardDealController.html#method_jsonDeal"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonCardDeckController",
+            "name": "JsonCardDeckController",
+            "summary": "Controller\u0020for\u0020json\u0020routes",
+            "url": "classes/App-Controller-JsonCardDeckController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonCardDeckController\u003A\u003AjsonDeck\u0028\u0029",
+            "name": "jsonDeck",
+            "summary": "Creates\u0020and\u0020shows\u0020json\u0020representation\u0020of\u0020a\u0020deck\u0020of\u0020cards\nin\u0020sorted\u0020order",
+            "url": "classes/App-Controller-JsonCardDeckController.html#method_jsonDeck"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonCardDeckController\u003A\u003AjsonShuffle\u0028\u0029",
+            "name": "jsonShuffle",
+            "summary": "Creates\u0020and\u0020shows\u0020json\u0020representation\u0020of\u0020a\u0020deck\u0020of\u0020cards\nin\u0020shuffled\u0020order",
+            "url": "classes/App-Controller-JsonCardDeckController.html#method_jsonShuffle"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonDealManyCardsController",
+            "name": "JsonDealManyCardsController",
+            "summary": "Controller\u0020for\u0020json\u0020routes",
+            "url": "classes/App-Controller-JsonDealManyCardsController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonDealManyCardsController\u003A\u003AjsonDrawMany\u0028\u0029",
+            "name": "jsonDrawMany",
+            "summary": "Route\u0020where\u0020a\u0020number\u0020of\u0020cards\u0020at\u0020a\u0020time\u0020is\u0020drawn\u0020and\u0020displayed\nfrom\u0020the\u0020deck\u0020of\u0020cards\u0020that\u0020was\u0020created\u0020in\u0020the\u0020\u0027shuffle\u0027\u0020route\nor\u0020in\u0020the\u0020\u0027deck\u0027\u0020route",
+            "url": "classes/App-Controller-JsonDealManyCardsController.html#method_jsonDrawMany"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonDealOneCardController",
+            "name": "JsonDealOneCardController",
+            "summary": "Controller\u0020for\u0020json\u0020routes",
+            "url": "classes/App-Controller-JsonDealOneCardController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonDealOneCardController\u003A\u003AjsonDraw\u0028\u0029",
+            "name": "jsonDraw",
+            "summary": "Route\u0020where\u0020one\u0020card\u0020at\u0020a\u0020time\u0020is\u0020drawn\u0020and\u0020displayed\nfrom\u0020the\u0020deck\u0020of\u0020cards\u0020that\u0020was\u0020created\u0020in\u0020the\u0020\u0027shuffle\u0027\u0020route\nor\u0020in\u0020the\u0020\u0027deck\u0027\u0020route",
+            "url": "classes/App-Controller-JsonDealOneCardController.html#method_jsonDraw"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonGame21Controller",
+            "name": "JsonGame21Controller",
+            "summary": "Controller\u0020class\u0020for\u0020the\u002021\u0020card\u0020game",
+            "url": "classes/App-Controller-JsonGame21Controller.html"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonGame21Controller\u003A\u003AjsonGame\u0028\u0029",
+            "name": "jsonGame",
+            "summary": "Route\u0020displays\u0020current\u0020game\/game\u002Dstatus\u0020as\u0020json\u0020object",
+            "url": "classes/App-Controller-JsonGame21Controller.html#method_jsonGame"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonLibraryController",
+            "name": "JsonLibraryController",
+            "summary": "Controller\u0020for\u0020json\u0020routes",
+            "url": "classes/App-Controller-JsonLibraryController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonLibraryController\u003A\u003AshowAllBooks\u0028\u0029",
+            "name": "showAllBooks",
+            "summary": "Displays\u0020all\u0020books\u0020in\u0020the\u0020library",
+            "url": "classes/App-Controller-JsonLibraryController.html#method_showAllBooks"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonLibraryController\u003A\u003AshowABookByIsbn\u0028\u0029",
+            "name": "showABookByIsbn",
+            "summary": "",
+            "url": "classes/App-Controller-JsonLibraryController.html#method_showABookByIsbn"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryUpdateBookController",
+            "name": "LibraryUpdateBookController",
+            "summary": "Class\u0020for\u0020the\u0020library\u0020controller",
+            "url": "classes/App-Controller-LibraryUpdateBookController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryUpdateBookController\u003A\u003AupdateBookForm\u0028\u0029",
+            "name": "updateBookForm",
+            "summary": "Form\u0020for\u0020editing\u0020details\u0020of\u0020a\u0020book",
+            "url": "classes/App-Controller-LibraryUpdateBookController.html#method_updateBookForm"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryUpdateBookController\u003A\u003AupdateBook\u0028\u0029",
+            "name": "updateBook",
+            "summary": "Saves\u0020updated\u0020information\u0020to\u0020database",
+            "url": "classes/App-Controller-LibraryUpdateBookController.html#method_updateBook"
+        },                {
+            "fqsen": "\\App\\Game\\BanksTurnHandler",
+            "name": "BanksTurnHandler",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020game\u0020in\u0020the\u0020Game21Controller",
+            "url": "classes/App-Game-BanksTurnHandler.html"
+        },                {
+            "fqsen": "\\App\\Game\\BanksTurnHandler\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Game-BanksTurnHandler.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Game\\BanksTurnHandler\u003A\u003AbankDraw\u0028\u0029",
+            "name": "bankDraw",
+            "summary": "Handles\u0020bank\u0027s\u0020turn\u0020to\u0020draw",
+            "url": "classes/App-Game-BanksTurnHandler.html#method_bankDraw"
+        },                {
+            "fqsen": "\\App\\Game\\BanksTurnHandler\u003A\u003A\u0024handler",
+            "name": "handler",
+            "summary": "",
+            "url": "classes/App-Game-BanksTurnHandler.html#property_handler"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandler2Trait",
+            "name": "GameAttrHandler2Trait",
+            "summary": "Trait\u0020has\u0020setter\u0020and\u0020getter\u0020methods\nto\u0020facilitate\u0020testing\u0020of\u0020the\u0020Game21Easy\nand\u0020Game21Hard\u0020classes",
+            "url": "classes/App-Game-GameAttrHandler2Trait.html"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandler2Trait\u003A\u003AsetPlayer\u0028\u0029",
+            "name": "setPlayer",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandler2Trait.html#method_setPlayer"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandler2Trait\u003A\u003AgetPlayer\u0028\u0029",
+            "name": "getPlayer",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandler2Trait.html#method_getPlayer"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandler2Trait\u003A\u003AsetBank\u0028\u0029",
+            "name": "setBank",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandler2Trait.html#method_setBank"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandler2Trait\u003A\u003AgetBank\u0028\u0029",
+            "name": "getBank",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandler2Trait.html#method_getBank"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandler2Trait\u003A\u003AsetWinner\u0028\u0029",
+            "name": "setWinner",
+            "summary": "Setter\u0020method\u0020for\u0020winner",
+            "url": "classes/App-Game-GameAttrHandler2Trait.html#method_setWinner"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandler2Trait\u003A\u003AgetWinner\u0028\u0029",
+            "name": "getWinner",
+            "summary": "Getter\u0020method\u0020for\u0020winner",
+            "url": "classes/App-Game-GameAttrHandler2Trait.html#method_getWinner"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandler2Trait\u003A\u003AsetCurrentRound\u0028\u0029",
+            "name": "setCurrentRound",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandler2Trait.html#method_setCurrentRound"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandler2Trait\u003A\u003AgetCurrentRound\u0028\u0029",
+            "name": "getCurrentRound",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandler2Trait.html#method_getCurrentRound"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandler2Trait\u003A\u003A\u0024bank",
+            "name": "bank",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandler2Trait.html#property_bank"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandler2Trait\u003A\u003A\u0024player",
+            "name": "player",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandler2Trait.html#property_player"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandler2Trait\u003A\u003A\u0024winner",
+            "name": "winner",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandler2Trait.html#property_winner"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandler2Trait\u003A\u003A\u0024currentRound",
+            "name": "currentRound",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandler2Trait.html#property_currentRound"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandlerTrait",
+            "name": "GameAttrHandlerTrait",
+            "summary": "Trait\u0020has\u0020setter\u0020and\u0020getter\u0020methods\nto\u0020facilitate\u0020testing\u0020of\u0020the\u0020Game21Easy\nand\u0020Game21Hard\u0020classes",
+            "url": "classes/App-Game-GameAttrHandlerTrait.html"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandlerTrait\u003A\u003AsetMoneyPot\u0028\u0029",
+            "name": "setMoneyPot",
+            "summary": "Setter\u0020method\u0020for\u0020moneypot",
+            "url": "classes/App-Game-GameAttrHandlerTrait.html#method_setMoneyPot"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandlerTrait\u003A\u003AgetMoneyPot\u0028\u0029",
+            "name": "getMoneyPot",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandlerTrait.html#method_getMoneyPot"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandlerTrait\u003A\u003AsetRoundOver\u0028\u0029",
+            "name": "setRoundOver",
+            "summary": "Setter\u0020method\u0020for\u0020roundOver",
+            "url": "classes/App-Game-GameAttrHandlerTrait.html#method_setRoundOver"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandlerTrait\u003A\u003AisRoundOver\u0028\u0029",
+            "name": "isRoundOver",
+            "summary": "Getter\u0020method\u0020for\u0020roundOver",
+            "url": "classes/App-Game-GameAttrHandlerTrait.html#method_isRoundOver"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandlerTrait\u003A\u003AisBankPlaying\u0028\u0029",
+            "name": "isBankPlaying",
+            "summary": "Getter\u0020method\u0020for\u0020bankPlaying",
+            "url": "classes/App-Game-GameAttrHandlerTrait.html#method_isBankPlaying"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandlerTrait\u003A\u003AsetBankPlaying\u0028\u0029",
+            "name": "setBankPlaying",
+            "summary": "Setter\u0020method\u0020for\u0020bankPlaying",
+            "url": "classes/App-Game-GameAttrHandlerTrait.html#method_setBankPlaying"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandlerTrait\u003A\u003AsetFinished\u0028\u0029",
+            "name": "setFinished",
+            "summary": "Setter\u0020method\u0020for\u0020finished",
+            "url": "classes/App-Game-GameAttrHandlerTrait.html#method_setFinished"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandlerTrait\u003A\u003A\u0024roundOver",
+            "name": "roundOver",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandlerTrait.html#property_roundOver"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandlerTrait\u003A\u003A\u0024bankPlaying",
+            "name": "bankPlaying",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandlerTrait.html#property_bankPlaying"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandlerTrait\u003A\u003A\u0024finished",
+            "name": "finished",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandlerTrait.html#property_finished"
+        },                {
+            "fqsen": "\\App\\Game\\GameAttrHandlerTrait\u003A\u003A\u0024moneyPot",
+            "name": "moneyPot",
+            "summary": "",
+            "url": "classes/App-Game-GameAttrHandlerTrait.html#property_moneyPot"
+        },                {
+            "fqsen": "\\App\\Game\\GameHandler",
+            "name": "GameHandler",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020game\u0020in\u0020the\u0020Game21Controller",
+            "url": "classes/App-Game-GameHandler.html"
+        },                {
+            "fqsen": "\\App\\Game\\GameHandler\u003A\u003Aplay\u0028\u0029",
+            "name": "play",
+            "summary": "Returns\u0020data\u0020for\u0020the\u0020route\u0020where\u0020current\u0020game\u0020is\u0020displayed",
+            "url": "classes/App-Game-GameHandler.html#method_play"
+        },                {
+            "fqsen": "\\App\\Game\\GameHandlerLanding",
+            "name": "GameHandlerLanding",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020the\u0020landing\u0020page\u0020and\u0020the\u0020docs\u0020page\u0020in\u0020the\u0020Game21Controller",
+            "url": "classes/App-Game-GameHandlerLanding.html"
+        },                {
+            "fqsen": "\\App\\Game\\GameHandlerLanding\u003A\u003Amain\u0028\u0029",
+            "name": "main",
+            "summary": "Returns\u0020associative\u0020array\u0020with\u0020data\u0020for\u0020the\u0020\/game\u0020route",
+            "url": "classes/App-Game-GameHandlerLanding.html#method_main"
+        },                {
+            "fqsen": "\\App\\Game\\GameHandlerLanding\u003A\u003Adoc\u0028\u0029",
+            "name": "doc",
+            "summary": "Returns\u0020associative\u0020array\u0020with\u0020data\u0020for\u0020the\u0020\/game\u0020\/doc\u0020route",
+            "url": "classes/App-Game-GameHandlerLanding.html#method_doc"
+        },                {
+            "fqsen": "\\App\\Game\\GameInitiator",
+            "name": "GameInitiator",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020game\u0020in\u0020the\u0020Game21Controller",
+            "url": "classes/App-Game-GameInitiator.html"
+        },                {
+            "fqsen": "\\App\\Game\\GameInitiator\u003A\u003Ainit\u0028\u0029",
+            "name": "init",
+            "summary": "Returns\u0020either\u0020a\u0020Game21Easy\u0020or\u0020a\u0020Game21Hard\u0020object",
+            "url": "classes/App-Game-GameInitiator.html#method_init"
+        },                {
+            "fqsen": "\\App\\Game\\GameMoneyHandler",
+            "name": "GameMoneyHandler",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020game\u0020in\u0020the\u0020Game21Controller",
+            "url": "classes/App-Game-GameMoneyHandler.html"
+        },                {
+            "fqsen": "\\App\\Game\\GameMoneyHandler\u003A\u003AselectAmount\u0028\u0029",
+            "name": "selectAmount",
+            "summary": "Updates\u0020game\u002Dobject\u0020to\u0020next\u0020round,\u0020returns\u0020some\u0020data\nfor\u0020the\u0020route\u0027s\u0020template",
+            "url": "classes/App-Game-GameMoneyHandler.html#method_selectAmount"
+        },                {
+            "fqsen": "\\App\\Game\\GameMoneyHandler\u003A\u003Abet\u0028\u0029",
+            "name": "bet",
+            "summary": "Updates\u0020the\u0020amount\u0020of\u0020money\u0020in\u0020the\u0020game\u0020obejcts\u0020moneypot",
+            "url": "classes/App-Game-GameMoneyHandler.html#method_bet"
+        },                {
+            "fqsen": "\\App\\Game\\JsonGameHandler",
+            "name": "JsonGameHandler",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020game\u0020in\u0020the\u0020Game21Controller",
+            "url": "classes/App-Game-JsonGameHandler.html"
+        },                {
+            "fqsen": "\\App\\Game\\JsonGameHandler\u003A\u003AjsonGame\u0028\u0029",
+            "name": "jsonGame",
+            "summary": "Returns\u0020data\u0020for\u0020the\u0020Json\u0020route\u0020where\u0020current\u0020game\u0020is\u0020idsplayed",
+            "url": "classes/App-Game-JsonGameHandler.html#method_jsonGame"
+        },                {
+            "fqsen": "\\App\\Game\\PlayerTrait",
+            "name": "PlayerTrait",
+            "summary": "Trate\u0020for\u0020bas\u0020methods\u0020for\u0020a\u0020player",
+            "url": "classes/App-Game-PlayerTrait.html"
+        },                {
+            "fqsen": "\\App\\Game\\PlayerTrait\u003A\u003AgetName\u0028\u0029",
+            "name": "getName",
+            "summary": "Getter\u0020of\u0020player\u0027s\u0020name",
+            "url": "classes/App-Game-PlayerTrait.html#method_getName"
+        },                {
+            "fqsen": "\\App\\Game\\PlayerTrait\u003A\u003Adraw\u0028\u0029",
+            "name": "draw",
+            "summary": "Draws\u00201\u0020card\u0020from\u0020deck\u0020and\u0020adds\u0020to\u0020the\u0020player\u0027s\u0020hand",
+            "url": "classes/App-Game-PlayerTrait.html#method_draw"
+        },                {
+            "fqsen": "\\App\\Game\\PlayerTrait\u003A\u003AgetCardValues\u0028\u0029",
+            "name": "getCardValues",
+            "summary": "Returns\u0020array\u0020with\u0020cards\u0027\u0020integer\u0020values",
+            "url": "classes/App-Game-PlayerTrait.html#method_getCardValues"
+        },                {
+            "fqsen": "\\App\\Game\\PlayerTrait\u003A\u003AshowHandGraphic\u0028\u0029",
+            "name": "showHandGraphic",
+            "summary": "Returns\u0020array\u0020with\u0020associative\u0020arrays\u0020containing\u0020two\u0020strings\u0020\u002D\u0020relative\nsvg\u002Dimage\u0020path\u0020and\u0020description\u0020for\u0020each\u0020card\n\u0028to\u0020use\u0020for\u0020the\u0020alt\u0020text\u0029.",
+            "url": "classes/App-Game-PlayerTrait.html#method_showHandGraphic"
+        },                {
+            "fqsen": "\\App\\Game\\PlayerTrait\u003A\u003AshowHandAsString\u0028\u0029",
+            "name": "showHandAsString",
+            "summary": "Returns\u0020array\u0020with\u0020description\u0020of\u0020each\u0020card.",
+            "url": "classes/App-Game-PlayerTrait.html#method_showHandAsString"
+        },                {
+            "fqsen": "\\App\\Game\\PlayerTrait\u003A\u003AgetCardCount\u0028\u0029",
+            "name": "getCardCount",
+            "summary": "Returns\u0020the\u0020count\u0020of\u0020cards\u0020in\u0020player\u0027s\u0020hand.",
+            "url": "classes/App-Game-PlayerTrait.html#method_getCardCount"
+        },                {
+            "fqsen": "\\App\\Game\\PlayerTrait\u003A\u003AemptyHand\u0028\u0029",
+            "name": "emptyHand",
+            "summary": "Removes\u0020all\u0020cards\u0020from\u0020player\u0027s\u0020hand",
+            "url": "classes/App-Game-PlayerTrait.html#method_emptyHand"
+        },                {
+            "fqsen": "\\App\\Game\\PlayerTrait\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/App-Game-PlayerTrait.html#property_name"
+        },                {
+            "fqsen": "\\App\\Game\\PlayerTrait\u003A\u003A\u0024hand",
+            "name": "hand",
+            "summary": "",
+            "url": "classes/App-Game-PlayerTrait.html#property_hand"
+        },                {
+            "fqsen": "\\App\\Game\\PlayerTurnHandler",
+            "name": "PlayerTurnHandler",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020game\u0020in\u0020the\u0020Game21Controller",
+            "url": "classes/App-Game-PlayerTurnHandler.html"
+        },                {
+            "fqsen": "\\App\\Game\\PlayerTurnHandler\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Game-PlayerTurnHandler.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Game\\PlayerTurnHandler\u003A\u003AplayerDraw\u0028\u0029",
+            "name": "playerDraw",
+            "summary": "Handles\u0020player\u0027s\u0020turn\u0020to\u0020draw",
+            "url": "classes/App-Game-PlayerTurnHandler.html#method_playerDraw"
+        },                {
+            "fqsen": "\\App\\Game\\PlayerTurnHandler\u003A\u003A\u0024handler",
+            "name": "handler",
+            "summary": "",
+            "url": "classes/App-Game-PlayerTurnHandler.html#property_handler"
+        },                {
+            "fqsen": "\\App\\Game\\RoundHandler",
+            "name": "RoundHandler",
+            "summary": "Class\u0020representing\u0020the\u0020easy\u0020version\u0020of\u0020the\u002021\u0020card\u0020game",
+            "url": "classes/App-Game-RoundHandler.html"
+        },                {
+            "fqsen": "\\App\\Game\\RoundHandler\u003A\u003AnextRound\u0028\u0029",
+            "name": "nextRound",
+            "summary": "Increases\u0020number\u0020of\u0020currenRound\u0020attribute\u0020by\u00201\nand\u0020resets\u0020for\u0020next\u0020round.",
+            "url": "classes/App-Game-RoundHandler.html#method_nextRound"
+        },                {
+            "fqsen": "\\App\\Game\\RoundHandler\u003A\u003AdetermineWinner\u0028\u0029",
+            "name": "determineWinner",
+            "summary": "",
+            "url": "classes/App-Game-RoundHandler.html#method_determineWinner"
+        },                {
+            "fqsen": "\\App\\Game\\RoundHandler\u003A\u003AfinishGame\u0028\u0029",
+            "name": "finishGame",
+            "summary": "",
+            "url": "classes/App-Game-RoundHandler.html#method_finishGame"
+        },                {
+            "fqsen": "\\App\\Game\\RoundHandler\u003A\u003AendRound\u0028\u0029",
+            "name": "endRound",
+            "summary": "Moves\u0020money\u0020from\u0020the\u0020money\u0020pot\u0020to\u0020the\u0020winner.",
+            "url": "classes/App-Game-RoundHandler.html#method_endRound"
+        },                {
+            "fqsen": "\\App\\Helpers\\JsonHandler",
+            "name": "JsonHandler",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020the\u0020routes\u0020in\u0020JsonController",
+            "url": "classes/App-Helpers-JsonHandler.html"
+        },                {
+            "fqsen": "\\App\\Helpers\\JsonHandler\u003A\u003AgetLandingData\u0028\u0029",
+            "name": "getLandingData",
+            "summary": "Returns\u0020an\u0020array\u0020with\u0020data\u0020json\u0020landing\u0020page",
+            "url": "classes/App-Helpers-JsonHandler.html#method_getLandingData"
+        },                {
+            "fqsen": "\\App\\Helpers\\JsonHandler\u003A\u003AgenerateQuote\u0028\u0029",
+            "name": "generateQuote",
+            "summary": "Returns\u0020a\u0020daily\u0020quote\u0020and\u0020the\u0020date,\u0020time\u0020when\u0020the\u0020page\u0020was\u0020loaded",
+            "url": "classes/App-Helpers-JsonHandler.html#method_generateQuote"
+        },                {
+            "fqsen": "\\App\\Helpers\\LuckyRouteData",
+            "name": "LuckyRouteData",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020the\u0020routes\u0020in\u0020MainController",
+            "url": "classes/App-Helpers-LuckyRouteData.html"
+        },                {
+            "fqsen": "\\App\\Helpers\\LuckyRouteData\u003A\u003AluckyData\u0028\u0029",
+            "name": "luckyData",
+            "summary": "",
+            "url": "classes/App-Helpers-LuckyRouteData.html#method_luckyData"
+        },                {
+            "fqsen": "\\App\\Helpers\\MainControllerHelper",
+            "name": "MainControllerHelper",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020the\u0020routes\u0020in\u0020MainController",
+            "url": "classes/App-Helpers-MainControllerHelper.html"
+        },                {
+            "fqsen": "\\App\\Helpers\\MainControllerHelper\u003A\u003AstandardData\u0028\u0029",
+            "name": "standardData",
+            "summary": "",
+            "url": "classes/App-Helpers-MainControllerHelper.html#method_standardData"
+        },                {
+            "fqsen": "\\App\\Helpers\\MainControllerHelper\u003A\u003AreportData\u0028\u0029",
+            "name": "reportData",
+            "summary": "",
+            "url": "classes/App-Helpers-MainControllerHelper.html#method_reportData"
+        },                {
+            "fqsen": "\\App\\Library\\BookNotFoundException",
+            "name": "BookNotFoundException",
+            "summary": "Exception\u0020class\u0020trhown\u0020when\u0020isbn\u0020number\u0020is\u0020alerady\u0020in\u0020use",
+            "url": "classes/App-Library-BookNotFoundException.html"
+        },                {
+            "fqsen": "\\App\\Library\\BookRemover",
+            "name": "BookRemover",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020som\u0020of\u0020the\nfuncitonality\u0020in\u0020the\u0020LibraryController",
+            "url": "classes/App-Library-BookRemover.html"
+        },                {
+            "fqsen": "\\App\\Library\\BookRemover\u003A\u003AremoveBook\u0028\u0029",
+            "name": "removeBook",
+            "summary": "Removes\u0020book",
+            "url": "classes/App-Library-BookRemover.html#method_removeBook"
+        },                {
+            "fqsen": "\\App\\Library\\BookSaver",
+            "name": "BookSaver",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020som\u0020of\u0020the\nfuncitonality\u0020in\u0020the\u0020LibraryController",
+            "url": "classes/App-Library-BookSaver.html"
+        },                {
+            "fqsen": "\\App\\Library\\BookSaver\u003A\u003AsaveBook\u0028\u0029",
+            "name": "saveBook",
+            "summary": "Returns\u0020true\u0020if\u0020everything\u0020was\u0020ok\u0020or\u0020false\u0020if\u0020not",
+            "url": "classes/App-Library-BookSaver.html#method_saveBook"
+        },                {
+            "fqsen": "\\App\\Library\\BookUpdator",
+            "name": "BookUpdator",
+            "summary": "Helper\u0020class\u0020to\u0020handle\u0020som\u0020of\u0020the\nfuncitonality\u0020in\u0020the\u0020LibraryController",
+            "url": "classes/App-Library-BookUpdator.html"
+        },                {
+            "fqsen": "\\App\\Library\\BookUpdator\u003A\u003AupdateBook\u0028\u0029",
+            "name": "updateBook",
+            "summary": "Updates\u0020details\u0020of\u0020a\u0020book\u0020object",
+            "url": "classes/App-Library-BookUpdator.html#method_updateBook"
+        },                {
+            "fqsen": "\\App\\Library\\IsbnAlreadyInUseException",
+            "name": "IsbnAlreadyInUseException",
+            "summary": "Exception\u0020class\u0020trhown\u0020when\u0020isbn\u0020number\u0020is\u0020alerady\u0020in\u0020use",
+            "url": "classes/App-Library-IsbnAlreadyInUseException.html"
+        },                {
+            "fqsen": "\\App\\Library\\LibraryException",
+            "name": "LibraryException",
+            "summary": "Exception\u0020class\u0020for\u0020Library",
+            "url": "classes/App-Library-LibraryException.html"
+        },                {
+            "fqsen": "\\App\\Library\\NewFlashGenerator",
+            "name": "NewFlashGenerator",
+            "summary": "Generates\u0020flash\u0020messages\u0020for\u0020the\u0020Library",
+            "url": "classes/App-Library-NewFlashGenerator.html"
+        },                {
+            "fqsen": "\\App\\Library\\NewFlashGenerator\u003A\u003AnewFlash\u0028\u0029",
+            "name": "newFlash",
+            "summary": "Generates\u0020class\u0020and\u0020text\u0020for\u0020flashmessage\nfor\u0020route\u0020for\u0020new\u0020book",
+            "url": "classes/App-Library-NewFlashGenerator.html#method_newFlash"
+        },                {
+            "fqsen": "\\App\\Library\\RemoveFlashGenerator",
+            "name": "RemoveFlashGenerator",
+            "summary": "Generates\u0020flash\u0020messages\u0020for\u0020the\u0020Library",
+            "url": "classes/App-Library-RemoveFlashGenerator.html"
+        },                {
+            "fqsen": "\\App\\Library\\RemoveFlashGenerator\u003A\u003AremoveFlash\u0028\u0029",
+            "name": "removeFlash",
+            "summary": "Generates\u0020class\u0020and\u0020text\u0020for\u0020flashmessage\nfor\u0020route\u0020for\u0020removing\u0020book",
+            "url": "classes/App-Library-RemoveFlashGenerator.html#method_removeFlash"
+        },                {
+            "fqsen": "\\App\\Library\\SqlFileLoader",
+            "name": "SqlFileLoader",
+            "summary": "Resets\u0020database\u0020from\u0020file",
+            "url": "classes/App-Library-SqlFileLoader.html"
+        },                {
+            "fqsen": "\\App\\Library\\SqlFileLoader\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Library-SqlFileLoader.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Library\\SqlFileLoader\u003A\u003Aload\u0028\u0029",
+            "name": "load",
+            "summary": "",
+            "url": "classes/App-Library-SqlFileLoader.html#method_load"
+        },                {
+            "fqsen": "\\App\\Library\\SqlFileLoader\u003A\u003A\u0024conn",
+            "name": "conn",
+            "summary": "Holds\u0020instance\u0020of\u0020the\u0020Doctrine\u0020connection\u0020for\u0020the\u0020resetter.",
+            "url": "classes/App-Library-SqlFileLoader.html#property_conn"
+        },                {
+            "fqsen": "\\App\\Library\\UpdateFlashGenerator",
+            "name": "UpdateFlashGenerator",
+            "summary": "Generates\u0020flash\u0020messages\u0020for\u0020the\u0020Library",
+            "url": "classes/App-Library-UpdateFlashGenerator.html"
+        },                {
+            "fqsen": "\\App\\Library\\UpdateFlashGenerator\u003A\u003AupdateFlash\u0028\u0029",
+            "name": "updateFlash",
+            "summary": "Generates\u0020class\u0020and\u0020text\u0020for\u0020flashmessage\nfor\u0020route\u0020for\u0020update\u0020book",
+            "url": "classes/App-Library-UpdateFlashGenerator.html#method_updateFlash"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -1061,11 +1466,6 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app-entity.html"
         },                {
-            "fqsen": "\\App\\Exceptions",
-            "name": "Exceptions",
-            "summary": "",
-            "url": "namespaces/app-exceptions.html"
-        },                {
             "fqsen": "\\App\\Game",
             "name": "Game",
             "summary": "",
@@ -1080,6 +1480,11 @@ Search.appendIndex(
             "name": "App",
             "summary": "",
             "url": "namespaces/app.html"
+        },                {
+            "fqsen": "\\App\\Library",
+            "name": "Library",
+            "summary": "",
+            "url": "namespaces/app-library.html"
         },                {
             "fqsen": "\\App\\Markdown",
             "name": "Markdown",

@@ -98,13 +98,4 @@ class GameAttrHandlerTraitTest extends TestCase
         $res = $this->finished;
         $this->assertTrue($res);
     }
-
-    // /**
-    //  * Tests the getter for finished
-    //  */
-    // public function testIsFinished(): void
-    // {
-    //     $res = $this->isFinished();
-    //     $this->assertFalse($res);
-    // }
 }

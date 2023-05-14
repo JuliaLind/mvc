@@ -34,12 +34,6 @@ class GameMoneyHandlerTest extends TestCase
                 'round' => 5,
             ]);
 
-        // $game->method('nextRound')->willReturn([
-        //     'limit' => 50,
-        //     'money' => 40,
-        //     'round' => 5,
-        // ]);
-
         $exp = [
             'limit' => 50,
             'money' => 40,

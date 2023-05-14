@@ -78,13 +78,6 @@ interface Game21Interface
      */
     public function getPlayerData();
 
-    // /**
-    //  * Ends current round
-    //  *
-    //  * @return void
-    //  */
-    // public function endRound();
-
     /**
      * Returns the risk as string for the currently playing
      * party

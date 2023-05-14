@@ -72,15 +72,15 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-exceptions.html" class="">Exceptions</a>
-                
-            </li>
-                    <li>
                 <a href="namespaces/app-game.html" class="">Game</a>
                 
             </li>
                     <li>
                 <a href="namespaces/app-helpers.html" class="">Helpers</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-library.html" class="">Library</a>
                 
             </li>
                     <li>
@@ -154,11 +154,6 @@ graphic representation (i.e. svg image)</dd>
         <dd>Controller for json routes</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-MainController.html"><abbr title="\App\Controller\MainController">MainController</abbr></a></dt>
         <dd>The main controller class</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Exceptions-GameException.html"><abbr title="\App\Exceptions\GameException">GameException</abbr></a></dt>
-        <dd>Exception class for Game</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Exceptions-NoCardsLeftException.html"><abbr title="\App\Exceptions\NoCardsLeftException">NoCardsLeftException</abbr></a></dt>
-        <dd>Exception class thown when there are no cards
-left do draw</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-Game.html"><abbr title="\App\Game\Game">Game</abbr></a></dt>
         <dd>Base class for a card game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-Game21Easy.html"><abbr title="\App\Game\Game21Easy">Game21Easy</abbr></a></dt>
@@ -167,8 +162,6 @@ left do draw</dd>
         <dd>Class representing the hard version of the 21 card game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-MoneyPot.html"><abbr title="\App\Game\MoneyPot">MoneyPot</abbr></a></dt>
         <dd>Class representing a money pot</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-Player.html"><abbr title="\App\Game\Player">Player</abbr></a></dt>
-        <dd>Class representing a Player</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-Player21.html"><abbr title="\App\Game\Player21">Player21</abbr></a></dt>
         <dd>Class representing a Player in the 21 game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Kernel.html"><abbr title="\App\Kernel">Kernel</abbr></a></dt>
@@ -181,22 +174,98 @@ to html</dd>
         <dd>Class for the library controller</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Entity-Book.html"><abbr title="\App\Entity\Book">Book</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Exceptions-IsbnAlreadyInUseException.html"><abbr title="\App\Exceptions\IsbnAlreadyInUseException">IsbnAlreadyInUseException</abbr></a></dt>
-        <dd>Exception class trhown when isbn number is alerady in use</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Exceptions-LibraryException.html"><abbr title="\App\Exceptions\LibraryException">LibraryException</abbr></a></dt>
-        <dd>Exception class for Library</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Helpers-SqlFileLoader.html"><abbr title="\App\Helpers\SqlFileLoader">SqlFileLoader</abbr></a></dt>
-        <dd>Resets database from file</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-CardDeckHandler.html"><abbr title="\App\Cards\CardDeckHandler">CardDeckHandler</abbr></a></dt>
+        <dd>Helper class to handle the routes in CardController</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-CardHandler.html"><abbr title="\App\Cards\CardHandler">CardHandler</abbr></a></dt>
+        <dd>Helper class to handle the routes in CardController</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-CardLandingHandler.html"><abbr title="\App\Cards\CardLandingHandler">CardLandingHandler</abbr></a></dt>
+        <dd>Helper class to handle the landing routes in CardController</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-GameException.html"><abbr title="\App\Cards\GameException">GameException</abbr></a></dt>
+        <dd>Exception class for Game</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-JsonCardHandler.html"><abbr title="\App\Cards\JsonCardHandler">JsonCardHandler</abbr></a></dt>
+        <dd>Helper class to handle the routes in CardController</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-NoCardsLeftException.html"><abbr title="\App\Cards\NoCardsLeftException">NoCardsLeftException</abbr></a></dt>
+        <dd>Exception class thown when there are no cards
+left do draw</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-PlayerCreator.html"><abbr title="\App\Cards\PlayerCreator">PlayerCreator</abbr></a></dt>
+        <dd>Helper class to handle the routes in CardController</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-CardLandingController.html"><abbr title="\App\Controller\CardLandingController">CardLandingController</abbr></a></dt>
+        <dd>Controller for routes where cards are displayed</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonCardDealController.html"><abbr title="\App\Controller\JsonCardDealController">JsonCardDealController</abbr></a></dt>
+        <dd>Controller for json routes</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonCardDeckController.html"><abbr title="\App\Controller\JsonCardDeckController">JsonCardDeckController</abbr></a></dt>
+        <dd>Controller for json routes</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonDealManyCardsController.html"><abbr title="\App\Controller\JsonDealManyCardsController">JsonDealManyCardsController</abbr></a></dt>
+        <dd>Controller for json routes</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonDealOneCardController.html"><abbr title="\App\Controller\JsonDealOneCardController">JsonDealOneCardController</abbr></a></dt>
+        <dd>Controller for json routes</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonGame21Controller.html"><abbr title="\App\Controller\JsonGame21Controller">JsonGame21Controller</abbr></a></dt>
+        <dd>Controller class for the 21 card game</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonLibraryController.html"><abbr title="\App\Controller\JsonLibraryController">JsonLibraryController</abbr></a></dt>
+        <dd>Controller for json routes</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-LibraryUpdateBookController.html"><abbr title="\App\Controller\LibraryUpdateBookController">LibraryUpdateBookController</abbr></a></dt>
+        <dd>Class for the library controller</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-BanksTurnHandler.html"><abbr title="\App\Game\BanksTurnHandler">BanksTurnHandler</abbr></a></dt>
+        <dd>Helper class to handle game in the Game21Controller</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-GameHandler.html"><abbr title="\App\Game\GameHandler">GameHandler</abbr></a></dt>
+        <dd>Helper class to handle game in the Game21Controller</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-GameHandlerLanding.html"><abbr title="\App\Game\GameHandlerLanding">GameHandlerLanding</abbr></a></dt>
+        <dd>Helper class to handle the landing page and the docs page in the Game21Controller</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-GameInitiator.html"><abbr title="\App\Game\GameInitiator">GameInitiator</abbr></a></dt>
+        <dd>Helper class to handle game in the Game21Controller</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-GameMoneyHandler.html"><abbr title="\App\Game\GameMoneyHandler">GameMoneyHandler</abbr></a></dt>
+        <dd>Helper class to handle game in the Game21Controller</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-JsonGameHandler.html"><abbr title="\App\Game\JsonGameHandler">JsonGameHandler</abbr></a></dt>
+        <dd>Helper class to handle game in the Game21Controller</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-PlayerTurnHandler.html"><abbr title="\App\Game\PlayerTurnHandler">PlayerTurnHandler</abbr></a></dt>
+        <dd>Helper class to handle game in the Game21Controller</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-RoundHandler.html"><abbr title="\App\Game\RoundHandler">RoundHandler</abbr></a></dt>
+        <dd>Class representing the easy version of the 21 card game</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Helpers-JsonHandler.html"><abbr title="\App\Helpers\JsonHandler">JsonHandler</abbr></a></dt>
+        <dd>Helper class to handle the routes in JsonController</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Helpers-LuckyRouteData.html"><abbr title="\App\Helpers\LuckyRouteData">LuckyRouteData</abbr></a></dt>
+        <dd>Helper class to handle the routes in MainController</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Helpers-MainControllerHelper.html"><abbr title="\App\Helpers\MainControllerHelper">MainControllerHelper</abbr></a></dt>
+        <dd>Helper class to handle the routes in MainController</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-BookNotFoundException.html"><abbr title="\App\Library\BookNotFoundException">BookNotFoundException</abbr></a></dt>
+        <dd>Exception class trhown when isbn number is alerady in use</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-BookRemover.html"><abbr title="\App\Library\BookRemover">BookRemover</abbr></a></dt>
+        <dd>Helper class to handle som of the
+funcitonality in the LibraryController</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-BookSaver.html"><abbr title="\App\Library\BookSaver">BookSaver</abbr></a></dt>
+        <dd>Helper class to handle som of the
+funcitonality in the LibraryController</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-BookUpdator.html"><abbr title="\App\Library\BookUpdator">BookUpdator</abbr></a></dt>
+        <dd>Helper class to handle som of the
+funcitonality in the LibraryController</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-IsbnAlreadyInUseException.html"><abbr title="\App\Library\IsbnAlreadyInUseException">IsbnAlreadyInUseException</abbr></a></dt>
+        <dd>Exception class trhown when isbn number is alerady in use</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-LibraryException.html"><abbr title="\App\Library\LibraryException">LibraryException</abbr></a></dt>
+        <dd>Exception class for Library</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-NewFlashGenerator.html"><abbr title="\App\Library\NewFlashGenerator">NewFlashGenerator</abbr></a></dt>
+        <dd>Generates flash messages for the Library</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-RemoveFlashGenerator.html"><abbr title="\App\Library\RemoveFlashGenerator">RemoveFlashGenerator</abbr></a></dt>
+        <dd>Generates flash messages for the Library</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-SqlFileLoader.html"><abbr title="\App\Library\SqlFileLoader">SqlFileLoader</abbr></a></dt>
+        <dd>Resets database from file</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-UpdateFlashGenerator.html"><abbr title="\App\Library\UpdateFlashGenerator">UpdateFlashGenerator</abbr></a></dt>
+        <dd>Generates flash messages for the Library</dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-BettingGameTrait.html"><abbr title="\App\Game\BettingGameTrait">BettingGameTrait</abbr></a></dt>
         <dd>Trait to be used in betting games
 between a player and a bank</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-GameTestingTrait.html"><abbr title="\App\Game\GameTestingTrait">GameTestingTrait</abbr></a></dt>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-GameAttrHandler2Trait.html"><abbr title="\App\Game\GameAttrHandler2Trait">GameAttrHandler2Trait</abbr></a></dt>
         <dd>Trait has setter and getter methods
 to facilitate testing of the Game21Easy
 and Game21Hard classes</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-GameAttrHandlerTrait.html"><abbr title="\App\Game\GameAttrHandlerTrait">GameAttrHandlerTrait</abbr></a></dt>
+        <dd>Trait has setter and getter methods
+to facilitate testing of the Game21Easy
+and Game21Hard classes</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-PlayerTrait.html"><abbr title="\App\Game\PlayerTrait">PlayerTrait</abbr></a></dt>
+        <dd>Trate for bas methods for a player</dd>
     
     </dl>
 
