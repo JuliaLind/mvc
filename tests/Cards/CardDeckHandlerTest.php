@@ -30,7 +30,7 @@ class CardDeckHandlerTest extends TestCase
             ->method('getImgLinks')
             ->willReturn(['alink.png', 'anotherlink.png']);
         $exp = [
-            'title' => "Sorted deck",
+            'title' => "New deck",
             'cards' => ['alink.png', 'anotherlink.png'],
             'page' => "deck card no-header",
             'url' => "/card",

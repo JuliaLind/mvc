@@ -27,7 +27,6 @@ class MainController extends AbstractController
     public function home(
         MainControllerHelper $helper=new MainControllerHelper()
     ): Response {
-        // $data = $helper->homeData();
         $data = $helper->standardData('home');
         return $this->render('standard.html.twig', $data);
     }
@@ -39,7 +38,6 @@ class MainController extends AbstractController
     public function about(
         MainControllerHelper $helper=new MainControllerHelper()
     ): Response {
-        // $data = $helper->aboutData();
         $data = $helper->standardData('about');
         return $this->render('about.html.twig', $data);
     }
@@ -52,7 +50,6 @@ class MainController extends AbstractController
         MainControllerHelper $helper=new MainControllerHelper()
     ): Response {
         $data = $helper->reportData();
-
         return $this->render('report.html.twig', $data);
     }
 
@@ -65,9 +62,7 @@ class MainController extends AbstractController
     public function number(
         LuckyRouteData $helper=new LuckyRouteData()
     ): Response {
-
         $data = $helper->luckyData();
-
         return $this->render('lucky.html.twig', $data);
     }
 
@@ -80,9 +75,7 @@ class MainController extends AbstractController
     public function metrics(
         MainControllerHelper $helper=new MainControllerHelper()
     ): Response {
-
         $data = $helper->standardData('metrics');
-
         return $this->render('standard.html.twig', $data);
     }
 }

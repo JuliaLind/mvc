@@ -4,12 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Book;
 use App\Repository\BookRepository;
-
-use App\Library\BookUpdator;
-use App\Library\BookSaver;
 use App\Library\BookNotFoundException;
-use App\Library\UpdateFlashGenerator;
-
+use App\Library\LibraryHandler;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -30,13 +26,8 @@ class LibraryUpdateBookController extends AbstractController
         BookRepository $bookRepository,
         string $isbn
     ): Response {
-        $book= $bookRepository
-            ->findOneByIsbn($isbn);
-
-        $data = [
-            'url' => 'library',
-            'book' => $book,
-        ];
+        $book= $bookRepository->findOneByIsbn($isbn);
+        $data = ['url' => 'library', 'book' => $book];
         return $this->render('library/update_book.html.twig', $data);
     }
 
@@ -47,23 +38,24 @@ class LibraryUpdateBookController extends AbstractController
     public function updateBook(
         BookRepository $bookRepository,
         Request $request,
-        BookSaver $saver = new BookSaver(),
-        BookUpdator $updator = new BookUpdator(),
-        UpdateFlashGenerator $flashGenerator = new UpdateFlashGenerator()
+        LibraryHandler $handler = new LibraryHandler()
     ): Response {
-        $bookId = $request->get('book_id');
         /**
-         * @var Book $book
+         * @var array<int,Book|array<string>|bool> $data
          */
-        $book = $bookRepository->find($bookId);
+        $data = $handler->updateOne($request, $bookRepository);
+        list($flash, $book, $wentWell) = [...$data];
 
-        $updator->updateBook($request, $book);
-        $wentWell = $saver->saveBook($bookRepository, $book);
-        $flash = $flashGenerator->updateFlash($wentWell, $book);
+        /**
+         * @var array<string,string> $flash
+         */
         $this->addFlash(...$flash);
 
         switch ($wentWell) {
             case true:
+                /**
+                 * @var Book $book
+                 */
                 return $this->redirectToRoute('read_one', array('isbn'=>$book->getIsbn()));
             default:
                 return $this->redirectToRoute("update_form", array('isbn'=>$request->get('original_isbn')));

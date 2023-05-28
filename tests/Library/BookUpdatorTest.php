@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Test cases for class GameHandler.
+ * Test cases for class BookUpdator
  */
 class BookUpdatorTest extends TestCase
 {

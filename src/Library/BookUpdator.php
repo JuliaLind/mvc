@@ -3,6 +3,7 @@
 namespace App\Library;
 
 use App\Entity\Book;
+use App\Repository\BookRepository;
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -41,5 +42,4 @@ class BookUpdator
         $book->setAuthor($author);
         $book->setImg($imgLink);
     }
-
 }

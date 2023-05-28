@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\BookRepository;
-
+use App\Helpers\JsonConverter;
 use App\Library\BookNotFoundException;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -24,15 +24,11 @@ class JsonLibraryController extends AbstractController
      */
     #[Route('/api/library/books', name: "books_json")]
     public function showAllBooks(
-        BookRepository $bookRepository
+        BookRepository $bookRepository,
+        JsonConverter $converter = new JsonConverter()
     ): Response {
-        $books = $bookRepository
-            ->findAll();
-
-        $response = $this->json($books);
-        $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_PRETTY_PRINT
-        );
+        $books = $bookRepository->findAll();
+        $response = $converter->convert($this->json($books));
         return $response;
     }
 
@@ -42,8 +38,7 @@ class JsonLibraryController extends AbstractController
         string $isbn
     ): Response {
         try {
-            $book = $bookRepository
-            ->findOneByIsbn($isbn);
+            $book = $bookRepository->findOneByIsbn($isbn);
         } catch (BookNotFoundException) {
             $book = "Book with ISBN {$isbn} was not found.";
         }

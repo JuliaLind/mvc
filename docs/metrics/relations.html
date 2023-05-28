@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-05-14 18:06:23        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-05-28 21:55:33        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -93,7 +93,7 @@
                             <path d="M0 0h24v24H0z" fill="none">
                             <path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z">
                         </svg>
-                        Violations (5)
+                        Violations (8)
                     </a>
                 </li>
                                     <li>
@@ -102,7 +102,16 @@
                             Composer
                         </a>
                     </li>
-                                                <li>
+                                                    <li>
+                        <a href="junit.html">
+                            <svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 5h8v2h-8zm0 5.5h8v2h-8zm0 5.5h8v2h-8zM2 11.5C2 15.08 4.92 18 8.5 18H9v2l3-3-3-3v2h-.5C6.02 16 4 13.98 4 11.5S6.02 7 8.5 7H12V5H8.5C4.92 5 2 7.92 2 11.5z">
+                                <path d="M0 0h24v24H0z" fill="none">
+                            </svg>
+                            Unit testing
+                        </a>
+                    </li>
+                                <li>
                     <a href="loc.html">
                         <svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24"
                              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -331,7 +340,8 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Repository\\BookRepository"
+            "\\App\\Repository\\BookRepository",
+            "\\App\\Helpers\\JsonConverter"
         ]
     },
     {
@@ -350,6 +360,13 @@
         "relations": []
     },
     {
+        "name": "\\App\\Helpers\\JsonConverter",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\LibraryController",
         "size": 3000,
         "relations": [
@@ -357,12 +374,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\App\\Repository\\BookRepository",
             "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\App\\Library\\BookSaver",
-            "\\App\\Library\\BookUpdator",
-            "\\App\\Library\\NewFlashGenerator",
-            "\\App\\Entity\\Book",
-            "\\App\\Library\\BookRemover",
-            "\\App\\Library\\RemoveFlashGenerator",
+            "\\App\\Library\\LibraryHandler",
             "\\Doctrine\\Persistence\\ManagerRegistry",
             "\\App\\Library\\SqlFileLoader"
         ]
@@ -373,46 +385,18 @@
         "relations": []
     },
     {
-        "name": "\\App\\Library\\BookSaver",
+        "name": "\\App\\Library\\LibraryHandler",
         "size": 3000,
         "relations": [
-            "\\App\\Repository\\BookRepository",
-            "\\App\\Entity\\Book"
-        ]
-    },
-    {
-        "name": "\\App\\Library\\BookUpdator",
-        "size": 3000,
-        "relations": [
+            "\\App\\Library\\BookSaver",
+            "\\App\\Library\\BookUpdator",
+            "\\App\\Library\\BookRemover",
+            "\\App\\Library\\UpdateFlashGenerator",
+            "\\App\\Library\\NewFlashGenerator",
+            "\\App\\Library\\RemoveFlashGenerator",
             "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\App\\Entity\\Book"
-        ]
-    },
-    {
-        "name": "\\App\\Library\\NewFlashGenerator",
-        "size": 3000,
-        "relations": [
-            "\\App\\Entity\\Book"
-        ]
-    },
-    {
-        "name": "\\App\\Entity\\Book",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Library\\BookRemover",
-        "size": 3000,
-        "relations": [
-            "\\App\\Repository\\BookRepository",
-            "\\App\\Entity\\Book"
-        ]
-    },
-    {
-        "name": "\\App\\Library\\RemoveFlashGenerator",
-        "size": 3000,
-        "relations": [
-            "\\App\\Entity\\Book"
+            "\\App\\Entity\\Book",
+            "\\App\\Repository\\BookRepository"
         ]
     },
     {
@@ -436,6 +420,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\Cards\\Player",
             "\\App\\Cards\\JsonCardHandler",
+            "\\App\\Helpers\\JsonConverter",
             "\\App\\Cards\\DeckOfCards",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
@@ -481,6 +466,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\Cards\\JsonCardHandler",
             "\\App\\Cards\\PlayerCreator",
+            "\\App\\Helpers\\JsonConverter",
             "\\App\\Cards\\DeckOfCards",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
@@ -494,6 +480,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\Cards\\Player",
             "\\App\\Cards\\JsonCardHandler",
+            "\\App\\Helpers\\JsonConverter",
             "\\App\\Cards\\DeckOfCards",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
@@ -506,6 +493,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\Game\\JsonGameHandler",
+            "\\App\\Helpers\\JsonConverter",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
     },
@@ -524,6 +512,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\Cards\\JsonCardHandler",
+            "\\App\\Helpers\\JsonConverter",
             "\\App\\Cards\\DeckOfCards",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
@@ -544,6 +533,7 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\App\\Helpers\\JsonHandler",
+            "\\App\\Helpers\\JsonConverter",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
     },
@@ -624,16 +614,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\App\\Repository\\BookRepository",
             "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\App\\Library\\BookSaver",
-            "\\App\\Library\\BookUpdator",
-            "\\App\\Library\\UpdateFlashGenerator"
-        ]
-    },
-    {
-        "name": "\\App\\Library\\UpdateFlashGenerator",
-        "size": 3000,
-        "relations": [
-            "\\App\\Entity\\Book"
+            "\\App\\Library\\LibraryHandler"
         ]
     },
     {
@@ -652,6 +633,11 @@
     },
     {
         "name": "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Entity\\Book",
         "size": 3000,
         "relations": []
     },
@@ -680,10 +666,52 @@
         "relations": []
     },
     {
+        "name": "\\App\\Library\\BookRemover",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Library\\LibraryException",
         "size": 3000,
         "relations": [
             "\\Exception"
+        ]
+    },
+    {
+        "name": "\\App\\Library\\BookSaver",
+        "size": 3000,
+        "relations": [
+            "\\App\\Repository\\BookRepository",
+            "\\App\\Entity\\Book"
+        ]
+    },
+    {
+        "name": "\\App\\Library\\BookUpdator",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\App\\Entity\\Book"
+        ]
+    },
+    {
+        "name": "\\App\\Library\\UpdateFlashGenerator",
+        "size": 3000,
+        "relations": [
+            "\\App\\Entity\\Book"
+        ]
+    },
+    {
+        "name": "\\App\\Library\\NewFlashGenerator",
+        "size": 3000,
+        "relations": [
+            "\\App\\Entity\\Book"
+        ]
+    },
+    {
+        "name": "\\App\\Library\\RemoveFlashGenerator",
+        "size": 3000,
+        "relations": [
+            "\\App\\Entity\\Book"
         ]
     },
     {

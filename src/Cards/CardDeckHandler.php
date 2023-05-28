@@ -17,7 +17,7 @@ class CardDeckHandler
     public function getDeckRouteData(DeckOfCards $deck): array
     {
         $data = [
-            'title' => "Sorted deck",
+            'title' => "New deck",
             'cards' => $deck->getImgLinks(),
             'page' => "deck card no-header",
             'url' => "/card",

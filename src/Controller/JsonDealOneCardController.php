@@ -17,6 +17,8 @@ use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 use App\Cards\Player;
 
+use App\Helpers\JsonConverter;
+
 /**
  * Controller for json routes
  */
@@ -31,7 +33,8 @@ class JsonDealOneCardController extends AbstractController
     public function jsonDraw(
         SessionInterface $session,
         Player $player=new Player(),
-        JsonCardHandler $cardHandler = new JsonCardHandler()
+        JsonCardHandler $cardHandler = new JsonCardHandler(),
+        JsonConverter $converter = new JsonConverter()
     ): Response {
         /**
          * @var DeckOfCards $deck The deck of cards.
@@ -39,11 +42,7 @@ class JsonDealOneCardController extends AbstractController
         $deck = $session->get("deck") ?? new DeckOfCards();
         $data = $cardHandler->getDataForDraw($deck, [$player]);
         $session->set("deck", $deck);
-
-        $response = new JsonResponse($data);
-        $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_PRETTY_PRINT
-        );
+        $response = $converter->convert(new JsonResponse($data));
         return $response;
     }
 }

@@ -6,9 +6,7 @@ use App\Entity\Book;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Repository\BookRepository;
 
-use App\Library\BookRemover;
-use App\Library\BookUpdator;
-use App\Library\BookSaver;
+use App\Library\LibraryHandler;
 use App\Library\SqlFileLoader;
 use App\Library\BookNotFoundException;
 use App\Library\RemoveFlashGenerator;
@@ -34,9 +32,7 @@ class LibraryController extends AbstractController
     #[Route('/library', name: 'library')]
     public function index(): Response
     {
-        $data = [
-            'url' => 'library',
-        ];
+        $data = ['url' => 'library'];
         return $this->render('library/index.html.twig', $data);
     }
 
@@ -46,9 +42,7 @@ class LibraryController extends AbstractController
     #[Route('/library/create', name: 'create_form')]
     public function createBookForm(): Response
     {
-        $data = [
-            'url' => 'library',
-        ];
+        $data = ['url' => 'library'];
         return $this->render('library/new_book.html.twig', $data);
     }
 
@@ -59,17 +53,24 @@ class LibraryController extends AbstractController
     public function createBook(
         BookRepository $bookRepository,
         Request $request,
-        BookSaver $saver = new BookSaver(),
-        BookUpdator $updator = new BookUpdator(),
-        NewFlashGenerator $flashGenerator = new NewFlashGenerator()
+        LibraryHandler $handler = new LibraryHandler()
     ): Response {
-        $book = new Book();
-        $updator->updateBook($request, $book);
-        $wentWell = $saver->saveBook($bookRepository, $book);
-        $flash = $flashGenerator->newFlash($wentWell, $book);
+        /**
+         * @var array<int,Book|array<string>|bool> $data
+         */
+        $data = $handler->createOne($request, $bookRepository);
+        list($flash, $book, $wentWell) = [...$data];
+
+        /**
+         * @var array<string,string> $flash
+         */
         $this->addFlash(...$flash);
+
         switch ($wentWell) {
             case true:
+                /**
+                 * @var Book $book
+                 */
                 return $this->redirectToRoute("read_one", array('isbn'=>$book->getIsbn()));
             default:
                 return $this->redirectToRoute("create_form");
@@ -85,17 +86,11 @@ class LibraryController extends AbstractController
         string $isbn
     ): Response {
         try {
-            $book= $bookRepository
-            ->findOneByIsbn($isbn);
+            $book = $bookRepository->findOneByIsbn($isbn);
         } catch (BookNotFoundException) {
             return $this->redirectToRoute('read_many');
         }
-
-
-        $data = [
-            'url' => 'library',
-            'book' => $book,
-        ];
+        $data = [ 'url' => 'library', 'book' => $book];
         return $this->render('library/show_single.html.twig', $data);
     }
 
@@ -106,13 +101,8 @@ class LibraryController extends AbstractController
     public function showAllBooks(
         BookRepository $bookRepository
     ): Response {
-        $books = $bookRepository
-            ->findAll();
-
-        $data = [
-            'url' => 'library',
-            'books' => $books,
-        ];
+        $books = $bookRepository->findAll();
+        $data = ['url' => 'library', 'books' => $books];
         return $this->render('library/show_many.html.twig', $data);
     }
 
@@ -124,15 +114,9 @@ class LibraryController extends AbstractController
     public function deleteBookByIsbn(
         string $isbn,
         BookRepository $bookRepository,
-        BookRemover $libraryHandler=new BookRemover(),
-        RemoveFlashGenerator $flashGenerator = new RemoveFlashGenerator()
+        LibraryHandler $handler = new LibraryHandler()
     ): Response {
-        /**
-         * @var Book $book
-         */
-        $book = $bookRepository->findOneByIsbn($isbn);
-        $libraryHandler->removeBook($bookRepository, $book);
-        $flash = $flashGenerator->removeFlash($book);
+        $flash = $handler->removeOne($bookRepository, $isbn);
         $this->addFlash(...$flash);
         return $this->redirectToRoute('read_many');
     }
