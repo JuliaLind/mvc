@@ -3,8 +3,6 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-// use App\Helpers\MainControllerHelper;
-use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Test class for MainController
