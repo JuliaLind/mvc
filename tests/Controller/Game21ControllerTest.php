@@ -10,9 +10,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-/**
- * Test class for MainController
- */
+
 class Game21ControllerTest extends WebTestCase
 {
     public function testGame(): void
@@ -57,5 +55,43 @@ class Game21ControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Spelomgång nr 1');
         $this->assertSelectorTextContains('p', 'Du kan investera max 100');
+    }
+
+        public function testBet(): void
+    {
+        $client = static::createClient();
+        $client->request('POST', '/game/init/0');
+        $client->request('POST', '/game/bet/30');
+        $this->assertRouteSame('bet');
+        $this->assertResponseRedirects('/game/play');
+    }
+
+    public function testPlayerDraw(): void
+    {
+        $client = static::createClient();
+        $client->request('POST', '/game/init/0');
+        $client->request('POST', '/game/draw');
+        $this->assertRouteSame('playerDraw');
+        $this->assertResponseRedirects('/game/play');
+    }
+
+    public function testBankPlaying(): void
+    {
+        $client = static::createClient();
+        $client->request('POST', '/game/init/0');
+        $client->request('POST', '/game/bank-playing');
+        $this->assertRouteSame('bankPlaying');
+        $this->assertResponseRedirects('/game/play');
+    }
+
+    public function testPlay(): void
+    {
+        $client = static::createClient();
+        $client->request('POST', '/game/init/0');
+        $client->request('POST', '/game/bet/30');
+        $client->request('GET', '/game/play');
+        $this->assertRouteSame('play');
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorTextContains('h1', "Level: easy | Round 0 | Money in pot: 60");
     }
 }
