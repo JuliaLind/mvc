@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-
 class Game21ControllerTest extends WebTestCase
 {
     public function testGame(): void
@@ -58,13 +57,13 @@ class Game21ControllerTest extends WebTestCase
     }
 
         public function testBet(): void
-    {
-        $client = static::createClient();
-        $client->request('POST', '/game/init/0');
-        $client->request('POST', '/game/bet/30');
-        $this->assertRouteSame('bet');
-        $this->assertResponseRedirects('/game/play');
-    }
+        {
+            $client = static::createClient();
+            $client->request('POST', '/game/init/0');
+            $client->request('POST', '/game/bet/30');
+            $this->assertRouteSame('bet');
+            $this->assertResponseRedirects('/game/play');
+        }
 
     public function testPlayerDraw(): void
     {

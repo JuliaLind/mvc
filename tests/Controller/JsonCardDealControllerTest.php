@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-
 class JsonCardDealControllerTest extends WebTestCase
 {
     public function testJsonDeal(): void

@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-
 class CardControllerTest extends WebTestCase
 {
     public function testDeck(): void
