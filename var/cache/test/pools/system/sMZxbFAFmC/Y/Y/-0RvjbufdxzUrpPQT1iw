@@ -1,0 +1,3 @@
+<?php //App%255CController%255CJsonLibraryController
+
+return [PHP_INT_MAX, []];
