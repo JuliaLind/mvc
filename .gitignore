@@ -10,14 +10,14 @@
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
-/phpunit.xml
+# /phpunit.xml
 .phpunit.result.cache
 .php-cs-fixer.dist.php
 ###< phpunit/phpunit ###
 
 ###> symfony/phpunit-bridge ###
 .phpunit.result.cache
-/phpunit.xml
+# /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
 ###> symfony/webpack-encore-bundle ###

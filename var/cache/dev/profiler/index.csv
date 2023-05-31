@@ -35,3 +35,8 @@ c9e733,::1,POST,http://localhost/dbwebb/mvc/me/report/public/game/draw,168551881
 a0eb81,::1,GET,http://localhost/dbwebb/mvc/me/report/public/game/play,1685518811,,200
 180e74,::1,GET,http://localhost/dbwebb/mvc/me/report/public/api,1685518813,,200
 061773,::1,POST,http://localhost/dbwebb/mvc/me/report/public/api/deck/draw,1685518815,,200
+b83a75,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library,1685520514,,200
+e09cd3,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library,1685520517,,200
+9030a9,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/read_many,1685520518,,200
+300f15,::1,POST,http://localhost/dbwebb/mvc/me/report/public/library/reset,1685520519,,302
+f0edcc,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/read_many,1685520519,,200
