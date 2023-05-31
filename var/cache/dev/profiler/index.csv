@@ -40,3 +40,6 @@ e09cd3,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library,1685520517,,
 9030a9,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/read_many,1685520518,,200
 300f15,::1,POST,http://localhost/dbwebb/mvc/me/report/public/library/reset,1685520519,,302
 f0edcc,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/read_many,1685520519,,200
+ec6a09,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/read_many,1685521763,,200
+6ffced,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/read_one/9781491952023,1685521765,,200
+88075e,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/update/9781491952023,1685521767,,200

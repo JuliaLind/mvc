@@ -15,25 +15,60 @@ class LibraryUpdateBookControllerTest extends WebTestCase
         $this->assertSelectorTextContains('h1', "Uppdatera bokdetaljer för 'Book 0'");
     }
 
-    // public function testUpdateOk(): void
-    // {
-    //     // $kernel = self::bootKernel();
+    public function testUpdateOk(): void
+    {
+        $client = static::createClient();
+        $client->request(
+            'POST',
+            '/library/update_one',
+            [
+            'book_id' => 7,
+            'title' => 'Updated Book',
+            'isbn' => '0123456789010',
+            'image' => 'https://newimglink.com',
+            'author' => 'The Author',
+            'original_isbn' => '0123456789010'
+            ]
+        );
+        $this->assertRouteSame('book_update');
+        $this->assertResponseRedirects('/library/read_one/0123456789010');
+    }
 
-    //     // $book = $repo->findOneByIsbn('0123456789010');
-    //     // $id = $book->getId();
-    //     $client = static::createClient();
-    //     $client->request(
-    //         'POST',
-    //         '/library/update_one',
-    //         [
-    //         'book_id' => 7,
-    //         'title' => 'Updated Book',
-    //         'isbn' => '0123456789010',
-    //         'image' => 'https://newimglink.com',
-    //         'author' => 'The Author'
-    //         ]
-    //     );
-    //     $this->assertRouteSame('book_update');
-    //     $this->assertResponseRedirects('/library/read_one/2345678901234');
-    // }
+    public function testUpdateAnotherOk(): void
+    {
+        $client = static::createClient();
+        $client->request(
+            'POST',
+            '/library/update_one',
+            [
+            'book_id' => 7,
+            'title' => 'Updated Book',
+            'isbn' => '0123459999010',
+            'image' => 'https://newimglink.com',
+            'author' => 'The Author',
+            'original_isbn' => '0123456789010'
+            ]
+        );
+        $this->assertRouteSame('book_update');
+        $this->assertResponseRedirects('/library/read_one/0123459999010');
+    }
+
+    public function testUpdateNotOk(): void
+    {
+        $client = static::createClient();
+        $client->request(
+            'POST',
+            '/library/update_one',
+            [
+            'book_id' => 7,
+            'title' => 'Updated Book',
+            'isbn' => '0123456789011',
+            'image' => 'https://newimglink.com',
+            'author' => 'The Author',
+            'original_isbn' => '0123456789010'
+            ]
+        );
+        $this->assertRouteSame('book_update');
+        $this->assertResponseRedirects('/library/update/0123456789010');
+    }
 }
