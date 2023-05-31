@@ -15,3 +15,8 @@ ff80cc,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/read_many,16
 a9b5c3,::1,POST,http://localhost/dbwebb/mvc/me/report/public/library/reset,1685495251,,302
 2588dc,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/read_many,1685495251,,200
 480fb2,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/read_many,1685495265,,200
+e42ad8,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/read_many,1685499986,,200
+22dd36,::1,GET,http://localhost/dbwebb/mvc/me/report/public/metrics,1685499993,,200
+5bbeaf,::1,GET,http://localhost/dbwebb/mvc/me/report/public/game,1685499996,,200
+ddc6b8,::1,GET,http://localhost/dbwebb/mvc/me/report/public/card,1685499997,,200
+63f8d5,::1,GET,http://localhost/dbwebb/mvc/me/report/public/report,1685499998,,200

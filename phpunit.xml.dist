@@ -45,13 +45,10 @@
         <extension class="DAMA\DoctrineTestBundle\PHPUnit\PHPUnitExtension"/>
     </extensions>
 
-    <!-- <listeners>
+    <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
-    </listeners> -->
+    </listeners>
 
-    <!-- <logging>
-        <junit outputFile="docs/phpunit/junit.xml"/>
-    </logging> -->
 
     <!-- Run `composer require symfony/panther` before enabling this extension -->
     <!--
