@@ -12,14 +12,14 @@ use App\Entity\Book;
 
 class LibraryUpdateBookControllerTest extends WebTestCase
 {
-    // public function testUpdateForm(): void
-    // {
-    //     $client = static::createClient();
-    //     $client->request('GET', '/library/update/0123456789010');
-    //     $this->assertResponseIsSuccessful();
-    //     $this->assertRouteSame('update_form');
-    //     $this->assertSelectorTextContains('h1', "Uppdatera bokdetaljer för 'Book 0'");
-    // }
+    public function testUpdateForm(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/library/update/0123456789010');
+        $this->assertResponseIsSuccessful();
+        $this->assertRouteSame('update_form');
+        $this->assertSelectorTextContains('h1', "Uppdatera bokdetaljer för 'Book 0'");
+    }
 
     // public function testUpdateOk(): void
     // {
@@ -41,23 +41,5 @@ class LibraryUpdateBookControllerTest extends WebTestCase
     //     );
     //     $this->assertRouteSame('book_update');
     //     $this->assertResponseRedirects('/library/read_one/2345678901234');
-    // }
-
-    // public function testCreateNewNotOk(): void
-    // {
-    //     $client = static::createClient();
-    //     $client->request(
-    //         'POST',
-    //         '/library/create_new',
-    //         [
-    //             'id' => 0,
-    //             'title' => 'Updated Book',
-    //             'isbn' => '0123456789011',
-    //             'image' => 'https://newimglink.com',
-    //             'author' => 'The Author'
-    //     ]
-    //     );
-    //     $this->assertRouteSame('book_update');
-    //     $this->assertResponseRedirects('/library/update/0123456789010');
     // }
 }
