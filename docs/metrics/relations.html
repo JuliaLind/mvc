@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-05-30 01:23:42        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-05-31 01:10:25        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -375,7 +375,7 @@
             "\\App\\Repository\\BookRepository",
             "\\Symfony\\Component\\HttpFoundation\\Request",
             "\\App\\Library\\LibraryHandler",
-            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\Doctrine\\DBAL\\Connection",
             "\\App\\Library\\SqlFileLoader"
         ]
     },
@@ -400,7 +400,7 @@
         ]
     },
     {
-        "name": "\\Doctrine\\Persistence\\ManagerRegistry",
+        "name": "\\Doctrine\\DBAL\\Connection",
         "size": 3000,
         "relations": []
     },
@@ -637,6 +637,11 @@
         "relations": []
     },
     {
+        "name": "\\Doctrine\\Persistence\\ManagerRegistry",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Entity\\Book",
         "size": 3000,
         "relations": []
@@ -715,9 +720,31 @@
         ]
     },
     {
-        "name": "\\Doctrine\\DBAL\\Connection",
+        "name": "\\App\\DataFixtures\\BookFixture",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\FixturesBundle\\Fixture",
+            "\\Doctrine\\Persistence\\ObjectManager",
+            "\\App\\Entity\\Book"
+        ]
+    },
+    {
+        "name": "\\Doctrine\\Bundle\\FixturesBundle\\Fixture",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\Doctrine\\Persistence\\ObjectManager",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\DataFixtures\\AppFixtures",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\FixturesBundle\\Fixture",
+            "\\Doctrine\\Persistence\\ObjectManager"
+        ]
     },
     {
         "name": "\\Datetime",

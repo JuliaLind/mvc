@@ -3,7 +3,8 @@
         "src/"
     ],
     "exclude": [
-      "test[s]?"
+      "test[s]?",
+      "src/DataFixtures"
     ],
     "report": {
         "html": "docs/metrics"

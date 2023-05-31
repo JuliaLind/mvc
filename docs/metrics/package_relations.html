@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-05-30 01:23:42        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-05-31 01:10:25        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -282,7 +282,7 @@
             "App\\Repository",
             "App\\Helpers",
             "App\\Library",
-            "Doctrine\\Persistence",
+            "Doctrine\\DBAL",
             "Symfony\\Component\\HttpFoundation\\Session",
             "App\\Cards",
             "App\\Game"
@@ -329,7 +329,7 @@
         ]
     },
     {
-        "name": "Doctrine\\Persistence",
+        "name": "Doctrine\\DBAL",
         "size": 3000,
         "relations": []
     },
@@ -352,6 +352,11 @@
         "relations": []
     },
     {
+        "name": "Doctrine\\Persistence",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "App\\Entity",
         "size": 3000,
         "relations": []
@@ -369,7 +374,16 @@
         "relations": []
     },
     {
-        "name": "Doctrine\\DBAL",
+        "name": "App\\DataFixtures",
+        "size": 3000,
+        "relations": [
+            "Doctrine\\Bundle\\FixturesBundle",
+            "Doctrine\\Persistence",
+            "App\\Entity"
+        ]
+    },
+    {
+        "name": "Doctrine\\Bundle\\FixturesBundle",
         "size": 3000,
         "relations": []
     },

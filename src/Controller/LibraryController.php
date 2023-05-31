@@ -15,11 +15,12 @@ use App\Library\NewFlashGenerator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\DBAL\Connection;
 
 
 use Symfony\Component\HttpFoundation\Request;
 
-use Doctrine\DBAL\Connection;
+// use Doctrine\DBAL\Connection;
 
 /**
  * Class for the library controller
@@ -126,14 +127,15 @@ class LibraryController extends AbstractController
      */
     #[Route('/library/reset', name: 'reset_library', methods: ['POST'])]
     public function resetBook(
-        ManagerRegistry $doctrine,
+        // ManagerRegistry $doctrine,
+        Connection $connection,
     ): Response {
         /**
-         * @var Connection $conn
+         * @var Connection $connection
          */
-        $conn = $doctrine->getConnection();
-        $loader = new SqlFileLoader($conn);
+        $loader = new SqlFileLoader($connection);
         $loader->load("sql/reset-book.sql");
+
         $this->addFlash("notice", "Databasen är återställd");
         return $this->redirectToRoute('read_many');
     }

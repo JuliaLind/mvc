@@ -14,7 +14,7 @@ class JsonLibraryControllerTest extends WebTestCase
         $this->assertRouteSame('books_json');
     }
 
-        public function testShowABookByIsbn(): void
+    public function testShowABookByIsbnNotOk(): void
     {
         $client = static::createClient();
         $client->request('GET', '/api/library/book/8589384934');
@@ -23,5 +23,16 @@ class JsonLibraryControllerTest extends WebTestCase
         $response = strval($client->getResponse()->getContent());
         $this->assertJson($response);
         $this->assertStringContainsString("Book with ISBN 8589384934 was not found.", $response);
+    }
+
+    public function testShowABookByIsbnOk(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/api/library/book/0123456789010');
+        $this->assertResponseIsSuccessful();
+        $this->assertRouteSame('single_book_json');
+        $response = strval($client->getResponse()->getContent());
+        $this->assertJson($response);
+        $this->assertStringContainsString("0123456789010", $response);
     }
 }
