@@ -32,7 +32,6 @@
     </coverage>
 
     <logging>
-        <!-- <junit outputFile="docs/phpunit/junit.xml"/> -->
         <junit outputFile="docs/junit.xml"/>
     </logging>
 
