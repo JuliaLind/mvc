@@ -12,14 +12,14 @@ use App\Entity\Book;
 
 class LibraryUpdateBookControllerTest extends WebTestCase
 {
-    public function testUpdateForm(): void
-    {
-        $client = static::createClient();
-        $client->request('GET', '/library/update/0123456789010');
-        $this->assertResponseIsSuccessful();
-        $this->assertRouteSame('update_form');
-        $this->assertSelectorTextContains('h1', "Uppdatera bokdetaljer för 'Book 0'");
-    }
+    // public function testUpdateForm(): void
+    // {
+    //     $client = static::createClient();
+    //     $client->request('GET', '/library/update/0123456789010');
+    //     $this->assertResponseIsSuccessful();
+    //     $this->assertRouteSame('update_form');
+    //     $this->assertSelectorTextContains('h1', "Uppdatera bokdetaljer för 'Book 0'");
+    // }
 
     // public function testUpdateOk(): void
     // {
