@@ -3,12 +3,6 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\DataFixtures\BookFixture;
-use Doctrine\Persistence\ObjectManager;
-use App\Entity\Book;
-
-// use App\Repository\BookRepository;
-
 
 class LibraryUpdateBookControllerTest extends WebTestCase
 {

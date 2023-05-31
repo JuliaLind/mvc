@@ -4,12 +4,6 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-use App\Game\Game21Easy;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
-use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
-use Symfony\Component\HttpFoundation\Session\Session;
-
 class Game21ControllerTest extends WebTestCase
 {
     public function testGame(): void
