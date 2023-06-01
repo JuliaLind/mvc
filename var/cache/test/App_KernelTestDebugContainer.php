@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelTestDebugContainer::class, false)) {
 
 return new \ContainerMTQXuGA\App_KernelTestDebugContainer([
     'container.build_hash' => 'MTQXuGA',
-    'container.build_id' => '04e08ae4',
-    'container.build_time' => 1685659592,
+    'container.build_id' => 'a3818fa7',
+    'container.build_time' => 1685660363,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerMTQXuGA');

@@ -214,4 +214,39 @@ class GridTest extends TestCase
         $this->assertEquals($exp, $res);
         $this->assertTrue($bool);
     }
+
+    public function testAddNotOk(): void
+    {
+        $emptySlot = ['filled' => false, 'img' => "", 'alt' => ""];
+        $emptyRow = [$emptySlot, $emptySlot, $emptySlot, $emptySlot, $emptySlot];
+        $card = new Card(10, 'D');
+        $grid = new Grid();
+        $initialGrid = [
+            2 => [
+                4 => new Card(14, 'S'),
+            ]
+        ];
+        $grid->setCards($initialGrid);
+        $bool = $grid->addCard(2, 4, $card);
+        $this->assertFalse($bool);
+        $res = $grid->graphic();
+        $exp = [
+            0 => $emptyRow,
+            1 => $emptyRow,
+            2 => [
+                0 => $emptySlot,
+                1 => $emptySlot,
+                2 => $emptySlot,
+                3 => $emptySlot,
+                4 => [
+                    'filled' => true,
+                    'img' => "img/project-cards/14S.svg",
+                    'alt' => "14S"
+                ]
+            ],
+            3 => $emptyRow,
+            4 => $emptyRow
+        ];
+        $this->assertEquals($exp, $res);
+    }
 }
