@@ -7,13 +7,13 @@ use PHPUnit\Framework\TestCase;
 /**
  * Test cases for class Counter.
  */
-class CounterTest extends TestCase
+class RankCounterTest extends TestCase
 {
     /**
      * @var array<Card> $cards
      */
     protected array $cards;
-    protected Counter $counter;
+    protected RankCounter $counter;
 
     protected function setUp(): void
     {
@@ -28,35 +28,17 @@ class CounterTest extends TestCase
             4 => $card4
         ];
         $this->cards = $cards;
-        $this->counter = new Counter();
+        $this->counter = new RankCounter();
     }
 
-    public function testCardCount(): void
-    {
-        $exp = 4;
-        $res = $this->counter->cardCount($this->cards);
-        $this->assertEquals($exp, $res);
-    }
-
-    public function testValues(): void
+    public function testRanks(): void
     {
         $exp = [
             2 => 2,
             14 => 1,
             4 => 1
         ];
-        $res = $this->counter->values($this->cards);
-        $this->assertEquals($exp, $res);
-    }
-
-    public function testSuits(): void
-    {
-        $exp = [
-            'H' => 1,
-            'S' => 2,
-            'C' => 1
-        ];
-        $res = $this->counter->suits($this->cards);
+        $res = $this->counter->ranks($this->cards);
         $this->assertEquals($exp, $res);
     }
 }

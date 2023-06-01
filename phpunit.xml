@@ -24,6 +24,9 @@
     </testsuites>
 
     <!-- <coverage processUncoveredFiles="true"> -->
+    <logging>
+        <junit outputFile="docs/junit.xml"/>
+    </logging>
     <coverage>
         <report>
           <clover outputFile="docs/coverage.clover"/>
@@ -31,9 +34,9 @@
         </report>
     </coverage>
 
-    <logging>
+    <!-- <logging>
         <junit outputFile="docs/junit.xml"/>
-    </logging>
+    </logging> -->
 
   <source>
     <include>
