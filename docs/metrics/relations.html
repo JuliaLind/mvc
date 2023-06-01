@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-05-31 09:06:47        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-01 00:18:26        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -669,6 +669,42 @@
         "name": "\\Anax\\TextFilter\\TextFilter",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\App\\Project\\GameException",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\Counter",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\Card",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\Grid",
+        "size": 3000,
+        "relations": [
+            "\\App\\Project\\Card"
+        ]
+    },
+    {
+        "name": "\\App\\Project\\NoCardsException",
+        "size": 3000,
+        "relations": [
+            "\\App\\Project\\GameException"
+        ]
+    },
+    {
+        "name": "\\App\\Project\\CardFactory",
+        "size": 3000,
+        "relations": [
+            "\\App\\Project\\Card"
+        ]
     },
     {
         "name": "\\App\\Library\\BookRemover",
