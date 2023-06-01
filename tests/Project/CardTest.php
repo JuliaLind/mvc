@@ -21,5 +21,12 @@ class CardTest extends TestCase
         $res = $card->getSuit();
         $exp = "S";
         $this->assertEquals($exp, $res);
+
+        $res = $card->graphic();
+        $exp = [
+            'img' => "img/project-cards/14S.svg",
+            'alt' => "14S"
+        ];
+        $this->assertEquals($exp, $res);
     }
 }

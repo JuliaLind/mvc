@@ -35,4 +35,17 @@ class Card
     {
         return $this->suit;
     }
+
+    /**
+     * @return array<string>
+     */
+    public function graphic(): array
+    {
+        $name = "{$this->value}".$this->suit;
+        $img = "img/project-cards/".$name.".svg";
+        return [
+            'img' => $img,
+            'alt' => $name
+        ];
+    }
 }

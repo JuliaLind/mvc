@@ -26,7 +26,8 @@ class Grid
 
     public function addCard(int $row, int $col, Card $card): bool
     {
-        if ($this->grid[$row][$col] != null) {
+        $grid = $this->grid;
+        if (array_key_exists($row, $grid) && array_key_exists($col, $grid[$row])) {
             return false;
         }
         $this->grid[$row][$col] = $card;
@@ -60,5 +61,41 @@ class Grid
             'rows' => $rows,
             'cols' => $cols
         ];
+    }
+
+    /**
+     * @return array<string,bool|string>
+     */
+    public function slotData(int $row, int $col): array
+    {
+        $data = [
+            'filled' => false,
+            'img' => "",
+            'alt' => ""
+        ];
+        $grid = $this->grid;
+        if (array_key_exists($row, $grid) && array_key_exists($col, $grid[$row])) {
+            $card = $grid[$row][$col]->graphic();
+            $data = [
+                'filled' => true,
+                ...$card,
+            ];
+        }
+        return $data;
+    }
+
+    /**
+     * @return  array<int,array<int,array<string,bool|string>>>
+     */
+    public function graphic(): array
+    {
+        $gridGraphic = [];
+        for ($row = 0; $row < 5; $row++) {
+            for ($col = 0; $col < 5; $col++) {
+                $gridGraphic[$row][$col] = $this->slotData($row, $col);
+            }
+        }
+
+        return $gridGraphic;
     }
 }
