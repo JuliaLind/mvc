@@ -88,7 +88,8 @@ class GridTest extends TestCase
     {
         $grid = new Grid();
         $cards = $this->rows;
-        $res = $grid->setCards($cards);
+        $grid->setCards($cards);
+        $res = $grid->getCards();
 
         $this->assertEquals($cards, $res);
     }

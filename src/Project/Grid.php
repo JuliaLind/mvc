@@ -19,11 +19,6 @@ class Grid
      */
     private array $grid = [];
 
-    // public function __construct()
-    // {
-    //     $this->grid = [];
-    // }
-
     public function addCard(int $row, int $col, Card $card): bool
     {
         $grid = $this->grid;
@@ -35,13 +30,38 @@ class Grid
     }
 
     /**
+     * @return array<int>
+     */
+    public function getEmptyCols(int $row): array
+    {
+        $grid = $this->grid;
+        if (!array_key_exists($row, $grid)) {
+            return [0, 1, 2, 3, 4, 5];
+        }
+        $row = $grid[$row];
+        $cols = [];
+        for ($col = 0; $col < 5; $col++) {
+            if (!array_key_exists($col, $row)) {
+                array_push($cols, $col);
+            }
+        }
+        return $cols;
+    }
+
+    /**
      * for testing purposes
      * @param array<array<Card>> $grid
-     * @return array<array<Card>>
      */
-    public function setCards(array $grid)
+    public function setCards(array $grid): void
     {
         $this->grid = $grid;
+    }
+
+    /**
+     * @return array<array<Card>>
+     */
+    public function getCards(): array
+    {
         return $this->grid;
     }
 
@@ -64,38 +84,10 @@ class Grid
     }
 
     /**
-     * @return array<string,bool|string>
+     * @return array<int,array<int,array<string,bool|string>>>
      */
-    private function slotData(int $row, int $col): array
+    public function graphic(GridGraphic $grid = new GridGraphic()): array
     {
-        $data = [
-            'filled' => false,
-            'img' => "",
-            'alt' => ""
-        ];
-        $grid = $this->grid;
-        if (array_key_exists($row, $grid) && array_key_exists($col, $grid[$row])) {
-            $card = $grid[$row][$col]->graphic();
-            $data = [
-                'filled' => true,
-                ...$card,
-            ];
-        }
-        return $data;
-    }
-
-    /**
-     * @return  array<int,array<int,array<string,bool|string>>>
-     */
-    public function graphic(): array
-    {
-        $gridGraphic = [];
-        for ($row = 0; $row < 5; $row++) {
-            for ($col = 0; $col < 5; $col++) {
-                $gridGraphic[$row][$col] = $this->slotData($row, $col);
-            }
-        }
-
-        return $gridGraphic;
+        return $grid->graphic($this->grid);
     }
 }

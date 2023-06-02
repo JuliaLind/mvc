@@ -5,7 +5,7 @@ namespace App\Project;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Test cases for class Counter.
+ * Test cases for class CardCounter.
  */
 class CardCounterTest extends TestCase
 {

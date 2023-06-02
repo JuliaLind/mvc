@@ -22,6 +22,8 @@ class CardCounter
         }
         return $arr;
     }
+
+
     /**
      * @param array<Card> $cards
      * @return  array<string,array<array<int|string,int>>>
@@ -36,7 +38,7 @@ class CardCounter
         }
         return [
             'ranks' => $ranks,
-            'suits' => $suits
+            'suits' => $suits,
         ];
     }
 }

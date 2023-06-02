@@ -8,27 +8,27 @@ namespace App\Project;
 class Card
 {
     /**
-     * @var int $value The integer value of the card, 2-14
+     * @var int $rank Rank of the card as integer 2-14
      * @var string $suit Suit of the card S|D|H|C
      */
-    protected int $value;
+    protected int $rank;
     protected string $suit;
 
     /**
      * Constructor
      *
-     * @param int $value - Value of the card
+     * @param int $rank - rank of the card
      * @param string $suit - Suit of the card
      */
-    public function __construct(int $value, string $suit)
+    public function __construct(int $rank, string $suit)
     {
         $this->suit = $suit;
-        $this->value = $value;
+        $this->rank = $rank;
     }
 
     public function getRank(): int
     {
-        return $this->value;
+        return $this->rank;
     }
 
     public function getSuit(): string
@@ -36,12 +36,17 @@ class Card
         return $this->suit;
     }
 
+    private function name(): string
+    {
+        return "{$this->rank}".$this->suit;
+    }
+
     /**
      * @return array<string>
      */
     public function graphic(): array
     {
-        $name = "{$this->value}".$this->suit;
+        $name = $this->name();
         $img = "img/project-cards/".$name.".svg";
         return [
             'img' => $img,

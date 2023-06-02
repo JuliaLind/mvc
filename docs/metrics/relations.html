@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-02 10:32:54        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-02 17:44:58        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -678,10 +678,7 @@
     {
         "name": "\\App\\Project\\RoyalFlush",
         "size": 3000,
-        "relations": [
-            "\\App\\Project\\RuleInterface",
-            "\\App\\Project\\CardCounter"
-        ]
+        "relations": []
     },
     {
         "name": "\\App\\Project\\RuleInterface",
@@ -694,6 +691,16 @@
         "relations": []
     },
     {
+        "name": "\\App\\Project\\RoyalFlushTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\CardSearcher",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Project\\Card",
         "size": 3000,
         "relations": []
@@ -702,8 +709,14 @@
         "name": "\\App\\Project\\Grid",
         "size": 3000,
         "relations": [
-            "\\App\\Project\\Card"
+            "\\App\\Project\\Card",
+            "\\App\\Project\\GridGraphic"
         ]
+    },
+    {
+        "name": "\\App\\Project\\GridGraphic",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Project\\NoCardsException",
@@ -725,6 +738,22 @@
         "relations": [
             "\\App\\Project\\Card"
         ]
+    },
+    {
+        "name": "\\App\\Project\\RoyalFlushStat",
+        "size": 3000,
+        "relations": [
+            "\\App\\Project\\RuleStatInterface",
+            "\\App\\Project\\CardCounter",
+            "\\App\\Project\\CardSearcher",
+            "\\App\\Project\\RoyalFlush",
+            "\\App\\Project\\Card"
+        ]
+    },
+    {
+        "name": "\\App\\Project\\RuleStatInterface",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Library\\BookRemover",

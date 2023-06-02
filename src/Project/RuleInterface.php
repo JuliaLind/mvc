@@ -12,11 +12,4 @@ interface RuleInterface
      * @return array<string,string|int|bool> true if rule is fullfilled otherwise false
      */
     public function scored(array $data);
-
-    // /**
-    //  * @param array<mixed> $data
-    //  * @return bool true if rule is still possible given passed value
-    //  * otherwise false
-    //  */
-    // public function possible(array $data, Card $card);
 }
