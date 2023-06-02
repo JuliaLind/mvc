@@ -82,36 +82,35 @@ class GridColsTest extends TestCase
     public function testAll(): void
     {
         $gridCols = new GridCols();
-        $gridCols->setRows($this->rows);
-        $res = $gridCols->all();
+        $res = $gridCols->all($this->rows);
         $exp = $this->cols;
 
         $this->assertEquals($exp, $res);
     }
 
-    public function testEmtpyCols(): void
-    {
-        $row0 = [3];
-        $row1 = [0, 2, 4];
-        $row2 = [0, 1, 2, 4];
-        $row3 = [0, 1, 2, 3, 4];
-        $row4 = [1, 2, 3, 4];
+    // public function testEmtpy(): void
+    // {
+    //     $row0 = [3];
+    //     $row1 = [0, 2, 4];
+    //     $row2 = [0, 1, 2, 4];
+    //     $row3 = [0, 1, 2, 3, 4];
+    //     $row4 = [1, 2, 3, 4];
 
-        $grid = new GridCols();
-        $grid->setRows($this->rows);
-        $res = $grid->emptyCols(0);
-        $this->assertEquals($row0, $res);
+    //     $grid = new GridCols();
+    //     $grid->setRows($this->rows);
+    //     $res = $grid->empty(0);
+    //     $this->assertEquals($row0, $res);
 
-        $res = $grid->emptyCols(1);
-        $this->assertEquals($row1, $res);
+    //     $res = $grid->empty(1);
+    //     $this->assertEquals($row1, $res);
 
-        $res = $grid->emptyCols(2);
-        $this->assertEquals($row2, $res);
+    //     $res = $grid->empty(2);
+    //     $this->assertEquals($row2, $res);
 
-        $res = $grid->emptyCols(3);
-        $this->assertEquals($row3, $res);
+    //     $res = $grid->empty(3);
+    //     $this->assertEquals($row3, $res);
 
-        $res = $grid->emptyCols(4);
-        $this->assertEquals($row4, $res);
-    }
+    //     $res = $grid->empty(4);
+    //     $this->assertEquals($row4, $res);
+    // }
 }

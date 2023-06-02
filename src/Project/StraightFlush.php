@@ -3,8 +3,8 @@
 namespace App\Project;
 
 /**
- * Royal Flush Rule
- * Ace, King, Queen, Jack, Ten of same suit
+ * Straight Flush Rule
+ * Any five subsequent ranks between 2 - Ace(14) of same suit
  *
  */
 class StraightFlush implements RuleInterface

@@ -52,8 +52,7 @@ class Grid
     public function rowsAndCols(GridCols $gridCols = new GridCols()): array
     {
         $rows = $this->grid;
-        $gridCols->setRows($rows);
-        $cols = $gridCols->all();
+        $cols = $gridCols->all($rows);
         return [
             'rows' => $rows,
             'cols' => $cols

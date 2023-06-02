@@ -489,6 +489,7 @@
     <service id="App\Project\Deck" class="App\Project\Deck" autowire="true" autoconfigure="true">
       <argument type="service" id="App\Project\CardFactory"/>
     </service>
+    <service id="App\Project\EmptyCellFinder" class="App\Project\EmptyCellFinder" autowire="true" autoconfigure="true"/>
     <service id="App\Project\GameException" class="App\Project\GameException" autowire="true" autoconfigure="true"/>
     <service id="App\Project\Grid" class="App\Project\Grid" autowire="true" autoconfigure="true"/>
     <service id="App\Project\GridCols" class="App\Project\GridCols" autowire="true" autoconfigure="true"/>
@@ -1656,6 +1657,7 @@
         <argument key="App\Project\CardFactory" type="service_closure" id="App\Project\CardFactory" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\CardSearcher" type="service_closure" id="App\Project\CardSearcher" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\Deck" type="service_closure" id="App\Project\Deck" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Project\EmptyCellFinder" type="service_closure" id="App\Project\EmptyCellFinder" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\GameException" type="service_closure" id="App\Project\GameException" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\Grid" type="service_closure" id="App\Project\Grid" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\GridCols" type="service_closure" id="App\Project\GridCols" on-invalid="ignore_uninitialized"/>
