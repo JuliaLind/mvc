@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-02 09:50:21        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-02 10:32:54        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -708,8 +708,15 @@
     {
         "name": "\\App\\Project\\NoCardsException",
         "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\Deck",
+        "size": 3000,
         "relations": [
-            "\\App\\Project\\GameException"
+            "\\App\\Project\\CardFactory",
+            "\\App\\Project\\Card",
+            "\\App\\Project\\NoCardsException"
         ]
     },
     {

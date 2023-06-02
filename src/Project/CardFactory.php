@@ -28,5 +28,4 @@ class CardFactory
         }
         return $cards;
     }
-
 }

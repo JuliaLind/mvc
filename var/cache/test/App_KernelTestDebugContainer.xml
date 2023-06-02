@@ -485,6 +485,9 @@
     <service id="App\Project\Card" class="App\Project\Card" autowire="true" autoconfigure="true"/>
     <service id="App\Project\CardCounter" class="App\Project\CardCounter" autowire="true" autoconfigure="true"/>
     <service id="App\Project\CardFactory" class="App\Project\CardFactory" autowire="true" autoconfigure="true"/>
+    <service id="App\Project\Deck" class="App\Project\Deck" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\Project\CardFactory"/>
+    </service>
     <service id="App\Project\GameException" class="App\Project\GameException" autowire="true" autoconfigure="true"/>
     <service id="App\Project\Grid" class="App\Project\Grid" autowire="true" autoconfigure="true"/>
     <service id="App\Project\NoCardsException" class="App\Project\NoCardsException" autowire="true" autoconfigure="true"/>
@@ -1641,6 +1644,7 @@
         <argument key="App\Markdown\MdParser" type="service_closure" id="App\Markdown\MdParser" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\CardCounter" type="service_closure" id="App\Project\CardCounter" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\CardFactory" type="service_closure" id="App\Project\CardFactory" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Project\Deck" type="service_closure" id="App\Project\Deck" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\GameException" type="service_closure" id="App\Project\GameException" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\Grid" type="service_closure" id="App\Project\Grid" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\NoCardsException" type="service_closure" id="App\Project\NoCardsException" on-invalid="ignore_uninitialized"/>
