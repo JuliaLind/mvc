@@ -488,13 +488,9 @@
     <service id="App\Project\GameException" class="App\Project\GameException" autowire="true" autoconfigure="true"/>
     <service id="App\Project\Grid" class="App\Project\Grid" autowire="true" autoconfigure="true"/>
     <service id="App\Project\NoCardsException" class="App\Project\NoCardsException" autowire="true" autoconfigure="true"/>
-    <service id="App\Project\RankCounter" class="App\Project\RankCounter" autowire="true" autoconfigure="true"/>
     <service id="App\Project\RoyalFlush" class="App\Project\RoyalFlush" autowire="true" autoconfigure="true">
       <argument type="service" id="App\Project\CardCounter"/>
-      <argument type="service" id="App\Project\SuitCounter"/>
-      <argument type="service" id="App\Project\RankCounter"/>
     </service>
-    <service id="App\Project\SuitCounter" class="App\Project\SuitCounter" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -1648,9 +1644,7 @@
         <argument key="App\Project\GameException" type="service_closure" id="App\Project\GameException" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\Grid" type="service_closure" id="App\Project\Grid" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\NoCardsException" type="service_closure" id="App\Project\NoCardsException" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Project\RankCounter" type="service_closure" id="App\Project\RankCounter" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\RoyalFlush" type="service_closure" id="App\Project\RoyalFlush" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Project\SuitCounter" type="service_closure" id="App\Project\SuitCounter" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository" on-invalid="ignore_uninitialized"/>
         <argument key="argument_metadata_factory" type="service_closure" id="argument_metadata_factory" on-invalid="ignore_uninitialized"/>
         <argument key="response_listener" type="service_closure" id="response_listener" on-invalid="ignore_uninitialized"/>

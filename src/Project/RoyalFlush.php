@@ -30,7 +30,7 @@ class RoyalFlush implements RuleInterface
     private const MINRANK = 10;
 
     /**
-     * @var int $UNIQUERANKS 
+     * @var int $UNIQUERANKS
      */
     private const UNIQUERANKS = 5;
 
@@ -40,17 +40,11 @@ class RoyalFlush implements RuleInterface
     private const UNIQUESUITS = 1;
 
     private CardCounter $cardCounter;
-    private SuitCounter $suitCounter;
-    private RankCounter $rankCounter;
 
     public function __construct(
-        CardCounter $cardCounter = new CardCounter(),
-        SuitCounter $suitCounter = new SuitCounter(),
-        RankCounter $rankCounter = new RankCounter()
+        CardCounter $cardCounter = new CardCounter()
     ) {
         $this->cardCounter = $cardCounter;
-        $this->suitCounter = $suitCounter;
-        $this->rankCounter = $rankCounter;
     }
 
     /**
@@ -78,15 +72,21 @@ class RoyalFlush implements RuleInterface
             'points' => self::POINTS,
             'scored' => false
         ];
-        $cardCount = $this->cardCounter->cardCount($hand);
+        $cardCount = count($hand);
         if ($cardCount < 5) {
             return $data;
         }
-        $uniqueSuits = $this->suitCounter->suits($hand);
-        $uniqueRanks = $this->rankCounter->ranks($hand);
+        $cardCount = $this->cardCounter->count($hand);
+        /**
+         * @var array<string,int> $uniqueSuits
+         */
+        $uniqueSuits = $cardCount['suits'];
+        /**
+         * @var array<int,int> $uniqueRanks
+         */
+        $uniqueRanks = $cardCount['ranks'];
         if (count($uniqueRanks) === self::UNIQUERANKS && count($uniqueSuits) === self::UNIQUESUITS) {
             $data['scored'] = $this->evaluateRanks($uniqueRanks);
-            // return $this->evaluateRanks($uniqueRanks);
         }
         return $data;
     }

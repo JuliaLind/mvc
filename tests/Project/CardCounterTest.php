@@ -5,7 +5,7 @@ namespace App\Project;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Test cases for class CardCounter.
+ * Test cases for class Counter.
  */
 class CardCounterTest extends TestCase
 {
@@ -31,10 +31,21 @@ class CardCounterTest extends TestCase
         $this->counter = new CardCounter();
     }
 
-    public function testCardCount(): void
+    public function testCount(): void
     {
-        $exp = 4;
-        $res = $this->counter->cardCount($this->cards);
-        $this->assertEquals($exp, $res);
+        $exp1 = [
+            2 => 2,
+            14 => 1,
+            4 => 1
+        ];
+
+        $exp2 = [
+            'H' => 1,
+            'S' => 2,
+            'C' => 1
+        ];
+        $res = $this->counter->count($this->cards);
+        $this->assertEquals($exp1, $res['ranks']);
+        $this->assertEquals($exp2, $res['suits']);
     }
 }

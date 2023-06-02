@@ -14,7 +14,7 @@ class CardTest extends TestCase
         $card = new Card(14, "S");
         $this->assertInstanceOf("\App\Project\Card", $card);
 
-        $res = $card->getValue();
+        $res = $card->getRank();
         $exp = 14;
         $this->assertEquals($exp, $res);
 

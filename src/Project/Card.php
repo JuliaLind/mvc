@@ -26,7 +26,7 @@ class Card
         $this->value = $value;
     }
 
-    public function getValue(): int
+    public function getRank(): int
     {
         return $this->value;
     }
