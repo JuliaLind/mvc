@@ -16,11 +16,4 @@ trait RoyalFlushTrait
      * @var int $MINRANK corresponds to Ten
      */
     private const MINRANK = 10;
-
-    /**
-     * @var int $UNIQUESUITS
-     */
-    private const UNIQUESUITS = 1;
-
-    private CardCounter $cardCounter;
 }

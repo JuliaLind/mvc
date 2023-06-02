@@ -10,6 +10,10 @@ namespace App\Project;
 class RoyalFlush implements RuleInterface
 {
     use RoyalFlushTrait;
+    use FlushTrait;
+    use RuleTrait;
+    use StraightTrait;
+
     /**
      * @var int $POINTS the points if rule is  scored
      */
@@ -19,11 +23,6 @@ class RoyalFlush implements RuleInterface
      * @var string $NAME name of the rule
      */
     private const NAME = "Royal Flush";
-
-    /**
-     * @var int $UNIQUERANKS
-     */
-    private const UNIQUERANKS = 5;
 
     public function __construct(
         CardCounter $cardCounter = new CardCounter()

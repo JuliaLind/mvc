@@ -501,6 +501,9 @@
       <argument type="service" id="App\Project\CardCounter"/>
       <argument type="service" id="App\Project\CardSearcher"/>
     </service>
+    <service id="App\Project\StraightFlush" class="App\Project\StraightFlush" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\Project\CardCounter"/>
+    </service>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -1660,6 +1663,7 @@
         <argument key="App\Project\NoCardsException" type="service_closure" id="App\Project\NoCardsException" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\RoyalFlush" type="service_closure" id="App\Project\RoyalFlush" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\RoyalFlushStat" type="service_closure" id="App\Project\RoyalFlushStat" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Project\StraightFlush" type="service_closure" id="App\Project\StraightFlush" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository" on-invalid="ignore_uninitialized"/>
         <argument key="argument_metadata_factory" type="service_closure" id="argument_metadata_factory" on-invalid="ignore_uninitialized"/>
         <argument key="response_listener" type="service_closure" id="response_listener" on-invalid="ignore_uninitialized"/>
@@ -2269,7 +2273,6 @@
         <argument key="cache.doctrine.orm.default.query.recorder_inner" type="service_closure" id="cache.doctrine.orm.default.query.recorder_inner" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_expression_language.recorder_inner" type="service_closure" id="cache.security_expression_language.recorder_inner" on-invalid="ignore_uninitialized"/>
         <argument key="cache.webpack_encore.recorder_inner" type="service_closure" id="cache.webpack_encore.recorder_inner" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Project\RuleInterface" type="service_closure" id="App\Project\RoyalFlush" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\RuleStatInterface" type="service_closure" id="App\Project\RoyalFlushStat" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface" type="service_closure" id="parameter_bag" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface" type="service_closure" id="parameter_bag" on-invalid="ignore_uninitialized"/>
@@ -8311,7 +8314,6 @@
         <argument key="Twig\Extra\Markdown\MarkdownRuntime" type="service_closure" id="twig.runtime.markdown"/>
       </argument>
     </service>
-    <service id="App\Project\RuleInterface" alias="App\Project\RoyalFlush"/>
     <service id="App\Project\RuleStatInterface" alias="App\Project\RoyalFlushStat"/>
     <service id="App\Kernel" alias="kernel" public="true"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface" alias="parameter_bag"/>

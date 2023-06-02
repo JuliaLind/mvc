@@ -11,6 +11,8 @@ namespace App\Project;
 class RoyalFlushStat implements RuleStatInterface
 {
     use RoyalFlushTrait;
+    use FlushTrait;
+    use RuleTrait;
 
     private CardSearcher $searcher;
 
