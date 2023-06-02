@@ -84,7 +84,6 @@ class RoyalFlush implements RuleInterface
         }
         $uniqueSuits = $this->suitCounter->suits($hand);
         $uniqueRanks = $this->rankCounter->ranks($hand);
-        $cardCount = $this->cardCounter->cardCount($hand);
         if (count($uniqueRanks) === self::UNIQUERANKS && count($uniqueSuits) === self::UNIQUESUITS) {
             $data['scored'] = $this->evaluateRanks($uniqueRanks);
             // return $this->evaluateRanks($uniqueRanks);
