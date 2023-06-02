@@ -9,7 +9,7 @@ class GridGraphic
 {
     /**
      * @param array<array<Card>> $grid
-     * @return array<string,bool|string>
+     * @return array<mixed>
      */
     private function slotData(int $row, int $col, array $grid): array
     {
@@ -30,7 +30,7 @@ class GridGraphic
 
     /**
      * @param array<array<Card>> $grid
-     * @return  array<int,array<int,array<string,bool|string>>>
+     * @return array<int,mixed>>>
      */
     public function graphic($grid): array
     {
