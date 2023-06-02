@@ -9,9 +9,7 @@ namespace App\Project;
  */
 class StraightFlush implements RuleInterface
 {
-    use FlushTrait;
     use RuleTrait;
-    use StraightTrait;
 
     /**
      * @var int $POINTS the points if rule is  scored
@@ -22,6 +20,16 @@ class StraightFlush implements RuleInterface
      * @var string $NAME name of the rule
      */
     private const NAME = "Straight Flush";
+
+    /**
+     * @var int $UNIQUERANKS
+     */
+    private const UNIQUERANKS = 5;
+
+    /**
+     * @var int $UNIQUESUITS
+     */
+    private const UNIQUESUITS = 1;
 
     public function __construct(
         CardCounter $cardCounter = new CardCounter()

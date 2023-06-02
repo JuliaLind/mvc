@@ -10,9 +10,22 @@ namespace App\Project;
  */
 class RoyalFlushStat implements RuleStatInterface
 {
-    use RoyalFlushTrait;
-    use FlushTrait;
     use RuleTrait;
+
+    /**
+     * @var int $MAXRANK corresponds to Ace
+     */
+    private const MAXRANK = 14;
+
+    /**
+     * @var int $MINRANK corresponds to Ten
+     */
+    private const MINRANK = 10;
+
+    /**
+     * @var int $UNIQUESUITS
+     */
+    private const UNIQUESUITS = 1;
 
     private CardSearcher $searcher;
 

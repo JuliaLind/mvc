@@ -9,10 +9,27 @@ namespace App\Project;
  */
 class RoyalFlush implements RuleInterface
 {
-    use RoyalFlushTrait;
-    use FlushTrait;
     use RuleTrait;
-    use StraightTrait;
+
+    /**
+     * @var int $MAXRANK corresponds to Ace
+     */
+    private const MAXRANK = 14;
+
+    /**
+     * @var int $MINRANK corresponds to Ten
+     */
+    private const MINRANK = 10;
+
+    /**
+     * @var int $UNIQUERANKS
+     */
+    private const UNIQUERANKS = 5;
+
+    /**
+     * @var int $UNIQUESUITS
+     */
+    private const UNIQUESUITS = 1;
 
     /**
      * @var int $POINTS the points if rule is  scored

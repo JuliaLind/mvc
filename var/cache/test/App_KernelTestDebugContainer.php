@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelTestDebugContainer::class, false)) {
 
 return new \ContainerAxrnypp\App_KernelTestDebugContainer([
     'container.build_hash' => 'Axrnypp',
-    'container.build_id' => 'd6e25d3b',
-    'container.build_time' => 1685740369,
+    'container.build_id' => '8c1655d0',
+    'container.build_time' => 1685741065,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerAxrnypp');
