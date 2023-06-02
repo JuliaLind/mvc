@@ -491,6 +491,7 @@
     </service>
     <service id="App\Project\GameException" class="App\Project\GameException" autowire="true" autoconfigure="true"/>
     <service id="App\Project\Grid" class="App\Project\Grid" autowire="true" autoconfigure="true"/>
+    <service id="App\Project\GridCols" class="App\Project\GridCols" autowire="true" autoconfigure="true"/>
     <service id="App\Project\GridGraphic" class="App\Project\GridGraphic" autowire="true" autoconfigure="true"/>
     <service id="App\Project\NoCardsException" class="App\Project\NoCardsException" autowire="true" autoconfigure="true"/>
     <service id="App\Project\RoyalFlush" class="App\Project\RoyalFlush" autowire="true" autoconfigure="true">
@@ -1654,6 +1655,7 @@
         <argument key="App\Project\Deck" type="service_closure" id="App\Project\Deck" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\GameException" type="service_closure" id="App\Project\GameException" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\Grid" type="service_closure" id="App\Project\Grid" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Project\GridCols" type="service_closure" id="App\Project\GridCols" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\GridGraphic" type="service_closure" id="App\Project\GridGraphic" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\NoCardsException" type="service_closure" id="App\Project\NoCardsException" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\RoyalFlush" type="service_closure" id="App\Project\RoyalFlush" on-invalid="ignore_uninitialized"/>

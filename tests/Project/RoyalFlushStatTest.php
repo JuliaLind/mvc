@@ -133,6 +133,23 @@ class RoyalFlushStatTest extends TestCase
         $this->assertFalse($res);
     }
 
+    public function testPossibleNotOk6(): void
+    {
+        $ten = new Card(9, "D");
+        $jack = new Card(11, "H");
+        $queen = new Card(12, "D");
+        $king = new Card(13, "D");
+        $ace = new Card(14, "D");
+
+        $hand = [$ten, $queen, $king];
+        $deck = [$jack];
+        $card = $ace;
+
+        $rule = new RoyalFlushStat();
+        $res = $rule->possible($hand, $deck, $card);
+        $this->assertFalse($res);
+    }
+
     public function testPossibleOk(): void
     {
         $ten = new Card(10, "D");

@@ -8,8 +8,8 @@ namespace App\Project;
 interface RuleInterface
 {
     /**
-     * @param array<mixed> $data
+     * @param array<Card> $hand
      * @return array<string,string|int|bool> true if rule is fullfilled otherwise false
      */
-    public function scored(array $data);
+    public function scored(array $hand);
 }

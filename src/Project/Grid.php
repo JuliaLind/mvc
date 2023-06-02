@@ -30,25 +30,6 @@ class Grid
     }
 
     /**
-     * @return array<int>
-     */
-    public function getEmptyCols(int $row): array
-    {
-        $grid = $this->grid;
-        if (!array_key_exists($row, $grid)) {
-            return [0, 1, 2, 3, 4, 5];
-        }
-        $row = $grid[$row];
-        $cols = [];
-        for ($col = 0; $col < 5; $col++) {
-            if (!array_key_exists($col, $row)) {
-                array_push($cols, $col);
-            }
-        }
-        return $cols;
-    }
-
-    /**
      * for testing purposes
      * @param array<array<Card>> $grid
      */
@@ -68,26 +49,14 @@ class Grid
     /**
      * @return array<string,array<array<Card>>>
      */
-    public function rowsAndCols(): array
+    public function rowsAndCols(GridCols $gridCols = new GridCols()): array
     {
         $rows = $this->grid;
-        $cols = [];
-        foreach($rows as $row => $cards) {
-            foreach($cards as $col => $card) {
-                $cols[$col][$row] = $card;
-            }
-        }
+        $gridCols->setRows($rows);
+        $cols = $gridCols->all();
         return [
             'rows' => $rows,
             'cols' => $cols
         ];
-    }
-
-    /**
-     * @return array<int,array<int,array<string,bool|string>>>
-     */
-    public function graphic(GridGraphic $grid = new GridGraphic()): array
-    {
-        return $grid->graphic($this->grid);
     }
 }

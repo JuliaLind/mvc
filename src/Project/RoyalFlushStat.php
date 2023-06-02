@@ -3,7 +3,8 @@
 namespace App\Project;
 
 /**
- * Royal Flush Rule
+ * Calculates it possible for a hand
+ * to score the RoyalFlush rule
  * Ace, King, Queen, Jack, Ten of same suit
  *
  */
@@ -91,13 +92,6 @@ class RoyalFlushStat implements RuleStatInterface
          */
         $suit = array_key_first($suitsHand);
         $allCards = array_merge($newHand, $deck);
-        // $possible = true;
-        // for ($rank = self::MINRANK; $rank <= self::MAXRANK; $rank++) {
-        //     $possible = $searcher->search($allCards, $rank, $suit);
-        //     if ($possible == false) {
-        //         break;
-        //     }
-        // }
         return $this->checkForCards($allCards, $suit);
     }
 }

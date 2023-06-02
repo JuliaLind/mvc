@@ -13,11 +13,6 @@ class GridGraphicTest extends TestCase
      * @var array<array<Card>> $rows
      */
     protected array $rows;
-    /**
-     * @var array<array<Card>> $cols
-     */
-    protected array $cols;
-    protected Grid $grid;
 
     protected function setUp(): void
     {
@@ -53,10 +48,6 @@ class GridGraphicTest extends TestCase
             4 => $row4
         ];
         $this->rows = $rows;
-
-        $grid = new Grid();
-        $grid->setCards($rows);
-        $this->grid = $grid;
     }
 
     public function testGraphic(): void
@@ -137,7 +128,8 @@ class GridGraphicTest extends TestCase
             4 => $row4
         ];
 
-        $res = $this->grid->graphic();
+        $grid = new GridGraphic();
+        $res = $grid->graphic($this->rows);
         $this->assertEquals($exp, $res);
     }
 }

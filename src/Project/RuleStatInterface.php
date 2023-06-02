@@ -7,10 +7,11 @@ namespace App\Project;
  */
 interface RuleStatInterface
 {
-    // /**
-    //  * @param array<mixed> $data
-    //  * @return bool true if rule is still possible given passed value
-    //  * otherwise false
-    //  */
-    // public function possible(array $data, Card $card);
+    /**
+     * @param array<Card> $hand
+     * @param array<Card> $deck
+     * @return bool true if rule is still possible given passed value
+     * otherwise false
+     */
+    public function possible(array $hand, array $deck, Card $card);
 }

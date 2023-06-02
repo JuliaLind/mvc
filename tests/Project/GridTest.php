@@ -105,149 +105,28 @@ class GridTest extends TestCase
         $this->assertEquals($exp, $res);
     }
 
-    public function testGraphic(): void
-    {
-        $empty = ['filled' => false, 'img' => "", 'alt' => ""];
-        $row0 = [
-            0 => [
-                'filled' => true,
-                'img' => "img/project-cards/2H.svg",
-                'alt' => "2H"
-            ],
-            1 => [
-                'filled' => true,
-                'img' => "img/project-cards/14S.svg",
-                'alt' => "14S"
-            ],
-            2 => [
-                'filled' => true,
-                'img' => "img/project-cards/2S.svg",
-                'alt' => "2S"
-            ],
-            3 => $empty,
-            4 => [
-                'filled' => true,
-                'img' => "img/project-cards/4C.svg",
-                'alt' => "4C"
-            ],
-        ];
-        $row1 = [
-            0 => $empty,
-            1 => [
-                'filled' => true,
-                'img' => "img/project-cards/5D.svg",
-                'alt' => "5D"
-            ],
-            2 => $empty,
-            3 => [
-                'filled' => true,
-                'img' => "img/project-cards/13C.svg",
-                'alt' => "13C"
-            ],
-            4 => $empty
-        ];
-        $row2 = [
-            0 => $empty,
-            1 => $empty,
-            2 => $empty,
-            3 => [
-                'filled' => true,
-                'img' => "img/project-cards/13D.svg",
-                'alt' => "13D"
-            ],
-            4 => $empty
-        ];
-        $row4 = [
-            0 => [
-                'filled' => true,
-                'img' => "img/project-cards/13H.svg",
-                'alt' => "13H"
-            ],
-            1 => $empty,
-            2 => $empty,
-            3 => $empty,
-            4 => $empty,
-        ];
-        $row3 = [
-            0 => $empty,
-            1 => $empty,
-            2 => $empty,
-            3 => $empty,
-            4 => $empty
-        ];
-        $exp = [
-            0 => $row0,
-            1 => $row1,
-            2 => $row2,
-            3 => $row3,
-            4 => $row4
-        ];
-
-        $res = $this->grid->graphic();
-        $this->assertEquals($exp, $res);
-    }
-
     public function testAddOk(): void
     {
-        $emptySlot = ['filled' => false, 'img' => "", 'alt' => ""];
-        $emptyRow = [$emptySlot, $emptySlot, $emptySlot, $emptySlot, $emptySlot];
         $card = new Card(14, 'S');
-        $grid = new Grid();
-        $bool = $grid->addCard(2, 4, $card);
-        $res = $grid->graphic();
-        $exp = [
-            0 => $emptyRow,
-            1 => $emptyRow,
-            2 => [
-                0 => $emptySlot,
-                1 => $emptySlot,
-                2 => $emptySlot,
-                3 => $emptySlot,
-                4 => [
-                    'filled' => true,
-                    'img' => "img/project-cards/14S.svg",
-                    'alt' => "14S"
-                ]
-            ],
-            3 => $emptyRow,
-            4 => $emptyRow
-        ];
+        $bool = $this->grid->addCard(2, 4, $card);
+        $res = $this->grid->getCards();
+        $exp = $this->rows;
+        $exp[2][4] = $card;
         $this->assertEquals($exp, $res);
         $this->assertTrue($bool);
+
+        $res = $res[2][4];
+        $this->assertEquals($res, $card);
     }
 
     public function testAddNotOk(): void
     {
-        $emptySlot = ['filled' => false, 'img' => "", 'alt' => ""];
-        $emptyRow = [$emptySlot, $emptySlot, $emptySlot, $emptySlot, $emptySlot];
         $card = new Card(10, 'D');
-        $grid = new Grid();
-        $initialGrid = [
-            2 => [
-                4 => new Card(14, 'S'),
-            ]
-        ];
-        $grid->setCards($initialGrid);
-        $bool = $grid->addCard(2, 4, $card);
+        $bool = $this->grid->addCard(0, 1, $card);
         $this->assertFalse($bool);
-        $res = $grid->graphic();
-        $exp = [
-            0 => $emptyRow,
-            1 => $emptyRow,
-            2 => [
-                0 => $emptySlot,
-                1 => $emptySlot,
-                2 => $emptySlot,
-                3 => $emptySlot,
-                4 => [
-                    'filled' => true,
-                    'img' => "img/project-cards/14S.svg",
-                    'alt' => "14S"
-                ]
-            ],
-            3 => $emptyRow,
-            4 => $emptyRow
-        ];
+        $exp = $this->rows;
+        $res = $this->grid->getCards();
+
         $this->assertEquals($exp, $res);
     }
 }
