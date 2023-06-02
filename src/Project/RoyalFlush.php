@@ -72,20 +72,17 @@ class RoyalFlush implements RuleInterface
             'points' => self::POINTS,
             'scored' => false
         ];
-        $cardCount = count($hand);
-        if ($cardCount < 5) {
-            return $data;
-        }
-        $cardCount = $this->cardCounter->count($hand);
+        $uniqueCount = $this->cardCounter->count($hand);
         /**
          * @var array<string,int> $uniqueSuits
          */
-        $uniqueSuits = $cardCount['suits'];
+        $uniqueSuits = $uniqueCount['suits'];
         /**
          * @var array<int,int> $uniqueRanks
          */
-        $uniqueRanks = $cardCount['ranks'];
-        if (count($uniqueRanks) === self::UNIQUERANKS && count($uniqueSuits) === self::UNIQUESUITS) {
+        $uniqueRanks = $uniqueCount['ranks'];
+
+        if (count($uniqueSuits) === self::UNIQUESUITS && count($uniqueRanks) === self::UNIQUERANKS) {
             $data['scored'] = $this->evaluateRanks($uniqueRanks);
         }
         return $data;
@@ -96,8 +93,36 @@ class RoyalFlush implements RuleInterface
     //  * @return bool true if rule is still possible given passed value
     //  * otherwise false
     //  */
-    // public function possible(array $data, Card $card): bool
+    // public function possible(array $hand, array $deck, Card $card): bool
     // {
+    //     $data = [
+    //         'name' => self::NAME,
+    //         'points' => self::POINTS,
+    //         'possible' => false
+    //     ];
+    //     $cardCountHand = count($hand);
+    //     if ($cardCountHand === 5) {
+    //         return $data;
+    //     }
+    //     $uniqueCountHand = $this->cardCounter->count($hand);
+    //     $uniqueCountDeck = $this->cardCounter->count($deck);
+    //     /**
+    //      * @var array<string,int> $suitsHand
+    //      */
+    //     $suitsHand = $uniqueCountHand['suits'];
+    //     /**
+    //      * @var array<int,int> $ranksHand
+    //      */
+    //     $ranksHand = $uniqueCountHand['ranks'];
+    //     /**
+    //      * @var array<string,int> $suitsHand
+    //      */
+    //     $suitsDeck = $uniqueCountDeck['suits'];
+    //     /**
+    //      * @var array<int,int> $ranksHand
+    //      */
+    //     $ranksDeck = $uniqueCountDeck['ranks'];
+
 
     // }
 }
