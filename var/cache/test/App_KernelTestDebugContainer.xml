@@ -489,6 +489,11 @@
     <service id="App\Project\Grid" class="App\Project\Grid" autowire="true" autoconfigure="true"/>
     <service id="App\Project\NoCardsException" class="App\Project\NoCardsException" autowire="true" autoconfigure="true"/>
     <service id="App\Project\RankCounter" class="App\Project\RankCounter" autowire="true" autoconfigure="true"/>
+    <service id="App\Project\RoyalFlush" class="App\Project\RoyalFlush" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\Project\CardCounter"/>
+      <argument type="service" id="App\Project\SuitCounter"/>
+      <argument type="service" id="App\Project\RankCounter"/>
+    </service>
     <service id="App\Project\SuitCounter" class="App\Project\SuitCounter" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -1644,6 +1649,7 @@
         <argument key="App\Project\Grid" type="service_closure" id="App\Project\Grid" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\NoCardsException" type="service_closure" id="App\Project\NoCardsException" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\RankCounter" type="service_closure" id="App\Project\RankCounter" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Project\RoyalFlush" type="service_closure" id="App\Project\RoyalFlush" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\SuitCounter" type="service_closure" id="App\Project\SuitCounter" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository" on-invalid="ignore_uninitialized"/>
         <argument key="argument_metadata_factory" type="service_closure" id="argument_metadata_factory" on-invalid="ignore_uninitialized"/>
@@ -2254,6 +2260,7 @@
         <argument key="cache.doctrine.orm.default.query.recorder_inner" type="service_closure" id="cache.doctrine.orm.default.query.recorder_inner" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_expression_language.recorder_inner" type="service_closure" id="cache.security_expression_language.recorder_inner" on-invalid="ignore_uninitialized"/>
         <argument key="cache.webpack_encore.recorder_inner" type="service_closure" id="cache.webpack_encore.recorder_inner" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Project\RuleInterface" type="service_closure" id="App\Project\RoyalFlush" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface" type="service_closure" id="parameter_bag" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface" type="service_closure" id="parameter_bag" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\Component\EventDispatcher\EventDispatcherInterface" type="service_closure" id="debug.event_dispatcher" on-invalid="ignore_uninitialized"/>
@@ -8294,6 +8301,7 @@
         <argument key="Twig\Extra\Markdown\MarkdownRuntime" type="service_closure" id="twig.runtime.markdown"/>
       </argument>
     </service>
+    <service id="App\Project\RuleInterface" alias="App\Project\RoyalFlush"/>
     <service id="App\Kernel" alias="kernel" public="true"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface" alias="parameter_bag"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface" alias="parameter_bag"/>

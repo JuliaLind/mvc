@@ -66,7 +66,7 @@ class Grid
     /**
      * @return array<string,bool|string>
      */
-    public function slotData(int $row, int $col): array
+    private function slotData(int $row, int $col): array
     {
         $data = [
             'filled' => false,
