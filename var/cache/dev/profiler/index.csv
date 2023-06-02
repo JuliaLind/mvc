@@ -43,3 +43,4 @@ f0edcc,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/read_many,16
 ec6a09,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/read_many,1685521763,,200
 6ffced,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/read_one/9781491952023,1685521765,,200
 88075e,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/update/9781491952023,1685521767,,200
+10b09f,::1,GET,http://localhost/dbwebb/mvc/me/report/public/metrics,1685668152,,200

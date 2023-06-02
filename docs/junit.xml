@@ -1,355 +1,355 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="217" assertions="438" errors="0" failures="0" skipped="0" time="2.198919">
-    <testsuite name="Project Test Suite" tests="217" assertions="438" errors="0" failures="0" skipped="0" time="2.198919">
-      <testsuite name="App\Cards\CardDeckHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardDeckHandlerTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.047938">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardDeckHandlerTest.php" line="16" class="App\Cards\CardDeckHandlerTest" classname="App.Cards.CardDeckHandlerTest" assertions="1" time="0.038559"/>
-        <testcase name="testGetDeckRouteData" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardDeckHandlerTest.php" line="25" class="App\Cards\CardDeckHandlerTest" classname="App.Cards.CardDeckHandlerTest" assertions="2" time="0.009379"/>
-      </testsuite>
-      <testsuite name="App\Cards\CardGraphicTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardGraphicTest.php" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.007630">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardGraphicTest.php" line="16" class="App\Cards\CardGraphicTest" classname="App.Cards.CardGraphicTest" assertions="2" time="0.007630"/>
-      </testsuite>
-      <testsuite name="App\Cards\CardHandTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" tests="8" assertions="14" errors="0" failures="0" skipped="0" time="0.015649">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="22" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="5" time="0.004698"/>
-        <testcase name="testAddOneCardOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="43" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="2" time="0.001341"/>
-        <testcase name="testGetValues" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="67" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="1" time="0.001524"/>
-        <testcase name="testGetAsString" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="93" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="1" time="0.002096"/>
-        <testcase name="testGetImgLinksAndDescr" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="118" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="1" time="0.001738"/>
-        <testcase name="testAddManyCardsOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="147" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="1" time="0.000892"/>
-        <testcase name="testAddManyCardsNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="163" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="1" time="0.002443"/>
-        <testcase name="testEmptyHandOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="183" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="2" time="0.000917"/>
-      </testsuite>
-      <testsuite name="App\Cards\CardHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandlerTest.php" tests="4" assertions="9" errors="0" failures="0" skipped="0" time="0.014224">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandlerTest.php" line="16" class="App\Cards\CardHandlerTest" classname="App.Cards.CardHandlerTest" assertions="1" time="0.004466"/>
-        <testcase name="testGetDataForDrawOneCard" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandlerTest.php" line="26" class="App\Cards\CardHandlerTest" classname="App.Cards.CardHandlerTest" assertions="2" time="0.006535"/>
-        <testcase name="testGetDataForDrawManyCards" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandlerTest.php" line="56" class="App\Cards\CardHandlerTest" classname="App.Cards.CardHandlerTest" assertions="1" time="0.001408"/>
-        <testcase name="testGetDataForDrawManyCardsManyPlayers" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandlerTest.php" line="70" class="App\Cards\CardHandlerTest" classname="App.Cards.CardHandlerTest" assertions="5" time="0.001815"/>
-      </testsuite>
-      <testsuite name="App\Cards\CardLandingHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardLandingHandlerTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.003335">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardLandingHandlerTest.php" line="15" class="App\Cards\CardLandingHandlerTest" classname="App.Cards.CardLandingHandlerTest" assertions="1" time="0.002675"/>
-        <testcase name="testGetMainData" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardLandingHandlerTest.php" line="24" class="App\Cards\CardLandingHandlerTest" classname="App.Cards.CardLandingHandlerTest" assertions="1" time="0.000660"/>
-      </testsuite>
-      <testsuite name="App\Cards\CardTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardTest.php" tests="2" assertions="10" errors="0" failures="0" skipped="0" time="0.001440">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardTest.php" line="16" class="App\Cards\CardTest" classname="App.Cards.CardTest" assertions="5" time="0.000739"/>
-        <testcase name="testCreateDifferentObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardTest.php" line="42" class="App\Cards\CardTest" classname="App.Cards.CardTest" assertions="5" time="0.000701"/>
-      </testsuite>
-      <testsuite name="App\Cards\DeckOfCardsExtTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsExtTest.php" tests="1" assertions="5" errors="0" failures="0" skipped="0" time="0.002608">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsExtTest.php" line="16" class="App\Cards\DeckOfCardsExtTest" classname="App.Cards.DeckOfCardsExtTest" assertions="5" time="0.002608"/>
-      </testsuite>
-      <testsuite name="App\Cards\DeckOfCardsTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" tests="9" assertions="21" errors="0" failures="0" skipped="0" time="0.011152">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="17" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="4" time="0.000872"/>
-        <testcase name="testDrawOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="43" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="1" time="0.001168"/>
-        <testcase name="testDrawNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="65" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="1" time="0.001173"/>
-        <testcase name="testCardCountOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="84" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="1" time="0.001072"/>
-        <testcase name="testGetAsStringOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="101" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="5" time="0.001303"/>
-        <testcase name="testGetAsStringNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="126" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="1" time="0.000841"/>
-        <testcase name="testGetImgLinksOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="143" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="5" time="0.001285"/>
-        <testcase name="testGetImgLinksNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="169" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="1" time="0.000825"/>
-        <testcase name="testShuffleOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="185" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="2" time="0.002614"/>
-      </testsuite>
-      <testsuite name="App\Cards\JsonCardHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/JsonCardHandlerTest.php" tests="5" assertions="11" errors="0" failures="0" skipped="0" time="0.010173">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/JsonCardHandlerTest.php" line="16" class="App\Cards\JsonCardHandlerTest" classname="App.Cards.JsonCardHandlerTest" assertions="1" time="0.004580"/>
-        <testcase name="testGetDeckRouteData" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/JsonCardHandlerTest.php" line="25" class="App\Cards\JsonCardHandlerTest" classname="App.Cards.JsonCardHandlerTest" assertions="2" time="0.000910"/>
-        <testcase name="testGetDataForDrawOneCard" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/JsonCardHandlerTest.php" line="43" class="App\Cards\JsonCardHandlerTest" classname="App.Cards.JsonCardHandlerTest" assertions="2" time="0.001752"/>
-        <testcase name="testGetDataForDrawManyCards" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/JsonCardHandlerTest.php" line="69" class="App\Cards\JsonCardHandlerTest" classname="App.Cards.JsonCardHandlerTest" assertions="1" time="0.001133"/>
-        <testcase name="testGetDataForDrawManyCardsManyPlayers" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/JsonCardHandlerTest.php" line="83" class="App\Cards\JsonCardHandlerTest" classname="App.Cards.JsonCardHandlerTest" assertions="5" time="0.001799"/>
-      </testsuite>
-      <testsuite name="App\Cards\PlayerCreatorTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerCreatorTest.php" tests="2" assertions="5" errors="0" failures="0" skipped="0" time="0.003263">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerCreatorTest.php" line="16" class="App\Cards\PlayerCreatorTest" classname="App.Cards.PlayerCreatorTest" assertions="1" time="0.002565"/>
-        <testcase name="testCreatePlayers" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerCreatorTest.php" line="26" class="App\Cards\PlayerCreatorTest" classname="App.Cards.PlayerCreatorTest" assertions="4" time="0.000698"/>
-      </testsuite>
-      <testsuite name="App\Cards\PlayerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerTest.php" tests="4" assertions="7" errors="0" failures="0" skipped="0" time="0.004140">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerTest.php" line="22" class="App\Cards\PlayerTest" classname="App.Cards.PlayerTest" assertions="4" time="0.000712"/>
-        <testcase name="testDrawOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerTest.php" line="42" class="App\Cards\PlayerTest" classname="App.Cards.PlayerTest" assertions="1" time="0.001468"/>
-        <testcase name="testDrawManyOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerTest.php" line="61" class="App\Cards\PlayerTest" classname="App.Cards.PlayerTest" assertions="1" time="0.000860"/>
-        <testcase name="testDrawManyNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerTest.php" line="81" class="App\Cards\PlayerTest" classname="App.Cards.PlayerTest" assertions="1" time="0.001100"/>
-      </testsuite>
-      <testsuite name="App\Controller\CardControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardControllerTest.php" tests="5" assertions="26" errors="0" failures="0" skipped="0" time="1.152114">
-        <testcase name="testDeck" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardControllerTest.php" line="9" class="App\Controller\CardControllerTest" classname="App.Controller.CardControllerTest" assertions="4" time="1.102817"/>
-        <testcase name="testShuffle" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardControllerTest.php" line="18" class="App\Controller\CardControllerTest" classname="App.Controller.CardControllerTest" assertions="4" time="0.012813"/>
-        <testcase name="testDraw" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardControllerTest.php" line="27" class="App\Controller\CardControllerTest" classname="App.Controller.CardControllerTest" assertions="6" time="0.014731"/>
-        <testcase name="testDrawMany" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardControllerTest.php" line="37" class="App\Controller\CardControllerTest" classname="App.Controller.CardControllerTest" assertions="6" time="0.010191"/>
-        <testcase name="testDeal" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardControllerTest.php" line="47" class="App\Controller\CardControllerTest" classname="App.Controller.CardControllerTest" assertions="6" time="0.011563"/>
-      </testsuite>
-      <testsuite name="App\Controller\CardLandingControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardLandingControllerTest.php" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.018731">
-        <testcase name="testCard" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardLandingControllerTest.php" line="9" class="App\Controller\CardLandingControllerTest" classname="App.Controller.CardLandingControllerTest" assertions="4" time="0.018731"/>
-      </testsuite>
-      <testsuite name="App\Controller\Game21ControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" tests="8" assertions="32" errors="0" failures="0" skipped="0" time="0.131243">
-        <testcase name="testGame" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="9" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="6" time="0.017963"/>
-        <testcase name="testDoc" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="19" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="4" time="0.012285"/>
-        <testcase name="testInit" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="28" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="3" time="0.007724"/>
-        <testcase name="testSelectAmount" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="36" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="6" time="0.022993"/>
-        <testcase name="testBet" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="53" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="3" time="0.013678"/>
-        <testcase name="testPlayerDraw" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="62" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="3" time="0.012408"/>
-        <testcase name="testBankPlaying" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="71" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="3" time="0.012285"/>
-        <testcase name="testPlay" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="80" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="4" time="0.031906"/>
-      </testsuite>
-      <testsuite name="App\Controller\JsonCardDealControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonCardDealControllerTest.php" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.007123">
-        <testcase name="testJsonDeal" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonCardDealControllerTest.php" line="9" class="App\Controller\JsonCardDealControllerTest" classname="App.Controller.JsonCardDealControllerTest" assertions="2" time="0.007123"/>
-      </testsuite>
-      <testsuite name="App\Controller\JsonCardDeckControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonCardDeckControllerTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="0.013111">
-        <testcase name="testJsonDeck" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonCardDeckControllerTest.php" line="9" class="App\Controller\JsonCardDeckControllerTest" classname="App.Controller.JsonCardDeckControllerTest" assertions="2" time="0.006382"/>
-        <testcase name="testJsonShuffle" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonCardDeckControllerTest.php" line="17" class="App\Controller\JsonCardDeckControllerTest" classname="App.Controller.JsonCardDeckControllerTest" assertions="2" time="0.006729"/>
-      </testsuite>
-      <testsuite name="App\Controller\JsonControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonControllerTest.php" tests="2" assertions="6" errors="0" failures="0" skipped="0" time="0.026573">
-        <testcase name="testApi" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonControllerTest.php" line="9" class="App\Controller\JsonControllerTest" classname="App.Controller.JsonControllerTest" assertions="4" time="0.017341"/>
-        <testcase name="testQuote" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonControllerTest.php" line="18" class="App\Controller\JsonControllerTest" classname="App.Controller.JsonControllerTest" assertions="2" time="0.009232"/>
-      </testsuite>
-      <testsuite name="App\Controller\JsonDealManyCardsControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonDealManyCardsControllerTest.php" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.006556">
-        <testcase name="testJsonDrawMany" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonDealManyCardsControllerTest.php" line="9" class="App\Controller\JsonDealManyCardsControllerTest" classname="App.Controller.JsonDealManyCardsControllerTest" assertions="2" time="0.006556"/>
-      </testsuite>
-      <testsuite name="App\Controller\JsonDealOneCardControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonDealOneCardControllerTest.php" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.006498">
-        <testcase name="testDraw" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonDealOneCardControllerTest.php" line="9" class="App\Controller\JsonDealOneCardControllerTest" classname="App.Controller.JsonDealOneCardControllerTest" assertions="2" time="0.006498"/>
-      </testsuite>
-      <testsuite name="App\Controller\JsonGame21ControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonGame21ControllerTest.php" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.013092">
-        <testcase name="testDraw" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonGame21ControllerTest.php" line="9" class="App\Controller\JsonGame21ControllerTest" classname="App.Controller.JsonGame21ControllerTest" assertions="2" time="0.013092"/>
-      </testsuite>
-      <testsuite name="App\Controller\JsonLibraryControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonLibraryControllerTest.php" tests="3" assertions="10" errors="0" failures="0" skipped="0" time="0.046311">
-        <testcase name="testShowAllBooks" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonLibraryControllerTest.php" line="9" class="App\Controller\JsonLibraryControllerTest" classname="App.Controller.JsonLibraryControllerTest" assertions="2" time="0.025923"/>
-        <testcase name="testShowABookByIsbnNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonLibraryControllerTest.php" line="17" class="App\Controller\JsonLibraryControllerTest" classname="App.Controller.JsonLibraryControllerTest" assertions="4" time="0.013663"/>
-        <testcase name="testShowABookByIsbnOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonLibraryControllerTest.php" line="28" class="App\Controller\JsonLibraryControllerTest" classname="App.Controller.JsonLibraryControllerTest" assertions="4" time="0.006725"/>
-      </testsuite>
-      <testsuite name="App\Controller\LibraryControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" tests="9" assertions="29" errors="0" failures="0" skipped="0" time="0.408129">
-        <testcase name="testLibrary" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="11" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="4" time="0.013645"/>
-        <testcase name="testCreateForm" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="20" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="4" time="0.012759"/>
-        <testcase name="testCreateNewOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="29" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="3" time="0.008236"/>
-        <testcase name="testCreateNewNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="46" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="3" time="0.007116"/>
-        <testcase name="testReadOneOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="63" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="4" time="0.018873"/>
-        <testcase name="testReadOneNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="72" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="3" time="0.006867"/>
-        <testcase name="testReadMany" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="80" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="4" time="0.018762"/>
-        <testcase name="testRemoveOne" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="89" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="3" time="0.009067"/>
-        <testcase name="testReset" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="97" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="1" time="0.312802"/>
-      </testsuite>
-      <testsuite name="App\Controller\LibraryUpdateBookControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryUpdateBookControllerTest.php" tests="4" assertions="13" errors="0" failures="0" skipped="0" time="0.042235">
-        <testcase name="testUpdateForm" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryUpdateBookControllerTest.php" line="9" class="App\Controller\LibraryUpdateBookControllerTest" classname="App.Controller.LibraryUpdateBookControllerTest" assertions="4" time="0.017130"/>
-        <testcase name="testUpdateOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryUpdateBookControllerTest.php" line="18" class="App\Controller\LibraryUpdateBookControllerTest" classname="App.Controller.LibraryUpdateBookControllerTest" assertions="3" time="0.008098"/>
-        <testcase name="testUpdateAnotherOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryUpdateBookControllerTest.php" line="37" class="App\Controller\LibraryUpdateBookControllerTest" classname="App.Controller.LibraryUpdateBookControllerTest" assertions="3" time="0.009037"/>
-        <testcase name="testUpdateNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryUpdateBookControllerTest.php" line="56" class="App\Controller\LibraryUpdateBookControllerTest" classname="App.Controller.LibraryUpdateBookControllerTest" assertions="3" time="0.007971"/>
-      </testsuite>
-      <testsuite name="App\Controller\MainControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/MainControllerTest.php" tests="5" assertions="13" errors="0" failures="0" skipped="0" time="0.058946">
-        <testcase name="testHome" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/MainControllerTest.php" line="12" class="App\Controller\MainControllerTest" classname="App.Controller.MainControllerTest" assertions="2" time="0.011892"/>
-        <testcase name="testAbout" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/MainControllerTest.php" line="25" class="App\Controller\MainControllerTest" classname="App.Controller.MainControllerTest" assertions="2" time="0.010776"/>
-        <testcase name="testReport" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/MainControllerTest.php" line="33" class="App\Controller\MainControllerTest" classname="App.Controller.MainControllerTest" assertions="2" time="0.012162"/>
-        <testcase name="testLucky" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/MainControllerTest.php" line="41" class="App\Controller\MainControllerTest" classname="App.Controller.MainControllerTest" assertions="5" time="0.010860"/>
-        <testcase name="testMetrics" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/MainControllerTest.php" line="52" class="App\Controller\MainControllerTest" classname="App.Controller.MainControllerTest" assertions="2" time="0.013257"/>
-      </testsuite>
-      <testsuite name="App\Entity\BookTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Entity/BookTest.php" tests="1" assertions="6" errors="0" failures="0" skipped="0" time="0.001005">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Entity/BookTest.php" line="18" class="App\Entity\BookTest" classname="App.Entity.BookTest" assertions="6" time="0.001005"/>
-      </testsuite>
-      <testsuite name="App\Game\BanksTurnHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BanksTurnHandlerTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="0.003164">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BanksTurnHandlerTest.php" line="16" class="App\Game\BanksTurnHandlerTest" classname="App.Game.BanksTurnHandlerTest" assertions="1" time="0.000781"/>
-        <testcase name="testBankDraw" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BanksTurnHandlerTest.php" line="25" class="App\Game\BanksTurnHandlerTest" classname="App.Game.BanksTurnHandlerTest" assertions="3" time="0.002383"/>
-      </testsuite>
-      <testsuite name="App\Game\BettingGameTraitTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BettingGameTraitTest.php" tests="5" assertions="8" errors="0" failures="0" skipped="0" time="0.004948">
-        <testcase name="testGetInvestLimit" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BettingGameTraitTest.php" line="34" class="App\Game\BettingGameTraitTest" classname="App.Game.BettingGameTraitTest" assertions="3" time="0.000856"/>
-        <testcase name="testAddToMoneyPotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BettingGameTraitTest.php" line="52" class="App\Game\BettingGameTraitTest" classname="App.Game.BettingGameTraitTest" assertions="1" time="0.001096"/>
-        <testcase name="testAddToMoneyPotNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BettingGameTraitTest.php" line="66" class="App\Game\BettingGameTraitTest" classname="App.Game.BettingGameTraitTest" assertions="2" time="0.001095"/>
-        <testcase name="testIsWinnerOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BettingGameTraitTest.php" line="84" class="App\Game\BettingGameTraitTest" classname="App.Game.BettingGameTraitTest" assertions="1" time="0.001039"/>
-        <testcase name="testIsWinnerNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BettingGameTraitTest.php" line="93" class="App\Game\BettingGameTraitTest" classname="App.Game.BettingGameTraitTest" assertions="1" time="0.000862"/>
-      </testsuite>
-      <testsuite name="App\Game\Game21EasyEvaluateBankTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateBankTest.php" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.005451">
-        <testcase name="testEvaluateBankBoth21" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateBankTest.php" line="21" class="App\Game\Game21EasyEvaluateBankTest" classname="App.Game.Game21EasyEvaluateBankTest" assertions="1" time="0.001378"/>
-        <testcase name="testEvaluateBankPlayerBetterHand" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateBankTest.php" line="58" class="App\Game\Game21EasyEvaluateBankTest" classname="App.Game.Game21EasyEvaluateBankTest" assertions="1" time="0.001460"/>
-        <testcase name="testEvaluateBankAbove21" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateBankTest.php" line="95" class="App\Game\Game21EasyEvaluateBankTest" classname="App.Game.Game21EasyEvaluateBankTest" assertions="1" time="0.001304"/>
-        <testcase name="testEvaluateBankWin" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateBankTest.php" line="133" class="App\Game\Game21EasyEvaluateBankTest" classname="App.Game.Game21EasyEvaluateBankTest" assertions="1" time="0.001309"/>
-      </testsuite>
-      <testsuite name="App\Game\Game21EasyEvaluateTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateTest.php" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.005204">
-        <testcase name="testEvaluateUnder21" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateTest.php" line="22" class="App\Game\Game21EasyEvaluateTest" classname="App.Game.Game21EasyEvaluateTest" assertions="1" time="0.001331"/>
-        <testcase name="testEvaluateAbove21" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateTest.php" line="56" class="App\Game\Game21EasyEvaluateTest" classname="App.Game.Game21EasyEvaluateTest" assertions="1" time="0.001330"/>
-        <testcase name="testEvaluateAt21" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateTest.php" line="92" class="App\Game\Game21EasyEvaluateTest" classname="App.Game.Game21EasyEvaluateTest" assertions="1" time="0.001298"/>
-        <testcase name="testEvaluateNoCradsLeft" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateTest.php" line="128" class="App\Game\Game21EasyEvaluateTest" classname="App.Game.Game21EasyEvaluateTest" assertions="1" time="0.001246"/>
-      </testsuite>
-      <testsuite name="App\Game\Game21EasyGenerateFlashTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyGenerateFlashTest.php" tests="3" assertions="5" errors="0" failures="0" skipped="0" time="0.003496">
-        <testcase name="testGenerateFlashRoundOver" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyGenerateFlashTest.php" line="22" class="App\Game\Game21EasyGenerateFlashTest" classname="App.Game.Game21EasyGenerateFlashTest" assertions="2" time="0.001301"/>
-        <testcase name="testGenerateFlashGameOver" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyGenerateFlashTest.php" line="53" class="App\Game\Game21EasyGenerateFlashTest" classname="App.Game.Game21EasyGenerateFlashTest" assertions="2" time="0.001278"/>
-        <testcase name="testGenerateFlashRoundNotOver" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyGenerateFlashTest.php" line="84" class="App\Game\Game21EasyGenerateFlashTest" classname="App.Game.Game21EasyGenerateFlashTest" assertions="1" time="0.000917"/>
-      </testsuite>
-      <testsuite name="App\Game\Game21EasyTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyTest.php" tests="6" assertions="9" errors="0" failures="0" skipped="0" time="0.007074">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyTest.php" line="21" class="App\Game\Game21EasyTest" classname="App.Game.Game21EasyTest" assertions="4" time="0.001171"/>
-        <testcase name="testDeal" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyTest.php" line="64" class="App\Game\Game21EasyTest" classname="App.Game.Game21EasyTest" assertions="1" time="0.001046"/>
-        <testcase name="testDealBankCardsLeft" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyTest.php" line="80" class="App\Game\Game21EasyTest" classname="App.Game.Game21EasyTest" assertions="1" time="0.001345"/>
-        <testcase name="testDealBankNoCardsLeft" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyTest.php" line="102" class="App\Game\Game21EasyTest" classname="App.Game.Game21EasyTest" assertions="1" time="0.001247"/>
-        <testcase name="testGetRiskPlayer" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyTest.php" line="122" class="App\Game\Game21EasyTest" classname="App.Game.Game21EasyTest" assertions="1" time="0.001114"/>
-        <testcase name="testGetRiskBank" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyTest.php" line="136" class="App\Game\Game21EasyTest" classname="App.Game.Game21EasyTest" assertions="1" time="0.001152"/>
-      </testsuite>
-      <testsuite name="App\Game\Game21HardTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21HardTest.php" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="0.004119">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21HardTest.php" line="21" class="App\Game\Game21HardTest" classname="App.Game.Game21HardTest" assertions="2" time="0.001072"/>
-        <testcase name="testDealBank" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21HardTest.php" line="43" class="App\Game\Game21HardTest" classname="App.Game.Game21HardTest" assertions="2" time="0.001432"/>
-        <testcase name="testDealBankNoCardsLeft" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21HardTest.php" line="67" class="App\Game\Game21HardTest" classname="App.Game.Game21HardTest" assertions="2" time="0.001615"/>
-      </testsuite>
-      <testsuite name="App\Game\GameAttrHandler2TraitTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" tests="9" assertions="9" errors="0" failures="0" skipped="0" time="0.008088">
-        <testcase name="testSetBank" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="27" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000912"/>
-        <testcase name="testGetBank" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="37" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000944"/>
-        <testcase name="testSetPlayer" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="47" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000983"/>
-        <testcase name="testGetPlayer" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="57" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000916"/>
-        <testcase name="testSetCurrentRound" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="67" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000802"/>
-        <testcase name="testGetCurrentRound" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="76" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000781"/>
-        <testcase name="testSetWinner" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="86" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.001094"/>
-        <testcase name="testGetWinnerOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="99" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000899"/>
-        <testcase name="testGetWinnerNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="112" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000757"/>
-      </testsuite>
-      <testsuite name="App\Game\GameAttrHandlerTraitTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" tests="7" assertions="7" errors="0" failures="0" skipped="0" time="0.005542">
-        <testcase name="testSetMoneyPot" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" line="34" class="App\Game\GameAttrHandlerTraitTest" classname="App.Game.GameAttrHandlerTraitTest" assertions="1" time="0.000855"/>
-        <testcase name="testGetMoneyPot" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" line="44" class="App\Game\GameAttrHandlerTraitTest" classname="App.Game.GameAttrHandlerTraitTest" assertions="1" time="0.000865"/>
-        <testcase name="testSetRoundOver" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" line="57" class="App\Game\GameAttrHandlerTraitTest" classname="App.Game.GameAttrHandlerTraitTest" assertions="1" time="0.000744"/>
-        <testcase name="testIsRoundOver" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" line="67" class="App\Game\GameAttrHandlerTraitTest" classname="App.Game.GameAttrHandlerTraitTest" assertions="1" time="0.000722"/>
-        <testcase name="testIsBankPlaying" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" line="76" class="App\Game\GameAttrHandlerTraitTest" classname="App.Game.GameAttrHandlerTraitTest" assertions="1" time="0.000751"/>
-        <testcase name="testSetBankPlaying" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" line="85" class="App\Game\GameAttrHandlerTraitTest" classname="App.Game.GameAttrHandlerTraitTest" assertions="1" time="0.000807"/>
-        <testcase name="testSetFinished" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" line="95" class="App\Game\GameAttrHandlerTraitTest" classname="App.Game.GameAttrHandlerTraitTest" assertions="1" time="0.000798"/>
-      </testsuite>
-      <testsuite name="App\Game\GameHandlerLandingTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerLandingTest.php" tests="5" assertions="9" errors="0" failures="0" skipped="0" time="0.005113">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerLandingTest.php" line="16" class="App\Game\GameHandlerLandingTest" classname="App.Game.GameHandlerLandingTest" assertions="1" time="0.000790"/>
-        <testcase name="testMainNoGame" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerLandingTest.php" line="25" class="App\Game\GameHandlerLandingTest" classname="App.Game.GameHandlerLandingTest" assertions="2" time="0.001085"/>
-        <testcase name="testMainGameFinished" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerLandingTest.php" line="44" class="App\Game\GameHandlerLandingTest" classname="App.Game.GameHandlerLandingTest" assertions="2" time="0.001175"/>
-        <testcase name="testMainGameNotFinished" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerLandingTest.php" line="65" class="App\Game\GameHandlerLandingTest" classname="App.Game.GameHandlerLandingTest" assertions="2" time="0.001138"/>
-        <testcase name="testDoc" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerLandingTest.php" line="86" class="App\Game\GameHandlerLandingTest" classname="App.Game.GameHandlerLandingTest" assertions="2" time="0.000925"/>
-      </testsuite>
-      <testsuite name="App\Game\GameHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.001781">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerTest.php" line="16" class="App\Game\GameHandlerTest" classname="App.Game.GameHandlerTest" assertions="1" time="0.000688"/>
-        <testcase name="testPlay" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerTest.php" line="25" class="App\Game\GameHandlerTest" classname="App.Game.GameHandlerTest" assertions="1" time="0.001093"/>
-      </testsuite>
-      <testsuite name="App\Game\GameInitiatorTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameInitiatorTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.002130">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameInitiatorTest.php" line="15" class="App\Game\GameInitiatorTest" classname="App.Game.GameInitiatorTest" assertions="1" time="0.000864"/>
-        <testcase name="testInit" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameInitiatorTest.php" line="25" class="App\Game\GameInitiatorTest" classname="App.Game.GameInitiatorTest" assertions="2" time="0.001266"/>
-      </testsuite>
-      <testsuite name="App\Game\GameMoneyHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameMoneyHandlerTest.php" tests="3" assertions="4" errors="0" failures="0" skipped="0" time="0.002671">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameMoneyHandlerTest.php" line="15" class="App\Game\GameMoneyHandlerTest" classname="App.Game.GameMoneyHandlerTest" assertions="1" time="0.000812"/>
-        <testcase name="testSelectAmount" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameMoneyHandlerTest.php" line="24" class="App\Game\GameMoneyHandlerTest" classname="App.Game.GameMoneyHandlerTest" assertions="2" time="0.000989"/>
-        <testcase name="testBet" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameMoneyHandlerTest.php" line="52" class="App\Game\GameMoneyHandlerTest" classname="App.Game.GameMoneyHandlerTest" assertions="1" time="0.000870"/>
-      </testsuite>
-      <testsuite name="App\Game\GameTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="0.001752">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="17" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="3" time="0.000884"/>
-        <testcase name="testCardsLeftOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="34" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.000868"/>
-      </testsuite>
-      <testsuite name="App\Game\JsonGameHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/JsonGameHandlerTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.001853">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/JsonGameHandlerTest.php" line="16" class="App\Game\JsonGameHandlerTest" classname="App.Game.JsonGameHandlerTest" assertions="1" time="0.000674"/>
-        <testcase name="testJsonGame" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/JsonGameHandlerTest.php" line="26" class="App\Game\JsonGameHandlerTest" classname="App.Game.JsonGameHandlerTest" assertions="1" time="0.001178"/>
-      </testsuite>
-      <testsuite name="App\Game\MoneyPotTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/MoneyPotTest.php" tests="3" assertions="5" errors="0" failures="0" skipped="0" time="0.002674">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/MoneyPotTest.php" line="25" class="App\Game\MoneyPotTest" classname="App.Game.MoneyPotTest" assertions="2" time="0.000738"/>
-        <testcase name="testAddMoneyOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/MoneyPotTest.php" line="37" class="App\Game\MoneyPotTest" classname="App.Game.MoneyPotTest" assertions="1" time="0.000918"/>
-        <testcase name="testMoneyToWinnerOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/MoneyPotTest.php" line="51" class="App\Game\MoneyPotTest" classname="App.Game.MoneyPotTest" assertions="2" time="0.001017"/>
-      </testsuite>
-      <testsuite name="App\Game\Player21Test" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Player21Test.php" tests="6" assertions="13" errors="0" failures="0" skipped="0" time="0.005508">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Player21Test.php" line="19" class="App\Game\Player21Test" classname="App.Game.Player21Test" assertions="2" time="0.000765"/>
-        <testcase name="testIncrMoneyOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Player21Test.php" line="32" class="App\Game\Player21Test" classname="App.Game.Player21Test" assertions="2" time="0.000739"/>
-        <testcase name="testDecrMoneyOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Player21Test.php" line="52" class="App\Game\Player21Test" classname="App.Game.Player21Test" assertions="2" time="0.000740"/>
-        <testcase name="testHandValue" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Player21Test.php" line="76" class="App\Game\Player21Test" classname="App.Game.Player21Test" assertions="1" time="0.000935"/>
-        <testcase name="testMinHandValue" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Player21Test.php" line="92" class="App\Game\Player21Test" classname="App.Game.Player21Test" assertions="1" time="0.000904"/>
-        <testcase name="testEstimateRisk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Player21Test.php" line="106" class="App\Game\Player21Test" classname="App.Game.Player21Test" assertions="5" time="0.001426"/>
-      </testsuite>
-      <testsuite name="App\Game\PlayerTraitTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTraitTest.php" tests="5" assertions="5" errors="0" failures="0" skipped="0" time="0.004530">
-        <testcase name="testDraw" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTraitTest.php" line="21" class="App\Game\PlayerTraitTest" classname="App.Game.PlayerTraitTest" assertions="1" time="0.000961"/>
-        <testcase name="testEmptyHandOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTraitTest.php" line="37" class="App\Game\PlayerTraitTest" classname="App.Game.PlayerTraitTest" assertions="1" time="0.000884"/>
-        <testcase name="testGetCardValues" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTraitTest.php" line="51" class="App\Game\PlayerTraitTest" classname="App.Game.PlayerTraitTest" assertions="1" time="0.000945"/>
-        <testcase name="testShowHandAsString" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTraitTest.php" line="65" class="App\Game\PlayerTraitTest" classname="App.Game.PlayerTraitTest" assertions="1" time="0.000875"/>
-        <testcase name="testGetCardCount" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTraitTest.php" line="79" class="App\Game\PlayerTraitTest" classname="App.Game.PlayerTraitTest" assertions="1" time="0.000864"/>
-      </testsuite>
-      <testsuite name="App\Game\PlayerTurnHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTurnHandlerTest.php" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="0.003105">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTurnHandlerTest.php" line="15" class="App\Game\PlayerTurnHandlerTest" classname="App.Game.PlayerTurnHandlerTest" assertions="1" time="0.000690"/>
-        <testcase name="testPlayerDrawRoundOver" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTurnHandlerTest.php" line="24" class="App\Game\PlayerTurnHandlerTest" classname="App.Game.PlayerTurnHandlerTest" assertions="3" time="0.001267"/>
-        <testcase name="testPlayerDrawRoundNotOver" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTurnHandlerTest.php" line="49" class="App\Game\PlayerTurnHandlerTest" classname="App.Game.PlayerTurnHandlerTest" assertions="2" time="0.001148"/>
-      </testsuite>
-      <testsuite name="App\Game\RoundHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/RoundHandlerTest.php" tests="5" assertions="9" errors="0" failures="0" skipped="0" time="0.007286">
-        <testcase name="testEndRoundNoCardsLeftNotSameFinalWinner" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/RoundHandlerTest.php" line="23" class="App\Game\RoundHandlerTest" classname="App.Game.RoundHandlerTest" assertions="2" time="0.002169"/>
-        <testcase name="testDeterminePlayerWinner" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/RoundHandlerTest.php" line="56" class="App\Game\RoundHandlerTest" classname="App.Game.RoundHandlerTest" assertions="1" time="0.001014"/>
-        <testcase name="testDetermineBankWinner" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/RoundHandlerTest.php" line="68" class="App\Game\RoundHandlerTest" classname="App.Game.RoundHandlerTest" assertions="1" time="0.001017"/>
-        <testcase name="testFinishGame" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/RoundHandlerTest.php" line="80" class="App\Game\RoundHandlerTest" classname="App.Game.RoundHandlerTest" assertions="1" time="0.001187"/>
-        <testcase name="testNextRound" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/RoundHandlerTest.php" line="93" class="App\Game\RoundHandlerTest" classname="App.Game.RoundHandlerTest" assertions="4" time="0.001899"/>
-      </testsuite>
-      <testsuite name="App\Helpers\JsonConverterTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/JsonConverterTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.004573">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/JsonConverterTest.php" line="17" class="App\Helpers\JsonConverterTest" classname="App.Helpers.JsonConverterTest" assertions="1" time="0.000674"/>
-        <testcase name="testConvert" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/JsonConverterTest.php" line="26" class="App\Helpers\JsonConverterTest" classname="App.Helpers.JsonConverterTest" assertions="2" time="0.003899"/>
-      </testsuite>
-      <testsuite name="App\Helpers\JsonHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/JsonHandlerTest.php" tests="3" assertions="3" errors="0" failures="0" skipped="0" time="0.002154">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/JsonHandlerTest.php" line="30" class="App\Helpers\JsonHandlerTest" classname="App.Helpers.JsonHandlerTest" assertions="1" time="0.000736"/>
-        <testcase name="testGetLandingData" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/JsonHandlerTest.php" line="39" class="App\Helpers\JsonHandlerTest" classname="App.Helpers.JsonHandlerTest" assertions="1" time="0.000712"/>
-        <testcase name="testGenerateQuote" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/JsonHandlerTest.php" line="101" class="App\Helpers\JsonHandlerTest" classname="App.Helpers.JsonHandlerTest" assertions="1" time="0.000706"/>
-      </testsuite>
-      <testsuite name="App\Helpers\LuckyRouteDataTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/LuckyRouteDataTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.001369">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/LuckyRouteDataTest.php" line="15" class="App\Helpers\LuckyRouteDataTest" classname="App.Helpers.LuckyRouteDataTest" assertions="1" time="0.000671"/>
-        <testcase name="testLuckyData" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/LuckyRouteDataTest.php" line="25" class="App\Helpers\LuckyRouteDataTest" classname="App.Helpers.LuckyRouteDataTest" assertions="1" time="0.000698"/>
-      </testsuite>
-      <testsuite name="App\Helpers\MainControllerHelperTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/MainControllerHelperTest.php" tests="3" assertions="5" errors="0" failures="0" skipped="0" time="0.002444">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/MainControllerHelperTest.php" line="16" class="App\Helpers\MainControllerHelperTest" classname="App.Helpers.MainControllerHelperTest" assertions="1" time="0.000661"/>
-        <testcase name="testStandardData" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/MainControllerHelperTest.php" line="25" class="App\Helpers\MainControllerHelperTest" classname="App.Helpers.MainControllerHelperTest" assertions="2" time="0.000891"/>
-        <testcase name="testReportData" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/MainControllerHelperTest.php" line="51" class="App\Helpers\MainControllerHelperTest" classname="App.Helpers.MainControllerHelperTest" assertions="2" time="0.000892"/>
-      </testsuite>
-      <testsuite name="App\Library\BookRemoverTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookRemoverTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.003281">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookRemoverTest.php" line="21" class="App\Library\BookRemoverTest" classname="App.Library.BookRemoverTest" assertions="1" time="0.000771"/>
-        <testcase name="testRemoveBook" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookRemoverTest.php" line="30" class="App\Library\BookRemoverTest" classname="App.Library.BookRemoverTest" assertions="1" time="0.002510"/>
-      </testsuite>
-      <testsuite name="App\Library\BookSaverTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookSaverTest.php" tests="3" assertions="5" errors="0" failures="0" skipped="0" time="0.002784">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookSaverTest.php" line="21" class="App\Library\BookSaverTest" classname="App.Library.BookSaverTest" assertions="1" time="0.000729"/>
-        <testcase name="testSaveBookOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookSaverTest.php" line="30" class="App\Library\BookSaverTest" classname="App.Library.BookSaverTest" assertions="2" time="0.001011"/>
-        <testcase name="testSaveBookNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookSaverTest.php" line="47" class="App\Library\BookSaverTest" classname="App.Library.BookSaverTest" assertions="2" time="0.001045"/>
-      </testsuite>
-      <testsuite name="App\Library\BookUpdatorTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookUpdatorTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.004689">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookUpdatorTest.php" line="21" class="App\Library\BookUpdatorTest" classname="App.Library.BookUpdatorTest" assertions="1" time="0.000664"/>
-        <testcase name="testUpdateBook" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookUpdatorTest.php" line="30" class="App\Library\BookUpdatorTest" classname="App.Library.BookUpdatorTest" assertions="2" time="0.004025"/>
-      </testsuite>
-      <testsuite name="App\Library\LibraryHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryHandlerTest.php" tests="5" assertions="18" errors="0" failures="0" skipped="0" time="0.007095">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryHandlerTest.php" line="20" class="App\Library\LibraryHandlerTest" classname="App.Library.LibraryHandlerTest" assertions="1" time="0.000746"/>
-        <testcase name="testUpdateOne" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryHandlerTest.php" line="29" class="App\Library\LibraryHandlerTest" classname="App.Library.LibraryHandlerTest" assertions="6" time="0.002065"/>
-        <testcase name="testCreateOne" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryHandlerTest.php" line="76" class="App\Library\LibraryHandlerTest" classname="App.Library.LibraryHandlerTest" assertions="4" time="0.001646"/>
-        <testcase name="testRemoveOne" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryHandlerTest.php" line="114" class="App\Library\LibraryHandlerTest" classname="App.Library.LibraryHandlerTest" assertions="4" time="0.001645"/>
-        <testcase name="testSettersGetters" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryHandlerTest.php" line="152" class="App\Library\LibraryHandlerTest" classname="App.Library.LibraryHandlerTest" assertions="3" time="0.000994"/>
-      </testsuite>
-      <testsuite name="App\Library\NewFlashGeneratorTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/NewFlashGeneratorTest.php" tests="3" assertions="3" errors="0" failures="0" skipped="0" time="0.002797">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/NewFlashGeneratorTest.php" line="17" class="App\Library\NewFlashGeneratorTest" classname="App.Library.NewFlashGeneratorTest" assertions="1" time="0.000705"/>
-        <testcase name="testNewFlashOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/NewFlashGeneratorTest.php" line="28" class="App\Library\NewFlashGeneratorTest" classname="App.Library.NewFlashGeneratorTest" assertions="1" time="0.000933"/>
-        <testcase name="testNewFlashNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/NewFlashGeneratorTest.php" line="47" class="App\Library\NewFlashGeneratorTest" classname="App.Library.NewFlashGeneratorTest" assertions="1" time="0.001159"/>
-      </testsuite>
-      <testsuite name="App\Library\RemoveFlashGeneratorTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/RemoveFlashGeneratorTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.001537">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/RemoveFlashGeneratorTest.php" line="17" class="App\Library\RemoveFlashGeneratorTest" classname="App.Library.RemoveFlashGeneratorTest" assertions="1" time="0.000666"/>
-        <testcase name="testRemoveFlash" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/RemoveFlashGeneratorTest.php" line="27" class="App\Library\RemoveFlashGeneratorTest" classname="App.Library.RemoveFlashGeneratorTest" assertions="1" time="0.000871"/>
-      </testsuite>
-      <testsuite name="App\Library\SqlFileLoaderTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/SqlFileLoaderTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.003775">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/SqlFileLoaderTest.php" line="28" class="App\Library\SqlFileLoaderTest" classname="App.Library.SqlFileLoaderTest" assertions="1" time="0.002780"/>
-        <testcase name="testLoad" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/SqlFileLoaderTest.php" line="39" class="App\Library\SqlFileLoaderTest" classname="App.Library.SqlFileLoaderTest" assertions="1" time="0.000996"/>
-      </testsuite>
-      <testsuite name="App\Library\UpdateFlashGeneratorTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/UpdateFlashGeneratorTest.php" tests="3" assertions="3" errors="0" failures="0" skipped="0" time="0.002637">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/UpdateFlashGeneratorTest.php" line="17" class="App\Library\UpdateFlashGeneratorTest" classname="App.Library.UpdateFlashGeneratorTest" assertions="1" time="0.000738"/>
-        <testcase name="testUpdateFlashOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/UpdateFlashGeneratorTest.php" line="28" class="App\Library\UpdateFlashGeneratorTest" classname="App.Library.UpdateFlashGeneratorTest" assertions="1" time="0.000957"/>
-        <testcase name="testUpdateFlashNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/UpdateFlashGeneratorTest.php" line="42" class="App\Library\UpdateFlashGeneratorTest" classname="App.Library.UpdateFlashGeneratorTest" assertions="1" time="0.000942"/>
-      </testsuite>
-      <testsuite name="App\Markdown\MdParserTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Markdown/MdParserTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.002785">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Markdown/MdParserTest.php" line="30" class="App\Markdown\MdParserTest" classname="App.Markdown.MdParserTest" assertions="1" time="0.000716"/>
-        <testcase name="testGetParsedText" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Markdown/MdParserTest.php" line="40" class="App\Markdown\MdParserTest" classname="App.Markdown.MdParserTest" assertions="2" time="0.002069"/>
-      </testsuite>
-      <testsuite name="App\Project\CardCounterTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/CardCounterTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.000731">
-        <testcase name="testCardCount" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/CardCounterTest.php" line="34" class="App\Project\CardCounterTest" classname="App.Project.CardCounterTest" assertions="1" time="0.000731"/>
-      </testsuite>
-      <testsuite name="App\Project\CardFactoryTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/CardFactoryTest.php" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.003315">
-        <testcase name="testFullSet" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/CardFactoryTest.php" line="12" class="App\Project\CardFactoryTest" classname="App.Project.CardFactoryTest" assertions="2" time="0.003315"/>
-      </testsuite>
-      <testsuite name="App\Project\CardTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/CardTest.php" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.001009">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/CardTest.php" line="12" class="App\Project\CardTest" classname="App.Project.CardTest" assertions="4" time="0.001009"/>
-      </testsuite>
-      <testsuite name="App\Project\GridTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/GridTest.php" tests="5" assertions="7" errors="0" failures="0" skipped="0" time="0.004244">
-        <testcase name="testSetCards" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/GridTest.php" line="87" class="App\Project\GridTest" classname="App.Project.GridTest" assertions="1" time="0.000710"/>
-        <testcase name="testRowsAndCols" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/GridTest.php" line="96" class="App\Project\GridTest" classname="App.Project.GridTest" assertions="1" time="0.001087"/>
-        <testcase name="testGraphic" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/GridTest.php" line="107" class="App\Project\GridTest" classname="App.Project.GridTest" assertions="1" time="0.000810"/>
-        <testcase name="testAddOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/GridTest.php" line="189" class="App\Project\GridTest" classname="App.Project.GridTest" assertions="2" time="0.000840"/>
-        <testcase name="testAddNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/GridTest.php" line="218" class="App\Project\GridTest" classname="App.Project.GridTest" assertions="2" time="0.000797"/>
-      </testsuite>
-      <testsuite name="App\Project\RankCounterTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RankCounterTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.000738">
-        <testcase name="testRanks" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RankCounterTest.php" line="34" class="App\Project\RankCounterTest" classname="App.Project.RankCounterTest" assertions="1" time="0.000738"/>
-      </testsuite>
-      <testsuite name="App\Project\RoyalFlushTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RoyalFlushTest.php" tests="6" assertions="6" errors="0" failures="0" skipped="0" time="0.005165">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RoyalFlushTest.php" line="12" class="App\Project\RoyalFlushTest" classname="App.Project.RoyalFlushTest" assertions="1" time="0.000714"/>
-        <testcase name="testScoreOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RoyalFlushTest.php" line="26" class="App\Project\RoyalFlushTest" classname="App.Project.RoyalFlushTest" assertions="1" time="0.000852"/>
-        <testcase name="testScoreNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RoyalFlushTest.php" line="43" class="App\Project\RoyalFlushTest" classname="App.Project.RoyalFlushTest" assertions="1" time="0.000833"/>
-        <testcase name="testScoreNotOk2" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RoyalFlushTest.php" line="55" class="App\Project\RoyalFlushTest" classname="App.Project.RoyalFlushTest" assertions="1" time="0.000837"/>
-        <testcase name="testScoreNotOk3" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RoyalFlushTest.php" line="71" class="App\Project\RoyalFlushTest" classname="App.Project.RoyalFlushTest" assertions="1" time="0.001114"/>
-        <testcase name="testScoreNotOk4" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RoyalFlushTest.php" line="84" class="App\Project\RoyalFlushTest" classname="App.Project.RoyalFlushTest" assertions="1" time="0.000815"/>
-      </testsuite>
-      <testsuite name="App\Project\SuitCounterTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/SuitCounterTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.000690">
-        <testcase name="testSuits" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/SuitCounterTest.php" line="34" class="App\Project\SuitCounterTest" classname="App.Project.SuitCounterTest" assertions="1" time="0.000690"/>
-      </testsuite>
-      <testsuite name="App\Repository\BookRepositoryTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="0.002393">
-        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="22" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" assertions="1" time="0.001242"/>
-        <testcase name="testCompareIdNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="34" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" assertions="3" time="0.001151"/>
+  <testsuite name="" tests="217" assertions="438" errors="0" failures="0" skipped="0" time="2.213504">
+    <testsuite name="Project Test Suite" tests="217" assertions="438" errors="0" failures="0" skipped="0" time="2.213504">
+      <testsuite name="App\Cards\CardDeckHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardDeckHandlerTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.048187">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardDeckHandlerTest.php" line="16" class="App\Cards\CardDeckHandlerTest" classname="App.Cards.CardDeckHandlerTest" assertions="1" time="0.038959"/>
+        <testcase name="testGetDeckRouteData" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardDeckHandlerTest.php" line="25" class="App\Cards\CardDeckHandlerTest" classname="App.Cards.CardDeckHandlerTest" assertions="2" time="0.009228"/>
+      </testsuite>
+      <testsuite name="App\Cards\CardGraphicTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardGraphicTest.php" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.007535">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardGraphicTest.php" line="16" class="App\Cards\CardGraphicTest" classname="App.Cards.CardGraphicTest" assertions="2" time="0.007535"/>
+      </testsuite>
+      <testsuite name="App\Cards\CardHandTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" tests="8" assertions="14" errors="0" failures="0" skipped="0" time="0.015485">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="22" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="5" time="0.004797"/>
+        <testcase name="testAddOneCardOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="43" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="2" time="0.001406"/>
+        <testcase name="testGetValues" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="67" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="1" time="0.001641"/>
+        <testcase name="testGetAsString" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="93" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="1" time="0.001462"/>
+        <testcase name="testGetImgLinksAndDescr" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="118" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="1" time="0.001714"/>
+        <testcase name="testAddManyCardsOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="147" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="1" time="0.000834"/>
+        <testcase name="testAddManyCardsNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="163" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="1" time="0.002753"/>
+        <testcase name="testEmptyHandOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="183" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="2" time="0.000878"/>
+      </testsuite>
+      <testsuite name="App\Cards\CardHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandlerTest.php" tests="4" assertions="9" errors="0" failures="0" skipped="0" time="0.013440">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandlerTest.php" line="16" class="App\Cards\CardHandlerTest" classname="App.Cards.CardHandlerTest" assertions="1" time="0.003837"/>
+        <testcase name="testGetDataForDrawOneCard" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandlerTest.php" line="26" class="App\Cards\CardHandlerTest" classname="App.Cards.CardHandlerTest" assertions="2" time="0.006498"/>
+        <testcase name="testGetDataForDrawManyCards" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandlerTest.php" line="56" class="App\Cards\CardHandlerTest" classname="App.Cards.CardHandlerTest" assertions="1" time="0.001350"/>
+        <testcase name="testGetDataForDrawManyCardsManyPlayers" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandlerTest.php" line="70" class="App\Cards\CardHandlerTest" classname="App.Cards.CardHandlerTest" assertions="5" time="0.001755"/>
+      </testsuite>
+      <testsuite name="App\Cards\CardLandingHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardLandingHandlerTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.003262">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardLandingHandlerTest.php" line="15" class="App\Cards\CardLandingHandlerTest" classname="App.Cards.CardLandingHandlerTest" assertions="1" time="0.002644"/>
+        <testcase name="testGetMainData" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardLandingHandlerTest.php" line="24" class="App\Cards\CardLandingHandlerTest" classname="App.Cards.CardLandingHandlerTest" assertions="1" time="0.000618"/>
+      </testsuite>
+      <testsuite name="App\Cards\CardTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardTest.php" tests="2" assertions="10" errors="0" failures="0" skipped="0" time="0.001392">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardTest.php" line="16" class="App\Cards\CardTest" classname="App.Cards.CardTest" assertions="5" time="0.000696"/>
+        <testcase name="testCreateDifferentObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/CardTest.php" line="42" class="App\Cards\CardTest" classname="App.Cards.CardTest" assertions="5" time="0.000696"/>
+      </testsuite>
+      <testsuite name="App\Cards\DeckOfCardsExtTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsExtTest.php" tests="1" assertions="5" errors="0" failures="0" skipped="0" time="0.002601">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsExtTest.php" line="16" class="App\Cards\DeckOfCardsExtTest" classname="App.Cards.DeckOfCardsExtTest" assertions="5" time="0.002601"/>
+      </testsuite>
+      <testsuite name="App\Cards\DeckOfCardsTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" tests="9" assertions="21" errors="0" failures="0" skipped="0" time="0.012764">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="17" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="4" time="0.001178"/>
+        <testcase name="testDrawOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="43" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="1" time="0.001552"/>
+        <testcase name="testDrawNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="65" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="1" time="0.001687"/>
+        <testcase name="testCardCountOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="84" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="1" time="0.001079"/>
+        <testcase name="testGetAsStringOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="101" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="5" time="0.001326"/>
+        <testcase name="testGetAsStringNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="126" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="1" time="0.000849"/>
+        <testcase name="testGetImgLinksOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="143" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="5" time="0.001279"/>
+        <testcase name="testGetImgLinksNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="169" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="1" time="0.000830"/>
+        <testcase name="testShuffleOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="185" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="2" time="0.002984"/>
+      </testsuite>
+      <testsuite name="App\Cards\JsonCardHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/JsonCardHandlerTest.php" tests="5" assertions="11" errors="0" failures="0" skipped="0" time="0.009248">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/JsonCardHandlerTest.php" line="16" class="App\Cards\JsonCardHandlerTest" classname="App.Cards.JsonCardHandlerTest" assertions="1" time="0.004216"/>
+        <testcase name="testGetDeckRouteData" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/JsonCardHandlerTest.php" line="25" class="App\Cards\JsonCardHandlerTest" classname="App.Cards.JsonCardHandlerTest" assertions="2" time="0.001091"/>
+        <testcase name="testGetDataForDrawOneCard" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/JsonCardHandlerTest.php" line="43" class="App\Cards\JsonCardHandlerTest" classname="App.Cards.JsonCardHandlerTest" assertions="2" time="0.001109"/>
+        <testcase name="testGetDataForDrawManyCards" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/JsonCardHandlerTest.php" line="69" class="App\Cards\JsonCardHandlerTest" classname="App.Cards.JsonCardHandlerTest" assertions="1" time="0.000990"/>
+        <testcase name="testGetDataForDrawManyCardsManyPlayers" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/JsonCardHandlerTest.php" line="83" class="App\Cards\JsonCardHandlerTest" classname="App.Cards.JsonCardHandlerTest" assertions="5" time="0.001842"/>
+      </testsuite>
+      <testsuite name="App\Cards\PlayerCreatorTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerCreatorTest.php" tests="2" assertions="5" errors="0" failures="0" skipped="0" time="0.003371">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerCreatorTest.php" line="16" class="App\Cards\PlayerCreatorTest" classname="App.Cards.PlayerCreatorTest" assertions="1" time="0.002646"/>
+        <testcase name="testCreatePlayers" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerCreatorTest.php" line="26" class="App\Cards\PlayerCreatorTest" classname="App.Cards.PlayerCreatorTest" assertions="4" time="0.000725"/>
+      </testsuite>
+      <testsuite name="App\Cards\PlayerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerTest.php" tests="4" assertions="7" errors="0" failures="0" skipped="0" time="0.003986">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerTest.php" line="22" class="App\Cards\PlayerTest" classname="App.Cards.PlayerTest" assertions="4" time="0.000782"/>
+        <testcase name="testDrawOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerTest.php" line="42" class="App\Cards\PlayerTest" classname="App.Cards.PlayerTest" assertions="1" time="0.001233"/>
+        <testcase name="testDrawManyOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerTest.php" line="61" class="App\Cards\PlayerTest" classname="App.Cards.PlayerTest" assertions="1" time="0.000917"/>
+        <testcase name="testDrawManyNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Cards/PlayerTest.php" line="81" class="App\Cards\PlayerTest" classname="App.Cards.PlayerTest" assertions="1" time="0.001054"/>
+      </testsuite>
+      <testsuite name="App\Controller\CardControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardControllerTest.php" tests="5" assertions="26" errors="0" failures="0" skipped="0" time="1.169569">
+        <testcase name="testDeck" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardControllerTest.php" line="9" class="App\Controller\CardControllerTest" classname="App.Controller.CardControllerTest" assertions="4" time="1.121660"/>
+        <testcase name="testShuffle" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardControllerTest.php" line="18" class="App\Controller\CardControllerTest" classname="App.Controller.CardControllerTest" assertions="4" time="0.012787"/>
+        <testcase name="testDraw" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardControllerTest.php" line="27" class="App\Controller\CardControllerTest" classname="App.Controller.CardControllerTest" assertions="6" time="0.014519"/>
+        <testcase name="testDrawMany" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardControllerTest.php" line="37" class="App\Controller\CardControllerTest" classname="App.Controller.CardControllerTest" assertions="6" time="0.010215"/>
+        <testcase name="testDeal" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardControllerTest.php" line="47" class="App\Controller\CardControllerTest" classname="App.Controller.CardControllerTest" assertions="6" time="0.010388"/>
+      </testsuite>
+      <testsuite name="App\Controller\CardLandingControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardLandingControllerTest.php" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.016910">
+        <testcase name="testCard" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/CardLandingControllerTest.php" line="9" class="App\Controller\CardLandingControllerTest" classname="App.Controller.CardLandingControllerTest" assertions="4" time="0.016910"/>
+      </testsuite>
+      <testsuite name="App\Controller\Game21ControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" tests="8" assertions="32" errors="0" failures="0" skipped="0" time="0.131057">
+        <testcase name="testGame" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="9" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="6" time="0.016509"/>
+        <testcase name="testDoc" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="19" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="4" time="0.013184"/>
+        <testcase name="testInit" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="28" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="3" time="0.007331"/>
+        <testcase name="testSelectAmount" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="36" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="6" time="0.022806"/>
+        <testcase name="testBet" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="53" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="3" time="0.012353"/>
+        <testcase name="testPlayerDraw" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="62" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="3" time="0.011429"/>
+        <testcase name="testBankPlaying" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="71" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="3" time="0.013669"/>
+        <testcase name="testPlay" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/Game21ControllerTest.php" line="80" class="App\Controller\Game21ControllerTest" classname="App.Controller.Game21ControllerTest" assertions="4" time="0.033776"/>
+      </testsuite>
+      <testsuite name="App\Controller\JsonCardDealControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonCardDealControllerTest.php" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.007018">
+        <testcase name="testJsonDeal" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonCardDealControllerTest.php" line="9" class="App\Controller\JsonCardDealControllerTest" classname="App.Controller.JsonCardDealControllerTest" assertions="2" time="0.007018"/>
+      </testsuite>
+      <testsuite name="App\Controller\JsonCardDeckControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonCardDeckControllerTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="0.012488">
+        <testcase name="testJsonDeck" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonCardDeckControllerTest.php" line="9" class="App\Controller\JsonCardDeckControllerTest" classname="App.Controller.JsonCardDeckControllerTest" assertions="2" time="0.006285"/>
+        <testcase name="testJsonShuffle" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonCardDeckControllerTest.php" line="17" class="App\Controller\JsonCardDeckControllerTest" classname="App.Controller.JsonCardDeckControllerTest" assertions="2" time="0.006203"/>
+      </testsuite>
+      <testsuite name="App\Controller\JsonControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonControllerTest.php" tests="2" assertions="6" errors="0" failures="0" skipped="0" time="0.028377">
+        <testcase name="testApi" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonControllerTest.php" line="9" class="App\Controller\JsonControllerTest" classname="App.Controller.JsonControllerTest" assertions="4" time="0.017575"/>
+        <testcase name="testQuote" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonControllerTest.php" line="18" class="App\Controller\JsonControllerTest" classname="App.Controller.JsonControllerTest" assertions="2" time="0.010802"/>
+      </testsuite>
+      <testsuite name="App\Controller\JsonDealManyCardsControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonDealManyCardsControllerTest.php" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.006630">
+        <testcase name="testJsonDrawMany" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonDealManyCardsControllerTest.php" line="9" class="App\Controller\JsonDealManyCardsControllerTest" classname="App.Controller.JsonDealManyCardsControllerTest" assertions="2" time="0.006630"/>
+      </testsuite>
+      <testsuite name="App\Controller\JsonDealOneCardControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonDealOneCardControllerTest.php" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.006783">
+        <testcase name="testDraw" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonDealOneCardControllerTest.php" line="9" class="App\Controller\JsonDealOneCardControllerTest" classname="App.Controller.JsonDealOneCardControllerTest" assertions="2" time="0.006783"/>
+      </testsuite>
+      <testsuite name="App\Controller\JsonGame21ControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonGame21ControllerTest.php" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.012554">
+        <testcase name="testDraw" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonGame21ControllerTest.php" line="9" class="App\Controller\JsonGame21ControllerTest" classname="App.Controller.JsonGame21ControllerTest" assertions="2" time="0.012554"/>
+      </testsuite>
+      <testsuite name="App\Controller\JsonLibraryControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonLibraryControllerTest.php" tests="3" assertions="10" errors="0" failures="0" skipped="0" time="0.044559">
+        <testcase name="testShowAllBooks" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonLibraryControllerTest.php" line="9" class="App\Controller\JsonLibraryControllerTest" classname="App.Controller.JsonLibraryControllerTest" assertions="2" time="0.024000"/>
+        <testcase name="testShowABookByIsbnNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonLibraryControllerTest.php" line="17" class="App\Controller\JsonLibraryControllerTest" classname="App.Controller.JsonLibraryControllerTest" assertions="4" time="0.013378"/>
+        <testcase name="testShowABookByIsbnOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/JsonLibraryControllerTest.php" line="28" class="App\Controller\JsonLibraryControllerTest" classname="App.Controller.JsonLibraryControllerTest" assertions="4" time="0.007181"/>
+      </testsuite>
+      <testsuite name="App\Controller\LibraryControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" tests="9" assertions="29" errors="0" failures="0" skipped="0" time="0.406164">
+        <testcase name="testLibrary" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="11" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="4" time="0.013330"/>
+        <testcase name="testCreateForm" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="20" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="4" time="0.013667"/>
+        <testcase name="testCreateNewOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="29" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="3" time="0.008362"/>
+        <testcase name="testCreateNewNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="46" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="3" time="0.007950"/>
+        <testcase name="testReadOneOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="63" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="4" time="0.020007"/>
+        <testcase name="testReadOneNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="72" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="3" time="0.006897"/>
+        <testcase name="testReadMany" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="80" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="4" time="0.018824"/>
+        <testcase name="testRemoveOne" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="89" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="3" time="0.008213"/>
+        <testcase name="testReset" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryControllerTest.php" line="97" class="App\Controller\LibraryControllerTest" classname="App.Controller.LibraryControllerTest" assertions="1" time="0.308913"/>
+      </testsuite>
+      <testsuite name="App\Controller\LibraryUpdateBookControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryUpdateBookControllerTest.php" tests="4" assertions="13" errors="0" failures="0" skipped="0" time="0.042925">
+        <testcase name="testUpdateForm" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryUpdateBookControllerTest.php" line="9" class="App\Controller\LibraryUpdateBookControllerTest" classname="App.Controller.LibraryUpdateBookControllerTest" assertions="4" time="0.017536"/>
+        <testcase name="testUpdateOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryUpdateBookControllerTest.php" line="18" class="App\Controller\LibraryUpdateBookControllerTest" classname="App.Controller.LibraryUpdateBookControllerTest" assertions="3" time="0.008829"/>
+        <testcase name="testUpdateAnotherOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryUpdateBookControllerTest.php" line="37" class="App\Controller\LibraryUpdateBookControllerTest" classname="App.Controller.LibraryUpdateBookControllerTest" assertions="3" time="0.008525"/>
+        <testcase name="testUpdateNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/LibraryUpdateBookControllerTest.php" line="56" class="App\Controller\LibraryUpdateBookControllerTest" classname="App.Controller.LibraryUpdateBookControllerTest" assertions="3" time="0.008035"/>
+      </testsuite>
+      <testsuite name="App\Controller\MainControllerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/MainControllerTest.php" tests="5" assertions="13" errors="0" failures="0" skipped="0" time="0.060310">
+        <testcase name="testHome" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/MainControllerTest.php" line="12" class="App\Controller\MainControllerTest" classname="App.Controller.MainControllerTest" assertions="2" time="0.011269"/>
+        <testcase name="testAbout" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/MainControllerTest.php" line="25" class="App\Controller\MainControllerTest" classname="App.Controller.MainControllerTest" assertions="2" time="0.011032"/>
+        <testcase name="testReport" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/MainControllerTest.php" line="33" class="App\Controller\MainControllerTest" classname="App.Controller.MainControllerTest" assertions="2" time="0.012837"/>
+        <testcase name="testLucky" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/MainControllerTest.php" line="41" class="App\Controller\MainControllerTest" classname="App.Controller.MainControllerTest" assertions="5" time="0.012189"/>
+        <testcase name="testMetrics" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Controller/MainControllerTest.php" line="52" class="App\Controller\MainControllerTest" classname="App.Controller.MainControllerTest" assertions="2" time="0.012984"/>
+      </testsuite>
+      <testsuite name="App\Entity\BookTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Entity/BookTest.php" tests="1" assertions="6" errors="0" failures="0" skipped="0" time="0.000979">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Entity/BookTest.php" line="18" class="App\Entity\BookTest" classname="App.Entity.BookTest" assertions="6" time="0.000979"/>
+      </testsuite>
+      <testsuite name="App\Game\BanksTurnHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BanksTurnHandlerTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="0.003114">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BanksTurnHandlerTest.php" line="16" class="App\Game\BanksTurnHandlerTest" classname="App.Game.BanksTurnHandlerTest" assertions="1" time="0.000741"/>
+        <testcase name="testBankDraw" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BanksTurnHandlerTest.php" line="25" class="App\Game\BanksTurnHandlerTest" classname="App.Game.BanksTurnHandlerTest" assertions="3" time="0.002373"/>
+      </testsuite>
+      <testsuite name="App\Game\BettingGameTraitTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BettingGameTraitTest.php" tests="5" assertions="8" errors="0" failures="0" skipped="0" time="0.004830">
+        <testcase name="testGetInvestLimit" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BettingGameTraitTest.php" line="34" class="App\Game\BettingGameTraitTest" classname="App.Game.BettingGameTraitTest" assertions="3" time="0.000860"/>
+        <testcase name="testAddToMoneyPotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BettingGameTraitTest.php" line="52" class="App\Game\BettingGameTraitTest" classname="App.Game.BettingGameTraitTest" assertions="1" time="0.001133"/>
+        <testcase name="testAddToMoneyPotNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BettingGameTraitTest.php" line="66" class="App\Game\BettingGameTraitTest" classname="App.Game.BettingGameTraitTest" assertions="2" time="0.001053"/>
+        <testcase name="testIsWinnerOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BettingGameTraitTest.php" line="84" class="App\Game\BettingGameTraitTest" classname="App.Game.BettingGameTraitTest" assertions="1" time="0.000952"/>
+        <testcase name="testIsWinnerNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/BettingGameTraitTest.php" line="93" class="App\Game\BettingGameTraitTest" classname="App.Game.BettingGameTraitTest" assertions="1" time="0.000832"/>
+      </testsuite>
+      <testsuite name="App\Game\Game21EasyEvaluateBankTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateBankTest.php" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.005447">
+        <testcase name="testEvaluateBankBoth21" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateBankTest.php" line="21" class="App\Game\Game21EasyEvaluateBankTest" classname="App.Game.Game21EasyEvaluateBankTest" assertions="1" time="0.001346"/>
+        <testcase name="testEvaluateBankPlayerBetterHand" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateBankTest.php" line="58" class="App\Game\Game21EasyEvaluateBankTest" classname="App.Game.Game21EasyEvaluateBankTest" assertions="1" time="0.001352"/>
+        <testcase name="testEvaluateBankAbove21" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateBankTest.php" line="95" class="App\Game\Game21EasyEvaluateBankTest" classname="App.Game.Game21EasyEvaluateBankTest" assertions="1" time="0.001340"/>
+        <testcase name="testEvaluateBankWin" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateBankTest.php" line="133" class="App\Game\Game21EasyEvaluateBankTest" classname="App.Game.Game21EasyEvaluateBankTest" assertions="1" time="0.001409"/>
+      </testsuite>
+      <testsuite name="App\Game\Game21EasyEvaluateTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateTest.php" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.005050">
+        <testcase name="testEvaluateUnder21" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateTest.php" line="22" class="App\Game\Game21EasyEvaluateTest" classname="App.Game.Game21EasyEvaluateTest" assertions="1" time="0.001291"/>
+        <testcase name="testEvaluateAbove21" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateTest.php" line="56" class="App\Game\Game21EasyEvaluateTest" classname="App.Game.Game21EasyEvaluateTest" assertions="1" time="0.001269"/>
+        <testcase name="testEvaluateAt21" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateTest.php" line="92" class="App\Game\Game21EasyEvaluateTest" classname="App.Game.Game21EasyEvaluateTest" assertions="1" time="0.001263"/>
+        <testcase name="testEvaluateNoCradsLeft" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyEvaluateTest.php" line="128" class="App\Game\Game21EasyEvaluateTest" classname="App.Game.Game21EasyEvaluateTest" assertions="1" time="0.001226"/>
+      </testsuite>
+      <testsuite name="App\Game\Game21EasyGenerateFlashTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyGenerateFlashTest.php" tests="3" assertions="5" errors="0" failures="0" skipped="0" time="0.003750">
+        <testcase name="testGenerateFlashRoundOver" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyGenerateFlashTest.php" line="22" class="App\Game\Game21EasyGenerateFlashTest" classname="App.Game.Game21EasyGenerateFlashTest" assertions="2" time="0.001483"/>
+        <testcase name="testGenerateFlashGameOver" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyGenerateFlashTest.php" line="53" class="App\Game\Game21EasyGenerateFlashTest" classname="App.Game.Game21EasyGenerateFlashTest" assertions="2" time="0.001306"/>
+        <testcase name="testGenerateFlashRoundNotOver" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyGenerateFlashTest.php" line="84" class="App\Game\Game21EasyGenerateFlashTest" classname="App.Game.Game21EasyGenerateFlashTest" assertions="1" time="0.000961"/>
+      </testsuite>
+      <testsuite name="App\Game\Game21EasyTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyTest.php" tests="6" assertions="9" errors="0" failures="0" skipped="0" time="0.006916">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyTest.php" line="21" class="App\Game\Game21EasyTest" classname="App.Game.Game21EasyTest" assertions="4" time="0.001179"/>
+        <testcase name="testDeal" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyTest.php" line="64" class="App\Game\Game21EasyTest" classname="App.Game.Game21EasyTest" assertions="1" time="0.000992"/>
+        <testcase name="testDealBankCardsLeft" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyTest.php" line="80" class="App\Game\Game21EasyTest" classname="App.Game.Game21EasyTest" assertions="1" time="0.001250"/>
+        <testcase name="testDealBankNoCardsLeft" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyTest.php" line="102" class="App\Game\Game21EasyTest" classname="App.Game.Game21EasyTest" assertions="1" time="0.001216"/>
+        <testcase name="testGetRiskPlayer" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyTest.php" line="122" class="App\Game\Game21EasyTest" classname="App.Game.Game21EasyTest" assertions="1" time="0.001079"/>
+        <testcase name="testGetRiskBank" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21EasyTest.php" line="136" class="App\Game\Game21EasyTest" classname="App.Game.Game21EasyTest" assertions="1" time="0.001201"/>
+      </testsuite>
+      <testsuite name="App\Game\Game21HardTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21HardTest.php" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="0.003579">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21HardTest.php" line="21" class="App\Game\Game21HardTest" classname="App.Game.Game21HardTest" assertions="2" time="0.000975"/>
+        <testcase name="testDealBank" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21HardTest.php" line="43" class="App\Game\Game21HardTest" classname="App.Game.Game21HardTest" assertions="2" time="0.001312"/>
+        <testcase name="testDealBankNoCardsLeft" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Game21HardTest.php" line="67" class="App\Game\Game21HardTest" classname="App.Game.Game21HardTest" assertions="2" time="0.001291"/>
+      </testsuite>
+      <testsuite name="App\Game\GameAttrHandler2TraitTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" tests="9" assertions="9" errors="0" failures="0" skipped="0" time="0.007832">
+        <testcase name="testSetBank" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="27" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000879"/>
+        <testcase name="testGetBank" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="37" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000867"/>
+        <testcase name="testSetPlayer" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="47" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000905"/>
+        <testcase name="testGetPlayer" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="57" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.001187"/>
+        <testcase name="testSetCurrentRound" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="67" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000745"/>
+        <testcase name="testGetCurrentRound" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="76" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000739"/>
+        <testcase name="testSetWinner" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="86" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000878"/>
+        <testcase name="testGetWinnerOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="99" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000889"/>
+        <testcase name="testGetWinnerNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandler2TraitTest.php" line="112" class="App\Game\GameAttrHandler2TraitTest" classname="App.Game.GameAttrHandler2TraitTest" assertions="1" time="0.000744"/>
+      </testsuite>
+      <testsuite name="App\Game\GameAttrHandlerTraitTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" tests="7" assertions="7" errors="0" failures="0" skipped="0" time="0.005639">
+        <testcase name="testSetMoneyPot" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" line="34" class="App\Game\GameAttrHandlerTraitTest" classname="App.Game.GameAttrHandlerTraitTest" assertions="1" time="0.000849"/>
+        <testcase name="testGetMoneyPot" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" line="44" class="App\Game\GameAttrHandlerTraitTest" classname="App.Game.GameAttrHandlerTraitTest" assertions="1" time="0.000842"/>
+        <testcase name="testSetRoundOver" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" line="57" class="App\Game\GameAttrHandlerTraitTest" classname="App.Game.GameAttrHandlerTraitTest" assertions="1" time="0.000902"/>
+        <testcase name="testIsRoundOver" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" line="67" class="App\Game\GameAttrHandlerTraitTest" classname="App.Game.GameAttrHandlerTraitTest" assertions="1" time="0.000815"/>
+        <testcase name="testIsBankPlaying" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" line="76" class="App\Game\GameAttrHandlerTraitTest" classname="App.Game.GameAttrHandlerTraitTest" assertions="1" time="0.000753"/>
+        <testcase name="testSetBankPlaying" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" line="85" class="App\Game\GameAttrHandlerTraitTest" classname="App.Game.GameAttrHandlerTraitTest" assertions="1" time="0.000734"/>
+        <testcase name="testSetFinished" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameAttrHandlerTraitTest.php" line="95" class="App\Game\GameAttrHandlerTraitTest" classname="App.Game.GameAttrHandlerTraitTest" assertions="1" time="0.000746"/>
+      </testsuite>
+      <testsuite name="App\Game\GameHandlerLandingTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerLandingTest.php" tests="5" assertions="9" errors="0" failures="0" skipped="0" time="0.005513">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerLandingTest.php" line="16" class="App\Game\GameHandlerLandingTest" classname="App.Game.GameHandlerLandingTest" assertions="1" time="0.000680"/>
+        <testcase name="testMainNoGame" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerLandingTest.php" line="25" class="App\Game\GameHandlerLandingTest" classname="App.Game.GameHandlerLandingTest" assertions="2" time="0.001055"/>
+        <testcase name="testMainGameFinished" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerLandingTest.php" line="44" class="App\Game\GameHandlerLandingTest" classname="App.Game.GameHandlerLandingTest" assertions="2" time="0.001191"/>
+        <testcase name="testMainGameNotFinished" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerLandingTest.php" line="65" class="App\Game\GameHandlerLandingTest" classname="App.Game.GameHandlerLandingTest" assertions="2" time="0.001626"/>
+        <testcase name="testDoc" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerLandingTest.php" line="86" class="App\Game\GameHandlerLandingTest" classname="App.Game.GameHandlerLandingTest" assertions="2" time="0.000961"/>
+      </testsuite>
+      <testsuite name="App\Game\GameHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.002406">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerTest.php" line="16" class="App\Game\GameHandlerTest" classname="App.Game.GameHandlerTest" assertions="1" time="0.001226"/>
+        <testcase name="testPlay" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameHandlerTest.php" line="25" class="App\Game\GameHandlerTest" classname="App.Game.GameHandlerTest" assertions="1" time="0.001180"/>
+      </testsuite>
+      <testsuite name="App\Game\GameInitiatorTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameInitiatorTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.001975">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameInitiatorTest.php" line="15" class="App\Game\GameInitiatorTest" classname="App.Game.GameInitiatorTest" assertions="1" time="0.000772"/>
+        <testcase name="testInit" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameInitiatorTest.php" line="25" class="App\Game\GameInitiatorTest" classname="App.Game.GameInitiatorTest" assertions="2" time="0.001203"/>
+      </testsuite>
+      <testsuite name="App\Game\GameMoneyHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameMoneyHandlerTest.php" tests="3" assertions="4" errors="0" failures="0" skipped="0" time="0.003750">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameMoneyHandlerTest.php" line="15" class="App\Game\GameMoneyHandlerTest" classname="App.Game.GameMoneyHandlerTest" assertions="1" time="0.000714"/>
+        <testcase name="testSelectAmount" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameMoneyHandlerTest.php" line="24" class="App\Game\GameMoneyHandlerTest" classname="App.Game.GameMoneyHandlerTest" assertions="2" time="0.001063"/>
+        <testcase name="testBet" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameMoneyHandlerTest.php" line="52" class="App\Game\GameMoneyHandlerTest" classname="App.Game.GameMoneyHandlerTest" assertions="1" time="0.001974"/>
+      </testsuite>
+      <testsuite name="App\Game\GameTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="0.001858">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="17" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="3" time="0.000930"/>
+        <testcase name="testCardsLeftOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="34" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.000928"/>
+      </testsuite>
+      <testsuite name="App\Game\JsonGameHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/JsonGameHandlerTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.001924">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/JsonGameHandlerTest.php" line="16" class="App\Game\JsonGameHandlerTest" classname="App.Game.JsonGameHandlerTest" assertions="1" time="0.000711"/>
+        <testcase name="testJsonGame" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/JsonGameHandlerTest.php" line="26" class="App\Game\JsonGameHandlerTest" classname="App.Game.JsonGameHandlerTest" assertions="1" time="0.001212"/>
+      </testsuite>
+      <testsuite name="App\Game\MoneyPotTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/MoneyPotTest.php" tests="3" assertions="5" errors="0" failures="0" skipped="0" time="0.002725">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/MoneyPotTest.php" line="25" class="App\Game\MoneyPotTest" classname="App.Game.MoneyPotTest" assertions="2" time="0.000762"/>
+        <testcase name="testAddMoneyOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/MoneyPotTest.php" line="37" class="App\Game\MoneyPotTest" classname="App.Game.MoneyPotTest" assertions="1" time="0.000941"/>
+        <testcase name="testMoneyToWinnerOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/MoneyPotTest.php" line="51" class="App\Game\MoneyPotTest" classname="App.Game.MoneyPotTest" assertions="2" time="0.001022"/>
+      </testsuite>
+      <testsuite name="App\Game\Player21Test" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Player21Test.php" tests="6" assertions="13" errors="0" failures="0" skipped="0" time="0.005392">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Player21Test.php" line="19" class="App\Game\Player21Test" classname="App.Game.Player21Test" assertions="2" time="0.000773"/>
+        <testcase name="testIncrMoneyOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Player21Test.php" line="32" class="App\Game\Player21Test" classname="App.Game.Player21Test" assertions="2" time="0.000747"/>
+        <testcase name="testDecrMoneyOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Player21Test.php" line="52" class="App\Game\Player21Test" classname="App.Game.Player21Test" assertions="2" time="0.000747"/>
+        <testcase name="testHandValue" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Player21Test.php" line="76" class="App\Game\Player21Test" classname="App.Game.Player21Test" assertions="1" time="0.000927"/>
+        <testcase name="testMinHandValue" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Player21Test.php" line="92" class="App\Game\Player21Test" classname="App.Game.Player21Test" assertions="1" time="0.000921"/>
+        <testcase name="testEstimateRisk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/Player21Test.php" line="106" class="App\Game\Player21Test" classname="App.Game.Player21Test" assertions="5" time="0.001277"/>
+      </testsuite>
+      <testsuite name="App\Game\PlayerTraitTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTraitTest.php" tests="5" assertions="5" errors="0" failures="0" skipped="0" time="0.004402">
+        <testcase name="testDraw" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTraitTest.php" line="21" class="App\Game\PlayerTraitTest" classname="App.Game.PlayerTraitTest" assertions="1" time="0.000975"/>
+        <testcase name="testEmptyHandOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTraitTest.php" line="37" class="App\Game\PlayerTraitTest" classname="App.Game.PlayerTraitTest" assertions="1" time="0.000851"/>
+        <testcase name="testGetCardValues" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTraitTest.php" line="51" class="App\Game\PlayerTraitTest" classname="App.Game.PlayerTraitTest" assertions="1" time="0.000861"/>
+        <testcase name="testShowHandAsString" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTraitTest.php" line="65" class="App\Game\PlayerTraitTest" classname="App.Game.PlayerTraitTest" assertions="1" time="0.000835"/>
+        <testcase name="testGetCardCount" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTraitTest.php" line="79" class="App\Game\PlayerTraitTest" classname="App.Game.PlayerTraitTest" assertions="1" time="0.000880"/>
+      </testsuite>
+      <testsuite name="App\Game\PlayerTurnHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTurnHandlerTest.php" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="0.003167">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTurnHandlerTest.php" line="15" class="App\Game\PlayerTurnHandlerTest" classname="App.Game.PlayerTurnHandlerTest" assertions="1" time="0.000770"/>
+        <testcase name="testPlayerDrawRoundOver" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTurnHandlerTest.php" line="24" class="App\Game\PlayerTurnHandlerTest" classname="App.Game.PlayerTurnHandlerTest" assertions="3" time="0.001286"/>
+        <testcase name="testPlayerDrawRoundNotOver" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTurnHandlerTest.php" line="49" class="App\Game\PlayerTurnHandlerTest" classname="App.Game.PlayerTurnHandlerTest" assertions="2" time="0.001111"/>
+      </testsuite>
+      <testsuite name="App\Game\RoundHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/RoundHandlerTest.php" tests="5" assertions="9" errors="0" failures="0" skipped="0" time="0.007535">
+        <testcase name="testEndRoundNoCardsLeftNotSameFinalWinner" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/RoundHandlerTest.php" line="23" class="App\Game\RoundHandlerTest" classname="App.Game.RoundHandlerTest" assertions="2" time="0.002199"/>
+        <testcase name="testDeterminePlayerWinner" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/RoundHandlerTest.php" line="56" class="App\Game\RoundHandlerTest" classname="App.Game.RoundHandlerTest" assertions="1" time="0.001062"/>
+        <testcase name="testDetermineBankWinner" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/RoundHandlerTest.php" line="68" class="App\Game\RoundHandlerTest" classname="App.Game.RoundHandlerTest" assertions="1" time="0.001040"/>
+        <testcase name="testFinishGame" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/RoundHandlerTest.php" line="80" class="App\Game\RoundHandlerTest" classname="App.Game.RoundHandlerTest" assertions="1" time="0.001230"/>
+        <testcase name="testNextRound" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Game/RoundHandlerTest.php" line="93" class="App\Game\RoundHandlerTest" classname="App.Game.RoundHandlerTest" assertions="4" time="0.002003"/>
+      </testsuite>
+      <testsuite name="App\Helpers\JsonConverterTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/JsonConverterTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.004224">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/JsonConverterTest.php" line="17" class="App\Helpers\JsonConverterTest" classname="App.Helpers.JsonConverterTest" assertions="1" time="0.000665"/>
+        <testcase name="testConvert" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/JsonConverterTest.php" line="26" class="App\Helpers\JsonConverterTest" classname="App.Helpers.JsonConverterTest" assertions="2" time="0.003559"/>
+      </testsuite>
+      <testsuite name="App\Helpers\JsonHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/JsonHandlerTest.php" tests="3" assertions="3" errors="0" failures="0" skipped="0" time="0.002095">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/JsonHandlerTest.php" line="30" class="App\Helpers\JsonHandlerTest" classname="App.Helpers.JsonHandlerTest" assertions="1" time="0.000680"/>
+        <testcase name="testGetLandingData" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/JsonHandlerTest.php" line="39" class="App\Helpers\JsonHandlerTest" classname="App.Helpers.JsonHandlerTest" assertions="1" time="0.000706"/>
+        <testcase name="testGenerateQuote" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/JsonHandlerTest.php" line="101" class="App\Helpers\JsonHandlerTest" classname="App.Helpers.JsonHandlerTest" assertions="1" time="0.000709"/>
+      </testsuite>
+      <testsuite name="App\Helpers\LuckyRouteDataTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/LuckyRouteDataTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.001424">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/LuckyRouteDataTest.php" line="15" class="App\Helpers\LuckyRouteDataTest" classname="App.Helpers.LuckyRouteDataTest" assertions="1" time="0.000708"/>
+        <testcase name="testLuckyData" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/LuckyRouteDataTest.php" line="25" class="App\Helpers\LuckyRouteDataTest" classname="App.Helpers.LuckyRouteDataTest" assertions="1" time="0.000716"/>
+      </testsuite>
+      <testsuite name="App\Helpers\MainControllerHelperTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/MainControllerHelperTest.php" tests="3" assertions="5" errors="0" failures="0" skipped="0" time="0.002558">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/MainControllerHelperTest.php" line="16" class="App\Helpers\MainControllerHelperTest" classname="App.Helpers.MainControllerHelperTest" assertions="1" time="0.000658"/>
+        <testcase name="testStandardData" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/MainControllerHelperTest.php" line="25" class="App\Helpers\MainControllerHelperTest" classname="App.Helpers.MainControllerHelperTest" assertions="2" time="0.000945"/>
+        <testcase name="testReportData" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Helpers/MainControllerHelperTest.php" line="51" class="App\Helpers\MainControllerHelperTest" classname="App.Helpers.MainControllerHelperTest" assertions="2" time="0.000956"/>
+      </testsuite>
+      <testsuite name="App\Library\BookRemoverTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookRemoverTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.003081">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookRemoverTest.php" line="21" class="App\Library\BookRemoverTest" classname="App.Library.BookRemoverTest" assertions="1" time="0.000671"/>
+        <testcase name="testRemoveBook" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookRemoverTest.php" line="30" class="App\Library\BookRemoverTest" classname="App.Library.BookRemoverTest" assertions="1" time="0.002409"/>
+      </testsuite>
+      <testsuite name="App\Library\BookSaverTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookSaverTest.php" tests="3" assertions="5" errors="0" failures="0" skipped="0" time="0.002878">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookSaverTest.php" line="21" class="App\Library\BookSaverTest" classname="App.Library.BookSaverTest" assertions="1" time="0.000675"/>
+        <testcase name="testSaveBookOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookSaverTest.php" line="30" class="App\Library\BookSaverTest" classname="App.Library.BookSaverTest" assertions="2" time="0.001219"/>
+        <testcase name="testSaveBookNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookSaverTest.php" line="47" class="App\Library\BookSaverTest" classname="App.Library.BookSaverTest" assertions="2" time="0.000984"/>
+      </testsuite>
+      <testsuite name="App\Library\BookUpdatorTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookUpdatorTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.004525">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookUpdatorTest.php" line="21" class="App\Library\BookUpdatorTest" classname="App.Library.BookUpdatorTest" assertions="1" time="0.000681"/>
+        <testcase name="testUpdateBook" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/BookUpdatorTest.php" line="30" class="App\Library\BookUpdatorTest" classname="App.Library.BookUpdatorTest" assertions="2" time="0.003844"/>
+      </testsuite>
+      <testsuite name="App\Library\LibraryHandlerTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryHandlerTest.php" tests="5" assertions="18" errors="0" failures="0" skipped="0" time="0.007331">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryHandlerTest.php" line="20" class="App\Library\LibraryHandlerTest" classname="App.Library.LibraryHandlerTest" assertions="1" time="0.000723"/>
+        <testcase name="testUpdateOne" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryHandlerTest.php" line="29" class="App\Library\LibraryHandlerTest" classname="App.Library.LibraryHandlerTest" assertions="6" time="0.001977"/>
+        <testcase name="testCreateOne" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryHandlerTest.php" line="76" class="App\Library\LibraryHandlerTest" classname="App.Library.LibraryHandlerTest" assertions="4" time="0.001585"/>
+        <testcase name="testRemoveOne" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryHandlerTest.php" line="114" class="App\Library\LibraryHandlerTest" classname="App.Library.LibraryHandlerTest" assertions="4" time="0.001633"/>
+        <testcase name="testSettersGetters" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryHandlerTest.php" line="152" class="App\Library\LibraryHandlerTest" classname="App.Library.LibraryHandlerTest" assertions="3" time="0.001414"/>
+      </testsuite>
+      <testsuite name="App\Library\NewFlashGeneratorTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/NewFlashGeneratorTest.php" tests="3" assertions="3" errors="0" failures="0" skipped="0" time="0.002421">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/NewFlashGeneratorTest.php" line="17" class="App\Library\NewFlashGeneratorTest" classname="App.Library.NewFlashGeneratorTest" assertions="1" time="0.000678"/>
+        <testcase name="testNewFlashOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/NewFlashGeneratorTest.php" line="28" class="App\Library\NewFlashGeneratorTest" classname="App.Library.NewFlashGeneratorTest" assertions="1" time="0.000875"/>
+        <testcase name="testNewFlashNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/NewFlashGeneratorTest.php" line="47" class="App\Library\NewFlashGeneratorTest" classname="App.Library.NewFlashGeneratorTest" assertions="1" time="0.000868"/>
+      </testsuite>
+      <testsuite name="App\Library\RemoveFlashGeneratorTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/RemoveFlashGeneratorTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.001552">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/RemoveFlashGeneratorTest.php" line="17" class="App\Library\RemoveFlashGeneratorTest" classname="App.Library.RemoveFlashGeneratorTest" assertions="1" time="0.000671"/>
+        <testcase name="testRemoveFlash" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/RemoveFlashGeneratorTest.php" line="27" class="App\Library\RemoveFlashGeneratorTest" classname="App.Library.RemoveFlashGeneratorTest" assertions="1" time="0.000881"/>
+      </testsuite>
+      <testsuite name="App\Library\SqlFileLoaderTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/SqlFileLoaderTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.003918">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/SqlFileLoaderTest.php" line="28" class="App\Library\SqlFileLoaderTest" classname="App.Library.SqlFileLoaderTest" assertions="1" time="0.002930"/>
+        <testcase name="testLoad" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/SqlFileLoaderTest.php" line="39" class="App\Library\SqlFileLoaderTest" classname="App.Library.SqlFileLoaderTest" assertions="1" time="0.000988"/>
+      </testsuite>
+      <testsuite name="App\Library\UpdateFlashGeneratorTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/UpdateFlashGeneratorTest.php" tests="3" assertions="3" errors="0" failures="0" skipped="0" time="0.002405">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/UpdateFlashGeneratorTest.php" line="17" class="App\Library\UpdateFlashGeneratorTest" classname="App.Library.UpdateFlashGeneratorTest" assertions="1" time="0.000690"/>
+        <testcase name="testUpdateFlashOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/UpdateFlashGeneratorTest.php" line="28" class="App\Library\UpdateFlashGeneratorTest" classname="App.Library.UpdateFlashGeneratorTest" assertions="1" time="0.000820"/>
+        <testcase name="testUpdateFlashNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Library/UpdateFlashGeneratorTest.php" line="42" class="App\Library\UpdateFlashGeneratorTest" classname="App.Library.UpdateFlashGeneratorTest" assertions="1" time="0.000895"/>
+      </testsuite>
+      <testsuite name="App\Markdown\MdParserTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Markdown/MdParserTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.002819">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Markdown/MdParserTest.php" line="30" class="App\Markdown\MdParserTest" classname="App.Markdown.MdParserTest" assertions="1" time="0.000700"/>
+        <testcase name="testGetParsedText" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Markdown/MdParserTest.php" line="40" class="App\Markdown\MdParserTest" classname="App.Markdown.MdParserTest" assertions="2" time="0.002119"/>
+      </testsuite>
+      <testsuite name="App\Project\CardCounterTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/CardCounterTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.000829">
+        <testcase name="testCardCount" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/CardCounterTest.php" line="34" class="App\Project\CardCounterTest" classname="App.Project.CardCounterTest" assertions="1" time="0.000829"/>
+      </testsuite>
+      <testsuite name="App\Project\CardFactoryTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/CardFactoryTest.php" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="0.003339">
+        <testcase name="testFullSet" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/CardFactoryTest.php" line="12" class="App\Project\CardFactoryTest" classname="App.Project.CardFactoryTest" assertions="2" time="0.003339"/>
+      </testsuite>
+      <testsuite name="App\Project\CardTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/CardTest.php" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.000774">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/CardTest.php" line="12" class="App\Project\CardTest" classname="App.Project.CardTest" assertions="4" time="0.000774"/>
+      </testsuite>
+      <testsuite name="App\Project\GridTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/GridTest.php" tests="5" assertions="7" errors="0" failures="0" skipped="0" time="0.004071">
+        <testcase name="testSetCards" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/GridTest.php" line="87" class="App\Project\GridTest" classname="App.Project.GridTest" assertions="1" time="0.000720"/>
+        <testcase name="testRowsAndCols" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/GridTest.php" line="96" class="App\Project\GridTest" classname="App.Project.GridTest" assertions="1" time="0.001006"/>
+        <testcase name="testGraphic" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/GridTest.php" line="107" class="App\Project\GridTest" classname="App.Project.GridTest" assertions="1" time="0.000790"/>
+        <testcase name="testAddOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/GridTest.php" line="189" class="App\Project\GridTest" classname="App.Project.GridTest" assertions="2" time="0.000795"/>
+        <testcase name="testAddNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/GridTest.php" line="218" class="App\Project\GridTest" classname="App.Project.GridTest" assertions="2" time="0.000761"/>
+      </testsuite>
+      <testsuite name="App\Project\RankCounterTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RankCounterTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.000717">
+        <testcase name="testRanks" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RankCounterTest.php" line="34" class="App\Project\RankCounterTest" classname="App.Project.RankCounterTest" assertions="1" time="0.000717"/>
+      </testsuite>
+      <testsuite name="App\Project\RoyalFlushTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RoyalFlushTest.php" tests="6" assertions="6" errors="0" failures="0" skipped="0" time="0.005018">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RoyalFlushTest.php" line="12" class="App\Project\RoyalFlushTest" classname="App.Project.RoyalFlushTest" assertions="1" time="0.000723"/>
+        <testcase name="testScoreOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RoyalFlushTest.php" line="18" class="App\Project\RoyalFlushTest" classname="App.Project.RoyalFlushTest" assertions="1" time="0.000831"/>
+        <testcase name="testScoreNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RoyalFlushTest.php" line="35" class="App\Project\RoyalFlushTest" classname="App.Project.RoyalFlushTest" assertions="1" time="0.000799"/>
+        <testcase name="testScoreNotOk2" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RoyalFlushTest.php" line="47" class="App\Project\RoyalFlushTest" classname="App.Project.RoyalFlushTest" assertions="1" time="0.000782"/>
+        <testcase name="testScoreNotOk3" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RoyalFlushTest.php" line="63" class="App\Project\RoyalFlushTest" classname="App.Project.RoyalFlushTest" assertions="1" time="0.000731"/>
+        <testcase name="testScoreNotOk4" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/RoyalFlushTest.php" line="76" class="App\Project\RoyalFlushTest" classname="App.Project.RoyalFlushTest" assertions="1" time="0.001152"/>
+      </testsuite>
+      <testsuite name="App\Project\SuitCounterTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/SuitCounterTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.000723">
+        <testcase name="testSuits" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Project/SuitCounterTest.php" line="34" class="App\Project\SuitCounterTest" classname="App.Project.SuitCounterTest" assertions="1" time="0.000723"/>
+      </testsuite>
+      <testsuite name="App\Repository\BookRepositoryTest" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="0.002405">
+        <testcase name="testCreateObject" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="22" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" assertions="1" time="0.001275"/>
+        <testcase name="testCompareIdNotOk" file="/home/juli22/dbwebb-kurser/mvc/me/report/tests/Repository/BookRepositoryTest.php" line="34" class="App\Repository\BookRepositoryTest" classname="App.Repository.BookRepositoryTest" assertions="3" time="0.001130"/>
       </testsuite>
     </testsuite>
   </testsuite>

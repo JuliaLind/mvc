@@ -13,14 +13,6 @@ class RoyalFlushTest extends TestCase
     {
         $rule = new RoyalFlush();
         $this->assertInstanceOf("\App\Project\RoyalFlush", $rule);
-
-        // $res = $rule->getPoints();
-        // $exp = 100;
-        // $this->assertEquals($exp, $res);
-
-        // $res = $rule->getName();
-        // $exp = "Royal Flush";
-        // $this->assertEquals($exp, $res);
     }
 
     public function testScoreOk(): void

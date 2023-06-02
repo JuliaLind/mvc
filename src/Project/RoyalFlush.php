@@ -19,6 +19,26 @@ class RoyalFlush implements RuleInterface
      */
     private const NAME = "Royal Flush";
 
+    /**
+     * @var int $MAXRANK corresponds to Ace
+     */
+    private const MAXRANK = 14;
+
+    /**
+     * @var int $MINRANK corresponds to Ten
+     */
+    private const MINRANK = 10;
+
+    /**
+     * @var int $UNIQUERANKS 
+     */
+    private const UNIQUERANKS = 5;
+
+    /**
+     * @var int $UNIQUESUITS
+     */
+    private const UNIQUESUITS = 1;
+
     private CardCounter $cardCounter;
     private SuitCounter $suitCounter;
     private RankCounter $rankCounter;
@@ -41,7 +61,7 @@ class RoyalFlush implements RuleInterface
     {
         $maxRank = max(array_keys($uniqueRanks));
         $minRank = min(array_keys($uniqueRanks));
-        if ($maxRank === 14 && $minRank === 10) {
+        if ($maxRank === self::MAXRANK && $minRank === self::MINRANK) {
             return true;
         }
         return false;
@@ -65,28 +85,12 @@ class RoyalFlush implements RuleInterface
         $uniqueSuits = $this->suitCounter->suits($hand);
         $uniqueRanks = $this->rankCounter->ranks($hand);
         $cardCount = $this->cardCounter->cardCount($hand);
-        if (count($uniqueRanks) === 5 && count($uniqueSuits) === 1) {
+        if (count($uniqueRanks) === self::UNIQUERANKS && count($uniqueSuits) === self::UNIQUESUITS) {
             $data['scored'] = $this->evaluateRanks($uniqueRanks);
             // return $this->evaluateRanks($uniqueRanks);
         }
         return $data;
     }
-
-    // /**
-    //  * @return int points
-    //  */
-    // public function getPoints(): int
-    // {
-    //     return self::POINTS;
-    // }
-
-    // /**
-    //  * @return string name of the rule
-    //  */
-    // public function getName(): string
-    // {
-    //     return self::NAME;
-    // }
 
     // /**
     //  * @param array<mixed> $data
