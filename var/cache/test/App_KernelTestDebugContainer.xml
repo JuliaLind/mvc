@@ -495,6 +495,13 @@
     <service id="App\ProjectGrid\Grid" class="App\ProjectGrid\Grid" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\GridCols" class="App\ProjectGrid\GridCols" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\GridGraphic" class="App\ProjectGrid\GridGraphic" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectRules\FourOfAKind" class="App\ProjectRules\FourOfAKind" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectCard\CardCounter"/>
+    </service>
+    <service id="App\ProjectRules\FourOfAKindStat" class="App\ProjectRules\FourOfAKindStat" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectCard\CardCounter"/>
+      <argument type="service" id="App\ProjectCard\CardSearcher"/>
+    </service>
     <service id="App\ProjectRules\RoyalFlush" class="App\ProjectRules\RoyalFlush" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectCard\CardCounter"/>
     </service>
@@ -1663,6 +1670,8 @@
         <argument key="App\ProjectGrid\Grid" type="service_closure" id="App\ProjectGrid\Grid" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\GridCols" type="service_closure" id="App\ProjectGrid\GridCols" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\GridGraphic" type="service_closure" id="App\ProjectGrid\GridGraphic" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectRules\FourOfAKind" type="service_closure" id="App\ProjectRules\FourOfAKind" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectRules\FourOfAKindStat" type="service_closure" id="App\ProjectRules\FourOfAKindStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\RoyalFlush" type="service_closure" id="App\ProjectRules\RoyalFlush" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\RoyalFlushStat" type="service_closure" id="App\ProjectRules\RoyalFlushStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\StraightFlush" type="service_closure" id="App\ProjectRules\StraightFlush" on-invalid="ignore_uninitialized"/>
@@ -2275,7 +2284,6 @@
         <argument key="cache.doctrine.orm.default.query.recorder_inner" type="service_closure" id="cache.doctrine.orm.default.query.recorder_inner" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_expression_language.recorder_inner" type="service_closure" id="cache.security_expression_language.recorder_inner" on-invalid="ignore_uninitialized"/>
         <argument key="cache.webpack_encore.recorder_inner" type="service_closure" id="cache.webpack_encore.recorder_inner" on-invalid="ignore_uninitialized"/>
-        <argument key="App\ProjectRules\RuleStatInterface" type="service_closure" id="App\ProjectRules\RoyalFlushStat" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface" type="service_closure" id="parameter_bag" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface" type="service_closure" id="parameter_bag" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\Component\EventDispatcher\EventDispatcherInterface" type="service_closure" id="debug.event_dispatcher" on-invalid="ignore_uninitialized"/>
@@ -8316,7 +8324,6 @@
         <argument key="Twig\Extra\Markdown\MarkdownRuntime" type="service_closure" id="twig.runtime.markdown"/>
       </argument>
     </service>
-    <service id="App\ProjectRules\RuleStatInterface" alias="App\ProjectRules\RoyalFlushStat"/>
     <service id="App\Kernel" alias="kernel" public="true"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface" alias="parameter_bag"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface" alias="parameter_bag"/>

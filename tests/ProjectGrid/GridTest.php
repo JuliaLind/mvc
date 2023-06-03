@@ -108,6 +108,7 @@ class GridTest extends TestCase
 
     public function testAddOk(): void
     {
+        $this->assertEquals(0, $this->grid->getCardCount());
         $card = new Card(14, 'S');
         $bool = $this->grid->addCard(2, 4, $card);
         $res = $this->grid->getCards();
@@ -118,6 +119,7 @@ class GridTest extends TestCase
 
         $res = $res[2][4];
         $this->assertEquals($res, $card);
+        $this->assertEquals(1, $this->grid->getCardCount());
     }
 
     public function testAddNotOk(): void

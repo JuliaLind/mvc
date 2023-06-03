@@ -22,4 +22,20 @@ class CardSearcher
         }
         return false;
     }
+
+    /**
+     * @param array<Card> $cards
+     * @param int $rank
+     */
+    public function searchForRank($cards, $rank): int
+    {
+        $count = 0;
+        foreach(['S', 'D', 'C', 'H'] as $suit) {
+            $possible = $this->search($cards, $rank, $suit);
+            if ($possible === true) {
+                $count += 1;
+            }
+        }
+        return $count;
+    }
 }

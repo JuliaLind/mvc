@@ -44,9 +44,8 @@ class RoyalFlushStat implements RuleStatInterface
     /**
      * @param array<Card> $hand
      */
-    public function checkForScore($hand): bool
+    private function checkForScore($hand, RoyalFlush $rule=new RoyalFlush()): bool
     {
-        $rule = new RoyalFlush();
         $scored =  $rule->scored($hand);
         /**
          * @var bool $possible
@@ -59,7 +58,7 @@ class RoyalFlushStat implements RuleStatInterface
      * @param array<Card> $cards
      * @param string $suit
      */
-    protected function checkForCards($cards, $suit): bool
+    private function checkForCards($cards, $suit): bool
     {
         $possible = true;
         $searcher = $this->searcher;
@@ -88,10 +87,6 @@ class RoyalFlushStat implements RuleStatInterface
          * @var array<Card> $newHand
          */
         $newHand = [...$hand, $card];
-        // $newHand = [
-        //     ...$hand,
-        //     $card
-        // ];
         if (count($newHand) === 5) {
             return $this->checkForScore($newHand);
         }

@@ -21,6 +21,8 @@ class Grid
      */
     private array $grid = [];
 
+    private int $cardCount = 0;
+
     public function addCard(int $row, int $col, Card $card): bool
     {
         $grid = $this->grid;
@@ -28,7 +30,13 @@ class Grid
             return false;
         }
         $this->grid[$row][$col] = $card;
+        $this->cardCount += 1;
         return true;
+    }
+
+    public function getCardCount(): int
+    {
+        return $this->cardCount;
     }
 
     /**
