@@ -84,10 +84,12 @@ class RoyalFlushStat implements RuleStatInterface
         if (count($hand) === 5) {
             return false;
         }
-        $newHand = [
-            ...$hand,
-            $card
-        ];
+        $newHand = [...$hand];
+        $newHand[] = $card;
+        // $newHand = [
+        //     ...$hand,
+        //     $card
+        // ];
         if (count($newHand) === 5) {
             return $this->checkForScore($newHand);
         }
