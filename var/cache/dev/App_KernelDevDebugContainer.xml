@@ -505,19 +505,29 @@
     </service>
     <service id="App\Library\UpdateFlashGenerator" class="App\Library\UpdateFlashGenerator" autowire="true" autoconfigure="true"/>
     <service id="App\Markdown\MdParser" class="App\Markdown\MdParser" autowire="true" autoconfigure="true"/>
-    <service id="App\Project\Card" class="App\Project\Card" autowire="true" autoconfigure="true"/>
-    <service id="App\Project\CardCounter" class="App\Project\CardCounter" autowire="true" autoconfigure="true"/>
-    <service id="App\Project\CardFactory" class="App\Project\CardFactory" autowire="true" autoconfigure="true"/>
-    <service id="App\Project\GameException" class="App\Project\GameException" autowire="true" autoconfigure="true"/>
-    <service id="App\Project\Grid" class="App\Project\Grid" autowire="true" autoconfigure="true"/>
-    <service id="App\Project\NoCardsException" class="App\Project\NoCardsException" autowire="true" autoconfigure="true"/>
-    <service id="App\Project\RankCounter" class="App\Project\RankCounter" autowire="true" autoconfigure="true"/>
-    <service id="App\Project\RoyalFlush" class="App\Project\RoyalFlush" autowire="true" autoconfigure="true">
-      <argument type="service" id="App\Project\CardCounter"/>
-      <argument type="service" id="App\Project\SuitCounter"/>
-      <argument type="service" id="App\Project\RankCounter"/>
+    <service id="App\ProjectCard\Card" class="App\ProjectCard\Card" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectCard\CardCounter" class="App\ProjectCard\CardCounter" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectCard\CardFactory" class="App\ProjectCard\CardFactory" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectCard\CardSearcher" class="App\ProjectCard\CardSearcher" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectCard\Deck" class="App\ProjectCard\Deck" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectCard\CardFactory"/>
     </service>
-    <service id="App\Project\SuitCounter" class="App\Project\SuitCounter" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectExceptions\NoCardsException" class="App\ProjectExceptions\NoCardsException" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectExceptions\PokerSquareException" class="App\ProjectExceptions\PokerSquareException" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectGrid\EmptyCellFinder" class="App\ProjectGrid\EmptyCellFinder" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectGrid\Grid" class="App\ProjectGrid\Grid" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectGrid\GridCols" class="App\ProjectGrid\GridCols" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectGrid\GridGraphic" class="App\ProjectGrid\GridGraphic" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectRules\RoyalFlush" class="App\ProjectRules\RoyalFlush" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectCard\CardCounter"/>
+    </service>
+    <service id="App\ProjectRules\RoyalFlushStat" class="App\ProjectRules\RoyalFlushStat" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectCard\CardCounter"/>
+      <argument type="service" id="App\ProjectCard\CardSearcher"/>
+    </service>
+    <service id="App\ProjectRules\StraightFlush" class="App\ProjectRules\StraightFlush" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectCard\CardCounter"/>
+    </service>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -8462,7 +8472,7 @@
         <argument key="Twig\Extra\Markdown\MarkdownRuntime" type="service_closure" id="twig.runtime.markdown"/>
       </argument>
     </service>
-    <service id="App\Project\RuleInterface" alias="App\Project\RoyalFlush"/>
+    <service id="App\ProjectRules\RuleStatInterface" alias="App\ProjectRules\RoyalFlushStat"/>
     <service id="App\Kernel" alias="kernel" public="true"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface" alias="parameter_bag"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface" alias="parameter_bag"/>

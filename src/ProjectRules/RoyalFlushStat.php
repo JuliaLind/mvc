@@ -65,7 +65,7 @@ class RoyalFlushStat implements RuleStatInterface
         $searcher = $this->searcher;
         for ($rank = self::MINRANK; $rank <= self::MAXRANK; $rank++) {
             $possible = $searcher->search($cards, $rank, $suit);
-            if ($possible == false) {
+            if ($possible === false) {
                 break;
             }
         }
