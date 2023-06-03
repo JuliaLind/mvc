@@ -34,10 +34,29 @@ class Deck
     }
 
     /**
+     * @return array<int>
+     */
+    public function ranksOfSuit(string $suit): array
+    {
+        $cards = $this->cards;
+        $ranksOfSuit = [];
+        foreach($cards as $card) {
+            if ($card->getSuit() === $suit) {
+                array_push($ranksOfSuit, $card->getRank());
+            }
+        }
+        // if (count($ranksOfSuit) == 0) {
+        //     throw new NoCardsException();
+        // }
+        return $ranksOfSuit;
+    }
+
+    /**
      * @return array<Card>
      */
     public function getCards(): array
     {
-        return $this->cards;
+        $cards = $this->cards;
+        return $cards;
     }
 }

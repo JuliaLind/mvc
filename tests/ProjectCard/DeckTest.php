@@ -57,6 +57,17 @@ class DeckTest extends TestCase
         $this->assertSame($exp, $res);
     }
 
+    public function testRanksOfSuitOk(): void
+    {
+        $factory = $this->createMock(CardFactory::class);
+        $factory->method('fullSet')
+        ->willReturn([new Card(5, "S"), new Card(6, "S"), new Card(7, "D"), new Card(8, "S"), new Card(8, "C"), new Card(9, "S")]);
+        $deck = new Deck($factory);
+        $res = $deck->ranksOfSuit('S');
+        $exp = [5, 6, 8, 9];
+        $this->assertSame($exp, $res);
+    }
+
     /**
      * Construct deck and checks that NoCardsLeftException is
      * thrown when try to draw more cards then there

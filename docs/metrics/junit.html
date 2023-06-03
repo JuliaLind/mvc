@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-03 16:09:32        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-03 17:06:10        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -67,7 +67,7 @@
         <div class="bloc bloc-number">
             <div class="label">Assertions</div>
             <div class="number">
-                471            </div>
+                472            </div>
         </div>
     </div>
     <div class="column">
@@ -268,17 +268,6 @@
                                     </td>
                                                             </tr>
                                                         <tr>
-                                <td><span class="path">App\Project\PokerSquareException</span></td>
-                                                                    <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
-                                        1                                        </span>
-                                    </td>
-                                                                    <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
-                                        0                                        </span>
-                                    </td>
-                                                            </tr>
-                                                        <tr>
                                 <td><span class="path">App\Library\BookNotFoundException</span></td>
                                                                     <td>
                                         <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
@@ -323,7 +312,18 @@
                                     </td>
                                                             </tr>
                                                         <tr>
-                                <td><span class="path">App\ProjectCard\NoCardsException</span></td>
+                                <td><span class="path">App\ProjectExceptions\PokerSquareException</span></td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
+                                        1                                        </span>
+                                    </td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
+                                        0                                        </span>
+                                    </td>
+                                                            </tr>
+                                                        <tr>
+                                <td><span class="path">App\ProjectExceptions\NoCardsException</span></td>
                                                                     <td>
                                         <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
                                         1                                        </span>
@@ -1132,7 +1132,7 @@
                                             -                                        </span>
                                         <span class="path">PHPUnit\Framework\TestCase</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            2                                        </span>
+                                            4                                        </span>
                                         <span class="path">App\ProjectCard\Deck</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             1                                        </span>
@@ -1492,7 +1492,7 @@
 
 
             
-            var json = {"name":"Execution time","children":[{"name":"App\\Cards\\CardDeckHandlerTest","time":0.047854},{"name":"App\\Cards\\CardGraphicTest","time":0.007295},{"name":"App\\Cards\\CardHandTest","time":0.015552},{"name":"App\\Cards\\CardHandlerTest","time":0.013991},{"name":"App\\Cards\\CardLandingHandlerTest","time":0.003301},{"name":"App\\Cards\\CardTest","time":0.001434},{"name":"App\\Cards\\DeckOfCardsExtTest","time":0.00294},{"name":"App\\Cards\\DeckOfCardsTest","time":0.011201},{"name":"App\\Cards\\JsonCardHandlerTest","time":0.009946},{"name":"App\\Cards\\PlayerCreatorTest","time":0.003322},{"name":"App\\Cards\\PlayerTest","time":0.003839},{"name":"App\\Controller\\CardControllerTest","time":1.139637},{"name":"App\\Controller\\CardLandingControllerTest","time":0.021294},{"name":"App\\Controller\\Game21ControllerTest","time":0.128257},{"name":"App\\Controller\\JsonCardDealControllerTest","time":0.011869},{"name":"App\\Controller\\JsonCardDeckControllerTest","time":0.014004},{"name":"App\\Controller\\JsonControllerTest","time":0.024069},{"name":"App\\Controller\\JsonDealManyCardsControllerTest","time":0.007084},{"name":"App\\Controller\\JsonDealOneCardControllerTest","time":0.006895},{"name":"App\\Controller\\JsonGame21ControllerTest","time":0.012337},{"name":"App\\Controller\\JsonLibraryControllerTest","time":0.044526},{"name":"App\\Controller\\LibraryControllerTest","time":0.410991},{"name":"App\\Controller\\LibraryUpdateBookControllerTest","time":0.042227},{"name":"App\\Controller\\MainControllerTest","time":0.059888},{"name":"App\\Entity\\BookTest","time":0.001028},{"name":"App\\Game\\BanksTurnHandlerTest","time":0.003263},{"name":"App\\Game\\BettingGameTraitTest","time":0.005193},{"name":"App\\Game\\Game21EasyEvaluateBankTest","time":0.005472},{"name":"App\\Game\\Game21EasyEvaluateTest","time":0.005335},{"name":"App\\Game\\Game21EasyGenerateFlashTest","time":0.00363},{"name":"App\\Game\\Game21EasyTest","time":0.007001},{"name":"App\\Game\\Game21HardTest","time":0.003856},{"name":"App\\Game\\GameAttrHandler2TraitTest","time":0.008001},{"name":"App\\Game\\GameAttrHandlerTraitTest","time":0.005799},{"name":"App\\Game\\GameHandlerLandingTest","time":0.005164},{"name":"App\\Game\\GameHandlerTest","time":0.001977},{"name":"App\\Game\\GameInitiatorTest","time":0.002163},{"name":"App\\Game\\GameMoneyHandlerTest","time":0.00304},{"name":"App\\Game\\GameTest","time":0.001872},{"name":"App\\Game\\JsonGameHandlerTest","time":0.001883},{"name":"App\\Game\\MoneyPotTest","time":0.003073},{"name":"App\\Game\\Player21Test","time":0.005875},{"name":"App\\Game\\PlayerTraitTest","time":0.004579},{"name":"App\\Game\\PlayerTurnHandlerTest","time":0.003153},{"name":"App\\Game\\RoundHandlerTest","time":0.007192},{"name":"App\\Helpers\\JsonConverterTest","time":0.004236},{"name":"App\\Helpers\\JsonHandlerTest","time":0.002094},{"name":"App\\Helpers\\LuckyRouteDataTest","time":0.001479},{"name":"App\\Helpers\\MainControllerHelperTest","time":0.00246},{"name":"App\\Library\\BookRemoverTest","time":0.003078},{"name":"App\\Library\\BookSaverTest","time":0.002637},{"name":"App\\Library\\BookUpdatorTest","time":0.004496},{"name":"App\\Library\\LibraryHandlerTest","time":0.007161},{"name":"App\\Library\\NewFlashGeneratorTest","time":0.002416},{"name":"App\\Library\\RemoveFlashGeneratorTest","time":0.001544},{"name":"App\\Library\\SqlFileLoaderTest","time":0.004364},{"name":"App\\Library\\UpdateFlashGeneratorTest","time":0.002376},{"name":"App\\Markdown\\MdParserTest","time":0.002738},{"name":"App\\ProjectCard\\CardCounterTest","time":0.000766},{"name":"App\\ProjectCard\\CardFactoryTest","time":0.003137},{"name":"App\\ProjectCard\\CardSearcherTest","time":0.000814},{"name":"App\\ProjectCard\\CardTest","time":0.000751},{"name":"App\\ProjectCard\\DeckTest","time":0.006259},{"name":"App\\ProjectGrid\\EmptyCellFinderTest","time":0.001864},{"name":"App\\ProjectGrid\\GridColsTest","time":0.00094},{"name":"App\\ProjectGrid\\GridGraphicTest","time":0.000833},{"name":"App\\ProjectGrid\\GridTest","time":0.003386},{"name":"App\\ProjectRules\\RoyalFlushStatTest","time":0.009615},{"name":"App\\ProjectRules\\RoyalFlushTest","time":0.004591},{"name":"App\\ProjectRules\\StraightFlushTest","time":0.004099},{"name":"App\\Repository\\BookRepositoryTest","time":0.002405}]};
+            var json = {"name":"Execution time","children":[{"name":"App\\Cards\\CardDeckHandlerTest","time":0.048547},{"name":"App\\Cards\\CardGraphicTest","time":0.007104},{"name":"App\\Cards\\CardHandTest","time":0.014946},{"name":"App\\Cards\\CardHandlerTest","time":0.01393},{"name":"App\\Cards\\CardLandingHandlerTest","time":0.003339},{"name":"App\\Cards\\CardTest","time":0.001426},{"name":"App\\Cards\\DeckOfCardsExtTest","time":0.00268},{"name":"App\\Cards\\DeckOfCardsTest","time":0.011038},{"name":"App\\Cards\\JsonCardHandlerTest","time":0.009309},{"name":"App\\Cards\\PlayerCreatorTest","time":0.003371},{"name":"App\\Cards\\PlayerTest","time":0.00403},{"name":"App\\Controller\\CardControllerTest","time":1.162772},{"name":"App\\Controller\\CardLandingControllerTest","time":0.022366},{"name":"App\\Controller\\Game21ControllerTest","time":0.129348},{"name":"App\\Controller\\JsonCardDealControllerTest","time":0.011502},{"name":"App\\Controller\\JsonCardDeckControllerTest","time":0.012295},{"name":"App\\Controller\\JsonControllerTest","time":0.023848},{"name":"App\\Controller\\JsonDealManyCardsControllerTest","time":0.006733},{"name":"App\\Controller\\JsonDealOneCardControllerTest","time":0.006935},{"name":"App\\Controller\\JsonGame21ControllerTest","time":0.012564},{"name":"App\\Controller\\JsonLibraryControllerTest","time":0.046564},{"name":"App\\Controller\\LibraryControllerTest","time":0.41022},{"name":"App\\Controller\\LibraryUpdateBookControllerTest","time":0.044581},{"name":"App\\Controller\\MainControllerTest","time":0.060488},{"name":"App\\Entity\\BookTest","time":0.001399},{"name":"App\\Game\\BanksTurnHandlerTest","time":0.00316},{"name":"App\\Game\\BettingGameTraitTest","time":0.005015},{"name":"App\\Game\\Game21EasyEvaluateBankTest","time":0.005854},{"name":"App\\Game\\Game21EasyEvaluateTest","time":0.005143},{"name":"App\\Game\\Game21EasyGenerateFlashTest","time":0.003733},{"name":"App\\Game\\Game21EasyTest","time":0.007801},{"name":"App\\Game\\Game21HardTest","time":0.003722},{"name":"App\\Game\\GameAttrHandler2TraitTest","time":0.007677},{"name":"App\\Game\\GameAttrHandlerTraitTest","time":0.005622},{"name":"App\\Game\\GameHandlerLandingTest","time":0.005233},{"name":"App\\Game\\GameHandlerTest","time":0.001905},{"name":"App\\Game\\GameInitiatorTest","time":0.00185},{"name":"App\\Game\\GameMoneyHandlerTest","time":0.003145},{"name":"App\\Game\\GameTest","time":0.002004},{"name":"App\\Game\\JsonGameHandlerTest","time":0.001882},{"name":"App\\Game\\MoneyPotTest","time":0.002689},{"name":"App\\Game\\Player21Test","time":0.005892},{"name":"App\\Game\\PlayerTraitTest","time":0.00453},{"name":"App\\Game\\PlayerTurnHandlerTest","time":0.003007},{"name":"App\\Game\\RoundHandlerTest","time":0.007471},{"name":"App\\Helpers\\JsonConverterTest","time":0.004262},{"name":"App\\Helpers\\JsonHandlerTest","time":0.002095},{"name":"App\\Helpers\\LuckyRouteDataTest","time":0.001494},{"name":"App\\Helpers\\MainControllerHelperTest","time":0.002466},{"name":"App\\Library\\BookRemoverTest","time":0.003228},{"name":"App\\Library\\BookSaverTest","time":0.003074},{"name":"App\\Library\\BookUpdatorTest","time":0.00448},{"name":"App\\Library\\LibraryHandlerTest","time":0.007727},{"name":"App\\Library\\NewFlashGeneratorTest","time":0.002589},{"name":"App\\Library\\RemoveFlashGeneratorTest","time":0.001544},{"name":"App\\Library\\SqlFileLoaderTest","time":0.003845},{"name":"App\\Library\\UpdateFlashGeneratorTest","time":0.002397},{"name":"App\\Markdown\\MdParserTest","time":0.002836},{"name":"App\\ProjectCard\\CardCounterTest","time":0.000734},{"name":"App\\ProjectCard\\CardFactoryTest","time":0.002984},{"name":"App\\ProjectCard\\CardSearcherTest","time":0.000778},{"name":"App\\ProjectCard\\CardTest","time":0.000759},{"name":"App\\ProjectCard\\DeckTest","time":0.007131},{"name":"App\\ProjectGrid\\EmptyCellFinderTest","time":0.001455},{"name":"App\\ProjectGrid\\GridColsTest","time":0.000855},{"name":"App\\ProjectGrid\\GridGraphicTest","time":0.00079},{"name":"App\\ProjectGrid\\GridTest","time":0.003481},{"name":"App\\ProjectRules\\RoyalFlushStatTest","time":0.009827},{"name":"App\\ProjectRules\\RoyalFlushTest","time":0.004602},{"name":"App\\ProjectRules\\StraightFlushTest","time":0.004076},{"name":"App\\Repository\\BookRepositoryTest","time":0.002508}]};
             root = json;
             var nodes = treemap.nodes(json)
                 .filter(function (d) {

@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-03 16:09:32        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-03 17:06:10        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -748,11 +748,6 @@
         "relations": []
     },
     {
-        "name": "\\App\\Project\\PokerSquareException",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\Library\\BookRemover",
         "size": 3000,
         "relations": []
@@ -834,17 +829,12 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectCard\\NoCardsException",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\ProjectCard\\Deck",
         "size": 3000,
         "relations": [
             "\\App\\ProjectCard\\CardFactory",
             "\\App\\ProjectCard\\Card",
-            "\\App\\ProjectCard\\NoCardsException"
+            "\\App\\ProjectExceptions\\NoCardsException"
         ]
     },
     {
@@ -853,6 +843,18 @@
         "relations": [
             "\\App\\ProjectCard\\Card"
         ]
+    },
+    {
+        "name": "\\App\\ProjectExceptions\\NoCardsException",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectExceptions\\PokerSquareException"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectExceptions\\PokerSquareException",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Kernel",
