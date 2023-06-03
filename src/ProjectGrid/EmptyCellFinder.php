@@ -14,7 +14,7 @@ class EmptyCellFinder
     {
         $empty = [];
         for ($col = 0; $col < 5; $col++) {
-            if ($notEmpty == false || !array_key_exists($col, $row)) {
+            if ($notEmpty === false || !array_key_exists($col, $row)) {
                 // array_push($empty, [
                 //     'row' => $rowNr,
                 //     'col' => $col
@@ -35,7 +35,7 @@ class EmptyCellFinder
         for ($row = 0; $row < 5; $row++) {
             $singleRow = [];
             $bool = array_key_exists($row, $rows);
-            if ($bool == true) {
+            if ($bool === true) {
                 $singleRow = $rows[$row];
             }
 
