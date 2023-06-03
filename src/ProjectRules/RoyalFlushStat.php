@@ -80,9 +80,9 @@ class RoyalFlushStat implements RuleStatInterface
      */
     public function possible(array $hand, array $deck, Card $card): bool
     {
-        if (count($hand) === 5) {
-            return false;
-        }
+        // if (count($hand) === 5) {
+        //     return false;
+        // }
         /**
          * @var array<Card> $newHand
          */

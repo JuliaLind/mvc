@@ -47,18 +47,14 @@ class FourOfAKindStat implements RuleStatInterface
      */
     public function possible(array $hand, array $deck, Card $card): bool
     {
-        if (count($hand) === 5) {
-            return false;
-        }
+        // if (count($hand) === 5) {
+        //     return false;
+        // }
         /**
          * @var array<Card> $newHand
          */
         $newHand = [...$hand, $card];
         $newCountHand = count($newHand);
-
-        // if ($newCountHand >= 4 && $this->checkForScore($newHand) === true) {
-        //     return true;
-        // }
 
         $uniqueCountHand = $this->cardCounter->count($newHand);
 

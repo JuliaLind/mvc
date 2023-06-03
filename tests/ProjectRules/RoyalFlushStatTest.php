@@ -12,22 +12,22 @@ use App\ProjectCard\CardSearcher;
  */
 class RoyalFlushStatTest extends TestCase
 {
-    public function testPossibleNotOk(): void
-    {
-        $counter = $this->createMock(CardCounter::class);
-        $counter->expects($this->never())->method('count');
+    // public function testPossibleNotOk(): void
+    // {
+    //     $counter = $this->createMock(CardCounter::class);
+    //     $counter->expects($this->never())->method('count');
 
-        $rule = new RoyalFlushStat($counter);
+    //     $rule = new RoyalFlushStat($counter);
 
-        $deck = [$this->createMock(Card::class)];
-        $card = $this->createMock(Card::class);
-        $hand = [];
-        for ($i = 0; $i < 5; $i++) {
-            array_push($hand, $this->createMock(Card::class));
-        }
-        $res = $rule->possible($hand, $deck, $card);
-        $this->assertFalse($res);
-    }
+    //     $deck = [$this->createMock(Card::class)];
+    //     $card = $this->createMock(Card::class);
+    //     $hand = [];
+    //     for ($i = 0; $i < 5; $i++) {
+    //         array_push($hand, $this->createMock(Card::class));
+    //     }
+    //     $res = $rule->possible($hand, $deck, $card);
+    //     $this->assertFalse($res);
+    // }
 
     public function testPossibleNotOk2(): void
     {
