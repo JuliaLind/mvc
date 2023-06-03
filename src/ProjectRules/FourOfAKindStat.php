@@ -25,18 +25,18 @@ class FourOfAKindStat implements RuleStatInterface
         $this->searcher = $searcher;
     }
 
-    /**
-     * @param array<Card> $hand
-     */
-    private function checkForScore($hand, FourOfAKind $rule=new FourOfAKind()): bool
-    {
-        $scored =  $rule->scored($hand);
-        /**
-         * @var bool $possible
-         */
-        $possible = $scored['scored'];
-        return $possible;
-    }
+    // /**
+    //  * @param array<Card> $hand
+    //  */
+    // private function checkForScore($hand, FourOfAKind $rule=new FourOfAKind()): bool
+    // {
+    //     $scored =  $rule->scored($hand);
+    //     /**
+    //      * @var bool $possible
+    //      */
+    //     $possible = $scored['scored'];
+    //     return $possible;
+    // }
 
     /**
      * @param array<Card> $hand
@@ -56,9 +56,9 @@ class FourOfAKindStat implements RuleStatInterface
         $newHand = [...$hand, $card];
         $newCountHand = count($newHand);
 
-        if ($newCountHand >= 4 && $this->checkForScore($newHand) === true) {
-            return true;
-        }
+        // if ($newCountHand >= 4 && $this->checkForScore($newHand) === true) {
+        //     return true;
+        // }
 
         $uniqueCountHand = $this->cardCounter->count($newHand);
 
