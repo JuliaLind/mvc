@@ -35,33 +35,33 @@ class CardSearcherTest extends TestCase
         $this->assertFalse($res);
     }
 
-    public function testSearchForRankOk(): void
-    {
-        $cards = [
-            new Card(5, "S"),
-            new Card(7, "D"),
-            new Card(12, "C"),
-            new Card(12, "D")
-        ];
-        $searcher = new CardSearcher();
-        $res = $searcher->searchForRank($cards, 12);
-        $exp = 2;
-        $this->assertEquals($exp, $res);
-    }
+    // public function testSearchForRankOk(): void
+    // {
+    //     $cards = [
+    //         new Card(5, "S"),
+    //         new Card(7, "D"),
+    //         new Card(12, "C"),
+    //         new Card(12, "D")
+    //     ];
+    //     $searcher = new CardSearcher();
+    //     $res = $searcher->searchForRank($cards, 12);
+    //     $exp = 2;
+    //     $this->assertEquals($exp, $res);
+    // }
 
-    public function testSearchForRankNotOk(): void
-    {
-        $cards = [
-            new Card(5, "S"),
-            new Card(7, "D"),
-            new Card(12, "C"),
-            new Card(12, "D")
-        ];
-        $searcher = new CardSearcher();
-        $res = $searcher->searchForRank($cards, 11);
-        $exp = 0;
-        $this->assertEquals($exp, $res);
-    }
+    // public function testSearchForRankNotOk(): void
+    // {
+    //     $cards = [
+    //         new Card(5, "S"),
+    //         new Card(7, "D"),
+    //         new Card(12, "C"),
+    //         new Card(12, "D")
+    //     ];
+    //     $searcher = new CardSearcher();
+    //     $res = $searcher->searchForRank($cards, 11);
+    //     $exp = 0;
+    //     $this->assertEquals($exp, $res);
+    // }
 
     public function testCheckRankQuantNotOk(): void
     {

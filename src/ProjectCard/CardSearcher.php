@@ -23,21 +23,21 @@ class CardSearcher
         return false;
     }
 
-    /**
-     * @param array<Card> $cards
-     * @param int $rank
-     */
-    public function searchForRank($cards, $rank): int
-    {
-        $count = 0;
-        foreach(['S', 'D', 'C', 'H'] as $suit) {
-            $possible = $this->search($cards, $rank, $suit);
-            if ($possible === true) {
-                $count += 1;
-            }
-        }
-        return $count;
-    }
+    // /**
+    //  * @param array<Card> $cards
+    //  * @param int $rank
+    //  */
+    // public function searchForRank($cards, $rank): int
+    // {
+    //     $count = 0;
+    //     foreach(['S', 'D', 'C', 'H'] as $suit) {
+    //         $possible = $this->search($cards, $rank, $suit);
+    //         if ($possible === true) {
+    //             $count += 1;
+    //         }
+    //     }
+    //     return $count;
+    // }
 
     /**
      * @param array<Card> $cards
@@ -46,9 +46,15 @@ class CardSearcher
      */
     public function checkRankQuant($cards, $rank, $quantity): bool
     {
-        $count = $this->searchForRank($cards, $rank);
-        if ($count >= $quantity) {
-            return true;
+        $count = 0;
+        foreach(['S', 'D', 'C', 'H'] as $suit) {
+            $possible = $this->search($cards, $rank, $suit);
+            if ($possible === true) {
+                $count += 1;
+            }
+            if ($count == $quantity) {
+                return true;
+            }
         }
         return false;
     }
