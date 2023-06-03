@@ -39,37 +39,6 @@ class FourOfAKindStat implements RuleStatInterface
     }
 
     /**
-     * @param array<Card> $cards
-     * @param int $rank
-     */
-    private function checkForSingle($cards, $rank): bool
-    {
-        $searcher = $this->searcher;
-        $count = $searcher->searchForRank($cards, $rank);
-        if ($count == 4) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * @param array<Card> $cards
-     * @param array<int> $ranks
-     */
-    private function checkForTwo($cards, $ranks): bool
-    {
-        $check = false;
-        foreach($ranks as $rank) {
-            $check = $this->checkForSingle($cards, $rank);
-            if ($check === true) {
-                break;
-            }
-        }
-        return $check;
-    }
-
-
-    /**
      * @param array<Card> $hand
      * @param array<Card> $deck
      * @param Card $card
@@ -103,13 +72,14 @@ class FourOfAKindStat implements RuleStatInterface
             return false;
         }
         $allCards = array_merge($newHand, $deck);
+        $searcher = $this->searcher;
         if ($newCountHand == 2 && $countRanksHand == 2) {
-            return $this->checkForTwo($allCards, array_keys($ranksHand));
+            return $searcher->checkRanksQuant($allCards, array_keys($ranksHand), 4);
         }
         /**
          * @var int $rank
          */
         $rank = array_search(max($ranksHand), $ranksHand);
-        return $this->checkForSingle($allCards, $rank);
+        return $searcher->checkRankQuant($allCards, $rank, 4);
     }
 }
