@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1685812164">
-  <project timestamp="1685812164">
+<coverage generated="1685813733">
+  <project timestamp="1685813733">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -692,14 +692,14 @@
       <line num="117" type="stmt" count="3"/>
       <line num="119" type="stmt" count="3"/>
       <line num="120" type="stmt" count="3"/>
-      <line num="124" type="method" name="bankWinsOnEqual" visibility="protected" complexity="3" crap="3" count="3"/>
-      <line num="126" type="stmt" count="3"/>
-      <line num="127" type="stmt" count="1"/>
+      <line num="124" type="method" name="bankWinsOnEqual" visibility="protected" complexity="3" crap="3" count="4"/>
+      <line num="126" type="stmt" count="4"/>
+      <line num="127" type="stmt" count="2"/>
       <line num="129" type="stmt" count="2"/>
       <line num="132" type="method" name="hasBankMoreThan21" visibility="protected" complexity="2" crap="2" count="5"/>
       <line num="134" type="stmt" count="5"/>
-      <line num="135" type="stmt" count="2"/>
-      <line num="137" type="stmt" count="3"/>
+      <line num="135" type="stmt" count="1"/>
+      <line num="137" type="stmt" count="4"/>
       <line num="140" type="method" name="hasBankBestScore" visibility="protected" complexity="2" crap="2" count="2"/>
       <line num="142" type="stmt" count="2"/>
       <line num="143" type="stmt" count="2"/>
@@ -712,11 +712,11 @@
       <line num="161" type="stmt" count="5"/>
       <line num="162" type="stmt" count="5"/>
       <line num="166" type="stmt" count="5"/>
-      <line num="167" type="stmt" count="2"/>
-      <line num="168" type="stmt" count="2"/>
-      <line num="170" type="stmt" count="3"/>
-      <line num="171" type="stmt" count="1"/>
-      <line num="172" type="stmt" count="1"/>
+      <line num="167" type="stmt" count="1"/>
+      <line num="168" type="stmt" count="1"/>
+      <line num="170" type="stmt" count="4"/>
+      <line num="171" type="stmt" count="2"/>
+      <line num="172" type="stmt" count="2"/>
       <line num="174" type="stmt" count="2"/>
       <line num="175" type="stmt" count="1"/>
       <line num="176" type="stmt" count="1"/>
@@ -729,7 +729,7 @@
       <line num="193" type="stmt" count="5"/>
       <line num="194" type="stmt" count="3"/>
       <line num="195" type="stmt" count="3"/>
-      <line num="196" type="stmt" count="2"/>
+      <line num="196" type="stmt" count="3"/>
       <line num="198" type="stmt" count="3"/>
       <line num="200" type="stmt" count="5"/>
       <line num="201" type="stmt" count="1"/>
@@ -1574,7 +1574,7 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/RoyalFlushStat.php">
       <class name="App\ProjectRules\RoyalFlushStat" namespace="global">
-        <metrics complexity="10" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="27" elements="31" coveredelements="31"/>
+        <metrics complexity="10" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="26" elements="30" coveredelements="30"/>
       </class>
       <line num="36" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="8"/>
       <line num="40" type="stmt" count="8"/>
@@ -1595,19 +1595,18 @@
       <line num="82" type="method" name="possible" visibility="public" complexity="5" crap="5" count="8"/>
       <line num="84" type="stmt" count="8"/>
       <line num="85" type="stmt" count="1"/>
-      <line num="87" type="stmt" count="7"/>
-      <line num="88" type="stmt" count="7"/>
-      <line num="93" type="stmt" count="7"/>
-      <line num="94" type="stmt" count="1"/>
-      <line num="97" type="stmt" count="6"/>
-      <line num="101" type="stmt" count="6"/>
-      <line num="105" type="stmt" count="6"/>
+      <line num="90" type="stmt" count="7"/>
+      <line num="95" type="stmt" count="7"/>
+      <line num="96" type="stmt" count="1"/>
+      <line num="99" type="stmt" count="6"/>
+      <line num="103" type="stmt" count="6"/>
       <line num="107" type="stmt" count="6"/>
-      <line num="108" type="stmt" count="1"/>
-      <line num="114" type="stmt" count="5"/>
-      <line num="115" type="stmt" count="5"/>
+      <line num="109" type="stmt" count="6"/>
+      <line num="110" type="stmt" count="1"/>
       <line num="116" type="stmt" count="5"/>
-      <metrics loc="119" ncloc="74" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="27" elements="31" coveredelements="31"/>
+      <line num="117" type="stmt" count="5"/>
+      <line num="118" type="stmt" count="5"/>
+      <metrics loc="121" ncloc="73" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="26" elements="30" coveredelements="30"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/RuleInterface.php">
       <metrics loc="18" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -1685,6 +1684,6 @@
       <line num="87" type="stmt" count="7"/>
       <metrics loc="115" ncloc="71" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="24" elements="30" coveredelements="30"/>
     </file>
-    <metrics files="82" loc="4714" ncloc="3325" classes="68" methods="220" coveredmethods="219" conditionals="0" coveredconditionals="0" statements="981" coveredstatements="979" elements="1201" coveredelements="1198"/>
+    <metrics files="82" loc="4716" ncloc="3324" classes="68" methods="220" coveredmethods="219" conditionals="0" coveredconditionals="0" statements="980" coveredstatements="978" elements="1200" coveredelements="1197"/>
   </project>
 </coverage>

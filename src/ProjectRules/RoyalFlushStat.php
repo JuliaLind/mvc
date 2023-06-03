@@ -84,6 +84,9 @@ class RoyalFlushStat implements RuleStatInterface
         if (count($hand) === 5) {
             return false;
         }
+        /**
+         * @var array<Card> $newHand
+         */
         $newHand = [...$hand, $card];
         // $newHand = [
         //     ...$hand,

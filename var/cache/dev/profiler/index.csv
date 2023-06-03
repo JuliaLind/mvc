@@ -45,3 +45,9 @@ ec6a09,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/read_many,16
 88075e,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library/update/9781491952023,1685521767,,200
 10b09f,::1,GET,http://localhost/dbwebb/mvc/me/report/public/metrics,1685668152,,200
 290f5f,::1,GET,http://localhost/dbwebb/mvc/me/report/public/api,1685812275,,200
+8505c5,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library,1685813202,,200
+702e87,::1,GET,http://localhost/dbwebb/mvc/me/report/public/game,1685813210,,200
+dbcb99,::1,GET,http://localhost/dbwebb/mvc/me/report/public/card,1685813212,,200
+0b9b5b,::1,GET,http://localhost/dbwebb/mvc/me/report/public/lucky,1685813213,,200
+2a972b,::1,GET,http://localhost/dbwebb/mvc/me/report/public/lucky,1685813248,,200
+d1a260,::1,GET,http://localhost/dbwebb/mvc/me/report/public/lucky,1685813252,,200
