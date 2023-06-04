@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1685834657">
-  <project timestamp="1685834657">
+<coverage generated="1685896787">
+  <project timestamp="1685896787">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -1567,22 +1567,11 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/FourOfAKind.php">
       <class name="App\ProjectRules\FourOfAKind" namespace="global">
-        <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="13" coveredelements="13"/>
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </class>
-      <line num="27" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="5"/>
-      <line num="30" type="stmt" count="5"/>
-      <line num="38" type="method" name="scored" visibility="public" complexity="2" crap="2" count="5"/>
-      <line num="40" type="stmt" count="5"/>
-      <line num="41" type="stmt" count="5"/>
-      <line num="42" type="stmt" count="5"/>
-      <line num="43" type="stmt" count="5"/>
-      <line num="44" type="stmt" count="5"/>
-      <line num="45" type="stmt" count="5"/>
-      <line num="50" type="stmt" count="5"/>
-      <line num="52" type="stmt" count="5"/>
-      <line num="53" type="stmt" count="2"/>
-      <line num="55" type="stmt" count="5"/>
-      <metrics loc="58" ncloc="40" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="13" coveredelements="13"/>
+      <line num="29" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="32" type="stmt" count="5"/>
+      <metrics loc="60" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/FourOfAKindStat.php">
       <class name="App\ProjectRules\FourOfAKindStat" namespace="global">
@@ -1679,6 +1668,24 @@
       <line num="7" type="stmt" count="1"/>
       <metrics loc="14" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="1" coveredelements="1"/>
     </file>
+    <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/SameRankTrait.php">
+      <class name="App\ProjectRules\SameRankTrait" namespace="global">
+        <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
+      </class>
+      <line num="8" type="stmt" count="1"/>
+      <line num="19" type="method" name="scored" visibility="public" complexity="2" crap="2" count="5"/>
+      <line num="21" type="stmt" count="5"/>
+      <line num="22" type="stmt" count="5"/>
+      <line num="23" type="stmt" count="5"/>
+      <line num="24" type="stmt" count="5"/>
+      <line num="25" type="stmt" count="5"/>
+      <line num="26" type="stmt" count="5"/>
+      <line num="31" type="stmt" count="5"/>
+      <line num="33" type="stmt" count="5"/>
+      <line num="34" type="stmt" count="2"/>
+      <line num="36" type="stmt" count="5"/>
+      <metrics loc="39" ncloc="32" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="12" coveredelements="12"/>
+    </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/StraightFlush.php">
       <class name="App\ProjectRules\StraightFlush" namespace="global">
         <metrics complexity="6" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="21" coveredelements="21"/>
@@ -1705,6 +1712,14 @@
       <line num="81" type="stmt" count="3"/>
       <line num="83" type="stmt" count="5"/>
       <metrics loc="86" ncloc="55" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="21" coveredelements="21"/>
+    </file>
+    <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/ThreeOfAKind.php">
+      <class name="App\ProjectRules\ThreeOfAKind" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      </class>
+      <line num="29" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <metrics loc="60" ncloc="29" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Repository/BookRepository.php">
       <class name="App\Repository\BookRepository" namespace="global">
@@ -1742,6 +1757,6 @@
       <line num="87" type="stmt" count="7"/>
       <metrics loc="115" ncloc="71" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="24" elements="30" coveredelements="30"/>
     </file>
-    <metrics files="84" loc="4912" ncloc="3442" classes="70" methods="227" coveredmethods="226" conditionals="0" coveredconditionals="0" statements="1019" coveredstatements="1017" elements="1246" coveredelements="1243"/>
+    <metrics files="86" loc="5013" ncloc="3492" classes="72" methods="228" coveredmethods="226" conditionals="0" coveredconditionals="0" statements="1021" coveredstatements="1018" elements="1249" coveredelements="1244"/>
   </project>
 </coverage>

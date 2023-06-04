@@ -5,19 +5,21 @@ namespace App\ProjectRules;
 use App\ProjectCard\CardCounter;
 use App\ProjectCard\Card;
 
-/**
- * Royal Flush Rule
- * Ace, King, Queen, Jack, Ten of same suit
- *
- */
 class FourOfAKind implements RuleInterface
 {
     use RuleTrait;
+    use SameRankTrait;
 
     /**
      * @var int $POINTS the points if rule is  scored
      */
     private const POINTS = 50;
+
+    /**
+     * @var int $MINCOUNTRANK the minimum number of cards of
+     * same rank required to score the rule
+     */
+    private const MINCOUNTRANK = 4;
 
     /**
      * @var string $NAME name of the rule
@@ -31,27 +33,27 @@ class FourOfAKind implements RuleInterface
     }
 
 
-    /**
-     * @param array<Card> $hand
-     * @return array<string,string|int|bool> name, points and true if rule is fullfilled otherwise false
-     */
-    public function scored(array $hand): array
-    {
-        $data = [
-            'name' => self::NAME,
-            'points' => self::POINTS,
-            'scored' => false
-        ];
-        $uniqueCount = $this->cardCounter->count($hand);
+    // /**
+    //  * @param array<Card> $hand
+    //  * @return array<string,string|int|bool> name, points and true if rule is fullfilled otherwise false
+    //  */
+    // public function scored(array $hand): array
+    // {
+    //     $data = [
+    //         'name' => self::NAME,
+    //         'points' => self::POINTS,
+    //         'scored' => false
+    //     ];
+    //     $uniqueCount = $this->cardCounter->count($hand);
 
-        /**
-         * @var array<int,int> $uniqueRanks
-         */
-        $uniqueRanks = $uniqueCount['ranks'];
+    //     /**
+    //      * @var array<int,int> $uniqueRanks
+    //      */
+    //     $uniqueRanks = $uniqueCount['ranks'];
 
-        if (max($uniqueRanks) >= 4) {
-            $data['scored'] = true;
-        }
-        return $data;
-    }
+    //     if (max($uniqueRanks) >= self::MINCOUNTRANK) {
+    //         $data['scored'] = true;
+    //     }
+    //     return $data;
+    // }
 }
