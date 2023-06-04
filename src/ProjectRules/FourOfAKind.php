@@ -13,11 +13,6 @@ class FourOfAKind extends Rule implements RuleInterface
     protected int $points;
     protected string $name;
 
-    // /**
-    //  * @var int $minCountRank minimum count of a rank to score the rule
-    //  */
-    // private int $minCountRank;
-
     /**
      * Constructor
      */

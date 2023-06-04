@@ -16,11 +16,6 @@ class OnePairStat extends RuleStat implements RuleStatInterface
     use RuleTrait;
     use SameRankStatTrait;
 
-    // /**
-    //  * @var int $minCountRank minimum count of a rank to score the rule
-    //  */
-    // private int $minCountRank = 2;
-
     /**
      * Constructor
      */

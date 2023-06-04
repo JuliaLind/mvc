@@ -13,21 +13,6 @@ class OnePair extends Rule implements RuleInterface
     protected int $points;
     protected string $name;
 
-    // /**
-    //  * @var int $points the points if rule is  scored
-    //  */
-    // private int $points = 2;
-
-    // /**
-    //  * @var string $name name of the rule
-    //  */
-    // private string $name = "OnePair";
-
-    // /**
-    //  * @var int $minCountRank minimum count of a rank to score the rule
-    //  */
-    // private int $minCountRank = 2;
-
     /**
      * Constructor
      */

@@ -4,11 +4,9 @@ namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
 use App\ProjectCard\Card;
-use App\ProjectCard\CardCounter;
-use App\ProjectCard\CardSearcher;
 
 /**
- * Test cases for class Royal Flush.
+ * Test cases for class Royal Flush Stat.
  */
 class RoyalFlushStatTest extends TestCase
 {

@@ -4,12 +4,7 @@ namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
 use App\ProjectCard\Card;
-use App\ProjectCard\CardCounter;
-use App\ProjectCard\CardSearcher;
 
-/**
- * Test cases for class Royal Flush.
- */
 class FourOfAKindStatNotOkTest extends TestCase
 {
     public function testPossibleNotOk(): void

@@ -31,16 +31,6 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
      */
     private const UNIQUESUITS = 1;
 
-    // private CardSearcher $searcher;
-
-    // public function __construct(
-    //     CardCounter $cardCounter = new CardCounter(),
-    //     CardSearcher $searcher = new CardSearcher()
-    // ) {
-    //     $this->cardCounter = $cardCounter;
-    //     $this->searcher = $searcher;
-    // }
-
     /**
      * @param array<Card> $cards
      * @param string $suit

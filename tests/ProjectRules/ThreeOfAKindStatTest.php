@@ -4,10 +4,8 @@ namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
 use App\ProjectCard\Card;
-use App\ProjectCard\CardCounter;
-use App\ProjectCard\CardSearcher;
 
-class ThreeOfAKindStatNotOkTest extends TestCase
+class ThreeOfAKindStatTest extends TestCase
 {
     public function testPossibleNotOk(): void
     {

@@ -6,9 +6,6 @@ use PHPUnit\Framework\TestCase;
 use App\ProjectCard\Card;
 use App\ProjectCard\CardCounter;
 
-/**
- * Test cases for class Royal Flush.
- */
 class SameRankTraitTest extends TestCase
 {
     use SameRankTrait;

@@ -13,13 +13,7 @@ use App\ProjectCard\Card;
  */
 class ThreeOfAKindStat extends RuleStat implements RuleStatInterface
 {
-    // use RuleTrait;
     use SameRankStatTrait;
-
-    // /**
-    //  * @var int $minCountRank minimum count of a rank to score the rule
-    //  */
-    // private int $minCountRank = 3;
 
     /**
      * Constructor

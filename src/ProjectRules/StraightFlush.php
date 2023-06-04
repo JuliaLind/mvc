@@ -34,12 +34,6 @@ class StraightFlush extends Rule implements RuleInterface
      */
     protected const UNIQUESUITS = 1;
 
-    // public function __construct(
-    //     CardCounter $cardCounter = new CardCounter()
-    // ) {
-    //     $this->cardCounter = $cardCounter;
-    // }
-
     /**
      * @param array<int,int> $uniqueRanks
      * @return bool

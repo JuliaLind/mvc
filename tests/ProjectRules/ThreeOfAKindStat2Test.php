@@ -4,13 +4,8 @@ namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
 use App\ProjectCard\Card;
-use App\ProjectCard\CardCounter;
-use App\ProjectCard\CardSearcher;
 
-/**
- * Test cases for class Royal Flush.
- */
-class ThreeOfAKindStatOkTest extends TestCase
+class ThreeOfAKindStat2Test extends TestCase
 {
     public function testPossibleNotOk(): void
     {
@@ -45,7 +40,7 @@ class ThreeOfAKindStatOkTest extends TestCase
         $this->assertTrue($res);
     }
 
-    public function testPossibleOk4(): void
+    public function testPossibleNotOk2(): void
     {
         $rule = new ThreeOfAKindStat();
         $hand = [];
@@ -53,7 +48,7 @@ class ThreeOfAKindStatOkTest extends TestCase
         $deck = [new Card(4, 'S'), new Card(4, 'D'), new Card(14, 'D'), new Card(5, 'C'), new Card(5, 'H'), new Card(4, 'S'), new Card(4, 'D'), new Card(5, 'S')];
         $card = new Card(4, 'H');
         $res = $rule->possible($hand, $deck, $card);
-        $this->assertTrue($res);
+        $this->assertFalse($res);
     }
 
     public function testPossibleOk5(): void

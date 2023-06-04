@@ -5,9 +5,6 @@ namespace App\ProjectRules;
 use PHPUnit\Framework\TestCase;
 use App\ProjectCard\Card;
 
-/**
- * Test cases for class Royal Flush.
- */
 class FourOfAKindTest extends TestCase
 {
     public function testScoreOk(): void
