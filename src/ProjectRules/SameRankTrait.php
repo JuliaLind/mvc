@@ -11,11 +11,13 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait SameRankTrait
 {
     private CardCounter $cardCounter;
+
     /**
-     * @var int $MINCOUNTRANK the minimum number of cards of
+     * @var int $minContRank the minimum number of cards of
      * same rank required to score the rule
      */
     private int $minCountRank;
+
     /**
     * @var int $points the points if rule is scored
     */

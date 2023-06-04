@@ -12,22 +12,16 @@ use App\ProjectCard\CardSearcher;
  */
 class FourOfAKindStatNotOkTest extends TestCase
 {
-    // public function testPossibleNotOk(): void
-    // {
-    //     $counter = $this->createMock(CardCounter::class);
-    //     $counter->expects($this->never())->method('count');
+    public function testPossibleNotOk(): void
+    {
+        $rule = new FourOfAKindStat();
+        $hand = [new Card(4, 'D'), new Card(5, 'H'), new Card(4, 'C'), new Card(5, 'S')];
 
-    //     $rule = new FourOfAKindStat($counter);
-
-    //     $deck = [$this->createMock(Card::class)];
-    //     $card = $this->createMock(Card::class);
-    //     $hand = [];
-    //     for ($i = 0; $i < 5; $i++) {
-    //         array_push($hand, $this->createMock(Card::class));
-    //     }
-    //     $res = $rule->possible($hand, $deck, $card);
-    //     $this->assertFalse($res);
-    // }
+        $deck = [ new Card(5, 'C')];
+        $card = new Card(8, 'H');
+        $res = $rule->possible($hand, $deck, $card);
+        $this->assertFalse($res);
+    }
 
     public function testPossibleNotOk2(): void
     {

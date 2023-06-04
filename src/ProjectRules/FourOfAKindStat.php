@@ -16,6 +16,11 @@ class FourOfAKindStat implements RuleStatInterface
     use RuleTrait;
 
     private CardSearcher $searcher;
+    /**
+     * @var int $minContRank the minimum number of cards of
+     * same rank required to score the rule
+     */
+    private int $minCountRank = 4;
 
     public function __construct(
         CardCounter $cardCounter = new CardCounter(),
@@ -24,19 +29,6 @@ class FourOfAKindStat implements RuleStatInterface
         $this->cardCounter = $cardCounter;
         $this->searcher = $searcher;
     }
-
-    // /**
-    //  * @param array<Card> $hand
-    //  */
-    // private function checkForScore($hand, FourOfAKind $rule=new FourOfAKind()): bool
-    // {
-    //     $scored =  $rule->scored($hand);
-    //     /**
-    //      * @var bool $possible
-    //      */
-    //     $possible = $scored['scored'];
-    //     return $possible;
-    // }
 
     /**
      * @param array<Card> $hand
@@ -64,18 +56,19 @@ class FourOfAKindStat implements RuleStatInterface
         $ranksHand = $uniqueCountHand['ranks'];
         $countRanksHand = count($ranksHand);
 
-        if ($countRanksHand > 2 || ($countRanksHand == 2 && min($ranksHand) == 2)) {
+        if ($countRanksHand > 2 || ($countRanksHand === 2 && min($ranksHand) === 2)) {
             return false;
         }
+
         $allCards = array_merge($newHand, $deck);
         $searcher = $this->searcher;
-        if ($newCountHand == 2 && $countRanksHand == 2) {
-            return $searcher->checkRanksQuant($allCards, array_keys($ranksHand), 4);
+        if ($newCountHand === $countRanksHand) {
+            return $searcher->checkRanksQuant($allCards, array_keys($ranksHand), $this->minCountRank);
         }
         /**
          * @var int $rank
          */
         $rank = array_search(max($ranksHand), $ranksHand);
-        return $searcher->checkRankQuant($allCards, $rank, 4);
+        return $searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
     }
 }
