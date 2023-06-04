@@ -12,7 +12,7 @@ use App\ProjectCard\CardSearcher;
  */
 class ThreeOfAKindStatOkTest extends TestCase
 {
-    public function testPossibleOk(): void
+    public function testPossibleNotOk(): void
     {
         $rule = new ThreeOfAKindStat();
         $hand = [new Card(4, 'D'), new Card(2, 'C')];
@@ -20,7 +20,7 @@ class ThreeOfAKindStatOkTest extends TestCase
         $deck = [new Card(4, 'S'), new Card(4, 'H')];
         $card = new Card(5, 'H');
         $res = $rule->possible($hand, $deck, $card);
-        $this->assertTrue($res);
+        $this->assertFalse($res);
     }
 
     public function testPossibleOk2(): void

@@ -17,7 +17,7 @@ class FourOfAKindStatOkTest extends TestCase
         $rule = new FourOfAKindStat();
         $hand = [new Card(4, 'D'), new Card(5, 'H'), new Card(4, 'C'), new Card(4, 'S')];
 
-        $deck = [$this->createMock(Card::class)];
+        $deck = [];
         $card = new Card(4, 'H');
         $res = $rule->possible($hand, $deck, $card);
         $this->assertTrue($res);
@@ -45,7 +45,7 @@ class FourOfAKindStatOkTest extends TestCase
         $this->assertTrue($res);
     }
 
-    public function testPossibleOk4(): void
+    public function testPossibleNotOk(): void
     {
         $rule = new FourOfAKindStat();
         $hand = [];
@@ -53,10 +53,10 @@ class FourOfAKindStatOkTest extends TestCase
         $deck = [new Card(4, 'S'), new Card(4, 'D'), new Card(14, 'D'), new Card(4, 'C'), new Card(5, 'S')];
         $card = new Card(4, 'H');
         $res = $rule->possible($hand, $deck, $card);
-        $this->assertTrue($res);
+        $this->assertFalse($res);
     }
 
-    public function testPossibleOk5(): void
+    public function testPossibleNotOk2(): void
     {
         $rule = new FourOfAKindStat();
         $hand = [new Card(4, 'S')];
@@ -64,10 +64,10 @@ class FourOfAKindStatOkTest extends TestCase
         $deck = [new Card(8, 'S'), new Card(4, 'D'), new Card(14, 'D'), new Card(4, 'C'), new Card(4, 'H'), new Card(7, 'S')];
         $card = new Card(5, 'S');
         $res = $rule->possible($hand, $deck, $card);
-        $this->assertTrue($res);
+        $this->assertFalse($res);
     }
 
-    public function testPossibleOk6(): void
+    public function testPossibleNotOk3(): void
     {
         $rule = new FourOfAKindStat();
         $hand = [new Card(4, 'S')];
@@ -75,6 +75,6 @@ class FourOfAKindStatOkTest extends TestCase
         $deck = [new Card(8, 'S'), new Card(5, 'D'), new Card(14, 'D'), new Card(5, 'C'), new Card(5, 'H'), new Card(7, 'S')];
         $card = new Card(5, 'S');
         $res = $rule->possible($hand, $deck, $card);
-        $this->assertTrue($res);
+        $this->assertFalse($res);
     }
 }

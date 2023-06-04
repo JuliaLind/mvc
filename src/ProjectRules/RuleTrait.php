@@ -9,7 +9,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 trait RuleTrait
 {
-    private CardCounter $cardCounter;
-    private int $points;
-    private string $name;
+    protected CardCounter $cardCounter;
+    protected int $points;
+    protected string $name;
 }

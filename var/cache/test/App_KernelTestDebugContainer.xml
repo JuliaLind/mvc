@@ -495,13 +495,10 @@
     <service id="App\ProjectGrid\Grid" class="App\ProjectGrid\Grid" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\GridCols" class="App\ProjectGrid\GridCols" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\GridGraphic" class="App\ProjectGrid\GridGraphic" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectRules\FourOfAKind" class="App\ProjectRules\FourOfAKind" autowire="true" autoconfigure="true">
-      <argument type="service" id="App\ProjectCard\CardCounter"/>
-    </service>
-    <service id="App\ProjectRules\FourOfAKindStat" class="App\ProjectRules\FourOfAKindStat" autowire="true" autoconfigure="true">
-      <argument type="service" id="App\ProjectCard\CardCounter"/>
-      <argument type="service" id="App\ProjectCard\CardSearcher"/>
-    </service>
+    <service id="App\ProjectRules\FourOfAKind" class="App\ProjectRules\FourOfAKind" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectRules\FourOfAKindStat" class="App\ProjectRules\FourOfAKindStat" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectRules\OnePair" class="App\ProjectRules\OnePair" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectRules\OnePairStat" class="App\ProjectRules\OnePairStat" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\RoyalFlush" class="App\ProjectRules\RoyalFlush" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectCard\CardCounter"/>
     </service>
@@ -509,16 +506,18 @@
       <argument type="service" id="App\ProjectCard\CardCounter"/>
       <argument type="service" id="App\ProjectCard\CardSearcher"/>
     </service>
-    <service id="App\ProjectRules\StraightFlush" class="App\ProjectRules\StraightFlush" autowire="true" autoconfigure="true">
+    <service id="App\ProjectRules\Rule" class="App\ProjectRules\Rule" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectCard\CardCounter"/>
     </service>
-    <service id="App\ProjectRules\ThreeOfAKind" class="App\ProjectRules\ThreeOfAKind" autowire="true" autoconfigure="true">
-      <argument type="service" id="App\ProjectCard\CardCounter"/>
-    </service>
-    <service id="App\ProjectRules\ThreeOfAKindStat" class="App\ProjectRules\ThreeOfAKindStat" autowire="true" autoconfigure="true">
+    <service id="App\ProjectRules\RuleStat" class="App\ProjectRules\RuleStat" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectCard\CardCounter"/>
       <argument type="service" id="App\ProjectCard\CardSearcher"/>
     </service>
+    <service id="App\ProjectRules\StraightFlush" class="App\ProjectRules\StraightFlush" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectCard\CardCounter"/>
+    </service>
+    <service id="App\ProjectRules\ThreeOfAKind" class="App\ProjectRules\ThreeOfAKind" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectRules\ThreeOfAKindStat" class="App\ProjectRules\ThreeOfAKindStat" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -1679,8 +1678,12 @@
         <argument key="App\ProjectGrid\GridGraphic" type="service_closure" id="App\ProjectGrid\GridGraphic" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\FourOfAKind" type="service_closure" id="App\ProjectRules\FourOfAKind" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\FourOfAKindStat" type="service_closure" id="App\ProjectRules\FourOfAKindStat" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectRules\OnePair" type="service_closure" id="App\ProjectRules\OnePair" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectRules\OnePairStat" type="service_closure" id="App\ProjectRules\OnePairStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\RoyalFlush" type="service_closure" id="App\ProjectRules\RoyalFlush" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\RoyalFlushStat" type="service_closure" id="App\ProjectRules\RoyalFlushStat" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectRules\Rule" type="service_closure" id="App\ProjectRules\Rule" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectRules\RuleStat" type="service_closure" id="App\ProjectRules\RuleStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\StraightFlush" type="service_closure" id="App\ProjectRules\StraightFlush" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\ThreeOfAKind" type="service_closure" id="App\ProjectRules\ThreeOfAKind" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\ThreeOfAKindStat" type="service_closure" id="App\ProjectRules\ThreeOfAKindStat" on-invalid="ignore_uninitialized"/>

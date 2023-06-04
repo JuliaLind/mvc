@@ -1,3 +1,6 @@
+Check if rule fulfilled already before checking for stat
+
+
 class for counting possible cards in deck & get statistics of remaining count of each card and remaining count of each suit & percentage of all
 
 Co not recaulculate stats each time, have two associative arrays:

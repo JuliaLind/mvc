@@ -11,57 +11,22 @@ use App\ProjectCard\Card;
  * Ace, King, Queen, Jack, Ten of same suit
  *
  */
-class ThreeOfAKindStat implements RuleStatInterface
+class ThreeOfAKindStat extends RuleStat implements RuleStatInterface
 {
-    use RuleTrait;
+    // use RuleTrait;
+    use SameRankStatTrait;
 
-    private CardSearcher $searcher;
-
-    /**
-     * @var int $minContRank the minimum number of cards of
-     * same rank required to score the rule
-     */
-    private int $minCountRank = 3;
-
-    public function __construct(
-        CardCounter $cardCounter = new CardCounter(),
-        CardSearcher $searcher = new CardSearcher()
-    ) {
-        $this->cardCounter = $cardCounter;
-        $this->searcher = $searcher;
-    }
+    // /**
+    //  * @var int $minCountRank minimum count of a rank to score the rule
+    //  */
+    // private int $minCountRank = 3;
 
     /**
-     * @param array<Card> $hand
-     * @param array<Card> $deck
-     * @param Card $card
-     * @return bool true if rule is still possible given passed value
-     * otherwise false
+     * Constructor
      */
-    public function possible(array $hand, array $deck, Card $card): bool
+    public function __construct()
     {
-        /**
-         * @var array<Card> $newHand
-         */
-        $newHand = [...$hand, $card];
-        $newCountHand = count($newHand);
-
-        $uniqueCountHand = $this->cardCounter->count($newHand);
-
-        /**
-         * @var array<int,int> $ranksHand
-         */
-        $ranksHand = $uniqueCountHand['ranks'];
-        $countRanksHand = count($ranksHand);
-
-        if ($countRanksHand > 3 ||($newCountHand === 5 && max($ranksHand) < $this->minCountRank)) {
-            return false;
-        }
-        $allCards = array_merge($newHand, $deck);
-        $searcher = $this->searcher;
-        if (min($ranksHand) === max($ranksHand)) {
-            return $searcher->checkRanksQuant($allCards, array_keys($ranksHand), $this->minCountRank);
-        }
-        return $searcher->checkRanksQuant($allCards, array_keys($ranksHand), $this->minCountRank);
+        parent::__construct();
+        $this->minCountRank = 3;
     }
 }

@@ -12,9 +12,9 @@ use App\ProjectCard\Card;
  * Ace, King, Queen, Jack, Ten of same suit
  *
  */
-class RoyalFlushStat implements RuleStatInterface
+class RoyalFlushStat extends RuleStat implements RuleStatInterface
 {
-    use RuleTrait;
+    // use RuleTrait;
 
     /**
      * @var int $MAXRANK corresponds to Ace
@@ -31,28 +31,15 @@ class RoyalFlushStat implements RuleStatInterface
      */
     private const UNIQUESUITS = 1;
 
-    private CardSearcher $searcher;
+    // private CardSearcher $searcher;
 
-    public function __construct(
-        CardCounter $cardCounter = new CardCounter(),
-        CardSearcher $searcher = new CardSearcher()
-    ) {
-        $this->cardCounter = $cardCounter;
-        $this->searcher = $searcher;
-    }
-
-    /**
-     * @param array<Card> $hand
-     */
-    private function checkForScore($hand, RoyalFlush $rule=new RoyalFlush()): bool
-    {
-        $scored =  $rule->scored($hand);
-        /**
-         * @var bool $possible
-         */
-        $possible = $scored['scored'];
-        return $possible;
-    }
+    // public function __construct(
+    //     CardCounter $cardCounter = new CardCounter(),
+    //     CardSearcher $searcher = new CardSearcher()
+    // ) {
+    //     $this->cardCounter = $cardCounter;
+    //     $this->searcher = $searcher;
+    // }
 
     /**
      * @param array<Card> $cards
@@ -80,35 +67,27 @@ class RoyalFlushStat implements RuleStatInterface
      */
     public function possible(array $hand, array $deck, Card $card): bool
     {
-        // if (count($hand) === 5) {
-        //     return false;
-        // }
-        /**
-         * @var array<Card> $newHand
-         */
-        $newHand = [...$hand, $card];
-        if (count($newHand) === 5) {
-            return $this->checkForScore($newHand);
-        }
-
-        $uniqueCountHand = $this->cardCounter->count($newHand);
+        $uniqueCountHand = $this->cardCounter->count($hand);
         /**
          * @var array<string,int> $suitsHand
          */
         $suitsHand = $uniqueCountHand['suits'];
         /**
+         * @var string $suit
+         */
+        $suit = array_key_first($suitsHand);
+        /**
          * @var array<int,int> $ranksHand
          */
         $ranksHand = $uniqueCountHand['ranks'];
 
-        if (count($suitsHand) > self::UNIQUESUITS || min(array_keys($ranksHand)) < self::MINRANK) {
+        if (count($suitsHand) > self::UNIQUESUITS || min(array_keys($ranksHand)) < self::MINRANK || $card->getSuit() != $suit || $card->getRank() <= self::MINRANK) {
             return false;
         }
-
         /**
-         * @var string $suit
+         * @var array<Card> $newHand
          */
-        $suit = array_key_first($suitsHand);
+        $newHand = [...$hand, $card];
         $allCards = array_merge($newHand, $deck);
         return $this->checkForCards($allCards, $suit);
     }

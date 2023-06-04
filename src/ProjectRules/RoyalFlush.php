@@ -10,9 +10,9 @@ use App\ProjectCard\Card;
  * Ace, King, Queen, Jack, Ten of same suit
  *
  */
-class RoyalFlush implements RuleInterface
+class RoyalFlush extends Rule implements RuleInterface
 {
-    use RuleTrait;
+    // use RuleTrait;
 
     /**
      * @var int $MAXRANK corresponds to Ace
@@ -44,11 +44,11 @@ class RoyalFlush implements RuleInterface
      */
     private const NAME = "Royal Flush";
 
-    public function __construct(
-        CardCounter $cardCounter = new CardCounter()
-    ) {
-        $this->cardCounter = $cardCounter;
-    }
+    // public function __construct(
+    //     CardCounter $cardCounter = new CardCounter()
+    // ) {
+    //     $this->cardCounter = $cardCounter;
+    // }
 
     /**
      * @param array<int,int> $uniqueRanks

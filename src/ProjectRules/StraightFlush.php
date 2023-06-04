@@ -10,35 +10,35 @@ use App\ProjectCard\Card;
  * Any five subsequent ranks between 2 - Ace(14) of same suit
  *
  */
-class StraightFlush implements RuleInterface
+class StraightFlush extends Rule implements RuleInterface
 {
-    use RuleTrait;
+    // use RuleTrait;
 
     /**
      * @var int $POINTS the points if rule is  scored
      */
-    private const POINTS = 75;
+    protected const POINTS = 75;
 
     /**
      * @var string $NAME name of the rule
      */
-    private const NAME = "Straight Flush";
+    protected const NAME = "Straight Flush";
 
     /**
      * @var int $UNIQUERANKS
      */
-    private const UNIQUERANKS = 5;
+    protected const UNIQUERANKS = 5;
 
     /**
      * @var int $UNIQUESUITS
      */
-    private const UNIQUESUITS = 1;
+    protected const UNIQUESUITS = 1;
 
-    public function __construct(
-        CardCounter $cardCounter = new CardCounter()
-    ) {
-        $this->cardCounter = $cardCounter;
-    }
+    // public function __construct(
+    //     CardCounter $cardCounter = new CardCounter()
+    // ) {
+    //     $this->cardCounter = $cardCounter;
+    // }
 
     /**
      * @param array<int,int> $uniqueRanks

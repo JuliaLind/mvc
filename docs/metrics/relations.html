@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-04 18:41:23        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-04 20:44:26        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -699,15 +699,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\FourOfAKind",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface",
-            "\\App\\ProjectCard\\CardCounter"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\RuleInterface",
+        "name": "\\App\\ProjectRules\\RuleStat",
         "size": 3000,
         "relations": []
     },
@@ -717,11 +709,47 @@
         "relations": []
     },
     {
+        "name": "\\App\\ProjectCard\\CardSearcher",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\FourOfAKind",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\Rule",
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\Rule",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\RuleInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\OnePairStat",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleStat",
+            "\\App\\ProjectRules\\RuleStatInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\RuleStatInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\ProjectRules\\StraightFlush",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\RuleInterface",
-            "\\App\\ProjectCard\\CardCounter"
+            "\\App\\ProjectRules\\Rule",
+            "\\App\\ProjectRules\\RuleInterface"
         ]
     },
     {
@@ -732,44 +760,40 @@
     {
         "name": "\\App\\ProjectRules\\RoyalFlush",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\App\\ProjectRules\\Rule",
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\SameRankStatTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectCard\\Card"
+        ]
     },
     {
         "name": "\\App\\ProjectRules\\FourOfAKindStat",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\RuleStatInterface",
-            "\\App\\ProjectCard\\CardCounter",
-            "\\App\\ProjectCard\\CardSearcher",
-            "\\App\\ProjectCard\\Card"
+            "\\App\\ProjectRules\\RuleStat",
+            "\\App\\ProjectRules\\RuleStatInterface"
         ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\RuleStatInterface",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectCard\\CardSearcher",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\App\\ProjectRules\\ThreeOfAKindStat",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\RuleStatInterface",
-            "\\App\\ProjectCard\\CardCounter",
-            "\\App\\ProjectCard\\CardSearcher",
-            "\\App\\ProjectCard\\Card"
+            "\\App\\ProjectRules\\RuleStat",
+            "\\App\\ProjectRules\\RuleStatInterface"
         ]
     },
     {
         "name": "\\App\\ProjectRules\\ThreeOfAKind",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\RuleInterface",
-            "\\App\\ProjectCard\\CardCounter"
+            "\\App\\ProjectRules\\Rule",
+            "\\App\\ProjectRules\\RuleInterface"
         ]
     },
     {
@@ -778,13 +802,19 @@
         "relations": []
     },
     {
+        "name": "\\App\\ProjectRules\\OnePair",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\Rule",
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
         "name": "\\App\\ProjectRules\\RoyalFlushStat",
         "size": 3000,
         "relations": [
+            "\\App\\ProjectRules\\RuleStat",
             "\\App\\ProjectRules\\RuleStatInterface",
-            "\\App\\ProjectCard\\CardCounter",
-            "\\App\\ProjectCard\\CardSearcher",
-            "\\App\\ProjectRules\\RoyalFlush",
             "\\App\\ProjectCard\\Card"
         ]
     },

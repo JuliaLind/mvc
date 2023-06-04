@@ -5,15 +5,25 @@ namespace App\ProjectRules;
 use App\ProjectCard\CardCounter;
 use App\ProjectCard\Card;
 
-class FourOfAKind implements RuleInterface
+class FourOfAKind extends Rule implements RuleInterface
 {
     use RuleTrait;
     use SameRankTrait;
 
-    public function __construct(
-        CardCounter $cardCounter = new CardCounter()
-    ) {
-        $this->cardCounter = $cardCounter;
+    protected int $points;
+    protected string $name;
+
+    // /**
+    //  * @var int $minCountRank minimum count of a rank to score the rule
+    //  */
+    // private int $minCountRank;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        parent::__construct();
         $this->points = 50;
         $this->name = "Four Of A Kind";
         $this->minCountRank = 4;
