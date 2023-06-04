@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelTestDebugContainer::class, false)) {
 
 return new \ContainerAB91aby\App_KernelTestDebugContainer([
     'container.build_hash' => 'AB91aby',
-    'container.build_id' => '42f237bd',
-    'container.build_time' => 1685896786,
+    'container.build_id' => '6badac49',
+    'container.build_time' => 1685897824,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerAB91aby');

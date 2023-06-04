@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1685896787">
-  <project timestamp="1685896787">
+<coverage generated="1685897826">
+  <project timestamp="1685897826">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -692,19 +692,19 @@
       <line num="117" type="stmt" count="3"/>
       <line num="119" type="stmt" count="3"/>
       <line num="120" type="stmt" count="3"/>
-      <line num="124" type="method" name="bankWinsOnEqual" visibility="protected" complexity="3" crap="3" count="4"/>
-      <line num="126" type="stmt" count="4"/>
+      <line num="124" type="method" name="bankWinsOnEqual" visibility="protected" complexity="3" crap="3" count="3"/>
+      <line num="126" type="stmt" count="3"/>
       <line num="127" type="stmt" count="1"/>
-      <line num="129" type="stmt" count="3"/>
+      <line num="129" type="stmt" count="2"/>
       <line num="132" type="method" name="hasBankMoreThan21" visibility="protected" complexity="2" crap="2" count="5"/>
       <line num="134" type="stmt" count="5"/>
-      <line num="135" type="stmt" count="1"/>
-      <line num="137" type="stmt" count="4"/>
-      <line num="140" type="method" name="hasBankBestScore" visibility="protected" complexity="2" crap="2" count="3"/>
-      <line num="142" type="stmt" count="3"/>
-      <line num="143" type="stmt" count="3"/>
-      <line num="144" type="stmt" count="3"/>
-      <line num="145" type="stmt" count="2"/>
+      <line num="135" type="stmt" count="2"/>
+      <line num="137" type="stmt" count="3"/>
+      <line num="140" type="method" name="hasBankBestScore" visibility="protected" complexity="2" crap="2" count="2"/>
+      <line num="142" type="stmt" count="2"/>
+      <line num="143" type="stmt" count="2"/>
+      <line num="144" type="stmt" count="2"/>
+      <line num="145" type="stmt" count="1"/>
       <line num="147" type="stmt" count="1"/>
       <line num="156" type="method" name="evaluateBank" visibility="public" complexity="4" crap="4" count="5"/>
       <line num="158" type="stmt" count="5"/>
@@ -712,14 +712,14 @@
       <line num="161" type="stmt" count="5"/>
       <line num="162" type="stmt" count="5"/>
       <line num="166" type="stmt" count="5"/>
-      <line num="167" type="stmt" count="1"/>
-      <line num="168" type="stmt" count="1"/>
-      <line num="170" type="stmt" count="4"/>
+      <line num="167" type="stmt" count="2"/>
+      <line num="168" type="stmt" count="2"/>
+      <line num="170" type="stmt" count="3"/>
       <line num="171" type="stmt" count="1"/>
       <line num="172" type="stmt" count="1"/>
-      <line num="174" type="stmt" count="3"/>
-      <line num="175" type="stmt" count="2"/>
-      <line num="176" type="stmt" count="2"/>
+      <line num="174" type="stmt" count="2"/>
+      <line num="175" type="stmt" count="1"/>
+      <line num="176" type="stmt" count="1"/>
       <line num="178" type="stmt" count="1"/>
       <line num="179" type="stmt" count="1"/>
       <line num="187" type="method" name="generateFlash" visibility="public" complexity="4" crap="4" count="5"/>
@@ -729,7 +729,7 @@
       <line num="193" type="stmt" count="5"/>
       <line num="194" type="stmt" count="3"/>
       <line num="195" type="stmt" count="3"/>
-      <line num="196" type="stmt" count="3"/>
+      <line num="196" type="stmt" count="2"/>
       <line num="198" type="stmt" count="3"/>
       <line num="200" type="stmt" count="5"/>
       <line num="201" type="stmt" count="1"/>
@@ -1567,11 +1567,14 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/FourOfAKind.php">
       <class name="App\ProjectRules\FourOfAKind" namespace="global">
-        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
       </class>
-      <line num="29" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="5"/>
-      <line num="32" type="stmt" count="5"/>
-      <metrics loc="60" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      <line num="30" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="33" type="stmt" count="5"/>
+      <line num="34" type="stmt" count="5"/>
+      <line num="35" type="stmt" count="5"/>
+      <line num="36" type="stmt" count="5"/>
+      <metrics loc="64" ncloc="30" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/FourOfAKindStat.php">
       <class name="App\ProjectRules\FourOfAKindStat" namespace="global">
@@ -1666,25 +1669,25 @@
         <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </class>
       <line num="7" type="stmt" count="1"/>
-      <metrics loc="14" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="1" coveredelements="1"/>
+      <metrics loc="16" ncloc="16" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="1" coveredelements="1"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/SameRankTrait.php">
       <class name="App\ProjectRules\SameRankTrait" namespace="global">
         <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
       </class>
       <line num="8" type="stmt" count="1"/>
-      <line num="19" type="method" name="scored" visibility="public" complexity="2" crap="2" count="5"/>
-      <line num="21" type="stmt" count="5"/>
-      <line num="22" type="stmt" count="5"/>
-      <line num="23" type="stmt" count="5"/>
-      <line num="24" type="stmt" count="5"/>
-      <line num="25" type="stmt" count="5"/>
-      <line num="26" type="stmt" count="5"/>
-      <line num="31" type="stmt" count="5"/>
-      <line num="33" type="stmt" count="5"/>
-      <line num="34" type="stmt" count="2"/>
+      <line num="33" type="method" name="scored" visibility="public" complexity="2" crap="2" count="5"/>
+      <line num="35" type="stmt" count="5"/>
       <line num="36" type="stmt" count="5"/>
-      <metrics loc="39" ncloc="32" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="12" coveredelements="12"/>
+      <line num="37" type="stmt" count="5"/>
+      <line num="38" type="stmt" count="5"/>
+      <line num="39" type="stmt" count="5"/>
+      <line num="40" type="stmt" count="5"/>
+      <line num="45" type="stmt" count="5"/>
+      <line num="47" type="stmt" count="5"/>
+      <line num="48" type="stmt" count="2"/>
+      <line num="50" type="stmt" count="5"/>
+      <metrics loc="53" ncloc="36" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="12" coveredelements="12"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/StraightFlush.php">
       <class name="App\ProjectRules\StraightFlush" namespace="global">
@@ -1715,11 +1718,14 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/ThreeOfAKind.php">
       <class name="App\ProjectRules\ThreeOfAKind" namespace="global">
-        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
       </class>
       <line num="29" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="32" type="stmt" count="0"/>
-      <metrics loc="60" ncloc="29" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="34" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <metrics loc="63" ncloc="29" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Repository/BookRepository.php">
       <class name="App\Repository\BookRepository" namespace="global">
@@ -1757,6 +1763,6 @@
       <line num="87" type="stmt" count="7"/>
       <metrics loc="115" ncloc="71" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="24" elements="30" coveredelements="30"/>
     </file>
-    <metrics files="86" loc="5013" ncloc="3492" classes="72" methods="228" coveredmethods="226" conditionals="0" coveredconditionals="0" statements="1021" coveredstatements="1018" elements="1249" coveredelements="1244"/>
+    <metrics files="86" loc="5036" ncloc="3499" classes="72" methods="228" coveredmethods="226" conditionals="0" coveredconditionals="0" statements="1027" coveredstatements="1021" elements="1255" coveredelements="1247"/>
   </project>
 </coverage>

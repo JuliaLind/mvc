@@ -10,26 +10,30 @@ class FourOfAKind implements RuleInterface
     use RuleTrait;
     use SameRankTrait;
 
-    /**
-     * @var int $POINTS the points if rule is  scored
-     */
-    private const POINTS = 50;
+    // /**
+    //  * @var int $points the points if rule is  scored
+    //  */
+    // private int $points = 50;
 
-    /**
-     * @var int $MINCOUNTRANK the minimum number of cards of
-     * same rank required to score the rule
-     */
-    private const MINCOUNTRANK = 4;
 
-    /**
-     * @var string $NAME name of the rule
-     */
-    private const NAME = "Four Of A Kind";
+    // /**
+    //  * @var string $name name of the rule
+    //  */
+    // private string $name = "Four Of A Kind";
+
+    // /**
+    //  * @var int $minCountRank the minimum number of cards of
+    //  * same rank required to score the rule
+    //  */
+    // private int $minCountRank = 4;
 
     public function __construct(
         CardCounter $cardCounter = new CardCounter()
     ) {
         $this->cardCounter = $cardCounter;
+        $this->points = 50;
+        $this->name = "Four Of A Kind";
+        $this->minCountRank = 4;
     }
 
 

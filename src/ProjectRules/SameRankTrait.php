@@ -11,6 +11,20 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait SameRankTrait
 {
     private CardCounter $cardCounter;
+    /**
+     * @var int $MINCOUNTRANK the minimum number of cards of
+     * same rank required to score the rule
+     */
+    private int $minCountRank;
+    /**
+    * @var int $points the points if rule is scored
+    */
+    private int $points;
+
+    /**
+     * @var string $name name of the rule
+     */
+    private string $name;
 
     /**
      * @param array<Card> $hand
@@ -19,8 +33,8 @@ trait SameRankTrait
     public function scored(array $hand): array
     {
         $data = [
-            'name' => self::NAME,
-            'points' => self::POINTS,
+            'name' => $this->name,
+            'points' => $this->points,
             'scored' => false
         ];
         $uniqueCount = $this->cardCounter->count($hand);
@@ -30,7 +44,7 @@ trait SameRankTrait
          */
         $uniqueRanks = $uniqueCount['ranks'];
 
-        if (max($uniqueRanks) >= self::MINCOUNTRANK) {
+        if (max($uniqueRanks) >= $this->minCountRank) {
             $data['scored'] = true;
         }
         return $data;

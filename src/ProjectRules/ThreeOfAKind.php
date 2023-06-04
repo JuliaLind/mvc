@@ -10,26 +10,29 @@ class ThreeOfAKind implements RuleInterface
     use RuleTrait;
     use SameRankTrait;
 
-    /**
-     * @var int $POINTS the points if rule is  scored
-     */
-    private const POINTS = 10;
+    // /**
+    //  * @var int $points the points if rule is  scored
+    //  */
+    // private int $points = 10;
 
-    /**
-     * @var int $MINCOUNTRANK the minimum number of cards of
-     * same rank required to score the rule
-     */
-    private const MINCOUNTRANK = 3;
+    // /**
+    //  * @var string $name name of the rule
+    //  */
+    // private string $name = "Three Of A Kind";
 
-    /**
-     * @var string $NAME name of the rule
-     */
-    private const NAME = "Three Of A Kind";
+    // /**
+    //  * @var int $minCountRank the minimum number of cards of
+    //  * same rank required to score the rule
+    //  */
+    // private int $minCountRank = 3;
 
     public function __construct(
         CardCounter $cardCounter = new CardCounter()
     ) {
         $this->cardCounter = $cardCounter;
+        $this->points = 10;
+        $this->name = "Three Of A Kind";
+        $this->minCountRank = 3;
     }
 
 
