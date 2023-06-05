@@ -20,7 +20,8 @@ class Rules
             ],
             'Four Of A Kind' => [
                 'points' => 50,
-                'scored' => new SameOfAKind(4)
+                'scored' => new SameOfAKind(4),
+                'possible' => new SameOfAKindStat(4)
             ],
             'Full House' => [
                 'points' => 25,
@@ -33,14 +34,16 @@ class Rules
             ],
             'Three Of A Kind' => [
                 'points' => 10,
-                'scored' => new SameOfAKind(3)
+                'scored' => new SameOfAKind(3),
+                'possible' => new SameOfAKindStat(3)
             ],
             'Two Pairs' => [
                 'points' => 5,
             ],
             'One Pair' => [
                 'points' => 2,
-                'scored' => new SameOfAKind(2)
+                'scored' => new SameOfAKind(2),
+                'possible' => new SameOfAKindStat(2)
             ],
         ];
     }
