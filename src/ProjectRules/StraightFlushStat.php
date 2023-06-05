@@ -8,17 +8,19 @@ use App\ProjectCard\Card;
 
 class StraightFlushStat extends RuleStat implements RuleStatInterface
 {
-    protected int $maxRank = 1;
-
-    /**
-     * @var int $MINRANK corresponds to Ten
-     */
-    protected int $minRank = 15;
+    use StraightTrait;
 
     /**
      * @var int $UNIQUESUITS
      */
     private const UNIQUESUITS = 1;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->maxRank = 1;
+        $this->minRank = 15;
+    }
 
     /**
      * @param array<int,int> $ranks
@@ -43,23 +45,6 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
      * @param array<Card> $cards
      * @param string $suit
      */
-    private function checkForCards($cards, $suit): bool
-    {
-        $possible = true;
-        $searcher = $this->searcher;
-        for ($rank = $this->minRank; $rank <= $this->maxRank; $rank++) {
-            $possible = $searcher->search($cards, $rank, $suit);
-            if ($possible === false) {
-                break;
-            }
-        }
-        return $possible;
-    }
-
-    /**
-     * @param array<Card> $cards
-     * @param string $suit
-     */
     private function checkAllPossible($cards, $suit): bool
     {
         $possible = false;
@@ -70,22 +55,7 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
             if ($this->checkForCards($cards, $suit) === true) {
                 return true;
             }
-            // for ($rank = $minRank; $rank <= $maxRank; $rank++) {
-            //     $possible = $searcher->search($cards, $rank, $suit);
-            //     if ($possible === false) {
-            //         break;
-            //     }
-            // }
         }
-        // for ($minRank = $this->maxRank - 4; $minRank <= $this->minRank; $minRank++) {
-        //     $maxRank = $minRank + 4;
-        //     for ($rank = $minRank; $rank <= $maxRank; $rank++) {
-        //         $possible = $searcher->search($cards, $rank, $suit);
-        //         if ($possible === false) {
-        //             break;
-        //         }
-        //     }
-        // }
         return $possible;
     }
 
@@ -96,7 +66,7 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
      * @return bool true if rule is still possible given passed value
      * otherwise false
      */
-    public function possible(array $hand, array $deck, Card $card): bool
+    public function check(array $hand, array $deck, Card $card): bool
     {
         /**
          * @var array<Card> $newHand
@@ -108,15 +78,11 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
          */
         $suitsHand = $uniqueCountHand['suits'];
 
-        if (count($suitsHand) > self::UNIQUESUITS) {
-            return false;
-        }
-
         /**
          * @var array<int,int> $ranksHand
          */
         $ranksHand = $uniqueCountHand['ranks'];
-        if ($this->setRankLimits($ranksHand) === false) {
+        if (count($suitsHand) > self::UNIQUESUITS || $this->setRankLimits($ranksHand) === false) {
             return false;
         }
 

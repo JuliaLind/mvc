@@ -16,7 +16,7 @@ class RoyalFlushTest extends TestCase
         $this->assertInstanceOf("\App\ProjectRules\RoyalFlush", $rule);
     }
 
-    public function testScoreOk(): void
+    public function testCheckOk(): void
     {
         $hand = [];
         for ($rank = 10 ;$rank <= 14; $rank++) {
@@ -24,16 +24,16 @@ class RoyalFlushTest extends TestCase
         }
         shuffle($hand);
         $rule = new RoyalFlush();
-        $res = $rule->scored($hand);
-        $exp = [
-            'name' => "Royal Flush",
-            'points' => 100,
-            'scored' => true
-        ];
-        $this->assertEquals($exp, $res);
+        $res = $rule->check($hand);
+        // $exp = [
+        //     'name' => "Royal Flush",
+        //     'points' => 100,
+        //     'scored' => true
+        // ];
+        $this->assertTrue($res);
     }
 
-    public function testScoreNotOk(): void
+    public function testCheckNotOk(): void
     {
         $hand = [];
         for ($rank = 9 ;$rank <= 13; $rank++) {
@@ -41,11 +41,11 @@ class RoyalFlushTest extends TestCase
         }
         shuffle($hand);
         $rule = new RoyalFlush();
-        $res = $rule->scored($hand);
-        $this->assertFalse($res['scored']);
+        $res = $rule->check($hand);
+        $this->assertFalse($res);
     }
 
-    public function testScoreNotOk2(): void
+    public function testCheckNotOk2(): void
     {
         $hand = [];
         for ($rank = 10 ;$rank <= 12; $rank++) {
@@ -57,11 +57,11 @@ class RoyalFlushTest extends TestCase
 
         shuffle($hand);
         $rule = new RoyalFlush();
-        $res = $rule->scored($hand);
-        $this->assertFalse($res['scored']);
+        $res = $rule->check($hand);
+        $this->assertFalse($res);
     }
 
-    public function testScoreNotOk3(): void
+    public function testCheckNotOk3(): void
     {
         $hand = [];
         for ($rank = 10 ;$rank <= 14; $rank++) {
@@ -70,11 +70,11 @@ class RoyalFlushTest extends TestCase
         unset($hand[2]);
         shuffle($hand);
         $rule = new RoyalFlush();
-        $res = $rule->scored($hand);
-        $this->assertFalse($res['scored']);
+        $res = $rule->check($hand);
+        $this->assertFalse($res);
     }
 
-    public function testScoreNotOk4(): void
+    public function testCheckNotOk4(): void
     {
         $hand = [];
         for ($rank = 10 ;$rank <= 14; $rank++) {
@@ -83,7 +83,7 @@ class RoyalFlushTest extends TestCase
         $hand[2] = new Card(5, "D");
         shuffle($hand);
         $rule = new RoyalFlush();
-        $res = $rule->scored($hand);
-        $this->assertFalse($res['scored']);
+        $res = $rule->check($hand);
+        $this->assertFalse($res);
     }
 }

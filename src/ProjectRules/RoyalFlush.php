@@ -12,8 +12,6 @@ use App\ProjectCard\Card;
  */
 class RoyalFlush extends Rule implements RuleInterface
 {
-    // use RuleTrait;
-
     /**
      * @var int $MAXRANK corresponds to Ace
      */
@@ -34,21 +32,6 @@ class RoyalFlush extends Rule implements RuleInterface
      */
     private const UNIQUESUITS = 1;
 
-    /**
-     * @var int $POINTS the points if rule is  scored
-     */
-    private const POINTS = 100;
-
-    /**
-     * @var string $NAME name of the rule
-     */
-    private const NAME = "Royal Flush";
-
-    // public function __construct(
-    //     CardCounter $cardCounter = new CardCounter()
-    // ) {
-    //     $this->cardCounter = $cardCounter;
-    // }
 
     /**
      * @param array<int,int> $uniqueRanks
@@ -67,15 +50,11 @@ class RoyalFlush extends Rule implements RuleInterface
 
     /**
      * @param array<Card> $hand
-     * @return array<string,string|int|bool> name, points and true if rule is fullfilled otherwise false
+     * @return bool true if rule is fullfilled otherwise false
      */
-    public function scored(array $hand): array
+    public function check(array $hand): bool
     {
-        $data = [
-            'name' => self::NAME,
-            'points' => self::POINTS,
-            'scored' => false
-        ];
+        $bool = false;
         $uniqueCount = $this->cardCounter->count($hand);
         /**
          * @var array<string,int> $uniqueSuits
@@ -87,8 +66,8 @@ class RoyalFlush extends Rule implements RuleInterface
         $uniqueRanks = $uniqueCount['ranks'];
 
         if (count($uniqueSuits) === self::UNIQUESUITS && count($uniqueRanks) === self::UNIQUERANKS) {
-            $data['scored'] = $this->evaluateRanks($uniqueRanks);
+            $bool = $this->evaluateRanks($uniqueRanks);
         }
-        return $data;
+        return $bool;
     }
 }

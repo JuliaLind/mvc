@@ -7,17 +7,11 @@ use App\ProjectCard\Card;
 
 class OnePairTest extends TestCase
 {
-    public function testScoreOk(): void
+    public function testCheckOk(): void
     {
         $hand = [new Card(4, 'D'), new Card(4, 'H')];
-
-        $rule = new OnePair();
-        $res = $rule->scored($hand);
-        $exp = [
-            'name' => "One Pair",
-            'points' => 2,
-            'scored' => true
-        ];
-        $this->assertEquals($exp, $res);
+        $rule = new SameOfAKind(2);
+        $res = $rule->check($hand);
+        $this->assertTrue($res);
     }
 }

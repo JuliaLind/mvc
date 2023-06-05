@@ -7,7 +7,7 @@ use App\ProjectCard\Card;
 
 class StraightFlushTest extends TestCase
 {
-    public function testScoreOk(): void
+    public function testCheckOk(): void
     {
         $hand = [];
         for ($rank = 2; $rank <= 6; $rank++) {
@@ -15,16 +15,11 @@ class StraightFlushTest extends TestCase
         }
         shuffle($hand);
         $rule = new StraightFlush();
-        $res = $rule->scored($hand);
-        $exp = [
-            'name' => "Straight Flush",
-            'points' => 75,
-            'scored' => true
-        ];
-        $this->assertEquals($exp, $res);
+        $res = $rule->check($hand);
+        $this->assertTrue($res);
     }
 
-    public function testScoreNotOk(): void
+    public function testCheckNotOk(): void
     {
         $hand = [];
         for ($rank = 2; $rank <= 5; $rank++) {
@@ -32,11 +27,11 @@ class StraightFlushTest extends TestCase
         }
         shuffle($hand);
         $rule = new StraightFlush();
-        $res = $rule->scored($hand);
-        $this->assertFalse($res['scored']);
+        $res = $rule->check($hand);
+        $this->assertFalse($res);
     }
 
-    public function testScoreNotOk2(): void
+    public function testCheckNotOk2(): void
     {
         $hand = [];
         for ($rank = 6; $rank <= 8; $rank++) {
@@ -48,11 +43,11 @@ class StraightFlushTest extends TestCase
 
         shuffle($hand);
         $rule = new StraightFlush();
-        $res = $rule->scored($hand);
-        $this->assertFalse($res['scored']);
+        $res = $rule->check($hand);
+        $this->assertFalse($res);
     }
 
-    public function testScoreNotOk3(): void
+    public function testCheckNotOk3(): void
     {
         $hand = [];
         for ($rank = 2; $rank <= 7; $rank++) {
@@ -61,11 +56,11 @@ class StraightFlushTest extends TestCase
         unset($hand[3]);
         shuffle($hand);
         $rule = new StraightFlush();
-        $res = $rule->scored($hand);
-        $this->assertFalse($res['scored']);
+        $res = $rule->check($hand);
+        $this->assertFalse($res);
     }
 
-    public function testScoreNotOk4(): void
+    public function testCheckNotOk4(): void
     {
         $hand = [];
         for ($rank = 10; $rank <= 14; $rank++) {
@@ -74,7 +69,7 @@ class StraightFlushTest extends TestCase
         $hand[2] = new Card(5, "D");
         shuffle($hand);
         $rule = new StraightFlush();
-        $res = $rule->scored($hand);
-        $this->assertFalse($res['scored']);
+        $res = $rule->check($hand);
+        $this->assertFalse($res);
     }
 }

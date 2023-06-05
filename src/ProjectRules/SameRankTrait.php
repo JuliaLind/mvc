@@ -19,26 +19,12 @@ trait SameRankTrait
     protected int $minCountRank;
 
     /**
-    * @var int $points the points if rule is scored
-    */
-    protected int $points;
-
-    /**
-     * @var string $name name of the rule
-     */
-    protected string $name;
-
-    /**
      * @param array<Card> $hand
-     * @return array<string,string|int|bool> name, points and true if rule is fullfilled otherwise false
+     * @return bool true if rule is fullfilled otherwise false
      */
-    public function scored(array $hand): array
+    public function check(array $hand): bool
     {
-        $data = [
-            'name' => $this->name,
-            'points' => $this->points,
-            'scored' => false
-        ];
+        $bool = false;
         $uniqueCount = $this->cardCounter->count($hand);
 
         /**
@@ -47,8 +33,8 @@ trait SameRankTrait
         $uniqueRanks = $uniqueCount['ranks'];
 
         if (max($uniqueRanks) >= $this->minCountRank) {
-            $data['scored'] = true;
+            $bool = true;
         }
-        return $data;
+        return $bool;
     }
 }

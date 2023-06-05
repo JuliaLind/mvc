@@ -15,5 +15,5 @@ interface RuleStatInterface
      * @return bool true if rule is still possible given passed value
      * otherwise false
      */
-    public function possible(array $hand, array $deck, Card $card);
+    public function check(array $hand, array $deck, Card $card);
 }

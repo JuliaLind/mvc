@@ -14,38 +14,18 @@ use App\ProjectCard\Card;
  */
 class RoyalFlushStat extends RuleStat implements RuleStatInterface
 {
-    // use RuleTrait;
-
-    /**
-     * @var int $MAXRANK corresponds to Ace
-     */
-    private const MAXRANK = 14;
-
-    /**
-     * @var int $MINRANK corresponds to Ten
-     */
-    private const MINRANK = 10;
+    use StraightTrait;
 
     /**
      * @var int $UNIQUESUITS
      */
     private const UNIQUESUITS = 1;
 
-    /**
-     * @param array<Card> $cards
-     * @param string $suit
-     */
-    private function checkForCards($cards, $suit): bool
+    public function __construct()
     {
-        $possible = true;
-        $searcher = $this->searcher;
-        for ($rank = self::MINRANK; $rank <= self::MAXRANK; $rank++) {
-            $possible = $searcher->search($cards, $rank, $suit);
-            if ($possible === false) {
-                break;
-            }
-        }
-        return $possible;
+        parent::__construct();
+        $this->maxRank = 14;
+        $this->minRank = 10;
     }
 
     /**
@@ -55,7 +35,7 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
      * @return bool true if rule is still possible given passed value
      * otherwise false
      */
-    public function possible(array $hand, array $deck, Card $card): bool
+    public function check(array $hand, array $deck, Card $card): bool
     {
         /**
          * @var array<Card> $newHand
@@ -71,7 +51,7 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
          */
         $ranksHand = $uniqueCountHand['ranks'];
 
-        if(count($suitsHand) > self::UNIQUESUITS || min(array_keys($ranksHand)) < self::MINRANK) {
+        if(count($suitsHand) > self::UNIQUESUITS || min(array_keys($ranksHand)) < $this->minRank) {
             return false;
         }
 

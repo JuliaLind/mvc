@@ -14,7 +14,6 @@ trait SameRankStatTrait
     protected CardCounter $cardCounter;
     protected CardSearcher $searcher;
 
-
     /**
      * @var int $minContRank the minimum number of cards of
      * same rank required to score the rule
@@ -29,7 +28,7 @@ trait SameRankStatTrait
      * @return bool true if rule is still possible given passed value
      * otherwise false
      */
-    public function possible(array $hand, array $deck, Card $card): bool
+    public function check(array $hand, array $deck, Card $card): bool
     {
         /**
          * @var array<Card> $newHand

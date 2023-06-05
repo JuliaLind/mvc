@@ -7,8 +7,6 @@ use App\ProjectCard\CardSearcher;
 
 class RuleStat
 {
-    // use RuleTrait;
-
     protected CardSearcher $searcher;
     protected CardCounter $cardCounter;
 

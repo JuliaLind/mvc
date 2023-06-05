@@ -12,18 +12,6 @@ use App\ProjectCard\Card;
  */
 class StraightFlush extends Rule implements RuleInterface
 {
-    // use RuleTrait;
-
-    /**
-     * @var int $POINTS the points if rule is  scored
-     */
-    protected const POINTS = 75;
-
-    /**
-     * @var string $NAME name of the rule
-     */
-    protected const NAME = "Straight Flush";
-
     /**
      * @var int $UNIQUERANKS
      */
@@ -52,15 +40,11 @@ class StraightFlush extends Rule implements RuleInterface
 
     /**
      * @param array<Card> $hand
-     * @return array<string,string|int|bool> name, points and true if rule is fullfilled otherwise false
+     * @return bool true if rule is fullfilled otherwise false
      */
-    public function scored(array $hand): array
+    public function check(array $hand): bool
     {
-        $data = [
-            'name' => self::NAME,
-            'points' => self::POINTS,
-            'scored' => false
-        ];
+        $bool = false;
         $uniqueCount = $this->cardCounter->count($hand);
         /**
          * @var array<string,int> $uniqueSuits
@@ -72,8 +56,8 @@ class StraightFlush extends Rule implements RuleInterface
         $uniqueRanks = $uniqueCount['ranks'];
 
         if (count($uniqueSuits) === self::UNIQUESUITS && count($uniqueRanks) === self::UNIQUERANKS) {
-            $data['scored'] = $this->evaluateRanks($uniqueRanks);
+            $bool = $this->evaluateRanks($uniqueRanks);
         }
-        return $data;
+        return $bool;
     }
 }

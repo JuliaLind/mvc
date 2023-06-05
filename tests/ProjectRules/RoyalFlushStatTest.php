@@ -10,7 +10,7 @@ use App\ProjectCard\Card;
  */
 class RoyalFlushStatTest extends TestCase
 {
-    public function testScoreNotOk(): void
+    public function testCheckNotOk(): void
     {
         $hand = [new Card(10, 'D'), new Card(11, 'D'), new Card(12, 'D'), new Card(13, 'D')];
 
@@ -18,12 +18,12 @@ class RoyalFlushStatTest extends TestCase
         $deck = [new Card(14, 'D')];
 
         $rule = new RoyalFlushStat();
-        $res = $rule->possible($hand, $deck, $card);
+        $res = $rule->check($hand, $deck, $card);
         $this->assertFalse($res);
     }
 
 
-    public function testPossibleOk(): void
+    public function testCheckOk(): void
     {
         $hand = [new Card(10, 'D'), new Card(11, 'D'), new Card(12, 'D'), new Card(13, 'D')];
 
@@ -31,11 +31,11 @@ class RoyalFlushStatTest extends TestCase
         $deck = [new Card(11, 'C')];
 
         $rule = new RoyalFlushStat();
-        $res = $rule->possible($hand, $deck, $card);
+        $res = $rule->check($hand, $deck, $card);
         $this->assertTrue($res);
     }
 
-    public function testPossibleNotOk2(): void
+    public function testCheckNotOk2(): void
     {
         $hand = [new Card(10, 'D'), new Card(12, 'D'), new Card(13, 'D')];
 
@@ -43,11 +43,11 @@ class RoyalFlushStatTest extends TestCase
         $deck = [new Card(11, 'C')];
 
         $rule = new RoyalFlushStat();
-        $res = $rule->possible($hand, $deck, $card);
+        $res = $rule->check($hand, $deck, $card);
         $this->assertFalse($res);
     }
 
-    public function testPossibleOk2(): void
+    public function testCheckOk2(): void
     {
         $hand = [new Card(10, 'D'), new Card(12, 'D'), new Card(13, 'D')];
 
@@ -55,7 +55,7 @@ class RoyalFlushStatTest extends TestCase
         $deck = [new Card(11, 'D')];
 
         $rule = new RoyalFlushStat();
-        $res = $rule->possible($hand, $deck, $card);
+        $res = $rule->check($hand, $deck, $card);
         $this->assertTrue($res);
     }
 }

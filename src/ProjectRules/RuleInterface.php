@@ -11,7 +11,7 @@ interface RuleInterface
 {
     /**
      * @param array<Card> $hand
-     * @return array<string,string|int|bool> true if rule is fullfilled otherwise false
+     * @return bool true if rule is fullfilled otherwise false
      */
-    public function scored(array $hand);
+    public function check(array $hand);
 }

@@ -15,31 +15,23 @@ class SameRankTraitTest extends TestCase
     {
         $this->cardCounter= new CardCounter();
         $this->minCountRank = 2;
-        $this->points = 5;
-        $this->name = "Test Rule";
+        // $this->points = 5;
+        // $this->name = "Test Rule";
     }
 
-    public function testScoredOk(): void
+    public function testCheckOk(): void
     {
         $hand = [new Card(5, 'S'), new Card(8, 'C'), new Card(5, 'D')];
-        $res = $this->scored($hand);
-        $exp = [
-            'name' => 'Test Rule',
-            'points' => 5,
-            'scored' => true
-        ];
+        $res = $this->check($hand);
+        $exp = true;
         $this->assertEquals($exp, $res);
     }
 
-    public function testScoredNotOk(): void
+    public function testCheckNotOk(): void
     {
         $hand = [new Card(7, 'S'), new Card(8, 'C'), new Card(5, 'D')];
-        $res = $this->scored($hand);
-        $exp = [
-            'name' => 'Test Rule',
-            'points' => 5,
-            'scored' => false
-        ];
+        $res = $this->check($hand);
+        $exp = false;
         $this->assertEquals($exp, $res);
     }
 }
