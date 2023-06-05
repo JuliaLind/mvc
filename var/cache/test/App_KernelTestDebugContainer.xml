@@ -516,6 +516,10 @@
     <service id="App\ProjectRules\StraightFlush" class="App\ProjectRules\StraightFlush" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectCard\CardCounter"/>
     </service>
+    <service id="App\ProjectRules\StraightFlushStat" class="App\ProjectRules\StraightFlushStat" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectCard\CardCounter"/>
+      <argument type="service" id="App\ProjectCard\CardSearcher"/>
+    </service>
     <service id="App\ProjectRules\ThreeOfAKind" class="App\ProjectRules\ThreeOfAKind" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\ThreeOfAKindStat" class="App\ProjectRules\ThreeOfAKindStat" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
@@ -1685,6 +1689,7 @@
         <argument key="App\ProjectRules\Rule" type="service_closure" id="App\ProjectRules\Rule" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\RuleStat" type="service_closure" id="App\ProjectRules\RuleStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\StraightFlush" type="service_closure" id="App\ProjectRules\StraightFlush" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectRules\StraightFlushStat" type="service_closure" id="App\ProjectRules\StraightFlushStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\ThreeOfAKind" type="service_closure" id="App\ProjectRules\ThreeOfAKind" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\ThreeOfAKindStat" type="service_closure" id="App\ProjectRules\ThreeOfAKindStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository" on-invalid="ignore_uninitialized"/>

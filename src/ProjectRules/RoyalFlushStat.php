@@ -57,27 +57,30 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
      */
     public function possible(array $hand, array $deck, Card $card): bool
     {
-        $uniqueCountHand = $this->cardCounter->count($hand);
+        /**
+         * @var array<Card> $newHand
+         */
+        $newHand = [...$hand, $card];
+        $uniqueCountHand = $this->cardCounter->count($newHand);
         /**
          * @var array<string,int> $suitsHand
          */
         $suitsHand = $uniqueCountHand['suits'];
         /**
-         * @var string $suit
-         */
-        $suit = array_key_first($suitsHand);
-        /**
          * @var array<int,int> $ranksHand
          */
         $ranksHand = $uniqueCountHand['ranks'];
 
-        if (count($suitsHand) > self::UNIQUESUITS || min(array_keys($ranksHand)) < self::MINRANK || $card->getSuit() != $suit || $card->getRank() <= self::MINRANK) {
+        if(count($suitsHand) > self::UNIQUESUITS || min(array_keys($ranksHand)) < self::MINRANK) {
             return false;
         }
+
         /**
-         * @var array<Card> $newHand
+         * @var string $suit
          */
-        $newHand = [...$hand, $card];
+        $suit = array_key_first($suitsHand);
+
+
         $allCards = array_merge($newHand, $deck);
         return $this->checkForCards($allCards, $suit);
     }
