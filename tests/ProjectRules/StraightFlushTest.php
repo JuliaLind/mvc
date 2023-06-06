@@ -14,7 +14,7 @@ class StraightFlushTest extends TestCase
             array_push($hand, new Card($rank, "D"));
         }
         shuffle($hand);
-        $rule = new StraightFlush();
+        $rule = new Straight(1);
         $res = $rule->check($hand);
         $this->assertTrue($res);
     }
@@ -26,7 +26,7 @@ class StraightFlushTest extends TestCase
             array_push($hand, new Card($rank, "D"));
         }
         shuffle($hand);
-        $rule = new StraightFlush();
+        $rule = new Straight(1);
         $res = $rule->check($hand);
         $this->assertFalse($res);
     }
@@ -42,7 +42,7 @@ class StraightFlushTest extends TestCase
         }
 
         shuffle($hand);
-        $rule = new StraightFlush();
+        $rule = new Straight(1);
         $res = $rule->check($hand);
         $this->assertFalse($res);
     }
@@ -55,7 +55,7 @@ class StraightFlushTest extends TestCase
         }
         unset($hand[3]);
         shuffle($hand);
-        $rule = new StraightFlush();
+        $rule = new Straight(1);
         $res = $rule->check($hand);
         $this->assertFalse($res);
     }
@@ -68,7 +68,7 @@ class StraightFlushTest extends TestCase
         }
         $hand[2] = new Card(5, "D");
         shuffle($hand);
-        $rule = new StraightFlush();
+        $rule = new Straight(1);
         $res = $rule->check($hand);
         $this->assertFalse($res);
     }

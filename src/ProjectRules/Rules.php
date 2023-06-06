@@ -14,9 +14,11 @@ class Rules
         $rules = [
             'Royal Flush' => [
                 'points' => 100,
+                'scored' => new RoyalFlush()
             ],
             'Straight Flush' => [
                 'points' => 70,
+                'scored' => new Straight(1)
             ],
             'Four Of A Kind' => [
                 'points' => 50,
@@ -31,6 +33,7 @@ class Rules
             ],
             'Straight' => [
                 'points' => 15,
+                'scored' => new Straight(4)
             ],
             'Three Of A Kind' => [
                 'points' => 10,
@@ -39,6 +42,7 @@ class Rules
             ],
             'Two Pairs' => [
                 'points' => 5,
+                'scored' => new TwoPairs()
             ],
             'One Pair' => [
                 'points' => 2,

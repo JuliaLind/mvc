@@ -5,33 +5,29 @@ namespace App\ProjectRules;
 use App\ProjectCard\CardCounter;
 use App\ProjectCard\Card;
 
-/**
- * Straight Flush Rule
- * Any five subsequent ranks between 2 - Ace(14) of same suit
- *
- */
-class StraightFlush extends Rule implements RuleInterface
+class Straight extends Rule implements RuleInterface
 {
-    /**
-     * @var int $UNIQUERANKS
-     */
-    protected const UNIQUERANKS = 5;
+    protected int $maxRank;
+    protected int $minRank;
+    protected int $uniqueRanks = 5;
+    protected int $uniqueSuits = 1;
 
-    /**
-     * @var int $UNIQUESUITS
-     */
-    protected const UNIQUESUITS = 1;
+    public function __construct(int $uniqueSuits)
+    {
+        parent::__construct();
+        $this->uniqueSuits = $uniqueSuits;
+    }
 
     /**
      * @param array<int,int> $uniqueRanks
      * @return bool
      */
-    private function evaluateRanks(array $uniqueRanks): bool
+    protected function evaluateRanks(array $uniqueRanks): bool
     {
         $maxRank = max(array_keys($uniqueRanks));
         $minRank = min(array_keys($uniqueRanks));
         $diff = $maxRank - $minRank;
-        if ($diff === self::UNIQUERANKS - 1) {
+        if ($diff === $this->uniqueRanks - 1) {
             return true;
         }
         return false;
@@ -55,7 +51,7 @@ class StraightFlush extends Rule implements RuleInterface
          */
         $uniqueRanks = $uniqueCount['ranks'];
 
-        if (count($uniqueSuits) === self::UNIQUESUITS && count($uniqueRanks) === self::UNIQUERANKS) {
+        if (count($uniqueSuits) <= $this->uniqueSuits && count($uniqueRanks) === $this->uniqueRanks) {
             $bool = $this->evaluateRanks($uniqueRanks);
         }
         return $bool;

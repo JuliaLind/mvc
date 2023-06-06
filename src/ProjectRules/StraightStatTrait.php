@@ -8,7 +8,7 @@ use App\ProjectCard\Card;
 require __DIR__ . "/../../vendor/autoload.php";
 
 
-trait StraightTrait
+trait StraightStatTrait
 {
     protected CardCounter $cardCounter;
     protected int $maxRank;

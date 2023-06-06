@@ -14,12 +14,9 @@ use App\ProjectCard\Card;
  */
 class RoyalFlushStat extends RuleStat implements RuleStatInterface
 {
-    use StraightTrait;
+    use StraightStatTrait;
 
-    /**
-     * @var int $UNIQUESUITS
-     */
-    private const UNIQUESUITS = 1;
+    protected int $uniqueSuits = 1;
 
     public function __construct()
     {
@@ -51,7 +48,7 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
          */
         $ranksHand = $uniqueCountHand['ranks'];
 
-        if(count($suitsHand) > self::UNIQUESUITS || min(array_keys($ranksHand)) < $this->minRank) {
+        if(count($suitsHand) > $this->uniqueSuits || min(array_keys($ranksHand)) < $this->minRank) {
             return false;
         }
 
@@ -59,7 +56,6 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
          * @var string $suit
          */
         $suit = array_key_first($suitsHand);
-
 
         $allCards = array_merge($newHand, $deck);
         return $this->checkForCards($allCards, $suit);

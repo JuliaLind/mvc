@@ -8,12 +8,10 @@ use App\ProjectCard\Card;
 
 class StraightFlushStat extends RuleStat implements RuleStatInterface
 {
-    use StraightTrait;
+    use StraightStatTrait;
 
-    /**
-     * @var int $UNIQUESUITS
-     */
-    private const UNIQUESUITS = 1;
+    protected int $uniqueSuits = 1;
+    protected string $suit;
 
     public function __construct()
     {
@@ -25,7 +23,7 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
     /**
      * @param array<int,int> $ranks
      */
-    private function setRankLimits(array $ranks): bool
+    protected function setRankLimits(array $ranks): bool
     {
         foreach($ranks as $rank) {
             if ($rank > $this->maxRank) {
@@ -43,10 +41,10 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
 
     /**
      * @param array<Card> $cards
-     * @param string $suit
      */
-    private function checkAllPossible($cards, $suit): bool
+    protected function checkAllPossible($cards): bool
     {
+        $suit = $this->suit;
         $possible = false;
         $minMinRank = $this->minRank - 4;
         $maxMinRank = $this->minRank;
@@ -82,7 +80,7 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
          * @var array<int,int> $ranksHand
          */
         $ranksHand = $uniqueCountHand['ranks'];
-        if (count($suitsHand) > self::UNIQUESUITS || $this->setRankLimits($ranksHand) === false) {
+        if (count($suitsHand) > $this->uniqueSuits || $this->setRankLimits($ranksHand) === false) {
             return false;
         }
 
@@ -90,7 +88,8 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
          * @var string $suit
          */
         $suit = array_key_first($suitsHand);
+        $this->suit = $suit;
         $allCards = array_merge($newHand, $deck);
-        return $this->checkAllPossible($allCards, $suit);
+        return $this->checkAllPossible($allCards);
     }
 }
