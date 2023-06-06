@@ -104,4 +104,25 @@ class DeckTest extends TestCase
         $this->assertNotEquals($exp, $res);
         $this->assertEqualsCanonicalizing($exp, $res);
     }
+
+    public function testPossibleCards(): void
+    {
+        $cards = [];
+        $exp = [];
+        for ($i = 2; $i < 8; $i++) {
+            $card = new Card($i, "D");
+            array_push($cards, $card);
+            if ($i % 2 === 1) {
+                array_push($exp, $card);
+            }
+        }
+        $factory = $this->createMock(CardFactory::class);
+        $factory->method('fullSet')
+        ->willReturn($cards);
+
+        $deck = new Deck($factory);
+        $res = $deck->possibleCards();
+        $this->assertEquals($exp, $res);
+        $this->assertEquals(3, count($res));
+    }
 }

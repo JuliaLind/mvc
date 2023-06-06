@@ -59,4 +59,20 @@ class Deck
         $cards = $this->cards;
         return $cards;
     }
+
+    /**
+     * @return array<Card>
+     */
+    public function possibleCards(): array
+    {
+        $cards = [];
+        $deck = $this->cards;
+
+        foreach ($deck as $index => $card) {
+            if ($index % 2 === 1) {
+                array_push($cards, $card);
+            }
+        }
+        return $cards;
+    }
 }

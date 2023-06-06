@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-06 15:03:46        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-06 22:09:54        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -699,6 +699,21 @@
         "relations": []
     },
     {
+        "name": "\\App\\ProjectRules\\FlushStat",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\Rule",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\RuleStatInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\ProjectRules\\RuleStat",
         "size": 3000,
         "relations": []
@@ -719,11 +734,6 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\Rule",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\ProjectRules\\RuleInterface",
         "size": 3000,
         "relations": []
@@ -738,6 +748,10 @@
             "\\App\\ProjectRules\\StraightFlushStat",
             "\\App\\ProjectRules\\SameOfAKind",
             "\\App\\ProjectRules\\SameOfAKindStat",
+            "\\App\\ProjectRules\\FullHouse",
+            "\\App\\ProjectRules\\FullHouseStat",
+            "\\App\\ProjectRules\\Flush",
+            "\\App\\ProjectRules\\FlushStat",
             "\\App\\ProjectRules\\StraightStat",
             "\\App\\ProjectRules\\TwoPairs",
             "\\App\\ProjectRules\\TwoPairsStat"
@@ -785,6 +799,31 @@
         ]
     },
     {
+        "name": "\\App\\ProjectRules\\FullHouse",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\Rule",
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\FullHouseStat",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\Rule",
+            "\\App\\ProjectRules\\RuleStatInterface",
+            "\\App\\ProjectCard\\Card"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\Flush",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\Rule",
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
         "name": "\\App\\ProjectRules\\StraightStat",
         "size": 3000,
         "relations": [
@@ -809,20 +848,6 @@
         ]
     },
     {
-        "name": "\\App\\ProjectRules\\RuleStatInterface",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\FullHouseStat",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleStat",
-            "\\App\\ProjectRules\\RuleStatInterface",
-            "\\App\\ProjectCard\\Card"
-        ]
-    },
-    {
         "name": "\\App\\ProjectRules\\SameRankTrait",
         "size": 3000,
         "relations": []
@@ -837,14 +862,6 @@
         "size": 3000,
         "relations": [
             "\\App\\ProjectCard\\Card"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\FullHouse",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\Rule",
-            "\\App\\ProjectRules\\RuleInterface"
         ]
     },
     {

@@ -24,7 +24,6 @@ class FullHouseStat extends Rule implements RuleStatInterface
         $newHand = [...$hand, $card];
 
         $uniqueCountHand = $this->cardCounter->count($newHand);
-        // $rank = $card->getRank();
 
         /**
          * @var array<int,int> $ranksHand
@@ -43,7 +42,7 @@ class FullHouseStat extends Rule implements RuleStatInterface
          */
         $uniqeRanksTotal = $uniqueCountAllCards['ranks'];
         $countRanksTotal = [];
-        forEach(array_keys($ranksHand) as $rankInHand) {
+        foreach(array_keys($ranksHand) as $rankInHand) {
             $countRanksTotal[$rankInHand] = $uniqeRanksTotal[$rankInHand];
         }
         if (max($uniqeRanksTotal) >= 3 && min($uniqeRanksTotal) >= 2) {

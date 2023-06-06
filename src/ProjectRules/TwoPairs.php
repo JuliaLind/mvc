@@ -34,9 +34,6 @@ class TwoPairs extends Rule implements RuleInterface
         $minCountRank = $this->minCountRank;
         $pairs = 0;
         foreach($uniqueRanks as $rankCount) {
-            // the hand should not contain more than 2 of same
-            // rank because four of a kind and three of a kind
-            // will be checked before two pairs
             if ($rankCount >= $minCountRank) {
                 $pairs += 1;
             }

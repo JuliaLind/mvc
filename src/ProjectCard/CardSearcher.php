@@ -52,7 +52,7 @@ class CardSearcher
             if ($possible === true) {
                 $count += 1;
             }
-            if ($count == $quantity) {
+            if ($count === $quantity) {
                 return true;
             }
         }

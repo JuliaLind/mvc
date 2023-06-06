@@ -132,4 +132,45 @@ class GridTest extends TestCase
 
         $this->assertEquals($exp, $res);
     }
+
+    public function testRowsAndCols2(): void
+    {
+        $cards = [
+            [new Card(14, 'D'), new Card(14, 'C'), new Card(14, 'S'), new Card(5, 'C'), new Card(10, 'H')],
+            [new Card(10, 'D'), new Card(8, 'C'), new Card(8, 'D'), new Card(5, 'D'), new Card(6, 'H')],
+            [new Card(12, 'D'), new Card(3, 'C'), new Card(2, 'C'), new Card(5, 'S'), new Card(7, 'H')],
+            [new Card(13, 'D'), new Card(4, 'C'), new Card(9, 'C'), new Card(5, 'H'), new Card(8, 'H')],
+            [new Card(11, 'D'), new Card(7, 'C'), new Card(10, 'H'), new Card(8, 'S'), new Card(9, 'H')]
+        ];
+
+        $grid = new Grid();
+        $grid->setCards($cards);
+        $res = $grid->rowsAndCols();
+        $exp = [ 'rows' => [
+                [new Card(14, 'D'), new Card(14, 'C'), new Card(14, 'S'), new Card(5, 'C'), new Card(10, 'H')],
+                [new Card(10, 'D'), new Card(8, 'C'), new Card(8, 'D'), new Card(5, 'D'), new Card(6, 'H')],
+                [new Card(12, 'D'), new Card(3, 'C'), new Card(2, 'C'), new Card(5, 'S'), new Card(7, 'H')],
+                [new Card(13, 'D'), new Card(4, 'C'), new Card(9, 'C'), new Card(5, 'H'), new Card(8, 'H')],
+                [new Card(11, 'D'), new Card(7, 'C'), new Card(10, 'H'), new Card(8, 'S'), new Card(9, 'H')]
+            ],
+            'cols' => [
+                [
+                    new Card(14, 'D'), new Card(10, 'D'), new Card(12, 'D'), new Card(13, 'D'), new Card(11, 'D')
+                ],
+                [
+                    new Card(14, 'C'), new Card(8, 'C'), new Card(3, 'C'), new Card(4, 'C'), new Card(7, 'C')
+                ],
+                [
+                    new Card(14, 'S'), new Card(8, 'D'), new Card(2, 'C'), new Card(9, 'C'), new Card(10, 'H')
+                ],
+                [
+                    new Card(5, 'C'), new Card(5, 'D'), new Card(5, 'S'), new Card(5, 'H'), new Card(8, 'S')
+                ],
+                [
+                    new Card(10, 'H'), new Card(6, 'H'), new Card(7, 'H'), new Card(8, 'H'), new Card(9, 'H')
+                ],
+            ]
+        ];
+        $this->assertEquals($exp, $res);
+    }
 }
