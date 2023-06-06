@@ -31,20 +31,10 @@ class TwoPairsStat extends RuleStat implements RuleStatInterface
          */
         $ranksHand = $uniqueCountHand['ranks'];
 
-        if (!array_key_exists($rank, $ranksHand) && count($ranksHand) > 1 || (5 - count($hand) < $this->minCountRank - $ranksHand[$rank])) {
+        if (!(array_key_exists($rank, $ranksHand)) && count($ranksHand) > 1 || (5 - count($hand) < $this->minCountRank - $ranksHand[$rank]) || count($hand) === count($ranksHand)) {
             return false;
         }
 
-        $check = false;
-        foreach($ranksHand as $rankInHand) {
-            if ($rankInHand >= 2) {
-                $check = true;
-                break;
-            }
-        }
-        if ($check === false) {
-            return false;
-        }
         $allCards = array_merge($newHand, $deck);
         $searcher = $this->searcher;
 

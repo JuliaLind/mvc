@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelTestDebugContainer::class, false)) {
 
 return new \ContainerLe9490q\App_KernelTestDebugContainer([
     'container.build_hash' => 'Le9490q',
-    'container.build_id' => 'f924c112',
-    'container.build_time' => 1686010991,
+    'container.build_id' => 'e32a7f04',
+    'container.build_time' => 1686011685,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerLe9490q');
