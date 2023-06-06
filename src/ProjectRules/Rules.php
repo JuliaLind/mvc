@@ -14,11 +14,13 @@ class Rules
         $rules = [
             'Royal Flush' => [
                 'points' => 100,
-                'scored' => new RoyalFlush()
+                'scored' => new RoyalFlush(),
+                'possible' => new RoyalFlushStat()
             ],
             'Straight Flush' => [
                 'points' => 70,
-                'scored' => new Straight(1)
+                'scored' => new Straight(1),
+                'possible' => new StraightFlushStat()
             ],
             'Four Of A Kind' => [
                 'points' => 50,
@@ -33,7 +35,8 @@ class Rules
             ],
             'Straight' => [
                 'points' => 15,
-                'scored' => new Straight(4)
+                'scored' => new Straight(4),
+                'possible' => new StraightStat()
             ],
             'Three Of A Kind' => [
                 'points' => 10,
@@ -42,7 +45,8 @@ class Rules
             ],
             'Two Pairs' => [
                 'points' => 5,
-                'scored' => new TwoPairs()
+                'scored' => new TwoPairs(),
+                'possible' => new TwoPairsStat()
             ],
             'One Pair' => [
                 'points' => 2,

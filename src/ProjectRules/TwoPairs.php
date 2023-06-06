@@ -7,8 +7,7 @@ use App\ProjectCard\Card;
 
 class TwoPairs extends Rule implements RuleInterface
 {
-    use SameRankTrait;
-
+    protected int $minCountRank;
     /**
      * Constructor
      */
@@ -32,12 +31,13 @@ class TwoPairs extends Rule implements RuleInterface
          */
         $uniqueRanks = $uniqueCount['ranks'];
 
+        $minCountRank = $this->minCountRank;
         $pairs = 0;
         foreach($uniqueRanks as $rankCount) {
             // the hand should not contain more than 2 of same
             // rank because four of a kind and three of a kind
             // will be checked before two pairs
-            if ($rankCount >= 2) {
+            if ($rankCount >= $minCountRank) {
                 $pairs += 1;
             }
             if ($pairs === 2) {

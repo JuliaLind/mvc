@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-06 00:23:54        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-06 15:03:46        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -733,10 +733,14 @@
         "size": 3000,
         "relations": [
             "\\App\\ProjectRules\\RoyalFlush",
+            "\\App\\ProjectRules\\RoyalFlushStat",
             "\\App\\ProjectRules\\Straight",
+            "\\App\\ProjectRules\\StraightFlushStat",
             "\\App\\ProjectRules\\SameOfAKind",
             "\\App\\ProjectRules\\SameOfAKindStat",
-            "\\App\\ProjectRules\\TwoPairs"
+            "\\App\\ProjectRules\\StraightStat",
+            "\\App\\ProjectRules\\TwoPairs",
+            "\\App\\ProjectRules\\TwoPairsStat"
         ]
     },
     {
@@ -747,34 +751,20 @@
         ]
     },
     {
+        "name": "\\App\\ProjectRules\\RoyalFlushStat",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleStat",
+            "\\App\\ProjectRules\\RuleStatInterface",
+            "\\App\\ProjectCard\\Card"
+        ]
+    },
+    {
         "name": "\\App\\ProjectRules\\Straight",
         "size": 3000,
         "relations": [
             "\\App\\ProjectRules\\Rule",
             "\\App\\ProjectRules\\RuleInterface"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\SameOfAKindStat",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleStat",
-            "\\App\\ProjectRules\\RuleStatInterface"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\TwoPairs",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\Rule",
-            "\\App\\ProjectRules\\RuleInterface"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\StraightStat",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\StraightFlushStat"
         ]
     },
     {
@@ -787,9 +777,50 @@
         ]
     },
     {
+        "name": "\\App\\ProjectRules\\SameOfAKindStat",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleStat",
+            "\\App\\ProjectRules\\RuleStatInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\StraightStat",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\StraightFlushStat"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\TwoPairs",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\Rule",
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\TwoPairsStat",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleStat",
+            "\\App\\ProjectRules\\RuleStatInterface",
+            "\\App\\ProjectCard\\Card"
+        ]
+    },
+    {
         "name": "\\App\\ProjectRules\\RuleStatInterface",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\FullHouseStat",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleStat",
+            "\\App\\ProjectRules\\RuleStatInterface",
+            "\\App\\ProjectCard\\Card"
+        ]
     },
     {
         "name": "\\App\\ProjectRules\\SameRankTrait",
@@ -809,21 +840,11 @@
         ]
     },
     {
-        "name": "\\App\\ProjectRules\\TwoPairsStat",
+        "name": "\\App\\ProjectRules\\FullHouse",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\RuleStat",
-            "\\App\\ProjectRules\\RuleStatInterface",
-            "\\App\\ProjectCard\\Card"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\RoyalFlushStat",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleStat",
-            "\\App\\ProjectRules\\RuleStatInterface",
-            "\\App\\ProjectCard\\Card"
+            "\\App\\ProjectRules\\Rule",
+            "\\App\\ProjectRules\\RuleInterface"
         ]
     },
     {
