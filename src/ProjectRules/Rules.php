@@ -82,7 +82,8 @@ class Rules
          */
         foreach($hands as $type => $arr) {
             foreach($arr as $index => $hand) {
-                $bool = false;
+                $result[$type][$index]['name'] = 'None';
+                $result[$type][$index]['points'] = 0;
                 /**
                  * @var string $name
                  */
@@ -92,7 +93,6 @@ class Rules
                      */
                     $rule = $options['scored'];
                     if ($rule->check($hand) === true) {
-                        $bool = true;
                         $result[$type][$index]['name'] = $name;
                         /**
                          * @var int $points
@@ -102,10 +102,6 @@ class Rules
                         $total += $points;
                         break;
                     }
-                }
-                if ($bool === false) {
-                    $result[$type][$index]['name'] = 'None';
-                    $result[$type][$index]['points'] = 0;
                 }
             }
         }
