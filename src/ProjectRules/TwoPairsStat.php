@@ -31,7 +31,7 @@ class TwoPairsStat extends RuleStat implements RuleStatInterface
          */
         $ranksHand = $uniqueCountHand['ranks'];
 
-        if (!(array_key_exists($rank, $ranksHand)) && count($ranksHand) > 1 || (5 - count($hand) < $this->minCountRank - $ranksHand[$rank]) || count($hand) === count($ranksHand)) {
+        if (!array_key_exists($rank, $ranksHand) || count($hand) === count($ranksHand)) {
             return false;
         }
 
