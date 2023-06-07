@@ -527,6 +527,9 @@
       <argument type="service" id="App\ProjectCard\CardCounter"/>
       <argument type="service" id="App\ProjectCard\CardSearcher"/>
     </service>
+    <service id="App\ProjectRules\WinEvaluator" class="App\ProjectRules\WinEvaluator" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectRules\Rules"/>
+    </service>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -1698,6 +1701,7 @@
         <argument key="App\ProjectRules\StraightStat" type="service_closure" id="App\ProjectRules\StraightStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\TwoPairs" type="service_closure" id="App\ProjectRules\TwoPairs" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\TwoPairsStat" type="service_closure" id="App\ProjectRules\TwoPairsStat" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectRules\WinEvaluator" type="service_closure" id="App\ProjectRules\WinEvaluator" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository" on-invalid="ignore_uninitialized"/>
         <argument key="argument_metadata_factory" type="service_closure" id="argument_metadata_factory" on-invalid="ignore_uninitialized"/>
         <argument key="response_listener" type="service_closure" id="response_listener" on-invalid="ignore_uninitialized"/>
