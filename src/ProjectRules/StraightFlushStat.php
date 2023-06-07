@@ -8,52 +8,51 @@ use App\ProjectCard\Card;
 
 class StraightFlushStat extends RuleStat implements RuleStatInterface
 {
+    use RankLimitsTrait;
     use StraightStatTrait;
 
-    protected int $uniqueSuits = 1;
-    protected string $suit;
+    // protected string $suit;
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->maxRank = 1;
-        $this->minRank = 15;
-    }
+    // /**
+    //  * @param array<Card> $cards
+    //  */
+    // protected function checkForCards($cards, int $minRank): bool
+    // {
+    //     $maxRank = $minRank + 4;
+    //     $suit = $this->suit;
+    //     $searcher = $this->searcher;
+    //     for ($rank = $minRank; $rank <= $maxRank; $rank++) {
+    //         if ($searcher->search($cards, $rank, $suit) === false) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
 
-    /**
-     * @param array<int,int> $ranks
-     */
-    protected function setRankLimits(array $ranks): bool
-    {
-        foreach($ranks as $rank) {
-            if ($rank > $this->maxRank) {
-                $this->maxRank = $rank;
-            }
-            if ($rank < $this->minRank) {
-                $this->minRank = $rank;
-            }
-            if ($this->maxRank - $this->minRank > 4) {
-                return false;
-            }
-        }
-        return true;
-    }
 
     /**
      * @param array<Card> $cards
      */
     protected function checkAllPossible($cards): bool
     {
-        $suit = $this->suit;
         $possible = false;
-        $minMinRank = $this->minRank - 4;
+
+        $minMinRank = $this->maxRank - 4;
+        if ($minMinRank < 2) {
+            $minMinRank = 2;
+        }
         $maxMinRank = $this->minRank;
-        for ($this->minRank = $minMinRank; $this->minRank <= $maxMinRank; $this->minRank++) {
-            $this->maxRank = $this->minRank + 4;
-            if ($this->checkForCards($cards, $suit) === true) {
-                return true;
+        if ($maxMinRank > 10) {
+            $maxMinRank = 10;
+        }
+
+        for ($minRank = $minMinRank; $minRank <= $maxMinRank; $minRank++) {
+            $possible = $this->checkForCards($cards, $minRank);
+            if ($possible === true) {
+                break;
             }
         }
+
         return $possible;
     }
 
@@ -80,7 +79,7 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
          * @var array<int,int> $ranksHand
          */
         $ranksHand = $uniqueCountHand['ranks'];
-        if (count($suitsHand) > $this->uniqueSuits || $this->setRankLimits($ranksHand) === false) {
+        if (count($suitsHand) > 1 || $this->setRankLimits(array_keys($ranksHand)) === false) {
             return false;
         }
 

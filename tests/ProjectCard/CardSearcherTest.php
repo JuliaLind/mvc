@@ -144,4 +144,22 @@ class CardSearcherTest extends TestCase
         $res = $searcher->checkRanksQuant($cards, [4, 12], 3);
         $this->assertTrue($res);
     }
+
+    public function testCheckRankQuantOk3(): void
+    {
+        $cards = [
+            new Card(10, 'D'), new Card(11, 'D'), new Card(13, 'D'), new Card(9, 'C'), new Card(8, 'C'), new Card(12, 'D')
+        ];
+        $searcher = new CardSearcher();
+        $res = $searcher->checkRankQuant($cards, 9, 1);
+        $this->assertTrue($res);
+        $res = $searcher->checkRankQuant($cards, 10, 1);
+        $this->assertTrue($res);
+        $res = $searcher->checkRankQuant($cards, 11, 1);
+        $this->assertTrue($res);
+        $res = $searcher->checkRankQuant($cards, 12, 1);
+        $this->assertTrue($res);
+        $res = $searcher->checkRankQuant($cards, 13, 1);
+        $this->assertTrue($res);
+    }
 }

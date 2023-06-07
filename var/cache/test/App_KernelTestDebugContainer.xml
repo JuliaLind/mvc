@@ -520,8 +520,14 @@
     <service id="App\ProjectRules\SameOfAKind" class="App\ProjectRules\SameOfAKind" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\SameOfAKindStat" class="App\ProjectRules\SameOfAKindStat" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\Straight" class="App\ProjectRules\Straight" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectRules\StraightFlushStat" class="App\ProjectRules\StraightFlushStat" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectRules\StraightStat" class="App\ProjectRules\StraightStat" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectRules\StraightFlushStat" class="App\ProjectRules\StraightFlushStat" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectCard\CardCounter"/>
+      <argument type="service" id="App\ProjectCard\CardSearcher"/>
+    </service>
+    <service id="App\ProjectRules\StraightStat" class="App\ProjectRules\StraightStat" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectCard\CardCounter"/>
+      <argument type="service" id="App\ProjectCard\CardSearcher"/>
+    </service>
     <service id="App\ProjectRules\TwoPairs" class="App\ProjectRules\TwoPairs" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\TwoPairsStat" class="App\ProjectRules\TwoPairsStat" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectCard\CardCounter"/>

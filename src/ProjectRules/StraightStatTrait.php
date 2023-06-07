@@ -1,5 +1,7 @@
 <?php
 
+
+// ta eventuellt bort denna
 namespace App\ProjectRules;
 
 use App\ProjectCard\CardCounter;
@@ -13,21 +15,23 @@ trait StraightStatTrait
     protected CardCounter $cardCounter;
     protected int $maxRank;
     protected int $minRank;
+    protected string $suit;
 
     /**
      * @param array<Card> $cards
      * @param string $suit
      */
-    private function checkForCards($cards, $suit): bool
+    protected function checkForCards($cards, int $minRank): bool
     {
-        $possible = true;
+        $maxRank = $minRank + 4;
+        $suit = $this->suit;
+
         $searcher = $this->searcher;
-        for ($rank = $this->minRank; $rank <= $this->maxRank; $rank++) {
-            $possible = $searcher->search($cards, $rank, $suit);
-            if ($possible === false) {
-                break;
+        for ($rank = $minRank; $rank <= $maxRank; $rank++) {
+            if ($searcher->search($cards, $rank, $suit) === false) {
+                return false;
             }
         }
-        return $possible;
+        return true;
     }
 }

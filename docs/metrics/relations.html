@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-07 10:05:10        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-07 14:58:32        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -729,6 +729,11 @@
         "relations": []
     },
     {
+        "name": "\\App\\ProjectRules\\RankLimitsTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\ProjectRules\\SameOfAKind",
         "size": 3000,
         "relations": []
@@ -813,7 +818,9 @@
         "name": "\\App\\ProjectRules\\StraightStat",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\StraightFlushStat"
+            "\\App\\ProjectRules\\RuleStat",
+            "\\App\\ProjectRules\\RuleStatInterface",
+            "\\App\\ProjectCard\\Card"
         ]
     },
     {
