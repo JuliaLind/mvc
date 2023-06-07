@@ -14,7 +14,7 @@ use App\ProjectCard\Card;
  */
 class RoyalFlushStat extends RuleStat implements RuleStatInterface
 {
-    use StraightStatTrait;
+    use StraightFlushStatTrait;
 
     public function __construct()
     {

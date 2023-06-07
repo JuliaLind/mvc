@@ -39,4 +39,15 @@ class FullHouseStatTest extends TestCase
         $res = $rule->check($hand, $deck, $card);
         $this->assertFalse($res);
     }
+
+    public function testCheckNotOk3(): void
+    {
+        $rule = new FullHouseStat();
+        $hand = [new Card(4, 'D'), new Card(8, 'D')];
+
+        $deck = [new Card(4, 'S'), new Card(2, 'C'), new Card(2, 'D')];
+        $card = new Card(8, 'H');
+        $res = $rule->check($hand, $deck, $card);
+        $this->assertFalse($res);
+    }
 }

@@ -1,10 +1,7 @@
 <?php
 
-
-// ta eventuellt bort denna
 namespace App\ProjectRules;
 
-use App\ProjectCard\CardCounter;
 use App\ProjectCard\Card;
 
 require __DIR__ . "/../../vendor/autoload.php";
@@ -12,26 +9,21 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 trait StraightStatTrait
 {
-    protected CardCounter $cardCounter;
-    protected int $maxRank;
-    protected int $minRank;
-    protected string $suit;
-
     /**
      * @param array<Card> $cards
-     * @param string $suit
      */
-    protected function checkForCards($cards, int $minRank): bool
+    protected function checkAllPossible($cards): bool
     {
-        $maxRank = $minRank + 4;
-        $suit = $this->suit;
-
-        $searcher = $this->searcher;
-        for ($rank = $minRank; $rank <= $maxRank; $rank++) {
-            if ($searcher->search($cards, $rank, $suit) === false) {
-                return false;
+        $possible = false;
+        $minLimits = $this->minRankLimits();
+        $minMinRank = $minLimits['min'];
+        $maxMinRank = $minLimits['max'];
+        for ($minRank = $minMinRank; $minRank <= $maxMinRank; $minRank++) {
+            $possible = $this->checkForCards($cards, $minRank);
+            if ($possible === true) {
+                break;
             }
         }
-        return true;
+        return $possible;
     }
 }

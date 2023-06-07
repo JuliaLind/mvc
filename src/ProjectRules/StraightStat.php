@@ -9,6 +9,7 @@ use App\ProjectCard\Card;
 class StraightStat extends RuleStat implements RuleStatInterface
 {
     use RankLimitsTrait;
+    use StraightStatTrait;
 
     /**
      * @param array<Card> $cards
@@ -27,23 +28,6 @@ class StraightStat extends RuleStat implements RuleStatInterface
         return true;
     }
 
-    /**
-     * @param array<Card> $cards
-     */
-    protected function checkAllPossible($cards): bool
-    {
-        $possible = false;
-        $minLimits = $this->minRankLimits();
-        $minMinRank = $minLimits['min'];
-        $maxMinRank = $minLimits['max'];
-        for ($minRank = $minMinRank; $minRank <= $maxMinRank; $minRank++) {
-            $possible = $this->checkForCards($cards, $minRank);
-            if ($possible === true) {
-                break;
-            }
-        }
-        return $possible;
-    }
 
     /**
      * @param array<Card> $hand

@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-07 15:10:40        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-07 22:07:27        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -60,21 +60,21 @@
         <div class="bloc bloc-number">
             <div class="label">Test suites</div>
             <div class="number">
-                91            </div>
+                92            </div>
         </div>
     </div>
     <div class="column">
         <div class="bloc bloc-number">
             <div class="label">Assertions</div>
             <div class="number">
-                562            </div>
+                569            </div>
         </div>
     </div>
     <div class="column">
         <div class="bloc bloc-number">
             <div class="label">
                 classes never called by tests
-                <small>(35.35 %)</small>
+                <small>(35 %)</small>
             </div>
             <div class="number">
                 35            </div>
@@ -270,23 +270,12 @@
                                                         <tr>
                                 <td><span class="path">App\ProjectRules\RankLimitsTrait</span></td>
                                                                     <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.06);">
-                                        2                                        </span>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.18);">
+                                        4                                        </span>
                                     </td>
                                                                     <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.02);">
-                                        0.02                                        </span>
-                                    </td>
-                                                            </tr>
-                                                        <tr>
-                                <td><span class="path">App\ProjectRules\FullHouseStat</span></td>
-                                                                    <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.29);">
-                                        6                                        </span>
-                                    </td>
-                                                                    <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.09);">
-                                        0.09                                        </span>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.07);">
+                                        0.07                                        </span>
                                     </td>
                                                             </tr>
                                                         <tr>
@@ -331,6 +320,17 @@
                                                                     <td>
                                         <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
                                         0                                        </span>
+                                    </td>
+                                                            </tr>
+                                                        <tr>
+                                <td><span class="path">App\ProjectRules\StraightFlushStatTrait</span></td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.12);">
+                                        3                                        </span>
+                                    </td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.04);">
+                                        0.04                                        </span>
                                     </td>
                                                             </tr>
                                                         <tr>
@@ -1332,6 +1332,20 @@
                                                                     </td>
                             </tr>
                                                     <tr>
+                                <td valign="top"><span class="path">App\ProjectRules\FullHouseStatTest</span></td>
+                                <td style="padding-bottom: 1em;">
+                                                                                                                    <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">PHPUnit\Framework\TestCase</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            6                                        </span>
+                                        <span class="path">App\ProjectRules\FullHouseStat</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            1                                        </span>
+                                        <span class="path">App\ProjectCard\Card</span>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
                                 <td valign="top"><span class="path">App\ProjectRules\FullHouseTest</span></td>
                                 <td style="padding-bottom: 1em;">
                                                                                                                     <span class="badge" title="Cyclomatic complexity of class">
@@ -1447,7 +1461,7 @@
                                             1                                        </span>
                                         <span class="path">App\ProjectCard\Card</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            7                                        </span>
+                                            3                                        </span>
                                         <span class="path">App\ProjectRules\StraightFlushStat</span>
                                                                     </td>
                             </tr>
@@ -1475,7 +1489,7 @@
                                             1                                        </span>
                                         <span class="path">App\ProjectCard\Card</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            8                                        </span>
+                                            4                                        </span>
                                         <span class="path">App\ProjectRules\StraightStat</span>
                                                                     </td>
                             </tr>
@@ -1832,7 +1846,7 @@
 
 
             
-            var json = {"name":"Execution time","children":[{"name":"App\\Cards\\CardDeckHandlerTest","time":0.049395},{"name":"App\\Cards\\CardGraphicTest","time":0.008917},{"name":"App\\Cards\\CardHandTest","time":0.014982},{"name":"App\\Cards\\CardHandlerTest","time":0.01185},{"name":"App\\Cards\\CardLandingHandlerTest","time":0.003281},{"name":"App\\Cards\\CardTest","time":0.001397},{"name":"App\\Cards\\DeckOfCardsExtTest","time":0.002987},{"name":"App\\Cards\\DeckOfCardsTest","time":0.011559},{"name":"App\\Cards\\JsonCardHandlerTest","time":0.009301},{"name":"App\\Cards\\PlayerCreatorTest","time":0.003583},{"name":"App\\Cards\\PlayerTest","time":0.003875},{"name":"App\\Controller\\CardControllerTest","time":1.19857},{"name":"App\\Controller\\CardLandingControllerTest","time":0.017991},{"name":"App\\Controller\\Game21ControllerTest","time":0.131457},{"name":"App\\Controller\\JsonCardDealControllerTest","time":0.00749},{"name":"App\\Controller\\JsonCardDeckControllerTest","time":0.014453},{"name":"App\\Controller\\JsonControllerTest","time":0.032314},{"name":"App\\Controller\\JsonDealManyCardsControllerTest","time":0.007066},{"name":"App\\Controller\\JsonDealOneCardControllerTest","time":0.007285},{"name":"App\\Controller\\JsonGame21ControllerTest","time":0.013454},{"name":"App\\Controller\\JsonLibraryControllerTest","time":0.044784},{"name":"App\\Controller\\LibraryControllerTest","time":0.41493},{"name":"App\\Controller\\LibraryUpdateBookControllerTest","time":0.042394},{"name":"App\\Controller\\MainControllerTest","time":0.059271},{"name":"App\\Entity\\BookTest","time":0.001018},{"name":"App\\Game\\BanksTurnHandlerTest","time":0.003493},{"name":"App\\Game\\BettingGameTraitTest","time":0.004975},{"name":"App\\Game\\Game21EasyEvaluateBankTest","time":0.005534},{"name":"App\\Game\\Game21EasyEvaluateTest","time":0.005413},{"name":"App\\Game\\Game21EasyGenerateFlashTest","time":0.003668},{"name":"App\\Game\\Game21EasyTest","time":0.006931},{"name":"App\\Game\\Game21HardTest","time":0.003893},{"name":"App\\Game\\GameAttrHandler2TraitTest","time":0.008172},{"name":"App\\Game\\GameAttrHandlerTraitTest","time":0.00561},{"name":"App\\Game\\GameHandlerLandingTest","time":0.004937},{"name":"App\\Game\\GameHandlerTest","time":0.001994},{"name":"App\\Game\\GameInitiatorTest","time":0.002123},{"name":"App\\Game\\GameMoneyHandlerTest","time":0.002604},{"name":"App\\Game\\GameTest","time":0.002126},{"name":"App\\Game\\JsonGameHandlerTest","time":0.001832},{"name":"App\\Game\\MoneyPotTest","time":0.002682},{"name":"App\\Game\\Player21Test","time":0.005402},{"name":"App\\Game\\PlayerTraitTest","time":0.004142},{"name":"App\\Game\\PlayerTurnHandlerTest","time":0.00308},{"name":"App\\Game\\RoundHandlerTest","time":0.007339},{"name":"App\\Helpers\\JsonConverterTest","time":0.004159},{"name":"App\\Helpers\\JsonHandlerTest","time":0.002121},{"name":"App\\Helpers\\LuckyRouteDataTest","time":0.001391},{"name":"App\\Helpers\\MainControllerHelperTest","time":0.00258},{"name":"App\\Library\\BookRemoverTest","time":0.002993},{"name":"App\\Library\\BookSaverTest","time":0.002617},{"name":"App\\Library\\BookUpdatorTest","time":0.004847},{"name":"App\\Library\\LibraryHandlerTest","time":0.007318},{"name":"App\\Library\\NewFlashGeneratorTest","time":0.002503},{"name":"App\\Library\\RemoveFlashGeneratorTest","time":0.001595},{"name":"App\\Library\\SqlFileLoaderTest","time":0.003694},{"name":"App\\Library\\UpdateFlashGeneratorTest","time":0.002564},{"name":"App\\Markdown\\MdParserTest","time":0.002707},{"name":"App\\ProjectCard\\CardCounterTest","time":0.000836},{"name":"App\\ProjectCard\\CardFactoryTest","time":0.002967},{"name":"App\\ProjectCard\\CardSearcherTest","time":0.006459},{"name":"App\\ProjectCard\\CardTest","time":0.000732},{"name":"App\\ProjectCard\\DeckTest","time":0.008283},{"name":"App\\ProjectGrid\\EmptyCellFinderTest","time":0.001496},{"name":"App\\ProjectGrid\\GridColsTest","time":0.000895},{"name":"App\\ProjectGrid\\GridGraphicTest","time":0.000819},{"name":"App\\ProjectGrid\\GridTest","time":0.005979},{"name":"App\\ProjectRules\\FlushStatTest","time":0.00335},{"name":"App\\ProjectRules\\FlushTest","time":0.001539},{"name":"App\\ProjectRules\\FourOfAKindStatNotOkTest","time":0.005195},{"name":"App\\ProjectRules\\FourOfAKindStatOkTest","time":0.004857},{"name":"App\\ProjectRules\\FourOfAKindTest","time":0.004159},{"name":"App\\ProjectRules\\FullHouseTest","time":0.003153},{"name":"App\\ProjectRules\\OnePairStatTest","time":0.001626},{"name":"App\\ProjectRules\\OnePairTest","time":0.000861},{"name":"App\\ProjectRules\\RankLimitsTraitTest","time":0.001414},{"name":"App\\ProjectRules\\RoyalFlushStatTest","time":0.003427},{"name":"App\\ProjectRules\\RoyalFlushTest","time":0.004795},{"name":"App\\ProjectRules\\RulesTest","time":0.00272},{"name":"App\\ProjectRules\\SameRankTraitTest","time":0.001495},{"name":"App\\ProjectRules\\StraightFlushStatTest","time":0.005112},{"name":"App\\ProjectRules\\StraightFlushTest","time":0.003924},{"name":"App\\ProjectRules\\StraightStatTest","time":0.003475},{"name":"App\\ProjectRules\\StraightTest","time":0.004732},{"name":"App\\ProjectRules\\ThreeOfAKindStat2Test","time":0.005678},{"name":"App\\ProjectRules\\ThreeOfAKindStatTest","time":0.002545},{"name":"App\\ProjectRules\\ThreeOfAKindTest","time":0.003521},{"name":"App\\ProjectRules\\TwoPairsStatTest","time":0.002358},{"name":"App\\ProjectRules\\TwoPairsTest","time":0.001525},{"name":"App\\ProjectRules\\WinEvaluatorTest","time":0.002679},{"name":"App\\Repository\\BookRepositoryTest","time":0.002503}]};
+            var json = {"name":"Execution time","children":[{"name":"App\\Cards\\CardDeckHandlerTest","time":0.049377},{"name":"App\\Cards\\CardGraphicTest","time":0.009054},{"name":"App\\Cards\\CardHandTest","time":0.01498},{"name":"App\\Cards\\CardHandlerTest","time":0.011832},{"name":"App\\Cards\\CardLandingHandlerTest","time":0.003203},{"name":"App\\Cards\\CardTest","time":0.00146},{"name":"App\\Cards\\DeckOfCardsExtTest","time":0.004178},{"name":"App\\Cards\\DeckOfCardsTest","time":0.010995},{"name":"App\\Cards\\JsonCardHandlerTest","time":0.010867},{"name":"App\\Cards\\PlayerCreatorTest","time":0.003386},{"name":"App\\Cards\\PlayerTest","time":0.004192},{"name":"App\\Controller\\CardControllerTest","time":1.206451},{"name":"App\\Controller\\CardLandingControllerTest","time":0.016948},{"name":"App\\Controller\\Game21ControllerTest","time":0.132329},{"name":"App\\Controller\\JsonCardDealControllerTest","time":0.007882},{"name":"App\\Controller\\JsonCardDeckControllerTest","time":0.012846},{"name":"App\\Controller\\JsonControllerTest","time":0.026941},{"name":"App\\Controller\\JsonDealManyCardsControllerTest","time":0.006299},{"name":"App\\Controller\\JsonDealOneCardControllerTest","time":0.006346},{"name":"App\\Controller\\JsonGame21ControllerTest","time":0.013135},{"name":"App\\Controller\\JsonLibraryControllerTest","time":0.043344},{"name":"App\\Controller\\LibraryControllerTest","time":0.405906},{"name":"App\\Controller\\LibraryUpdateBookControllerTest","time":0.041718},{"name":"App\\Controller\\MainControllerTest","time":0.058345},{"name":"App\\Entity\\BookTest","time":0.000958},{"name":"App\\Game\\BanksTurnHandlerTest","time":0.003365},{"name":"App\\Game\\BettingGameTraitTest","time":0.004819},{"name":"App\\Game\\Game21EasyEvaluateBankTest","time":0.005495},{"name":"App\\Game\\Game21EasyEvaluateTest","time":0.005143},{"name":"App\\Game\\Game21EasyGenerateFlashTest","time":0.003509},{"name":"App\\Game\\Game21EasyTest","time":0.007},{"name":"App\\Game\\Game21HardTest","time":0.003706},{"name":"App\\Game\\GameAttrHandler2TraitTest","time":0.008048},{"name":"App\\Game\\GameAttrHandlerTraitTest","time":0.005581},{"name":"App\\Game\\GameHandlerLandingTest","time":0.005472},{"name":"App\\Game\\GameHandlerTest","time":0.001906},{"name":"App\\Game\\GameInitiatorTest","time":0.001875},{"name":"App\\Game\\GameMoneyHandlerTest","time":0.002761},{"name":"App\\Game\\GameTest","time":0.001813},{"name":"App\\Game\\JsonGameHandlerTest","time":0.001828},{"name":"App\\Game\\MoneyPotTest","time":0.002592},{"name":"App\\Game\\Player21Test","time":0.005592},{"name":"App\\Game\\PlayerTraitTest","time":0.004498},{"name":"App\\Game\\PlayerTurnHandlerTest","time":0.003091},{"name":"App\\Game\\RoundHandlerTest","time":0.007496},{"name":"App\\Helpers\\JsonConverterTest","time":0.004129},{"name":"App\\Helpers\\JsonHandlerTest","time":0.002532},{"name":"App\\Helpers\\LuckyRouteDataTest","time":0.001376},{"name":"App\\Helpers\\MainControllerHelperTest","time":0.002549},{"name":"App\\Library\\BookRemoverTest","time":0.003172},{"name":"App\\Library\\BookSaverTest","time":0.002643},{"name":"App\\Library\\BookUpdatorTest","time":0.004611},{"name":"App\\Library\\LibraryHandlerTest","time":0.007253},{"name":"App\\Library\\NewFlashGeneratorTest","time":0.002402},{"name":"App\\Library\\RemoveFlashGeneratorTest","time":0.002019},{"name":"App\\Library\\SqlFileLoaderTest","time":0.004502},{"name":"App\\Library\\UpdateFlashGeneratorTest","time":0.002355},{"name":"App\\Markdown\\MdParserTest","time":0.003272},{"name":"App\\ProjectCard\\CardCounterTest","time":0.000749},{"name":"App\\ProjectCard\\CardFactoryTest","time":0.002711},{"name":"App\\ProjectCard\\CardSearcherTest","time":0.00675},{"name":"App\\ProjectCard\\CardTest","time":0.000736},{"name":"App\\ProjectCard\\DeckTest","time":0.008414},{"name":"App\\ProjectGrid\\EmptyCellFinderTest","time":0.001464},{"name":"App\\ProjectGrid\\GridColsTest","time":0.000876},{"name":"App\\ProjectGrid\\GridGraphicTest","time":0.000807},{"name":"App\\ProjectGrid\\GridTest","time":0.006112},{"name":"App\\ProjectRules\\FlushStatTest","time":0.003162},{"name":"App\\ProjectRules\\FlushTest","time":0.00153},{"name":"App\\ProjectRules\\FourOfAKindStatNotOkTest","time":0.005434},{"name":"App\\ProjectRules\\FourOfAKindStatOkTest","time":0.005258},{"name":"App\\ProjectRules\\FourOfAKindTest","time":0.004106},{"name":"App\\ProjectRules\\FullHouseStatTest","time":0.003294},{"name":"App\\ProjectRules\\FullHouseTest","time":0.003135},{"name":"App\\ProjectRules\\OnePairStatTest","time":0.001675},{"name":"App\\ProjectRules\\OnePairTest","time":0.000888},{"name":"App\\ProjectRules\\RankLimitsTraitTest","time":0.002877},{"name":"App\\ProjectRules\\RoyalFlushStatTest","time":0.003311},{"name":"App\\ProjectRules\\RoyalFlushTest","time":0.004837},{"name":"App\\ProjectRules\\RulesTest","time":0.002559},{"name":"App\\ProjectRules\\SameRankTraitTest","time":0.001495},{"name":"App\\ProjectRules\\StraightFlushStatTest","time":0.005706},{"name":"App\\ProjectRules\\StraightFlushTest","time":0.003898},{"name":"App\\ProjectRules\\StraightStatTest","time":0.00452},{"name":"App\\ProjectRules\\StraightTest","time":0.004922},{"name":"App\\ProjectRules\\ThreeOfAKindStat2Test","time":0.005172},{"name":"App\\ProjectRules\\ThreeOfAKindStatTest","time":0.002753},{"name":"App\\ProjectRules\\ThreeOfAKindTest","time":0.003305},{"name":"App\\ProjectRules\\TwoPairsStatTest","time":0.002428},{"name":"App\\ProjectRules\\TwoPairsTest","time":0.002128},{"name":"App\\ProjectRules\\WinEvaluatorTest","time":0.002485},{"name":"App\\Repository\\BookRepositoryTest","time":0.002501}]};
             root = json;
             var nodes = treemap.nodes(json)
                 .filter(function (d) {
