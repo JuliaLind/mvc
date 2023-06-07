@@ -26,18 +26,26 @@ trait RankLimitsTrait
         $this->maxRank = $maxRank;
         $this->minRank = $minRank;
         return true;
-        // foreach($ranks as $rank) {
-        //     if ($rank > $this->maxRank) {
-        //         $this->maxRank = $rank;
-        //     }
-        //     if ($rank < $this->minRank) {
-        //         $this->minRank = $rank;
-        //     }
-        //     if ($this->maxRank - $this->minRank > 4) {
-        //         return false;
-        //     }
-        // }
-        // return true;
+
+    }
+
+    /**
+     * @return array<string,int>
+     */
+    protected function minRankLimits(): array
+    {
+        $minMinRank = $this->maxRank - 4;
+        if ($minMinRank < 2) {
+            $minMinRank = 2;
+        }
+        $maxMinRank = $this->minRank;
+        if ($maxMinRank > 10) {
+            $maxMinRank = 10;
+        }
+        return [
+            'min' => $minMinRank,
+            'max' => $maxMinRank
+        ];
     }
 
 }

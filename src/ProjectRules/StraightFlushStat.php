@@ -37,14 +37,9 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
     {
         $possible = false;
 
-        $minMinRank = $this->maxRank - 4;
-        if ($minMinRank < 2) {
-            $minMinRank = 2;
-        }
-        $maxMinRank = $this->minRank;
-        if ($maxMinRank > 10) {
-            $maxMinRank = 10;
-        }
+        $minLimits = $this->minRankLimits();
+        $minMinRank = $minLimits['min'];
+        $maxMinRank = $minLimits['max'];
 
         for ($minRank = $minMinRank; $minRank <= $maxMinRank; $minRank++) {
             $possible = $this->checkForCards($cards, $minRank);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686150463">
-  <project timestamp="1686150463">
+<coverage generated="1686151182">
+  <project timestamp="1686151182">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -941,7 +941,7 @@
       <line num="60" type="stmt" count="3"/>
       <line num="66" type="method" name="adjAceValue" visibility="protected" complexity="3" crap="3" count="3"/>
       <line num="68" type="stmt" count="3"/>
-      <line num="69" type="stmt" count="1"/>
+      <line num="69" type="stmt" count="2"/>
       <line num="71" type="stmt" count="3"/>
       <line num="77" type="method" name="adjAceValueToOne" visibility="protected" complexity="2" crap="2" count="5"/>
       <line num="79" type="stmt" count="5"/>
@@ -1640,7 +1640,7 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/RankLimitsTrait.php">
       <class name="App\ProjectRules\RankLimitsTrait" namespace="global">
-        <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
+        <metrics complexity="5" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="15" elements="19" coveredelements="16"/>
       </class>
       <line num="19" type="method" name="setRankLimits" visibility="protected" complexity="2" crap="2" count="10"/>
       <line num="21" type="stmt" count="10"/>
@@ -1650,7 +1650,18 @@
       <line num="26" type="stmt" count="9"/>
       <line num="27" type="stmt" count="9"/>
       <line num="28" type="stmt" count="9"/>
-      <metrics loc="44" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
+      <line num="35" type="method" name="minRankLimits" visibility="protected" complexity="3" crap="3.07" count="8"/>
+      <line num="37" type="stmt" count="8"/>
+      <line num="38" type="stmt" count="8"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="41" type="stmt" count="8"/>
+      <line num="42" type="stmt" count="8"/>
+      <line num="43" type="stmt" count="0"/>
+      <line num="45" type="stmt" count="8"/>
+      <line num="46" type="stmt" count="8"/>
+      <line num="47" type="stmt" count="8"/>
+      <line num="48" type="stmt" count="8"/>
+      <metrics loc="52" ncloc="46" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="15" elements="19" coveredelements="16"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/RoyalFlush.php">
       <class name="App\ProjectRules\RoyalFlush" namespace="global">
@@ -1853,37 +1864,34 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/StraightFlushStat.php">
       <class name="App\ProjectRules\StraightFlushStat" namespace="global">
-        <metrics complexity="8" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="20" elements="24" coveredelements="21"/>
+        <metrics complexity="6" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="21" coveredelements="21"/>
       </class>
-      <line num="36" type="method" name="checkAllPossible" visibility="protected" complexity="5" crap="5.12" count="4"/>
+      <line num="36" type="method" name="checkAllPossible" visibility="protected" complexity="3" crap="3" count="4"/>
       <line num="38" type="stmt" count="4"/>
       <line num="40" type="stmt" count="4"/>
       <line num="41" type="stmt" count="4"/>
-      <line num="42" type="stmt" count="0"/>
+      <line num="42" type="stmt" count="4"/>
       <line num="44" type="stmt" count="4"/>
       <line num="45" type="stmt" count="4"/>
-      <line num="46" type="stmt" count="0"/>
-      <line num="49" type="stmt" count="4"/>
-      <line num="50" type="stmt" count="4"/>
+      <line num="46" type="stmt" count="4"/>
+      <line num="47" type="stmt" count="3"/>
       <line num="51" type="stmt" count="4"/>
-      <line num="52" type="stmt" count="3"/>
-      <line num="56" type="stmt" count="4"/>
-      <line num="66" type="method" name="check" visibility="public" complexity="3" crap="3" count="6"/>
+      <line num="61" type="method" name="check" visibility="public" complexity="3" crap="3" count="6"/>
+      <line num="66" type="stmt" count="6"/>
+      <line num="67" type="stmt" count="6"/>
       <line num="71" type="stmt" count="6"/>
-      <line num="72" type="stmt" count="6"/>
       <line num="76" type="stmt" count="6"/>
-      <line num="81" type="stmt" count="6"/>
-      <line num="82" type="stmt" count="6"/>
-      <line num="83" type="stmt" count="2"/>
-      <line num="89" type="stmt" count="4"/>
-      <line num="90" type="stmt" count="4"/>
-      <line num="91" type="stmt" count="4"/>
-      <line num="92" type="stmt" count="4"/>
-      <metrics loc="95" ncloc="57" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="20" elements="24" coveredelements="21"/>
+      <line num="77" type="stmt" count="6"/>
+      <line num="78" type="stmt" count="2"/>
+      <line num="84" type="stmt" count="4"/>
+      <line num="85" type="stmt" count="4"/>
+      <line num="86" type="stmt" count="4"/>
+      <line num="87" type="stmt" count="4"/>
+      <metrics loc="90" ncloc="52" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="21" coveredelements="21"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/StraightStat.php">
       <class name="App\ProjectRules\StraightStat" namespace="global">
-        <metrics complexity="10" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="22" elements="28" coveredelements="23"/>
+        <metrics complexity="8" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="21" elements="25" coveredelements="23"/>
       </class>
       <line num="16" type="method" name="checkForCards" visibility="protected" complexity="3" crap="3" count="4"/>
       <line num="18" type="stmt" count="4"/>
@@ -1892,28 +1900,25 @@
       <line num="23" type="stmt" count="4"/>
       <line num="24" type="stmt" count="1"/>
       <line num="27" type="stmt" count="3"/>
-      <line num="33" type="method" name="checkAllPossible" visibility="protected" complexity="5" crap="5.12" count="4"/>
+      <line num="33" type="method" name="checkAllPossible" visibility="protected" complexity="3" crap="3" count="4"/>
       <line num="35" type="stmt" count="4"/>
-      <line num="36" type="stmt" count="4"/>
-      <line num="37" type="stmt" count="4"/>
-      <line num="38" type="stmt" count="0"/>
-      <line num="40" type="stmt" count="4"/>
-      <line num="41" type="stmt" count="4"/>
-      <line num="42" type="stmt" count="0"/>
       <line num="44" type="stmt" count="4"/>
       <line num="45" type="stmt" count="4"/>
       <line num="46" type="stmt" count="4"/>
-      <line num="47" type="stmt" count="3"/>
-      <line num="50" type="stmt" count="4"/>
-      <line num="60" type="method" name="check" visibility="public" complexity="2" crap="2.01" count="4"/>
-      <line num="65" type="stmt" count="4"/>
-      <line num="66" type="stmt" count="4"/>
-      <line num="71" type="stmt" count="4"/>
-      <line num="72" type="stmt" count="4"/>
-      <line num="73" type="stmt" count="0"/>
-      <line num="76" type="stmt" count="4"/>
-      <line num="77" type="stmt" count="4"/>
-      <metrics loc="80" ncloc="61" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="22" elements="28" coveredelements="23"/>
+      <line num="47" type="stmt" count="4"/>
+      <line num="48" type="stmt" count="4"/>
+      <line num="49" type="stmt" count="4"/>
+      <line num="50" type="stmt" count="3"/>
+      <line num="53" type="stmt" count="4"/>
+      <line num="63" type="method" name="check" visibility="public" complexity="2" crap="2.01" count="4"/>
+      <line num="68" type="stmt" count="4"/>
+      <line num="69" type="stmt" count="4"/>
+      <line num="74" type="stmt" count="4"/>
+      <line num="75" type="stmt" count="4"/>
+      <line num="76" type="stmt" count="0"/>
+      <line num="79" type="stmt" count="4"/>
+      <line num="80" type="stmt" count="4"/>
+      <metrics loc="83" ncloc="56" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="21" elements="25" coveredelements="23"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/StraightStatTrait.php">
       <class name="App\ProjectRules\StraightStatTrait" namespace="global">
@@ -2025,6 +2030,6 @@
       <line num="87" type="stmt" count="7"/>
       <metrics loc="115" ncloc="71" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="24" elements="30" coveredelements="30"/>
     </file>
-    <metrics files="99" loc="5554" ncloc="3914" classes="86" methods="245" coveredmethods="240" conditionals="0" coveredconditionals="0" statements="1194" coveredstatements="1172" elements="1439" coveredelements="1412"/>
+    <metrics files="99" loc="5560" ncloc="3921" classes="86" methods="246" coveredmethods="242" conditionals="0" coveredconditionals="0" statements="1198" coveredstatements="1178" elements="1444" coveredelements="1420"/>
   </project>
 </coverage>
