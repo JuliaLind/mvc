@@ -10,16 +10,9 @@ class RankLimitsTraitTest extends TestCase
 {
     use RankLimitsTrait;
 
-
-    // protected function setUp(): void
-    // {
-    //     $this->maxRank = 1;
-    //     $this->minRank = 15;
-    // }
-
     public function testSetRankLimitsOk(): void
     {
-        $ranks = [8, 9, 11];
+        $ranks = ['ranks' => [8 => 1, 9 => 1, 11 => 1]];
         $res = $this->setRankLimits($ranks);
         $this->assertTrue($res);
         $this->assertEquals(8, $this->minRank);
@@ -28,14 +21,14 @@ class RankLimitsTraitTest extends TestCase
 
     public function testSetRankLimitsNotOk(): void
     {
-        $ranks = [4, 9, 11, 14];
+        $ranks = ['ranks' => [4 => 1, 9 => 1, 11 => 1, 14 => 1]];
         $res = $this->setRankLimits($ranks);
         $this->assertFalse($res);
     }
 
     public function testMinRankLimits(): void
     {
-        $ranks = [3, 4, 5];
+        $ranks = ['ranks' => [3 => 2, 4 => 3, 5 => 1]];
         $this->setRankLimits($ranks);
         $res = $this->minRankLimits();
         $exp = [
@@ -47,7 +40,7 @@ class RankLimitsTraitTest extends TestCase
 
     public function testMinRankLimits2(): void
     {
-        $ranks = [11, 14];
+        $ranks = ['ranks' => [11 => 1, 14 => 4]];
         $this->setRankLimits($ranks);
         $res = $this->minRankLimits();
         $exp = [

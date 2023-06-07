@@ -42,13 +42,12 @@ class StraightStat extends RuleStat implements RuleStatInterface
          * @var array<Card> $newHand
          */
         $newHand = [...$hand, $card];
+        /**
+         * @var array<string,array<int,int>> $uniqueCountHand
+         */
         $uniqueCountHand = $this->cardCounter->count($newHand);
 
-        /**
-         * @var array<int,int> $ranksHand
-         */
-        $ranksHand = $uniqueCountHand['ranks'];
-        if ($this->setRankLimits(array_keys($ranksHand)) === false) {
+        if ($this->setRankLimits($uniqueCountHand) === false) {
             return false;
         }
 

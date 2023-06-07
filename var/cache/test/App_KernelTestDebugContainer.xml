@@ -528,7 +528,9 @@
       <argument type="service" id="App\ProjectCard\CardCounter"/>
       <argument type="service" id="App\ProjectCard\CardSearcher"/>
     </service>
-    <service id="App\ProjectRules\TwoPairs" class="App\ProjectRules\TwoPairs" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectRules\TwoPairs" class="App\ProjectRules\TwoPairs" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectCard\CardCounter"/>
+    </service>
     <service id="App\ProjectRules\TwoPairsStat" class="App\ProjectRules\TwoPairsStat" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectCard\CardCounter"/>
       <argument type="service" id="App\ProjectCard\CardSearcher"/>

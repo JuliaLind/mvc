@@ -13,6 +13,28 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
     use StraightStatTrait;
 
     /**
+     * @param array<string,array<int,int>> $uniqueCountHand
+     */
+    protected function setSuit(array $uniqueCountHand): bool
+    {
+        /**
+         * @var array<string,int> $suitsHand
+         */
+        $suitsHand = $uniqueCountHand['suits'];
+
+        if (count($suitsHand) > 1) {
+            return false;
+        }
+
+        /**
+         * @var string $suit
+         */
+        $suit = array_key_first($suitsHand);
+        $this->suit = $suit;
+        return true;
+    }
+
+    /**
      * @param array<Card> $hand
      * @param array<Card> $deck
      * @param Card $card
@@ -25,26 +47,16 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
          * @var array<Card> $newHand
          */
         $newHand = [...$hand, $card];
+        /**
+         * @var array<string,array<int,int>> $uniqueCountHand
+         */
         $uniqueCountHand = $this->cardCounter->count($newHand);
-        /**
-         * @var array<string,int> $suitsHand
-         */
-        $suitsHand = $uniqueCountHand['suits'];
 
-        /**
-         * @var array<int,int> $ranksHand
-         */
-        $ranksHand = $uniqueCountHand['ranks'];
 
-        if (count($suitsHand) > 1 || $this->setRankLimits(array_keys($ranksHand)) === false) {
+        if ($this->setSuit($uniqueCountHand) === false || $this->setRankLimits($uniqueCountHand) === false) {
             return false;
         }
 
-        /**
-         * @var string $suit
-         */
-        $suit = array_key_first($suitsHand);
-        $this->suit = $suit;
         $allCards = array_merge($newHand, $deck);
         return $this->checkAllPossible($allCards);
     }
