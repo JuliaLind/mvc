@@ -46,11 +46,6 @@ class Straight extends Rule implements RuleInterface
          */
         $uniqueRanks = $uniqueCount['ranks'];
 
-        // if (count($uniqueSuits) <= $this->uniqueSuits && count($uniqueRanks) === 5) {
-        //     $bool = $this->evaluateRanks($uniqueRanks);
-        // }
-        // return $bool;
-
         return count($uniqueSuits) <= $this->uniqueSuits && count($uniqueRanks) === 5 && $this->evaluateRanks($uniqueRanks);
     }
 }

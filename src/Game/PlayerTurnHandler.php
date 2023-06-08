@@ -28,7 +28,6 @@ class PlayerTurnHandler
         $game->deal();
         $roundOver = $game->evaluate();
         if ($roundOver === true) {
-            // $game->endRound();
             $this->handler->endRound($game);
         }
         $flash = $game->generateFlash();

@@ -26,12 +26,6 @@ trait RankLimitsTrait
 
         $maxRank = max($ranks);
         $minRank = min($ranks);
-        // if ($maxRank - $minRank > 4) {
-        //     return false;
-        // }
-        // $this->maxRank = $maxRank;
-        // $this->minRank = $minRank;
-        // return true;
 
         $this->maxRank = $maxRank;
         $this->minRank = $minRank;

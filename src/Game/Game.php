@@ -24,7 +24,6 @@ class Game
     {
         $this->deck = $deck;
         $this->deck->shuffle();
-        // $this->finished = false;
     }
 
     /**

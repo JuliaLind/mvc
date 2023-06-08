@@ -17,9 +17,12 @@ class GameHandlerLanding
     public function main(Game21Interface|null $game, MdParser $parser = new MdParser(), string $filename = "markdown/game21.md"): array
     {
         $finished = true;
-        if ($game && $game->gameOver() === false) {
-            $finished = false;
+
+        if ($game) {
+            $finished = $game->gameOver();
         }
+
+
 
         return [
             'about' => $parser->getParsedText($filename),

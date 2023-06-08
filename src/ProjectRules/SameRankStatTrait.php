@@ -43,12 +43,9 @@ trait SameRankStatTrait
          */
         $ranksHand = $uniqueCountHand['ranks'];
 
-        if (!array_key_exists($rank, $ranksHand) || (5 - count($hand) < $this->minCountRank - $ranksHand[$rank])) {
-            return false;
-        }
         $allCards = array_merge($newHand, $deck);
         $searcher = $this->searcher;
 
-        return $searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
+        return array_key_exists($rank, $ranksHand) && 5 - count($hand) >= $this->minCountRank - $ranksHand[$rank] && $searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
     }
 }

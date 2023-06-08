@@ -50,9 +50,6 @@ trait BettingGameTrait
      */
     public function isWinner(): bool
     {
-        if ($this->winner->getName() === '') {
-            return false;
-        }
-        return true;
+        return $this->winner->getName() != '';
     }
 }

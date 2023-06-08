@@ -16,10 +16,8 @@ class GameInitiator
     public function init(int $level): Game21Interface
     {
         $game = new Game21Easy();
-        switch($level) {
-            case 2:
-                $game = new Game21Hard();
-                break;
+        if ($level === 2) {
+            $game = new Game21Hard();
         }
         return $game;
     }

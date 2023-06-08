@@ -28,8 +28,6 @@ class BanksTurnHandler
         $game->dealBank();
         $game->evaluateBank();
         $this->handler->endRound($game);
-        // $game->endRound();
-
         $flash = $game->generateFlash();
         return $flash;
     }

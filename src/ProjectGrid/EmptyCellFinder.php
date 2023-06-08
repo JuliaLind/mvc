@@ -15,10 +15,6 @@ class EmptyCellFinder
         $empty = [];
         for ($col = 0; $col < 5; $col++) {
             if ($notEmpty === false || !array_key_exists($col, $row)) {
-                // array_push($empty, [
-                //     'row' => $rowNr,
-                //     'col' => $col
-                // ]);
                 array_push($empty, [$rowNr, $col]);
             }
         }
