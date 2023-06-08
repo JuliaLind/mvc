@@ -24,16 +24,11 @@ trait SameSuitTrait
          * @var array<string,int> $suitsHand
          */
         $suitsHand = $uniqueCountHand['suits'];
-
-        if (count($suitsHand) > 1) {
-            return false;
-        }
-
         /**
          * @var string $suit
          */
         $suit = array_key_first($suitsHand);
         $this->suit = $suit;
-        return true;
+        return count($suitsHand) === 1;
     }
 }

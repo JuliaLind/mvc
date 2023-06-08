@@ -31,12 +31,7 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
          */
         $uniqueCountHand = $this->cardCounter->count($newHand);
 
-
-        if ($this->setSuit($uniqueCountHand) === false || $this->setRankLimits($uniqueCountHand) === false) {
-            return false;
-        }
-
         $allCards = array_merge($newHand, $deck);
-        return $this->checkAllPossible($allCards);
+        return $this->setSuit($uniqueCountHand) && $this->setRankLimits($uniqueCountHand) && $this->checkAllPossible($allCards);
     }
 }

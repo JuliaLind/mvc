@@ -13,7 +13,7 @@ class TwoPairs extends Rule implements RuleInterface
      */
     public function check(array $hand): bool
     {
-        $bool = false;
+        // $bool = false;
         $uniqueCount = $this->cardCounter->count($hand);
 
         /**
@@ -26,11 +26,7 @@ class TwoPairs extends Rule implements RuleInterface
             if ($rankCount >= 2) {
                 $pairs += 1;
             }
-            if ($pairs === 2) {
-                $bool = true;
-                break;
-            }
         }
-        return $bool;
+        return $pairs === 2;
     }
 }
