@@ -98,40 +98,4 @@ class Rules
         }
         return $result;
     }
-
-    // /**
-    //  * @param  array<string,array<array<Card>>> $hands
-    //  * @return  array<string,array<array<string,int|string>>|int>
-    //  */
-    // public function checkForWin(array $hands): array
-    // {
-    //     // $rules = $this->rules;
-    //     $result = [];
-    //     $total = 0;
-    //     /**
-    //      * @var string $type
-    //      * @var array<array<Card>> $arr
-    //      */
-    //     foreach($hands as $type => $arr) {
-    //         foreach($arr as $index => $hand) {
-    //             /**
-    //              * @var array<string,string|int> $data
-    //              */
-    //             $data = $this->checkWinSingle($hand);
-    //             /**
-    //              * @var string $name
-    //              */
-    //             $name = $data['name'];
-    //             $result[$type][$index]['name'] = $name;
-    //             /**
-    //              * @var int $points
-    //              */
-    //             $points = $data['points'];
-    //             $total += $points;
-    //             $result[$type][$index]['points'] = $points;
-    //         }
-    //     }
-    //     $result['total'] = $total;
-    //     return $result;
-    // }
 }

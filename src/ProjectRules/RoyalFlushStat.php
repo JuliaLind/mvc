@@ -15,6 +15,7 @@ use App\ProjectCard\Card;
 class RoyalFlushStat extends RuleStat implements RuleStatInterface
 {
     use StraightFlushStatTrait;
+    use SameSuitTrait;
 
     public function __construct()
     {
@@ -36,27 +37,36 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
          * @var array<Card> $newHand
          */
         $newHand = [...$hand, $card];
-        $uniqueCountHand = $this->cardCounter->count($newHand);
         /**
-         * @var array<string,int> $suitsHand
+         * @var array<string,array<int,int>> $uniqueCountHand
          */
-        $suitsHand = $uniqueCountHand['suits'];
+        $uniqueCountHand = $this->cardCounter->count($newHand);
+        // /**
+        //  * @var array<string,int> $suitsHand
+        //  */
+        // $suitsHand = $uniqueCountHand['suits'];
+
         /**
          * @var array<int,int> $ranksHand
          */
         $ranksHand = $uniqueCountHand['ranks'];
 
-        if(count($suitsHand) > 1 || min(array_keys($ranksHand)) < $this->minRank) {
-            return false;
+        if($this->setSuit($uniqueCountHand) === true && min(array_keys($ranksHand)) >= $this->minRank) {
+            $allCards = array_merge($newHand, $deck);
+            return $this->checkForCards($allCards, $this->minRank);
         }
+        return false;
+        // if(count($suitsHand) > 1 || min(array_keys($ranksHand)) < $this->minRank) {
+        //     return false;
+        // }
 
-        /**
-         * @var string $suit
-         */
-        $suit = array_key_first($suitsHand);
-        $this->suit = $suit;
+        // /**
+        //  * @var string $suit
+        //  */
+        // $suit = array_key_first($suitsHand);
+        // $this->suit = $suit;
 
-        $allCards = array_merge($newHand, $deck);
-        return $this->checkForCards($allCards, $this->minRank);
+        // $allCards = array_merge($newHand, $deck);
+        // return $this->checkForCards($allCards, $this->minRank);
     }
 }

@@ -13,28 +13,6 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
     use StraightStatTrait;
     use SameSuitTrait;
 
-    // /**
-    //  * @param array<string,array<int,int>> $uniqueCountHand
-    //  */
-    // protected function setSuit(array $uniqueCountHand): bool
-    // {
-    //     /**
-    //      * @var array<string,int> $suitsHand
-    //      */
-    //     $suitsHand = $uniqueCountHand['suits'];
-
-    //     if (count($suitsHand) > 1) {
-    //         return false;
-    //     }
-
-    //     /**
-    //      * @var string $suit
-    //      */
-    //     $suit = array_key_first($suitsHand);
-    //     $this->suit = $suit;
-    //     return true;
-    // }
-
     /**
      * @param array<Card> $hand
      * @param array<Card> $deck

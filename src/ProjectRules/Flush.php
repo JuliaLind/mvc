@@ -21,14 +21,5 @@ class Flush extends Rule implements RuleInterface
         $uniqueCount = $this->cardCounter->count($hand);
 
         return $this->setSuit($uniqueCount);
-        // /**
-        //  * @var array<string,int> $uniqueSuits
-        //  */
-        // $uniqueSuits = $uniqueCount['suits'];
-
-        // if (count($uniqueSuits) > 1) {
-        //     return false;
-        // }
-        // return true;
     }
 }

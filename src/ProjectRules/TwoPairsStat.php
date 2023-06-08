@@ -31,13 +31,11 @@ class TwoPairsStat extends RuleStat implements RuleStatInterface
          */
         $ranksHand = $uniqueCountHand['ranks'];
 
-        if (!(array_key_exists($rank, $ranksHand)) || (count($hand) == count($ranksHand))) {
-            return false;
+        if ((array_key_exists($rank, $ranksHand)) && (count($hand) > count($ranksHand))) {
+            $allCards = array_merge($newHand, $deck);
+            $searcher = $this->searcher;
+            return $searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
         }
-
-        $allCards = array_merge($newHand, $deck);
-        $searcher = $this->searcher;
-
-        return $searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
+        return false;
     }
 }

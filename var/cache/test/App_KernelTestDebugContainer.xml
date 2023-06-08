@@ -1705,6 +1705,7 @@
         <argument key="App\ProjectRules\Rule" type="service_closure" id="App\ProjectRules\Rule" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\RuleStat" type="service_closure" id="App\ProjectRules\RuleStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\Rules" type="service_closure" id="App\ProjectRules\Rules" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectRules\Straight" type="service_closure" id="App\ProjectRules\Straight" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\StraightFlushStat" type="service_closure" id="App\ProjectRules\StraightFlushStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\StraightStat" type="service_closure" id="App\ProjectRules\StraightStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\TwoPairs" type="service_closure" id="App\ProjectRules\TwoPairs" on-invalid="ignore_uninitialized"/>

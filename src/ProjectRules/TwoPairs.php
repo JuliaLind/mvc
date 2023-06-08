@@ -7,16 +7,6 @@ use App\ProjectCard\Card;
 
 class TwoPairs extends Rule implements RuleInterface
 {
-    // protected int $minCountRank;
-    // /**
-    //  * Constructor
-    //  */
-    // public function __construct()
-    // {
-    //     parent::__construct();
-    //     $this->minCountRank = 2;
-    // }
-
     /**
      * @param array<Card> $hand
      * @return bool true if rule is fullfilled otherwise false
@@ -31,7 +21,6 @@ class TwoPairs extends Rule implements RuleInterface
          */
         $uniqueRanks = $uniqueCount['ranks'];
 
-        // $minCountRank = $this->minCountRank;
         $pairs = 0;
         foreach($uniqueRanks as $rankCount) {
             if ($rankCount >= 2) {

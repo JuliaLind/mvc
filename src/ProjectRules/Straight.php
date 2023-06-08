@@ -9,10 +9,9 @@ class Straight extends Rule implements RuleInterface
 {
     protected int $maxRank;
     protected int $minRank;
-    protected int $uniqueRanks = 5;
-    protected int $uniqueSuits = 1;
+    protected int $uniqueSuits;
 
-    public function __construct(int $uniqueSuits)
+    public function __construct(int $uniqueSuits=4)
     {
         parent::__construct();
         $this->uniqueSuits = $uniqueSuits;
@@ -27,7 +26,7 @@ class Straight extends Rule implements RuleInterface
         $maxRank = max(array_keys($uniqueRanks));
         $minRank = min(array_keys($uniqueRanks));
         $diff = $maxRank - $minRank;
-        if ($diff === $this->uniqueRanks - 1) {
+        if ($diff === 4) {
             return true;
         }
         return false;
@@ -51,7 +50,7 @@ class Straight extends Rule implements RuleInterface
          */
         $uniqueRanks = $uniqueCount['ranks'];
 
-        if (count($uniqueSuits) <= $this->uniqueSuits && count($uniqueRanks) === $this->uniqueRanks) {
+        if (count($uniqueSuits) <= $this->uniqueSuits && count($uniqueRanks) === 5) {
             $bool = $this->evaluateRanks($uniqueRanks);
         }
         return $bool;

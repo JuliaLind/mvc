@@ -6,7 +6,6 @@ use App\ProjectCard\CardCounter;
 
 class Rule
 {
-    // use RuleTrait;
     protected CardCounter $cardCounter;
 
     public function __construct(
