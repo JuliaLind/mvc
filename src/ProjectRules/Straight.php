@@ -25,11 +25,7 @@ class Straight extends Rule implements RuleInterface
     {
         $maxRank = max(array_keys($uniqueRanks));
         $minRank = min(array_keys($uniqueRanks));
-        $diff = $maxRank - $minRank;
-        if ($diff === 4) {
-            return true;
-        }
-        return false;
+        return $maxRank - $minRank === 4;
     }
 
 

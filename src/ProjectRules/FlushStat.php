@@ -26,10 +26,7 @@ class FlushStat extends Rule implements RuleStatInterface
          */
         $suit = $this->suit;
 
-        if (array_key_exists($suit, $suitsDeck) && $suitsDeck[$suit] >= (5 - count($newHand))) {
-            return true;
-        }
-        return false;
+        return (array_key_exists($suit, $suitsDeck) && $suitsDeck[$suit] >= (5 - count($newHand)));
     }
 
     /**
@@ -46,16 +43,22 @@ class FlushStat extends Rule implements RuleStatInterface
          */
         $newHand = [...$hand, $card];
 
-        $uniqueCountHand = $this->cardCounter->count($newHand);
-
-
         /**
          * @var array<string,array<int,int>> $uniqueCountHand
          */
-        if ($this->setSuit($uniqueCountHand) === true) {
-            return $this->checkInDeck($deck, $newHand);
-        }
+        $uniqueCountHand = $this->cardCounter->count($newHand);
 
-        return false;
+
+        return $this->setSuit($uniqueCountHand) && $this->checkInDeck($deck, $newHand);
+ 
+
+        // /**
+        //  * @var array<string,array<int,int>> $uniqueCountHand
+        //  */
+        // if ($this->setSuit($uniqueCountHand) === true) {
+        //     return $this->checkInDeck($deck, $newHand);
+        // }
+
+        // return false;
     }
 }

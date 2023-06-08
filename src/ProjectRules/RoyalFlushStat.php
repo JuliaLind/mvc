@@ -25,6 +25,18 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
     }
 
     /**
+     * @param array<string,array<int,int>> $uniqueCountHand
+     */
+    protected function checkRank(array $uniqueCountHand): bool
+    {
+        /**
+         * @var array<int,int> $ranksHand
+         */
+        $ranksHand = $uniqueCountHand['ranks'];
+        return min(array_keys($ranksHand)) >= $this->minRank;
+    }
+
+    /**
      * @param array<Card> $hand
      * @param array<Card> $deck
      * @param Card $card
@@ -41,32 +53,11 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
          * @var array<string,array<int,int>> $uniqueCountHand
          */
         $uniqueCountHand = $this->cardCounter->count($newHand);
-        // /**
-        //  * @var array<string,int> $suitsHand
-        //  */
-        // $suitsHand = $uniqueCountHand['suits'];
 
-        /**
-         * @var array<int,int> $ranksHand
-         */
-        $ranksHand = $uniqueCountHand['ranks'];
-
-        if($this->setSuit($uniqueCountHand) === true && min(array_keys($ranksHand)) >= $this->minRank) {
+        if($this->setSuit($uniqueCountHand) === true && $this->checkRank($uniqueCountHand) === true) {
             $allCards = array_merge($newHand, $deck);
             return $this->checkForCards($allCards, $this->minRank);
         }
         return false;
-        // if(count($suitsHand) > 1 || min(array_keys($ranksHand)) < $this->minRank) {
-        //     return false;
-        // }
-
-        // /**
-        //  * @var string $suit
-        //  */
-        // $suit = array_key_first($suitsHand);
-        // $this->suit = $suit;
-
-        // $allCards = array_merge($newHand, $deck);
-        // return $this->checkForCards($allCards, $this->minRank);
     }
 }
