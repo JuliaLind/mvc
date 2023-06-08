@@ -10,6 +10,15 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait StraightStatTrait
 {
     /**
+     * @return array<string,int>
+     */
+    abstract protected function minRankLimits(): array;
+    /**
+     * @param array<Card> $cards
+     */
+    abstract protected function checkForCards($cards, int $minRank): bool;
+
+    /**
      * @param array<Card> $cards
      */
     protected function checkAllPossible($cards): bool
