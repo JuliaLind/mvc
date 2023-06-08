@@ -30,9 +30,7 @@ class RoyalFlush extends Straight
     {
         $maxRank = max(array_keys($uniqueRanks));
         $minRank = min(array_keys($uniqueRanks));
-        if ($maxRank === $this->maxRank && $minRank === $this->minRank) {
-            return true;
-        }
-        return false;
+
+        return $maxRank === $this->maxRank && $minRank === $this->minRank;
     }
 }

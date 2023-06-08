@@ -24,7 +24,6 @@ trait SameRankTrait
      */
     public function check(array $hand): bool
     {
-        $bool = false;
         $uniqueCount = $this->cardCounter->count($hand);
 
         /**
@@ -32,9 +31,6 @@ trait SameRankTrait
          */
         $uniqueRanks = $uniqueCount['ranks'];
 
-        if (max($uniqueRanks) >= $this->minCountRank) {
-            $bool = true;
-        }
-        return $bool;
+        return max($uniqueRanks) >= $this->minCountRank;
     }
 }

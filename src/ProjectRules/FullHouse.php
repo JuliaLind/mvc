@@ -24,9 +24,6 @@ class FullHouse extends Rule implements RuleInterface
 
         $rankCountMax = max($uniqueRanks);
 
-        if ($countDistinct === 2 && $rankCountMax === 3) {
-            return true;
-        }
-        return false;
+        return $countDistinct === 2 && $rankCountMax === 3;
     }
 }

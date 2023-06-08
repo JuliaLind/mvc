@@ -50,15 +50,5 @@ class FlushStat extends Rule implements RuleStatInterface
 
 
         return $this->setSuit($uniqueCountHand) && $this->checkInDeck($deck, $newHand);
- 
-
-        // /**
-        //  * @var array<string,array<int,int>> $uniqueCountHand
-        //  */
-        // if ($this->setSuit($uniqueCountHand) === true) {
-        //     return $this->checkInDeck($deck, $newHand);
-        // }
-
-        // return false;
     }
 }

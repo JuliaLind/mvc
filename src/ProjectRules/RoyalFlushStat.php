@@ -54,10 +54,7 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
          */
         $uniqueCountHand = $this->cardCounter->count($newHand);
 
-        if($this->setSuit($uniqueCountHand) === true && $this->checkRank($uniqueCountHand) === true) {
-            $allCards = array_merge($newHand, $deck);
-            return $this->checkForCards($allCards, $this->minRank);
-        }
-        return false;
+        $allCards = array_merge($newHand, $deck);
+        return $this->setSuit($uniqueCountHand) && $this->checkRank($uniqueCountHand) && $this->checkForCards($allCards, $this->minRank);
     }
 }

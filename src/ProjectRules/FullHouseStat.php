@@ -45,9 +45,7 @@ class FullHouseStat extends Rule implements RuleStatInterface
         foreach(array_keys($ranksHand) as $rankInHand) {
             $countRanksTotal[$rankInHand] = $uniqeRanksTotal[$rankInHand];
         }
-        if (max($countRanksTotal) >= 3 && min($countRanksTotal) >= 2) {
-            return true;
-        }
-        return false;
+
+        return max($countRanksTotal) >= 3 && min($countRanksTotal) >= 2;
     }
 }
