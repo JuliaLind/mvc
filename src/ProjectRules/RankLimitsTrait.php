@@ -13,22 +13,6 @@ trait RankLimitsTrait
     protected int $maxRank;
     protected int $minRank;
 
-    // /**
-    //  * @param array<int,int> $ranks
-    //  */
-    // protected function setRankLimits(array $ranks): bool
-    // {
-    //     $maxRank = max($ranks);
-    //     $minRank = min($ranks);
-    //     if ($maxRank - $minRank > 4) {
-    //         return false;
-    //     }
-    //     $this->maxRank = $maxRank;
-    //     $this->minRank = $minRank;
-    //     return true;
-
-    // }
-
     /**
      * @param array<string,array<int,int>> $uniqueCountHand
      */
