@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686272368">
-  <project timestamp="1686272368">
+<coverage generated="1686272693">
+  <project timestamp="1686272693">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -694,10 +694,10 @@
       <line num="126" type="stmt" count="4"/>
       <line num="129" type="method" name="hasBankMoreThan21" visibility="protected" complexity="1" crap="1" count="5"/>
       <line num="131" type="stmt" count="5"/>
-      <line num="134" type="method" name="hasBankBestScore" visibility="protected" complexity="1" crap="1" count="3"/>
-      <line num="136" type="stmt" count="3"/>
-      <line num="137" type="stmt" count="3"/>
-      <line num="138" type="stmt" count="3"/>
+      <line num="134" type="method" name="hasBankBestScore" visibility="protected" complexity="1" crap="1" count="2"/>
+      <line num="136" type="stmt" count="2"/>
+      <line num="137" type="stmt" count="2"/>
+      <line num="138" type="stmt" count="2"/>
       <line num="147" type="method" name="evaluateBank" visibility="public" complexity="4" crap="4" count="5"/>
       <line num="149" type="stmt" count="5"/>
       <line num="150" type="stmt" count="5"/>
@@ -707,11 +707,11 @@
       <line num="156" type="stmt" count="1"/>
       <line num="157" type="stmt" count="1"/>
       <line num="159" type="stmt" count="4"/>
-      <line num="160" type="stmt" count="1"/>
-      <line num="161" type="stmt" count="1"/>
-      <line num="163" type="stmt" count="3"/>
-      <line num="164" type="stmt" count="2"/>
-      <line num="165" type="stmt" count="2"/>
+      <line num="160" type="stmt" count="2"/>
+      <line num="161" type="stmt" count="2"/>
+      <line num="163" type="stmt" count="2"/>
+      <line num="164" type="stmt" count="1"/>
+      <line num="165" type="stmt" count="1"/>
       <line num="167" type="stmt" count="1"/>
       <line num="168" type="stmt" count="1"/>
       <line num="176" type="method" name="generateFlash" visibility="public" complexity="4" crap="4" count="5"/>
