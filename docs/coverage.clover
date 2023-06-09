@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686265649">
-  <project timestamp="1686265649">
+<coverage generated="1686271625">
+  <project timestamp="1686271625">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -932,7 +932,7 @@
       <line num="60" type="stmt" count="3"/>
       <line num="66" type="method" name="adjAceValue" visibility="protected" complexity="3" crap="3" count="3"/>
       <line num="68" type="stmt" count="3"/>
-      <line num="69" type="stmt" count="2"/>
+      <line num="69" type="stmt" count="1"/>
       <line num="71" type="stmt" count="3"/>
       <line num="77" type="method" name="adjAceValueToOne" visibility="protected" complexity="2" crap="2" count="5"/>
       <line num="79" type="stmt" count="5"/>
@@ -1779,25 +1779,34 @@
       <class name="App\ProjectRules\SameOfAKindStat" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
       </class>
-      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="25"/>
-      <line num="14" type="stmt" count="25"/>
+      <line num="13" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="25"/>
       <line num="15" type="stmt" count="25"/>
-      <metrics loc="18" ncloc="15" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+      <line num="16" type="stmt" count="25"/>
+      <metrics loc="19" ncloc="16" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+    </file>
+    <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/SameRankSingleStatTrait.php">
+      <class name="App\ProjectRules\SameRankSingleStatTrait" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="9" type="stmt" count="1"/>
+      <line num="25" type="method" name="checkCountRanks" visibility="protected" complexity="1" crap="1" count="13"/>
+      <line num="27" type="stmt" count="13"/>
+      <metrics loc="30" ncloc="22" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/SameRankStatTrait.php">
       <class name="App\ProjectRules\SameRankStatTrait" namespace="global">
         <metrics complexity="3" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
       </class>
       <line num="9" type="stmt" count="1"/>
-      <line num="31" type="method" name="check" visibility="public" complexity="3" crap="3" count="23"/>
-      <line num="36" type="stmt" count="23"/>
-      <line num="38" type="stmt" count="23"/>
-      <line num="39" type="stmt" count="23"/>
-      <line num="44" type="stmt" count="23"/>
-      <line num="46" type="stmt" count="23"/>
-      <line num="47" type="stmt" count="23"/>
-      <line num="49" type="stmt" count="23"/>
-      <metrics loc="52" ncloc="35" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
+      <line num="32" type="method" name="check" visibility="public" complexity="3" crap="3" count="26"/>
+      <line num="34" type="stmt" count="26"/>
+      <line num="36" type="stmt" count="26"/>
+      <line num="37" type="stmt" count="26"/>
+      <line num="42" type="stmt" count="26"/>
+      <line num="47" type="stmt" count="26"/>
+      <line num="48" type="stmt" count="26"/>
+      <line num="50" type="stmt" count="26"/>
+      <metrics loc="53" ncloc="36" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/SameRankTrait.php">
       <class name="App\ProjectRules\SameRankTrait" namespace="global">
@@ -1916,38 +1925,35 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/TwoPairsStat.php">
       <class name="App\ProjectRules\TwoPairsStat" namespace="global">
-        <metrics complexity="3" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
       </class>
-      <line num="19" type="method" name="check" visibility="public" complexity="3" crap="3" count="3"/>
-      <line num="24" type="stmt" count="3"/>
-      <line num="26" type="stmt" count="3"/>
-      <line num="27" type="stmt" count="3"/>
-      <line num="32" type="stmt" count="3"/>
-      <line num="34" type="stmt" count="3"/>
-      <line num="35" type="stmt" count="3"/>
-      <line num="36" type="stmt" count="3"/>
-      <metrics loc="39" ncloc="26" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
+      <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="18" type="stmt" count="5"/>
+      <line num="19" type="stmt" count="5"/>
+      <line num="26" type="method" name="checkCountRanks" visibility="protected" complexity="1" crap="1" count="2"/>
+      <line num="28" type="stmt" count="2"/>
+      <metrics loc="31" ncloc="24" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/WinEvaluator.php">
       <class name="App\ProjectRules\WinEvaluator" namespace="global">
         <metrics complexity="4" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
       </class>
-      <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="18" type="stmt" count="1"/>
-      <line num="25" type="method" name="results" visibility="public" complexity="3" crap="3" count="1"/>
-      <line num="28" type="stmt" count="1"/>
-      <line num="29" type="stmt" count="1"/>
-      <line num="34" type="stmt" count="1"/>
-      <line num="35" type="stmt" count="1"/>
-      <line num="39" type="stmt" count="1"/>
-      <line num="43" type="stmt" count="1"/>
-      <line num="44" type="stmt" count="1"/>
+      <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="16" type="stmt" count="1"/>
+      <line num="23" type="method" name="results" visibility="public" complexity="3" crap="3" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <line num="33" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="42" type="stmt" count="1"/>
+      <line num="46" type="stmt" count="1"/>
+      <line num="47" type="stmt" count="1"/>
       <line num="48" type="stmt" count="1"/>
-      <line num="49" type="stmt" count="1"/>
-      <line num="50" type="stmt" count="1"/>
-      <line num="53" type="stmt" count="1"/>
-      <line num="54" type="stmt" count="1"/>
-      <metrics loc="57" ncloc="35" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
+      <line num="51" type="stmt" count="1"/>
+      <line num="52" type="stmt" count="1"/>
+      <metrics loc="55" ncloc="34" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Repository/BookRepository.php">
       <class name="App\Repository\BookRepository" namespace="global">
@@ -1985,6 +1991,6 @@
       <line num="87" type="stmt" count="7"/>
       <metrics loc="115" ncloc="71" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="24" elements="30" coveredelements="30"/>
     </file>
-    <metrics files="101" loc="5421" ncloc="3867" classes="88" methods="247" coveredmethods="246" conditionals="0" coveredconditionals="0" statements="1140" coveredstatements="1138" elements="1387" coveredelements="1384"/>
+    <metrics files="102" loc="5443" ncloc="3888" classes="89" methods="249" coveredmethods="248" conditionals="0" coveredconditionals="0" statements="1138" coveredstatements="1136" elements="1387" coveredelements="1384"/>
   </project>
 </coverage>

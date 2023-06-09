@@ -5,6 +5,7 @@ namespace App\ProjectRules;
 class SameOfAKindStat extends RuleStat implements RuleStatInterface
 {
     use SameRankStatTrait;
+    use SameRankSingleStatTrait;
 
     /**
      * Constructor

@@ -4,8 +4,6 @@ namespace App\ProjectRules;
 
 use App\ProjectCard\Card;
 
-// use App\ProjectGrid\Grid;
-
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */

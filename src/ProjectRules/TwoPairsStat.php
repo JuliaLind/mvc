@@ -7,32 +7,24 @@ use App\ProjectCard\Card;
 
 class TwoPairsStat extends RuleStat implements RuleStatInterface
 {
-    protected int $minCountRank = 2;
+    use SameRankStatTrait;
+    protected int $rank;
+
+    /**
+     * Constructor
+     */
+    public function __construct(int $minCountRank=2)
+    {
+        parent::__construct();
+        $this->minCountRank = $minCountRank;
+    }
 
     /**
      * @param array<Card> $hand
-     * @param array<Card> $deck
-     * @param Card $card
-     * @return bool true if rule is still possible given passed value
-     * otherwise false
+     * @param array<int,int> $ranksHand
      */
-    public function check(array $hand, array $deck, Card $card): bool
+    protected function checkCountRanks($ranksHand, $hand): bool
     {
-        /**
-         * @var array<Card> $newHand
-         */
-        $newHand = [...$hand, $card];
-
-        $uniqueCountHand = $this->cardCounter->count($hand);
-        $rank = $card->getRank();
-
-        /**
-         * @var array<int,int> $ranksHand
-         */
-        $ranksHand = $uniqueCountHand['ranks'];
-
-        $allCards = array_merge($newHand, $deck);
-        $searcher = $this->searcher;
-        return array_key_exists($rank, $ranksHand) && count($hand) > count($ranksHand) && $searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
+        return count($hand) > count($ranksHand);
     }
 }

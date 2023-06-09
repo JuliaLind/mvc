@@ -19,6 +19,7 @@ trait SameRankStatTrait
      * same rank required to score the rule
      */
     protected int $minCountRank;
+    protected int $rank;
 
 
     /**
@@ -30,22 +31,22 @@ trait SameRankStatTrait
      */
     public function check(array $hand, array $deck, Card $card): bool
     {
-        /**
-         * @var array<Card> $newHand
-         */
-        $newHand = [...$hand, $card];
-
         $uniqueCountHand = $this->cardCounter->count($hand);
+
         $rank = $card->getRank();
+        $this->rank = $rank;
 
         /**
          * @var array<int,int> $ranksHand
          */
         $ranksHand = $uniqueCountHand['ranks'];
 
-        $allCards = array_merge($newHand, $deck);
+        /**
+         * @var array<Card> $allCards
+         */
+        $allCards = array_merge([...$hand, $card], $deck);
         $searcher = $this->searcher;
 
-        return array_key_exists($rank, $ranksHand) && 5 - count($hand) >= $this->minCountRank - $ranksHand[$rank] && $searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
+        return array_key_exists($rank, $ranksHand) && $this->checkCountRanks($ranksHand, $hand) && $searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
     }
 }
