@@ -35,7 +35,6 @@ class Straight extends Rule implements RuleInterface
      */
     public function check(array $hand): bool
     {
-        // $bool = false;
         $uniqueCount = $this->cardCounter->count($hand);
         /**
          * @var array<string,int> $uniqueSuits

@@ -30,6 +30,7 @@ trait SameRankStatTrait
      */
     protected array $ranksHand;
 
+    abstract protected function checkCountRanks(): bool;
 
     /**
      * @param array<Card> $hand
