@@ -19,15 +19,6 @@ class TwoPairsStat extends RuleStat implements RuleStatInterface
         $this->minCountRank = $minCountRank;
     }
 
-    // /**
-    //  * @param array<Card> $hand
-    //  * @param array<int,int> $ranksHand
-    //  */
-    // protected function checkCountRanks($ranksHand, $hand): bool
-    // {
-    //     return count($hand) > count($ranksHand);
-    // }
-
     protected function checkCountRanks(): bool
     {
         return count($this->hand) > count($this->ranksHand);
