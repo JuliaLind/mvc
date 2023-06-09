@@ -18,12 +18,8 @@ trait SameRankSingleStatTrait
     protected int $minCountRank;
     protected int $rank;
 
-    /**
-     * @param array<Card> $hand
-     * @param array<int,int> $ranksHand
-     */
-    protected function checkCountRanks($ranksHand, $hand): bool
+    protected function checkCountRanks(): bool
     {
-        return 5 - count($hand) >= $this->minCountRank - $ranksHand[$this->rank];
+        return 5 - count($this->hand) >= $this->minCountRank - $this->ranksHand[$this->rank];
     }
 }

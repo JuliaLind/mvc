@@ -21,6 +21,15 @@ trait SameRankStatTrait
     protected int $minCountRank;
     protected int $rank;
 
+    /**
+     * @var array<Card> $hand
+     */
+    protected array $hand;
+    /**
+     * @var array<int,int> $ranksHand
+     */
+    protected array $ranksHand;
+
 
     /**
      * @param array<Card> $hand
@@ -33,20 +42,20 @@ trait SameRankStatTrait
     {
         $uniqueCountHand = $this->cardCounter->count($hand);
 
-        $rank = $card->getRank();
-        $this->rank = $rank;
-
         /**
          * @var array<int,int> $ranksHand
          */
         $ranksHand = $uniqueCountHand['ranks'];
+        $this->ranksHand = $ranksHand;
+        $this->hand = $hand;
+        $rank = $card->getRank();
+        $this->rank = $rank;
 
         /**
          * @var array<Card> $allCards
          */
         $allCards = array_merge([...$hand, $card], $deck);
-        $searcher = $this->searcher;
 
-        return array_key_exists($rank, $ranksHand) && $this->checkCountRanks($ranksHand, $hand) && $searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
+        return array_key_exists($rank, $ranksHand) && $this->checkCountRanks() && $this->searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
     }
 }
