@@ -48,7 +48,7 @@ class MoveEvaluator
         /**
          * @var array<array<string,string|int|RuleInterface|RuleStatInterface>> $allRules
          */
-        $allRules = $rules->getAll();
+        $allRules = $rules->getRules();
         $rule = $allRules[$ruleNr];
 
         if($rules->checkSingle($hand, $deck, $card, $ruleNr)) {
@@ -86,7 +86,7 @@ class MoveEvaluator
      * @param array<array<Card>> $rows
      * @param array<array<Card>> $cols
      */
-    protected function checkForRule(int $index, int $ruleNr, $rows, $cols): bool
+    protected function checkRowColForRule(int $index, int $ruleNr, $rows, $cols): bool
     {
         if (array_key_exists($index, $rows) && $this->setSlot($index, $ruleNr, $rows, $cols)) {
             $this->data = [
@@ -128,23 +128,9 @@ class MoveEvaluator
 
         for ($i = 0; $i < $ruleCount; $i++) {
             for ($j = 0; $j <= 5; $j++) {
-                if ($this->checkForRule($j, $i, $rows, $cols)) {
+                if ($this->checkRowColForRule($j, $i, $rows, $cols)) {
                     return $this->data;
                 }
-                // if (array_key_exists($j, $rows) && $this->setSlot($j, $i, $rows, $cols)) {
-                //     return [
-                //         'rowRuleName' => $this->rowRuleName,
-                //         'colRuleName' => $this->colRuleName,
-                //         'slot' => [$this->rowNr, $this->colNr]
-                //     ];
-                // }
-                // if (array_key_exists($j, $cols) && $this->setSlot($j, $i, $cols, $rows)) {
-                //     return [
-                //         'rowRuleName' => $this->colRuleName,
-                //         'colRuleName' => $this->rowRuleName,
-                //         'slot' => [$this->colNr, $this->rowNr]
-                //     ];
-                // }
             }
         }
         return [

@@ -5,8 +5,6 @@ namespace App\ProjectRules;
 use App\ProjectCard\Card;
 use App\ProjectCard\EmptyCellFinder;
 
-// use App\ProjectGrid\Grid;
-
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
@@ -80,9 +78,17 @@ class Rules
     /**
      * @return array<array<string,string|int|RuleInterface|RuleStatInterface>>
      */
-    public function getAll(): array
+    public function getRules(): array
     {
         return $this->rules;
+    }
+
+    /**
+     * @param array<array<string,string|int|RuleInterface|RuleStatInterface>> $rules
+     */
+    public function setRules($rules): void
+    {
+        $this->rules = $rules;
     }
 
     /**
@@ -128,15 +134,16 @@ class Rules
     {
         $rules = $this->rules;
         $rule = $rules[$ruleNr];
-        /**
-         * @var RuleInterface $scored
-         */
-        $scored = $rule['scored'];
+        // /**
+        //  * @var RuleInterface $scored
+        //  */
+        // $scored = $rule['scored'];
         /**
          * @var RuleStatInterface $possible
          */
         $possible = $rule['possible'];
-        $count = count($hand);
-        return ($count === 4 && $scored->check([...$hand, $card])) || ($count < 4 && $count > 0 && $possible->check($hand, $deck, $card));
+        // $count = count($hand);
+        return ($possible->check($hand, $deck, $card));
+        // return ($count === 4 && $scored->check([...$hand, $card])) || ($count < 4 && $count > 0 && $possible->check($hand, $deck, $card));
     }
 }

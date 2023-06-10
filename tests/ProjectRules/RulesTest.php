@@ -83,4 +83,97 @@ class RulesTest extends TestCase
             $this->assertEquals($exp[$i], $res);
         }
     }
+
+    public function testSetGetRules(): void
+    {
+        $rules = new Rules();
+        $scored = $this->createMock(RoyalFlush::class);
+        $possible = $this->createMock(RoyalFlushStat::class);
+        $allRules = [
+            [
+                'name' => 'Test1',
+                'points' => 150,
+                'scored' => $scored,
+                'possible' => $possible
+            ]
+        ];
+        $rules->setRules($allRules);
+
+        $res = $rules->getRules();
+        $this->assertEquals($allRules, $res);
+    }
+
+    // public function testCheckSingleScored(): void
+    // {
+    //     $rules = new Rules();
+    //     $scored = $this->createMock(RoyalFlush::class);
+    //     $possible = $this->createMock(RoyalFlushStat::class);
+    //     $allRules = [
+    //         [
+    //             'name' => 'Test1',
+    //             'points' => 150,
+    //             'scored' => $scored,
+    //             'possible' => $possible
+    //         ]
+    //     ];
+    //     $hand = [];
+    //     $deck = [];
+    //     for ($i = 0; $i < 4; $i++) {
+    //         array_push($hand, $this->createMock(Card::class));
+    //     }
+    //     $card = $this->createMock(Card::class);
+    //     $scored->expects($this->once())->method('check')->with([...$hand, $card]);
+    //     $possible->expects($this->never())->method('check');
+    //     $rules->setRules($allRules);
+    //     $rules->checkSingle($hand, $deck, $card, 0);
+    // }
+
+    // public function testCheckSinglePossible(): void
+    // {
+    //     $rules = new Rules();
+    //     $scored = $this->createMock(RoyalFlush::class);
+    //     $possible = $this->createMock(RoyalFlushStat::class);
+    //     $allRules = [
+    //         [
+    //             'name' => 'Test1',
+    //             'points' => 150,
+    //             'scored' => $scored,
+    //             'possible' => $possible
+    //         ]
+    //     ];
+    //     $hand = [];
+    //     $deck = [];
+    //     for ($i = 0; $i < 3; $i++) {
+    //         array_push($hand, $this->createMock(Card::class));
+    //     }
+    //     $card = $this->createMock(Card::class);
+    //     $scored->expects($this->never())->method('check');
+    //     $possible->expects($this->once())->method('check')->with($hand, $deck, $card);
+    //     $rules->setRules($allRules);
+    //     $rules->checkSingle($hand, $deck, $card, 0);
+    // }
+
+    public function testCheckSinglePossible(): void
+    {
+        $rules = new Rules();
+        $scored = $this->createMock(RoyalFlush::class);
+        $possible = $this->createMock(RoyalFlushStat::class);
+        $allRules = [
+            [
+                'name' => 'Test1',
+                'points' => 150,
+                'scored' => $scored,
+                'possible' => $possible
+            ]
+        ];
+        $hand = [];
+        $deck = [];
+        for ($i = 0; $i < 3; $i++) {
+            array_push($hand, $this->createMock(Card::class));
+        }
+        $card = $this->createMock(Card::class);
+        $possible->expects($this->once())->method('check')->with($hand, $deck, $card);
+        $rules->setRules($allRules);
+        $rules->checkSingle($hand, $deck, $card, 0);
+    }
 }
