@@ -23,6 +23,11 @@ class MoveEvaluator
     private int $rowNr = -1;
     private int $colNr = -1;
 
+    /**
+     * @var array<string,string|array<int>> $data
+     */
+    private array $data;
+
     public function __construct(EmptyCellFinder $finder = new EmptyCellFinder(), Rules $rules = new Rules())
     {
         $this->rules = $rules;
@@ -78,6 +83,31 @@ class MoveEvaluator
     }
 
     /**
+     * @param array<array<Card>> $rows
+     * @param array<array<Card>> $cols
+     */
+    protected function checkForRule(int $index, int $ruleNr, $rows, $cols): bool
+    {
+        if (array_key_exists($index, $rows) && $this->setSlot($index, $ruleNr, $rows, $cols)) {
+            $this->data = [
+                'rowRuleName' => $this->rowRuleName,
+                'colRuleName' => $this->colRuleName,
+                'slot' => [$this->rowNr, $this->colNr]
+            ];
+            return true;
+        }
+        if (array_key_exists($index, $cols) && $this->setSlot($index, $ruleNr, $cols, $rows)) {
+            $this->data = [
+                'rowRuleName' => $this->colRuleName,
+                'colRuleName' => $this->rowRuleName,
+                'slot' => [$this->colNr, $this->rowNr]
+            ];
+            return true;
+        }
+        return false;
+    }
+
+    /**
      * @param array<string,array<array<Card>>> $rowsAndCols
      * @param array<Card> $deck
      * @return array<string,string|array<int>>
@@ -98,20 +128,23 @@ class MoveEvaluator
 
         for ($i = 0; $i < $ruleCount; $i++) {
             for ($j = 0; $j <= 5; $j++) {
-                if (array_key_exists($j, $rows) && $this->setSlot($j, $i, $rows, $cols)) {
-                    return [
-                        'rowRuleName' => $this->rowRuleName,
-                        'colRuleName' => $this->colRuleName,
-                        'slot' => [$this->rowNr, $this->colNr]
-                    ];
+                if ($this->checkForRule($j, $i, $rows, $cols)) {
+                    return $this->data;
                 }
-                if (array_key_exists($j, $cols) && $this->setSlot($j, $i, $cols, $rows)) {
-                    return [
-                        'rowRuleName' => $this->colRuleName,
-                        'colRuleName' => $this->rowRuleName,
-                        'slot' => [$this->colNr, $this->rowNr]
-                    ];
-                }
+                // if (array_key_exists($j, $rows) && $this->setSlot($j, $i, $rows, $cols)) {
+                //     return [
+                //         'rowRuleName' => $this->rowRuleName,
+                //         'colRuleName' => $this->colRuleName,
+                //         'slot' => [$this->rowNr, $this->colNr]
+                //     ];
+                // }
+                // if (array_key_exists($j, $cols) && $this->setSlot($j, $i, $cols, $rows)) {
+                //     return [
+                //         'rowRuleName' => $this->colRuleName,
+                //         'colRuleName' => $this->rowRuleName,
+                //         'slot' => [$this->colNr, $this->rowNr]
+                //     ];
+                // }
             }
         }
         return [
