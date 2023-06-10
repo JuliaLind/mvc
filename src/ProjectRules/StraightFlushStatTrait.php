@@ -28,7 +28,7 @@ trait StraightFlushStatTrait
         $searcher = $this->searcher;
 
         for ($rank = $minRank; $rank <= $maxRank; $rank++) {
-            if ($searcher->search($cards, $rank, $suit) === false) {
+            if (!($searcher->search($cards, $rank, $suit))) {
                 return false;
             }
         }

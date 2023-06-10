@@ -27,10 +27,10 @@ class WinEvaluator
         $total = 0;
         /**
          * @var string $type
-         * @var array<array<Card>> $arr
+         * @var array<array<Card>> $handArray
          */
-        foreach($hands as $type => $arr) {
-            foreach($arr as $index => $hand) {
+        foreach($hands as $type => $handArray) {
+            foreach($handArray as $index => $hand) {
                 /**
                  * @var array<string,string|int> $data
                  */

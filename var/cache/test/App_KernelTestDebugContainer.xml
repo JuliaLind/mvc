@@ -507,6 +507,10 @@
     <service id="App\ProjectRules\FullHouseStat" class="App\ProjectRules\FullHouseStat" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectCard\CardCounter"/>
     </service>
+    <service id="App\ProjectRules\MoveEvaluator" class="App\ProjectRules\MoveEvaluator" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectGrid\EmptyCellFinder"/>
+      <argument type="service" id="App\ProjectRules\Rules"/>
+    </service>
     <service id="App\ProjectRules\RoyalFlush" class="App\ProjectRules\RoyalFlush" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\RoyalFlushStat" class="App\ProjectRules\RoyalFlushStat" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\Rule" class="App\ProjectRules\Rule" autowire="true" autoconfigure="true">
@@ -1697,6 +1701,7 @@
         <argument key="App\ProjectRules\FlushStat" type="service_closure" id="App\ProjectRules\FlushStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\FullHouse" type="service_closure" id="App\ProjectRules\FullHouse" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\FullHouseStat" type="service_closure" id="App\ProjectRules\FullHouseStat" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectRules\MoveEvaluator" type="service_closure" id="App\ProjectRules\MoveEvaluator" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\RoyalFlush" type="service_closure" id="App\ProjectRules\RoyalFlush" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\RoyalFlushStat" type="service_closure" id="App\ProjectRules\RoyalFlushStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\Rule" type="service_closure" id="App\ProjectRules\Rule" on-invalid="ignore_uninitialized"/>

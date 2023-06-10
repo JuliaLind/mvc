@@ -29,7 +29,7 @@ trait StraightStatTrait
         $maxMinRank = $minLimits['max'];
         for ($minRank = $minMinRank; $minRank <= $maxMinRank; $minRank++) {
             $possible = $this->checkForCards($cards, $minRank);
-            if ($possible === true) {
+            if ($possible) {
                 break;
             }
         }
