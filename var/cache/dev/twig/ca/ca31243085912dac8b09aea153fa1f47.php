@@ -161,6 +161,10 @@ class __TwigTemplate_9a4096e0a3463ef0ccedc82d202a8de4 extends Template
         echo " href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("metrics");
         echo "\">Metrics</a>
+            <a href=\"";
+        // line 24
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("proj");
+        echo "\">Project</a>
             <a class=\"nav-toggle\" id=\"nav-toggle\" title=\"Toggle Menu\" role=\"button\" aria-expanded=\"false\"
                 tabindex=\"0\">
             <span class=\"bar\"></span>
@@ -188,7 +192,7 @@ class __TwigTemplate_9a4096e0a3463ef0ccedc82d202a8de4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  158 => 23,  150 => 22,  142 => 21,  134 => 20,  126 => 19,  118 => 18,  112 => 15,  108 => 14,  104 => 13,  100 => 12,  96 => 11,  92 => 10,  88 => 9,  84 => 8,  73 => 6,  62 => 4,  54 => 3,  46 => 2,  43 => 1,);
+        return array (  166 => 24,  158 => 23,  150 => 22,  142 => 21,  134 => 20,  126 => 19,  118 => 18,  112 => 15,  108 => 14,  104 => 13,  100 => 12,  96 => 11,  92 => 10,  88 => 9,  84 => 8,  73 => 6,  62 => 4,  54 => 3,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -216,6 +220,7 @@ class __TwigTemplate_9a4096e0a3463ef0ccedc82d202a8de4 extends Template
             <a {% if url == '/api' %} class=\"active\" {% endif %} href=\"{{ path('api') }}\">Json routes</a>
             <a {% if url == 'library' %} class=\"active\" {% endif %} href=\"{{ path('library') }}\">Library</a>
             <a {% if url == 'metrics' %} class=\"active\" {% endif %} href=\"{{ path('metrics') }}\">Metrics</a>
+            <a href=\"{{ path('proj') }}\">Project</a>
             <a class=\"nav-toggle\" id=\"nav-toggle\" title=\"Toggle Menu\" role=\"button\" aria-expanded=\"false\"
                 tabindex=\"0\">
             <span class=\"bar\"></span>

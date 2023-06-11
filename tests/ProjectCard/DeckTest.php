@@ -102,7 +102,7 @@ class DeckTest extends TestCase
         for ($i = 2; $i < 8; $i++) {
             $card = new Card($i, "D");
             array_push($cards, $card);
-            if ($i % 2 === 1) {
+            if ($i > 4 && $i % 2 === 1) {
                 array_push($exp, $card);
             }
         }
@@ -113,6 +113,6 @@ class DeckTest extends TestCase
         $deck = new Deck($factory);
         $res = $deck->possibleCards();
         $this->assertEquals($exp, $res);
-        $this->assertEquals(3, count($res));
+        $this->assertEquals(2, count($res));
     }
 }

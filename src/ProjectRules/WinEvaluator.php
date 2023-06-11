@@ -22,7 +22,6 @@ class WinEvaluator
      */
     public function results(array $hands): array
     {
-        // $rules = $this->rules;
         $result = [];
         $total = 0;
         /**

@@ -38,9 +38,26 @@ class Deck
      */
     public function getCards(): array
     {
-        $cards = $this->cards;
+        return $this->cards;
+    }
+
+    /**
+     * @return array<string>
+     */
+    public function getAsStringArr(): array
+    {
+        $cards = [];
+        forEach($this->cards as $card) {
+            array_push($cards, $card->name());
+        }
         return $cards;
     }
+
+    // public function peek(): Card
+    // {
+    //     $cards = $this->cards;
+    //     return $cards[count($cards)-1];
+    // }
 
     /**
      * @return array<Card>
@@ -49,10 +66,12 @@ class Deck
     {
         $cards = [];
         $deck = $this->cards;
+        $count = count($deck);
 
-        foreach ($deck as $index => $card) {
-            if ($index % 2 === 1) {
-                array_push($cards, $card);
+        // the first two cards in deck will not be picked by bank or by playerS
+        for ($i = 2; $i < $count; $i++) {
+            if ($i % 2 === 1) {
+                array_push($cards, $deck[$i]);
             }
         }
         return $cards;

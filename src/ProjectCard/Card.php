@@ -36,7 +36,7 @@ class Card
         return $this->suit;
     }
 
-    private function name(): string
+    public function name(): string
     {
         return "{$this->rank}".$this->suit;
     }

@@ -11,7 +11,7 @@ use App\ProjectCard\EmptyCellFinder;
 class Rules
 {
     /**
-     * @var array<array<string,string|int|RuleInterface|RuleStatInterface>>
+     * @var array<array<string,string|int|RuleInterface>>
      */
     protected $rules = [];
 
@@ -21,62 +21,53 @@ class Rules
             [
                 'name' => 'Royal Flush',
                 'points' => 100,
-                'scored' => new RoyalFlush(),
-                'possible' => new RoyalFlushStat()
+                'scored' => new RoyalFlush()
             ],
             [
                 'name' => 'Straight Flush',
                 'points' => 75,
-                'scored' => new Straight(1),
-                'possible' => new StraightFlushStat()
+                'scored' => new Straight(1)
             ],
             [
                 'name' => 'Four Of A Kind',
                 'points' => 50,
-                'scored' => new SameOfAKind(4),
-                'possible' => new SameOfAKindStat(4)
+                'scored' => new SameOfAKind(4)
             ],
             [
                 'name' => 'Full House',
                 'points' => 25,
-                'scored' => new FullHouse(),
-                'possible' => new FullHouseStat()
+                'scored' => new FullHouse()
             ],
             [
                 'name' => 'Flush',
                 'points' => 20,
-                'scored' => new Flush(),
-                'possible' => new FlushStat()
+                'scored' => new Flush()
             ],
             [
                 'name' => 'Straight',
                 'points' => 15,
-                'scored' => new Straight(4),
-                'possible' => new StraightStat()
+                'scored' => new Straight(4)
             ],
             [
                 'name' => 'Three Of A Kind',
                 'points' => 10,
-                'scored' => new SameOfAKind(3),
-                'possible' => new SameOfAKindStat(3)
+                'scored' => new SameOfAKind(3)
             ],
             [
                 'name' => 'Two Pairs',
                 'points' => 5,
-                'scored' => new TwoPairs(),
-                'possible' => new TwoPairsStat()
+                'scored' => new TwoPairs()
             ],
             [
                 'name' => 'One Pair',
                 'points' => 2,
-                'scored' => new SameOfAKind(2),
-                'possible' => new SameOfAKindStat(2)
+                'scored' => new SameOfAKind(2)
             ],
         ];
     }
 
     /**
-     * @return array<array<string,string|int|RuleInterface|RuleStatInterface>>
+     * @return array<array<string,string|int|RuleInterface>>
      */
     public function getRules(): array
     {
@@ -84,7 +75,7 @@ class Rules
     }
 
     /**
-     * @param array<array<string,string|int|RuleInterface|RuleStatInterface>> $rules
+     * @param array<array<string,string|int|RuleInterface>> $rules
      */
     public function setRules($rules): void
     {
@@ -123,27 +114,5 @@ class Rules
             }
         }
         return $result;
-    }
-
-    /**
-     * @param int $ruleNr
-     * @param array<Card> $hand
-     * @param array<Card> $deck
-     */
-    public function checkSingle($hand, $deck, Card $card, $ruleNr): bool
-    {
-        $rules = $this->rules;
-        $rule = $rules[$ruleNr];
-        // /**
-        //  * @var RuleInterface $scored
-        //  */
-        // $scored = $rule['scored'];
-        /**
-         * @var RuleStatInterface $possible
-         */
-        $possible = $rule['possible'];
-        // $count = count($hand);
-        return ($possible->check($hand, $deck, $card));
-        // return ($count === 4 && $scored->check([...$hand, $card])) || ($count < 4 && $count > 0 && $possible->check($hand, $deck, $card));
     }
 }

@@ -11,7 +11,7 @@ use App\ProjectGrid\EmptyCellFinder;
  */
 class MoveEvaluator
 {
-    private Rules $rules;
+    private RuleStats $rules;
     private EmptyCellFinder $finder;
     private string $rowRuleName = "";
     private string $colRuleName = "";
@@ -28,7 +28,7 @@ class MoveEvaluator
      */
     private array $data;
 
-    public function __construct(EmptyCellFinder $finder = new EmptyCellFinder(), Rules $rules = new Rules())
+    public function __construct(EmptyCellFinder $finder = new EmptyCellFinder(), RuleStats $rules = new RuleStats())
     {
         $this->rules = $rules;
         $this->finder = $finder;
@@ -45,8 +45,9 @@ class MoveEvaluator
         $rules = $this->rules;
         $deck = $this->deck;
         $card = $this->card;
+
         /**
-         * @var array<array<string,string|int|RuleInterface|RuleStatInterface>> $allRules
+         * @var array<array<string,string|RuleStatInterface>> $allRules
          */
         $allRules = $rules->getRules();
         $rule = $allRules[$ruleNr];
@@ -67,7 +68,7 @@ class MoveEvaluator
                 foreach($emptyCells as $cell) {
                     $colNr = $cell[1];
                     $this->colNr = $colNr;
-                    if ($rules->checkSingle($cols[$colNr], $deck, $card, $i) === true) {
+                    if (array_key_exists($colNr, $cols) && $rules->checkSingle($cols[$colNr], $deck, $card, $i)) {
                         /**
                          * @var string $name
                          */
@@ -90,16 +91,16 @@ class MoveEvaluator
     {
         if (array_key_exists($index, $rows) && $this->setSlot($index, $ruleNr, $rows, $cols)) {
             $this->data = [
-                'rowRuleName' => $this->rowRuleName,
-                'colRuleName' => $this->colRuleName,
+                'row-rule' => $this->rowRuleName,
+                'col-rule' => $this->colRuleName,
                 'slot' => [$this->rowNr, $this->colNr]
             ];
             return true;
         }
         if (array_key_exists($index, $cols) && $this->setSlot($index, $ruleNr, $cols, $rows)) {
             $this->data = [
-                'rowRuleName' => $this->colRuleName,
-                'colRuleName' => $this->rowRuleName,
+                'row-rule' => $this->colRuleName,
+                'col-rule' => $this->rowRuleName,
                 'slot' => [$this->colNr, $this->rowNr]
             ];
             return true;
@@ -134,8 +135,8 @@ class MoveEvaluator
             }
         }
         return [
-            'rowRuleName' => "",
-            'colRuleName' => "",
+            'row-rule' => "",
+            'col-rule' => "",
             'slot' => $this->finder->all($rows)[0]
         ];
     }

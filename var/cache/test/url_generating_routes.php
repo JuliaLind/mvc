@@ -41,4 +41,10 @@ return [
     'report' => [[], ['_controller' => 'App\\Controller\\MainController::report'], [], [['text', '/report']], [], [], []],
     'lucky' => [[], ['_controller' => 'App\\Controller\\MainController::number'], [], [['text', '/lucky']], [], [], []],
     'metrics' => [[], ['_controller' => 'App\\Controller\\MainController::metrics'], [], [['text', '/metrics']], [], [], []],
+    'api-one-round' => [[], ['_controller' => 'App\\Controller\\ProjectApiController::apiOneRound'], [], [['text', '/project/api/game']], [], [], []],
+    'api-new' => [[], ['_controller' => 'App\\Controller\\ProjectApiController::apiNew'], [], [['text', '/project/api/new']], [], [], []],
+    'api-results' => [[], ['_controller' => 'App\\Controller\\ProjectApiController::apiResults'], [], [['text', '/project/api/results']], [], [], []],
+    'proj' => [[], ['_controller' => 'App\\Controller\\ProjectMainController::projLanding'], [], [['text', '/proj']], [], [], []],
+    'proj-api' => [[], ['_controller' => 'App\\Controller\\ProjectMainController::projApiLanding'], [], [['text', '/proj/api']], [], [], []],
+    'proj-about' => [[], ['_controller' => 'App\\Controller\\ProjectMainController::projAbout'], [], [['text', '/proj/about']], [], [], []],
 ];

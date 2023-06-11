@@ -1,0 +1,26 @@
+{% extends 'base-project.html.twig' %}
+
+{% block title %}Project-api{% endblock %}
+
+{% block body %}
+
+<form method="post" action="{{ path('api-one-round') }}">
+<p>Picks a card from deck and places in grid based on generated suggestion. grid is saves in session and reset after the grid gets full</p>
+<input type="submit" class="btn" value="Go" name="do">
+</form>
+
+<form method="post" action="{{ path('api-results') }}">
+<p>Fills grid completely based on suggestions and returns results of all hands</p>
+<input type="submit" class="btn" value="Go" name="do">
+</form>
+
+<form method="post" action="{{ path('api-new') }}">
+<p>Picks a card from new, unshuffled deck and places it into new grid in selected row and column. Default is row 1, column 3 (range rows/columns goes from 0 to 4)</p>
+<label for="row">Row</label>
+<input type="number" id="row" name="row" min="0" max="4" value="1" step="1">
+<label for="col">Column</label>
+<input type="number" id="col" name="col" min="0" max="4" value="3" step="1">
+<input type="submit" class="btn" value="Go" name="do">
+</form>
+
+{% endblock %}

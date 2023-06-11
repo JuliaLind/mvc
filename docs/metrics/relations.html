@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-10 22:50:34        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-11 23:15:44        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -93,7 +93,7 @@
                             <path d="M0 0h24v24H0z" fill="none">
                             <path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z">
                         </svg>
-                        Violations (10)
+                        Violations (11)
                     </a>
                 </li>
                                     <li>
@@ -472,6 +472,52 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\ProjectApiController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Helpers\\JsonConverter",
+            "\\App\\Project\\ApiGame",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\App\\Project\\ApiNew",
+            "\\App\\Project\\ApiResults"
+        ]
+    },
+    {
+        "name": "\\App\\Project\\ApiGame",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectGrid\\Grid",
+            "\\App\\ProjectCard\\Deck",
+            "\\App\\ProjectRules\\MoveEvaluator",
+            "\\App\\ProjectGrid\\GridGraphic"
+        ]
+    },
+    {
+        "name": "\\App\\Project\\ApiNew",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\App\\ProjectGrid\\Grid",
+            "\\App\\ProjectCard\\Deck",
+            "\\App\\ProjectGrid\\GridGraphic"
+        ]
+    },
+    {
+        "name": "\\App\\Project\\ApiResults",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\MoveEvaluator",
+            "\\App\\ProjectRules\\WinEvaluator",
+            "\\App\\ProjectGrid\\GridGraphic",
+            "\\App\\ProjectGrid\\Grid",
+            "\\App\\ProjectCard\\Deck"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\JsonDealOneCardController",
         "size": 3000,
         "relations": [
@@ -502,6 +548,14 @@
         "size": 3000,
         "relations": [
             "\\App\\Game\\Game21Interface"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjectMainController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response"
         ]
     },
     {
@@ -644,10 +698,7 @@
     {
         "name": "\\App\\ProjectGrid\\Grid",
         "size": 3000,
-        "relations": [
-            "\\App\\ProjectCard\\Card",
-            "\\App\\ProjectGrid\\GridCols"
-        ]
+        "relations": []
     },
     {
         "name": "\\App\\ProjectCard\\Card",
@@ -716,16 +767,21 @@
     {
         "name": "\\App\\ProjectRules\\MoveEvaluator",
         "size": 3000,
-        "relations": [
-            "\\App\\ProjectGrid\\EmptyCellFinder",
-            "\\App\\ProjectRules\\Rules",
-            "\\App\\ProjectCard\\Card"
-        ]
+        "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\Rules",
+        "name": "\\App\\ProjectRules\\RuleStats",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\App\\ProjectRules\\RoyalFlushStat",
+            "\\App\\ProjectRules\\StraightFlushStat",
+            "\\App\\ProjectRules\\SameOfAKindStat",
+            "\\App\\ProjectRules\\FullHouseStat",
+            "\\App\\ProjectRules\\FlushStat",
+            "\\App\\ProjectRules\\StraightStat",
+            "\\App\\ProjectRules\\TwoPairsStat",
+            "\\App\\ProjectCard\\Card"
+        ]
     },
     {
         "name": "\\App\\ProjectRules\\RuleStat",
@@ -758,19 +814,15 @@
         "relations": []
     },
     {
+        "name": "\\App\\ProjectRules\\Rules",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\ProjectRules\\RoyalFlush",
         "size": 3000,
         "relations": [
             "\\App\\ProjectRules\\Straight"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\RoyalFlushStat",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleStat",
-            "\\App\\ProjectRules\\RuleStatInterface",
-            "\\App\\ProjectCard\\Card"
         ]
     },
     {
@@ -782,37 +834,11 @@
         ]
     },
     {
-        "name": "\\App\\ProjectRules\\StraightFlushStat",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleStat",
-            "\\App\\ProjectRules\\RuleStatInterface",
-            "\\App\\ProjectCard\\Card"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\SameOfAKindStat",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleStat",
-            "\\App\\ProjectRules\\RuleStatInterface"
-        ]
-    },
-    {
         "name": "\\App\\ProjectRules\\FullHouse",
         "size": 3000,
         "relations": [
             "\\App\\ProjectRules\\Rule",
             "\\App\\ProjectRules\\RuleInterface"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\FullHouseStat",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\Rule",
-            "\\App\\ProjectRules\\RuleStatInterface",
-            "\\App\\ProjectCard\\Card"
         ]
     },
     {
@@ -824,15 +850,6 @@
         ]
     },
     {
-        "name": "\\App\\ProjectRules\\StraightStat",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleStat",
-            "\\App\\ProjectRules\\RuleStatInterface",
-            "\\App\\ProjectCard\\Card"
-        ]
-    },
-    {
         "name": "\\App\\ProjectRules\\TwoPairs",
         "size": 3000,
         "relations": [
@@ -841,12 +858,24 @@
         ]
     },
     {
-        "name": "\\App\\ProjectRules\\TwoPairsStat",
+        "name": "\\App\\ProjectRules\\StraightStat",
         "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleStat",
-            "\\App\\ProjectRules\\RuleStatInterface"
-        ]
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\StraightFlushStat",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\SameOfAKindStat",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\FullHouseStat",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\ProjectRules\\SameRankTrait",
@@ -871,6 +900,23 @@
         "relations": []
     },
     {
+        "name": "\\App\\ProjectRules\\RoyalFlushStat",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleStat",
+            "\\App\\ProjectRules\\RuleStatInterface",
+            "\\App\\ProjectCard\\Card"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\TwoPairsStat",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleStat",
+            "\\App\\ProjectRules\\RuleStatInterface"
+        ]
+    },
+    {
         "name": "\\App\\ProjectRules\\StraightFlushStatTrait",
         "size": 3000,
         "relations": []
@@ -883,8 +929,27 @@
     {
         "name": "\\App\\ProjectRules\\WinEvaluator",
         "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectCard\\Deck",
+        "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\Rules"
+            "\\App\\ProjectCard\\CardFactory",
+            "\\App\\ProjectCard\\Card",
+            "\\App\\ProjectExceptions\\NoCardsException"
+        ]
+    },
+    {
+        "name": "\\App\\Project\\Game",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectGrid\\Grid",
+            "\\App\\ProjectCard\\Deck",
+            "\\App\\ProjectRules\\MoveEvaluator",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\App\\ProjectRules\\WinEvaluator",
+            "\\App\\ProjectGrid\\GridGraphic"
         ]
     },
     {
@@ -967,15 +1032,6 @@
         "name": "\\Datetime",
         "size": 3000,
         "relations": []
-    },
-    {
-        "name": "\\App\\ProjectCard\\Deck",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectCard\\CardFactory",
-            "\\App\\ProjectCard\\Card",
-            "\\App\\ProjectExceptions\\NoCardsException"
-        ]
     },
     {
         "name": "\\App\\ProjectCard\\CardFactory",

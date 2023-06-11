@@ -73,8 +73,8 @@ class MoveEvaluatorTest extends TestCase
         $deck = [];
 
         $exp = [
-            'rowRuleName' => "",
-            'colRuleName' => "Four Of A Kind",
+            'row-rule' => "",
+            'col-rule' => "Four Of A Kind",
             'slot' => [1, 3]
         ];
 
@@ -95,8 +95,8 @@ class MoveEvaluatorTest extends TestCase
         $card = new Card(14, 'D');
 
         $exp = [
-            'rowRuleName' => "",
-            'colRuleName' => "",
+            'row-rule' => "",
+            'col-rule' => "",
             'slot' => [0, 0]
         ];
 
