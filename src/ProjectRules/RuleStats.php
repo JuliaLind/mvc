@@ -73,19 +73,39 @@ class RuleStats
         $this->rules = $rules;
     }
 
+    // /**
+    //  * @param int $ruleNr
+    //  * @param array<Card> $hand
+    //  * @param array<Card> $deck
+    //  */
+    // public function checkSingle($hand, $deck, Card $card, $ruleNr): bool
+    // {
+    //     $rules = $this->rules;
+    //     $rule = $rules[$ruleNr];
+    //     /**
+    //      * @var RuleStatInterface $possible
+    //      */
+    //     $possible = $rule['possible'];
+    //     return ($possible->check($hand, $deck, $card));
+    // }
+
     /**
      * @param int $ruleNr
-     * @param array<Card> $hand
+     * @param array<array<Card>> $rows
      * @param array<Card> $deck
      */
-    public function checkSingle($hand, $deck, Card $card, $ruleNr): bool
+    public function checkSingle($rows, int $rowNr, $deck, Card $card, $ruleNr): bool
     {
-        $rules = $this->rules;
-        $rule = $rules[$ruleNr];
-        /**
-         * @var RuleStatInterface $possible
-         */
-        $possible = $rule['possible'];
-        return ($possible->check($hand, $deck, $card));
+        if (array_key_exists($rowNr, $rows)) {
+            $hand = $rows[$rowNr];
+            $rules = $this->rules;
+            $rule = $rules[$ruleNr];
+            /**
+             * @var RuleStatInterface $possible
+             */
+            $possible = $rule['possible'];
+            return ($possible->check($hand, $deck, $card));
+        }
+        return false;
     }
 }

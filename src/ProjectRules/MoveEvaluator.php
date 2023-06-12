@@ -52,7 +52,7 @@ class MoveEvaluator
         $allRules = $rules->getRules();
         $rule = $allRules[$ruleNr];
 
-        if(array_key_exists($index, $rows) && $rules->checkSingle($rows[$index], $deck, $card, $ruleNr)) {
+        if($rules->checkSingle($rows, $index, $deck, $card, $ruleNr)) {
             $this->rowNr = $index;
             /**
              * @var string $name
@@ -68,7 +68,7 @@ class MoveEvaluator
                 foreach($emptyCells as $cell) {
                     $colNr = $cell[1];
                     $this->colNr = $colNr;
-                    if (array_key_exists($colNr, $cols) && $rules->checkSingle($cols[$colNr], $deck, $card, $i)) {
+                    if ($rules->checkSingle($cols, $colNr, $deck, $card, $i)) {
                         /**
                          * @var string $name
                          */

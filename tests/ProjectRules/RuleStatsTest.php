@@ -39,9 +39,12 @@ class RuleStatsTest extends TestCase
         for ($i = 0; $i < 3; $i++) {
             array_push($hand, $this->createMock(Card::class));
         }
+        $rows = [
+            2 => $hand
+        ];
         $card = $this->createMock(Card::class);
         $possible->expects($this->once())->method('check')->with($hand, $deck, $card);
         $rules->setRules($allRules);
-        $rules->checkSingle($hand, $deck, $card, 0);
+        $rules->checkSingle($rows, 2, $deck, $card, 0);
     }
 }
