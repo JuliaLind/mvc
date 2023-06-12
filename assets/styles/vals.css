@@ -10,4 +10,23 @@
 
     --right-light-clear: #bf6d65a8;
     --left-dark-clear: #78bf96a6;
+
+    /* --form-neon: #0ef; */
+    --form-neon: #AD4FFF;
+    --form-neon2: #42FF88;
+
+    /* Color Theme Swatches in Hex
+.nya-kort-1-1-hex { color: #FF6F69; }
+.nya-kort-1-2-hex { color: #F7FF75; }
+.nya-kort-1-3-hex { color: #FF5BE7; }
+.nya-kort-1-4-hex { color: #42FF88; }
+.nya-kort-1-5-hex { color: #AD4FFF; } */
+
+/* Color Theme Swatches in RGBA 
+.nya-kort-1-1-rgba { color: rgba(255, 111, 105, 1); }
+.nya-kort-1-2-rgba { color: rgba(247, 255, 117, 1); }
+.nya-kort-1-3-rgba { color: rgba(255, 91, 231, 1); }
+.nya-kort-1-4-rgba { color: rgba(66, 255, 136, 1); }
+.nya-kort-1-5-rgba { color: rgba(173, 79, 255, 1); }
+*/
 }

@@ -433,6 +433,20 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectApiController"/>
       </call>
     </service>
+    <service id="App\Controller\ProjectAuthController" class="App\Controller\ProjectAuthController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectAuthController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ProjectFormController" class="App\Controller\ProjectFormController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectFormController"/>
+      </call>
+    </service>
     <service id="App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -6889,6 +6903,12 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectApiController" class="App\Controller\ProjectApiController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectApiController" class="App\Controller\ProjectApiController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectApiController" class="App\Controller\ProjectApiController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectAuthController" class="App\Controller\ProjectAuthController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectAuthController" class="App\Controller\ProjectAuthController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectAuthController" class="App\Controller\ProjectAuthController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectFormController" class="App\Controller\ProjectFormController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectFormController" class="App\Controller\ProjectFormController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectFormController" class="App\Controller\ProjectFormController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7652,6 +7672,18 @@
     <service id=".service_locator.jIxfAsi.App\Controller\ProjectApiController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ProjectApiController"/>
       <argument>App\Controller\ProjectApiController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectAuthController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectAuthController"/>
+      <argument>App\Controller\ProjectAuthController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectFormController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectFormController"/>
+      <argument>App\Controller\ProjectFormController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>

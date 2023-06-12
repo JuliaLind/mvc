@@ -1,0 +1,20 @@
+{{ include('flash.html.twig') }}
+
+<div class="wrapper login">
+<form method="post" action="{{ path('login') }}">
+<h2>Login</h2>
+    <div class="input-box">
+    <span class="material-symbols-outlined icon">person</span>
+    <input name="username" type="text" required="required" minlength="1" maxlength="100" placeholder="Username">
+    </div>
+
+    <div class="input-box">
+    <span class="material-symbols-outlined icon">key</span>
+    <input name="password" type="password" required="required" minlength="1" maxlength="100" placeholder="Password">
+    </div>
+    <button class="form-btn" type="submit">Login</button>
+    <div class="register-link">
+    <p>Don't have an account? <a href="{{ path('register-form') }}">Register</a></p>
+    </div>
+</form>
+</div>

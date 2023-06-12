@@ -1,0 +1,35 @@
+.project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #000;
+    /* background-color: #999; */
+    width: 100vw;
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.project .topnav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    left: 0;
+    right: 0;
+}
+
+.project .topnav a {
+    float: right;
+}
+
+.project h1,
+.project h2,
+.project h3,
+.project h4,
+.project a,
+.project p,
+button,
+input {
+    font-size: unset;
+}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686562642">
-  <project timestamp="1686562642">
+<coverage generated="1686586043">
+  <project timestamp="1686586043">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -584,6 +584,38 @@
       <line num="61" type="stmt" count="0"/>
       <metrics loc="64" ncloc="61" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="1" elements="15" coveredelements="1"/>
     </file>
+    <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Controller/ProjectAuthController.php">
+      <class name="App\Controller\ProjectAuthController" namespace="global">
+        <metrics complexity="4" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="13" coveredelements="0"/>
+      </class>
+      <line num="5" type="stmt" count="1"/>
+      <line num="21" type="method" name="projRegister" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="40" type="method" name="projLogin" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="49" type="stmt" count="0"/>
+      <line num="52" type="method" name="projLogout" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="58" type="stmt" count="0"/>
+      <line num="59" type="stmt" count="0"/>
+      <metrics loc="62" ncloc="54" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="1" elements="14" coveredelements="1"/>
+    </file>
+    <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Controller/ProjectFormController.php">
+      <class name="App\Controller\ProjectFormController" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
+      </class>
+      <line num="5" type="stmt" count="1"/>
+      <line num="18" type="method" name="projRegisterForm" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <line num="22" type="stmt" count="0"/>
+      <line num="23" type="stmt" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <metrics loc="27" ncloc="24" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="1" elements="6" coveredelements="1"/>
+    </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Controller/ProjectMainController.php">
       <class name="App\Controller\ProjectMainController" namespace="global">
         <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="15" coveredelements="0"/>
@@ -604,7 +636,7 @@
       <line num="42" type="stmt" count="0"/>
       <line num="43" type="stmt" count="0"/>
       <line num="44" type="stmt" count="0"/>
-      <metrics loc="47" ncloc="43" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="1" elements="16" coveredelements="1"/>
+      <metrics loc="47" ncloc="44" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="1" elements="16" coveredelements="1"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/DataFixtures/AppFixtures.php">
       <class name="App\DataFixtures\AppFixtures" namespace="global">
@@ -1961,15 +1993,15 @@
       <line num="65" type="stmt" count="3"/>
       <line num="71" type="method" name="setRules" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="73" type="stmt" count="2"/>
-      <line num="97" type="method" name="checkSingle" visibility="public" complexity="2" crap="2" count="3"/>
-      <line num="99" type="stmt" count="3"/>
-      <line num="100" type="stmt" count="2"/>
-      <line num="101" type="stmt" count="2"/>
-      <line num="102" type="stmt" count="2"/>
-      <line num="106" type="stmt" count="2"/>
-      <line num="107" type="stmt" count="2"/>
-      <line num="109" type="stmt" count="2"/>
-      <metrics loc="112" ncloc="77" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="47" coveredstatements="47" elements="51" coveredelements="51"/>
+      <line num="81" type="method" name="checkSingle" visibility="public" complexity="2" crap="2" count="3"/>
+      <line num="83" type="stmt" count="3"/>
+      <line num="84" type="stmt" count="2"/>
+      <line num="85" type="stmt" count="2"/>
+      <line num="86" type="stmt" count="2"/>
+      <line num="90" type="stmt" count="2"/>
+      <line num="91" type="stmt" count="2"/>
+      <line num="93" type="stmt" count="2"/>
+      <metrics loc="96" ncloc="76" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="47" coveredstatements="47" elements="51" coveredelements="51"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/Rules.php">
       <class name="App\ProjectRules\Rules" namespace="global">
@@ -2269,6 +2301,6 @@
       <line num="87" type="stmt" count="7"/>
       <metrics loc="115" ncloc="71" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="24" elements="30" coveredelements="30"/>
     </file>
-    <metrics files="110" loc="6086" ncloc="4395" classes="97" methods="278" coveredmethods="255" conditionals="0" coveredconditionals="0" statements="1339" coveredstatements="1227" elements="1617" coveredelements="1482"/>
+    <metrics files="112" loc="6159" ncloc="4473" classes="99" methods="282" coveredmethods="255" conditionals="0" coveredconditionals="0" statements="1355" coveredstatements="1229" elements="1637" coveredelements="1484"/>
   </project>
 </coverage>

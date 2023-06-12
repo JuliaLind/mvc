@@ -58,10 +58,10 @@ class __TwigTemplate_e855f9446d684d4728377e6a32a8ab9f extends Template
         // line 7
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 10
+        // line 11
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 13
+        // line 14
         echo "    </head>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -81,7 +81,7 @@ class __TwigTemplate_e855f9446d684d4728377e6a32a8ab9f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        echo "Julia Lind - MVC";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -104,6 +104,7 @@ class __TwigTemplate_e855f9446d684d4728377e6a32a8ab9f extends Template
         echo "            ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
         echo "
+            <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0\" />
         ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -113,7 +114,7 @@ class __TwigTemplate_e855f9446d684d4728377e6a32a8ab9f extends Template
 
     }
 
-    // line 10
+    // line 11
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -123,7 +124,7 @@ class __TwigTemplate_e855f9446d684d4728377e6a32a8ab9f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 11
+        // line 12
         echo "            ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
@@ -148,19 +149,20 @@ class __TwigTemplate_e855f9446d684d4728377e6a32a8ab9f extends Template
 
     public function getDebugInfo()
     {
-        return array (  127 => 11,  117 => 10,  104 => 8,  94 => 7,  75 => 3,  65 => 13,  62 => 10,  59 => 7,  55 => 5,  50 => 3,  46 => 1,);
+        return array (  128 => 12,  118 => 11,  104 => 8,  94 => 7,  75 => 3,  65 => 14,  62 => 11,  59 => 7,  55 => 5,  50 => 3,  46 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("    <head>
         <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Julia Lind - MVC{% endblock %}</title>
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
         <link rel=\"icon\" href=\"{{ asset('img/leaf-single.svg') }}\">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+            <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0\" />
         {% endblock %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}

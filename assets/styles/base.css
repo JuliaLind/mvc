@@ -29,8 +29,8 @@ main {
 
 
 footer {
-    /* position: sticky;
-    bottom: 0; */
+    position: absolute;
+    bottom: 0;
     width: 100vw;
     padding: 0.7rem;
     background-color: #000;

@@ -1,8 +1,8 @@
         <nav class="topnav" id="myTopnav">
-            <a href="{{ path('home') }}">Home</a>
-            <a {% if url == 'proj' %} class="active" {% endif %} href="{{ path('proj') }}">Casino</a>
-            <a {% if url == 'api' %} class="active" {% endif %} href="{{ path('proj-api') }}">API</a>
+            <a href="{{ path('home') }}"><span class="material-symbols-outlined">arrow_forward</span></a>
             <a {% if url == 'about' %} class="active" {% endif %} href="{{ path('proj-about') }}">About</a>
+            <a {% if url == 'api' %} class="active" {% endif %} href="{{ path('proj-api') }}">API</a>
+            <a {% if url == 'proj' %} class="active" {% endif %} href="{{ path('proj') }}">Casino</a>
             <a class="nav-toggle" id="nav-toggle" title="Toggle Menu" role="button" aria-expanded="false"
                 tabindex="0">
             <span class="bar"></span>
