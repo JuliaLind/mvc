@@ -47,7 +47,7 @@ class Deck
     public function getAsStringArr(): array
     {
         $cards = [];
-        forEach($this->cards as $card) {
+        foreach($this->cards as $card) {
             array_push($cards, $card->name());
         }
         return $cards;

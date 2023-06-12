@@ -41,7 +41,7 @@ class MoveEvaluator
     protected function setSlot(int $index, int $ruleNr, array $rows, array $cols): bool
     {
         $finder = $this->finder;
-        $hand = $rows[$index];
+
         $rules = $this->rules;
         $deck = $this->deck;
         $card = $this->card;
@@ -52,7 +52,7 @@ class MoveEvaluator
         $allRules = $rules->getRules();
         $rule = $allRules[$ruleNr];
 
-        if($rules->checkSingle($hand, $deck, $card, $ruleNr)) {
+        if(array_key_exists($index, $rows) && $rules->checkSingle($rows[$index], $deck, $card, $ruleNr)) {
             $this->rowNr = $index;
             /**
              * @var string $name
@@ -60,7 +60,7 @@ class MoveEvaluator
             $name = $rule['name'];
             $this->rowRuleName = $name;
 
-            $emptyCells = $finder->single($hand, $index, true);
+            $emptyCells = $finder->single($rows[$index], $index, true);
 
             $ruleCount = count($allRules);
 
@@ -89,7 +89,7 @@ class MoveEvaluator
      */
     protected function checkRowColForRule(int $index, int $ruleNr, $rows, $cols): bool
     {
-        if (array_key_exists($index, $rows) && $this->setSlot($index, $ruleNr, $rows, $cols)) {
+        if ($this->setSlot($index, $ruleNr, $rows, $cols)) {
             $this->data = [
                 'row-rule' => $this->rowRuleName,
                 'col-rule' => $this->colRuleName,
@@ -97,7 +97,7 @@ class MoveEvaluator
             ];
             return true;
         }
-        if (array_key_exists($index, $cols) && $this->setSlot($index, $ruleNr, $cols, $rows)) {
+        if ($this->setSlot($index, $ruleNr, $cols, $rows)) {
             $this->data = [
                 'row-rule' => $this->colRuleName,
                 'col-rule' => $this->rowRuleName,

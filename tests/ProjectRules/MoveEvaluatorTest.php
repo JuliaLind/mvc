@@ -13,6 +13,7 @@ class MoveEvaluatorTest extends TestCase
     {
         $evaluator = new MoveEvaluator();
 
+        /// lägg till många fler tester
 
         // KEEP AS TEMPLATE
         // $hands= [
