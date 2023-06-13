@@ -22,7 +22,7 @@ use App\Project\ApiResults;
 
 class ProjectApiController extends AbstractController
 {
-    #[Route('project/api/game', name: "api-one-round", methods: ['POST'])]
+    #[Route('/project/api/bot-plays', name: "api-bot-plays", methods: ['POST'])]
     public function apiOneRound(
         SessionInterface $session,
         JsonConverter $converter = new JsonConverter()
@@ -38,7 +38,7 @@ class ProjectApiController extends AbstractController
         return $response;
     }
 
-    #[Route('project/api/new', name: "api-new", methods: ['POST'])]
+    #[Route('/project/api/place-card', name: "api-place-card", methods: ['POST'])]
     public function apiNew(
         Request $request,
         ApiNew $game = new ApiNew(),
@@ -50,7 +50,7 @@ class ProjectApiController extends AbstractController
         return $response;
     }
 
-    #[Route('project/api/results', name: "api-results", methods: ['POST'])]
+    #[Route('/project/api/results', name: "api-results", methods: ['POST'])]
     public function apiResults(
         ApiResults $game = new ApiResults(),
         JsonConverter $converter = new JsonConverter()

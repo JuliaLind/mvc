@@ -3,20 +3,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 500px;
     background: transparent;
     border: 5px solid #333;
     border-radius: 10px;
     transition: 0.5s;
 }
 
-.project .wrapper.login:hover {
+.project .wrapper.login,
+.project .wrapper.register {
+    height: 500px;
+    width: 400px;
+}
+
+.project .wrapper.api:hover,
+.project .wrapper.login {
     border: 5px solid var(--form-neon);
     box-shadow: 0 0 20px var(--form-neon), inset 0 0 20px var(--form-neon);
 }
 
-.project .wrapper.register:hover {
+
+.project .wrapper.register {
     border: 5px solid var(--form-neon2);
     box-shadow: 0 0 20px var(--form-neon2), inset 0 0 20px var(--form-neon2);
 }
@@ -28,12 +34,16 @@
     transition: 0.5s;
 }
 
-.project .wrapper.login:hover h2 {
+.project .wrapper.api:hover h2,
+.project .login h2 {
     color: var(--form-neon);
+    text-shadow: 0 0 0.125em var(--form-neon);
 }
 
-.project .wrapper.register:hover h2 {
+
+.project .register h2 {
     color: var(--form-neon2);
+    text-shadow: 0 0 0.125em var(--form-neon2);
 }
 
 
@@ -56,12 +66,14 @@
     transition: 0.5s;
 }
 
-.project .wrapper.login:hover .input-box input {
+.project .wrapper.api:hover .input-box input,
+.project .login .input-box input {
     border: 2px solid var(--form-neon);
     box-shadow: 0 0 10px var(--form-neon), inset 0 0 10px var(--form-neon);
 }
 
-.project .wrapper.register:hover .input-box input {
+
+.project .register .input-box input {
     border: 2px solid var(--form-neon2);
     box-shadow: 0 0 10px var(--form-neon2), inset 0 0 10px var(--form-neon2);
 }
@@ -80,11 +92,12 @@
     transition: 0.5s;
 }
 
-.project .wrapper.login:hover .input-box .icon {
+.project .wrapper.api:hover .input-box .icon,
+.project .login .input-box .icon {
     color: var(--form-neon);
 }
 
-.project .wrapper.register:hover .input-box .icon {
+.project .register .input-box .icon {
     color: var(--form-neon2);
 }
 
@@ -99,27 +112,25 @@
     cursor: pointer;
     font-size: 1em;
     color: #fff;
-    /* font-weight: 500; */
+    /* color: #000; */
     font-weight: 600;
     transition: 0.5s;
 }
 
-/* .project .wrapper:hover button.form-btn {
-    background: var(--form-neon);
-    color: #000;
-    box-shadow: 0 0 20px var(--form-neon);
-} */
 
-.project .wrapper:hover button.form-btn {
+.project .wrapper.api:hover button.form-btn,
+.project .login button.form-btn,
+.project .register button.form-btn {
     color: #000;
 }
-
-.project .wrapper.login:hover button.form-btn {
+.project .wrapper.api:hover button.form-btn,
+.project .login button.form-btn {
     background: var(--form-neon);
     box-shadow: 0 0 20px var(--form-neon);
 }
 
-.project .wrapper.register:hover button.form-btn {
+
+.project .register button.form-btn {
     background: var(--form-neon2);
     box-shadow: 0 0 20px var(--form-neon2);
 }
@@ -141,11 +152,13 @@
     transition: 0.5s;
 }
 
-.project .wrapper.login:hover .register-link p a {
+/* .project .wrapper.login:hover .register-link p a { */
+.project .login .register-link p a {
     color: var(--form-neon);
 }
 
-.project .wrapper.register:hover .register-link p a {
+/* .project .wrapper.register:hover .register-link p a { */
+.project .register .register-link p a {
     color: var(--form-neon2);
 }
 

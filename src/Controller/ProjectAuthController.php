@@ -12,7 +12,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-
 /**
  * The main controller class
  */
@@ -22,8 +21,7 @@ class ProjectAuthController extends AbstractController
     public function projRegister(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $username = $request->get('username');
         $password = $request->get('password');
         $password2 = $request->get('password2');
@@ -41,8 +39,7 @@ class ProjectAuthController extends AbstractController
     public function projLogin(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         // get user from db by username
         // $success = password_verify($password, $hash);
         // if ok save user to session
@@ -53,8 +50,7 @@ class ProjectAuthController extends AbstractController
     public function projLogout(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $session->clear();
         return $this->redirectToRoute('proj');
     }

@@ -1,0 +1,32 @@
+.full-page-background-image {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background-position: 0 70%;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size: cover;
+}
+
+.project .title {
+    font-family: 'Bungee Outline', cursive;
+
+    color: var(--title-neon);
+    font-size: 3.4em;
+    /* margin-top: 1em; */
+    margin-bottom: 1em;
+    text-shadow:
+    0 0 7px var(--title-neon),
+    0 0 10px var(--title-neon),
+    0 0 21px var(--title-neon),
+    0 0 42px var(--title-neon),
+    0 0 82px var(--title-neon),
+    0 0 92px var(--title-neon),
+    0 0 102px var(--title-neon),
+    0 0 151px var(--title-neon);
+}

@@ -9,6 +9,7 @@
     min-height: 100vh;
     font-size: 100%;
     font-family: 'Poppins', sans-serif;
+    padding-top: 4.5rem;
 }
 
 .project .topnav {
@@ -21,6 +22,19 @@
 
 .project .topnav a {
     float: right;
+}
+
+.project footer p {
+    font-size: 0.8em;
+}
+
+.project footer {
+    justify-content: flex-end;
+    padding-right: 1.4rem;
+}
+
+.project h1::before {
+    all: unset;
 }
 
 .project h1,

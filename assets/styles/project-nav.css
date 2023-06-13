@@ -1,0 +1,147 @@
+.project .topnav {
+    background-color: initial;
+    /* background-color: rgb(0, 0, 0, 0.5); */
+    /* background-image: linear-gradient(to right, rgb(0, 0, 0, 0.01) 90%, rgb(0, 0, 0, 0.8) 10%);  */
+}
+
+.project .topnav a {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.project .topnav a:hover,
+.project .topnav a.active {
+    color: var(--nav-neon);
+    text-shadow:
+    0 0 7px var(--nav-neon),
+    0 0 10px var(--nav-neon),
+    0 0 21px var(--nav-neon),
+    0 0 42px var(--nav-neon),
+    0 0 82px var(--nav-neon),
+    0 0 92px var(--nav-neon),
+    0 0 102px var(--nav-neon),
+    0 0 151px var(--nav-neon);
+}
+
+.project .topnav a.active {
+    text-decoration: none;
+}
+
+
+/* .topnav {
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #818181;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.topnav .subnav {
+    float: left;
+    overflow: hidden;
+}
+
+
+
+.subnav-content a.active {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+.topnav .nav-toggle {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+    background-color: var(--right-light);
+}
+
+.expanded {
+    display: block;
+}
+
+
+
+@media screen and (max-width: 1150px) {
+    .desktop-only {
+        display: none !important;
+    }
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav {
+        overflow: hidden;
+    }
+
+    .subnav a {
+        display: none;
+    }
+
+    .subnav-content {
+        width: 100vw;
+    }
+
+    .subnav-content {
+        border-top: 2px solid var(--main);
+        border-bottom: 2px solid var(--main);
+    }
+
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: center;
+    }
+
+    .topnav a.nav-toggle,
+    .topnav.responsive .nav-toggle {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        text-align: right !important;
+    }
+}
+
+@media (min-width: 1151px) {
+    .topnav {
+        height: 3.5rem;
+    }
+
+    .mobile-only {
+        display: none !important;
+    }
+} */
+
+
+

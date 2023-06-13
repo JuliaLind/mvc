@@ -45,6 +45,7 @@ class ApiGame
             $this->reset();
         }
         $card = $this->deck->deal();
+        $deck = array_slice($this->deck->getCards(), 26);
         $suggestion = $evaluator->suggestion($this->player->rowsAndCols(), $card, $this->deck->getCards());
         $slot = $suggestion['slot'];
         /**

@@ -4,23 +4,62 @@
 
 {% block body %}
 
-<form method="post" action="{{ path('api-one-round') }}">
-<p>Picks a card from deck and places in grid based on generated suggestion. grid is saves in session and reset after the grid gets full</p>
-<input type="submit" class="btn" value="Go" name="do">
-</form>
+<h1 class="title">Api routes</h1>
 
+<div class="flex-wrapper-col">
+<div class="half-width-col">
+<div class="wrapper api">
+<form method="post" action="{{ path('api-bot-plays') }}">
+<h2>/project/api/bot-plays</h2>
+
+<div class="register-link">
+<p>Top card is picked from a shuffled deck and placed into 5x5 grid based on generated (auto-calculated) suggestion. Grid is saved in session and reset after the grid gets full. Json object displays the picked card, the grid and the suggestion. The suggestion is primarily based on if the picked card combined with the cards in any of the rows and any of the columns together with the cards that will be picked from deck (i.e. in this route not the last 27, in actual game with two opponents it is each other card except for the last two) will result in possible rule scoring. If a rule is possible to score in row but not in a column of that row the card is placed in the last empty slot of the row, and vice versa if rule is possible in a column but not in a row of the column. Rules are checked one by one in all 10 hands ranging from the rule that generates highest points to the rule that generates the lowest. If no rule is possible to achive with the card in any column or row the card is placed in first empty slot.</p>
+</div>
+<button class="form-btn" type="submit">Go to route</button>
+
+</form>
+</div>
+
+<div class="wrapper api">
 <form method="post" action="{{ path('api-results') }}">
-<p>Fills grid completely based on suggestions and returns results of all hands</p>
-<input type="submit" class="btn" value="Go" name="do">
-</form>
+<h2>/project/api/results</h2>
 
-<form method="post" action="{{ path('api-new') }}">
-<p>Picks a card from new, unshuffled deck and places it into new grid in selected row and column. Default is row 1, column 3 (range rows/columns goes from 0 to 4)</p>
-<label for="row">Row</label>
-<input type="number" id="row" name="row" min="0" max="4" value="1" step="1">
-<label for="col">Column</label>
-<input type="number" id="col" name="col" min="0" max="4" value="3" step="1">
-<input type="submit" class="btn" value="Go" name="do">
+<div class="register-link">
+<p>The grid is filled completely based on automatically calculated suggestions. Then, all ten hands are evaluated and the fulfilled rule/points for each hand and total are displayed. </p>
+</div>
+<button class="form-btn" type="submit">Go to route</button>
+
 </form>
+</div>
+
+</div>
+<div class="half-width-col">
+
+<div class="wrapper api">
+<form method="post" action="{{ path('api-place-card') }}">
+<h2>/project/api/place-card</h2>
+
+<div class="register-link">
+<p>Pick top card from new, unshuffled deck and place it into new grid. Default is row 1, column 3 (range rows/columns goes from 0 to 4) </p>
+</div>
+<div class="two-col">
+    <div class="input-box">
+    {# <span class="material-symbols-outlined icon">key</span> #}
+    <span class="icon">row</span>
+    <input name="row" type="number" required="required" min="0" max="4" value="1" step="1">
+    </div>
+
+    <div class="input-box">
+    {# <span class="material-symbols-outlined icon">key</span> #}
+    <span class="icon">col</span>
+    <input name="col" type="number" required="required" min="0" max="4" value="3" step="1">
+    </div>
+</div>
+    <button class="form-btn" type="submit">Go to route</button>
+
+</form>
+</div>
+</div>
+</div>
 
 {% endblock %}
