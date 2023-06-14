@@ -470,6 +470,13 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectFormController"/>
       </call>
     </service>
+    <service id="App\Controller\ProjectGameController" class="App\Controller\ProjectGameController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectGameController"/>
+      </call>
+    </service>
     <service id="App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -6304,6 +6311,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectFormController" class="App\Controller\ProjectFormController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectFormController" class="App\Controller\ProjectFormController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectFormController" class="App\Controller\ProjectFormController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectGameController" class="App\Controller\ProjectGameController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectGameController" class="App\Controller\ProjectGameController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectGameController" class="App\Controller\ProjectGameController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6812,7 +6822,7 @@
         <argument key="game" type="service_closure" id="App\Project\ApiResults"/>
       </argument>
     </service>
-    <service id=".service_locator.08fMxh1" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Aa7oP_U" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CardController::deal" type="service_closure" id=".service_locator.WQSKPJO"/>
@@ -6853,6 +6863,7 @@
         <argument key="App\Controller\MainController::report" type="service_closure" id=".service_locator.o.hPovE"/>
         <argument key="App\Controller\ProjectApiController::apiNew" type="service_closure" id=".service_locator.0ngtyR9"/>
         <argument key="App\Controller\ProjectApiController::apiOneRound" type="service_closure" id=".service_locator.csp0YFR"/>
+        <argument key="App\Controller\ProjectApiController::apiRegister" type="service_closure" id=".service_locator.csp0YFR"/>
         <argument key="App\Controller\ProjectApiController::apiResults" type="service_closure" id=".service_locator.0bpx6bF"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -6896,6 +6907,7 @@
         <argument key="App\Controller\MainController:report" type="service_closure" id=".service_locator.o.hPovE"/>
         <argument key="App\Controller\ProjectApiController:apiNew" type="service_closure" id=".service_locator.0ngtyR9"/>
         <argument key="App\Controller\ProjectApiController:apiOneRound" type="service_closure" id=".service_locator.csp0YFR"/>
+        <argument key="App\Controller\ProjectApiController:apiRegister" type="service_closure" id=".service_locator.csp0YFR"/>
         <argument key="App\Controller\ProjectApiController:apiResults" type="service_closure" id=".service_locator.0bpx6bF"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -7516,6 +7528,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectGameController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectGameController"/>
+      <argument>App\Controller\ProjectGameController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
     <service id=".service_locator.jIxfAsi.App\Controller\ProjectMainController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ProjectMainController"/>
       <argument>App\Controller\ProjectMainController</argument>
@@ -7788,12 +7806,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.08fMxh1"/>
+      <argument type="service" id=".service_locator.Aa7oP_U"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.08fMxh1"/>
+      <argument type="service" id=".service_locator.Aa7oP_U"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8738,7 +8756,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.08fMxh1"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Aa7oP_U"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -8766,7 +8784,7 @@
     <service id=".service_locator.4awfFdA" alias=".service_locator.vq74bGk"/>
     <service id=".service_locator.7MDOYEf" alias=".service_locator.0ngtyR9"/>
     <service id=".service_locator.JvlVFSm" alias=".service_locator.0bpx6bF"/>
-    <service id=".service_locator.JWj_Syq" alias=".service_locator.08fMxh1"/>
+    <service id=".service_locator.lnhWGBD" alias=".service_locator.Aa7oP_U"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>

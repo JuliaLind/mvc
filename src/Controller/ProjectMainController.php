@@ -5,7 +5,7 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -18,10 +18,15 @@ use App\Markdown\MdParser;
 class ProjectMainController extends AbstractController
 {
     #[Route("/proj", name: "proj")]
-    public function projLanding(): Response
-    {
+    public function projLanding(
+        SessionInterface $session
+    ): Response {
+        $user = $session->get("user") ?? null;
+        $game = $session->get("game") ?? null;
         $data = [
-            'url' => "proj"
+            'url' => "proj",
+            'user' => $user,
+            'game' => $game
         ];
         return $this->render('proj/index.html.twig', $data);
     }
@@ -42,5 +47,14 @@ class ProjectMainController extends AbstractController
             'url' => "about"
         ];
         return $this->render('proj/api.html.twig', $data);
+    }
+
+    #[Route("/proj/rules", name: "proj-rules")]
+    public function projRules(): Response
+    {
+        $data = [
+            'url' => "proj"
+        ];
+        return $this->render('proj/rules.html.twig', $data);
     }
 }

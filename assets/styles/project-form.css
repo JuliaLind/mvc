@@ -7,6 +7,7 @@
     border: 5px solid #333;
     border-radius: 10px;
     transition: 0.5s;
+    max-width: 100%;
 }
 
 .project .wrapper.login,
@@ -117,12 +118,20 @@
     transition: 0.5s;
 }
 
+.project .wrapper.api button.form-btn {
+    color: var(--form-neon);
+}
 
 .project .wrapper.api:hover button.form-btn,
 .project .login button.form-btn,
 .project .register button.form-btn {
     color: #000;
 }
+
+.project .wrapper.api button.form-btn {
+    box-shadow: 0 0 20px var(--form-neon);
+}
+
 .project .wrapper.api:hover button.form-btn,
 .project .login button.form-btn {
     background: var(--form-neon);

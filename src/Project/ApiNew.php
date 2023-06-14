@@ -7,25 +7,16 @@ use App\ProjectGrid\Grid;
 use App\ProjectGrid\GridGraphic;
 use App\ProjectCard\Card;
 
-
-use Symfony\Component\HttpFoundation\Request;
+// use Symfony\Component\HttpFoundation\Request;
 
 class ApiNew
 {
     /**
      * @return array<mixed>
      */
-    public function oneRound(Request $request, Grid $grid = new Grid(), Deck $deck = new Deck(), GridGraphic $gridGraphic = new GridGraphic()): array
+    public function oneRound(int $row, int $col, Grid $grid = new Grid(), Deck $deck = new Deck(), GridGraphic $gridGraphic = new GridGraphic()): array
     {
         $card = $deck->deal();
-        /**
-         * @var int $row
-         */
-        $row = $request->get('row');
-        /**
-         * @var int $col
-         */
-        $col = $request->get('col');
         $grid->addCard($row, $col, $card);
 
         return [

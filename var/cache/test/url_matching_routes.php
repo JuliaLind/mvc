@@ -36,9 +36,9 @@ return [
         '/report' => [[['_route' => 'report', '_controller' => 'App\\Controller\\MainController::report'], null, null, null, false, false, null]],
         '/lucky' => [[['_route' => 'lucky', '_controller' => 'App\\Controller\\MainController::number'], null, null, null, false, false, null]],
         '/metrics' => [[['_route' => 'metrics', '_controller' => 'App\\Controller\\MainController::metrics'], null, null, null, false, false, null]],
-        '/project/api/game' => [[['_route' => 'api-one-round', '_controller' => 'App\\Controller\\ProjectApiController::apiOneRound'], null, ['POST' => 0], null, false, false, null]],
-        '/project/api/new' => [[['_route' => 'api-new', '_controller' => 'App\\Controller\\ProjectApiController::apiNew'], null, ['POST' => 0], null, false, false, null]],
+        '/project/api/bot-plays' => [[['_route' => 'api-bot-plays', '_controller' => 'App\\Controller\\ProjectApiController::apiOneRound'], null, ['POST' => 0], null, false, false, null]],
         '/project/api/results' => [[['_route' => 'api-results', '_controller' => 'App\\Controller\\ProjectApiController::apiResults'], null, ['POST' => 0], null, false, false, null]],
+        '/project/api/register' => [[['_route' => 'api-register', '_controller' => 'App\\Controller\\ProjectApiController::apiRegister'], null, ['POST' => 0], null, false, false, null]],
         '/proj/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\ProjectAuthController::projRegister'], null, ['POST' => 0], null, false, false, null]],
         '/proj/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\ProjectAuthController::projLogin'], null, ['POST' => 0], null, false, false, null]],
         '/proj/logout' => [[['_route' => 'logout', '_controller' => 'App\\Controller\\ProjectAuthController::projLogout'], null, ['POST' => 0], null, false, false, null]],
@@ -69,6 +69,7 @@ return [
                     .'|delete/([^/]++)(*:250)'
                     .'|update/([^/]++)(*:273)'
                 .')'
+                .'|/project/api/place\\-card/(\\d+)/(\\d+)(*:318)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -81,8 +82,9 @@ return [
         189 => [[['_route' => 'single_book_json', '_controller' => 'App\\Controller\\JsonLibraryController::showABookByIsbn'], ['isbn'], null, null, false, true, null]],
         227 => [[['_route' => 'read_one', '_controller' => 'App\\Controller\\LibraryController::showBookByIsbn'], ['isbn'], null, null, false, true, null]],
         250 => [[['_route' => 'book_delete_by_isbn', '_controller' => 'App\\Controller\\LibraryController::deleteBookByIsbn'], ['isbn'], ['POST' => 0], null, false, true, null]],
-        273 => [
-            [['_route' => 'update_form', '_controller' => 'App\\Controller\\LibraryUpdateBookController::updateBookForm'], ['isbn'], null, null, false, true, null],
+        273 => [[['_route' => 'update_form', '_controller' => 'App\\Controller\\LibraryUpdateBookController::updateBookForm'], ['isbn'], null, null, false, true, null]],
+        318 => [
+            [['_route' => 'api-place-card', '_controller' => 'App\\Controller\\ProjectApiController::apiNew'], ['row', 'col'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

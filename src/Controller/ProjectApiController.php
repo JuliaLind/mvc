@@ -38,14 +38,16 @@ class ProjectApiController extends AbstractController
         return $response;
     }
 
-    #[Route('/project/api/place-card', name: "api-place-card", methods: ['POST'])]
+    #[Route('/project/api/place-card/{row<\d+>}/{col<\d+>}', name: "api-place-card", methods: ['POST'])]
     public function apiNew(
+        int $row,
+        int $col,
         Request $request,
         ApiNew $game = new ApiNew(),
         JsonConverter $converter = new JsonConverter()
     ): Response {
 
-        $data = $game->oneRound($request);
+        $data = $game->oneRound($row, $col);
         $response = $converter->convert(new JsonResponse($data));
         return $response;
     }
@@ -57,6 +59,24 @@ class ProjectApiController extends AbstractController
     ): Response {
 
         $data = $game->results();
+        $response = $converter->convert(new JsonResponse($data));
+        return $response;
+    }
+
+    #[Route('/project/api/register', name: "api-register", methods: ['POST'])]
+    public function apiRegister(
+        Request $request,
+        JsonConverter $converter = new JsonConverter()
+    ): Response {
+        $username = $request->get('username');
+        $password = $request->get('password');
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $data = [
+            'username' => $username,
+            'password' => $password,
+            'hash' => $hash,
+            'password verify' => password_verify($password, $hash)
+        ];
         $response = $converter->convert(new JsonResponse($data));
         return $response;
     }

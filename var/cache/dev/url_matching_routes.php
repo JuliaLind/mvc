@@ -43,15 +43,18 @@ return [
         '/lucky' => [[['_route' => 'lucky', '_controller' => 'App\\Controller\\MainController::number'], null, null, null, false, false, null]],
         '/metrics' => [[['_route' => 'metrics', '_controller' => 'App\\Controller\\MainController::metrics'], null, null, null, false, false, null]],
         '/project/api/bot-plays' => [[['_route' => 'api-bot-plays', '_controller' => 'App\\Controller\\ProjectApiController::apiOneRound'], null, ['POST' => 0], null, false, false, null]],
-        '/project/api/place-card' => [[['_route' => 'api-place-card', '_controller' => 'App\\Controller\\ProjectApiController::apiNew'], null, ['POST' => 0], null, false, false, null]],
         '/project/api/results' => [[['_route' => 'api-results', '_controller' => 'App\\Controller\\ProjectApiController::apiResults'], null, ['POST' => 0], null, false, false, null]],
+        '/project/api/register' => [[['_route' => 'api-register', '_controller' => 'App\\Controller\\ProjectApiController::apiRegister'], null, ['POST' => 0], null, false, false, null]],
         '/proj/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\ProjectAuthController::projRegister'], null, ['POST' => 0], null, false, false, null]],
         '/proj/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\ProjectAuthController::projLogin'], null, ['POST' => 0], null, false, false, null]],
         '/proj/logout' => [[['_route' => 'logout', '_controller' => 'App\\Controller\\ProjectAuthController::projLogout'], null, ['POST' => 0], null, false, false, null]],
         '/proj/register-form' => [[['_route' => 'register-form', '_controller' => 'App\\Controller\\ProjectFormController::projRegisterForm'], null, null, null, false, false, null]],
+        '/proj/play' => [[['_route' => 'proj-play', '_controller' => 'App\\Controller\\ProjectGameController::projPlay'], null, null, null, false, false, null]],
+        '/proj/init' => [[['_route' => 'proj-init', '_controller' => 'App\\Controller\\ProjectGameController::projInit'], null, null, null, false, false, null]],
         '/proj' => [[['_route' => 'proj', '_controller' => 'App\\Controller\\ProjectMainController::projLanding'], null, null, null, false, false, null]],
         '/proj/api' => [[['_route' => 'proj-api', '_controller' => 'App\\Controller\\ProjectMainController::projApiLanding'], null, null, null, false, false, null]],
         '/proj/about' => [[['_route' => 'proj-about', '_controller' => 'App\\Controller\\ProjectMainController::projAbout'], null, null, null, false, false, null]],
+        '/proj/rules' => [[['_route' => 'proj-rules', '_controller' => 'App\\Controller\\ProjectMainController::projRules'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -90,6 +93,7 @@ return [
                     .'|delete/([^/]++)(*:415)'
                     .'|update/([^/]++)(*:438)'
                 .')'
+                .'|/project/api/place\\-card/(\\d+)/(\\d+)(*:483)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -109,8 +113,9 @@ return [
         354 => [[['_route' => 'single_book_json', '_controller' => 'App\\Controller\\JsonLibraryController::showABookByIsbn'], ['isbn'], null, null, false, true, null]],
         392 => [[['_route' => 'read_one', '_controller' => 'App\\Controller\\LibraryController::showBookByIsbn'], ['isbn'], null, null, false, true, null]],
         415 => [[['_route' => 'book_delete_by_isbn', '_controller' => 'App\\Controller\\LibraryController::deleteBookByIsbn'], ['isbn'], ['POST' => 0], null, false, true, null]],
-        438 => [
-            [['_route' => 'update_form', '_controller' => 'App\\Controller\\LibraryUpdateBookController::updateBookForm'], ['isbn'], null, null, false, true, null],
+        438 => [[['_route' => 'update_form', '_controller' => 'App\\Controller\\LibraryUpdateBookController::updateBookForm'], ['isbn'], null, null, false, true, null]],
+        483 => [
+            [['_route' => 'api-place-card', '_controller' => 'App\\Controller\\ProjectApiController::apiNew'], ['row', 'col'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

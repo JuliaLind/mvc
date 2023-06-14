@@ -1,0 +1,31 @@
+{% extends 'base-project.html.twig' %}
+
+{% block title %}Casino{% endblock %}
+
+{% block body %}
+
+<h1 class="title">Rules</h1>
+{{ include('proj/incl/background-image.html.twig') }}
+
+<div class="flex-wrapper-col">
+<a class="close" href="{{ path('read_many') }}">&times;</a>
+
+<div class="half-width-col">
+Take turns against the house to each fill a 5x5 grid. Get points vetically and horizontally. If you get more points than house your points will be converted into coins. Use coins to puchase cheats such as calculated slot-suggestion, move a card, see which cards you will pick and shuffle the remaining cards in deck. 
+</div>
+<div class="half-width-col">
+<table class="points">
+<tr><th>Poker Hand</th><th>Points</th></tr>
+<tr><td>Royal Flush</td><td>100</td></tr>
+<tr><td>Straight Flush</td><td>75</td></tr>
+<tr><td>Four Of A Kind</td><td>50</td></tr>
+<tr><td>Full House</td><td>25</td></tr>
+<tr><td>Flush</td><td>20</td></tr>
+<tr><td>Straight</td><td>15</td></tr>
+<tr><td>Three Of A Kind</td><td>10</td></tr>
+<tr><td>Two Pairs</td><td>5</td></tr>
+<tr><td>One Pair</td><td>2</td></tr>
+</table>
+</div>
+</div>
+{% endblock %}

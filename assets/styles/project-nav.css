@@ -27,6 +27,15 @@
     text-decoration: none;
 }
 
+@media screen and (max-width: 1150px) {
+    .project .desktop-only {
+        display: block !important;
+    }
+    .topnav a:not(:first-child) {
+        display: block;
+    }
+}
+
 
 /* .topnav {
     background-color: #000;

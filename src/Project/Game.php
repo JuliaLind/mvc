@@ -17,6 +17,7 @@ class Game
     private Grid $player;
     private Deck $deck;
     private Card $card;
+    private bool $finished = false;
     // private bool $finished = false;
 
     public function __construct()
@@ -67,7 +68,9 @@ class Game
 
     public function checkIfFinished(): bool
     {
-        return $this->house->getCardCount() === 25;
+        $finished = $this->house->getCardCount() === 25;
+        $this->finished = $finished;
+        return $finished;
     }
 
     /**

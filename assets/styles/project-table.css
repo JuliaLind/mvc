@@ -1,0 +1,23 @@
+.points table {
+    border-collapse: collapse;
+}
+
+.points td + .points td,
+.points th + .points th { 
+    border-left: 1px solid var(--form-neon2); 
+}
+.points tr + .points tr { 
+    border-top: 1px solid var(--form-neon2); 
+}
+
+.points td,
+.points th {
+    padding: 10px;
+}
+
+
+
+.points tr + .points tr > .points td,
+.points tr + .points tr > .points th {
+    border-top: 1px solid var(--form-neon2);
+}

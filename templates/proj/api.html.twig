@@ -10,7 +10,7 @@
 <div class="half-width-col">
 <div class="wrapper api">
 <form method="post" action="{{ path('api-bot-plays') }}">
-<h2>/project/api/bot-plays</h2>
+<h2>[POST] /project/api/bot-plays</h2>
 
 <div class="register-link">
 <p>Top card is picked from a shuffled deck and placed into 5x5 grid based on generated (auto-calculated) suggestion. Grid is saved in session and reset after the grid gets full. Json object displays the picked card, the grid and the suggestion. The suggestion is primarily based on if the picked card combined with the cards in any of the rows and any of the columns together with the cards that will be picked from deck (i.e. in this route not the last 27, in actual game with two opponents it is each other card except for the last two) will result in possible rule scoring. If a rule is possible to score in row but not in a column of that row the card is placed in the last empty slot of the row, and vice versa if rule is possible in a column but not in a row of the column. Rules are checked one by one in all 10 hands ranging from the rule that generates highest points to the rule that generates the lowest. If no rule is possible to achive with the card in any column or row the card is placed in first empty slot.</p>
@@ -22,7 +22,7 @@
 
 <div class="wrapper api">
 <form method="post" action="{{ path('api-results') }}">
-<h2>/project/api/results</h2>
+<h2>[POST] /project/api/results</h2>
 
 <div class="register-link">
 <p>The grid is filled completely based on automatically calculated suggestions. Then, all ten hands are evaluated and the fulfilled rule/points for each hand and total are displayed. </p>
@@ -36,29 +36,52 @@
 <div class="half-width-col">
 
 <div class="wrapper api">
-<form method="post" action="{{ path('api-place-card') }}">
-<h2>/project/api/place-card</h2>
+<form id="grid-form" method="post" action="">
+<h2>[POST] /project/api/place-card/row/col</h2>
 
 <div class="register-link">
-<p>Pick top card from new, unshuffled deck and place it into new grid. Default is row 1, column 3 (range rows/columns goes from 0 to 4) </p>
+<p>Pick top card from new, unshuffled deck and place it into empty grid. Click on one of the slots and the api route will displa ythe updated grid with the card in it. </p>
 </div>
-<div class="two-col">
+<div class="game-grid">
+    {% for i in 0..4 %}
+        {% for j in 0..4 %}
+                <button class="slot player-slot grid-row{{i}} grid-col-{{j}}" type="submit" onClick="this.form.action='{{ path('api-place-card', {row: i, col: j}) }}';">r:{{i}}, c:{{j}}</button>
+                {# <input class="slot player-slot grid-row{{i}} grid-col-{{j}}" value="r:{{i}}, c:{{j}}" type="submit" onClick="this.form.action='{{ path('api-place-card', {row: i, col: j}) }}';"> #}
+        {% endfor %}
+    {% endfor %}
+</div>
+</form>
+</div>
+
+<div class="wrapper api">
+<form method="post" action="{{ path('api-register') }}">
+
+<h2>[POST] /project/api/register</h2>
+
+    <div class="register-link">
+    <p>Registers user and displays the user details returned from the database. Does not login the user directly though, as opposed to the actual register route.</p>
+    </div>
+    <div class="field-box">
     <div class="input-box">
-    {# <span class="material-symbols-outlined icon">key</span> #}
-    <span class="icon">row</span>
-    <input name="row" type="number" required="required" min="0" max="4" value="1" step="1">
+    <span class="material-symbols-outlined icon">person</span>
+    <input name="username" type="text" required="required" minlength="1" maxlength="100" placeholder="Username">
     </div>
 
     <div class="input-box">
-    {# <span class="material-symbols-outlined icon">key</span> #}
-    <span class="icon">col</span>
-    <input name="col" type="number" required="required" min="0" max="4" value="3" step="1">
+    <span class="material-symbols-outlined icon">key</span>
+    <input name="password" type="password" required="required" minlength="1" maxlength="100" placeholder="Password">
     </div>
-</div>
-    <button class="form-btn" type="submit">Go to route</button>
+
+    {# <div class="input-box">
+    <span class="material-symbols-outlined icon">key</span>
+    <input name="password2" type="password" required="required" minlength="1" maxlength="100" placeholder="Repeat password">
+    </div> #}
+    </div>
+    <button class="form-btn" type="submit">Register</button>
 
 </form>
 </div>
+
 </div>
 </div>
 
