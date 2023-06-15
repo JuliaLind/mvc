@@ -57,7 +57,6 @@ class ProjectApiController extends AbstractController
         ApiResults $game = new ApiResults(),
         JsonConverter $converter = new JsonConverter()
     ): Response {
-
         $data = $game->results();
         $response = $converter->convert(new JsonResponse($data));
         return $response;

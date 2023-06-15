@@ -2,8 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\Card;
-
 require __DIR__ . "/../../vendor/autoload.php";
 
 
@@ -14,12 +12,12 @@ trait StraightStatTrait
      */
     abstract protected function minRankLimits(): array;
     /**
-     * @param array<Card> $cards
+     * @param array<string> $cards
      */
     abstract protected function checkForCards($cards, int $minRank): bool;
 
     /**
-     * @param array<Card> $cards
+     * @param array<string> $cards
      */
     protected function checkAllPossible($cards): bool
     {

@@ -2,12 +2,10 @@
 
 namespace App\ProjectGrid;
 
-use App\ProjectCard\Card;
-
 class EmptyCellFinder
 {
     /**
-     * @param array<Card> $row
+     * @param array<string> $row
      * @return array<array<int,int>>
      */
     public function single(array $row, int $rowNr, bool $notEmpty): array
@@ -22,7 +20,7 @@ class EmptyCellFinder
     }
 
     /**
-     * @param array<array<Card>> $rows
+     * @param array<array<string>> $rows
      * @return array<array<int,int>> [row][col]
      */
     public function all($rows): array

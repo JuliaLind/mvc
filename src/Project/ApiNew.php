@@ -5,9 +5,6 @@ namespace App\Project;
 use App\ProjectCard\Deck;
 use App\ProjectGrid\Grid;
 use App\ProjectGrid\GridGraphic;
-use App\ProjectCard\Card;
-
-// use Symfony\Component\HttpFoundation\Request;
 
 class ApiNew
 {
@@ -20,9 +17,9 @@ class ApiNew
         $grid->addCard($row, $col, $card);
 
         return [
-            "placement" => "You placed card '{$card->name()}' on row {$row} column {$col}",
+            "placement" => "You placed card '{$card}' on row {$row} column {$col}",
             "grid" => $gridGraphic->graphic($grid->getCards()),
-            "remaining cards" => $deck->getAsStringArr()
+            "remaining cards" => $deck->getCards()
         ];
     }
 }

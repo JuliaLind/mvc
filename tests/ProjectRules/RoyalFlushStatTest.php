@@ -3,7 +3,6 @@
 namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
 
 /**
  * Test cases for class Royal Flush Stat.
@@ -12,10 +11,9 @@ class RoyalFlushStatTest extends TestCase
 {
     public function testCheckNotOk(): void
     {
-        $hand = [new Card(10, 'D'), new Card(11, 'D'), new Card(12, 'D'), new Card(13, 'D')];
-
-        $card = new Card(14, 'C');
-        $deck = [new Card(14, 'D')];
+        $hand = ["10D", "11D", "12D", "13D"];
+        $card = "14C";
+        $deck = ["14D"];
 
         $rule = new RoyalFlushStat();
         $res = $rule->check($hand, $deck, $card);
@@ -25,10 +23,9 @@ class RoyalFlushStatTest extends TestCase
 
     public function testCheckOk(): void
     {
-        $hand = [new Card(10, 'D'), new Card(11, 'D'), new Card(12, 'D'), new Card(13, 'D')];
-
-        $card = new Card(14, 'D');
-        $deck = [new Card(11, 'C')];
+        $hand = ["10D", "11D", "12D", "13D"];
+        $card = "14D";
+        $deck = ["11C"];
 
         $rule = new RoyalFlushStat();
         $res = $rule->check($hand, $deck, $card);
@@ -37,10 +34,9 @@ class RoyalFlushStatTest extends TestCase
 
     public function testCheckNotOk2(): void
     {
-        $hand = [new Card(10, 'D'), new Card(12, 'D'), new Card(13, 'D')];
-
-        $card = new Card(14, 'D');
-        $deck = [new Card(11, 'C')];
+        $hand = ["10D", "12D", "13D"];
+        $card = "14D";
+        $deck = ["11C"];
 
         $rule = new RoyalFlushStat();
         $res = $rule->check($hand, $deck, $card);
@@ -49,10 +45,9 @@ class RoyalFlushStatTest extends TestCase
 
     public function testCheckOk2(): void
     {
-        $hand = [new Card(10, 'D'), new Card(12, 'D'), new Card(13, 'D')];
-
-        $card = new Card(14, 'D');
-        $deck = [new Card(11, 'D')];
+        $hand = ["10D", "12D", "13D"];
+        $card = "14D";
+        $deck = ["11D"];
 
         $rule = new RoyalFlushStat();
         $res = $rule->check($hand, $deck, $card);

@@ -447,6 +447,13 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectFormController"/>
       </call>
     </service>
+    <service id="App\Controller\ProjectGameController" class="App\Controller\ProjectGameController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectGameController"/>
+      </call>
+    </service>
     <service id="App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -514,19 +521,18 @@
     <service id="App\Project\ApiNew" class="App\Project\ApiNew" autowire="true" autoconfigure="true"/>
     <service id="App\Project\ApiResults" class="App\Project\ApiResults" autowire="true" autoconfigure="true"/>
     <service id="App\Project\Game" class="App\Project\Game" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectCard\Card" class="App\ProjectCard\Card" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\CardCounter" class="App\ProjectCard\CardCounter" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\CardFactory" class="App\ProjectCard\CardFactory" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\CardSearcher" class="App\ProjectCard\CardSearcher" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\Deck" class="App\ProjectCard\Deck" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectCard\CardFactory"/>
     </service>
-    <service id="App\ProjectExceptions\NoCardsException" class="App\ProjectExceptions\NoCardsException" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectExceptions\PokerSquareException" class="App\ProjectExceptions\PokerSquareException" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectCard\NoCardsException" class="App\ProjectCard\NoCardsException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\EmptyCellFinder" class="App\ProjectGrid\EmptyCellFinder" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\Grid" class="App\ProjectGrid\Grid" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\GridCols" class="App\ProjectGrid\GridCols" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\GridGraphic" class="App\ProjectGrid\GridGraphic" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectGrid\SlotNotEmptyException" class="App\ProjectGrid\SlotNotEmptyException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\Flush" class="App\ProjectRules\Flush" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectCard\CardCounter"/>
     </service>
@@ -1728,12 +1734,12 @@
         <argument key="App\ProjectCard\CardFactory" type="service_closure" id="App\ProjectCard\CardFactory" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectCard\CardSearcher" type="service_closure" id="App\ProjectCard\CardSearcher" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectCard\Deck" type="service_closure" id="App\ProjectCard\Deck" on-invalid="ignore_uninitialized"/>
-        <argument key="App\ProjectExceptions\NoCardsException" type="service_closure" id="App\ProjectExceptions\NoCardsException" on-invalid="ignore_uninitialized"/>
-        <argument key="App\ProjectExceptions\PokerSquareException" type="service_closure" id="App\ProjectExceptions\PokerSquareException" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectCard\NoCardsException" type="service_closure" id="App\ProjectCard\NoCardsException" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\EmptyCellFinder" type="service_closure" id="App\ProjectGrid\EmptyCellFinder" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\Grid" type="service_closure" id="App\ProjectGrid\Grid" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\GridCols" type="service_closure" id="App\ProjectGrid\GridCols" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\GridGraphic" type="service_closure" id="App\ProjectGrid\GridGraphic" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectGrid\SlotNotEmptyException" type="service_closure" id="App\ProjectGrid\SlotNotEmptyException" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\Flush" type="service_closure" id="App\ProjectRules\Flush" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\FlushStat" type="service_closure" id="App\ProjectRules\FlushStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\FullHouse" type="service_closure" id="App\ProjectRules\FullHouse" on-invalid="ignore_uninitialized"/>
@@ -6909,6 +6915,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectFormController" class="App\Controller\ProjectFormController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectFormController" class="App\Controller\ProjectFormController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectFormController" class="App\Controller\ProjectFormController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectGameController" class="App\Controller\ProjectGameController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectGameController" class="App\Controller\ProjectGameController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectGameController" class="App\Controller\ProjectGameController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7686,6 +7695,12 @@
     <service id=".service_locator.jIxfAsi.App\Controller\ProjectFormController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ProjectFormController"/>
       <argument>App\Controller\ProjectFormController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectGameController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectGameController"/>
+      <argument>App\Controller\ProjectGameController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>

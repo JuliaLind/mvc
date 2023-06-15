@@ -2,7 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\Card;
 use App\ProjectCard\EmptyCellFinder;
 
 /**
@@ -83,7 +82,7 @@ class Rules
     }
 
     /**
-     * @param array<Card> $hand
+     * @param array<string> $hand
      * @return array<string,string|int>
      */
     public function checkHandForWin($hand): array

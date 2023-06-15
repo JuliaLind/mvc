@@ -2,7 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\Card;
 use App\ProjectCard\EmptyCellFinder;
 
 /**
@@ -75,12 +74,12 @@ class RuleStats
 
     /**
      * @param int $ruleNr
-     * @param array<array<Card>> $rows
-     * @param array<Card> $deck
+     * @param array<array<string>> $rows
+     * @param array<string> $deck
      */
-    public function checkSingle($rows, int $rowNr, $deck, Card $card, $ruleNr): bool
+    public function checkSingle($rows, int $rowNr, $deck, string $card, $ruleNr): bool
     {
-        if (array_key_exists($rowNr, $rows)) {
+        if (array_key_exists($rowNr, $rows) && count($rows[$rowNr]) < 5) {
             $hand = $rows[$rowNr];
             $rules = $this->rules;
             $rule = $rules[$ruleNr];

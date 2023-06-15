@@ -4,7 +4,6 @@ namespace App\ProjectRules;
 
 use App\ProjectCard\CardCounter;
 use App\ProjectCard\CardSearcher;
-use App\ProjectCard\Card;
 
 require __DIR__ . "/../../vendor/autoload.php";
 

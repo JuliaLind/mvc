@@ -3,7 +3,7 @@
 namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
+
 use App\ProjectGrid\Grid;
 
 class RuleStatsTest extends TestCase
@@ -36,13 +36,13 @@ class RuleStatsTest extends TestCase
         ];
         $hand = [];
         $deck = [];
-        for ($i = 0; $i < 3; $i++) {
-            array_push($hand, $this->createMock(Card::class));
+        for ($i = 2; $i < 5; $i++) {
+            array_push($hand, strval($i)."H");
         }
         $rows = [
             2 => $hand
         ];
-        $card = $this->createMock(Card::class);
+        $card = "11D";
         $possible->expects($this->once())->method('check')->with($hand, $deck, $card);
         $rules->setRules($allRules);
         $rules->checkSingle($rows, 2, $deck, $card, 0);

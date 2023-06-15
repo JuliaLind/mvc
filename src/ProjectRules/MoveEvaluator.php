@@ -2,7 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\Card;
 use App\ProjectCard\Deck;
 use App\ProjectGrid\EmptyCellFinder;
 
@@ -15,9 +14,9 @@ class MoveEvaluator
     private EmptyCellFinder $finder;
     private string $rowRuleName = "";
     private string $colRuleName = "";
-    private Card $card;
+    private string $card;
     /**
-     * @var array<Card> $deck
+     * @var array<string> $deck
      */
     private array $deck;
     private int $rowNr = -1;
@@ -35,10 +34,10 @@ class MoveEvaluator
     }
 
     /**
-     * @param array<array<Card>> $rows
-     * @param array<array<Card>> $cols
+     * @param array<array<string>> $rows
+     * @param array<array<string>> $cols
      */
-    protected function setSlot(int $index, int $ruleNr, array $rows, array $cols): bool
+    protected function setSlot(int $rowNr, int $ruleNr, array $rows, array $cols): bool
     {
         $finder = $this->finder;
 
@@ -52,15 +51,15 @@ class MoveEvaluator
         $allRules = $rules->getRules();
         $rule = $allRules[$ruleNr];
 
-        if($rules->checkSingle($rows, $index, $deck, $card, $ruleNr)) {
-            $this->rowNr = $index;
+        if($rules->checkSingle($rows, $rowNr, $deck, $card, $ruleNr)) {
+            $this->rowNr = $rowNr;
             /**
              * @var string $name
              */
             $name = $rule['name'];
             $this->rowRuleName = $name;
 
-            $emptyCells = $finder->single($rows[$index], $index, true);
+            $emptyCells = $finder->single($rows[$rowNr], $rowNr, true);
 
             $ruleCount = count($allRules);
 
@@ -84,8 +83,8 @@ class MoveEvaluator
     }
 
     /**
-     * @param array<array<Card>> $rows
-     * @param array<array<Card>> $cols
+     * @param array<array<string>> $rows
+     * @param array<array<string>> $cols
      */
     protected function checkRowColForRule(int $index, int $ruleNr, $rows, $cols): bool
     {
@@ -109,19 +108,19 @@ class MoveEvaluator
     }
 
     /**
-     * @param array<string,array<array<Card>>> $rowsAndCols
-     * @param array<Card> $deck
+     * @param array<string,array<array<string>>> $rowsAndCols
+     * @param array<string> $deck
      * @return array<string,string|array<int>>
      */
-    public function suggestion(array $rowsAndCols, Card $card, array $deck): array
+    public function suggestion(array $rowsAndCols, string $card, array $deck): array
     {
         $ruleCount = 9;
         /**
-         * @var array<array<Card>> $rows
+         * @var array<array<string>> $rows
          */
         $rows = $rowsAndCols['rows'];
         /**
-         * @var array<array<Card>> $cols
+         * @var array<array<string>> $cols
          */
         $cols = $rowsAndCols['cols'];
         $this->card = $card;

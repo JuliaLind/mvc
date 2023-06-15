@@ -553,6 +553,7 @@
     </service>
     <service id="App\ProjectExceptions\NoCardsException" class="App\ProjectExceptions\NoCardsException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectExceptions\PokerSquareException" class="App\ProjectExceptions\PokerSquareException" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectExceptions\SlotNotEmptyException" class="App\ProjectExceptions\SlotNotEmptyException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\EmptyCellFinder" class="App\ProjectGrid\EmptyCellFinder" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\Grid" class="App\ProjectGrid\Grid" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\GridCols" class="App\ProjectGrid\GridCols" autowire="true" autoconfigure="true"/>

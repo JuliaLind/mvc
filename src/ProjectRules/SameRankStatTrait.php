@@ -4,7 +4,6 @@ namespace App\ProjectRules;
 
 use App\ProjectCard\CardCounter;
 use App\ProjectCard\CardSearcher;
-use App\ProjectCard\Card;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
@@ -22,9 +21,10 @@ trait SameRankStatTrait
     protected int $rank;
 
     /**
-     * @var array<Card> $hand
+     * @var array<string> $hand
      */
     protected array $hand;
+
     /**
      * @var array<int,int> $ranksHand
      */
@@ -32,14 +32,14 @@ trait SameRankStatTrait
 
     abstract protected function checkCountRanks(): bool;
 
+
     /**
-     * @param array<Card> $hand
-     * @param array<Card> $deck
-     * @param Card $card
+     * @param array<string> $hand
+     * @param array<string> $deck
      * @return bool true if rule is still possible given passed value
      * otherwise false
      */
-    public function check(array $hand, array $deck, Card $card): bool
+    public function check(array $hand, array $deck, string $card): bool
     {
         $uniqueCountHand = $this->cardCounter->count($hand);
 
@@ -49,11 +49,11 @@ trait SameRankStatTrait
         $ranksHand = $uniqueCountHand['ranks'];
         $this->ranksHand = $ranksHand;
         $this->hand = $hand;
-        $rank = $card->getRank();
+        $rank = intval(substr($card, 0, -1));
         $this->rank = $rank;
 
         /**
-         * @var array<Card> $allCards
+         * @var array<string> $allCards
          */
         $allCards = array_merge([...$hand, $card], $deck);
 

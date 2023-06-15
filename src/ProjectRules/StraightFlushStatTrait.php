@@ -6,7 +6,6 @@
 namespace App\ProjectRules;
 
 use App\ProjectCard\CardCounter;
-use App\ProjectCard\Card;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
@@ -19,7 +18,7 @@ trait StraightFlushStatTrait
     protected string $suit;
 
     /**
-     * @param array<Card> $cards
+     * @param array<string> $cards
      */
     protected function checkForCards($cards, int $minRank): bool
     {

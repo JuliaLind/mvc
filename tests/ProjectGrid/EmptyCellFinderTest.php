@@ -3,25 +3,24 @@
 namespace App\ProjectGrid;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
 
 class EmptyCellFinderTest extends TestCase
 {
     /**
-     * @var array<array<Card>> $rows
+     * @var array<array<string>> $rows
      */
     protected array $rows;
 
     protected function setUp(): void
     {
-        $card1 = new Card(2, "H");
-        $card2 = new Card(14, "S");
-        $card3 = new Card(2, "S");
-        $card4 = new Card(4, "C");
-        $card5 = new Card(5, "D");
-        $card6 = new Card(13, "C");
-        $card7 = new Card(13, "D");
-        $card8 = new Card(13, "H");
+        $card1 = "2H";
+        $card2 = "14S";
+        $card3 = "2S";
+        $card4 = "4C";
+        $card5 = "5D";
+        $card6 = "13C";
+        $card7 = "13D";
+        $card8 = "13H";
         $row0 = [
             0 => $card1,
             1 => $card2,
@@ -63,18 +62,7 @@ class EmptyCellFinderTest extends TestCase
         $rows = $this->rows;
         $res = $finder->all($rows);
 
-        // // $row0 = [3];
-        // // $row1 = [0, 2, 4];
-        // // $row2 = [0, 1, 2, 4];
-        // // $row3 = [0, 1, 2, 3, 4];
-        // // $row4 = [1, 2, 3, 4];
-
         $exp = [
-            // ['row' => 0, 'col' => 3],
-            // ['row' => 1, 'col' => 0], ['row' => 1, 'col' => 2], ['row' => 1, 'col' => 4],
-            // ['row' => 2, 'col' => 0], ['row' => 2, 'col' => 1], ['row' => 2, 'col' => 2], ['row' => 2, 'col' => 4],
-            // ['row' => 3, 'col' => 0], ['row' => 3, 'col' => 1], ['row' => 3, 'col' => 2], ['row' => 3, 'col' => 3], ['row' => 3, 'col' => 4],
-            // ['row' => 4, 'col' => 1], ['row' => 4, 'col' => 2], ['row' => 4, 'col' => 3], ['row' => 4, 'col' => 4]
             [0, 3],
             [1, 0], [1, 2], [1, 4],
             [2, 0], [2, 1], [2, 2], [2, 4],

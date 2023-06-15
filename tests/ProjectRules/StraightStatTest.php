@@ -3,19 +3,14 @@
 namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
 
-/**
- * Test cases for class Royal Flush Stat.
- */
 class StraightStatTest extends TestCase
 {
     public function testCheckOk3(): void
     {
-        $hand = [new Card(9, 'D'), new Card(10, 'D'), new Card(11, 'D'), new Card(13, 'D')];
-
-        $card = new Card(12, 'D');
-        $deck = [new Card(8, 'C')];
+        $hand = ["9D", "10D", "11D", "13D"];
+        $card = "12D";
+        $deck = ["8C"];
 
         $rule = new StraightStat();
         $res = $rule->check($hand, $deck, $card);
@@ -24,10 +19,9 @@ class StraightStatTest extends TestCase
 
     public function testCheckOk4(): void
     {
-        $hand = [new Card(10, 'D'), new Card(11, 'D'), new Card(13, 'D')];
-
-        $card = new Card(9, 'C');
-        $deck = [new Card(8, 'C'), new Card(12, 'D')];
+        $hand = ["10D", "11D", "13D"];
+        $card = "9C";
+        $deck = ["8C", "12D"];
 
         $rule = new StraightStat();
         $res = $rule->check($hand, $deck, $card);
@@ -37,10 +31,9 @@ class StraightStatTest extends TestCase
 
     public function testCheckNotOk5(): void
     {
-        $hand = [new Card(10, 'D'), new Card(11, 'D'), new Card(13, 'D'), new Card(6, 'D')];
-
-        $card = new Card(9, 'C');
-        $deck = [new Card(8, 'C'), new Card(12, 'D')];
+        $hand = ["10D", "11D", "13D", "6D"];
+        $card = "9C";
+        $deck = ["8C", "12D"];
 
         $rule = new StraightStat();
         $res = $rule->check($hand, $deck, $card);
@@ -50,10 +43,9 @@ class StraightStatTest extends TestCase
 
     public function testCheckOk(): void
     {
-        $hand = [new Card(10, 'D'), new Card(11, 'D'), new Card(12, 'D'), new Card(13, 'D')];
-
-        $card = new Card(9, 'C');
-        $deck = [new Card(9, 'D')];
+        $hand = ["10D", "11D", "12D", "13D"];
+        $card = "9C";
+        $deck = ["9D"];
 
         $rule = new StraightStat();
         $res = $rule->check($hand, $deck, $card);
@@ -62,10 +54,9 @@ class StraightStatTest extends TestCase
 
     public function testCheckNotOk2(): void
     {
-        $hand = [new Card(10, 'D'), new Card(12, 'D'), new Card(13, 'D')];
-
-        $card = new Card(9, 'D');
-        $deck = [new Card(8, 'C')];
+        $hand = ["10D", "12D", "13D"];
+        $card = "9D";
+        $deck = ["8C"];
 
         $rule = new StraightStat();
         $res = $rule->check($hand, $deck, $card);

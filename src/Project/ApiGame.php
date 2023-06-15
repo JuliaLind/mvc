@@ -4,7 +4,6 @@ namespace App\Project;
 
 use App\ProjectCard\Deck;
 use App\ProjectGrid\Grid;
-use App\ProjectCard\Card;
 use App\ProjectGrid\GridGraphic;
 use App\ProjectRules\MoveEvaluator;
 
@@ -54,10 +53,10 @@ class ApiGame
         $this->player->addCard($slot[0], $slot[1], $card);
 
         $data = [
-            "picked card" => $card->name(),
+            "picked card" => $card,
             "suggestion" => $suggestion,
             "grid" => $gridGraphic->graphic($this->player->getCards()),
-            "remaining cards" => $this->deck->getAsStringArr()
+            "remaining cards" => $this->deck->getCards()
         ];
         $data['suggestion']['slot'] = [
             'row' => $slot[0],

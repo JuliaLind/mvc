@@ -3,17 +3,15 @@
 namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
 
 class OnePairStatTest extends TestCase
 {
     public function testCheckOk(): void
     {
         $rule = new SameOfAKindStat(2);
-        $hand = [new Card(4, 'D'), new Card(2, 'C'), new Card(8, 'D')];
-
-        $deck = [new Card(2, 'D')];
-        $card = new Card(4, 'H');
+        $hand = ["4D", "2C", "8D"];
+        $deck = ["2D"];
+        $card = "4H";
         $res = $rule->check($hand, $deck, $card);
         $this->assertTrue($res);
     }
@@ -21,10 +19,9 @@ class OnePairStatTest extends TestCase
     public function testCheckNotOk(): void
     {
         $rule = new SameOfAKindStat(2);
-        $hand = [new Card(4, 'D'), new Card(2, 'C'), new Card(8, 'D')];
-
-        $deck = [new Card(9, 'D'), new Card(4, 'H')];
-        $card = new Card(9, 'H');
+        $hand = ["4D", "2C", "8D"];
+        $deck = ["9D", "4H"];
+        $card = "9H";
         $res = $rule->check($hand, $deck, $card);
         $this->assertFalse($res);
     }

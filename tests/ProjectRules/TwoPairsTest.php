@@ -3,14 +3,12 @@
 namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
 
 class TwoPairsTest extends TestCase
 {
     public function testCheckOk(): void
     {
-        $hand = [new Card(4, 'D'), new Card(4, 'H'), new Card(5, 'D'), new Card(5, 'H')];
-
+        $hand = ["4D", "4H", "5D", "5H"];
         $rule = new TwoPairs();
         $res = $rule->check($hand);
         $this->assertTrue($res);
@@ -18,7 +16,7 @@ class TwoPairsTest extends TestCase
 
     public function testCheckNotOk(): void
     {
-        $hand = [new Card(4, 'D'), new Card(4, 'C'), new Card(4, 'H')];
+        $hand = ["4D", "4C", "4H"];
 
         $rule = new TwoPairs();
         $res = $rule->check($hand);

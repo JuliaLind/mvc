@@ -3,14 +3,12 @@
 namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
 
 class FullHouseTest extends TestCase
 {
     public function testCheckOk(): void
     {
-        $hand = [new Card(4, 'D'), new Card(4, 'H'), new Card(5, 'D'), new Card(4, 'C'), new Card(5, 'H')];
-
+        $hand = ["4D", "4H", "5D", "4C", "5H"];
         $rule = new FullHouse();
         $res = $rule->check($hand);
         $this->assertTrue($res);
@@ -18,8 +16,7 @@ class FullHouseTest extends TestCase
 
     public function testCheckNotOk(): void
     {
-        $hand = [new Card(4, 'D'), new Card(4, 'D'), new Card(4, 'C'), new Card(4, 'H'), new Card(5, 'H')];
-
+        $hand = ["4D", "8D", "4C", "4H", "5H"];
         $rule = new FullHouse();
         $res = $rule->check($hand);
         $this->assertFalse($res);
@@ -27,7 +24,7 @@ class FullHouseTest extends TestCase
 
     public function testCheckNotOk2(): void
     {
-        $hand = [new Card(5, 'D'), new Card(4, 'C'), new Card(4, 'H'), new Card(5, 'H')];
+        $hand = ["5D", "4C", "4H", "5H"];
 
         $rule = new FullHouse();
         $res = $rule->check($hand);
@@ -36,7 +33,7 @@ class FullHouseTest extends TestCase
 
     public function testCheckNotOk3(): void
     {
-        $hand = [new Card(5, 'D'), new Card(4, 'C'), new Card(4, 'H'), new Card(3, 'H'), new Card(5, 'H')];
+        $hand = ["5D", "4C", "4H", "3H", "5H"];
 
         $rule = new FullHouse();
         $res = $rule->check($hand);

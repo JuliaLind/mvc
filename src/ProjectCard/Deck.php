@@ -2,7 +2,6 @@
 
 namespace App\ProjectCard;
 
-use App\ProjectExceptions\NoCardsException;
 
 /**
  * Class representing a deck of cards
@@ -10,7 +9,7 @@ use App\ProjectExceptions\NoCardsException;
 class Deck
 {
     /**
-     * @var array<Card>
+     * @var array<string>
      */
     private array $cards = [];
 
@@ -24,17 +23,20 @@ class Deck
         shuffle($this->cards);
     }
 
-    public function deal(): Card
+    public function deal(): string
     {
+        /**
+         * @var string $card
+         */
         $card = array_pop($this->cards);
-        if ($card === null) {
+        if ($card == null) {
             throw new NoCardsException();
         }
         return $card;
     }
 
     /**
-     * @return array<Card>
+     * @return array<string>
      */
     public function getCards(): array
     {
@@ -44,34 +46,16 @@ class Deck
     /**
      * @return array<string>
      */
-    public function getAsStringArr(): array
-    {
-        $cards = [];
-        foreach($this->cards as $card) {
-            array_push($cards, $card->name());
-        }
-        return $cards;
-    }
-
-    // public function peek(): Card
-    // {
-    //     $cards = $this->cards;
-    //     return $cards[count($cards)-1];
-    // }
-
-    /**
-     * @return array<Card>
-     */
     public function possibleCards(): array
     {
         $cards = [];
         $deck = $this->cards;
         $count = count($deck);
 
-        // the first two cards in deck will not be picked by bank or by playerS
-        for ($i = 2; $i < $count; $i++) {
-            if ($i % 2 === 1) {
-                array_push($cards, $deck[$i]);
+        // the first two cards in deck will not be picked by bank or by player
+        for ($index = 2; $index < $count; $index++) {
+            if ($index % 2 === 1) {
+                array_push($cards, $deck[$index]);
             }
         }
         return $cards;

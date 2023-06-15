@@ -3,7 +3,6 @@
 namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
 use App\ProjectGrid\Grid;
 
 class RulesTest extends TestCase
@@ -13,26 +12,16 @@ class RulesTest extends TestCase
         $rules = new Rules();
 
         $hands= [
-            [new Card(14, 'D'), new Card(14, 'C'), new Card(14, 'S'), new Card(5, 'C'), new Card(10, 'H')],
-            [new Card(10, 'D'), new Card(8, 'C'), new Card(8, 'D'), new Card(5, 'D'), new Card(6, 'H')],
-            [new Card(12, 'D'), new Card(3, 'C'), new Card(2, 'C'), new Card(5, 'S'), new Card(7, 'H')],
-            [new Card(13, 'D'), new Card(4, 'C'), new Card(9, 'C'), new Card(5, 'H'), new Card(8, 'H')],
-            [new Card(11, 'D'), new Card(7, 'C'), new Card(10, 'H'), new Card(8, 'S'), new Card(9, 'H')],
-            [
-                new Card(14, 'D'), new Card(10, 'D'), new Card(12, 'D'), new Card(13, 'D'), new Card(11, 'D')
-            ],
-            [
-                new Card(14, 'C'), new Card(8, 'C'), new Card(3, 'C'), new Card(4, 'C'), new Card(7, 'C')
-            ],
-            [
-                new Card(14, 'S'), new Card(8, 'D'), new Card(2, 'C'), new Card(9, 'C'), new Card(10, 'H')
-            ],
-            [
-                new Card(5, 'C'), new Card(5, 'D'), new Card(5, 'S'), new Card(5, 'H'), new Card(8, 'S')
-            ],
-            [
-                new Card(10, 'H'), new Card(6, 'H'), new Card(7, 'H'), new Card(8, 'H'), new Card(9, 'H')
-            ],
+            ["14D", "14C", "14S", "5C", "10H"],
+            ["10D", "8C", "8D", "5D", "6H"],
+            ["12D", "3C", "2C", "5S", "7H"],
+            ["13D", "4C", "9C", "5H", "8H"],
+            ["11D", "7C", "10H", "8S", "9H"],
+            [ "14D", "10D", "12D", "13D", "11D"],
+            ["14C", "8C", "3C", "4C", "7C"],
+            ["14S", "8D", "2C", "9C", "10H"],
+            ["5C", "5D", "5S", "5H", "8S"],
+            ["10H", "6H", "7H", "8H", "9H"],
         ];
 
 

@@ -5,7 +5,6 @@ namespace App\Project;
 use App\ProjectCard\Deck;
 use App\ProjectGrid\Grid;
 use App\ProjectGrid\GridGraphic;
-use App\ProjectCard\Card;
 use App\ProjectRules\WinEvaluator;
 use App\ProjectRules\MoveEvaluator;
 
@@ -41,7 +40,7 @@ class ApiResults
         return [
             "results" => $results,
             "grid" => $gridGraphic->graphic($grid->getCards()),
-            "remaining cards" => $deck->getAsStringArr()
+            "remaining cards" => $deck->getCards()
         ];
     }
 }

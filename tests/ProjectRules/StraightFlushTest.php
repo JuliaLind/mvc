@@ -3,7 +3,6 @@
 namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
 
 class StraightFlushTest extends TestCase
 {
@@ -11,7 +10,7 @@ class StraightFlushTest extends TestCase
     {
         $hand = [];
         for ($rank = 2; $rank <= 6; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
         shuffle($hand);
         $rule = new Straight(1);
@@ -23,7 +22,7 @@ class StraightFlushTest extends TestCase
     {
         $hand = [];
         for ($rank = 2; $rank <= 5; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
         shuffle($hand);
         $rule = new Straight(1);
@@ -35,10 +34,10 @@ class StraightFlushTest extends TestCase
     {
         $hand = [];
         for ($rank = 6; $rank <= 8; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
         for ($rank = 9; $rank <= 10; $rank++) {
-            array_push($hand, new Card($rank, "S"));
+            array_push($hand, strval($rank)."S");
         }
 
         shuffle($hand);
@@ -51,7 +50,7 @@ class StraightFlushTest extends TestCase
     {
         $hand = [];
         for ($rank = 2; $rank <= 7; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
         unset($hand[3]);
         shuffle($hand);
@@ -64,9 +63,9 @@ class StraightFlushTest extends TestCase
     {
         $hand = [];
         for ($rank = 10; $rank <= 14; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
-        $hand[2] = new Card(5, "D");
+        $hand[2] = "5D";
         shuffle($hand);
         $rule = new Straight(1);
         $res = $rule->check($hand);

@@ -3,7 +3,7 @@
 namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
+
 use App\ProjectCard\CardCounter;
 
 class RankLimitsTraitTest extends TestCase

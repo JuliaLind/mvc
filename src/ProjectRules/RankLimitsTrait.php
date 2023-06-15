@@ -3,7 +3,6 @@
 namespace App\ProjectRules;
 
 use App\ProjectCard\CardCounter;
-use App\ProjectCard\Card;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
@@ -50,5 +49,4 @@ trait RankLimitsTrait
             'max' => $maxMinRank
         ];
     }
-
 }

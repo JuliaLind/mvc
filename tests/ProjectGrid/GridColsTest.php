@@ -3,7 +3,6 @@
 namespace App\ProjectGrid;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
 
 /**
  * Test cases for class Hand.
@@ -11,24 +10,24 @@ use App\ProjectCard\Card;
 class GridColsTest extends TestCase
 {
     /**
-     * @var array<array<Card>> $rows
+     * @var array<array<string>> $rows
      */
     protected array $rows;
     /**
-     * @var array<array<Card>> $cols
+     * @var array<array<string>> $cols
      */
     protected array $cols;
 
     protected function setUp(): void
     {
-        $card1 = new Card(2, "H");
-        $card2 = new Card(14, "S");
-        $card3 = new Card(2, "S");
-        $card4 = new Card(4, "C");
-        $card5 = new Card(5, "D");
-        $card6 = new Card(13, "C");
-        $card7 = new Card(13, "D");
-        $card8 = new Card(13, "H");
+        $card1 = "2H";
+        $card2 = "14S";
+        $card3 = "2S";
+        $card4 = "4C";
+        $card5 = "5D";
+        $card6 = "13C";
+        $card7 = "13D";
+        $card8 = "13H";
         $row0 = [
             0 => $card1,
             1 => $card2,

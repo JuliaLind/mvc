@@ -3,7 +3,6 @@
 namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
 
 class StraightTest extends TestCase
 {
@@ -11,10 +10,10 @@ class StraightTest extends TestCase
     {
         $hand = [];
         for ($rank = 2; $rank <= 6; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
-        $hand[0] = new Card(2, "H");
-        $hand[4] = new Card(6, "C");
+        $hand[0] = "2H";
+        $hand[4] = "6C";
         shuffle($hand);
         $rule = new Straight(4);
         $res = $rule->check($hand);
@@ -25,7 +24,7 @@ class StraightTest extends TestCase
     {
         $hand = [];
         for ($rank = 2; $rank <= 5; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
         shuffle($hand);
         $rule = new Straight(4);
@@ -37,10 +36,10 @@ class StraightTest extends TestCase
     {
         $hand = [];
         for ($rank = 6; $rank <= 8; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
         for ($rank = 9; $rank <= 10; $rank++) {
-            array_push($hand, new Card($rank, "S"));
+            array_push($hand, strval($rank)."S");
         }
 
         shuffle($hand);
@@ -53,7 +52,7 @@ class StraightTest extends TestCase
     {
         $hand = [];
         for ($rank = 2; $rank <= 7; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
         unset($hand[3]);
         shuffle($hand);
@@ -66,9 +65,9 @@ class StraightTest extends TestCase
     {
         $hand = [];
         for ($rank = 10; $rank <= 14; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
-        $hand[2] = new Card(5, "D");
+        $hand[2] = "5D";
         shuffle($hand);
         $rule = new Straight(4);
         $res = $rule->check($hand);
@@ -79,9 +78,9 @@ class StraightTest extends TestCase
     {
         $hand = [];
         for ($rank = 10; $rank <= 14; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
-        $hand[1] = new Card(10, "C");
+        $hand[1] = "10C";
         shuffle($hand);
         $rule = new Straight(4);
         $res = $rule->check($hand);

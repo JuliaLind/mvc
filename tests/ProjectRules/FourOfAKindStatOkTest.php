@@ -3,17 +3,15 @@
 namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
 
 class FourOfAKindStatOkTest extends TestCase
 {
     public function testCheckOk(): void
     {
         $rule = new SameOfAKindStat(4);
-        $hand = [new Card(4, 'D'), new Card(5, 'H'), new Card(4, 'C'), new Card(4, 'S')];
-
+        $hand = ["4D", "5H", "4C", "4S"];
         $deck = [];
-        $card = new Card(4, 'H');
+        $card = "4H";
         $res = $rule->check($hand, $deck, $card);
         $this->assertTrue($res);
     }
@@ -21,10 +19,9 @@ class FourOfAKindStatOkTest extends TestCase
     public function testCheckOk2(): void
     {
         $rule = new SameOfAKindStat(4);
-        $hand = [new Card(4, 'D'), new Card(4, 'C'), new Card(5, 'S')];
-
-        $deck = [new Card(4, 'S')];
-        $card = new Card(4, 'H');
+        $hand = ["4D", "4C", "4S"];
+        $deck = ["4S"];
+        $card = "4H";
         $res = $rule->check($hand, $deck, $card);
         $this->assertTrue($res);
     }
@@ -32,10 +29,9 @@ class FourOfAKindStatOkTest extends TestCase
     public function testCheckOk3(): void
     {
         $rule = new SameOfAKindStat(4);
-        $hand = [new Card(4, 'C'), new Card(5, 'S')];
-
-        $deck = [new Card(4, 'S'), new Card(4, 'D'), new Card(14, 'D'),];
-        $card = new Card(4, 'H');
+        $hand = ["4C", "5S"];
+        $deck = ["4S", "4D", "14D"];
+        $card = "4H";
         $res = $rule->check($hand, $deck, $card);
         $this->assertTrue($res);
     }
@@ -44,9 +40,8 @@ class FourOfAKindStatOkTest extends TestCase
     {
         $rule = new SameOfAKindStat(4);
         $hand = [];
-
-        $deck = [new Card(4, 'S'), new Card(4, 'D'), new Card(14, 'D'), new Card(4, 'C'), new Card(5, 'S')];
-        $card = new Card(4, 'H');
+        $deck = ["4S", "4D", "14D", "4C", "5S"];
+        $card = "4H";
         $res = $rule->check($hand, $deck, $card);
         $this->assertFalse($res);
     }
@@ -54,10 +49,10 @@ class FourOfAKindStatOkTest extends TestCase
     public function testCheckNotOk2(): void
     {
         $rule = new SameOfAKindStat(4);
-        $hand = [new Card(4, 'S')];
+        $hand = ["4S"];
 
-        $deck = [new Card(8, 'S'), new Card(4, 'D'), new Card(14, 'D'), new Card(4, 'C'), new Card(4, 'H'), new Card(7, 'S')];
-        $card = new Card(5, 'S');
+        $deck = ["8S", "4D", "14D", "4C", "4H", "7S"];
+        $card = "5S";
         $res = $rule->check($hand, $deck, $card);
         $this->assertFalse($res);
     }
@@ -65,10 +60,9 @@ class FourOfAKindStatOkTest extends TestCase
     public function testCheckNotOk3(): void
     {
         $rule = new SameOfAKindStat(4);
-        $hand = [new Card(4, 'S')];
-
-        $deck = [new Card(8, 'S'), new Card(5, 'D'), new Card(14, 'D'), new Card(5, 'C'), new Card(5, 'H'), new Card(7, 'S')];
-        $card = new Card(5, 'S');
+        $hand = ["4S"];
+        $deck = ["8S", "5D", "14D", "5C", "5H", "7S"];
+        $card = "5S";
         $res = $rule->check($hand, $deck, $card);
         $this->assertFalse($res);
     }

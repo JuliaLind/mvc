@@ -2,7 +2,6 @@
 
 namespace App\ProjectGrid;
 
-use App\ProjectCard\Card;
 
 /**
  * Class representing a grid for cards
@@ -10,7 +9,7 @@ use App\ProjectCard\Card;
 class Grid
 {
     /**
-     * @var array<array<Card>> $grid
+     * @var array<array<string>> $grid
      * [
      * [01, 02, 03, 04, 05],
      * [11, 12, 13, 14, 15],
@@ -23,15 +22,14 @@ class Grid
 
     private int $cardCount = 0;
 
-    public function addCard(int $row, int $col, Card $card): bool
+    public function addCard(int $row, int $col, string $card): void
     {
         $grid = $this->grid;
         if (array_key_exists($row, $grid) && array_key_exists($col, $grid[$row])) {
-            return false;
+            throw new SlotNotEmptyException();
         }
         $this->grid[$row][$col] = $card;
         $this->cardCount += 1;
-        return true;
     }
 
     public function getCardCount(): int
@@ -41,7 +39,7 @@ class Grid
 
     /**
      * for testing purposes
-     * @param array<array<Card>> $grid
+     * @param array<array<string>> $grid
      */
     public function setCards(array $grid): void
     {
@@ -49,7 +47,7 @@ class Grid
     }
 
     /**
-     * @return array<array<Card>>
+     * @return array<array<string>>
      */
     public function getCards(): array
     {
@@ -57,7 +55,7 @@ class Grid
     }
 
     /**
-     * @return array<string,array<array<Card>>>
+     * @return array<string,array<array<string>>>
      */
     public function rowsAndCols(GridCols $gridCols = new GridCols()): array
     {

@@ -17,7 +17,7 @@ class CardFactoryTest extends TestCase
         $cards = [];
         foreach($suits as $suit) {
             for ($value = $minValue; $value <= $maxValue; $value++) {
-                $card = new Card($value, $suit);
+                $card = strval($value).$suit;
                 array_push($cards, $card);
             }
         }

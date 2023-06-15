@@ -3,33 +3,30 @@
 namespace App\ProjectGrid;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
+// use App\ProjectGrid\SlotNotEmptyException;
 
-/**
- * Test cases for class Hand.
- */
 class GridTest extends TestCase
 {
     /**
-     * @var array<array<Card>> $rows
+     * @var array<array<string>> $rows
      */
     protected array $rows;
     /**
-     * @var array<array<Card>> $cols
+     * @var array<array<string>> $cols
      */
     protected array $cols;
     protected Grid $grid;
 
     protected function setUp(): void
     {
-        $card1 = new Card(2, "H");
-        $card2 = new Card(14, "S");
-        $card3 = new Card(2, "S");
-        $card4 = new Card(4, "C");
-        $card5 = new Card(5, "D");
-        $card6 = new Card(13, "C");
-        $card7 = new Card(13, "D");
-        $card8 = new Card(13, "H");
+        $card1 = "2H";
+        $card2 = "14S";
+        $card3 = "2S";
+        $card4 = "4C";
+        $card5 = "5D";
+        $card6 = "13C";
+        $card7 = "13D";
+        $card8 = "13H";
         $row0 = [
             0 => $card1,
             1 => $card2,
@@ -109,13 +106,13 @@ class GridTest extends TestCase
     public function testAddOk(): void
     {
         $this->assertEquals(0, $this->grid->getCardCount());
-        $card = new Card(14, 'S');
-        $bool = $this->grid->addCard(2, 4, $card);
+        $card = "14S";
+        $this->grid->addCard(2, 4, $card);
         $res = $this->grid->getCards();
         $exp = $this->rows;
         $exp[2][4] = $card;
         $this->assertEquals($exp, $res);
-        $this->assertTrue($bool);
+
 
         $res = $res[2][4];
         $this->assertEquals($res, $card);
@@ -124,9 +121,10 @@ class GridTest extends TestCase
 
     public function testAddNotOk(): void
     {
-        $card = new Card(10, 'D');
-        $bool = $this->grid->addCard(0, 1, $card);
-        $this->assertFalse($bool);
+        $card = "10D";
+        $this->expectException(SlotNotEmptyException::class);
+        $this->grid->addCard(0, 1, $card);
+
         $exp = $this->rows;
         $res = $this->grid->getCards();
 
@@ -136,38 +134,38 @@ class GridTest extends TestCase
     public function testRowsAndCols2(): void
     {
         $cards = [
-            [new Card(14, 'D'), new Card(14, 'C'), new Card(14, 'S'), new Card(5, 'C'), new Card(10, 'H')],
-            [new Card(10, 'D'), new Card(8, 'C'), new Card(8, 'D'), new Card(5, 'D'), new Card(6, 'H')],
-            [new Card(12, 'D'), new Card(3, 'C'), new Card(2, 'C'), new Card(5, 'S'), new Card(7, 'H')],
-            [new Card(13, 'D'), new Card(4, 'C'), new Card(9, 'C'), new Card(5, 'H'), new Card(8, 'H')],
-            [new Card(11, 'D'), new Card(7, 'C'), new Card(10, 'H'), new Card(8, 'S'), new Card(9, 'H')]
+            ["14D", "14C", "14S", "5C", "10H"],
+            ["10D", "8C", "8D", "5D", "6H"],
+            ["12D", "3C", "2C", "5S", "7H"],
+            ["13D", "4C", "9C", "5H", "8H"],
+            ["11D", "7C", "10H", "8S", "9H"]
         ];
 
         $grid = new Grid();
         $grid->setCards($cards);
         $res = $grid->rowsAndCols();
         $exp = [ 'rows' => [
-                [new Card(14, 'D'), new Card(14, 'C'), new Card(14, 'S'), new Card(5, 'C'), new Card(10, 'H')],
-                [new Card(10, 'D'), new Card(8, 'C'), new Card(8, 'D'), new Card(5, 'D'), new Card(6, 'H')],
-                [new Card(12, 'D'), new Card(3, 'C'), new Card(2, 'C'), new Card(5, 'S'), new Card(7, 'H')],
-                [new Card(13, 'D'), new Card(4, 'C'), new Card(9, 'C'), new Card(5, 'H'), new Card(8, 'H')],
-                [new Card(11, 'D'), new Card(7, 'C'), new Card(10, 'H'), new Card(8, 'S'), new Card(9, 'H')]
+                ["14D", "14C", "14S", "5C", "10H"],
+                ["10D", "8C", "8D", "5D", "6H"],
+                ["12D", "3C", "2C", "5S", "7H"],
+                ["13D", "4C", "9C", "5H", "8H"],
+                ["11D", "7C", "10H", "8S", "9H"]
             ],
             'cols' => [
                 [
-                    new Card(14, 'D'), new Card(10, 'D'), new Card(12, 'D'), new Card(13, 'D'), new Card(11, 'D')
+                    "14D", "10D", "12D", "13D", "11D"
                 ],
                 [
-                    new Card(14, 'C'), new Card(8, 'C'), new Card(3, 'C'), new Card(4, 'C'), new Card(7, 'C')
+                    "14C", "8C", "3C", "4C", "7C"
                 ],
                 [
-                    new Card(14, 'S'), new Card(8, 'D'), new Card(2, 'C'), new Card(9, 'C'), new Card(10, 'H')
+                    "14S", "8D", "2C", "9C", "10H"
                 ],
                 [
-                    new Card(5, 'C'), new Card(5, 'D'), new Card(5, 'S'), new Card(5, 'H'), new Card(8, 'S')
+                    "5C", "5D", "5S", "5H", "8S"
                 ],
                 [
-                    new Card(10, 'H'), new Card(6, 'H'), new Card(7, 'H'), new Card(8, 'H'), new Card(9, 'H')
+                    "10H", "6H", "7H", "8H", "9H"
                 ],
             ]
         ];

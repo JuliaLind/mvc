@@ -5,7 +5,6 @@ namespace App\Project;
 use App\ProjectCard\Deck;
 use App\ProjectGrid\Grid;
 use App\ProjectGrid\GridGraphic;
-use App\ProjectCard\Card;
 use App\ProjectRules\WinEvaluator;
 use App\ProjectRules\MoveEvaluator;
 
@@ -16,9 +15,8 @@ class Game
     private Grid $house;
     private Grid $player;
     private Deck $deck;
-    private Card $card;
+    private string $card;
     private bool $finished = false;
-    // private bool $finished = false;
 
     public function __construct()
     {

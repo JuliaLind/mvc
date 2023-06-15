@@ -3,15 +3,15 @@
 namespace App\ProjectRules;
 
 use App\ProjectCard\CardCounter;
-use App\ProjectCard\Card;
 
 class FlushStat extends Rule implements RuleStatInterface
 {
     use SameSuitTrait;
 
+
     /**
-     * @param array<Card> $deck
-     * @param array<Card> $newHand
+     * @param array<string> $deck
+     * @param array<string> $newHand
      */
     protected function checkInDeck(array $deck, array $newHand): bool
     {
@@ -30,16 +30,15 @@ class FlushStat extends Rule implements RuleStatInterface
     }
 
     /**
-     * @param array<Card> $hand
-     * @param array<Card> $deck
-     * @param Card $card
+     * @param array<string> $hand
+     * @param array<string> $deck
      * @return bool true if rule is still possible given passed value
      * otherwise false
      */
-    public function check(array $hand, array $deck, Card $card): bool
+    public function check(array $hand, array $deck, string $card): bool
     {
         /**
-         * @var array<Card> $newHand
+         * @var array<string> $newHand
          */
         $newHand = [...$hand, $card];
 

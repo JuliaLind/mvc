@@ -3,7 +3,6 @@
 namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
 
 /**
  * Test cases for class Royal Flush.
@@ -20,16 +19,11 @@ class RoyalFlushTest extends TestCase
     {
         $hand = [];
         for ($rank = 10 ;$rank <= 14; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
         shuffle($hand);
         $rule = new RoyalFlush();
         $res = $rule->check($hand);
-        // $exp = [
-        //     'name' => "Royal Flush",
-        //     'points' => 100,
-        //     'scored' => true
-        // ];
         $this->assertTrue($res);
     }
 
@@ -37,7 +31,7 @@ class RoyalFlushTest extends TestCase
     {
         $hand = [];
         for ($rank = 9 ;$rank <= 13; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
         shuffle($hand);
         $rule = new RoyalFlush();
@@ -49,10 +43,10 @@ class RoyalFlushTest extends TestCase
     {
         $hand = [];
         for ($rank = 10 ;$rank <= 12; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
         for ($rank = 13 ;$rank <= 14; $rank++) {
-            array_push($hand, new Card($rank, "S"));
+            array_push($hand, strval($rank)."S");
         }
 
         shuffle($hand);
@@ -65,7 +59,7 @@ class RoyalFlushTest extends TestCase
     {
         $hand = [];
         for ($rank = 10 ;$rank <= 14; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
         unset($hand[2]);
         shuffle($hand);
@@ -78,9 +72,9 @@ class RoyalFlushTest extends TestCase
     {
         $hand = [];
         for ($rank = 10 ;$rank <= 14; $rank++) {
-            array_push($hand, new Card($rank, "D"));
+            array_push($hand, strval($rank)."D");
         }
-        $hand[2] = new Card(5, "D");
+        $hand[2] = "5D";
         shuffle($hand);
         $rule = new RoyalFlush();
         $res = $rule->check($hand);

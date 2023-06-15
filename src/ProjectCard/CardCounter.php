@@ -25,7 +25,7 @@ class CardCounter
 
 
     /**
-     * @param array<Card> $cards
+     * @param array<string> $cards
      * @return  array<string,array<array<int|string,int>>>
      */
     public function count($cards): array
@@ -33,8 +33,8 @@ class CardCounter
         $ranks = [];
         $suits = [];
         foreach($cards as $card) {
-            $ranks = $this->newCount($card->getRank(), $ranks);
-            $suits = $this->newCount($card->getSuit(), $suits);
+            $ranks = $this->newCount(intval(substr($card, 0, -1)), $ranks);
+            $suits = $this->newCount($card[-1], $suits);
         }
         return [
             'ranks' => $ranks,

@@ -12,12 +12,16 @@
 {% else %} #}
     {# <h1 class="title">Welcome to the casino {{user.name}}!</h1> #}
 <h1 class="title">Welcome to the casino Julia!</h1>
-    {{ include('proj/incl/rules-link.html.twig') }}
+
+{{ include('proj/incl/rules-link.html.twig') }}
+
+<div class="flex-container-row">
     {{ include('proj/incl/logout-btn.html.twig') }}
-    {{ include('proj/incl/new-game-btn.html.twig') }}
     {% if user != null %}
         {{ include('proj/incl/continue-btn.html.twig') }}
     {% endif %}
+    {{ include('proj/incl/new-game-btn.html.twig') }}
+</div>
 {# {% endif %} #}
 
 

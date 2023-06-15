@@ -3,7 +3,6 @@
 namespace App\ProjectRules;
 
 use App\ProjectCard\CardCounter;
-use App\ProjectCard\Card;
 
 /**
  * Royal Flush Rule

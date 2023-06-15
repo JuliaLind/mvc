@@ -2,36 +2,33 @@
 
 namespace App\ProjectGrid;
 
-use App\ProjectCard\Card;
-
 /**
  * Class representing a grid for cards
  */
 class GridGraphic
 {
     /**
-     * @param array<array<Card>> $grid
+     * @param array<array<string>> $grid
      * @return array<mixed>
      */
     private function slotData(int $row, int $col, array $grid): array
     {
         $data = [
-            'filled' => false,
             'img' => "",
             'alt' => ""
         ];
         if (array_key_exists($row, $grid) && array_key_exists($col, $grid[$row])) {
-            $card = $grid[$row][$col]->graphic();
+            $card = $grid[$row][$col];
             $data = [
-                'filled' => true,
-                ...$card,
+                'img' => "img/project-cards/".$card.".svg",
+                'alt' => $card
             ];
         }
         return $data;
     }
 
     /**
-     * @param array<array<Card>> $grid
+     * @param array<array<string>> $grid
      * @return array<int,mixed>>>
      */
     public function graphic($grid): array

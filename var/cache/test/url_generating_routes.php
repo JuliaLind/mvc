@@ -49,7 +49,10 @@ return [
     'login' => [[], ['_controller' => 'App\\Controller\\ProjectAuthController::projLogin'], [], [['text', '/proj/login']], [], [], []],
     'logout' => [[], ['_controller' => 'App\\Controller\\ProjectAuthController::projLogout'], [], [['text', '/proj/logout']], [], [], []],
     'register-form' => [[], ['_controller' => 'App\\Controller\\ProjectFormController::projRegisterForm'], [], [['text', '/proj/register-form']], [], [], []],
+    'proj-play' => [[], ['_controller' => 'App\\Controller\\ProjectGameController::projPlay'], [], [['text', '/proj/play']], [], [], []],
+    'proj-init' => [[], ['_controller' => 'App\\Controller\\ProjectGameController::projInit'], [], [['text', '/proj/init']], [], [], []],
     'proj' => [[], ['_controller' => 'App\\Controller\\ProjectMainController::projLanding'], [], [['text', '/proj']], [], [], []],
     'proj-api' => [[], ['_controller' => 'App\\Controller\\ProjectMainController::projApiLanding'], [], [['text', '/proj/api']], [], [], []],
     'proj-about' => [[], ['_controller' => 'App\\Controller\\ProjectMainController::projAbout'], [], [['text', '/proj/about']], [], [], []],
+    'proj-rules' => [[], ['_controller' => 'App\\Controller\\ProjectMainController::projRules'], [], [['text', '/proj/rules']], [], [], []],
 ];

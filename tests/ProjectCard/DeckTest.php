@@ -3,7 +3,7 @@
 namespace App\ProjectCard;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectExceptions\NoCardsException;
+// use App\ProjectCard\NoCardsException;
 
 /**
  * Test cases for Deck class.
@@ -25,7 +25,7 @@ class DeckTest extends TestCase
         $cards = [];
         foreach($suits as $suit) {
             for ($value = $minValue; $value <= $maxValue; $value++) {
-                $card = new Card($value, $suit);
+                $card = strval($value).$suit;
                 array_push($cards, $card);
             }
         }
@@ -35,16 +35,13 @@ class DeckTest extends TestCase
         $res = count($res);
         $exp = 52;
         $this->assertEquals($exp, $res);
-
-        $card = $deck->deal();
-        $this->assertInstanceOf("\App\ProjectCard\Card", $card);
     }
 
     public function testDealOk(): void
     {
-        $card = $this->createMock(Card::class);
-        $card2 = $this->createMock(Card::class);
-        $card3 = $this->createMock(Card::class);
+        $card = "12D";
+        $card2 = "7C";
+        $card3 = "8H";
         $factory = $this->createMock(CardFactory::class);
         $factory->method('fullSet')
         ->willReturn([$card, $card2, $card3]);
@@ -81,7 +78,7 @@ class DeckTest extends TestCase
     {
         $cards = [];
         for ($i = 2; $i < 7; $i++) {
-            array_push($cards, new Card($i, "D"));
+            array_push($cards, strval($i)."D");
         }
         $factory = $this->createMock(CardFactory::class);
         $factory->method('fullSet')
@@ -100,7 +97,7 @@ class DeckTest extends TestCase
         $cards = [];
         $exp = [];
         for ($i = 2; $i < 8; $i++) {
-            $card = new Card($i, "D");
+            $card = strval($i)."D";
             array_push($cards, $card);
             if ($i > 4 && $i % 2 === 1) {
                 array_push($exp, $card);

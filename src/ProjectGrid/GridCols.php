@@ -2,16 +2,14 @@
 
 namespace App\ProjectGrid;
 
-use App\ProjectCard\Card;
-
 /**
  * Class representing a grid for cards
  */
 class GridCols
 {
     /**
-     * @param array<array<Card>> $rows
-     * @return array<array<Card>>
+     * @param array<array<string>> $rows
+     * @return array<array<string>>
      */
     public function all($rows): array
     {

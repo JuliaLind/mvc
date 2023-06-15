@@ -3,17 +3,15 @@
 namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
-use App\ProjectCard\Card;
 
 class FullHouseStatTest extends TestCase
 {
     public function testCheckNotOk(): void
     {
         $rule = new FullHouseStat();
-        $hand = [new Card(4, 'D'), new Card(2, 'C'), new Card(8, 'D')];
-
-        $deck = [new Card(4, 'S'), new Card(2, 'D'), new Card(4, 'C')];
-        $card = new Card(8, 'H');
+        $hand = ["4D", "2C", "8D"];
+        $deck = ["4S", "2D", "4C"];
+        $card = "8H";
         $res = $rule->check($hand, $deck, $card);
         $this->assertFalse($res);
     }
@@ -21,10 +19,9 @@ class FullHouseStatTest extends TestCase
     public function testCheckOk(): void
     {
         $rule = new FullHouseStat();
-        $hand = [new Card(4, 'D'), new Card(2, 'C'),  new Card(2, 'D')];
-
-        $deck = [new Card(4, 'S'), new Card(5, 'S'),];
-        $card = new Card(4, 'H');
+        $hand = ["4D", "2C", "2D"];
+        $deck = ["4S", "5S"];
+        $card = "4H";
         $res = $rule->check($hand, $deck, $card);
         $this->assertTrue($res);
     }
@@ -32,10 +29,9 @@ class FullHouseStatTest extends TestCase
     public function testCheckNotOk2(): void
     {
         $rule = new FullHouseStat();
-        $hand = [new Card(4, 'C'), new Card(4, 'D'), new Card(14, 'D'), new Card(14, 'H'),];
-
-        $deck = [new Card(14, 'S'), new Card(4, 'S')];
-        $card = new Card(8, 'H');
+        $hand = ["4C", "4D", "14D", "14H"];
+        $deck = ["14S", "4S"];
+        $card = "8H";
         $res = $rule->check($hand, $deck, $card);
         $this->assertFalse($res);
     }
@@ -43,10 +39,9 @@ class FullHouseStatTest extends TestCase
     public function testCheckNotOk3(): void
     {
         $rule = new FullHouseStat();
-        $hand = [new Card(4, 'D'), new Card(8, 'D')];
-
-        $deck = [new Card(4, 'S'), new Card(2, 'C'), new Card(2, 'D')];
-        $card = new Card(8, 'H');
+        $hand = ["4D", "8D"];
+        $deck = ["4S", "2C", "2D"];
+        $card = "8H";
         $res = $rule->check($hand, $deck, $card);
         $this->assertFalse($res);
     }

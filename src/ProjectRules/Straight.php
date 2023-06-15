@@ -3,7 +3,6 @@
 namespace App\ProjectRules;
 
 use App\ProjectCard\CardCounter;
-use App\ProjectCard\Card;
 
 class Straight extends Rule implements RuleInterface
 {
@@ -28,9 +27,8 @@ class Straight extends Rule implements RuleInterface
         return $maxRank - $minRank === 4;
     }
 
-
     /**
-     * @param array<Card> $hand
+     * @param array<string> $hand
      * @return bool true if rule is fullfilled otherwise false
      */
     public function check(array $hand): bool

@@ -10,22 +10,18 @@ use PHPUnit\Framework\TestCase;
 class CardCounterTest extends TestCase
 {
     /**
-     * @var array<Card> $cards
+     * @var array<string> $cards
      */
     protected array $cards;
     protected CardCounter $counter;
 
     protected function setUp(): void
     {
-        $card1 = new Card(2, "H");
-        $card2 = new Card(14, "S");
-        $card3 = new Card(2, "S");
-        $card4 = new Card(4, "C");
         $cards = [
-            0 => $card1,
-            1 => $card2,
-            2 => $card3,
-            4 => $card4
+            0 => "2H",
+            1 => "14S",
+            2 => "2S",
+            4 => "4C"
         ];
         $this->cards = $cards;
         $this->counter = new CardCounter();

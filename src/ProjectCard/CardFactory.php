@@ -10,19 +10,19 @@ require __DIR__ . "/../../vendor/autoload.php";
 class CardFactory
 {
     /**
-     * Creturns an array with 52 playing cards
+     * Returns an array with 52 playing cards
      *
-     * @return array<Card>
+     * @return array<string>
      */
     public function fullSet(): array
     {
         $suits = ['S', 'D', 'H', 'C'];
-        $minValue = 2;
-        $maxValue = 14;
+        $minRank = 2;
+        $maxRank = 14;
         $cards = [];
         foreach($suits as $suit) {
-            for ($value = $minValue; $value <= $maxValue; $value++) {
-                $card = new Card($value, $suit);
+            for ($rank = $minRank; $rank <= $maxRank; $rank++) {
+                $card = strval($rank).$suit;
                 array_push($cards, $card);
             }
         }

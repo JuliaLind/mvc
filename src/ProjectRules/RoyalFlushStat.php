@@ -4,7 +4,6 @@ namespace App\ProjectRules;
 
 use App\ProjectCard\CardCounter;
 use App\ProjectCard\CardSearcher;
-use App\ProjectCard\Card;
 
 /**
  * Calculates it possible for a hand
@@ -37,16 +36,15 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
     }
 
     /**
-     * @param array<Card> $hand
-     * @param array<Card> $deck
-     * @param Card $card
+     * @param array<string> $hand
+     * @param array<string> $deck
      * @return bool true if rule is still possible given passed value
      * otherwise false
      */
-    public function check(array $hand, array $deck, Card $card): bool
+    public function check(array $hand, array $deck, string $card): bool
     {
         /**
-         * @var array<Card> $newHand
+         * @var array<string> $newHand
          */
         $newHand = [...$hand, $card];
         /**

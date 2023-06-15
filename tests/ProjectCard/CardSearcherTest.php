@@ -12,10 +12,10 @@ class CardSearcherTest extends TestCase
     public function testSearch(): void
     {
         $cards = [
-            new Card(5, "S"),
-            new Card(7, "D"),
-            new Card(12, "C"),
-            new Card(12, "D")
+            "5S",
+            "7D",
+            "12C",
+            "12D"
         ];
         $searcher = new CardSearcher();
 
@@ -35,41 +35,14 @@ class CardSearcherTest extends TestCase
         $this->assertFalse($res);
     }
 
-    // public function testSearchForRankOk(): void
-    // {
-    //     $cards = [
-    //         new Card(5, "S"),
-    //         new Card(7, "D"),
-    //         new Card(12, "C"),
-    //         new Card(12, "D")
-    //     ];
-    //     $searcher = new CardSearcher();
-    //     $res = $searcher->searchForRank($cards, 12);
-    //     $exp = 2;
-    //     $this->assertEquals($exp, $res);
-    // }
-
-    // public function testSearchForRankNotOk(): void
-    // {
-    //     $cards = [
-    //         new Card(5, "S"),
-    //         new Card(7, "D"),
-    //         new Card(12, "C"),
-    //         new Card(12, "D")
-    //     ];
-    //     $searcher = new CardSearcher();
-    //     $res = $searcher->searchForRank($cards, 11);
-    //     $exp = 0;
-    //     $this->assertEquals($exp, $res);
-    // }
 
     public function testCheckRankQuantNotOk(): void
     {
         $cards = [
-            new Card(5, "S"),
-            new Card(7, "D"),
-            new Card(12, "C"),
-            new Card(12, "D")
+            "5S",
+            "7D",
+            "12C",
+            "12D"
         ];
         $searcher = new CardSearcher();
         $res = $searcher->checkRankQuant($cards, 12, 4);
@@ -79,10 +52,10 @@ class CardSearcherTest extends TestCase
     public function testCheckRankQuantOk(): void
     {
         $cards = [
-            new Card(5, "S"),
-            new Card(7, "D"),
-            new Card(12, "C"),
-            new Card(12, "D")
+            "5S",
+            "7D",
+            "12C",
+            "12D"
         ];
         $searcher = new CardSearcher();
         $res = $searcher->checkRankQuant($cards, 12, 2);
@@ -92,11 +65,11 @@ class CardSearcherTest extends TestCase
     public function testCheckRankQuantOk2(): void
     {
         $cards = [
-            new Card(5, "S"),
-            new Card(12, "H"),
-            new Card(7, "D"),
-            new Card(12, "C"),
-            new Card(12, "D")
+            "5S",
+            "12H",
+            "7D",
+            "12C",
+            "12D"
         ];
         $searcher = new CardSearcher();
         $res = $searcher->checkRankQuant($cards, 12, 2);
@@ -106,11 +79,11 @@ class CardSearcherTest extends TestCase
     public function testCheckRanksQuantNotOk(): void
     {
         $cards = [
-            new Card(5, "S"),
-            new Card(12, "H"),
-            new Card(7, "D"),
-            new Card(12, "C"),
-            new Card(12, "D")
+            "5S",
+            "12H",
+            "7D",
+            "12C",
+            "12D"
         ];
         $searcher = new CardSearcher();
         $res = $searcher->checkRanksQuant($cards, [13, 4], 2);
@@ -120,11 +93,11 @@ class CardSearcherTest extends TestCase
     public function testCheckRanksQuantOk(): void
     {
         $cards = [
-            new Card(5, "S"),
-            new Card(12, "H"),
-            new Card(7, "D"),
-            new Card(12, "C"),
-            new Card(12, "D")
+            "5S",
+            "12H",
+            "7D",
+            "12C",
+            "12D"
         ];
         $searcher = new CardSearcher();
         $res = $searcher->checkRanksQuant($cards, [12, 4], 3);
@@ -134,11 +107,11 @@ class CardSearcherTest extends TestCase
     public function testCheckRanksQuantOk2(): void
     {
         $cards = [
-            new Card(5, "S"),
-            new Card(12, "H"),
-            new Card(7, "D"),
-            new Card(12, "C"),
-            new Card(12, "D")
+            "5S",
+            "12H",
+            "7D",
+            "12C",
+            "12D"
         ];
         $searcher = new CardSearcher();
         $res = $searcher->checkRanksQuant($cards, [4, 12], 3);
@@ -148,7 +121,7 @@ class CardSearcherTest extends TestCase
     public function testCheckRankQuantOk3(): void
     {
         $cards = [
-            new Card(10, 'D'), new Card(11, 'D'), new Card(13, 'D'), new Card(9, 'C'), new Card(8, 'C'), new Card(12, 'D')
+            "10D", "11D", "13D", "9C", "8C", "12D"
         ];
         $searcher = new CardSearcher();
         $res = $searcher->checkRankQuant($cards, 9, 1);

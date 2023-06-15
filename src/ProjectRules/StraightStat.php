@@ -4,7 +4,6 @@ namespace App\ProjectRules;
 
 use App\ProjectCard\CardCounter;
 use App\ProjectCard\CardSearcher;
-use App\ProjectCard\Card;
 
 class StraightStat extends RuleStat implements RuleStatInterface
 {
@@ -12,7 +11,7 @@ class StraightStat extends RuleStat implements RuleStatInterface
     use StraightStatTrait;
 
     /**
-     * @param array<Card> $cards
+     * @param array<string> $cards
      */
     protected function checkForCards($cards, int $minRank): bool
     {
@@ -28,18 +27,16 @@ class StraightStat extends RuleStat implements RuleStatInterface
         return true;
     }
 
-
     /**
-     * @param array<Card> $hand
-     * @param array<Card> $deck
-     * @param Card $card
+     * @param array<string> $hand
+     * @param array<string> $deck
      * @return bool true if rule is still possible given passed value
      * otherwise false
      */
-    public function check(array $hand, array $deck, Card $card): bool
+    public function check(array $hand, array $deck, string $card): bool
     {
         /**
-         * @var array<Card> $newHand
+         * @var array<string> $newHand
          */
         $newHand = [...$hand, $card];
         /**

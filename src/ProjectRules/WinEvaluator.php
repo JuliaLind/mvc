@@ -2,8 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\Card;
-
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
@@ -17,7 +15,7 @@ class WinEvaluator
     }
 
     /**
-     * @param  array<string,array<array<Card>>> $hands
+     * @param  array<string,array<array<string>>> $hands
      * @return  array<string,array<array<string,int|string>>|int>
      */
     public function results(array $hands): array
@@ -26,7 +24,7 @@ class WinEvaluator
         $total = 0;
         /**
          * @var string $type
-         * @var array<array<Card>> $handArray
+         * @var array<array<string>> $handArray
          */
         foreach($hands as $type => $handArray) {
             foreach($handArray as $index => $hand) {

@@ -3,7 +3,6 @@
 namespace App\ProjectRules;
 
 use App\ProjectCard\CardCounter;
-use App\ProjectCard\Card;
 
 class TwoPairsStat extends RuleStat implements RuleStatInterface
 {
