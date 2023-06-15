@@ -48,7 +48,7 @@ class Game
 
     public function playerSuggest(): void
     {
-        $suggestion = $this->moveEvaluator->suggestion($this->player->rowsAndCols(), $this->card, $this->deck->possibleCards());
+        $suggestion = $this->moveEvaluator->suggestion($this->player->getCards(), $this->card, $this->deck->possibleCards());
         $message = "";
         /**
          * @var array<int> $slot
@@ -91,7 +91,7 @@ class Game
     private function housePlaceCard(): void
     {
         $card = $this->deck->deal();
-        $suggestion = $this->moveEvaluator->suggestion($this->house->rowsAndCols(), $card, $this->deck->possibleCards());
+        $suggestion = $this->moveEvaluator->suggestion($this->house->getCards(), $card, $this->deck->possibleCards());
         /**
          * @var array<int> $slot
          */
@@ -109,12 +109,12 @@ class Game
 
     private function evaluate(): void
     {
-        $playerData = $this->winEvaluator->results($this->player->rowsAndCols());
+        $playerData = $this->winEvaluator->results($this->player->getCards());
         /**
          * @var int $playerTotal
          */
         $playerTotal = $playerData['total'];
-        $houseData = $this->winEvaluator->results($this->house->rowsAndCols());
+        $houseData = $this->winEvaluator->results($this->house->getCards());
         /**
          * @var int $houseTotal
          */

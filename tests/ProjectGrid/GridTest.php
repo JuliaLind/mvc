@@ -12,10 +12,10 @@ class GridTest extends TestCase
      * @var array<array<string>> $rows
      */
     protected array $rows;
-    /**
-     * @var array<array<string>> $cols
-     */
-    protected array $cols;
+    // /**
+    //  * @var array<array<string>> $cols
+    //  */
+    // protected array $cols;
     protected Grid $grid;
 
     protected function setUp(): void
@@ -52,31 +52,31 @@ class GridTest extends TestCase
             4 => $row4
         ];
         $this->rows = $rows;
-        $col0 = [
-            0 => $card1,
-            4 => $card8
-        ];
-        $col1 = [
-            0 => $card2,
-            1 => $card5
-        ];
-        $col2 = [
-            0 => $card3
-        ];
-        $col3 = [
-            1 => $card6,
-            2 => $card7
-        ];
-        $col4 = [
-            0 => $card4,
-        ];
-        $this->cols = [
-            0 => $col0,
-            1 => $col1,
-            2 => $col2,
-            3 => $col3,
-            4 => $col4
-        ];
+        // $col0 = [
+        //     0 => $card1,
+        //     4 => $card8
+        // ];
+        // $col1 = [
+        //     0 => $card2,
+        //     1 => $card5
+        // ];
+        // $col2 = [
+        //     0 => $card3
+        // ];
+        // $col3 = [
+        //     1 => $card6,
+        //     2 => $card7
+        // ];
+        // $col4 = [
+        //     0 => $card4,
+        // ];
+        // $this->cols = [
+        //     0 => $col0,
+        //     1 => $col1,
+        //     2 => $col2,
+        //     3 => $col3,
+        //     4 => $col4
+        // ];
 
         $grid = new Grid();
         $grid->setCards($rows);
@@ -93,16 +93,16 @@ class GridTest extends TestCase
         $this->assertEquals($cards, $res);
     }
 
-    public function testRowsAndCols(): void
-    {
-        $exp = [
-            'rows' => $this->rows,
-            'cols' => $this->cols
-        ];
-        $res = $this->grid->rowsAndCols();
+    // public function testRowsAndCols(): void
+    // {
+    //     $exp = [
+    //         'rows' => $this->rows,
+    //         'cols' => $this->cols
+    //     ];
+    //     $res = $this->grid->rowsAndCols();
 
-        $this->assertEquals($exp, $res);
-    }
+    //     $this->assertEquals($exp, $res);
+    // }
 
     public function testAddOk(): void
     {
@@ -132,44 +132,44 @@ class GridTest extends TestCase
         $this->assertEquals($exp, $res);
     }
 
-    public function testRowsAndCols2(): void
-    {
-        $cards = [
-            ["14D", "14C", "14S", "5C", "10H"],
-            ["10D", "8C", "8D", "5D", "6H"],
-            ["12D", "3C", "2C", "5S", "7H"],
-            ["13D", "4C", "9C", "5H", "8H"],
-            ["11D", "7C", "10H", "8S", "9H"]
-        ];
+    // public function testRowsAndCols2(): void
+    // {
+    //     $cards = [
+    //         ["14D", "14C", "14S", "5C", "10H"],
+    //         ["10D", "8C", "8D", "5D", "6H"],
+    //         ["12D", "3C", "2C", "5S", "7H"],
+    //         ["13D", "4C", "9C", "5H", "8H"],
+    //         ["11D", "7C", "10H", "8S", "9H"]
+    //     ];
 
-        $grid = new Grid();
-        $grid->setCards($cards);
-        $res = $grid->rowsAndCols();
-        $exp = [ 'rows' => [
-                ["14D", "14C", "14S", "5C", "10H"],
-                ["10D", "8C", "8D", "5D", "6H"],
-                ["12D", "3C", "2C", "5S", "7H"],
-                ["13D", "4C", "9C", "5H", "8H"],
-                ["11D", "7C", "10H", "8S", "9H"]
-            ],
-            'cols' => [
-                [
-                    "14D", "10D", "12D", "13D", "11D"
-                ],
-                [
-                    "14C", "8C", "3C", "4C", "7C"
-                ],
-                [
-                    "14S", "8D", "2C", "9C", "10H"
-                ],
-                [
-                    "5C", "5D", "5S", "5H", "8S"
-                ],
-                [
-                    "10H", "6H", "7H", "8H", "9H"
-                ],
-            ]
-        ];
-        $this->assertEquals($exp, $res);
-    }
+    //     $grid = new Grid();
+    //     $grid->setCards($cards);
+    //     $res = $grid->rowsAndCols();
+    //     $exp = [ 'rows' => [
+    //             ["14D", "14C", "14S", "5C", "10H"],
+    //             ["10D", "8C", "8D", "5D", "6H"],
+    //             ["12D", "3C", "2C", "5S", "7H"],
+    //             ["13D", "4C", "9C", "5H", "8H"],
+    //             ["11D", "7C", "10H", "8S", "9H"]
+    //         ],
+    //         'cols' => [
+    //             [
+    //                 "14D", "10D", "12D", "13D", "11D"
+    //             ],
+    //             [
+    //                 "14C", "8C", "3C", "4C", "7C"
+    //             ],
+    //             [
+    //                 "14S", "8D", "2C", "9C", "10H"
+    //             ],
+    //             [
+    //                 "5C", "5D", "5S", "5H", "8S"
+    //             ],
+    //             [
+    //                 "10H", "6H", "7H", "8H", "9H"
+    //             ],
+    //         ]
+    //     ];
+    //     $this->assertEquals($exp, $res);
+    // }
 }

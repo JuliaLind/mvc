@@ -543,21 +543,26 @@
     <service id="App\Project\ApiGame" class="App\Project\ApiGame" autowire="true" autoconfigure="true"/>
     <service id="App\Project\ApiNew" class="App\Project\ApiNew" autowire="true" autoconfigure="true"/>
     <service id="App\Project\ApiResults" class="App\Project\ApiResults" autowire="true" autoconfigure="true"/>
-    <service id="App\Project\Game" class="App\Project\Game" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectCard\Card" class="App\ProjectCard\Card" autowire="true" autoconfigure="true"/>
+    <service id="App\Project\Game" class="App\Project\Game" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectGrid\Grid"/>
+      <argument type="service" id="App\ProjectGrid\Grid"/>
+      <argument type="service" id="App\ProjectCard\Deck"/>
+      <argument type="service" id="App\ProjectRules\MoveEvaluator"/>
+      <argument type="service" id="App\ProjectRules\WinEvaluator"/>
+    </service>
     <service id="App\ProjectCard\CardCounter" class="App\ProjectCard\CardCounter" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\CardFactory" class="App\ProjectCard\CardFactory" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\CardSearcher" class="App\ProjectCard\CardSearcher" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\Deck" class="App\ProjectCard\Deck" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectCard\CardFactory"/>
     </service>
-    <service id="App\ProjectExceptions\NoCardsException" class="App\ProjectExceptions\NoCardsException" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectExceptions\PokerSquareException" class="App\ProjectExceptions\PokerSquareException" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectExceptions\SlotNotEmptyException" class="App\ProjectExceptions\SlotNotEmptyException" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectCard\NoCardsException" class="App\ProjectCard\NoCardsException" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectGrid\ColumnGetter" class="App\ProjectGrid\ColumnGetter" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\EmptyCellFinder" class="App\ProjectGrid\EmptyCellFinder" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\Grid" class="App\ProjectGrid\Grid" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectGrid\GridCols" class="App\ProjectGrid\GridCols" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\GridGraphic" class="App\ProjectGrid\GridGraphic" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectGrid\Hands" class="App\ProjectGrid\Hands" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectGrid\SlotNotEmptyException" class="App\ProjectGrid\SlotNotEmptyException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\Flush" class="App\ProjectRules\Flush" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectCard\CardCounter"/>
     </service>
@@ -573,6 +578,7 @@
     <service id="App\ProjectRules\MoveEvaluator" class="App\ProjectRules\MoveEvaluator" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectGrid\EmptyCellFinder"/>
       <argument type="service" id="App\ProjectRules\RuleStats"/>
+      <argument type="service" id="App\ProjectGrid\ColumnGetter"/>
     </service>
     <service id="App\ProjectRules\RoyalFlush" class="App\ProjectRules\RoyalFlush" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\RoyalFlushStat" class="App\ProjectRules\RoyalFlushStat" autowire="true" autoconfigure="true"/>
@@ -602,6 +608,7 @@
     <service id="App\ProjectRules\TwoPairsStat" class="App\ProjectRules\TwoPairsStat" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\WinEvaluator" class="App\ProjectRules\WinEvaluator" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectRules\Rules"/>
+      <argument type="service" id="App\ProjectGrid\ColumnGetter"/>
     </service>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>

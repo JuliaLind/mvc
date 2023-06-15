@@ -2,10 +2,7 @@
 
 namespace App\ProjectGrid;
 
-/**
- * Class representing a grid for cards
- */
-class GridCols
+class ColumnGetter
 {
     /**
      * @param array<array<string>> $rows

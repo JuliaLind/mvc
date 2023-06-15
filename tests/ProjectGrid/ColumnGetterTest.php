@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Test cases for class Hand.
  */
-class GridColsTest extends TestCase
+class ColumnGetterTest extends TestCase
 {
     /**
      * @var array<array<string>> $rows
@@ -81,7 +81,7 @@ class GridColsTest extends TestCase
 
     public function testAll(): void
     {
-        $gridCols = new GridCols();
+        $gridCols = new ColumnGetter();
         $res = $gridCols->all($this->rows);
         $exp = $this->cols;
 

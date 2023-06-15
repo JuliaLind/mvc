@@ -4,6 +4,7 @@ namespace App\ProjectRules;
 
 use App\ProjectCard\Deck;
 use App\ProjectGrid\EmptyCellFinder;
+use App\ProjectGrid\ColumnGetter;
 
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
@@ -12,6 +13,7 @@ class MoveEvaluator
 {
     private RuleStats $rules;
     private EmptyCellFinder $finder;
+    private ColumnGetter $colGetter;
     private string $rowRuleName = "";
     private string $colRuleName = "";
     private string $card;
@@ -27,10 +29,14 @@ class MoveEvaluator
      */
     private array $data;
 
-    public function __construct(EmptyCellFinder $finder = new EmptyCellFinder(), RuleStats $rules = new RuleStats())
-    {
+    public function __construct(
+        EmptyCellFinder $finder = new EmptyCellFinder(),
+        RuleStats $rules = new RuleStats(),
+        ColumnGetter $colGetter = new ColumnGetter()
+    ) {
         $this->rules = $rules;
         $this->finder = $finder;
+        $this->colGetter = $colGetter;
     }
 
     /**
@@ -108,21 +114,17 @@ class MoveEvaluator
     }
 
     /**
-     * @param array<string,array<array<string>>> $rowsAndCols
+     * @param array<array<string>> $rows
      * @param array<string> $deck
      * @return array<string,string|array<int>>
      */
-    public function suggestion(array $rowsAndCols, string $card, array $deck): array
+    public function suggestion(array $rows, string $card, array $deck): array
     {
         $ruleCount = 9;
         /**
-         * @var array<array<string>> $rows
-         */
-        $rows = $rowsAndCols['rows'];
-        /**
          * @var array<array<string>> $cols
          */
-        $cols = $rowsAndCols['cols'];
+        $cols = $this->colGetter->all($rows);
         $this->card = $card;
         $this->deck = $deck;
 
@@ -139,4 +141,37 @@ class MoveEvaluator
             'slot' => $this->finder->all($rows)[0]
         ];
     }
+
+    // /**
+    //  * @param array<string,array<array<string>>> $rowsAndCols
+    //  * @param array<string> $deck
+    //  * @return array<string,string|array<int>>
+    //  */
+    // public function suggestion(array $rowsAndCols, string $card, array $deck): array
+    // {
+    //     $ruleCount = 9;
+    //     /**
+    //      * @var array<array<string>> $rows
+    //      */
+    //     $rows = $rowsAndCols['rows'];
+    //     /**
+    //      * @var array<array<string>> $cols
+    //      */
+    //     $cols = $rowsAndCols['cols'];
+    //     $this->card = $card;
+    //     $this->deck = $deck;
+
+    //     for ($i = 0; $i < $ruleCount; $i++) {
+    //         for ($j = 0; $j <= 5; $j++) {
+    //             if ($this->checkRowColForRule($j, $i, $rows, $cols)) {
+    //                 return $this->data;
+    //             }
+    //         }
+    //     }
+    //     return [
+    //         'row-rule' => "",
+    //         'col-rule' => "",
+    //         'slot' => $this->finder->all($rows)[0]
+    //     ];
+    // }
 }

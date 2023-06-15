@@ -534,9 +534,9 @@
       <argument type="service" id="App\ProjectCard\CardFactory"/>
     </service>
     <service id="App\ProjectCard\NoCardsException" class="App\ProjectCard\NoCardsException" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectGrid\ColumnGetter" class="App\ProjectGrid\ColumnGetter" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\EmptyCellFinder" class="App\ProjectGrid\EmptyCellFinder" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\Grid" class="App\ProjectGrid\Grid" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectGrid\GridCols" class="App\ProjectGrid\GridCols" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\GridGraphic" class="App\ProjectGrid\GridGraphic" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\SlotNotEmptyException" class="App\ProjectGrid\SlotNotEmptyException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\Flush" class="App\ProjectRules\Flush" autowire="true" autoconfigure="true">
@@ -554,6 +554,7 @@
     <service id="App\ProjectRules\MoveEvaluator" class="App\ProjectRules\MoveEvaluator" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectGrid\EmptyCellFinder"/>
       <argument type="service" id="App\ProjectRules\RuleStats"/>
+      <argument type="service" id="App\ProjectGrid\ColumnGetter"/>
     </service>
     <service id="App\ProjectRules\RoyalFlush" class="App\ProjectRules\RoyalFlush" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\RoyalFlushStat" class="App\ProjectRules\RoyalFlushStat" autowire="true" autoconfigure="true"/>
@@ -583,6 +584,7 @@
     <service id="App\ProjectRules\TwoPairsStat" class="App\ProjectRules\TwoPairsStat" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\WinEvaluator" class="App\ProjectRules\WinEvaluator" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectRules\Rules"/>
+      <argument type="service" id="App\ProjectGrid\ColumnGetter"/>
     </service>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -1741,9 +1743,9 @@
         <argument key="App\ProjectCard\CardSearcher" type="service_closure" id="App\ProjectCard\CardSearcher" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectCard\Deck" type="service_closure" id="App\ProjectCard\Deck" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectCard\NoCardsException" type="service_closure" id="App\ProjectCard\NoCardsException" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectGrid\ColumnGetter" type="service_closure" id="App\ProjectGrid\ColumnGetter" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\EmptyCellFinder" type="service_closure" id="App\ProjectGrid\EmptyCellFinder" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\Grid" type="service_closure" id="App\ProjectGrid\Grid" on-invalid="ignore_uninitialized"/>
-        <argument key="App\ProjectGrid\GridCols" type="service_closure" id="App\ProjectGrid\GridCols" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\GridGraphic" type="service_closure" id="App\ProjectGrid\GridGraphic" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\SlotNotEmptyException" type="service_closure" id="App\ProjectGrid\SlotNotEmptyException" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\Flush" type="service_closure" id="App\ProjectRules\Flush" on-invalid="ignore_uninitialized"/>

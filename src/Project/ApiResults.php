@@ -25,7 +25,7 @@ class ApiResults
         $deck->shuffle();
         while ($grid->getCardCount() < 25) {
             $card = $deck->deal();
-            $suggestion = $moveEvaluator->suggestion($grid->rowsAndCols(), $card, $deck->getCards());
+            $suggestion = $moveEvaluator->suggestion($grid->getCards(), $card, $deck->getCards());
             /**
              * @var int $row
              */
@@ -36,7 +36,7 @@ class ApiResults
             $col = $suggestion['slot'][1];
             $grid->addCard($row, $col, $card);
         }
-        $results = $winEvaluator->results($grid->rowsAndCols());
+        $results = $winEvaluator->results($grid->getCards());
         return [
             "results" => $results,
             "grid" => $gridGraphic->graphic($grid->getCards()),
