@@ -520,7 +520,13 @@
     <service id="App\Project\ApiGame" class="App\Project\ApiGame" autowire="true" autoconfigure="true"/>
     <service id="App\Project\ApiNew" class="App\Project\ApiNew" autowire="true" autoconfigure="true"/>
     <service id="App\Project\ApiResults" class="App\Project\ApiResults" autowire="true" autoconfigure="true"/>
-    <service id="App\Project\Game" class="App\Project\Game" autowire="true" autoconfigure="true"/>
+    <service id="App\Project\Game" class="App\Project\Game" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectGrid\Grid"/>
+      <argument type="service" id="App\ProjectGrid\Grid"/>
+      <argument type="service" id="App\ProjectCard\Deck"/>
+      <argument type="service" id="App\ProjectRules\MoveEvaluator"/>
+      <argument type="service" id="App\ProjectRules\WinEvaluator"/>
+    </service>
     <service id="App\ProjectCard\CardCounter" class="App\ProjectCard\CardCounter" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\CardFactory" class="App\ProjectCard\CardFactory" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\CardSearcher" class="App\ProjectCard\CardSearcher" autowire="true" autoconfigure="true"/>

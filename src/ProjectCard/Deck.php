@@ -2,7 +2,6 @@
 
 namespace App\ProjectCard;
 
-
 /**
  * Class representing a deck of cards
  */

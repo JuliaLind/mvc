@@ -17,46 +17,81 @@ class Game
     private Deck $deck;
     private string $card;
     private bool $finished = false;
+    private MoveEvaluator $moveEvaluator;
+    private WinEvaluator $winEvaluator;
+    /**
+     * @var array<string,array<string,array<array<string,int|string>>|int>|string> $results
+     */
+    private array $results;
+    private string $message;
+    /**
+     * @var array<int> $suggestedSlot
+     */
+    private array $suggestedSlot;
 
-    public function __construct()
-    {
-        $this->house = new Grid();
-        $this->player = new Grid();
-        $deck = new Deck();
+    public function __construct(
+        Grid $house = new Grid(),
+        Grid $player = new Grid(),
+        Deck $deck = new Deck(),
+        MoveEvaluator $moveEvaluator=new MoveEvaluator(),
+        WinEvaluator $winEvaluator=new WinEvaluator()
+    ) {
+        $this->house = $house;
+        $this->player = $player;
         $deck->shuffle();
         $this->deck = $deck;
-    }
-
-    public function deal(): void
-    {
+        $this->playerSuggest();
         $this->card = $this->deck->deal();
+        $this->moveEvaluator = $moveEvaluator;
+        $this->winEvaluator = $winEvaluator;
     }
 
-    /**
-     * @return array<string,string|array<int>>
-     */
-    public function playerSuggest(MoveEvaluator $evaluator=new MoveEvaluator()): array
+    public function playerSuggest(): void
     {
-        return $evaluator->suggestion($this->player->rowsAndCols(), $this->card, $this->deck->possibleCards());
+        $suggestion = $this->moveEvaluator->suggestion($this->player->rowsAndCols(), $this->card, $this->deck->possibleCards());
+        $message = "";
+        /**
+         * @var array<int> $slot
+         */
+        $slot = $suggestion["slot"];
+        $this->suggestedSlot = $slot;
+        $row = $slot[0];
+        $col = $slot[1];
+        /**
+         * @var string $rowRule
+         */
+        $rowRule = $suggestion['row-rule'];
+        /**
+         * @var string $colRule
+         */
+        $colRule = $suggestion['col-rule'];
+        if ($rowRule != "" && $colRule != "") {
+            $message = "Place card in row {$row} column {$col} for possible {$rowRule} horizontally and {$colRule} vertically.";
+        } elseif ($rowRule != "") {
+            $message = "Place card in row {$row} column {$col} for possible {$rowRule} horizontally.";
+        } elseif ($colRule != "") {
+            $message = "Place card in row {$row} column {$col} for possible {$colRule} vertically.";
+        }
+        $this->message = $message;
     }
 
-    public function playerPlaceCard(Request $request): void
+    public function playerPlaceCard(int $row, int $col): bool
     {
-        /**
-         * @var int $row
-         */
-        $row = $request->get('row');
-        /**
-         * @var int $col
-         */
-        $col = $request->get('col');
         $this->player->addCard($row, $col, $this->card);
+        $this->housePlaceCard();
+        if (!($this->checkIfFinished($this->house->getCardCount()))) {
+            $this->playerSuggest();
+            $this->card = $this->deck->deal();
+            return false;
+        }
+        $this->evaluate();
+        return true;
     }
 
-    public function housePlaceCard(MoveEvaluator $evaluator=new MoveEvaluator()): void
+    private function housePlaceCard(): void
     {
         $card = $this->deck->deal();
-        $suggestion = $evaluator->suggestion($this->house->rowsAndCols(), $card, $this->deck->possibleCards());
+        $suggestion = $this->moveEvaluator->suggestion($this->house->rowsAndCols(), $card, $this->deck->possibleCards());
         /**
          * @var array<int> $slot
          */
@@ -64,25 +99,32 @@ class Game
         $this->house->addCard($slot[0], $slot[1], $card);
     }
 
-    public function checkIfFinished(): bool
+
+    private function checkIfFinished(int $houseCardCount): bool
     {
-        $finished = $this->house->getCardCount() === 25;
+        $finished = $houseCardCount === 25;
         $this->finished = $finished;
         return $finished;
     }
 
-    /**
-     * @return array<string,array<string,array<array<string,int|string>>|int>|string>
-     */
-    public function evaluate(WinEvaluator $evaluator=new WinEvaluator()): array
+    private function evaluate(): void
     {
-        $playerData = $evaluator->results($this->player->rowsAndCols());
-        $houseData = $evaluator->results($this->house->rowsAndCols());
-        $winner = "player";
+        $playerData = $this->winEvaluator->results($this->player->rowsAndCols());
+        /**
+         * @var int $playerTotal
+         */
+        $playerTotal = $playerData['total'];
+        $houseData = $this->winEvaluator->results($this->house->rowsAndCols());
+        /**
+         * @var int $houseTotal
+         */
+        $houseTotal = $houseData['total'];
+        $winner = "You";
         if ($playerData['total'] <= $houseData['total']) {
-            $winner = "house";
+            $winner = "House";
         }
-        return [
+        $this->message = "Game finished, You got {$playerTotal} points and House got {$houseTotal} points. {$winner} won";
+        $this->results = [
             'winner' => $winner,
             'player' => $playerData,
             'house' => $houseData
@@ -97,7 +139,7 @@ class Game
         return [
             'house' => $grid->graphic($this->house->getCards()),
             'player' => $grid->graphic($this->player->getCards()),
-            'card' => $this->card
+            'suggestion' => $this->message != ""
         ];
     }
 

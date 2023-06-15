@@ -3,6 +3,7 @@
 namespace App\ProjectGrid;
 
 use PHPUnit\Framework\TestCase;
+
 // use App\ProjectGrid\SlotNotEmptyException;
 
 class GridTest extends TestCase

@@ -45,7 +45,7 @@ class ApiGame
         }
         $card = $this->deck->deal();
         $deck = array_slice($this->deck->getCards(), 26);
-        $suggestion = $evaluator->suggestion($this->player->rowsAndCols(), $card, $this->deck->getCards());
+        $suggestion = $evaluator->suggestion($this->player->rowsAndCols(), $card, $deck);
         $slot = $suggestion['slot'];
         /**
          * @var array<int> $slot
@@ -56,7 +56,8 @@ class ApiGame
             "picked card" => $card,
             "suggestion" => $suggestion,
             "grid" => $gridGraphic->graphic($this->player->getCards()),
-            "remaining cards" => $this->deck->getCards()
+            "remaining cards" => $this->deck->getCards(),
+            "possible cards" => $deck
         ];
         $data['suggestion']['slot'] = [
             'row' => $slot[0],

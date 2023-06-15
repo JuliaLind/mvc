@@ -2,7 +2,6 @@
 
 namespace App\ProjectGrid;
 
-
 /**
  * Class representing a grid for cards
  */
