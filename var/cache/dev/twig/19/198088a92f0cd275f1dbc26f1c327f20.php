@@ -110,7 +110,7 @@ class __TwigTemplate_4df4084cb4eead9eb69a2c319a345dc8 extends Template
                     echo ">
                 <input type=\"submit\" value=";
                     // line 15
-                    echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(twig_get_attribute($this->env, $this->source, $context["route"], "link", [], "any", false, false, false, 15), ["number" => 5]);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["route"], "route", [], "any", false, false, false, 15), "html", null, true);
                     echo ">
             ";
                 } elseif ((twig_get_attribute($this->env, $this->source,                 // line 16
@@ -123,7 +123,7 @@ $context["route"], "link", [], "any", false, false, false, 16) == "jsonDeal")) {
                     echo ">
                 <input type=\"submit\" value=";
                     // line 18
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(twig_get_attribute($this->env, $this->source, $context["route"], "link", [], "any", false, false, false, 18), ["players" => 3, "cards" => 5]), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["route"], "route", [], "any", false, false, false, 18), "html", null, true);
                     echo ">
             ";
                 } else {
@@ -135,7 +135,7 @@ $context["route"], "link", [], "any", false, false, false, 16) == "jsonDeal")) {
                     echo ">
                 <input type=\"submit\" value=";
                     // line 21
-                    echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(twig_get_attribute($this->env, $this->source, $context["route"], "link", [], "any", false, false, false, 21));
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["route"], "route", [], "any", false, false, false, 21), "html", null, true);
                     echo ">
             ";
                 }
@@ -148,7 +148,7 @@ $context["route"], "link", [], "any", false, false, false, 24) == "single_book_j
                 echo "            <a href=\"";
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(twig_get_attribute($this->env, $this->source, $context["route"], "link", [], "any", false, false, false, 25), ["isbn" => "9781492053514"]);
                 echo "\">";
-                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(twig_get_attribute($this->env, $this->source, $context["route"], "link", [], "any", false, false, false, 25), ["isbn" => "9781492053514"]);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["route"], "route", [], "any", false, false, false, 25), "html", null, true);
                 echo "</a>
         ";
             } else {
@@ -156,7 +156,7 @@ $context["route"], "link", [], "any", false, false, false, 24) == "single_book_j
                 echo "            <a href=\"";
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(twig_get_attribute($this->env, $this->source, $context["route"], "link", [], "any", false, false, false, 27));
                 echo "\">";
-                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(twig_get_attribute($this->env, $this->source, $context["route"], "link", [], "any", false, false, false, 27));
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["route"], "route", [], "any", false, false, false, 27), "html", null, true);
                 echo "</a>
         ";
             }
@@ -212,19 +212,19 @@ $context["route"], "link", [], "any", false, false, false, 24) == "single_book_j
         {% if route.method %}
             {% if route.link == \"jsonDrawMany\" %}
                 <form action=\"{{ path(route.link, {number: 5}) }}\" method={{ route.method }}>
-                <input type=\"submit\" value={{ path(route.link, {number: 5}) }}>
+                <input type=\"submit\" value={{ route.route }}>
             {% elseif route.link == \"jsonDeal\" %}
                 <form action=\"{{ path(route.link, {players: 3, cards: 5}) }}\" method={{ route.method }}>
-                <input type=\"submit\" value={{ path(route.link, {players: 3, cards: 5}) }}>
+                <input type=\"submit\" value={{ route.route }}>
             {% else %}
                 <form action=\"{{ path(route.link) }}\" method={{ route.method }}>
-                <input type=\"submit\" value={{ path(route.link) }}>
+                <input type=\"submit\" value={{ route.route }}>
             {% endif %}
         </form>
         {% elseif route.link == \"single_book_json\" %}
-            <a href=\"{{ path(route.link, {isbn: \"9781492053514\"}) }}\">{{ path(route.link, {isbn: \"9781492053514\"}) }}</a>
+            <a href=\"{{ path(route.link, {isbn: \"9781492053514\"}) }}\">{{ route.route }}</a>
         {% else %}
-            <a href=\"{{ path(route.link) }}\">{{ path(route.link) }}</a>
+            <a href=\"{{ path(route.link) }}\">{{ route.route }}</a>
         {% endif %}
         </td><td>{{ route.descr }}</td>
     </tr>

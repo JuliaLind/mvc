@@ -20,6 +20,7 @@
 
 .project .wrapper.api button.form-btn {
     width: 350px;
+    max-width: 100%;
 }
 
 .project .wrapper.api {
@@ -43,19 +44,12 @@
     justify-content: center;
 }
 
-/* .project .wrapper.api .two-col .input-box {
-    display: inline-block;
-    width: 48%;
+@media (max-width: 800px) {
+    .project .wrapper.api {
+        padding: 1em;
+    }
+
+    .register-link {
+        margin-top: 0;
+    }
 }
-
-.project .api .two-col .input-box input {
-    text-align: center;
-    color: var(--alt-neon);
-} */
-
-/* .project .api .two-col .input-box .icon {
-    font-size: 1em;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-} */

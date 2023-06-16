@@ -52,25 +52,4 @@ class Grid
     {
         return $this->grid;
     }
-
-    // /**
-    //  * @return array<string,array<array<string>>>
-    //  */
-    // public function rowsAndCols(GridCols $gridCols = new GridCols()): array
-    // {
-    //     $rows = $this->grid;
-    //     $cols = $gridCols->all($rows);
-    //     return [
-    //         'rows' => $rows,
-    //         'cols' => $cols
-    //     ];
-    // }
-
-    // /**
-    //  * @return array<string,array<array<string>>>
-    //  */
-    // public function rowsAndCols(Hands $hands = new Hands()): array
-    // {
-    //     return $hands->all($this->grid);
-    // }
 }

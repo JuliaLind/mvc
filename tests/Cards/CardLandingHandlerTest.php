@@ -31,22 +31,27 @@ class CardLandingHandlerTest extends TestCase
                 [
                     'link' => "deck",
                     'method' => 'GET',
+                    'route' => '/card/deck'
                 ],
                 [
                     'link' => "shuffle",
                     'method' => 'POST',
+                    'route' => '/card/deck/shuffle'
                 ],
                 [
                     'link' => "draw",
                     'method' => 'POST',
+                    'route' => '/card/deck/draw'
                 ],
                 [
                     'link' => "drawMany",
                     'method' => 'POST',
+                    'route' => '/card/deck/draw/5'
                 ],
                 [
                     'link' => "deal",
                     'method' => 'POST',
+                    'route' => '/card/deck/deal/3/5'
                 ],
             ],
         ];

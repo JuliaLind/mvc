@@ -52,6 +52,7 @@ class CardController extends AbstractController
     ): Response {
         $deck->shuffle();
         $data = $cardHandler->getDeckRouteData($deck);
+        $data['title'] = "Shuffled deck";
         $session->set("deck", $deck);
 
         return $this->render('card/deck.html.twig', $data);

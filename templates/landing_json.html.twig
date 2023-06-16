@@ -12,19 +12,19 @@
         {% if route.method %}
             {% if route.link == "jsonDrawMany" %}
                 <form action="{{ path(route.link, {number: 5}) }}" method={{ route.method }}>
-                <input type="submit" value={{ path(route.link, {number: 5}) }}>
+                <input type="submit" value={{ route.route }}>
             {% elseif route.link == "jsonDeal" %}
                 <form action="{{ path(route.link, {players: 3, cards: 5}) }}" method={{ route.method }}>
-                <input type="submit" value={{ path(route.link, {players: 3, cards: 5}) }}>
+                <input type="submit" value={{ route.route }}>
             {% else %}
                 <form action="{{ path(route.link) }}" method={{ route.method }}>
-                <input type="submit" value={{ path(route.link) }}>
+                <input type="submit" value={{ route.route }}>
             {% endif %}
         </form>
         {% elseif route.link == "single_book_json" %}
-            <a href="{{ path(route.link, {isbn: "9781492053514"}) }}">{{ path(route.link, {isbn: "9781492053514"}) }}</a>
+            <a href="{{ path(route.link, {isbn: "9781492053514"}) }}">{{ route.route }}</a>
         {% else %}
-            <a href="{{ path(route.link) }}">{{ path(route.link) }}</a>
+            <a href="{{ path(route.link) }}">{{ route.route }}</a>
         {% endif %}
         </td><td>{{ route.descr }}</td>
     </tr>

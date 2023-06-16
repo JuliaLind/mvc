@@ -2,22 +2,50 @@
     border-collapse: collapse;
 }
 
-.points td + .points td,
-.points th + .points th { 
-    border-left: 1px solid var(--form-neon2); 
-}
-.points tr + .points tr { 
-    border-top: 1px solid var(--form-neon2); 
-}
 
 .points td,
 .points th {
     padding: 10px;
+    text-align: left;
+}
+
+.points td {
+    border-bottom: 2px solid var(--form-neon);
 }
 
 
+.flex-wrapper-col {
+    color: var(--form-neon);
+}
 
-.points tr + .points tr > .points td,
-.points tr + .points tr > .points th {
-    border-top: 1px solid var(--form-neon2);
+.points th {
+    color: var(--form-neon2);
+}
+
+.half-width-col.points,
+.half-width-col.descr {
+    width: 400px;
+}
+
+@media (max-width: 800px) {
+    .half-width-col {
+        margin-bottom: 1rem;
+    }
+
+    /* .half-width-col.points,
+    .half-width-col.descr { */
+    .half-width-col {
+        row-gap: unset;
+    }
+
+    .half-width-col.points {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 801px) {
+    .half-width-col.descr {
+        padding: 2rem;
+        border-right: 3px solid var(--form-neon2);
+    }
 }

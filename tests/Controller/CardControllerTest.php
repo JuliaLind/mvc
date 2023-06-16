@@ -21,7 +21,7 @@ class CardControllerTest extends WebTestCase
         $client->request('POST', '/card/deck/shuffle');
         $this->assertResponseIsSuccessful();
         $this->assertRouteSame('shuffle');
-        $this->assertSelectorTextContains('h1', 'New deck');
+        $this->assertSelectorTextContains('h1', 'Shuffled deck');
     }
 
     public function testDraw(): void

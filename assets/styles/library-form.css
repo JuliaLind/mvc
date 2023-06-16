@@ -176,6 +176,23 @@ img.no-border {
     .library .flex-row {
         flex-wrap: wrap;
     }
+
+    .library form {
+        padding: unset;
+    }
+
+    .library form .btn {
+        width: 200px;
+    }
+
+    .library a.btn,
+    .library .btn {
+        padding: 0.5rem;
+    }
+
+    .library a.btn {
+        font-size: 1em;
+    }
 }
 
 

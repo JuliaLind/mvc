@@ -13,17 +13,17 @@
         {% if route.method != "GET" %}
             {% if route.link == "drawMany" %}
                 <form action="{{ path(route.link, {number: 5}) }}" method={{ route.method }}>
-                <input type="submit" value={{ path(route.link, {number: 5}) }}>
+                <input type="submit" value={{ route.route }}>
             {% elseif route.link == "deal" %}
                 <form action="{{ path(route.link, {players: 3, cards: 5}) }}" method={{ route.method }}>
-                <input type="submit" value={{ path(route.link, {players: 3, cards: 5}) }}>
+                <input type="submit" value={{ route.route }}>
             {% else %}
                 <form action="{{ path(route.link) }}" method={{ route.method }}>
-                <input type="submit" value={{ path(route.link) }}>
+                <input type="submit" value={{ route.route }}>
             {% endif %}
         </form>
         {% else %}
-            <a href="{{ path(route.link) }}">{{ path(route.link) }}</a>
+            <a href="{{ path(route.link) }}">{{ route.route }}</a>
         {% endif %}
         </td>
         <td>

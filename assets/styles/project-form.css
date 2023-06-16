@@ -174,3 +174,42 @@
 .register-link p a:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 800px) {
+    .project form {
+        max-width: 100%;
+    }
+
+    .project .wrapper h2 {
+        font-size: 1rem;
+    }
+
+    .project form {
+        padding-bottom: 1rem;
+    }
+
+    .project .wrapper {
+        border-top: unset;
+        border-left: unset;
+        border-right: unset;
+        border-radius: unset;
+        border-bottom-color: var(--form-neon2);
+    }
+
+    .project .wrapper.api button.form-btn {
+        background: var(--form-neon);
+        box-shadow: 0 0 20px var(--form-neon);
+    }
+
+    .project .wrapper.api .input-box input {
+        border: 2px solid var(--form-neon);
+        box-shadow: 0 0 10px var(--form-neon), inset 0 0 10px var(--form-neon);
+    }
+    .project .wrapper.api button.form-btn {
+        color: #000;
+    }
+
+    .project .wrapper p {
+        font-size: 0.9rem;
+    }
+}

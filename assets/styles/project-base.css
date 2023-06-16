@@ -47,3 +47,9 @@ button,
 input {
     font-size: unset;
 }
+
+@media (max-width: 800px) {
+    .project {
+        justify-content: center;
+    }
+}

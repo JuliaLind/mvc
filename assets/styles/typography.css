@@ -69,17 +69,39 @@ section {
     margin-bottom: calc(1.4 * 1.1rem * 2);
 }
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
     main {
         padding: calc(var(--magic-number) * 0.5);
         padding-bottom: calc(var(--magic-number) * 2.5);
     }
 
-    .site-title {
-        font-size: 2rem;
+
+    .site-title,
+    a.close {
+        /* font-size: 2rem; */
+        font-size: 1.6rem;
     }
 
     h1 {
+        font-size: 1.423rem;
+    }
+
+
+    h2,
+    th,
+    .library .smaller {
+        font-size: 1.265rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+        margin-bottom: 1rem;
+    }
+
+
+    /* h1 {
         font-size: 2.4rem;
         margin-bottom: 2.8rem;
     }
@@ -87,16 +109,15 @@ section {
     h2{
         font-size: 2rem;
         margin-bottom: 1.4rem;
-    }
+    } */
     
     h3 {
-        font-size: 1.4rem;
-        margin-bottom: 1.4rem;
+        font-size: 1.125rem;
     }
     
-    p {
+    p,
+    td {
         font-size: 1rem;
-        margin-bottom: 1.4rem;
     }
 
     section {

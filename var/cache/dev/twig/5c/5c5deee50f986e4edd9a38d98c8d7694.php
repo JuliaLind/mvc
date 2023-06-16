@@ -111,7 +111,7 @@ class __TwigTemplate_52583a38a9cf603912c8041016b22abc extends Template
                     echo ">
                 <input type=\"submit\" value=";
                     // line 16
-                    echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(twig_get_attribute($this->env, $this->source, $context["route"], "link", [], "any", false, false, false, 16), ["number" => 5]);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["route"], "route", [], "any", false, false, false, 16), "html", null, true);
                     echo ">
             ";
                 } elseif ((twig_get_attribute($this->env, $this->source,                 // line 17
@@ -124,7 +124,7 @@ $context["route"], "link", [], "any", false, false, false, 17) == "deal")) {
                     echo ">
                 <input type=\"submit\" value=";
                     // line 19
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(twig_get_attribute($this->env, $this->source, $context["route"], "link", [], "any", false, false, false, 19), ["players" => 3, "cards" => 5]), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["route"], "route", [], "any", false, false, false, 19), "html", null, true);
                     echo ">
             ";
                 } else {
@@ -136,7 +136,7 @@ $context["route"], "link", [], "any", false, false, false, 17) == "deal")) {
                     echo ">
                 <input type=\"submit\" value=";
                     // line 22
-                    echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(twig_get_attribute($this->env, $this->source, $context["route"], "link", [], "any", false, false, false, 22));
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["route"], "route", [], "any", false, false, false, 22), "html", null, true);
                     echo ">
             ";
                 }
@@ -148,7 +148,7 @@ $context["route"], "link", [], "any", false, false, false, 17) == "deal")) {
                 echo "            <a href=\"";
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(twig_get_attribute($this->env, $this->source, $context["route"], "link", [], "any", false, false, false, 26));
                 echo "\">";
-                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(twig_get_attribute($this->env, $this->source, $context["route"], "link", [], "any", false, false, false, 26));
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["route"], "route", [], "any", false, false, false, 26), "html", null, true);
                 echo "</a>
         ";
             }
@@ -226,17 +226,17 @@ $context["route"], "link", [], "any", false, false, false, 17) == "deal")) {
         {% if route.method != \"GET\" %}
             {% if route.link == \"drawMany\" %}
                 <form action=\"{{ path(route.link, {number: 5}) }}\" method={{ route.method }}>
-                <input type=\"submit\" value={{ path(route.link, {number: 5}) }}>
+                <input type=\"submit\" value={{ route.route }}>
             {% elseif route.link == \"deal\" %}
                 <form action=\"{{ path(route.link, {players: 3, cards: 5}) }}\" method={{ route.method }}>
-                <input type=\"submit\" value={{ path(route.link, {players: 3, cards: 5}) }}>
+                <input type=\"submit\" value={{ route.route }}>
             {% else %}
                 <form action=\"{{ path(route.link) }}\" method={{ route.method }}>
-                <input type=\"submit\" value={{ path(route.link) }}>
+                <input type=\"submit\" value={{ route.route }}>
             {% endif %}
         </form>
         {% else %}
-            <a href=\"{{ path(route.link) }}\">{{ path(route.link) }}</a>
+            <a href=\"{{ path(route.link) }}\">{{ route.route }}</a>
         {% endif %}
         </td>
         <td>

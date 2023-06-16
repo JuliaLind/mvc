@@ -141,37 +141,4 @@ class MoveEvaluator
             'slot' => $this->finder->all($rows)[0]
         ];
     }
-
-    // /**
-    //  * @param array<string,array<array<string>>> $rowsAndCols
-    //  * @param array<string> $deck
-    //  * @return array<string,string|array<int>>
-    //  */
-    // public function suggestion(array $rowsAndCols, string $card, array $deck): array
-    // {
-    //     $ruleCount = 9;
-    //     /**
-    //      * @var array<array<string>> $rows
-    //      */
-    //     $rows = $rowsAndCols['rows'];
-    //     /**
-    //      * @var array<array<string>> $cols
-    //      */
-    //     $cols = $rowsAndCols['cols'];
-    //     $this->card = $card;
-    //     $this->deck = $deck;
-
-    //     for ($i = 0; $i < $ruleCount; $i++) {
-    //         for ($j = 0; $j <= 5; $j++) {
-    //             if ($this->checkRowColForRule($j, $i, $rows, $cols)) {
-    //                 return $this->data;
-    //             }
-    //         }
-    //     }
-    //     return [
-    //         'row-rule' => "",
-    //         'col-rule' => "",
-    //         'slot' => $this->finder->all($rows)[0]
-    //     ];
-    // }
 }

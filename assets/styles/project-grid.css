@@ -70,6 +70,13 @@
     grid-row: 5 / span 1;
 }
 
+@media (max-width: 800px) {
+    .slot {
+        border: 1px solid var(--clear-neon);
+        color: var(--form-neon);
+    }
+}
+
 @media (max-width: 450px) {
     .slot {
         size: 0.3em;

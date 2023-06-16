@@ -133,7 +133,10 @@
     }
 
     .topnav.responsive {
-        position: relative;
+        /* position: relative; */
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
     }
 
     .topnav.responsive {
@@ -142,6 +145,10 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+    }
+
+    .topnav.responsive a {
+        padding: 0.1rem;
     }
 
     /* .topnav.responsive .nav-toggle {
@@ -164,6 +171,7 @@
         right: 0;
         top: 0;
         text-align: right !important;
+        padding: 0.7rem;
     }
 }
 

@@ -80,6 +80,13 @@
         min-height: 92vh;
     }
 }
+
+@media (max-width: 800px) {
+    .library .site-header h1 {
+        /* font-size: 2rem; */
+        font-size: 2.4rem;
+    }
+}
 /* .library main {
     background-color: var(--main);
 } */
