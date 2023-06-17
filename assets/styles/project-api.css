@@ -44,6 +44,11 @@
     justify-content: center;
 }
 
+/* 
+.api h2 {
+    font-family: 'Text Me One', sans-serif;
+} */
+
 @media (max-width: 800px) {
     .project .wrapper.api {
         padding: 1em;

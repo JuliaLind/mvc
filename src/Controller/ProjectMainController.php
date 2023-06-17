@@ -22,13 +22,19 @@ class ProjectMainController extends AbstractController
         SessionInterface $session
     ): Response {
         $user = $session->get("user") ?? null;
-        $game = $session->get("game") ?? null;
         $data = [
             'url' => "proj",
+        ];
+        // if($user === null) {
+        //     return $this->render('proj/index.html.twig', $data);
+        // }
+        $game = $session->get("game") ?? null;
+        $data = [
+            ...$data,
             'user' => $user,
             'game' => $game
         ];
-        return $this->render('proj/index.html.twig', $data);
+        return $this->render('proj/profile.html.twig', $data);
     }
 
     #[Route("/proj/api", name: "proj-api")]
@@ -53,7 +59,7 @@ class ProjectMainController extends AbstractController
     public function projRules(): Response
     {
         $data = [
-            'url' => "proj"
+            'url' => "rules"
         ];
         return $this->render('proj/rules.html.twig', $data);
     }

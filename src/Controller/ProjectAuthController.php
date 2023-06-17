@@ -46,7 +46,7 @@ class ProjectAuthController extends AbstractController
         return $this->redirectToRoute('proj');
     }
 
-    #[Route("/proj/logout", name: "logout", methods: ['POST'])]
+    #[Route("/proj/logout", name: "logout", methods: ['GET'])]
     public function projLogout(
         Request $request,
         SessionInterface $session

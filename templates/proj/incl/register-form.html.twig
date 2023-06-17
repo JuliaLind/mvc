@@ -3,11 +3,17 @@
 <div class="wrapper register">
 <form method="post" action="{{ path('register') }}">
 
-{# Note to self: lägg till javascript för kontroll att båda lösenorden matchar#}
-<h2>Register</h2>
+<h2>Register and get 1000 free coins</h2>
+    <div class="input-box">
+    <span class="material-symbols-outlined icon">
+    alternate_email
+    </span>
+    <input name="email" type="email" required="required" minlength="1" maxlength="100" placeholder="Email">
+    </div>
+
     <div class="input-box">
     <span class="material-symbols-outlined icon">person</span>
-    <input name="username" type="text" required="required" minlength="1" maxlength="100" placeholder="Username">
+    <input name="username" type="text" required="required" minlength="1" maxlength="100" placeholder="Gamer name">
     </div>
 
     <div class="input-box">

@@ -1,12 +1,11 @@
 .project .topnav {
     background-color: initial;
-    /* background-color: rgb(0, 0, 0, 0.5); */
-    /* background-image: linear-gradient(to right, rgb(0, 0, 0, 0.01) 90%, rgb(0, 0, 0, 0.8) 10%);  */
 }
 
 .project .topnav a {
-    font-size: 1.2em;
+    font-size: 1.4rem;
     color: #333;
+    font-family: 'Text Me One', sans-serif;
 }
 
 .project .topnav a:hover,
@@ -27,130 +26,43 @@
     text-decoration: none;
 }
 
-@media screen and (max-width: 1150px) {
-    .project .desktop-only {
-        display: block !important;
-    }
-    .project .topnav a:not(:first-child) {
-        display: block;
-    }
-}
-
-
-/* .topnav {
-    background-color: #000;
-    position: sticky;
+.project .topnav {
+    position: fixed;
     top: 0;
+    width: 100vw;
     left: 0;
-    z-index: 99999;
+    right: 0;
 }
-
-.topnav a {
-    float: left;
-    display: block;
-    color: #818181;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    text-transform: uppercase;
-}
-
-.topnav .subnav {
-    float: left;
-    overflow: hidden;
-}
-
-
-
-.subnav-content a.active {
-    color: #f1f1f1;
-    text-decoration: none;
-}
-
-.topnav .nav-toggle {
-    display: none;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.6s ease-in-out;
-    transition: all 0.6s ease-in-out;
-    background-color: var(--right-light);
-}
-
-.expanded {
-    display: block;
-}
-
 
 
 @media screen and (max-width: 1150px) {
-    .desktop-only {
-        display: none !important;
-    }
-    .topnav a:not(:first-child) {
-        display: none;
-    }
-
-    .topnav {
-        overflow: hidden;
-    }
-
-    .subnav a {
-        display: none;
-    }
-
-    .subnav-content {
-        width: 100vw;
-    }
-
-    .subnav-content {
-        border-top: 2px solid var(--main);
-        border-bottom: 2px solid var(--main);
-    }
+    /* .project .desktop-only {
+        display: block !important;
+    } */
+    /* .project .topnav a:not(:last-child) {
+        display: block;
+    } */
 
     .topnav.responsive {
-        position: relative;
+        background-color: #000;
     }
 
-    .topnav.responsive {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-
-    .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: center;
-    }
-
-    .topnav a.nav-toggle,
-    .topnav.responsive .nav-toggle {
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
-        text-align: right !important;
+    .project .bar {
+        background-color: var(--nav-neon);
     }
 }
+
 
 @media (min-width: 1151px) {
-    .topnav {
-        height: 3.5rem;
+    .project .topnav {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 2rem;
     }
 
-    .mobile-only {
-        display: none !important;
+    .project .topnav a {
+        float: right;
     }
-} */
-
+}
 
 

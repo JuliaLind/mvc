@@ -47,7 +47,7 @@ return [
         '/project/api/register' => [[['_route' => 'api-register', '_controller' => 'App\\Controller\\ProjectApiController::apiRegister'], null, ['POST' => 0], null, false, false, null]],
         '/proj/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\ProjectAuthController::projRegister'], null, ['POST' => 0], null, false, false, null]],
         '/proj/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\ProjectAuthController::projLogin'], null, ['POST' => 0], null, false, false, null]],
-        '/proj/logout' => [[['_route' => 'logout', '_controller' => 'App\\Controller\\ProjectAuthController::projLogout'], null, ['POST' => 0], null, false, false, null]],
+        '/proj/logout' => [[['_route' => 'logout', '_controller' => 'App\\Controller\\ProjectAuthController::projLogout'], null, ['GET' => 0], null, false, false, null]],
         '/proj/register-form' => [[['_route' => 'register-form', '_controller' => 'App\\Controller\\ProjectFormController::projRegisterForm'], null, null, null, false, false, null]],
         '/proj/play' => [[['_route' => 'proj-play', '_controller' => 'App\\Controller\\ProjectGameController::projPlay'], null, null, null, false, false, null]],
         '/proj/init' => [[['_route' => 'proj-init', '_controller' => 'App\\Controller\\ProjectGameController::projInit'], null, null, null, false, false, null]],

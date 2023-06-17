@@ -17,19 +17,19 @@
 .project .title {
     font-family: 'Bungee Outline', cursive;
     text-align: center;
-    color: var(--title-neon);
+    color: var(--form-neon);
     font-size: 3.4em;
 
     margin-bottom: 1rem;
     text-shadow:
-    0 0 7px var(--title-neon),
-    0 0 10px var(--title-neon),
-    0 0 21px var(--title-neon),
-    0 0 42px var(--title-neon),
-    0 0 82px var(--title-neon),
-    0 0 92px var(--title-neon),
-    0 0 102px var(--title-neon),
-    0 0 151px var(--title-neon);
+    0 0 7px var(--form-neon),
+    0 0 10px var(--form-neon),
+    0 0 21px var(--form-neon),
+    0 0 42px var(--form-neon),
+    0 0 82px var(--form-neon),
+    0 0 92px var(--form-neon),
+    0 0 102px var(--form-neon),
+    0 0 151px var(--form-neon);
 }
 
 .rules-text {
@@ -40,7 +40,7 @@
 }
 
 .register-link.rules-text p a {
-    color: var(--title-neon);
+    color: var(--form-neon);
 }
 
 @media (max-width: 800px) {

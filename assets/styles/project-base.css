@@ -8,20 +8,9 @@
     width: 100vw;
     min-height: 100vh;
     font-size: 100%;
+    /* font-family: 'Text Me One', sans-serif; */
     font-family: 'Poppins', sans-serif;
     padding-top: 4.5rem;
-}
-
-.project .topnav {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    left: 0;
-    right: 0;
-}
-
-.project .topnav a {
-    float: right;
 }
 
 .project footer p {
@@ -31,6 +20,7 @@
 .project footer {
     justify-content: flex-end;
     padding-right: 1.4rem;
+    color: var(--form-neon2)
 }
 
 .project h1::before {
@@ -47,6 +37,8 @@ button,
 input {
     font-size: unset;
 }
+
+
 
 @media (max-width: 800px) {
     .project {

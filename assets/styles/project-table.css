@@ -16,16 +16,26 @@
 
 .flex-wrapper-col {
     color: var(--form-neon);
+    /* width: 1000px;
+    max-width: 100%; */
 }
 
 .points th {
     color: var(--form-neon2);
+    text-shadow:
+    /* 0 0 7px var(--form-neon2), */
+    0 0 10px var(--form-neon2),
+    /* 0 0 21px var(--form-neon2), */
+    0 0 42px var(--form-neon2);
 }
 
 .half-width-col.points,
 .half-width-col.descr {
     width: 400px;
+    max-width: 100%;
 }
+
+
 
 @media (max-width: 800px) {
     .half-width-col {
@@ -47,5 +57,9 @@
     .half-width-col.descr {
         padding: 2rem;
         border-right: 3px solid var(--form-neon2);
+    }
+
+    .points {
+        padding-left: 2rem;
     }
 }

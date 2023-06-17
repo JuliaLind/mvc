@@ -31,7 +31,6 @@ class ProjectApiController extends AbstractController
          * @var ApiGame $game
          */
         $game = $session->get("api-game") ?? new ApiGame();
-
         $data = $game->oneRound();
         $response = $converter->convert(new JsonResponse($data));
         $session->set("api-game", $game);
@@ -46,7 +45,6 @@ class ProjectApiController extends AbstractController
         ApiNew $game = new ApiNew(),
         JsonConverter $converter = new JsonConverter()
     ): Response {
-
         $data = $game->oneRound($row, $col);
         $response = $converter->convert(new JsonResponse($data));
         return $response;
