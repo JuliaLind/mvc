@@ -6,6 +6,9 @@
     font-size: 1.4rem;
     color: #333;
     font-family: 'Text Me One', sans-serif;
+
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 .project .topnav a:hover,

@@ -10,7 +10,11 @@
 }
 
 .points td {
-    border-bottom: 2px solid var(--form-neon);
+    border-top: 2px solid var(--form-neon);
+}
+
+.points tr:nth-of-type(2) td {
+    border-top: 0;
 }
 
 

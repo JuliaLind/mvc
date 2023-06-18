@@ -27,15 +27,11 @@ class User
     #[ORM\Column(length: 100)]
     private ?string $hash = null;
 
-    /**
-     * @var array<Transaction>
-     */
+
     #[ORM\OneToMany(mappedBy: 'userid', targetEntity: Transaction::class)]
     private Collection $transactions;
 
-    /**
-     * @var array<Score>
-     */
+
     #[ORM\OneToMany(mappedBy: 'userid', targetEntity: Score::class)]
     private Collection $scores;
 
