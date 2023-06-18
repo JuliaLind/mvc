@@ -20,7 +20,8 @@
 .project footer {
     justify-content: flex-end;
     padding-right: 1.4rem;
-    color: var(--form-neon2)
+    background-color: rgb(0, 0, 0, 0);
+    color: var(--form-neon)
 }
 
 .project h1::before {

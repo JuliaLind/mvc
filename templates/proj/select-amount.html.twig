@@ -1,0 +1,33 @@
+{% extends 'base-project.html.twig' %}
+
+{% block title %}Casino{% endblock %}
+
+{% block body %}
+
+{# {{ include('proj/incl/background-image.html.twig') }} #}
+<div class="full-page-background-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({{ asset('img/project/casino6.jpg') }})">
+</div>
+
+<h1 class="title">Place your bet</h1>
+
+<div class="wrapper login">
+<form method="post" action="{{ path('proj-bet') }}">
+    <div class="input-box">
+    <span class="material-symbols-outlined icon">
+    alternate_email
+    </span>
+    <input name="email" type="email" required="required" minlength="1" maxlength="100" placeholder="Email">
+    </div>
+
+    <div class="input-box">
+    <span class="material-symbols-outlined icon">key</span>
+    <input name="password" type="password" required="required" minlength="1" maxlength="100" placeholder="Password">
+    </div>
+    <button class="form-btn" type="submit">Login</button>
+</form>
+</div>
+
+
+
+
+{% endblock %}

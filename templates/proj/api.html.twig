@@ -32,6 +32,19 @@
 </form>
 </div>
 
+<div class="wrapper api">
+<form method="get" action="{{ path('api-user', {email: 'doe@bth.se'}) }}">
+
+<h2>[GET] /project/api/user/doe@bth.se</h2>
+
+    <div class="register-link">
+    <p>Displays data of user with email 'doe@bth.se'</p>
+    </div>
+    <button class="form-btn" type="submit">Go to route</button>
+
+</form>
+</div>
+
 </div>
 <div class="half-width-col">
 
@@ -77,31 +90,9 @@
 </form>
 </div> #}
 
-<div class="wrapper api">
-<form method="get" action="">
 
-<h2>[GET] /project/api/user/emailaddress</h2>
 
-    <div class="register-link">
-    <p>Displays data from user with email XX</p>
-    </div>
-    {# <div class="field-box">
-    <div class="input-box">
-    <span class="material-symbols-outlined icon">person</span>
-    <input name="username" type="text" required="required" minlength="1" maxlength="100" placeholder="Username">
-    </div>
-
-    <div class="input-box">
-    <span class="material-symbols-outlined icon">key</span>
-    <input name="password" type="password" required="required" minlength="1" maxlength="100" placeholder="Password">
-    </div> #}
-    </div>
-    <button class="form-btn" type="submit">Go to route</button>
-
-</form>
-</div>
-
-<div class="wrapper api">
+{# <div class="wrapper api">
 <form method="get" action="">
 
 <h2>[GET] /project/api/users</h2>
@@ -109,47 +100,25 @@
     <div class="register-link">
     <p>Displays data for all registered users</p>
     </div>
-    {# <div class="field-box">
-    <div class="input-box">
-    <span class="material-symbols-outlined icon">person</span>
-    <input name="username" type="text" required="required" minlength="1" maxlength="100" placeholder="Username">
-    </div>
-
-    <div class="input-box">
-    <span class="material-symbols-outlined icon">key</span>
-    <input name="password" type="password" required="required" minlength="1" maxlength="100" placeholder="Password">
-    </div> #}
-    </div>
     <button class="form-btn" type="submit">Go to route</button>
 
 </form>
-</div>
+</div> #}
 
-<div class="wrapper api">
+{# <div class="wrapper api">
 <form method="get" action="">
 
 <h2>[GET] /project/api/transactions/userid</h2>
 
     <div class="register-link">
     <p>Displays all transactions for a single user</p>
-    </div>
-    {# <div class="field-box">
-    <div class="input-box">
-    <span class="material-symbols-outlined icon">person</span>
-    <input name="username" type="text" required="required" minlength="1" maxlength="100" placeholder="Username">
-    </div>
-
-    <div class="input-box">
-    <span class="material-symbols-outlined icon">key</span>
-    <input name="password" type="password" required="required" minlength="1" maxlength="100" placeholder="Password">
-    </div> #}
-    </div>
+    </div>>
     <button class="form-btn" type="submit">Go to route</button>
 
 </form>
-</div>
+</div> #}
 
-<div class="wrapper api">
+{# <div class="wrapper api">
 <form method="get" action="">
 
 <h2>[GET] /project/api/transactions</h2>
@@ -157,30 +126,18 @@
     <div class="register-link">
     <p>Displays all transactions for all users</p>
     </div>
-    {# <div class="field-box">
-    <div class="input-box">
-    <span class="material-symbols-outlined icon">person</span>
-    <input name="username" type="text" required="required" minlength="1" maxlength="100" placeholder="Username">
-    </div>
-
-    <div class="input-box">
-    <span class="material-symbols-outlined icon">key</span>
-    <input name="password" type="password" required="required" minlength="1" maxlength="100" placeholder="Password">
-    </div> #}
-    </div>
     <button class="form-btn" type="submit">Go to route</button>
 
 </form>
-</div>
+</div> #}
 
-<div class="wrapper api">
+{# <div class="wrapper api">
 <form method="get" action="">
 
 <h2>[GET] /project/api/leaderboard/</h2>
 
     <div class="register-link">
     <p>Displays all wins aganst bank</p>
-    </div>
     </div>
     <button class="form-btn" type="submit">Go to route</button>
 
@@ -196,11 +153,10 @@
     <div class="register-link">
     <p>Displays all wins aganst bank for specific player</p>
     </div>
-    </div>
     <button class="form-btn" type="submit">Go to route</button>
 
 </form>
-</div>
+</div> #}
 
 </div>
 </div>

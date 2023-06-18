@@ -8,10 +8,13 @@ use App\ProjectGrid\GridGraphic;
 use App\ProjectRules\WinEvaluator;
 use App\ProjectRules\MoveEvaluator;
 
+use App\Entity\User;
+
 use Symfony\Component\HttpFoundation\Request;
 
 class Game
 {
+    private int $pot;
     private Grid $house;
     private Grid $player;
     private Deck $deck;
@@ -28,6 +31,11 @@ class Game
      * @var array<int> $suggestedSlot
      */
     private array $suggestedSlot;
+
+    public function setPot(int $amount): void
+    {
+        $this->pot = $amount;
+    }
 
     public function __construct(
         Grid $house = new Grid(),
@@ -84,7 +92,6 @@ class Game
             $this->card = $this->deck->deal();
             return false;
         }
-        $this->evaluate();
         return true;
     }
 
@@ -107,7 +114,7 @@ class Game
         return $finished;
     }
 
-    private function evaluate(): void
+    public function evaluate(): int
     {
         $playerData = $this->winEvaluator->results($this->player->getCards());
         /**
@@ -119,16 +126,21 @@ class Game
          * @var int $houseTotal
          */
         $houseTotal = $houseData['total'];
-        $winner = "You";
-        if ($playerData['total'] <= $houseData['total']) {
-            $winner = "House";
+        $winner = "House";
+        $lastPart = "";
+        $amount = 0;
+
+        if ($playerTotal >= $houseTotal) {
+            $winner = "You";
+            $amount = ($this->pot + ($playerTotal - $houseTotal)) * 2;
+            $lastPart = " and received {$amount} coins";
         }
-        $this->message = "Game finished, You got {$playerTotal} points and House got {$houseTotal} points. {$winner} won";
+        $this->message = "Game finished, You got {$playerTotal} points and House got {$houseTotal} points. {$winner} won{$lastPart}";
         $this->results = [
-            'winner' => $winner,
             'player' => $playerData,
             'house' => $houseData
         ];
+        return $amount;
     }
 
     /**

@@ -20,6 +20,11 @@ use App\Project\ApiGame;
 use App\Project\ApiNew;
 use App\Project\ApiResults;
 
+use App\Repository\UserRepository;
+use App\Entity\User;
+
+use Datetime;
+
 class ProjectApiController extends AbstractController
 {
     #[Route('/project/api/bot-plays', name: "api-bot-plays", methods: ['POST'])]
@@ -41,7 +46,6 @@ class ProjectApiController extends AbstractController
     public function apiNew(
         int $row,
         int $col,
-        Request $request,
         ApiNew $game = new ApiNew(),
         JsonConverter $converter = new JsonConverter()
     ): Response {
@@ -60,21 +64,95 @@ class ProjectApiController extends AbstractController
         return $response;
     }
 
-    #[Route('/project/api/register', name: "api-register", methods: ['POST'])]
-    public function apiRegister(
-        Request $request,
+    #[Route('/project/api/user/{email}', name: "api-user", methods: ['GET'])]
+    public function apiUser(
+        UserRepository $userRepo,
+        string $email,
         JsonConverter $converter = new JsonConverter()
     ): Response {
-        $username = $request->get('username');
-        $password = $request->get('password');
-        $hash = password_hash($password, PASSWORD_DEFAULT);
+        /**
+         * @var User $user
+         */
+        $user = $userRepo->findOneBy(['email' => $email]);
         $data = [
-            'username' => $username,
-            'password' => $password,
-            'hash' => $hash,
-            'password verify' => password_verify($password, $hash)
+            'id' => $user->getId(),
+            'acronym' => $user->getAcronym(),
+            'email' => $user->getEmail(),
+            'hash' => $user->getHash(),
+            'transactions' => [],
+            'scores' => []
         ];
+
+        $transactions = $user->getTransactions()->toArray();
+        $scores = $user->getScores()->toArray();
+        foreach($transactions as $transaction) {
+            $transId = $transaction->getId();
+            /**
+             * @var User $user
+             */
+            $user = $transaction->getUserId();
+            /**
+             * @var DateTime $registered
+             */
+            $registered = $transaction->getRegistered();
+            $registered = $registered->format('Y-m-d');
+            $descr = $transaction->getDescr();
+            $amount = $transaction->getAmount();
+
+            array_push(
+                $data['transactions'],
+                [
+                    'id' => $transId,
+                    'user-id' => $user->getId(),
+                    'registered' => $registered,
+                    'descr' => $descr,
+                    'amount' => $amount
+                ]
+            );
+        }
+        foreach($scores as $score) {
+            $scoreId = $score->getId();
+            /**
+             * @var User $user
+             */
+            $user = $score->getUserId();
+            /**
+             * @var DateTime $registered
+             */
+            $registered = $score->getRegistered();
+            $registered = $registered->format('Y-m-d');
+            $points = $score->getPoints();
+
+            array_push(
+                $data['transactions'],
+                [
+                    'id' => $scoreId,
+                    'player' => $user->getAcronym(),
+                    'registered' => $registered,
+                    'score' => $points,
+                ]
+            );
+        }
         $response = $converter->convert(new JsonResponse($data));
         return $response;
     }
+
+
+    // #[Route('/project/api/register', name: "api-register", methods: ['POST'])]
+    // public function apiRegister(
+    //     Request $request,
+    //     JsonConverter $converter = new JsonConverter()
+    // ): Response {
+    //     $username = $request->get('username');
+    //     $password = $request->get('password');
+    //     $hash = password_hash($password, PASSWORD_DEFAULT);
+    //     $data = [
+    //         'username' => $username,
+    //         'password' => $password,
+    //         'hash' => $hash,
+    //         'password verify' => password_verify($password, $hash)
+    //     ];
+    //     $response = $converter->convert(new JsonResponse($data));
+    //     return $response;
+    // }
 }

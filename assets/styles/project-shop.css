@@ -1,0 +1,53 @@
+.shop {
+    color: var(--form-neon);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.shop .btn {
+    width: 200px;
+}
+
+.coins {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+.coins p {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+/* .shop img {
+    width: 200px;
+    height: auto;
+} */
+
+.coins1 {
+    width: 50px;
+    margin-bottom: 1rem;
+}
+
+.coins2 {
+    width: 100px;
+    margin-bottom: 1rem;
+}
+
+.coins3 {
+    width: 150px;
+}
+
+.coins4 {
+    margin-bottom: 1rem;
+}

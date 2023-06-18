@@ -8,8 +8,8 @@
 <div class="full-page-background-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({{ asset('img/project/casino6.jpg') }})">
 </div>
 
-{# <h1 class="title">Welcome to the casino {{user.name}}!</h1> #}
-<h1 class="title profile">Welcome to the casino Julia!</h1>
+<h1 class="title">Welcome to the casino {{user.acronym}}!</h1>
+
 
 <div class="flex-container-row profile">
 <div class="half-width-col">
@@ -18,10 +18,10 @@
 </div>
 
 <div class="btns-grid">
-<a class="profile-btn grid-col-0 grid-row-0" href="{{ path('logout') }}"><span class="material-symbols-outlined">logout</span>Logout</a>
-<a class="profile-btn grid-col-0 grid-row-1" href="/"><span class="material-symbols-outlined">shop</span>Shop</a>
-<a class="profile-btn grid-col-1 grid-row-0" href="/"><span class="material-symbols-outlined">currency_exchange</span>Transaction history</a>
-<a class="profile-btn grid-col-1 grid-row-1" href="/"><span class="material-symbols-outlined">trophy</span>Your top 10 scores</a>
+<a class="profile-btn grid-col-0 grid-row-0" href="{{ path('shop') }}"><span class="material-symbols-outlined">shop</span>Shop</a>
+<a class="profile-btn grid-col-0 grid-row-1" href="/"><span class="material-symbols-outlined">currency_exchange</span>Transaction history</a>
+<a class="profile-btn grid-col-1 grid-row-0" href="/"><span class="material-symbols-outlined">trophy</span>Your top 10 scores</a>
+<a class="profile-btn grid-col-1 grid-row-1" href="{{ path('logout') }}"><span class="material-symbols-outlined">logout</span>Logout</a>
 </div>
 
 </div>

@@ -11,13 +11,14 @@
     --right-light-clear: #bf6d65a8;
     --left-dark-clear: #78bf96a6;
 
-    /* --form-neon: #0ef; */
+  
     --form-neon: #f7ff75;
     --form-neon2: #ad4fff;
-    /* --title-neon: #f7ff75; */
     --nav-neon: #ff5be7;
     --alt-neon: #42FF88;
-    --clear-neon: rgba(247, 255, 117, 0.5)
+    --clear-neon: rgba(247, 255, 117, 0.5);
+    --neon-red: #FF6F69;
+    --neon-green: #42FF88;
 
     /* Color Theme Swatches in Hex
 .nya-kort-1-1-hex { color: #FF6F69; }

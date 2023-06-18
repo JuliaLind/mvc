@@ -25,9 +25,9 @@ class ProjectMainController extends AbstractController
         $data = [
             'url' => "proj",
         ];
-        // if($user === null) {
-        //     return $this->render('proj/index.html.twig', $data);
-        // }
+        if($user === null) {
+            return $this->render('proj/index.html.twig', $data);
+        }
         $game = $session->get("game") ?? null;
         $data = [
             ...$data,

@@ -1,0 +1,37 @@
+{% extends 'base-project.html.twig' %}
+
+{% block title %}Casino{% endblock %}
+
+{% block body %}
+
+{# {{ include('proj/incl/background-image.html.twig') }} #}
+
+<div class="full-page-background-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({{ asset('img/project/casino5.jpg') }})">
+</div>
+
+<h1 class="title">Shop</h1>
+<div class="shop">
+<form class="coins" action="" method="POST">
+<img class="coins1" src="{{ asset('img/project/coins/coins1.svg') }}" alt="100 coins">
+<p>100 coins</p>
+<button class="btn active-btn2" type="submit">50 SEK</button>
+</form>
+<form class="coins" action="" method="POST">
+<img class="coins2" src="{{ asset('img/project/coins/coins2.svg') }}" alt="550 coins">
+<p>550 coins</p>
+<button class="btn active-btn2" type="submit">250 SEK</button>
+</form>
+<form class="coins" action="" method="POST">
+<img class="coins3" src="{{ asset('img/project/coins/coins3.svg') }}" alt="10 100 coins">
+<p>10 100 coins</p>
+<button class="btn active-btn2" type="submit">5 000 SEK</button>
+</form>
+<form class="coins" method="POST" action="">
+<img class="coins4" src="{{ asset('img/project/coins/coins4.svg') }}" alt="25 200 coins">
+<p>25 200 coins</p>
+<button class="btn active-btn2" type="submit">12 500 SEK</button>
+</form>
+
+</div>
+
+{% endblock %}

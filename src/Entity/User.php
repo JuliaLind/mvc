@@ -28,10 +28,15 @@ class User
     private ?string $hash = null;
 
 
+    /**
+     * @var Collection<int,Transaction> $transactions
+     */
     #[ORM\OneToMany(mappedBy: 'userid', targetEntity: Transaction::class)]
     private Collection $transactions;
 
-
+    /**
+     * @var Collection<int,Score> $scores
+     */
     #[ORM\OneToMany(mappedBy: 'userid', targetEntity: Score::class)]
     private Collection $scores;
 
@@ -80,6 +85,16 @@ class User
         $this->hash = $hash;
 
         return $this;
+    }
+
+    public function getBalance(): int
+    {
+        $balance = 0;
+        $transactions = $this->transactions->toArray();
+        foreach($transactions as $transaction) {
+            $balance += $transaction->getAmount();
+        }
+        return $balance;
     }
 
     /**
