@@ -20,7 +20,7 @@ class GridGraphic
         if (array_key_exists($row, $grid) && array_key_exists($col, $grid[$row])) {
             $card = $grid[$row][$col];
             $data = [
-                'img' => "img/project-cards/".$card.".svg",
+                'img' => "img/project/cards/".$card.".svg",
                 'alt' => $card
             ];
         }

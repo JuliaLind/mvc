@@ -26,7 +26,7 @@ class Game
      * @var array<string,array<string,array<array<string,int|string>>|int>|string> $results
      */
     private array $results;
-    private string $message;
+    private string $message = "";
     /**
      * @var array<int> $suggestedSlot
      */
@@ -35,6 +35,10 @@ class Game
     public function setPot(int $amount): void
     {
         $this->pot = $amount;
+    }
+
+    public function isFinished() {
+        return $this->finished;
     }
 
     public function __construct(
@@ -46,12 +50,13 @@ class Game
     ) {
         $this->house = $house;
         $this->player = $player;
-        $deck->shuffle();
-        $this->deck = $deck;
-        $this->playerSuggest();
-        $this->card = $this->deck->deal();
         $this->moveEvaluator = $moveEvaluator;
         $this->winEvaluator = $winEvaluator;
+        $deck->shuffle();
+        $this->deck = $deck;
+        $this->card = $this->deck->deal();
+        $this->playerSuggest();
+
     }
 
     public function playerSuggest(): void
@@ -150,8 +155,7 @@ class Game
     {
         return [
             'house' => $grid->graphic($this->house->getCards()),
-            'player' => $grid->graphic($this->player->getCards()),
-            'suggestion' => $this->message != ""
+            'player' => $grid->graphic($this->player->getCards())
         ];
     }
 

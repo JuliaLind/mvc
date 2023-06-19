@@ -64,19 +64,12 @@ class ProjectAuthController extends AbstractController
         $user->setEmail($email);
         $user->setAcronym($acronym);
         $user->setHash($hash);
-        // try {
-        //     $userRepo->save($user, true);
-        // } catch (UniqueConstraintViolationException) {
-        //     $this->addFlash('warning', "A user with this email or Gamer name already exists");
-        //     return $this->redirectToRoute('register-form');
-        // }
         date_default_timezone_set('Europe/Stockholm');
         $transaction = new Transaction();
         $transaction->setRegistered(new DateTime());
         $transaction->setDescr('Free registration bonus');
         $transaction->setAmount(1000);
         $transaction->setUserId($user);
-        // $transactionRepo->save($transaction, true);
         try {
             $entityManager->persist($user);
             $entityManager->persist($transaction);

@@ -52,32 +52,32 @@ class GridGraphicTest extends TestCase
         $empty = ['img' => "", 'alt' => ""];
         $row0 = [
             0 => [
-                'img' => "img/project-cards/2H.svg",
+                'img' => "img/project/cards/2H.svg",
                 'alt' => "2H"
             ],
             1 => [
-                'img' => "img/project-cards/14S.svg",
+                'img' => "img/project/cards/14S.svg",
                 'alt' => "14S"
             ],
             2 => [
-                'img' => "img/project-cards/2S.svg",
+                'img' => "img/project/cards/2S.svg",
                 'alt' => "2S"
             ],
             3 => $empty,
             4 => [
-                'img' => "img/project-cards/4C.svg",
+                'img' => "img/project/cards/4C.svg",
                 'alt' => "4C"
             ],
         ];
         $row1 = [
             0 => $empty,
             1 => [
-                'img' => "img/project-cards/5D.svg",
+                'img' => "img/project/cards/5D.svg",
                 'alt' => "5D"
             ],
             2 => $empty,
             3 => [
-                'img' => "img/project-cards/13C.svg",
+                'img' => "img/project/cards/13C.svg",
                 'alt' => "13C"
             ],
             4 => $empty
@@ -87,14 +87,14 @@ class GridGraphicTest extends TestCase
             1 => $empty,
             2 => $empty,
             3 => [
-                'img' => "img/project-cards/13D.svg",
+                'img' => "img/project/cards/13D.svg",
                 'alt' => "13D"
             ],
             4 => $empty
         ];
         $row4 = [
             0 => [
-                'img' => "img/project-cards/13H.svg",
+                'img' => "img/project/cards/13H.svg",
                 'alt' => "13H"
             ],
             1 => $empty,
