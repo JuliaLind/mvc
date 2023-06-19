@@ -1,0 +1,29 @@
+{% extends 'base-project.html.twig' %}
+
+{% block title %}Transactions{% endblock %}
+
+{% block body %}
+
+{{ include('proj/incl/bg-coins.html.twig') }}
+{{ include('proj/incl/return-arr.html.twig') }}
+
+<h1 class="title">Your transaction history</h1>
+<table class="points trans">
+    <tr>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Coins</th>
+    </tr>
+{% for transaction in transactions %}
+    <tr>
+        <td>
+            {{ transaction.registered|date("Y-m-d") }}
+            {# {{ transaction.registered }} #}
+            </td>
+        <td>{{ transaction.descr }}</td>
+        <td>{{ transaction.amount }}</td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

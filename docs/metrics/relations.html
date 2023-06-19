@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-15 23:55:05        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-18 21:00:51        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -481,7 +481,6 @@
             "\\App\\Helpers\\JsonConverter",
             "\\App\\Project\\ApiGame",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
-            "\\Symfony\\Component\\HttpFoundation\\Request",
             "\\App\\Project\\ApiNew",
             "\\App\\Project\\ApiResults"
         ]
@@ -684,7 +683,67 @@
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response"
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Repository\\TransactionRepository",
+            "\\App\\Project\\Game",
+            "\\App\\Entity\\Transaction",
+            "\\Datetime"
+        ]
+    },
+    {
+        "name": "\\App\\Repository\\TransactionRepository",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\Transaction",
+            "\\App\\Entity\\User"
+        ]
+    },
+    {
+        "name": "\\App\\Project\\Game",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectGrid\\Grid",
+            "\\App\\ProjectCard\\Deck",
+            "\\App\\ProjectRules\\MoveEvaluator",
+            "\\App\\ProjectRules\\WinEvaluator",
+            "\\App\\ProjectGrid\\GridGraphic"
+        ]
+    },
+    {
+        "name": "\\App\\Entity\\Transaction",
+        "size": 3000,
+        "relations": [
+            "\\DateTimeInterface"
+        ]
+    },
+    {
+        "name": "\\Datetime",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Controller\\ProjectApiAuthController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\App\\Repository\\UserRepository",
+            "\\App\\Repository\\TransactionRepository",
+            "\\App\\Helpers\\JsonConverter",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+        ]
+    },
+    {
+        "name": "\\App\\Repository\\UserRepository",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\User"
         ]
     },
     {
@@ -693,8 +752,23 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\App\\Repository\\UserRepository",
+            "\\App\\Repository\\TransactionRepository",
             "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface"
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Entity\\User",
+            "\\App\\Entity\\Transaction",
+            "\\Datetime"
+        ]
+    },
+    {
+        "name": "\\App\\Entity\\User",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Common\\Collections\\ArrayCollection",
+            "\\Doctrine\\Common\\Collections\\Collection",
+            "\\App\\Entity\\Transaction",
+            "\\App\\Entity\\Score"
         ]
     },
     {
@@ -747,6 +821,22 @@
         "name": "\\Doctrine\\Persistence\\ManagerRegistry",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\App\\Repository\\ScoreRepository",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\Score"
+        ]
+    },
+    {
+        "name": "\\App\\Entity\\Score",
+        "size": 3000,
+        "relations": [
+            "\\DateTimeInterface"
+        ]
     },
     {
         "name": "\\App\\Entity\\Book",
@@ -964,17 +1054,6 @@
         ]
     },
     {
-        "name": "\\App\\Project\\Game",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectGrid\\Grid",
-            "\\App\\ProjectCard\\Deck",
-            "\\App\\ProjectRules\\MoveEvaluator",
-            "\\App\\ProjectRules\\WinEvaluator",
-            "\\App\\ProjectGrid\\GridGraphic"
-        ]
-    },
-    {
         "name": "\\App\\Library\\BookRemover",
         "size": 3000,
         "relations": []
@@ -1051,7 +1130,17 @@
         ]
     },
     {
-        "name": "\\Datetime",
+        "name": "\\Doctrine\\Common\\Collections\\ArrayCollection",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Doctrine\\Common\\Collections\\Collection",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\DateTimeInterface",
         "size": 3000,
         "relations": []
     },

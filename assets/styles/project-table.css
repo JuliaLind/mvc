@@ -18,7 +18,8 @@
 }
 
 
-.flex-wrapper-col {
+.flex-wrapper-col,
+.points td {
     color: var(--form-neon);
     /* width: 1000px;
     max-width: 100%; */
@@ -37,6 +38,31 @@
 .half-width-col.descr {
     width: 400px;
     max-width: 100%;
+}
+
+.trans {
+    width: 64em;
+    max-width: 100%;
+}
+
+.trans td,
+.trans th {
+    padding: 1rem;
+}
+
+.trans th:not(:last-of-type),
+.trans td:not(:last-of-type) {
+    border-right: 2px solid var(--form-neon2);
+}
+
+
+/* .trans tr:not(:last-of-type) td, */
+.trans th {
+    border-bottom: 2px solid var(--form-neon2);
+}
+
+.trans td {
+    border-top: unset;
 }
 
 

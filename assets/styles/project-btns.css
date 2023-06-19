@@ -129,6 +129,24 @@
     font-size: 3rem;
 }
 
+.project .return-arr {
+    color: var(--form-neon);
+    text-shadow: 0 0 20px var(--form-neon);
+    font-weight: bold;
+    position: absolute;
+    right: 10vw;
+    top: 10vh;
+}
+
+.project .return-arr:hover {
+    text-shadow:
+    0 0 7px var(--form-neon),
+    0 0 10px var(--form-neon),
+    0 0 21px var(--form-neon),
+    0 0 42px var(--form-neon);
+}
+
+
 
 @media (max-width: 800px) {
     .flex-container-row {
@@ -146,5 +164,9 @@
 
     h1.profile {
         margin: 3.5rem auto;
+    }
+
+    .project .return-arr .material-symbols-outlined {
+        font-size: 3rem;
     }
 }

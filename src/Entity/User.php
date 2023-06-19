@@ -87,15 +87,15 @@ class User
         return $this;
     }
 
-    public function getBalance(): int
-    {
-        $balance = 0;
-        $transactions = $this->transactions->toArray();
-        foreach($transactions as $transaction) {
-            $balance += $transaction->getAmount();
-        }
-        return $balance;
-    }
+    // public function getBalance(): int
+    // {
+    //     $balance = 0;
+    //     $transactions = $this->transactions->toArray();
+    //     foreach($transactions as $transaction) {
+    //         $balance += $transaction->getAmount();
+    //     }
+    //     return $balance;
+    // }
 
     /**
      * @return Collection<int, Transaction>

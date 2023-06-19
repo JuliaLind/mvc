@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Transaction;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -38,6 +39,16 @@ class TransactionRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    public function getUserBalance(User $user): int
+    {
+        $balance = 0;
+        $transactions = $this->findBy(['userid' => $user]);
+        foreach($transactions as $transaction) {
+            $balance += $transaction->getAmount();
+        }
+        return $balance;
     }
 
 //    /**

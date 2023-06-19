@@ -12,6 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
+use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\TransactionRepository;
 use App\Repository\UserRepository;
 use App\Entity\User;
@@ -30,7 +31,8 @@ class ProjectAuthController extends AbstractController
     #[Route("/proj/register", name: "register", methods: ['POST'])]
     public function projRegister(
         UserRepository $userRepo,
-        TransactionRepository $transactionRepo,
+        // TransactionRepository $transactionRepo,
+        EntityManagerInterface $entityManager,
         Request $request,
         SessionInterface $session
     ): Response {
@@ -62,25 +64,72 @@ class ProjectAuthController extends AbstractController
         $user->setEmail($email);
         $user->setAcronym($acronym);
         $user->setHash($hash);
-        try {
-            $userRepo->save($user, true);
-        } catch (UniqueConstraintViolationException) {
-            $this->addFlash('warning', "A user with this email or Gamer name already exists");
-            return $this->redirectToRoute('register-form');
-        }
-        /**
-         * @var User $user
-         */
-        $user = $userRepo->findOneBy(['email' => $email]);
+        // try {
+        //     $userRepo->save($user, true);
+        // } catch (UniqueConstraintViolationException) {
+        //     $this->addFlash('warning', "A user with this email or Gamer name already exists");
+        //     return $this->redirectToRoute('register-form');
+        // }
         date_default_timezone_set('Europe/Stockholm');
         $transaction = new Transaction();
         $transaction->setRegistered(new DateTime());
         $transaction->setDescr('Free registration bonus');
         $transaction->setAmount(1000);
         $transaction->setUserId($user);
-        $transactionRepo->save($transaction, true);
+        // $transactionRepo->save($transaction, true);
+        try {
+            $entityManager->persist($user);
+            $entityManager->persist($transaction);
+            $entityManager->flush();
+        } catch (UniqueConstraintViolationException) {
+            $this->addFlash('warning', "A user with this email or Gamer name already exists");
+            return $this->redirectToRoute('register-form');
+        }
+        $entityManager->persist($user);
+        $entityManager->persist($transaction);
+        $entityManager->flush();
+        /**
+         * @var User $user
+         */
+        $user = $userRepo->findOneBy(['email' => $email]);
         $session->set("user", $user);
         return $this->redirectToRoute('proj');
+    }
+
+    #[Route("/proj/purchase/{coins<\d+>}", name: "purchase", methods: ['POST'])]
+    public function projPurchase(
+        int $coins,
+        // UserRepository $userRepo,
+        // TransactionRepository $transRepo,
+        EntityManagerInterface $entityManager,
+        SessionInterface $session
+    ): Response {
+        /**
+         * @var User $user
+         */
+        $user = $session->get("user");
+        // apparently neccessary to get the same object again from database in order
+        // for Doctrine not to mistake it to be a new one
+        /**
+         * @var User $user
+         */
+        $user = $entityManager->getRepository(User::class)->find($user->getId());
+        date_default_timezone_set('Europe/Stockholm');
+        $transaction = new Transaction();
+        $transaction->setRegistered(new DateTime());
+        $transaction->setDescr('Purchase');
+        $transaction->setAmount($coins);
+
+        $transaction->setUserId($user);
+        $entityManager->persist($transaction);
+        $entityManager->flush();
+        /**
+         * @var TransactionRepository $repo
+         */
+        $repo = $entityManager->getRepository(Transaction::class);
+        $balance = $repo->getUserBalance($user);
+        $this->addFlash('notice', "You have successfully purchsed {$coins} coins. Your new balance is {$balance} coins");
+        return $this->redirectToRoute('shop');
     }
 
     #[Route("/proj/login", name: "login", methods: ['POST'])]
@@ -134,5 +183,26 @@ class ProjectAuthController extends AbstractController
             'url' => "proj"
         ];
         return $this->render('proj/shop.html.twig', $data);
+    }
+
+    #[Route("/proj/select-amount", name: "select-amount")]
+    public function selectAmount(
+        SessionInterface $session,
+        TransactionRepository $repo,
+    ): Response {
+        /**
+         * @var User $user
+         */
+        $user = $session->get("user");
+        $balance = $repo->getUserBalance($user);
+        if ($balance < 10) {
+            $this->addFlash('warning', "You do not have enough coins, the minimum amount to bet is 10 coins. Purchase more coins in the shop");
+            return $this->redirectToRoute('proj-shop');
+        }
+        $data = [
+            'url' => "proj",
+            'balance' => $balance,
+        ];
+        return $this->render('proj/select-amount.html.twig', $data);
     }
 }

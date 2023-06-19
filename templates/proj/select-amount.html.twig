@@ -4,30 +4,22 @@
 
 {% block body %}
 
-{# {{ include('proj/incl/background-image.html.twig') }} #}
-<div class="full-page-background-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({{ asset('img/project/casino6.jpg') }})">
-</div>
+{{ include('proj/incl/bg-cards.html.twig') }}
+{{ include('proj/incl/return-arr.html.twig') }}
 
-<h1 class="title">Place your bet</h1>
-
-<div class="wrapper login">
-<form method="post" action="{{ path('proj-bet') }}">
-    <div class="input-box">
-    <span class="material-symbols-outlined icon">
-    alternate_email
-    </span>
-    <input name="email" type="email" required="required" minlength="1" maxlength="100" placeholder="Email">
+<h1 class="title">Select amount to bet</h1>
+{{ include('flash.html.twig') }}
+<form class="select-amount" action="{{ path('proj-init') }}" method="POST">
+    <div class="box">
+    <input type="range" name="bet" class="range" value="30" min="10" max="{{ balance }}" step="10" onmousemove="rangeSlider(this.value)">
+    <span id="rangeValue">10</span>
     </div>
-
-    <div class="input-box">
-    <span class="material-symbols-outlined icon">key</span>
-    <input name="password" type="password" required="required" minlength="1" maxlength="100" placeholder="Password">
-    </div>
-    <button class="form-btn" type="submit">Login</button>
+    <button class="btn active-btn" type="submit">Place bet</button>
 </form>
-</div>
-
-
-
+<script>
+    function rangeSlider(value) {
+        document.getElementById('rangeValue').innerHTML = value;
+    }
+</script>
 
 {% endblock %}

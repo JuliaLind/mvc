@@ -9,8 +9,8 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
-use App\Markdown\MdParser;
+use App\Entity\User;
+use App\Repository\TransactionRepository;
 
 /**
  * The main controller class
@@ -19,22 +19,43 @@ class ProjectMainController extends AbstractController
 {
     #[Route("/proj", name: "proj")]
     public function projLanding(
-        SessionInterface $session
+        SessionInterface $session,
+        TransactionRepository $repo
     ): Response {
+        /**
+         * @var User $user
+         */
         $user = $session->get("user") ?? null;
         $data = [
             'url' => "proj",
         ];
-        if($user === null) {
+        if($user == null) {
             return $this->render('proj/index.html.twig', $data);
         }
         $game = $session->get("game") ?? null;
         $data = [
             ...$data,
             'user' => $user,
-            'game' => $game
+            'game' => $game,
+            'balance' => $repo->getUserBalance($user)
         ];
         return $this->render('proj/profile.html.twig', $data);
+    }
+
+    #[Route("/proj/transactions", name: "proj-trans")]
+    public function projTrans(
+        SessionInterface $session,
+        TransactionRepository $repo
+    ): Response {
+        /**
+         * @var User $user
+         */
+        $user = $session->get("user") ?? null;
+        $data = [
+            'url' => "proj",
+            'transactions' => $repo->findBy(['userid' => $user])
+        ];
+        return $this->render('proj/transactions.html.twig', $data);
     }
 
     #[Route("/proj/api", name: "proj-api")]
