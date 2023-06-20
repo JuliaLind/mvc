@@ -560,6 +560,7 @@
     <service id="App\ProjectCard\NoCardsException" class="App\ProjectCard\NoCardsException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\ColumnGetter" class="App\ProjectGrid\ColumnGetter" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\EmptyCellFinder" class="App\ProjectGrid\EmptyCellFinder" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectGrid\EmptyCellFinder2" class="App\ProjectGrid\EmptyCellFinder2" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\Grid" class="App\ProjectGrid\Grid" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\GridGraphic" class="App\ProjectGrid\GridGraphic" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\SlotNotEmptyException" class="App\ProjectGrid\SlotNotEmptyException" autowire="true" autoconfigure="true"/>
@@ -579,6 +580,7 @@
       <argument type="service" id="App\ProjectGrid\EmptyCellFinder"/>
       <argument type="service" id="App\ProjectRules\RuleStats"/>
       <argument type="service" id="App\ProjectGrid\ColumnGetter"/>
+      <argument type="service" id="App\ProjectGrid\EmptyCellFinder2"/>
     </service>
     <service id="App\ProjectRules\RoyalFlush" class="App\ProjectRules\RoyalFlush" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\RoyalFlushStat" class="App\ProjectRules\RoyalFlushStat" autowire="true" autoconfigure="true"/>

@@ -25,7 +25,7 @@ class Game
     /**
      * @var array<string,array<string,array<array<string,int|string>>|int>|string> $results
      */
-    private array $results;
+    private array $results = [];
     private string $message = "";
     /**
      * @var array<int> $suggestedSlot
@@ -161,9 +161,10 @@ class Game
     public function currentState(GridGraphic $grid = new GridGraphic()): array
     {
         return [
+            'message' => $this->message,
+            'results' => $this->results,
             'house' => $grid->graphic($this->house->getCards()),
             'player' => $grid->graphic($this->player->getCards()),
-            'message' => $this->message,
             'slot' => $this->suggestedSlot,
             'card' => [
                 'img' => "img/project/cards/".$this->card.".svg",

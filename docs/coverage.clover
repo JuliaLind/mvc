@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687222808">
-  <project timestamp="1687222808">
+<coverage generated="1687224262">
+  <project timestamp="1687224262">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -1088,28 +1088,28 @@
       <line num="117" type="stmt" count="3"/>
       <line num="119" type="stmt" count="3"/>
       <line num="120" type="stmt" count="3"/>
-      <line num="124" type="method" name="bankWinsOnEqual" visibility="protected" complexity="2" crap="2" count="3"/>
-      <line num="126" type="stmt" count="3"/>
+      <line num="124" type="method" name="bankWinsOnEqual" visibility="protected" complexity="2" crap="2" count="4"/>
+      <line num="126" type="stmt" count="4"/>
       <line num="129" type="method" name="hasBankMoreThan21" visibility="protected" complexity="1" crap="1" count="5"/>
       <line num="131" type="stmt" count="5"/>
-      <line num="134" type="method" name="hasBankBestScore" visibility="protected" complexity="1" crap="1" count="2"/>
-      <line num="136" type="stmt" count="2"/>
-      <line num="137" type="stmt" count="2"/>
-      <line num="138" type="stmt" count="2"/>
+      <line num="134" type="method" name="hasBankBestScore" visibility="protected" complexity="1" crap="1" count="3"/>
+      <line num="136" type="stmt" count="3"/>
+      <line num="137" type="stmt" count="3"/>
+      <line num="138" type="stmt" count="3"/>
       <line num="147" type="method" name="evaluateBank" visibility="public" complexity="4" crap="4" count="5"/>
       <line num="149" type="stmt" count="5"/>
       <line num="150" type="stmt" count="5"/>
       <line num="152" type="stmt" count="5"/>
       <line num="153" type="stmt" count="5"/>
       <line num="155" type="stmt" count="5"/>
-      <line num="156" type="stmt" count="2"/>
-      <line num="157" type="stmt" count="2"/>
-      <line num="159" type="stmt" count="3"/>
+      <line num="156" type="stmt" count="1"/>
+      <line num="157" type="stmt" count="1"/>
+      <line num="159" type="stmt" count="4"/>
       <line num="160" type="stmt" count="1"/>
       <line num="161" type="stmt" count="1"/>
-      <line num="163" type="stmt" count="2"/>
-      <line num="164" type="stmt" count="1"/>
-      <line num="165" type="stmt" count="1"/>
+      <line num="163" type="stmt" count="3"/>
+      <line num="164" type="stmt" count="2"/>
+      <line num="165" type="stmt" count="2"/>
       <line num="167" type="stmt" count="1"/>
       <line num="168" type="stmt" count="1"/>
       <line num="176" type="method" name="generateFlash" visibility="public" complexity="4" crap="4" count="5"/>
@@ -1119,7 +1119,7 @@
       <line num="182" type="stmt" count="5"/>
       <line num="183" type="stmt" count="3"/>
       <line num="184" type="stmt" count="3"/>
-      <line num="185" type="stmt" count="2"/>
+      <line num="185" type="stmt" count="3"/>
       <line num="187" type="stmt" count="3"/>
       <line num="189" type="stmt" count="5"/>
       <line num="190" type="stmt" count="1"/>
@@ -1823,7 +1823,7 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Project/Game.php">
       <class name="App\Project\Game" namespace="global">
-        <metrics complexity="14" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="67" coveredstatements="0" elements="75" coveredelements="0"/>
+        <metrics complexity="14" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="68" coveredstatements="0" elements="76" coveredelements="0"/>
       </class>
       <line num="35" type="method" name="setPot" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="37" type="stmt" count="0"/>
@@ -1900,7 +1900,8 @@
       <line num="171" type="stmt" count="0"/>
       <line num="172" type="stmt" count="0"/>
       <line num="173" type="stmt" count="0"/>
-      <metrics loc="177" ncloc="140" classes="1" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="67" coveredstatements="0" elements="75" coveredelements="0"/>
+      <line num="174" type="stmt" count="0"/>
+      <metrics loc="178" ncloc="141" classes="1" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="68" coveredstatements="0" elements="76" coveredelements="0"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectCard/CardCounter.php">
       <class name="App\ProjectCard\CardCounter" namespace="global">
@@ -2035,18 +2036,21 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectGrid/EmptyCellFinder2.php">
       <class name="App\ProjectGrid\EmptyCellFinder2" namespace="global">
-        <metrics complexity="7" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="5" elements="9" coveredelements="5"/>
+        <metrics complexity="8" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="5" elements="12" coveredelements="5"/>
       </class>
-      <line num="12" type="method" name="oneCell" visibility="public" complexity="7" crap="9.58" count="1"/>
-      <line num="14" type="stmt" count="1"/>
-      <line num="15" type="stmt" count="1"/>
-      <line num="16" type="stmt" count="1"/>
-      <line num="17" type="stmt" count="1"/>
-      <line num="18" type="stmt" count="1"/>
+      <line num="18" type="method" name="setSlot" visibility="private" complexity="3" crap="12" count="0"/>
       <line num="20" type="stmt" count="0"/>
       <line num="21" type="stmt" count="0"/>
-      <line num="25" type="stmt" count="0"/>
-      <metrics loc="28" ncloc="23" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="5" elements="9" coveredelements="5"/>
+      <line num="22" type="stmt" count="0"/>
+      <line num="30" type="method" name="oneCell" visibility="public" complexity="5" crap="5.58" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="45" type="stmt" count="0"/>
+      <metrics loc="48" ncloc="34" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="5" elements="12" coveredelements="5"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectGrid/Grid.php">
       <class name="App\ProjectGrid\Grid" namespace="global">
@@ -2712,6 +2716,6 @@
       <line num="39" type="stmt" count="0"/>
       <metrics loc="68" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="120" loc="7160" ncloc="5247" classes="107" methods="326" coveredmethods="249" conditionals="0" coveredconditionals="0" statements="1674" coveredstatements="1240" elements="2000" coveredelements="1489"/>
+    <metrics files="120" loc="7181" ncloc="5259" classes="107" methods="327" coveredmethods="249" conditionals="0" coveredconditionals="0" statements="1677" coveredstatements="1240" elements="2004" coveredelements="1489"/>
   </project>
 </coverage>
