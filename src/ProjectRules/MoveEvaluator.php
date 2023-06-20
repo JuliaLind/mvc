@@ -4,6 +4,7 @@ namespace App\ProjectRules;
 
 use App\ProjectCard\Deck;
 use App\ProjectGrid\EmptyCellFinder;
+use App\ProjectGrid\EmptyCellFinder2;
 use App\ProjectGrid\ColumnGetter;
 
 /**
@@ -13,6 +14,7 @@ class MoveEvaluator
 {
     private RuleStats $rules;
     private EmptyCellFinder $finder;
+    private EmptyCellFinder2 $finder2;
     private ColumnGetter $colGetter;
     private string $rowRuleName = "";
     private string $colRuleName = "";
@@ -32,10 +34,12 @@ class MoveEvaluator
     public function __construct(
         EmptyCellFinder $finder = new EmptyCellFinder(),
         RuleStats $rules = new RuleStats(),
-        ColumnGetter $colGetter = new ColumnGetter()
+        ColumnGetter $colGetter = new ColumnGetter(),
+        EmptyCellFinder2 $finder2 = new EmptyCellFinder2(),
     ) {
         $this->rules = $rules;
         $this->finder = $finder;
+        $this->finder2 = $finder2;
         $this->colGetter = $colGetter;
     }
 
@@ -138,7 +142,7 @@ class MoveEvaluator
         $data = [
             'row-rule' => "",
             'col-rule' => "",
-            'slot' => $this->finder->oneCell($rows, $cols)
+            'slot' => $this->finder2->oneCell($rows, $cols)
         ];
         // for ($row = 0; $row <= 4; $row++) {
         //     for ($col = 0; $col <= 4; $col++) {

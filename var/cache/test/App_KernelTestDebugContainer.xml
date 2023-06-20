@@ -537,6 +537,7 @@
     <service id="App\ProjectCard\NoCardsException" class="App\ProjectCard\NoCardsException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\ColumnGetter" class="App\ProjectGrid\ColumnGetter" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\EmptyCellFinder" class="App\ProjectGrid\EmptyCellFinder" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectGrid\EmptyCellFinder2" class="App\ProjectGrid\EmptyCellFinder2" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\Grid" class="App\ProjectGrid\Grid" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\GridGraphic" class="App\ProjectGrid\GridGraphic" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\SlotNotEmptyException" class="App\ProjectGrid\SlotNotEmptyException" autowire="true" autoconfigure="true"/>
@@ -556,6 +557,7 @@
       <argument type="service" id="App\ProjectGrid\EmptyCellFinder"/>
       <argument type="service" id="App\ProjectRules\RuleStats"/>
       <argument type="service" id="App\ProjectGrid\ColumnGetter"/>
+      <argument type="service" id="App\ProjectGrid\EmptyCellFinder2"/>
     </service>
     <service id="App\ProjectRules\RoyalFlush" class="App\ProjectRules\RoyalFlush" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\RoyalFlushStat" class="App\ProjectRules\RoyalFlushStat" autowire="true" autoconfigure="true"/>
@@ -1757,6 +1759,7 @@
         <argument key="App\ProjectCard\NoCardsException" type="service_closure" id="App\ProjectCard\NoCardsException" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\ColumnGetter" type="service_closure" id="App\ProjectGrid\ColumnGetter" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\EmptyCellFinder" type="service_closure" id="App\ProjectGrid\EmptyCellFinder" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectGrid\EmptyCellFinder2" type="service_closure" id="App\ProjectGrid\EmptyCellFinder2" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\Grid" type="service_closure" id="App\ProjectGrid\Grid" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\GridGraphic" type="service_closure" id="App\ProjectGrid\GridGraphic" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\SlotNotEmptyException" type="service_closure" id="App\ProjectGrid\SlotNotEmptyException" on-invalid="ignore_uninitialized"/>
