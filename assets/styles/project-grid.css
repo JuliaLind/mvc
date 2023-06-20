@@ -1,5 +1,6 @@
 
-.game-grid {
+.game-grid,
+.api-grid {
     display: grid;
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(5, 1fr);
@@ -14,13 +15,32 @@
     border-radius: 5px;
 }
 
+.api .slot {
+    background-color: #333;
+    cursor: pointer;
+}
+
+.game-grid .slot,
+.center-grid .slot {
+    outline: 5px solid #333;
+}
+
+.game-grid .slot {
+    background-color: #000;
+}
+
+.empty-slot.player-slot:hover {
+    z-index: 1;
+    outline-color: var(--form-neon);
+}
+
 
 .slot {
     width: auto;
     /* height: 100%; */
     height: 15vh;
     display: block;
-    background-color: #333;
+
     aspect-ratio: 3/4;
     border-radius: 5px;
     text-align: center;
@@ -37,7 +57,7 @@
     pointer-events: none;
 }
 
-.empty-slot {
+.empty-slot.player-slot {
     cursor: pointer;
 }
 
@@ -45,8 +65,7 @@
     box-shadow: 0 0 20px var(--form-neon);
 } */
 
-.api .player-slot:hover,
-.empty-slot:hover {
+.api .player-slot:hover {
     background: var(--form-neon);
 }
 
@@ -102,17 +121,22 @@
 
 
 .outer-grid-container .game-grid {
-    background-color: var(--clear-neon);
+    background-color: #333;
     width: auto;
     max-width: 100%;
 }
 
 .center-grid {
-    display: flex;
+    display: grid;
     flex-basis: 1;
     width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
+    padding: 5px;
+    gap: 5px;
+    justify-items: center;
 }
 
 .house-grid {
@@ -126,14 +150,14 @@
 }
 
 @media (max-width: 800px) {
-    .slot {
+    .api .slot {
         border: 1px solid var(--clear-neon);
         color: var(--form-neon);
     }
 }
 
 @media (max-width: 450px) {
-    .slot {
+    .api .slot {
         size: 0.3em;
     }
 }

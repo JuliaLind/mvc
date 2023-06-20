@@ -13,11 +13,11 @@
 <div class="half-width-col">
 {{ include('proj/incl/rules-link.html.twig') }}
 
-{% if game != null and game.finished == false %}
+{% if finished == false %}
     {{ include('proj/incl/continue-btn.html.twig') }}
-{% else %}
-    {{ include('proj/incl/new-game-btn.html.twig') }}
 {% endif %}
+
+{{ include('proj/incl/new-game-btn.html.twig') }}
 </div>
 
 <div class="btns-grid">

@@ -53,11 +53,12 @@ class ApiGame
         $this->player->addCard($slot[0], $slot[1], $card);
 
         $data = [
+            'placed cards' => $this->player->getCardCount(),
             "picked card" => $card,
             "suggestion" => $suggestion,
             "grid" => $gridGraphic->graphic($this->player->getCards()),
             "remaining cards" => $this->deck->getCards(),
-            "possible cards" => $deck
+            "possible cards" => $deck,
         ];
         $data['suggestion']['slot'] = [
             'row' => $slot[0],

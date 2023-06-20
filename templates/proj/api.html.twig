@@ -33,17 +33,31 @@
 </div>
 
 <div class="wrapper api">
-<form method="get" action="{{ path('api-user', {email: 'doe@bth.se'}) }}">
+<form method="get" action="{{ path('api-user', {email: 'jane@bth.se'}) }}">
 
-<h2>[GET] /project/api/user/doe@bth.se</h2>
+<h2>[GET] /project/api/user/jane@bth.se</h2>
 
     <div class="register-link">
-    <p>Displays data of user with email 'doe@bth.se'</p>
+    <p>Displays data of user with email 'jane@bth.se'</p>
     </div>
     <button class="form-btn" type="submit">Go to route</button>
 
 </form>
 </div>
+
+
+<div class="wrapper api">
+<form method="GET" action="{{ path('api-game-state') }}">
+<h2>[POST] /project/api/game-state</h2>
+
+<div class="register-link">
+<p>Shows data for the currently initiated Poker Square Game</p>
+</div>
+<button class="form-btn" type="submit">Go to route</button>
+
+</form>
+</div>
+
 
 </div>
 <div class="half-width-col">
@@ -55,7 +69,7 @@
 <div class="register-link">
 <p>Pick top card from new, unshuffled deck and place it into empty grid. Click on one of the slots and the api route will display the updated grid with the card in it. </p>
 </div>
-<div class="game-grid">
+<div class="api-grid">
     {% for i in 0..4 %}
         {% for j in 0..4 %}
                 <button class="slot player-slot grid-row{{i}} grid-col-{{j}}" type="submit" onClick="this.form.action='{{ path('api-place-card', {row: i, col: j}) }}';">r:{{i}}, c:{{j}}</button>

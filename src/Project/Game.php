@@ -37,19 +37,25 @@ class Game
         $this->pot = $amount;
     }
 
-    public function isFinished() {
-        return $this->finished;
-    }
+    // public function isFinished() {
+    //     return $this->finished;
+    // }
 
+    /**
+     * @param array<Grid> $grids
+     */
     public function __construct(
-        Grid $house = new Grid(),
-        Grid $player = new Grid(),
+        array $grids,
+        // Grid $house = new Grid(),
+        // Grid $player = new Grid(),
         Deck $deck = new Deck(),
         MoveEvaluator $moveEvaluator=new MoveEvaluator(),
         WinEvaluator $winEvaluator=new WinEvaluator()
     ) {
-        $this->house = $house;
-        $this->player = $player;
+        // $this->house = new Grid();
+        // $this->player = new Grid();
+        $this->house = $grids['house'];
+        $this->player = $grids['player'];
         $this->moveEvaluator = $moveEvaluator;
         $this->winEvaluator = $winEvaluator;
         $deck->shuffle();
@@ -88,13 +94,13 @@ class Game
         $this->message = $message;
     }
 
-    public function playerPlaceCard(int $row, int $col): bool
+    public function oneRound(int $row, int $col): bool
     {
         $this->player->addCard($row, $col, $this->card);
         $this->housePlaceCard();
         if (!($this->checkIfFinished($this->house->getCardCount()))) {
-            $this->playerSuggest();
             $this->card = $this->deck->deal();
+            $this->playerSuggest();
             return false;
         }
         return true;
@@ -145,6 +151,7 @@ class Game
             'player' => $playerData,
             'house' => $houseData
         ];
+        $this->pot = 0;
         return $amount;
     }
 
@@ -155,7 +162,14 @@ class Game
     {
         return [
             'house' => $grid->graphic($this->house->getCards()),
-            'player' => $grid->graphic($this->player->getCards())
+            'player' => $grid->graphic($this->player->getCards()),
+            'message' => $this->message,
+            'slot' => $this->suggestedSlot,
+            'card' => [
+                'img' => "img/project/cards/".$this->card.".svg",
+                'alt' => $this->card
+            ],
+            'finished' => $this->finished
         ];
     }
 

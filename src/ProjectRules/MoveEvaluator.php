@@ -135,10 +135,20 @@ class MoveEvaluator
                 }
             }
         }
-        return [
+        $data = [
             'row-rule' => "",
             'col-rule' => "",
-            'slot' => $this->finder->all($rows)[0]
+            'slot' => $this->finder->oneCell($rows, $cols)
         ];
+        // for ($row = 0; $row <= 4; $row++) {
+        //     for ($col = 0; $col <= 4; $col++) {
+        //         if (!array_key_exists($row, $rows) && !array_key_exists($col, $cols)) {
+        //             $data['slot'] = [$row, $col];
+        //             return $data;
+        //         }
+        //     }
+        // }
+        // $data['slot'] = $this->finder->all($rows)[0];
+        return $data;
     }
 }

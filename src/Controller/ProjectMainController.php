@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\User;
 use App\Repository\TransactionRepository;
+use App\Project\Game;
 
 /**
  * The main controller class
@@ -32,13 +33,20 @@ class ProjectMainController extends AbstractController
         if($user == null) {
             return $this->render('proj/index.html.twig', $data);
         }
+        /**
+         * @var Game|null $game
+         */
         $game = $session->get("game") ?? null;
+
         $data = [
             ...$data,
             'user' => $user,
-            'game' => $game,
+            'finished' => true,
             'balance' => $repo->getUserBalance($user)
         ];
+        if ($game) {
+            $data['finished'] = $game->currentState()['finished'];
+        }
         return $this->render('proj/profile.html.twig', $data);
     }
 

@@ -19,6 +19,7 @@ use App\Helpers\JsonConverter;
 use App\Project\ApiGame;
 use App\Project\ApiNew;
 use App\Project\ApiResults;
+use App\Project\Game;
 
 // use App\Repository\UserRepository;
 // use App\Entity\User;
@@ -60,6 +61,28 @@ class ProjectApiController extends AbstractController
         JsonConverter $converter = new JsonConverter()
     ): Response {
         $data = $game->results();
+        $response = $converter->convert(new JsonResponse($data));
+        return $response;
+    }
+
+    #[Route('/proj/api/game-state', name: "api-game-state")]
+    public function apiGameState(
+        SessionInterface $session,
+        JsonConverter $converter = new JsonConverter()
+    ): Response {
+        /**
+         * @var Game $game
+         */
+        $game = $session->get("game") ?? null;
+        $data = [
+            "status" => "no game initiated"
+        ];
+        if ($game != null) {
+            $state = $game->currentState();
+            $data = [
+                ...$state
+            ];
+        }
         $response = $converter->convert(new JsonResponse($data));
         return $response;
     }

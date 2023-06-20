@@ -38,6 +38,7 @@ return [
         '/metrics' => [[['_route' => 'metrics', '_controller' => 'App\\Controller\\MainController::metrics'], null, null, null, false, false, null]],
         '/proj/api/bot-plays' => [[['_route' => 'api-bot-plays', '_controller' => 'App\\Controller\\ProjectApiController::apiOneRound'], null, ['POST' => 0], null, false, false, null]],
         '/proj/api/results' => [[['_route' => 'api-results', '_controller' => 'App\\Controller\\ProjectApiController::apiResults'], null, ['POST' => 0], null, false, false, null]],
+        '/proj/api/game-state' => [[['_route' => 'api-game-state', '_controller' => 'App\\Controller\\ProjectApiController::apiGameState'], null, null, null, false, false, null]],
         '/proj/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\ProjectAuthController::projRegister'], null, ['POST' => 0], null, false, false, null]],
         '/proj/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\ProjectAuthController::projLogin'], null, ['POST' => 0], null, false, false, null]],
         '/proj/logout' => [[['_route' => 'logout', '_controller' => 'App\\Controller\\ProjectAuthController::projLogout'], null, ['GET' => 0], null, false, false, null]],
@@ -80,6 +81,7 @@ return [
                         .'|place\\-card/(\\d+)/(\\d+)(*:342)'
                     .')'
                     .'|purchase/(\\d+)(*:365)'
+                    .'|one\\-round/(\\d+)/(\\d+)(*:395)'
                 .')'
             .')/?$}sDu',
     ],
@@ -96,8 +98,9 @@ return [
         273 => [[['_route' => 'update_form', '_controller' => 'App\\Controller\\LibraryUpdateBookController::updateBookForm'], ['isbn'], null, null, false, true, null]],
         311 => [[['_route' => 'api-user', '_controller' => 'App\\Controller\\ProjectApiAuthController::apiUser'], ['email'], ['GET' => 0], null, false, true, null]],
         342 => [[['_route' => 'api-place-card', '_controller' => 'App\\Controller\\ProjectApiController::apiNew'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
-        365 => [
-            [['_route' => 'purchase', '_controller' => 'App\\Controller\\ProjectAuthController::projPurchase'], ['coins'], ['POST' => 0], null, false, true, null],
+        365 => [[['_route' => 'purchase', '_controller' => 'App\\Controller\\ProjectAuthController::projPurchase'], ['coins'], ['POST' => 0], null, false, true, null]],
+        395 => [
+            [['_route' => 'proj-round', '_controller' => 'App\\Controller\\ProjectGameController::projRound'], ['row', 'col'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

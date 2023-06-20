@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-19 00:51:36        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-20 00:30:21        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -695,24 +695,19 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Request",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Repository\\TransactionRepository",
-            "\\App\\Project\\Game",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\Doctrine\\ORM\\EntityManagerInterface",
             "\\App\\Entity\\Transaction",
-            "\\Datetime"
+            "\\Datetime",
+            "\\App\\ProjectGrid\\Grid",
+            "\\App\\Project\\Game"
         ]
     },
     {
-        "name": "\\App\\Project\\Game",
+        "name": "\\Doctrine\\ORM\\EntityManagerInterface",
         "size": 3000,
-        "relations": [
-            "\\App\\ProjectGrid\\Grid",
-            "\\App\\ProjectCard\\Deck",
-            "\\App\\ProjectRules\\MoveEvaluator",
-            "\\App\\ProjectRules\\WinEvaluator",
-            "\\App\\ProjectGrid\\GridGraphic"
-        ]
+        "relations": []
     },
     {
         "name": "\\App\\Entity\\Transaction",
@@ -725,6 +720,21 @@
         "name": "\\Datetime",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\App\\ProjectGrid\\Grid",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\Game",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectCard\\Deck",
+            "\\App\\ProjectRules\\MoveEvaluator",
+            "\\App\\ProjectRules\\WinEvaluator",
+            "\\App\\ProjectGrid\\GridGraphic"
+        ]
     },
     {
         "name": "\\App\\Controller\\ProjectApiAuthController",
@@ -764,11 +774,6 @@
         ]
     },
     {
-        "name": "\\Doctrine\\ORM\\EntityManagerInterface",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\Entity\\User",
         "size": 3000,
         "relations": [
@@ -794,11 +799,6 @@
     },
     {
         "name": "\\App\\ProjectGrid\\EmptyCellFinder",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectGrid\\Grid",
         "size": 3000,
         "relations": []
     },
