@@ -14,31 +14,32 @@ mitten: suggestion-btn, move-card-btn, sneak a peak-btn
 picked card, deck#}
 
 <div class="outer-grid-container">
-
+<h2 class="grid-col-0 grid-row-0">House</h2>
 <div class="game-grid house-grid">
     {% for i in 0..4 %}
         {% for j in 0..4 %}
             {% if house[i][j] != "" %}
-                <div class="slot filled-slot grid-row-{{i}} grid-col-{{j}}"><img src="{{ asset(house[i][j]['img']) }}" alt="{{ house[i][j]['alt'] }}"></div>
+                <div class="slot grid-row-{{i}} grid-col-{{j}}"><img src="{{ asset(house[i][j]['img']) }}" alt="{{ house[i][j]['alt'] }}"></div>
             {% else %}
-                <div class="slot empty-slot grid-row{{i}} grid-col-{{j}}" type="submit"></div>
+                <div class="slot grid-row{{i}} grid-col-{{j}}" type="submit"></div>
             {% endif %}
         {% endfor %}
     {% endfor %}
 </div>
 
 <div class="center-grid">
-<div class="slot filled-slot grid-row-0 grid-col-0"><img src="{{ asset(card['img']) }}" alt="{{ card['alt'] }}"></div>
+<div class="slot grid-row-0 grid-col-0"><img src="{{ asset(card['img']) }}" alt="{{ card['alt'] }}"></div>
 </div>
 
+<h2 class="grid-col-2 grid-row-0">You</h2>
 <form id="grid-form" method="post" action="">
 <div class="game-grid player-grid">
     {% for k in 0..4 %}
         {% for l in 0..4 %}
             {% if player[k][l]['alt'] != "" %}
-                <div class="slot filled-slot grid-row-{{k}} grid-col-{{l}}"><img src="{{ asset(player[k][l]['img']) }}" alt="{{ player[k][l]['alt'] }}"></div>
+                <div class="slot grid-row-{{k}} grid-col-{{l}}"><img src="{{ asset(player[k][l]['img']) }}" alt="{{ player[k][l]['alt'] }}"></div>
             {% else %}
-                <button class="slot empty-slot player-slot grid-row{{k}} grid-col-{{l}}" type="submit" onClick="this.form.action='{{ path('proj-round', {row: k, col: l}) }}';"></button>
+                <button class="slot clickable player-slot grid-row{{k}} grid-col-{{l}}" type="submit" onClick="this.form.action='{{ path('proj-round', {row: k, col: l}) }}';"></button>
             {% endif %}
         {% endfor %}
     {% endfor %}

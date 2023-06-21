@@ -32,6 +32,11 @@ class Game
      */
     private array $suggestedSlot;
 
+    /**
+     * @var array<int>
+     */
+    private array $fromSlot = [];
+
     public function setPot(int $amount): void
     {
         $this->pot = $amount;
@@ -46,14 +51,10 @@ class Game
      */
     public function __construct(
         array $grids,
-        // Grid $house = new Grid(),
-        // Grid $player = new Grid(),
         Deck $deck = new Deck(),
         MoveEvaluator $moveEvaluator=new MoveEvaluator(),
         WinEvaluator $winEvaluator=new WinEvaluator()
     ) {
-        // $this->house = new Grid();
-        // $this->player = new Grid();
         $this->house = $grids['house'];
         $this->player = $grids['player'];
         $this->moveEvaluator = $moveEvaluator;
@@ -62,8 +63,8 @@ class Game
         $this->deck = $deck;
         $this->card = $this->deck->deal();
         $this->playerSuggest();
-
     }
+
 
     public function playerSuggest(): void
     {
@@ -92,6 +93,18 @@ class Game
             $message = "Place card in row {$row} column {$col} for possible {$colRule} vertically.";
         }
         $this->message = $message;
+    }
+
+    public function setFromSlot(int $row, int $col): void
+    {
+        $this->fromSlot = [$row,$col];
+    }
+
+    public function moveCard(int $row, int $col): void
+    {
+        $card = $this->player->removeCard($this->fromSlot[0], $this->fromSlot[1]);
+        $this->player->addCard($row, $col, $card);
+        $this->fromSlot = [];
     }
 
     public function oneRound(int $row, int $col): bool
@@ -162,10 +175,11 @@ class Game
     {
         return [
             'message' => $this->message,
+            'slot' => $this->suggestedSlot,
             'results' => $this->results,
             'house' => $grid->graphic($this->house->getCards()),
             'player' => $grid->graphic($this->player->getCards()),
-            'slot' => $this->suggestedSlot,
+            'fromSlot' => $this->fromSlot,
             'card' => [
                 'img' => "img/project/cards/".$this->card.".svg",
                 'alt' => $this->card

@@ -31,7 +31,6 @@ class ProjectAuthController extends AbstractController
     #[Route("/proj/register", name: "register", methods: ['POST'])]
     public function projRegister(
         UserRepository $userRepo,
-        // TransactionRepository $transactionRepo,
         EntityManagerInterface $entityManager,
         Request $request,
         SessionInterface $session
@@ -85,28 +84,26 @@ class ProjectAuthController extends AbstractController
          * @var User $user
          */
         $user = $userRepo->findOneBy(['email' => $email]);
-        $session->set("user", $user);
+
+
+        $session->set("user", $user->getId());
         return $this->redirectToRoute('proj');
     }
 
     #[Route("/proj/purchase/{coins<\d+>}", name: "purchase", methods: ['POST'])]
     public function projPurchase(
         int $coins,
-        // UserRepository $userRepo,
-        // TransactionRepository $transRepo,
         EntityManagerInterface $entityManager,
         SessionInterface $session
     ): Response {
         /**
-         * @var User $user
+         * @var int $userId
          */
-        $user = $session->get("user");
-        // apparently neccessary to get the same object again from database in order
-        // for Doctrine not to mistake it to be a new one
+        $userId = $session->get("user");
         /**
          * @var User $user
          */
-        $user = $entityManager->getRepository(User::class)->find($user->getId());
+        $user = $entityManager->getRepository(User::class)->find($userId);
         date_default_timezone_set('Europe/Stockholm');
         $transaction = new Transaction();
         $transaction->setRegistered(new DateTime());
@@ -156,7 +153,7 @@ class ProjectAuthController extends AbstractController
             return $this->redirectToRoute('register-form');
         }
 
-        $session->set("user", $user);
+        $session->set("user", $user->getId());
 
         return $this->redirectToRoute('proj');
     }
@@ -182,11 +179,16 @@ class ProjectAuthController extends AbstractController
     public function selectAmount(
         SessionInterface $session,
         TransactionRepository $repo,
+        EntityManagerInterface $entityManager,
     ): Response {
+        /**
+         * @var int $userId
+         */
+        $userId = $session->get("user");
         /**
          * @var User $user
          */
-        $user = $session->get("user");
+        $user = $entityManager->getRepository(User::class)->find($userId);
         $balance = $repo->getUserBalance($user);
         if ($balance < 10) {
             $this->addFlash('warning', "You do not have enough coins, the minimum amount to bet is 10 coins. Purchase more coins in the shop");

@@ -43,7 +43,18 @@ class ProjectGameController extends AbstractController
             'url' => "proj",
         ];
         if ($state['finished'] === true) {
+            $this->addFlash('notice', $data['message']);
             return $this->render('proj/results.html.twig', $data);
+        }
+
+        if (count($state['fromSlot']) > 0) {
+            $this->addFlash('notice', "Click on an empty slot to which you want to move the selected card");
+            return $this->render('proj/place-card.html.twig', $data);
+        }
+
+        if ($session->get("show-suggestion")) {
+            $session->set("show-suggestion", false);
+            return $this->render('proj/game-display-suggest.html.twig', $data);
         }
         return $this->render('proj/game.html.twig', $data);
     }
@@ -55,16 +66,13 @@ class ProjectGameController extends AbstractController
         EntityManagerInterface $entityManager,
     ): Response {
         /**
-         * @var User $user
+         * @var int $userId
          */
-        $user = $session->get("user");
-        // apparently neccessary to get the same object again from database in order
-        // for Doctrine not to mistake it to be a new one
+        $userId = $session->get("user");
         /**
          * @var User $user
          */
-        $user = $entityManager->getRepository(User::class)->find($user->getId());
-
+        $user = $entityManager->getRepository(User::class)->find($userId);
         /**
          * @var int $bet
          */
@@ -96,6 +104,7 @@ class ProjectGameController extends AbstractController
         $game->setPot($bet);
 
         $session->set("game", $game);
+        $session->set("show-suggestion", false);
         return $this->redirectToRoute('proj-play');
     }
 
@@ -115,15 +124,13 @@ class ProjectGameController extends AbstractController
             $wonAmount = $game->evaluate();
             if ($wonAmount > 0) {
                 /**
-                 * @var User $user
+                 * @var int $userId
                  */
-                $user = $session->get("user");
-                // apparently neccessary to get the same object again from database in order
-                // for Doctrine not to mistake it to be a new one
+                $userId = $session->get("user");
                 /**
                  * @var User $user
                  */
-                $user = $entityManager->getRepository(User::class)->find($user->getId());
+                $user = $entityManager->getRepository(User::class)->find($userId);
                 date_default_timezone_set('Europe/Stockholm');
                 $transaction = new Transaction();
                 $transaction->setRegistered(new DateTime());
@@ -136,5 +143,96 @@ class ProjectGameController extends AbstractController
         }
         $session->set("game", $game);
         return $this->redirectToRoute('proj-play');
+    }
+
+    #[Route('/proj/set-fromslot', name: "set-fromslot", methods: ['POST'])]
+    public function setFromSlot(
+        int $row,
+        int $col,
+        SessionInterface $session,
+        EntityManagerInterface $entityManager
+    ): Response {
+        /**
+         * @var int $userId
+         */
+        $userId = $session->get("user");
+        /**
+         * @var User $user
+         */
+        $user = $entityManager->getRepository(User::class)->find($userId);
+
+        date_default_timezone_set('Europe/Stockholm');
+        $transaction = new Transaction();
+        $transaction->setRegistered(new DateTime());
+        $transaction->setDescr('move-a-card cheat');
+        $transaction->setAmount(-50);
+        $transaction->setUserId($user);
+        $entityManager->persist($transaction);
+        $entityManager->flush();
+        /**
+         * @var Game $game
+         */
+        $game = $session->get("game");
+        $game->setFromSlot($row, $col);
+        $session->set("game", $game);
+        return $this->redirectToRoute('proj-play');
+    }
+
+    #[Route('/proj/move-card', name: "move-card", methods: ['POST'])]
+    public function moveCard(
+        int $row,
+        int $col,
+        SessionInterface $session
+    ): Response {
+        /**
+         * @var Game $game
+         */
+        $game = $session->get("game");
+        $game->moveCard($row, $col);
+        $session->set("game", $game);
+        return $this->redirectToRoute('proj-play');
+    }
+
+    #[Route('/proj/show-suggestion', name: "show-suggestion", methods: ['POST'])]
+    public function showSuggestion(
+        SessionInterface $session,
+        EntityManagerInterface $entityManager
+    ): Response {
+        /**
+         * @var int $userId
+         */
+        $userId = $session->get("user");
+        /**
+         * @var User $user
+         */
+        $user = $entityManager->getRepository(User::class)->find($userId);
+        date_default_timezone_set('Europe/Stockholm');
+        $transaction = new Transaction();
+        $transaction->setRegistered(new DateTime());
+        $transaction->setDescr('show-suggestion cheat');
+        $transaction->setAmount(-30);
+        $transaction->setUserId($user);
+        $entityManager->persist($transaction);
+        $entityManager->flush();
+
+        $session->set("show-suggestion", true);
+        return $this->redirectToRoute('proj-play');
+    }
+
+    #[Route('/proj/pick-card', name: "pick-card")]
+    public function pickCard(
+        SessionInterface $session
+    ): Response {
+        /**
+         * @var Game $game
+         */
+        $game = $session->get("game");
+        $state = $game->currentState();
+        $data = [
+            ...$state,
+            'url' => "proj",
+        ];
+        $this->addFlash('notice', "Click on the card you want to move");
+        return $this->render('proj/pick-card.html.twig', $data);
     }
 }

@@ -52,4 +52,11 @@ class Grid
     {
         return $this->grid;
     }
+
+    public function removeCard(int $row, int $col): string
+    {
+        $card = $this->grid[$row][$col];
+        unset($this->grid[$row][$col]);
+        return $card;
+    }
 }
