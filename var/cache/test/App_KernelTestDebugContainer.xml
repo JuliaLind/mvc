@@ -506,6 +506,9 @@
     <service id="App\Helpers\JsonHandler" class="App\Helpers\JsonHandler" autowire="true" autoconfigure="true"/>
     <service id="App\Helpers\LuckyRouteData" class="App\Helpers\LuckyRouteData" autowire="true" autoconfigure="true"/>
     <service id="App\Helpers\MainControllerHelper" class="App\Helpers\MainControllerHelper" autowire="true" autoconfigure="true"/>
+    <service id="App\Helpers\SqlFileLoader" class="App\Helpers\SqlFileLoader" autowire="true" autoconfigure="true">
+      <argument type="service" id="doctrine.dbal.default_connection"/>
+    </service>
     <service id="App\Library\BookNotFoundException" class="App\Library\BookNotFoundException" autowire="true" autoconfigure="true"/>
     <service id="App\Library\BookRemover" class="App\Library\BookRemover" autowire="true" autoconfigure="true"/>
     <service id="App\Library\BookSaver" class="App\Library\BookSaver" autowire="true" autoconfigure="true"/>
@@ -519,9 +522,6 @@
     </service>
     <service id="App\Library\NewFlashGenerator" class="App\Library\NewFlashGenerator" autowire="true" autoconfigure="true"/>
     <service id="App\Library\RemoveFlashGenerator" class="App\Library\RemoveFlashGenerator" autowire="true" autoconfigure="true"/>
-    <service id="App\Library\SqlFileLoader" class="App\Library\SqlFileLoader" autowire="true" autoconfigure="true">
-      <argument type="service" id="doctrine.dbal.default_connection"/>
-    </service>
     <service id="App\Library\UpdateFlashGenerator" class="App\Library\UpdateFlashGenerator" autowire="true" autoconfigure="true"/>
     <service id="App\Markdown\MdParser" class="App\Markdown\MdParser" autowire="true" autoconfigure="true"/>
     <service id="App\Project\ApiGame" class="App\Project\ApiGame" autowire="true" autoconfigure="true"/>
@@ -530,6 +530,7 @@
     <service id="App\Project\Game" class="App\Project\Game" autowire="true" autoconfigure="true"/>
     <service id="App\Project\NotEnoughCoinsException" class="App\Project\NotEnoughCoinsException" autowire="true" autoconfigure="true"/>
     <service id="App\Project\Register" class="App\Project\Register" autowire="true" autoconfigure="true"/>
+    <service id="App\Project\UserNotRegisteredException" class="App\Project\UserNotRegisteredException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\CardCounter" class="App\ProjectCard\CardCounter" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\CardFactory" class="App\ProjectCard\CardFactory" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\CardSearcher" class="App\ProjectCard\CardSearcher" autowire="true" autoconfigure="true"/>
@@ -1739,6 +1740,7 @@
         <argument key="App\Helpers\JsonHandler" type="service_closure" id="App\Helpers\JsonHandler" on-invalid="ignore_uninitialized"/>
         <argument key="App\Helpers\LuckyRouteData" type="service_closure" id="App\Helpers\LuckyRouteData" on-invalid="ignore_uninitialized"/>
         <argument key="App\Helpers\MainControllerHelper" type="service_closure" id="App\Helpers\MainControllerHelper" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Helpers\SqlFileLoader" type="service_closure" id="App\Helpers\SqlFileLoader" on-invalid="ignore_uninitialized"/>
         <argument key="App\Library\BookNotFoundException" type="service_closure" id="App\Library\BookNotFoundException" on-invalid="ignore_uninitialized"/>
         <argument key="App\Library\BookRemover" type="service_closure" id="App\Library\BookRemover" on-invalid="ignore_uninitialized"/>
         <argument key="App\Library\BookSaver" type="service_closure" id="App\Library\BookSaver" on-invalid="ignore_uninitialized"/>
@@ -1748,13 +1750,13 @@
         <argument key="App\Library\LibraryHandler" type="service_closure" id="App\Library\LibraryHandler" on-invalid="ignore_uninitialized"/>
         <argument key="App\Library\NewFlashGenerator" type="service_closure" id="App\Library\NewFlashGenerator" on-invalid="ignore_uninitialized"/>
         <argument key="App\Library\RemoveFlashGenerator" type="service_closure" id="App\Library\RemoveFlashGenerator" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Library\SqlFileLoader" type="service_closure" id="App\Library\SqlFileLoader" on-invalid="ignore_uninitialized"/>
         <argument key="App\Library\UpdateFlashGenerator" type="service_closure" id="App\Library\UpdateFlashGenerator" on-invalid="ignore_uninitialized"/>
         <argument key="App\Markdown\MdParser" type="service_closure" id="App\Markdown\MdParser" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\ApiGame" type="service_closure" id="App\Project\ApiGame" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\ApiNew" type="service_closure" id="App\Project\ApiNew" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\ApiResults" type="service_closure" id="App\Project\ApiResults" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\NotEnoughCoinsException" type="service_closure" id="App\Project\NotEnoughCoinsException" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Project\UserNotRegisteredException" type="service_closure" id="App\Project\UserNotRegisteredException" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectCard\CardCounter" type="service_closure" id="App\ProjectCard\CardCounter" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectCard\CardFactory" type="service_closure" id="App\ProjectCard\CardFactory" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectCard\CardSearcher" type="service_closure" id="App\ProjectCard\CardSearcher" on-invalid="ignore_uninitialized"/>

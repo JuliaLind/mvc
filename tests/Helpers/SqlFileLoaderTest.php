@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Library;
+namespace App\Helpers;
 
 use PHPUnit\Framework\TestCase;
 use Doctrine\DBAL\Connection;
@@ -29,7 +29,7 @@ class SqlFileLoaderTest extends TestCase
     {
         $conn = $this->createMock(Connection::class);
         $loader = new SqlFileLoader($conn);
-        $this->assertInstanceOf("\App\Library\SqlFileLoader", $loader);
+        $this->assertInstanceOf("\App\Helpers\SqlFileLoader", $loader);
     }
 
 

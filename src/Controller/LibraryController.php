@@ -7,7 +7,7 @@ use Doctrine\Persistence\ManagerRegistry;
 use App\Repository\BookRepository;
 
 use App\Library\LibraryHandler;
-use App\Library\SqlFileLoader;
+use App\Helpers\SqlFileLoader;
 use App\Library\BookNotFoundException;
 use App\Library\RemoveFlashGenerator;
 use App\Library\NewFlashGenerator;
@@ -19,8 +19,6 @@ use Doctrine\DBAL\Connection;
 
 
 use Symfony\Component\HttpFoundation\Request;
-
-// use Doctrine\DBAL\Connection;
 
 /**
  * Class for the library controller
@@ -127,7 +125,6 @@ class LibraryController extends AbstractController
      */
     #[Route('/library/reset', name: 'reset_library', methods: ['POST'])]
     public function resetBook(
-        // ManagerRegistry $doctrine,
         Connection $connection,
     ): Response {
         /**

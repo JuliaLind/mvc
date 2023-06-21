@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Code Coverage for /home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectGrid/SlotNotEmptyException.php</title>
+  <title>Code Coverage for /home/juli22/dbwebb-kurser/mvc/me/report/src/Project/UserNotRegisteredException.php</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../_css/bootstrap.min.css?v=10.1.1" rel="stylesheet" type="text/css">
   <link href="../_css/octicons.css?v=10.1.1" rel="stylesheet" type="text/css">
@@ -17,8 +17,8 @@
       <nav aria-label="breadcrumb">
        <ol class="breadcrumb">
          <li class="breadcrumb-item"><a href="../index.html">/home/juli22/dbwebb-kurser/mvc/me/report/src</a></li>
-         <li class="breadcrumb-item"><a href="index.html">ProjectGrid</a></li>
-         <li class="breadcrumb-item active">SlotNotEmptyException.php</li>
+         <li class="breadcrumb-item"><a href="index.html">Project</a></li>
+         <li class="breadcrumb-item active">UserNotRegisteredException.php</li>
 
        </ol>
       </nav>
@@ -62,7 +62,7 @@
       </tr>
 
       <tr>
-       <td class=""><abbr title="App\ProjectGrid\SlotNotEmptyException">SlotNotEmptyException</abbr></td>
+       <td class=""><abbr title="App\Project\UserNotRegisteredException">UserNotRegisteredException</abbr></td>
        <td class=" big"></td>
        <td class=" small"><div align="right">n/a</div></td>
        <td class=" small"><div align="right">0&nbsp;/&nbsp;0</div></td>
@@ -83,15 +83,19 @@
 <tbody>
     <tr class=" d-flex"><td  class="col-1 text-right"><a id="1" href="#1">1</a></td><td class="col-11 codeLine"><span class="default">&lt;?php</span></td></tr>
     <tr class=" d-flex"><td  class="col-1 text-right"><a id="2" href="#2">2</a></td><td class="col-11 codeLine"></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="3" href="#3">3</a></td><td class="col-11 codeLine"><span class="keyword">namespace</span><span class="default">&nbsp;</span><span class="default">App\ProjectGrid</span><span class="keyword">;</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="3" href="#3">3</a></td><td class="col-11 codeLine"><span class="keyword">namespace</span><span class="default">&nbsp;</span><span class="default">App\Project</span><span class="keyword">;</span></td></tr>
     <tr class=" d-flex"><td  class="col-1 text-right"><a id="4" href="#4">4</a></td><td class="col-11 codeLine"></td></tr>
     <tr class="covered-by-large-tests popin d-flex"><td  data-title="1 test covers line 5" data-content="&lt;ul&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;App\Controller\CardControllerTest::testDeck&lt;/li&gt;&lt;/ul&gt;" data-placement="top" data-html="true" class="col-1 text-right"><a id="5" href="#5">5</a></td><td class="col-11 codeLine"><span class="keyword">require</span><span class="default">&nbsp;</span><span class="default">__DIR__</span><span class="default">&nbsp;</span><span class="keyword">.</span><span class="default">&nbsp;</span><span class="default">&quot;/../../vendor/autoload.php&quot;</span><span class="keyword">;</span></td></tr>
     <tr class=" d-flex"><td  class="col-1 text-right"><a id="6" href="#6">6</a></td><td class="col-11 codeLine"></td></tr>
     <tr class=" d-flex"><td  class="col-1 text-right"><a id="7" href="#7">7</a></td><td class="col-11 codeLine"><span class="keyword">use</span><span class="default">&nbsp;</span><span class="default">Exception</span><span class="keyword">;</span></td></tr>
     <tr class=" d-flex"><td  class="col-1 text-right"><a id="8" href="#8">8</a></td><td class="col-11 codeLine"></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="9" href="#9">9</a></td><td class="col-11 codeLine"><span class="keyword">class</span><span class="default">&nbsp;</span><span class="default">SlotNotEmptyException</span><span class="default">&nbsp;</span><span class="keyword">extends</span><span class="default">&nbsp;</span><span class="default">Exception</span></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="10" href="#10">10</a></td><td class="col-11 codeLine"><span class="keyword">{</span></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="11" href="#11">11</a></td><td class="col-11 codeLine"><span class="keyword">}</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="9" href="#9">9</a></td><td class="col-11 codeLine"><span class="comment">/**</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="10" href="#10">10</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;*&nbsp;Exception&nbsp;class&nbsp;thown&nbsp;when&nbsp;the&nbsp;suer&nbsp;does&nbsp;not&nbsp;have</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="11" href="#11">11</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;*&nbsp;enough&nbsp;coins&nbsp;to&nbsp;cover&nbsp;for&nbsp;a&nbsp;transaction</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="12" href="#12">12</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;*/</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="13" href="#13">13</a></td><td class="col-11 codeLine"><span class="keyword">class</span><span class="default">&nbsp;</span><span class="default">UserNotRegisteredException</span><span class="default">&nbsp;</span><span class="keyword">extends</span><span class="default">&nbsp;</span><span class="default">Exception</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="14" href="#14">14</a></td><td class="col-11 codeLine"><span class="keyword">{</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="15" href="#15">15</a></td><td class="col-11 codeLine"><span class="keyword">}</span></td></tr>
 
 </tbody>
 </table>
