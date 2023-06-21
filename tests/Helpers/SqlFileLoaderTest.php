@@ -22,15 +22,15 @@ function file_get_contents(string $filename): string
  */
 class SqlFileLoaderTest extends TestCase
 {
-    /**
-     * Construct object and check
-     */
-    public function testCreateObject(): void
-    {
-        $conn = $this->createMock(Connection::class);
-        $loader = new SqlFileLoader($conn);
-        $this->assertInstanceOf("\App\Helpers\SqlFileLoader", $loader);
-    }
+    // /**
+    //  * Construct object and check
+    //  */
+    // public function testCreateObject(): void
+    // {
+    //     $conn = $this->createMock(Connection::class);
+    //     $loader = new SqlFileLoader($conn);
+    //     $this->assertInstanceOf("\App\Helpers\SqlFileLoader", $loader);
+    // }
 
 
     /**
@@ -39,11 +39,13 @@ class SqlFileLoaderTest extends TestCase
     public function testLoad(): void
     {
         $conn = $this->createMock(Connection::class);
-        $loader = new SqlFileLoader($conn);
+        // $loader = new SqlFileLoader($conn);
+        $loader = new SqlFileLoader();
         // $sql = "This is some text";
         $conn->expects($this->once())
             ->method('executeStatement')
             ->with($this->equalTo("This is some text"));
-        $loader->load("sql/reset-book.sql");
+        // $loader->load("sql/reset-book.sql");
+        $loader->load("sql/reset-book.sql", $conn);
     }
 }

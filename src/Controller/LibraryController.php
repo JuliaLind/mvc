@@ -126,12 +126,9 @@ class LibraryController extends AbstractController
     #[Route('/library/reset', name: 'reset_library', methods: ['POST'])]
     public function resetBook(
         Connection $connection,
+        SqlFileLoader $loader=new SqlFileLoader()
     ): Response {
-        /**
-         * @var Connection $connection
-         */
-        $loader = new SqlFileLoader($connection);
-        $loader->load("sql/reset-book.sql");
+        $loader->load("sql/reset-book.sql", $connection);
 
         $this->addFlash("notice", "Databasen är återställd");
         return $this->redirectToRoute('read_many');

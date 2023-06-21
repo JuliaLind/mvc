@@ -5,6 +5,8 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\DataFixtures\BookFixture;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\DBAL\Connection;
+use App\Helpers\SqlFileLoader;
 
 class LibraryControllerTest extends WebTestCase
 {
@@ -96,8 +98,27 @@ class LibraryControllerTest extends WebTestCase
 
     public function testReset(): void
     {
-        $client = static::createClient();
+        // $client = static::createClient();
+        $loader = $this->createMock(SqlFileLoader::class);
+        $connection = $this->createMock(Connection::class);
+        // $connection->expects($this->once())
+        // ->method('executeStatement');
+
+        $loader->expects($this->once())
+        ->method('load')
+        ->with($this->equalTo('sql/reset-book.sql', $this->equalTo($connection)));
+        // ;
+        $client = static::createClient([
+            'services' => [
+                'connection' => $connection
+            ]
+        ]);
+        $container = $client->getContainer();
+        $container->set(SqlFileLoader::class, $loader);
+
+
         $client->request('POST', '/library/reset');
         $this->assertRouteSame('reset_library');
+        $this->assertResponseRedirects('/library/read_many');
     }
 }

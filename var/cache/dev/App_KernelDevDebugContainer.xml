@@ -529,6 +529,9 @@
     <service id="App\Helpers\JsonHandler" class="App\Helpers\JsonHandler" autowire="true" autoconfigure="true"/>
     <service id="App\Helpers\LuckyRouteData" class="App\Helpers\LuckyRouteData" autowire="true" autoconfigure="true"/>
     <service id="App\Helpers\MainControllerHelper" class="App\Helpers\MainControllerHelper" autowire="true" autoconfigure="true"/>
+    <service id="App\Helpers\SqlFileLoader" class="App\Helpers\SqlFileLoader" autowire="true" autoconfigure="true">
+      <argument type="service" id="doctrine.dbal.default_connection"/>
+    </service>
     <service id="App\Library\BookNotFoundException" class="App\Library\BookNotFoundException" autowire="true" autoconfigure="true"/>
     <service id="App\Library\BookRemover" class="App\Library\BookRemover" autowire="true" autoconfigure="true"/>
     <service id="App\Library\BookSaver" class="App\Library\BookSaver" autowire="true" autoconfigure="true"/>
@@ -542,9 +545,6 @@
     </service>
     <service id="App\Library\NewFlashGenerator" class="App\Library\NewFlashGenerator" autowire="true" autoconfigure="true"/>
     <service id="App\Library\RemoveFlashGenerator" class="App\Library\RemoveFlashGenerator" autowire="true" autoconfigure="true"/>
-    <service id="App\Library\SqlFileLoader" class="App\Library\SqlFileLoader" autowire="true" autoconfigure="true">
-      <argument type="service" id="doctrine.dbal.default_connection"/>
-    </service>
     <service id="App\Library\UpdateFlashGenerator" class="App\Library\UpdateFlashGenerator" autowire="true" autoconfigure="true"/>
     <service id="App\Markdown\MdParser" class="App\Markdown\MdParser" autowire="true" autoconfigure="true"/>
     <service id="App\Project\ApiGame" class="App\Project\ApiGame" autowire="true" autoconfigure="true"/>
@@ -553,6 +553,7 @@
     <service id="App\Project\Game" class="App\Project\Game" autowire="true" autoconfigure="true"/>
     <service id="App\Project\NotEnoughCoinsException" class="App\Project\NotEnoughCoinsException" autowire="true" autoconfigure="true"/>
     <service id="App\Project\Register" class="App\Project\Register" autowire="true" autoconfigure="true"/>
+    <service id="App\Project\UserNotRegisteredException" class="App\Project\UserNotRegisteredException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\CardCounter" class="App\ProjectCard\CardCounter" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\CardFactory" class="App\ProjectCard\CardFactory" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectCard\CardSearcher" class="App\ProjectCard\CardSearcher" autowire="true" autoconfigure="true"/>

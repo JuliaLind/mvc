@@ -50,7 +50,7 @@ class User
 
     public function getId(): int
     {
-        if (!$this->id) {
+        if ($this->id === null) {
             throw new UserNotRegisteredException();
         }
         return $this->id;
