@@ -41,15 +41,6 @@ class TransactionRepository extends ServiceEntityRepository
         }
     }
 
-    public function getUserBalance(User $user): int
-    {
-        $balance = 0;
-        $transactions = $this->findBy(['userid' => $user]);
-        foreach($transactions as $transaction) {
-            $balance += $transaction->getAmount();
-        }
-        return $balance;
-    }
 
 //    /**
 //     * @return Transaction[] Returns an array of Transaction objects

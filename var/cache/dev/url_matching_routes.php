@@ -56,7 +56,6 @@ return [
         '/proj/set-fromslot' => [[['_route' => 'set-fromslot', '_controller' => 'App\\Controller\\ProjectGameController::setFromSlot'], null, ['POST' => 0], null, false, false, null]],
         '/proj/move-card' => [[['_route' => 'move-card', '_controller' => 'App\\Controller\\ProjectGameController::moveCard'], null, ['POST' => 0], null, false, false, null]],
         '/proj/show-suggestion' => [[['_route' => 'show-suggestion', '_controller' => 'App\\Controller\\ProjectGameController::showSuggestion'], null, ['POST' => 0], null, false, false, null]],
-        '/proj/pick-card' => [[['_route' => 'pick-card', '_controller' => 'App\\Controller\\ProjectGameController::pickCard'], null, null, null, false, false, null]],
         '/proj' => [[['_route' => 'proj', '_controller' => 'App\\Controller\\ProjectMainController::projLanding'], null, null, null, false, false, null]],
         '/proj/transactions' => [[['_route' => 'proj-trans', '_controller' => 'App\\Controller\\ProjectMainController::projTrans'], null, null, null, false, false, null]],
         '/proj/api' => [[['_route' => 'proj-api', '_controller' => 'App\\Controller\\ProjectMainController::projApiLanding'], null, null, null, false, false, null]],
@@ -105,8 +104,11 @@ return [
                         .'|user/([^/]++)(*:476)'
                         .'|place\\-card/(\\d+)/(\\d+)(*:507)'
                     .')'
-                    .'|purchase/(\\d+)(*:530)'
-                    .'|one\\-round/(\\d+)/(\\d+)(*:560)'
+                    .'|p(?'
+                        .'|urchase/(\\d+)(*:533)'
+                        .'|ick\\-card/(\\d+)(*:556)'
+                    .')'
+                    .'|one\\-round/(\\d+)/(\\d+)(*:587)'
                 .')'
             .')/?$}sDu',
     ],
@@ -130,8 +132,9 @@ return [
         438 => [[['_route' => 'update_form', '_controller' => 'App\\Controller\\LibraryUpdateBookController::updateBookForm'], ['isbn'], null, null, false, true, null]],
         476 => [[['_route' => 'api-user', '_controller' => 'App\\Controller\\ProjectApiAuthController::apiUser'], ['email'], ['GET' => 0], null, false, true, null]],
         507 => [[['_route' => 'api-place-card', '_controller' => 'App\\Controller\\ProjectApiController::apiNew'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
-        530 => [[['_route' => 'purchase', '_controller' => 'App\\Controller\\ProjectAuthController::projPurchase'], ['coins'], ['POST' => 0], null, false, true, null]],
-        560 => [
+        533 => [[['_route' => 'purchase', '_controller' => 'App\\Controller\\ProjectAuthController::projPurchase'], ['coins'], ['POST' => 0], null, false, true, null]],
+        556 => [[['_route' => 'pick-card', '_controller' => 'App\\Controller\\ProjectGameController::pickCard'], ['balance'], null, null, false, true, null]],
+        587 => [
             [['_route' => 'proj-round', '_controller' => 'App\\Controller\\ProjectGameController::projRound'], ['row', 'col'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

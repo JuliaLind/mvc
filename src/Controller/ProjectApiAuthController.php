@@ -11,18 +11,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-// use Symfony\Component\HttpFoundation\Request;
-// use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 use App\Helpers\JsonConverter;
 
-// use App\Project\ApiGame;
-// use App\Project\ApiNew;
-// use App\Project\ApiResults;
-
 use App\Repository\UserRepository;
 use App\Repository\TransactionRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
+use App\Project\Register;
 
 use Datetime;
 
@@ -31,7 +27,7 @@ class ProjectApiAuthController extends AbstractController
     #[Route('/proj/api/user/{email}', name: "api-user", methods: ['GET'])]
     public function apiUser(
         UserRepository $userRepo,
-        TransactionRepository $transRepo,
+        EntityManagerInterface $entityManager,
         string $email,
         JsonConverter $converter = new JsonConverter()
     ): Response {
@@ -39,12 +35,18 @@ class ProjectApiAuthController extends AbstractController
          * @var User $user
          */
         $user = $userRepo->findOneBy(['email' => $email]);
+        /**
+         * @var int $userId
+         */
+        $userId = $user->getId();
+        $register = new Register($entityManager, $userId);
+        $balance = $register->getBalance();
         $data = [
-            'id' => $user->getId(),
+            'id' => $userId,
             'acronym' => $user->getAcronym(),
             'email' => $user->getEmail(),
             'hash' => $user->getHash(),
-            'balance' => $transRepo->getUserBalance($user),
+            'balance' => $balance,
             'transactions' => [],
             'scores' => []
         ];

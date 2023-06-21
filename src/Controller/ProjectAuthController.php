@@ -18,8 +18,7 @@ use App\Repository\UserRepository;
 use App\Entity\User;
 use App\Entity\Transaction;
 use Datetime;
-
-// use App\Project\UserAlreadyExistsException;
+use App\Project\Register;
 
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 
@@ -30,7 +29,7 @@ class ProjectAuthController extends AbstractController
 {
     #[Route("/proj/register", name: "register", methods: ['POST'])]
     public function projRegister(
-        UserRepository $userRepo,
+        // UserRepository $userRepo,
         EntityManagerInterface $entityManager,
         Request $request,
         SessionInterface $session
@@ -63,30 +62,28 @@ class ProjectAuthController extends AbstractController
         $user->setEmail($email);
         $user->setAcronym($acronym);
         $user->setHash($hash);
-        date_default_timezone_set('Europe/Stockholm');
-        $transaction = new Transaction();
-        $transaction->setRegistered(new DateTime());
-        $transaction->setDescr('Free registration bonus');
-        $transaction->setAmount(1000);
-        $transaction->setUserId($user);
+
         try {
             $entityManager->persist($user);
-            $entityManager->persist($transaction);
             $entityManager->flush();
         } catch (UniqueConstraintViolationException) {
             $this->addFlash('warning', "A user with this email or Gamer name already exists");
             return $this->redirectToRoute('register-form');
         }
-        $entityManager->persist($user);
-        $entityManager->persist($transaction);
-        $entityManager->flush();
+
         /**
          * @var User $user
          */
-        $user = $userRepo->findOneBy(['email' => $email]);
+        $user = $entityManager->getRepository(User::class)->findOneBy(['email' => $email]);
+        /**
+         * @var int userId
+         */
+        $userId = $user->getId();
 
+        $register = new Register($entityManager, $userId);
+        $register->transaction(1000, 'Free registration bonus');
 
-        $session->set("user", $user->getId());
+        $session->set("user", $userId);
         return $this->redirectToRoute('proj');
     }
 
@@ -100,24 +97,10 @@ class ProjectAuthController extends AbstractController
          * @var int $userId
          */
         $userId = $session->get("user");
-        /**
-         * @var User $user
-         */
-        $user = $entityManager->getRepository(User::class)->find($userId);
-        date_default_timezone_set('Europe/Stockholm');
-        $transaction = new Transaction();
-        $transaction->setRegistered(new DateTime());
-        $transaction->setDescr('Purchase');
-        $transaction->setAmount($coins);
 
-        $transaction->setUserId($user);
-        $entityManager->persist($transaction);
-        $entityManager->flush();
-        /**
-         * @var TransactionRepository $repo
-         */
-        $repo = $entityManager->getRepository(Transaction::class);
-        $balance = $repo->getUserBalance($user);
+        $register = new Register($entityManager, $userId);
+        $register->transaction($coins, 'Purchase');
+        $balance = $register->getBalance();
         $this->addFlash('notice', "You have successfully purchsed {$coins} coins. Your new balance is {$balance} coins");
         return $this->redirectToRoute('shop');
     }
@@ -178,18 +161,16 @@ class ProjectAuthController extends AbstractController
     #[Route("/proj/select-amount", name: "select-amount")]
     public function selectAmount(
         SessionInterface $session,
-        TransactionRepository $repo,
         EntityManagerInterface $entityManager,
     ): Response {
         /**
          * @var int $userId
          */
         $userId = $session->get("user");
-        /**
-         * @var User $user
-         */
-        $user = $entityManager->getRepository(User::class)->find($userId);
-        $balance = $repo->getUserBalance($user);
+
+        $register = new Register($entityManager, $userId);
+        $balance = $register->getBalance();
+
         if ($balance < 10) {
             $this->addFlash('warning', "You do not have enough coins, the minimum amount to bet is 10 coins. Purchase more coins in the shop");
             return $this->redirectToRoute('proj-shop');

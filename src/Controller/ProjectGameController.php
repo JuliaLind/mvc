@@ -18,6 +18,8 @@ use App\Repository\UserRepository;
 use App\Entity\User;
 use App\Entity\Transaction;
 use Datetime;
+use App\Project\NotEnoughCoinsException;
+use App\Project\Register;
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -29,6 +31,7 @@ class ProjectGameController extends AbstractController
     #[Route("/proj/play", name: "proj-play")]
     public function projPlay(
         SessionInterface $session,
+        EntityManagerInterface $entityManager,
     ): Response {
         /**
          * @var Game $game
@@ -42,6 +45,7 @@ class ProjectGameController extends AbstractController
             ...$state,
             'url' => "proj",
         ];
+
         if ($state['finished'] === true) {
             $this->addFlash('notice', $data['message']);
             return $this->render('proj/results.html.twig', $data);
@@ -56,6 +60,12 @@ class ProjectGameController extends AbstractController
             $session->set("show-suggestion", false);
             return $this->render('proj/game-display-suggest.html.twig', $data);
         }
+        /**
+         * @var int $userId
+         */
+        $userId = $session->get("user");
+        $register = new Register($entityManager, $userId);
+        $data['balance'] = $register->getBalance();
         return $this->render('proj/game.html.twig', $data);
     }
 
@@ -70,33 +80,18 @@ class ProjectGameController extends AbstractController
          */
         $userId = $session->get("user");
         /**
-         * @var User $user
-         */
-        $user = $entityManager->getRepository(User::class)->find($userId);
-        /**
          * @var int $bet
          */
         $bet = $request->get("bet");
-        /**
-         * @var TransactionRepository $repo
-         */
-        $repo = $entityManager->getRepository(Transaction::class);
-        $balance = $repo->getUserBalance($user);
+        $register = new Register($entityManager, $userId);
 
-        if ($bet > $balance) {
+        try {
+            $register->debit($bet, 'Bet');
+        } catch (NotEnoughCoinsException) {
             $this->addFlash('warning', "You do not have enough coins to place the wanted bet. Purchase more coins in the shop");
             return $this->redirectToRoute('proj-shop');
         }
-        date_default_timezone_set('Europe/Stockholm');
-        $transaction = new Transaction();
-        $transaction->setRegistered(new DateTime());
-        $transaction->setDescr('Bet');
-        $transaction->setAmount(-$bet);
-        $transaction->setUserId($user);
-        $entityManager->persist($transaction);
-        $entityManager->flush();
 
-        // $game = new Game();
         $game = new Game([
             'house' => new Grid(),
             'player' => new Grid()
@@ -127,18 +122,8 @@ class ProjectGameController extends AbstractController
                  * @var int $userId
                  */
                 $userId = $session->get("user");
-                /**
-                 * @var User $user
-                 */
-                $user = $entityManager->getRepository(User::class)->find($userId);
-                date_default_timezone_set('Europe/Stockholm');
-                $transaction = new Transaction();
-                $transaction->setRegistered(new DateTime());
-                $transaction->setDescr('return (bet + profit)');
-                $transaction->setAmount($wonAmount);
-                $transaction->setUserId($user);
-                $entityManager->persist($transaction);
-                $entityManager->flush();
+                $register = new Register($entityManager, $userId);
+                $register->transaction($wonAmount, 'return (bet + profit)');
             }
         }
         $session->set("game", $game);
@@ -156,19 +141,15 @@ class ProjectGameController extends AbstractController
          * @var int $userId
          */
         $userId = $session->get("user");
-        /**
-         * @var User $user
-         */
-        $user = $entityManager->getRepository(User::class)->find($userId);
 
-        date_default_timezone_set('Europe/Stockholm');
-        $transaction = new Transaction();
-        $transaction->setRegistered(new DateTime());
-        $transaction->setDescr('move-a-card cheat');
-        $transaction->setAmount(-50);
-        $transaction->setUserId($user);
-        $entityManager->persist($transaction);
-        $entityManager->flush();
+        $register = new Register($entityManager, $userId);
+        try {
+            $register->debit(50, 'move-a-card cheat');
+        } catch (NotEnoughCoinsException) {
+            $this->addFlash('warning', "You do not have enough coins to use this cheat. Purchase more coins in the shop");
+            return $this->redirectToRoute('proj-play');
+        }
+
         /**
          * @var Game $game
          */
@@ -202,32 +183,31 @@ class ProjectGameController extends AbstractController
          * @var int $userId
          */
         $userId = $session->get("user");
-        /**
-         * @var User $user
-         */
-        $user = $entityManager->getRepository(User::class)->find($userId);
-        date_default_timezone_set('Europe/Stockholm');
-        $transaction = new Transaction();
-        $transaction->setRegistered(new DateTime());
-        $transaction->setDescr('show-suggestion cheat');
-        $transaction->setAmount(-30);
-        $transaction->setUserId($user);
-        $entityManager->persist($transaction);
-        $entityManager->flush();
-
+        $register = new Register($entityManager, $userId);
+        try {
+            $register->debit(30, 'show-suggestion cheat');
+        } catch (NotEnoughCoinsException) {
+            $this->addFlash('warning', "You do not have enough coins to use this cheat. Purchase more coins in the shop");
+            return $this->redirectToRoute('proj-play');
+        }
         $session->set("show-suggestion", true);
         return $this->redirectToRoute('proj-play');
     }
 
-    #[Route('/proj/pick-card', name: "pick-card")]
+    #[Route('/proj/pick-card/{balance<\d+>}', name: "pick-card")]
     public function pickCard(
-        SessionInterface $session
+        SessionInterface $session,
+        int $balance
     ): Response {
         /**
          * @var Game $game
          */
         $game = $session->get("game");
         $state = $game->currentState();
+        if ($balance < 50) {
+            $this->addFlash('warning', "You do not have enough coins to use this cheat. Purchase more coins in the shop");
+            return $this->redirectToRoute('proj-play');
+        }
         $data = [
             ...$state,
             'url' => "proj",

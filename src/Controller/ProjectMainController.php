@@ -13,6 +13,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
 use App\Repository\TransactionRepository;
 use App\Project\Game;
+use App\Project\Register;
 
 /**
  * The main controller class
@@ -22,7 +23,6 @@ class ProjectMainController extends AbstractController
     #[Route("/proj", name: "proj")]
     public function projLanding(
         SessionInterface $session,
-        TransactionRepository $repo,
         EntityManagerInterface $entityManager,
     ): Response {
         /**
@@ -44,11 +44,13 @@ class ProjectMainController extends AbstractController
          */
         $game = $session->get("game") ?? null;
 
+        $register = new Register($entityManager, $userId);
+
         $data = [
             ...$data,
             'user' => $user,
             'finished' => true,
-            'balance' => $repo->getUserBalance($user)
+            'balance' => $register->getBalance()
         ];
         if ($game) {
             $data['finished'] = $game->currentState()['finished'];

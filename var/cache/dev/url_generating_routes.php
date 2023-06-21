@@ -72,7 +72,7 @@ return [
     'set-fromslot' => [[], ['_controller' => 'App\\Controller\\ProjectGameController::setFromSlot'], [], [['text', '/proj/set-fromslot']], [], [], []],
     'move-card' => [[], ['_controller' => 'App\\Controller\\ProjectGameController::moveCard'], [], [['text', '/proj/move-card']], [], [], []],
     'show-suggestion' => [[], ['_controller' => 'App\\Controller\\ProjectGameController::showSuggestion'], [], [['text', '/proj/show-suggestion']], [], [], []],
-    'pick-card' => [[], ['_controller' => 'App\\Controller\\ProjectGameController::pickCard'], [], [['text', '/proj/pick-card']], [], [], []],
+    'pick-card' => [['balance'], ['_controller' => 'App\\Controller\\ProjectGameController::pickCard'], ['balance' => '\\d+'], [['variable', '/', '\\d+', 'balance', true], ['text', '/proj/pick-card']], [], [], []],
     'proj' => [[], ['_controller' => 'App\\Controller\\ProjectMainController::projLanding'], [], [['text', '/proj']], [], [], []],
     'proj-trans' => [[], ['_controller' => 'App\\Controller\\ProjectMainController::projTrans'], [], [['text', '/proj/transactions']], [], [], []],
     'proj-api' => [[], ['_controller' => 'App\\Controller\\ProjectMainController::projApiLanding'], [], [['text', '/proj/api']], [], [], []],
