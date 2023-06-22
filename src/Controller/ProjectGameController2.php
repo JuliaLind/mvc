@@ -57,6 +57,33 @@ class ProjectGameController2 extends AbstractController
         return $this->redirectToRoute('proj-play');
     }
 
+    #[Route('/proj/undo', name: "undo", methods: ['POST'])]
+    public function undo(
+        SessionInterface $session,
+        EntityManagerInterface $entityManager
+    ): Response {
+        /**
+         * @var int $userId
+         */
+        $userId = $session->get("user");
+
+        $register = new Register($entityManager, $userId);
+        try {
+            $register->debit(10, 'undo last move cheat');
+        } catch (NotEnoughCoinsException) {
+            $this->addFlash('warning', "You do not have enough coins to use this cheat. Purchase more coins in the shop");
+            return $this->redirectToRoute('proj-play');
+        }
+
+        /**
+         * @var Game $game
+         */
+        $game = $session->get("game");
+        $game->undoLastRound();
+        $session->set("game", $game);
+        return $this->redirectToRoute('proj-play');
+    }
+
     #[Route('/proj/move-card/{row<\d+>}/{col<\d+>}', name: "move-card", methods: ['POST'])]
     public function moveCard(
         int $row,
@@ -108,7 +135,8 @@ class ProjectGameController2 extends AbstractController
         }
         $data = [
             ...$state,
-            'url' => "proj",
+            // 'url' => "proj",
+            'url' => ""
         ];
         $this->addFlash('notice', "Click on the card you want to move");
         return $this->render('proj/pick-card.html.twig', $data);

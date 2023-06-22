@@ -1,16 +1,12 @@
 
 
 {% if placedCards >= 1 %}
-{# <a class="btn active-btn" href="{{ path('pick-card', {balance: balance}) }}">Move a card 50 
-<span class="material-symbols-outlined">
-paid
-</span></a> #}
-
 <form method="post" action="{{ path('pick-card', {balance: balance}) }}">
 <button type="submit" class="btn active-btn">
-Move a card 50 
-<span class="material-symbols-outlined">
+Move a card | 50 coins
+{# <span class="material-symbols-outlined">
 paid
-</span></button>
+</span> #}
+</button>
 </form>
 {% endif %}

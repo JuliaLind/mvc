@@ -6,23 +6,13 @@
 
 
 <div class="outer-grid-container">
-<h2 class="grid-col-0 grid-row-0">House</h2>
-<div class="game-grid house-grid">
-    {% for i in 0..4 %}
-        {% for j in 0..4 %}
-            {% if house[i][j] != "" %}
-                <div class="slot grid-row-{{i}} grid-col-{{j}}"><img src="{{ asset(house[i][j]['img']) }}" alt="{{ house[i][j]['alt'] }}"></div>
-            {% else %}
-                <div class="slot grid-row{{i}} grid-col-{{j}}" type="submit"></div>
-            {% endif %}
-        {% endfor %}
-    {% endfor %}
-</div>
+
+{{ include('proj/incl/house-grid.html.twig') }}
 
 <div class="center-grid">
 {{ include('flash.html.twig') }}
 <div class="slot grid-row-0 grid-col-0"><img src="{{ asset(card['img']) }}" alt="{{ card['alt'] }}"></div>
-{{ include('proj/incl/new-game-btn.html.twig') }}
+{# {{ include('proj/incl/new-game-btn.html.twig') }} #}
 </div>
 
 <h2 class="grid-col-2 grid-row-0">You</h2>

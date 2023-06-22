@@ -34,6 +34,11 @@ class Deck
         return $card;
     }
 
+    public function addCard(string $card): void
+    {
+        array_push($this->cards, $card);
+    }
+
     /**
      * @return array<string>
      */

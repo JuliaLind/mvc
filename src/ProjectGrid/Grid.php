@@ -57,6 +57,7 @@ class Grid
     {
         $card = $this->grid[$row][$col];
         unset($this->grid[$row][$col]);
+        $this->cardCount -= 1;
         return $card;
     }
 }

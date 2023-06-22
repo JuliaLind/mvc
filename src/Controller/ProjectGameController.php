@@ -28,47 +28,6 @@ use App\ProjectGrid\Grid;
 
 class ProjectGameController extends AbstractController
 {
-    #[Route("/proj/play", name: "proj-play")]
-    public function projPlay(
-        SessionInterface $session,
-        EntityManagerInterface $entityManager,
-    ): Response {
-        /**
-         * @var Game $game
-         */
-        $game = $session->get("game") ?? null;
-        if ($game == null) {
-            return $this->redirectToRoute('proj');
-        }
-        $state = $game->currentState();
-        $data = [
-            ...$state,
-            'url' => "proj",
-        ];
-
-        if ($state['finished'] === true) {
-            $this->addFlash('notice', $data['message']);
-            return $this->render('proj/results.html.twig', $data);
-        }
-
-        if (count($state['fromSlot']) > 0) {
-            $this->addFlash('notice', "Click on an empty slot to which you want to move the selected card");
-            return $this->render('proj/place-card.html.twig', $data);
-        }
-
-        if ($session->get("show-suggestion")) {
-            $this->addFlash('notice', $data['message']);
-            return $this->render('proj/game-display-suggest.html.twig', $data);
-        }
-        /**
-         * @var int $userId
-         */
-        $userId = $session->get("user");
-        $register = new Register($entityManager, $userId);
-        $data['balance'] = $register->getBalance();
-        return $this->render('proj/game.html.twig', $data);
-    }
-
     #[Route("/proj/init", name: "proj-init")]
     public function projInit(
         Request $request,
@@ -129,5 +88,52 @@ class ProjectGameController extends AbstractController
         }
         $session->set("game", $game);
         return $this->redirectToRoute('proj-play');
+    }
+
+    #[Route("/proj/play", name: "proj-play")]
+    public function projPlay(
+        SessionInterface $session,
+        EntityManagerInterface $entityManager,
+    ): Response {
+        /**
+         * @var Game $game
+         */
+        $game = $session->get("game") ?? null;
+        if ($game == null) {
+            return $this->redirectToRoute('proj');
+        }
+        $state = $game->currentState();
+        $data = [
+            ...$state,
+            // 'url' => "proj",
+            'url' => "",
+        ];
+
+
+        if ($state['finished'] === true) {
+            $this->addFlash('notice', $data['message']);
+            return $this->render('proj/results.html.twig', $data);
+        }
+
+        if (count($state['fromSlot']) > 0) {
+            $this->addFlash('notice', "Click on an empty slot to which you want to move the selected card");
+            return $this->render('proj/place-card.html.twig', $data);
+        }
+
+        if ($session->get("show-suggestion")) {
+            $this->addFlash('notice', $data['message']);
+            return $this->render('proj/game-display-suggest.html.twig', $data);
+        }
+        /**
+         * @var int $userId
+         */
+        $userId = $session->get("user");
+        $register = new Register($entityManager, $userId);
+        $data['balance'] = $register->getBalance();
+        $data['undo'] = false;
+        if ($data['lastRound'] != []) {
+            $data['undo'] = true;
+        }
+        return $this->render('proj/game.html.twig', $data);
     }
 }

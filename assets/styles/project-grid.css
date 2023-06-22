@@ -196,6 +196,12 @@
     justify-items: center;
 }
 
+.center-grid .balance {
+    color: var(--neon-green);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
 .center-grid .flash-notice,
 .center-grid .flash-warning {
     display: flex;

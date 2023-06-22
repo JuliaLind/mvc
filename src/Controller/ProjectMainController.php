@@ -73,7 +73,8 @@ class ProjectMainController extends AbstractController
          */
         $user = $entityManager->getRepository(User::class)->find($userId);
         $data = [
-            'url' => "proj",
+            // 'url' => "proj",
+            'url' => "",
             'transactions' => $repo->findBy(
                 ['userid' => $user],
                 ['id' => 'DESC']

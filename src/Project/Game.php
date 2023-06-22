@@ -33,9 +33,13 @@ class Game
     private array $suggestedSlot;
 
     /**
-     * @var array<int>
+     * @var array<int> $fromSlot
      */
     private array $fromSlot = [];
+    /**
+     * @var array<string,array<int>>> $lastRound
+     */
+    private array $lastRound = [];
 
     public function setPot(int $amount): void
     {
@@ -99,7 +103,8 @@ class Game
 
     public function setFromSlot(int $row, int $col): void
     {
-        $this->fromSlot = [$row,$col];
+        $this->fromSlot = [$row, $col];
+        $this->lastRound = [];
     }
 
     public function moveCard(int $row, int $col): void
@@ -110,9 +115,23 @@ class Game
         $this->playerSuggest();
     }
 
+    public function undoLastRound(): void
+    {
+        $houseSlot = $this->lastRound['house'];
+        $playerSlot = $this->lastRound['player'];
+        $houseCard = $this->house->removeCard($houseSlot[0], $houseSlot[1]);
+        $playerCard = $this->player->removeCard($playerSlot[0], $playerSlot[1]);
+        $this->deck->addCard($this->card);
+        $this->deck->addCard($houseCard);
+        $this->card = $playerCard;
+        $this->lastRound = [];
+        $this->playerSuggest();
+    }
+
     public function oneRound(int $row, int $col): bool
     {
         $this->player->addCard($row, $col, $this->card);
+        $this->lastRound['player'] = [$row, $col];
         $this->housePlaceCard();
         if (!($this->checkIfFinished($this->house->getCardCount()))) {
             $this->card = $this->deck->deal();
@@ -130,6 +149,7 @@ class Game
          * @var array<int> $slot
          */
         $slot = $suggestion['slot'];
+        $this->lastRound['house'] = $slot;
         $this->house->addCard($slot[0], $slot[1], $card);
     }
 
@@ -177,6 +197,7 @@ class Game
     public function currentState(GridGraphic $grid = new GridGraphic()): array
     {
         return [
+            'bet' => $this->pot,
             'card' => [
                 'img' => "img/project/cards/".$this->card.".svg",
                 'alt' => $this->card
@@ -189,7 +210,8 @@ class Game
             'fromSlot' => $this->fromSlot,
             'finished' => $this->finished,
             'placedCards' => $this->player->getCardCount(),
-            'playerPossibleCards' => $this->deck->possibleCards()
+            'playerPossibleCards' => $this->deck->possibleCards(),
+            'lastRound' => $this->lastRound
         ];
     }
 

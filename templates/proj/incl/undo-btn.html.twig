@@ -1,0 +1,13 @@
+
+
+{% if undo == true %}
+
+<form method="post" action="{{ path('undo') }}">
+<button type="submit" class="btn active-btn">
+Undo last move | 10 coins
+{# <span class="material-symbols-outlined">
+paid
+</span> #}
+</button>
+</form>
+{% endif %}
