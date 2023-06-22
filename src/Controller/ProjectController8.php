@@ -45,18 +45,8 @@ class ProjectController8 extends AbstractController
 
     #[Route("/proj/leaderboard", name: "proj-leaderboard")]
     public function projLeaderboard(
-        SessionInterface $session,
-        ScoreRepository $repo,
-        EntityManagerInterface $entityManager,
+        ScoreRepository $repo
     ): Response {
-        /**
-         * @var int $userId
-         */
-        $userId = $session->get("user");
-        /**
-         * @var User $user
-         */
-        $user = $entityManager->getRepository(User::class)->find($userId);
         $data = [
             'url' => "leaderboard",
             'scores' => $repo->findBy(

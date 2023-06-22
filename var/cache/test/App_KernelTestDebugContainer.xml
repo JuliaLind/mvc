@@ -2557,7 +2557,7 @@
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" type="service_closure" id="webpack_encore.entrypoint_lookup_collection" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader.filesystem" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
-        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.pv2Lisu" on-invalid="ignore_uninitialized"/>
+        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.Z.nVpWR" on-invalid="ignore_uninitialized"/>
         <argument key="doctrine.id_generator_locator" type="service_closure" id=".service_locator.KLVvNIq" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
         <argument key="Psr\Log\LoggerInterface $requestLogger" type="service_closure" id="monolog.logger.request" on-invalid="ignore_uninitialized"/>
@@ -7243,7 +7243,13 @@
         <argument key="repo" type="service_closure" id="App\Repository\ScoreRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.pv2Lisu" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.j7c.8f." class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service_closure" id="App\Repository\ScoreRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Z.nVpWR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CardController::deal" type="service_closure" id=".service_locator.WQSKPJO"/>
@@ -7303,7 +7309,7 @@
         <argument key="App\Controller\ProjectController7::purchasePeekCheat" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController7::showSuggestion" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController7::undo" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController8::projLeaderboard" type="service_closure" id=".service_locator.VxD2oRa"/>
+        <argument key="App\Controller\ProjectController8::projLeaderboard" type="service_closure" id=".service_locator.j7c.8f."/>
         <argument key="App\Controller\ProjectController8::projScoresSingle" type="service_closure" id=".service_locator.VxD2oRa"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -7366,7 +7372,7 @@
         <argument key="App\Controller\ProjectController7:purchasePeekCheat" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController7:showSuggestion" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController7:undo" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController8:projLeaderboard" type="service_closure" id=".service_locator.VxD2oRa"/>
+        <argument key="App\Controller\ProjectController8:projLeaderboard" type="service_closure" id=".service_locator.j7c.8f."/>
         <argument key="App\Controller\ProjectController8:projScoresSingle" type="service_closure" id=".service_locator.VxD2oRa"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -8091,12 +8097,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.pv2Lisu"/>
+      <argument type="service" id=".service_locator.Z.nVpWR"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.pv2Lisu"/>
+      <argument type="service" id=".service_locator.Z.nVpWR"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8813,7 +8819,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.pv2Lisu"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Z.nVpWR"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -8843,7 +8849,7 @@
     <service id=".service_locator.0B72jtA" alias=".service_locator.7oOFMGT"/>
     <service id=".service_locator.hjZjVN0" alias=".service_locator.OsH1muE"/>
     <service id=".service_locator.sB0QlrM" alias=".service_locator.VxD2oRa"/>
-    <service id=".service_locator.Ea9dlFn" alias=".service_locator.pv2Lisu"/>
+    <service id=".service_locator.BbzZ5IY" alias=".service_locator.Z.nVpWR"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.fTeS4zl" alias=".service_locator.iwVv_YN"/>
@@ -8903,6 +8909,7 @@
     <service id=".service_locator.3ZhCy_8" alias=".service_locator.OsH1muE"/>
     <service id=".service_locator.sxVTQ8c" alias=".service_locator.J..d_da"/>
     <service id=".service_locator.wxPxzEn" alias=".service_locator.VxD2oRa"/>
+    <service id=".service_locator.8ax3mVW" alias=".service_locator.j7c.8f."/>
     <service id=".service_locator.eAaUVIw" alias=".service_locator.jIxfAsi"/>
     <service id=".service_locator.pFwChgS" alias=".service_locator.UkE3SaZ"/>
     <service id=".service_locator.aa1PbBb" alias=".service_locator.nLgZj7R"/>
