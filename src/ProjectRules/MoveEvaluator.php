@@ -124,6 +124,8 @@ class MoveEvaluator
      */
     public function suggestion(array $rows, string $card, array $deck): array
     {
+        $this->rowRuleName = "";
+        $this->colRuleName = "";
         $ruleCount = 9;
         /**
          * @var array<array<string>> $cols

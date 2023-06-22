@@ -195,8 +195,12 @@
     transition: 0.5s;
 }
 
-/* .project .wrapper.login:hover .register-link p a { */
 .project .login .register-link p a {
+    color: var(--form-neon);
+}
+
+.project .register-link .balance {
+    font-weight: 600;
     color: var(--form-neon);
 }
 

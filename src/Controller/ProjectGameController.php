@@ -57,7 +57,7 @@ class ProjectGameController extends AbstractController
         }
 
         if ($session->get("show-suggestion")) {
-            $session->set("show-suggestion", false);
+            $this->addFlash('notice', $data['message']);
             return $this->render('proj/game-display-suggest.html.twig', $data);
         }
         /**
@@ -110,6 +110,7 @@ class ProjectGameController extends AbstractController
         SessionInterface $session,
         EntityManagerInterface $entityManager
     ): Response {
+        $session->set("show-suggestion", false);
         /**
          * @var Game $game
          */
@@ -128,91 +129,5 @@ class ProjectGameController extends AbstractController
         }
         $session->set("game", $game);
         return $this->redirectToRoute('proj-play');
-    }
-
-    #[Route('/proj/set-fromslot', name: "set-fromslot", methods: ['POST'])]
-    public function setFromSlot(
-        int $row,
-        int $col,
-        SessionInterface $session,
-        EntityManagerInterface $entityManager
-    ): Response {
-        /**
-         * @var int $userId
-         */
-        $userId = $session->get("user");
-
-        $register = new Register($entityManager, $userId);
-        try {
-            $register->debit(50, 'move-a-card cheat');
-        } catch (NotEnoughCoinsException) {
-            $this->addFlash('warning', "You do not have enough coins to use this cheat. Purchase more coins in the shop");
-            return $this->redirectToRoute('proj-play');
-        }
-
-        /**
-         * @var Game $game
-         */
-        $game = $session->get("game");
-        $game->setFromSlot($row, $col);
-        $session->set("game", $game);
-        return $this->redirectToRoute('proj-play');
-    }
-
-    #[Route('/proj/move-card', name: "move-card", methods: ['POST'])]
-    public function moveCard(
-        int $row,
-        int $col,
-        SessionInterface $session
-    ): Response {
-        /**
-         * @var Game $game
-         */
-        $game = $session->get("game");
-        $game->moveCard($row, $col);
-        $session->set("game", $game);
-        return $this->redirectToRoute('proj-play');
-    }
-
-    #[Route('/proj/show-suggestion', name: "show-suggestion", methods: ['POST'])]
-    public function showSuggestion(
-        SessionInterface $session,
-        EntityManagerInterface $entityManager
-    ): Response {
-        /**
-         * @var int $userId
-         */
-        $userId = $session->get("user");
-        $register = new Register($entityManager, $userId);
-        try {
-            $register->debit(30, 'show-suggestion cheat');
-        } catch (NotEnoughCoinsException) {
-            $this->addFlash('warning', "You do not have enough coins to use this cheat. Purchase more coins in the shop");
-            return $this->redirectToRoute('proj-play');
-        }
-        $session->set("show-suggestion", true);
-        return $this->redirectToRoute('proj-play');
-    }
-
-    #[Route('/proj/pick-card/{balance<\d+>}', name: "pick-card")]
-    public function pickCard(
-        SessionInterface $session,
-        int $balance
-    ): Response {
-        /**
-         * @var Game $game
-         */
-        $game = $session->get("game");
-        $state = $game->currentState();
-        if ($balance < 50) {
-            $this->addFlash('warning', "You do not have enough coins to use this cheat. Purchase more coins in the shop");
-            return $this->redirectToRoute('proj-play');
-        }
-        $data = [
-            ...$state,
-            'url' => "proj",
-        ];
-        $this->addFlash('notice', "Click on the card you want to move");
-        return $this->render('proj/pick-card.html.twig', $data);
     }
 }

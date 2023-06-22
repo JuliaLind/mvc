@@ -103,10 +103,10 @@
 }
 
 
-.selected.player-slot {
+/* .selected.player-slot {
     z-index: 1;
     outline-color: var(--neon-green);
-}
+} */
 
 .clickable.player-slot:hover {
     z-index: 1;
@@ -183,6 +183,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     flex-basis: 1;
     width: 100%;
     /* grid-template-columns: 1fr;
@@ -190,8 +191,15 @@
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
     padding: 5px;
-    gap: 5px;
+    /* gap: 5px; */
+    gap: 5rem;
     justify-items: center;
+}
+
+.center-grid .flash-notice,
+.center-grid .flash-warning {
+    display: flex;
+    text-align: center;
 }
 
 .house-grid {
@@ -210,6 +218,38 @@
     grid-template-columns: repeat(5, 1fr) auto;
     background-color: #000;
 }
+
+.selected,
+.suggested {
+    animation-duration: 1s;
+    animation-iteration-count: 100;
+    color: #333;
+    z-index: 1;
+}
+
+.suggested {
+    animation-name: blinking;
+}
+
+.selected {
+    animation-name: blinking3;
+}
+
+@keyframes blinking {
+    50% {
+      outline-color: var(--neon-green);
+      color: var(--neon-green);
+    }
+}
+
+@keyframes blinking3 {
+    50% {
+      outline-color: var(--form-neon);
+      color: var(--form-neon);
+    }
+}
+
+
 
 @media (max-width: 800px) {
     .api .slot {

@@ -22,17 +22,6 @@ function file_get_contents(string $filename): string
  */
 class SqlFileLoaderTest extends TestCase
 {
-    // /**
-    //  * Construct object and check
-    //  */
-    // public function testCreateObject(): void
-    // {
-    //     $conn = $this->createMock(Connection::class);
-    //     $loader = new SqlFileLoader($conn);
-    //     $this->assertInstanceOf("\App\Helpers\SqlFileLoader", $loader);
-    // }
-
-
     /**
      * Tests the load method
      */

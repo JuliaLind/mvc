@@ -47,9 +47,7 @@ return [
         '/proj/register-form' => [[['_route' => 'register-form', '_controller' => 'App\\Controller\\ProjectFormController::projRegisterForm'], null, null, null, false, false, null]],
         '/proj/play' => [[['_route' => 'proj-play', '_controller' => 'App\\Controller\\ProjectGameController::projPlay'], null, null, null, false, false, null]],
         '/proj/init' => [[['_route' => 'proj-init', '_controller' => 'App\\Controller\\ProjectGameController::projInit'], null, null, null, false, false, null]],
-        '/proj/set-fromslot' => [[['_route' => 'set-fromslot', '_controller' => 'App\\Controller\\ProjectGameController::setFromSlot'], null, ['POST' => 0], null, false, false, null]],
-        '/proj/move-card' => [[['_route' => 'move-card', '_controller' => 'App\\Controller\\ProjectGameController::moveCard'], null, ['POST' => 0], null, false, false, null]],
-        '/proj/show-suggestion' => [[['_route' => 'show-suggestion', '_controller' => 'App\\Controller\\ProjectGameController::showSuggestion'], null, ['POST' => 0], null, false, false, null]],
+        '/proj/show-suggestion' => [[['_route' => 'show-suggestion', '_controller' => 'App\\Controller\\ProjectGameController2::showSuggestion'], null, ['POST' => 0], null, false, false, null]],
         '/proj' => [[['_route' => 'proj', '_controller' => 'App\\Controller\\ProjectMainController::projLanding'], null, null, null, false, false, null]],
         '/proj/transactions' => [[['_route' => 'proj-trans', '_controller' => 'App\\Controller\\ProjectMainController::projTrans'], null, null, null, false, false, null]],
         '/proj/api' => [[['_route' => 'proj-api', '_controller' => 'App\\Controller\\ProjectMainController::projApiLanding'], null, null, null, false, false, null]],
@@ -88,6 +86,8 @@ return [
                         .'|ick\\-card/(\\d+)(*:391)'
                     .')'
                     .'|one\\-round/(\\d+)/(\\d+)(*:422)'
+                    .'|set\\-fromslot/(\\d+)/(\\d+)(*:455)'
+                    .'|move\\-card/(\\d+)/(\\d+)(*:485)'
                 .')'
             .')/?$}sDu',
     ],
@@ -105,9 +105,11 @@ return [
         311 => [[['_route' => 'api-user', '_controller' => 'App\\Controller\\ProjectApiAuthController::apiUser'], ['email'], ['GET' => 0], null, false, true, null]],
         342 => [[['_route' => 'api-place-card', '_controller' => 'App\\Controller\\ProjectApiController::apiNew'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
         368 => [[['_route' => 'purchase', '_controller' => 'App\\Controller\\ProjectAuthController::projPurchase'], ['coins'], ['POST' => 0], null, false, true, null]],
-        391 => [[['_route' => 'pick-card', '_controller' => 'App\\Controller\\ProjectGameController::pickCard'], ['balance'], null, null, false, true, null]],
-        422 => [
-            [['_route' => 'proj-round', '_controller' => 'App\\Controller\\ProjectGameController::projRound'], ['row', 'col'], ['POST' => 0], null, false, true, null],
+        391 => [[['_route' => 'pick-card', '_controller' => 'App\\Controller\\ProjectGameController2::pickCard'], ['balance'], null, null, false, true, null]],
+        422 => [[['_route' => 'proj-round', '_controller' => 'App\\Controller\\ProjectGameController::projRound'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
+        455 => [[['_route' => 'set-fromslot', '_controller' => 'App\\Controller\\ProjectGameController2::setFromSlot'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
+        485 => [
+            [['_route' => 'move-card', '_controller' => 'App\\Controller\\ProjectGameController2::moveCard'], ['row', 'col'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

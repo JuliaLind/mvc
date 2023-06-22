@@ -44,6 +44,10 @@ class StraightStat extends RuleStat implements RuleStatInterface
          */
         $uniqueCountHand = $this->cardCounter->count($newHand);
 
+        if ((count($newHand) > count($uniqueCountHand['ranks']))) {
+            return false;
+        }
+
         $allCards = array_merge($newHand, $deck);
         return $this->setRankLimits($uniqueCountHand) && $this->checkAllPossible($allCards);
     }

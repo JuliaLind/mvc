@@ -1,0 +1,14 @@
+
+<form method="post" action="{{ path('show-suggestion') }}">
+<button type="submit" class="btn {% if message != "" %}blink-btn{% else %}stnd-btn{% endif %}">
+Slot suggestion 30 
+<span class="material-symbols-outlined">
+paid
+</span></button>
+</form>
+{# <a class="btn {% if message != "" %}blink-btn{% else %}stnd-btn{% endif %}" href="{{ path('show-suggestion') }}">
+Slot suggestion 30 
+<span class="material-symbols-outlined">
+paid
+</span>
+</a> #}

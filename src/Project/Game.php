@@ -85,6 +85,7 @@ class Game
          * @var string $colRule
          */
         $colRule = $suggestion['col-rule'];
+
         if ($rowRule != "" && $colRule != "") {
             $message = "Place card in row {$row} column {$col} for possible {$rowRule} horizontally and {$colRule} vertically.";
         } elseif ($rowRule != "") {
@@ -92,6 +93,7 @@ class Game
         } elseif ($colRule != "") {
             $message = "Place card in row {$row} column {$col} for possible {$colRule} vertically.";
         }
+
         $this->message = $message;
     }
 
@@ -174,17 +176,19 @@ class Game
     public function currentState(GridGraphic $grid = new GridGraphic()): array
     {
         return [
+            'card' => [
+                'img' => "img/project/cards/".$this->card.".svg",
+                'alt' => $this->card
+            ],
             'message' => $this->message,
             'slot' => $this->suggestedSlot,
             'results' => $this->results,
             'house' => $grid->graphic($this->house->getCards()),
             'player' => $grid->graphic($this->player->getCards()),
             'fromSlot' => $this->fromSlot,
-            'card' => [
-                'img' => "img/project/cards/".$this->card.".svg",
-                'alt' => $this->card
-            ],
-            'finished' => $this->finished
+            'finished' => $this->finished,
+            'placedCards' => $this->player->getCardCount(),
+            'playerPossibleCards' => $this->deck->possibleCards()
         ];
     }
 

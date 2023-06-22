@@ -13,7 +13,7 @@ höger halva: spelare
 mitten: suggestion-btn, move-card-btn, sneak a peak-btn
 picked card, deck#}
 
-{{ include('flash.html.twig') }}
+
 <div class="outer-grid-container">
 <h2 class="grid-col-0 grid-row-0">House</h2>
 <div class="game-grid house-grid">
@@ -29,6 +29,7 @@ picked card, deck#}
 </div>
 
 <div class="center-grid">
+{{ include('flash.html.twig') }}
 {# <div class="slot filled-slot grid-row-0 grid-col-0"><img src="{{ asset(card['img']) }}" alt="{{ card['alt'] }}"></div> #}
 </div>
 <h2 class="grid-col-2 grid-row-0">You</h2>

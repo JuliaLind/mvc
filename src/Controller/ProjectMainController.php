@@ -74,7 +74,10 @@ class ProjectMainController extends AbstractController
         $user = $entityManager->getRepository(User::class)->find($userId);
         $data = [
             'url' => "proj",
-            'transactions' => $repo->findBy(['userid' => $user])
+            'transactions' => $repo->findBy(
+                ['userid' => $user],
+                ['id' => 'DESC']
+            )
         ];
         return $this->render('proj/transactions.html.twig', $data);
     }

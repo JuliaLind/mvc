@@ -461,6 +461,13 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectGameController"/>
       </call>
     </service>
+    <service id="App\Controller\ProjectGameController2" class="App\Controller\ProjectGameController2" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectGameController2"/>
+      </call>
+    </service>
     <service id="App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -2522,7 +2529,7 @@
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" type="service_closure" id="webpack_encore.entrypoint_lookup_collection" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader.filesystem" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
-        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.uupHdLR" on-invalid="ignore_uninitialized"/>
+        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.n1K5bgY" on-invalid="ignore_uninitialized"/>
         <argument key="doctrine.id_generator_locator" type="service_closure" id=".service_locator.KLVvNIq" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
         <argument key="Psr\Log\LoggerInterface $requestLogger" type="service_closure" id="monolog.logger.request" on-invalid="ignore_uninitialized"/>
@@ -6949,6 +6956,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectGameController" class="App\Controller\ProjectGameController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectGameController" class="App\Controller\ProjectGameController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectGameController" class="App\Controller\ProjectGameController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectGameController2" class="App\Controller\ProjectGameController2" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectGameController2" class="App\Controller\ProjectGameController2" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectGameController2" class="App\Controller\ProjectGameController2" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectMainController" class="App\Controller\ProjectMainController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7187,7 +7197,7 @@
         <argument key="repo" type="service_closure" id="App\Repository\TransactionRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.uupHdLR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.n1K5bgY" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CardController::deal" type="service_closure" id=".service_locator.WQSKPJO"/>
@@ -7235,11 +7245,11 @@
         <argument key="App\Controller\ProjectAuthController::projPurchase" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectAuthController::projRegister" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectAuthController::selectAmount" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectGameController2::setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectGameController2::showSuggestion" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectGameController::projInit" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectGameController::projPlay" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectGameController::projRound" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectGameController::setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectGameController::showSuggestion" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectMainController::projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectMainController::projTrans" type="service_closure" id=".service_locator.OsH1muE"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -7291,11 +7301,11 @@
         <argument key="App\Controller\ProjectAuthController:projPurchase" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectAuthController:projRegister" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectAuthController:selectAmount" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectGameController2:setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectGameController2:showSuggestion" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectGameController:projInit" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectGameController:projPlay" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectGameController:projRound" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectGameController:setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectGameController:showSuggestion" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectMainController:projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectMainController:projTrans" type="service_closure" id=".service_locator.OsH1muE"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -7802,6 +7812,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectGameController2" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectGameController2"/>
+      <argument>App\Controller\ProjectGameController2</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
     <service id=".service_locator.jIxfAsi.App\Controller\ProjectMainController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ProjectMainController"/>
       <argument>App\Controller\ProjectMainController</argument>
@@ -7991,12 +8007,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.uupHdLR"/>
+      <argument type="service" id=".service_locator.n1K5bgY"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.uupHdLR"/>
+      <argument type="service" id=".service_locator.n1K5bgY"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8713,7 +8729,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.uupHdLR"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.n1K5bgY"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -8742,7 +8758,7 @@
     <service id=".service_locator.7MDOYEf" alias=".service_locator.0ngtyR9"/>
     <service id=".service_locator.JvlVFSm" alias=".service_locator.0bpx6bF"/>
     <service id=".service_locator.hjZjVN0" alias=".service_locator.OsH1muE"/>
-    <service id=".service_locator.Xm2W.uB" alias=".service_locator.uupHdLR"/>
+    <service id=".service_locator.n0ZiMPv" alias=".service_locator.n1K5bgY"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.fTeS4zl" alias=".service_locator.iwVv_YN"/>

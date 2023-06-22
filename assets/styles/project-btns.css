@@ -1,3 +1,4 @@
+.blink-btn,
 .project .stnd-btn {
     color: var(--form-neon);
     box-shadow: 0 0 20px var(--form-neon);
@@ -8,6 +9,37 @@
 .project .stnd-btn:hover {
     background-color: var(--form-neon);
     color: #000;
+}
+
+.project .btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.project .btn-container form {
+    width: 100%;
+}
+
+.project .btn-container .btn {
+    max-width: unset;
+    padding: 1rem;
+}
+
+.blink-btn {
+    animation-name: blinking2;
+    animation-duration: 1s;
+    animation-iteration-count: 100;
+    color: var(--form-neon);
+}
+
+@keyframes blinking2 {
+    50% {
+      background-color: var(--form-neon);
+      color: #000;
+    }
 }
 
 

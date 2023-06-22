@@ -4,15 +4,7 @@
 
 {% block body %}
 
-{# {{ include('proj/incl/bg-cards.html.twig') }} #}
 
-
-{# Lägg till:
-vänster halva: hus
-höger halva: spelare
-mitten: suggestion-btn, move-card-btn, sneak a peak-btn
-picked card, deck#}
-{{ include('flash.html.twig') }}
 <div class="outer-grid-container">
 <h2 class="grid-col-0 grid-row-0">House</h2>
 <div class="game-grid house-grid">
@@ -28,14 +20,16 @@ picked card, deck#}
 </div>
 
 <div class="center-grid">
-<div class="slot filled-slot grid-row-0 grid-col-0"><img src="{{ asset(card['img']) }}" alt="{{ card['alt'] }}"></div>
+{{ include('flash.html.twig') }}
 </div>
 <h2 class="grid-col-2 grid-row-0">You</h2>
 <form id="grid-form" method="post" action="">
 <div class="game-grid player-grid">
     {% for k in 0..4 %}
         {% for l in 0..4 %}
-            {% if player[k][l]['alt'] != "" %}
+            {% if fromSlot[0] == k and fromSlot[1] == l %}
+                <div class="slot selected player-slot grid-row{{k}} grid-col-{{l}}"><img src="{{ asset(player[k][l]['img']) }}" alt="{{ player[k][l]['alt'] }}"></div>
+            {% elseif player[k][l]['alt'] != "" %}
                 <div class="slot grid-row-{{k}} grid-col-{{l}}"><img src="{{ asset(player[k][l]['img']) }}" alt="{{ player[k][l]['alt'] }}"></div>
             {% else %}
                 <button class="slot clickable player-slot grid-row{{k}} grid-col-{{l}}" type="submit" onClick="this.form.action='{{ path('move-card', {row: k, col: l}) }}';"></button>

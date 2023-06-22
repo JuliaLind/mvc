@@ -62,4 +62,55 @@ class StraightStatTest extends TestCase
         $res = $rule->check($hand, $deck, $card);
         $this->assertFalse($res);
     }
+
+        public function testCheckNotOk3(): void
+        {
+            $hand = ["11C", "13S", "9S", "9C"];
+            $card = "10S";
+            $deck = [
+                "2S", "12H", "2C", "4C",
+                "5S", "10D", "14D", "6C"
+            ];
+
+            $rule = new StraightStat();
+            $res = $rule->check($hand, $deck, $card);
+            $this->assertFalse($res);
+        }
+
+    public function testCheckNotOk4(): void
+    {
+        $hand = ["14S", "5D"];
+        $card = "6C";
+        $deck = [
+            "2S",
+            "12H",
+            "2C",
+            "4C",
+            "5S",
+            "10D",
+            "14D"
+        ];
+
+        $rule = new StraightStat();
+        $res = $rule->check($hand, $deck, $card);
+        $this->assertFalse($res);
+    }
+
+    public function testCheckNotOk6(): void
+    {
+        $hand = ["9S", "4D", "3H", "4H"];
+        $card = "14D";
+        $deck = [
+            "2S",
+            "12H",
+            "2C",
+            "4C",
+            "5S",
+            "10D"
+        ];
+
+        $rule = new StraightStat();
+        $res = $rule->check($hand, $deck, $card);
+        $this->assertFalse($res);
+    }
 }
