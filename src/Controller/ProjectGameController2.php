@@ -145,7 +145,6 @@ class ProjectGameController2 extends AbstractController
     #[Route('/proj/deck-peek', name: "deck-peek", methods: ['GET'])]
     public function deckPeek(
         SessionInterface $session,
-        EntityManagerInterface $entityManager
     ): Response {
         if($session->get('deck-peek') === false) {
             return $this->redirectToRoute('proj-play');

@@ -36,7 +36,7 @@ class ProjectApiAuthController extends AbstractController
         /**
          * @var User $user
          */
-        $user = getRepository(User::class)->findOneBy(['email' => $email]);
+        $user = $entityManager->getRepository(User::class)->findOneBy(['email' => $email]);
         /**
          * @var int $userId
          */
@@ -114,7 +114,7 @@ class ProjectApiAuthController extends AbstractController
     ): Response {
         $users = $entityManager->getRepository(User::class)->findAll();
         $data = [];
-        forEach($users as $user) {
+        foreach($users as $user) {
             /**
              * @var int $userId
              */
@@ -142,15 +142,19 @@ class ProjectApiAuthController extends AbstractController
         // $transactions = $entityManager->getRepository(Transaction::class)->findAll();
         $transactions = $entityManager->getRepository(Transaction::class)->findBy([], ['id' => 'DESC']);
         $data = [];
-        forEach($transactions as $transaction) {
+        foreach($transactions as $transaction) {
             /**
              * @var DateTime $registered
              */
             $registered = $transaction->getRegistered();
             $registered = $registered->format('Y-m-d');
+            /**
+             * @var User $user
+             */
+            $user = $transaction->getUserid();
             $data[] = [
                 'id' => $transaction->getId(),
-                'user' => $transaction->getUserid()->getAcronym(),
+                'user' => $user->getAcronym(),
                 'registered' => $registered,
                 'descr' => $transaction->getDescr(),
                 'amount' => $transaction->getAmount(),
@@ -168,14 +172,19 @@ class ProjectApiAuthController extends AbstractController
         // $scores = $entityManager->getRepository(Score::class)->findAll();
         $scores = $entityManager->getRepository(Score::class)->findBy([], ['points' => 'DESC'], 10);
         $data = [];
-        forEach($scores as $score) {
+
+        foreach($scores as $score) {
+            /**
+             * @var User $user
+             */
+            $user = $score->getUserid();
             /**
              * @var DateTime $registered
              */
             $registered = $score->getRegistered();
             $registered = $registered->format('Y-m-d');
             $data[] = [
-                'user' => $score->getUserid()->getAcronym(),
+                'user' => $user->getAcronym(),
                 'registered' => $registered,
                 'points' => $score->getPoints(),
             ];
