@@ -130,10 +130,6 @@ class ProjectGameController extends AbstractController
         $userId = $session->get("user");
         $register = new Register($entityManager, $userId);
         $data['balance'] = $register->getBalance();
-        $data['undo'] = false;
-        if ($data['lastRound'] != []) {
-            $data['undo'] = true;
-        }
         return $this->render('proj/game.html.twig', $data);
     }
 }

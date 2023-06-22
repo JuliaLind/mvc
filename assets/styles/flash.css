@@ -27,13 +27,12 @@
 .project .flash-warning {
     color: var(--neon-red);
     background-color: rgb(0,0,0,0);
-    /* border-color: #ffeeba; */
     border: unset;
 }
 
 .project .flash-notice {
     color: var(--neon-green);
     background-color: rgb(0,0,0,0);
-    /* border-color: #b8daff; */
     border: unset;
 }
+

@@ -1,0 +1,20 @@
+{% extends 'base-project.html.twig' %}
+
+{% block title %}Casino{% endblock %}
+
+{% block body %}
+
+
+<span class="descr">These are the remaining cards that will be dealt to you from the deck</span>
+<div class="deck-container">
+<div class="slot"><img src="{{ asset(card['img']) }}" alt="{{ card['alt'] }}"></div>
+<div class="btn-container">
+<div class="balance">Your balance: {{balance}} coins</div>
+
+
+
+</div>
+
+
+
+{% endblock %}
