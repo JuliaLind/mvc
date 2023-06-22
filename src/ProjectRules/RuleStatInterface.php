@@ -14,4 +14,12 @@ interface RuleStatInterface
      * otherwise false
      */
     public function check(array $hand, array $deck, string $card);
+
+    /**
+     * @param array<string> $hand
+     * @param array<string> $deck
+     * @return bool true if rule is still possible given passed value
+     * otherwise false
+     */
+    public function check2(array $hand, array $deck);
 }

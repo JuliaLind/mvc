@@ -42,13 +42,6 @@ class FlushStat extends Rule implements RuleStatInterface
          */
         $newHand = [...$hand, $card];
 
-        // /**
-        //  * @var array<string,array<int,int>> $uniqueCountHand
-        //  */
-        // $uniqueCountHand = $this->cardCounter->count($newHand);
-
-
-        // return $this->setSuit($uniqueCountHand) && $this->checkInDeck($deck, $newHand);
         return $this->check2($newHand, $deck);
     }
 

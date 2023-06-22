@@ -47,13 +47,7 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
          * @var array<string> $newHand
          */
         $newHand = [...$hand, $card];
-        // /**
-        //  * @var array<string,array<int,int>> $uniqueCountHand
-        //  */
-        // $uniqueCountHand = $this->cardCounter->count($newHand);
 
-        // $allCards = array_merge($newHand, $deck);
-        // return $this->setSuit($uniqueCountHand) && $this->checkRank($uniqueCountHand) && $this->checkForCards($allCards, $this->minRank);
         return $this->check2($newHand, $deck);
     }
 
@@ -66,10 +60,6 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
      */
     public function check2(array $hand, array $deck): bool
     {
-        // /**
-        //  * @var array<string> $newHand
-        //  */
-        // $newHand = [...$hand, $card];
         /**
          * @var array<string,array<int,int>> $uniqueCountHand
          */

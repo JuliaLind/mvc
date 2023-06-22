@@ -83,12 +83,12 @@ trait SameRankStatTrait
         $allCards = array_merge($hand, $deck);
 
         $check = false;
-        forEach(array_keys($ranksHand) as $rank) {
+        foreach(array_keys($ranksHand) as $rank) {
             $this->rank = $rank;
             $check = $this->checkCountRanks() && $this->searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
             if ($check === true) {
                 break;
-            } 
+            }
         }
         return $check;
     }

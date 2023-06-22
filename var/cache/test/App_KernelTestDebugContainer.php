@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelTestDebugContainer::class, false)) {
 
 return new \ContainerVh5opRH\App_KernelTestDebugContainer([
     'container.build_hash' => 'Vh5opRH',
-    'container.build_id' => 'a83183da',
-    'container.build_time' => 1687477607,
+    'container.build_id' => '24014335',
+    'container.build_time' => 1687477867,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerVh5opRH');

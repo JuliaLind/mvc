@@ -24,13 +24,7 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
          * @var array<string> $newHand
          */
         $newHand = [...$hand, $card];
-        // /**
-        //  * @var array<string,array<int,int>> $uniqueCountHand
-        //  */
-        // $uniqueCountHand = $this->cardCounter->count($newHand);
 
-        // $allCards = array_merge($newHand, $deck);
-        // return $this->setSuit($uniqueCountHand) && $this->setRankLimits($uniqueCountHand) && $this->checkAllPossible($allCards);
         return $this->check2($newHand, $deck);
     }
 
