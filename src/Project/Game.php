@@ -107,6 +107,7 @@ class Game
         $card = $this->player->removeCard($this->fromSlot[0], $this->fromSlot[1]);
         $this->player->addCard($row, $col, $card);
         $this->fromSlot = [];
+        $this->playerSuggest();
     }
 
     public function oneRound(int $row, int $col): bool
