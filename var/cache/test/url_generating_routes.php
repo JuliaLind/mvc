@@ -71,4 +71,6 @@ return [
     'show-suggestion' => [[], ['_controller' => 'App\\Controller\\ProjectController7::showSuggestion'], [], [['text', '/proj/show-suggestion']], [], [], []],
     'deck-peek' => [[], ['_controller' => 'App\\Controller\\ProjectController7::deckPeek'], [], [['text', '/proj/deck-peek']], [], [], []],
     'purchase-peek' => [[], ['_controller' => 'App\\Controller\\ProjectController7::purchasePeekCheat'], [], [['text', '/proj/purchase-peek-cheat']], [], [], []],
+    'proj-scores-single' => [[], ['_controller' => 'App\\Controller\\ProjectController8::projScoresSingle'], [], [['text', '/proj/scores-single']], [], [], []],
+    'proj-leaderboard' => [[], ['_controller' => 'App\\Controller\\ProjectController8::projLeaderboard'], [], [['text', '/proj/leaderboard']], [], [], []],
 ];

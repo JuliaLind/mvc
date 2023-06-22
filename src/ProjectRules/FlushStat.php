@@ -42,12 +42,30 @@ class FlushStat extends Rule implements RuleStatInterface
          */
         $newHand = [...$hand, $card];
 
+        // /**
+        //  * @var array<string,array<int,int>> $uniqueCountHand
+        //  */
+        // $uniqueCountHand = $this->cardCounter->count($newHand);
+
+
+        // return $this->setSuit($uniqueCountHand) && $this->checkInDeck($deck, $newHand);
+        return $this->check2($newHand, $deck);
+    }
+
+    /**
+     * @param array<string> $hand
+     * @param array<string> $deck
+     * @return bool true if rule is still possible given passed value
+     * otherwise false
+     */
+    public function check2(array $hand, array $deck): bool
+    {
         /**
          * @var array<string,array<int,int>> $uniqueCountHand
          */
-        $uniqueCountHand = $this->cardCounter->count($newHand);
+        $uniqueCountHand = $this->cardCounter->count($hand);
 
 
-        return $this->setSuit($uniqueCountHand) && $this->checkInDeck($deck, $newHand);
+        return $this->setSuit($uniqueCountHand) && $this->checkInDeck($deck, $hand);
     }
 }

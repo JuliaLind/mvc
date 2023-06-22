@@ -24,12 +24,34 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
          * @var array<string> $newHand
          */
         $newHand = [...$hand, $card];
+        // /**
+        //  * @var array<string,array<int,int>> $uniqueCountHand
+        //  */
+        // $uniqueCountHand = $this->cardCounter->count($newHand);
+
+        // $allCards = array_merge($newHand, $deck);
+        // return $this->setSuit($uniqueCountHand) && $this->setRankLimits($uniqueCountHand) && $this->checkAllPossible($allCards);
+        return $this->check2($newHand, $deck);
+    }
+
+    /**
+     * @param array<string> $hand
+     * @param array<string> $deck
+     * @return bool true if rule is still possible given passed value
+     * otherwise false
+     */
+    public function check2(array $hand, array $deck): bool
+    {
+        /**
+         * @var array<string> $newHand
+         */
+        $newHand = [...$hand, $card];
         /**
          * @var array<string,array<int,int>> $uniqueCountHand
          */
-        $uniqueCountHand = $this->cardCounter->count($newHand);
+        $uniqueCountHand = $this->cardCounter->count($hand);
 
-        $allCards = array_merge($newHand, $deck);
+        $allCards = array_merge($hand, $deck);
         return $this->setSuit($uniqueCountHand) && $this->setRankLimits($uniqueCountHand) && $this->checkAllPossible($allCards);
     }
 }

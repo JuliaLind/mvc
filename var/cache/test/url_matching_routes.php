@@ -59,6 +59,8 @@ return [
         '/proj/show-suggestion' => [[['_route' => 'show-suggestion', '_controller' => 'App\\Controller\\ProjectController7::showSuggestion'], null, ['POST' => 0], null, false, false, null]],
         '/proj/deck-peek' => [[['_route' => 'deck-peek', '_controller' => 'App\\Controller\\ProjectController7::deckPeek'], null, ['GET' => 0], null, false, false, null]],
         '/proj/purchase-peek-cheat' => [[['_route' => 'purchase-peek', '_controller' => 'App\\Controller\\ProjectController7::purchasePeekCheat'], null, ['POST' => 0], null, false, false, null]],
+        '/proj/scores-single' => [[['_route' => 'proj-scores-single', '_controller' => 'App\\Controller\\ProjectController8::projScoresSingle'], null, null, null, false, false, null]],
+        '/proj/leaderboard' => [[['_route' => 'proj-leaderboard', '_controller' => 'App\\Controller\\ProjectController8::projLeaderboard'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

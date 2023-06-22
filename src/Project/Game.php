@@ -90,7 +90,7 @@ class Game
         $colRule = $suggestion['col-rule'];
 
         if ($rowRule != "" && $colRule != "") {
-            $message = "Place card in row {$row} column {$col} for possible {$rowRule} horizontally and {$colRule} vertically.";
+            $message = "Place card in row {$row} column {$col} for possible {$rowRule} horizontally and/or {$colRule} vertically.";
         } elseif ($rowRule != "") {
             $message = "Place card in row {$row} column {$col} for possible {$rowRule} horizontally.";
         } elseif ($colRule != "") {

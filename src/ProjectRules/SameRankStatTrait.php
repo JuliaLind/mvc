@@ -59,4 +59,37 @@ trait SameRankStatTrait
 
         return array_key_exists($rank, $ranksHand) && $this->checkCountRanks() && $this->searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
     }
+
+    /**
+     * @param array<string> $hand
+     * @param array<string> $deck
+     * @return bool true if rule is still possible given passed value
+     * otherwise false
+     */
+    public function check2(array $hand, array $deck): bool
+    {
+        $uniqueCountHand = $this->cardCounter->count($hand);
+
+        /**
+         * @var array<int,int> $ranksHand
+         */
+        $ranksHand = $uniqueCountHand['ranks'];
+        $this->ranksHand = $ranksHand;
+        $this->hand = $hand;
+
+        /**
+         * @var array<string> $allCards
+         */
+        $allCards = array_merge($hand, $deck);
+
+        $check = false;
+        forEach(array_keys($ranksHand) as $rank) {
+            $this->rank = $rank;
+            $check = $this->checkCountRanks() && $this->searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
+            if ($check === true) {
+                break;
+            } 
+        }
+        return $check;
+    }
 }
