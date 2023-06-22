@@ -41,8 +41,24 @@
 }
 
 .trans {
-    width: 64em;
+    /* width: 64em; */
+    width: auto;
     max-width: 100%;
+}
+
+.trans {
+    position: absolute;
+    position: sticky;
+    top: 4.5rem;
+}
+
+.trans tr:first-of-type {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .trans td,

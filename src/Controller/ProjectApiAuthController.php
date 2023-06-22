@@ -18,6 +18,8 @@ use App\Repository\UserRepository;
 use App\Repository\TransactionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
+use App\Entity\Transaction;
+use App\Entity\Score;
 use App\Project\Register;
 
 use Datetime;
@@ -26,7 +28,7 @@ class ProjectApiAuthController extends AbstractController
 {
     #[Route('/proj/api/user/{email}', name: "api-user", methods: ['GET'])]
     public function apiUser(
-        UserRepository $userRepo,
+        // UserRepository $userRepo,
         EntityManagerInterface $entityManager,
         string $email,
         JsonConverter $converter = new JsonConverter()
@@ -34,7 +36,7 @@ class ProjectApiAuthController extends AbstractController
         /**
          * @var User $user
          */
-        $user = $userRepo->findOneBy(['email' => $email]);
+        $user = getRepository(User::class)->findOneBy(['email' => $email]);
         /**
          * @var int $userId
          */
@@ -55,10 +57,10 @@ class ProjectApiAuthController extends AbstractController
         $scores = $user->getScores()->toArray();
         foreach($transactions as $transaction) {
             $transId = $transaction->getId();
-            /**
-             * @var User $user
-             */
-            $user = $transaction->getUserId();
+            // /**
+            //  * @var User $user
+            //  */
+            // $user = $transaction->getUserId();
             /**
              * @var DateTime $registered
              */
@@ -71,7 +73,7 @@ class ProjectApiAuthController extends AbstractController
                 $data['transactions'],
                 [
                     'id' => $transId,
-                    'user-id' => $user->getId(),
+                    // 'user-id' => $user->getId(),
                     'registered' => $registered,
                     'descr' => $descr,
                     'amount' => $amount
@@ -79,11 +81,11 @@ class ProjectApiAuthController extends AbstractController
             );
         }
         foreach($scores as $score) {
-            $scoreId = $score->getId();
-            /**
-             * @var User $user
-             */
-            $user = $score->getUserId();
+            // $scoreId = $score->getId();
+            // /**
+            //  * @var User $user
+            //  */
+            // $user = $score->getUserId();
             /**
              * @var DateTime $registered
              */
@@ -94,8 +96,8 @@ class ProjectApiAuthController extends AbstractController
             array_push(
                 $data['transactions'],
                 [
-                    'id' => $scoreId,
-                    'player' => $user->getAcronym(),
+                    // 'id' => $scoreId,
+                    // 'player' => $user->getAcronym(),
                     'registered' => $registered,
                     'score' => $points,
                 ]
@@ -105,22 +107,80 @@ class ProjectApiAuthController extends AbstractController
         return $response;
     }
 
+    #[Route('/proj/api/users', name: "api-users", methods: ['GET'])]
+    public function apiUsers(
+        EntityManagerInterface $entityManager,
+        JsonConverter $converter = new JsonConverter()
+    ): Response {
+        $users = $entityManager->getRepository(User::class)->findAll();
+        $data = [];
+        forEach($users as $user) {
+            /**
+             * @var int $userId
+             */
+            $userId = $user->getId();
+            $register = new Register($entityManager, $userId);
+            $balance = $register->getBalance();
+            $info = [
+                'id' => $userId,
+                'acronym' => $user->getAcronym(),
+                'email' => $user->getEmail(),
+                'hash' => $user->getHash(),
+                'balance' => $balance
+            ];
+            $data[] = $info;
+        }
+        $response = $converter->convert(new JsonResponse($data));
+        return $response;
+    }
 
-    // #[Route('/project/api/register', name: "api-register", methods: ['POST'])]
-    // public function apiRegister(
-    //     Request $request,
-    //     JsonConverter $converter = new JsonConverter()
-    // ): Response {
-    //     $username = $request->get('username');
-    //     $password = $request->get('password');
-    //     $hash = password_hash($password, PASSWORD_DEFAULT);
-    //     $data = [
-    //         'username' => $username,
-    //         'password' => $password,
-    //         'hash' => $hash,
-    //         'password verify' => password_verify($password, $hash)
-    //     ];
-    //     $response = $converter->convert(new JsonResponse($data));
-    //     return $response;
-    // }
+    #[Route('/proj/api/transactions', name: "api-transactions", methods: ['GET'])]
+    public function apiTransactions(
+        EntityManagerInterface $entityManager,
+        JsonConverter $converter = new JsonConverter()
+    ): Response {
+        // $transactions = $entityManager->getRepository(Transaction::class)->findAll();
+        $transactions = $entityManager->getRepository(Transaction::class)->findBy([], ['id' => 'DESC']);
+        $data = [];
+        forEach($transactions as $transaction) {
+            /**
+             * @var DateTime $registered
+             */
+            $registered = $transaction->getRegistered();
+            $registered = $registered->format('Y-m-d');
+            $data[] = [
+                'id' => $transaction->getId(),
+                'user' => $transaction->getUserid()->getAcronym(),
+                'registered' => $registered,
+                'descr' => $transaction->getDescr(),
+                'amount' => $transaction->getAmount(),
+            ];
+        }
+        $response = $converter->convert(new JsonResponse($data));
+        return $response;
+    }
+
+    #[Route('/proj/api/leaderboard', name: "api-leaderboard", methods: ['GET'])]
+    public function apiLeaderboard(
+        EntityManagerInterface $entityManager,
+        JsonConverter $converter = new JsonConverter()
+    ): Response {
+        // $scores = $entityManager->getRepository(Score::class)->findAll();
+        $scores = $entityManager->getRepository(Score::class)->findBy([], ['points' => 'DESC'], 10);
+        $data = [];
+        forEach($scores as $score) {
+            /**
+             * @var DateTime $registered
+             */
+            $registered = $score->getRegistered();
+            $registered = $registered->format('Y-m-d');
+            $data[] = [
+                'user' => $score->getUserid()->getAcronym(),
+                'registered' => $registered,
+                'points' => $score->getPoints(),
+            ];
+        }
+        $response = $converter->convert(new JsonResponse($data));
+        return $response;
+    }
 }

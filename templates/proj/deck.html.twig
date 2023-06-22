@@ -4,13 +4,13 @@
 
 {% block body %}
 
-
-<span class="descr">These are the remaining cards that will be dealt to you from the deck</span>
+{{ include('proj/incl/return-to-game-arr.html.twig') }}
+<span class="descr">These are {{ deckCardCount }} cards left in the deck, of which you will be dealt the following {{ playerPossibleCards|length }} cards:</span>
 <div class="deck-container">
-<div class="slot"><img src="{{ asset(card['img']) }}" alt="{{ card['alt'] }}"></div>
-<div class="btn-container">
-<div class="balance">Your balance: {{balance}} coins</div>
 
+{% for card in playerPossibleCards %}
+<div class="slot"><img src="{{ asset('img/project/cards/' ~ card ~ '.svg') }}" alt="{{ card }}"></div>
+{% endfor %}
 
 
 </div>

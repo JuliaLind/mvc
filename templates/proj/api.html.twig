@@ -48,7 +48,7 @@
 
 <div class="wrapper api">
 <form method="GET" action="{{ path('api-game-state') }}">
-<h2>[POST] /project/api/game-state</h2>
+<h2>[GET] /project/api/game-state</h2>
 
 <div class="register-link">
 <p>Shows data for the currently initiated Poker Square Game</p>
@@ -56,6 +56,19 @@
 <button class="form-btn" type="submit">Go to route</button>
 
 </form>
+</div>
+
+<div class="wrapper api">
+<form method="GET" action="{{ path('api-leaderboard') }}">
+<h2>[GET] /project/api/leaderboard</h2>
+
+<div class="register-link">
+<p>Shows the 10 highest scores</p>
+</div>
+<button class="form-btn" type="submit">Go to route</button>
+
+</form>
+
 </div>
 
 
@@ -80,97 +93,30 @@
 </form>
 </div>
 
-{# <div class="wrapper api">
-<form method="post" action="{{ path('api-register') }}">
-
-<h2>[POST] /project/api/user/</h2>
-
-    <div class="register-link">
-    <p>Registers user and displays the user details returned from the database. Does not login the user directly though, as opposed to the actual register route.</p>
-    </div>
-    <div class="field-box">
-    <div class="input-box">
-    <span class="material-symbols-outlined icon">person</span>
-    <input name="username" type="text" required="required" minlength="1" maxlength="100" placeholder="Username">
-    </div>
-
-    <div class="input-box">
-    <span class="material-symbols-outlined icon">key</span>
-    <input name="password" type="password" required="required" minlength="1" maxlength="100" placeholder="Password">
-    </div>
-    </div>
-    <button class="form-btn" type="submit">Register</button>
-
-</form>
-</div> #}
-
-
-
-{# <div class="wrapper api">
-<form method="get" action="">
-
+<div class="wrapper api">
+<form method="GET" action="{{ path('api-users') }}">
 <h2>[GET] /project/api/users</h2>
 
-    <div class="register-link">
-    <p>Displays data for all registered users</p>
-    </div>
-    <button class="form-btn" type="submit">Go to route</button>
-
-</form>
-</div> #}
-
-{# <div class="wrapper api">
-<form method="get" action="">
-
-<h2>[GET] /project/api/transactions/userid</h2>
-
-    <div class="register-link">
-    <p>Displays all transactions for a single user</p>
-    </div>>
-    <button class="form-btn" type="submit">Go to route</button>
-
-</form>
-</div> #}
-
-{# <div class="wrapper api">
-<form method="get" action="">
-
-<h2>[GET] /project/api/transactions</h2>
-
-    <div class="register-link">
-    <p>Displays all transactions for all users</p>
-    </div>
-    <button class="form-btn" type="submit">Go to route</button>
-
-</form>
-</div> #}
-
-{# <div class="wrapper api">
-<form method="get" action="">
-
-<h2>[GET] /project/api/leaderboard/</h2>
-
-    <div class="register-link">
-    <p>Displays all wins aganst bank</p>
-    </div>
-    <button class="form-btn" type="submit">Go to route</button>
+<div class="register-link">
+<p>Shows all registered users</p>
+</div>
+<button class="form-btn" type="submit">Go to route</button>
 
 </form>
 </div>
 
-
 <div class="wrapper api">
-<form method="get" action="">
+<form method="GET" action="{{ path('api-transactions') }}">
+<h2>[GET] /project/api/transactions</h2>
 
-<h2>[GET] /project/api/leaderboard/userid</h2>
-
-    <div class="register-link">
-    <p>Displays all wins aganst bank for specific player</p>
-    </div>
-    <button class="form-btn" type="submit">Go to route</button>
+<div class="register-link">
+<p>Shows all transactions, with the latest one first</p>
+</div>
+<button class="form-btn" type="submit">Go to route</button>
 
 </form>
-</div> #}
+
+</div>
 
 </div>
 </div>

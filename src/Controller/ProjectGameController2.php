@@ -141,4 +141,45 @@ class ProjectGameController2 extends AbstractController
         $this->addFlash('notice', "Click on the card you want to move");
         return $this->render('proj/pick-card.html.twig', $data);
     }
+
+    #[Route('/proj/deck-peek', name: "deck-peek", methods: ['GET'])]
+    public function deckPeek(
+        SessionInterface $session,
+        EntityManagerInterface $entityManager
+    ): Response {
+        if($session->get('deck-peek') === false) {
+            return $this->redirectToRoute('proj-play');
+        }
+        /**
+         * @var Game $game
+         */
+        $game = $session->get("game");
+        $state = $game->currentState();
+        $data = [
+            ...$state,
+            'url' => ""
+        ];
+        $session->set("deck-peek", false);
+        return $this->render('proj/deck.html.twig', $data);
+    }
+
+    #[Route('/proj/purchase-peek-cheat', name: "purchase-peek", methods: ['POST'])]
+    public function purchasePeekCheat(
+        SessionInterface $session,
+        EntityManagerInterface $entityManager
+    ): Response {
+        /**
+         * @var int $userId
+         */
+        $userId = $session->get("user");
+        $register = new Register($entityManager, $userId);
+        try {
+            $register->debit(120, 'peek in deck cheat');
+        } catch (NotEnoughCoinsException) {
+            $this->addFlash('warning', "You do not have enough coins to use this cheat. Purchase more coins in the shop");
+            return $this->redirectToRoute('proj-play');
+        }
+        $session->set("deck-peek", true);
+        return $this->redirectToRoute('deck-peek');
+    }
 }

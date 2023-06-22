@@ -59,6 +59,7 @@ class ProjectGameController extends AbstractController
 
         $session->set("game", $game);
         $session->set("show-suggestion", false);
+        $session->set("deck-peek", false);
         return $this->redirectToRoute('proj-play');
     }
 

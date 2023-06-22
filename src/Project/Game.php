@@ -210,7 +210,8 @@ class Game
             'fromSlot' => $this->fromSlot,
             'finished' => $this->finished,
             'placedCards' => $this->player->getCardCount(),
-            'playerPossibleCards' => $this->deck->possibleCards(),
+            'deckCardCount' => count($this->deck->getCards()),
+            'playerPossibleCards' => array_reverse($this->deck->possibleCards()),
             'lastRound' => $this->lastRound
         ];
     }

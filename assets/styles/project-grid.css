@@ -6,7 +6,6 @@
     grid-template-columns: repeat(5, 1fr);
     width: 100%;
     height: 100%;
-    /* gap: 1rem; */
     max-width: 100%;
     justify-items: center;
 
@@ -37,11 +36,6 @@
 .col-res {
     grid-row: 6 / span 1;
 }
-
-/* .center-grid.results {
-    grid-template-rows: 1fr;
-    justify-items: center;
-} */
 
 .result {
     color: var(--form-neon);
@@ -78,17 +72,12 @@
 
 .slot {
     width: auto;
-    /* height: 100%; */
     height: 15vh;
     display: block;
 
     aspect-ratio: 3/4;
     border-radius: 5px;
     text-align: center;
-
-    /* background-repeat: no-repeat;
-    background-position: center; 
-    background-size: cover; */
 }
 
 .outer-grid-container img {
@@ -102,20 +91,10 @@
     cursor: pointer;
 }
 
-
-/* .selected.player-slot {
-    z-index: 1;
-    outline-color: var(--neon-green);
-} */
-
 .clickable.player-slot:hover {
     z-index: 1;
     outline-color: var(--form-neon);
 }
-
-/* .player-slot {
-    box-shadow: 0 0 20px var(--form-neon);
-} */
 
 .api .player-slot:hover {
     background: var(--form-neon);
@@ -179,19 +158,16 @@
 }
 
 .center-grid {
-    /* display: grid; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     flex-basis: 1;
     width: 100%;
-    /* grid-template-columns: 1fr;
-    grid-template-rows: 1fr; */
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
-    padding: 5px;
-    /* gap: 5px; */
+    /* padding: 5px; */
+    padding: 1rem;
     gap: 5rem;
     justify-items: center;
 }
@@ -256,14 +232,6 @@
 }
 
 
-.descr {
-    padding: 0.5em;
-    color: var(--neon-green);
-    background-color: rgb(0,0,0,0);
-    margin-bottom: var(--magic-number);
-    font-size: 1.25rem;
-}
-
 @media (max-width: 800px) {
     .api .slot {
         border: 1px solid var(--clear-neon);
@@ -277,16 +245,10 @@
     }
 
     .outer-grid-container {
-        /* row-gap: 1rem; */
         display: flex;
         flex-direction: column;
         max-width: 100vw;
-        /* width: 98vw;
-        height: 100%;
-        display: grid;
-        grid-template-rows: min-content auto min-content;
-        grid-template-columns: 1fr;
-        margin-bottom: 3rem; */
+        width: unset;
     }
 
     .house-grid,
@@ -295,24 +257,25 @@
         margin-bottom: 1.5rem;
     }
 
-
     .result {
         font-size: 0.5rem;
     }
 
-    .center-grid {
-        /* grid-column: 1 / span 1;
-        grid-row: 2 / span 1; */
-        order: -1;
+    .player-grid {
+        order: 5;
     }
 
-    /* .grid-form,
-    .player-grid {
-        grid-column: 1 / span 1;
-        grid-row: 3 / span 1;
-    } */
+    .center-grid {
+        order: 10;
+    }
 
+    .outer-grid-container h2:first-of-type {
+        order: 15;
+    }
 
+    .house-grid {
+        order: 20;
+    }
 
     .game-grid,
     .api-grid {
@@ -326,9 +289,16 @@
         outline-width: 2px;
     }
 
-    .slot {
+    .game-grid {
         height: unset;
+        width: unset;
+        flex-grow: 0;
     }
 
+    .game-grid .slot {
+        height: 14vh;
+        /* width: 18vw; */
+        /* background-color: #000; */
+    }
 }
 
