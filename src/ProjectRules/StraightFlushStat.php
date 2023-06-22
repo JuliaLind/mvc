@@ -43,10 +43,6 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
     public function check2(array $hand, array $deck): bool
     {
         /**
-         * @var array<string> $newHand
-         */
-        $newHand = [...$hand, $card];
-        /**
          * @var array<string,array<int,int>> $uniqueCountHand
          */
         $uniqueCountHand = $this->cardCounter->count($hand);
