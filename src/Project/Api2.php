@@ -6,7 +6,7 @@ use App\ProjectCard\Deck;
 use App\ProjectGrid\Grid;
 use App\ProjectGrid\GridGraphic;
 
-class ApiNew
+class Api2
 {
     /**
      * @return array<mixed>

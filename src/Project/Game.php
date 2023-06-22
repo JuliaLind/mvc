@@ -7,8 +7,11 @@ use App\ProjectGrid\Grid;
 use App\ProjectGrid\GridGraphic;
 use App\ProjectRules\WinEvaluator;
 use App\ProjectRules\MoveEvaluator;
+use Datetime;
+use Doctrine\ORM\EntityManagerInterface;
 
 use App\Entity\User;
+use App\Entity\Score;
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -45,10 +48,6 @@ class Game
     {
         $this->pot = $amount;
     }
-
-    // public function isFinished() {
-    //     return $this->finished;
-    // }
 
     /**
      * @param array<Grid> $grids
@@ -161,7 +160,7 @@ class Game
         return $finished;
     }
 
-    public function evaluate(): int
+    public function evaluate(EntityManagerInterface $manager, int $userId): void
     {
         $playerData = $this->winEvaluator->results($this->player->getCards());
         /**
@@ -175,12 +174,26 @@ class Game
         $houseTotal = $houseData['total'];
         $winner = "House";
         $lastPart = "";
-        $amount = 0;
+        // $amount = 0;
 
         if ($playerTotal >= $houseTotal) {
             $winner = "You";
             $amount = ($this->pot + ($playerTotal - $houseTotal)) * 2;
             $lastPart = " and received {$amount} coins";
+
+            /**
+             * @var User $user;
+             */
+            $user = $manager->getRepository(User::class)->find($userId);
+            $register = new Register($manager, $userId);
+            $register->transaction($amount, 'return (bet + profit)');
+            $score = new Score();
+            date_default_timezone_set('Europe/Stockholm');
+            $score->setRegistered(new DateTime());
+            $score->setPoints($playerTotal);
+            $score->setUserid($user);
+            $manager->persist($score);
+            $manager->flush();
         }
         $this->message = "Game finished, You got {$playerTotal} points and House got {$houseTotal} points. {$winner} won{$lastPart}";
         $this->results = [
@@ -188,7 +201,7 @@ class Game
             'house' => $houseData
         ];
         $this->pot = 0;
-        return $amount;
+        // return $amount;
     }
 
     /**

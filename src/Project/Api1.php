@@ -17,7 +17,7 @@ use App\ProjectRules\MoveEvaluator;
  * 6. Show current game status
  *
  */
-class ApiGame
+class Api1
 {
     private Grid $player;
     private Deck $deck;

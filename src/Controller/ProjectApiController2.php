@@ -24,11 +24,10 @@ use App\Project\Register;
 
 use Datetime;
 
-class ProjectApiAuthController extends AbstractController
+class ProjectApiController2 extends AbstractController
 {
     #[Route('/proj/api/user/{email}', name: "api-user", methods: ['GET'])]
     public function apiUser(
-        // UserRepository $userRepo,
         EntityManagerInterface $entityManager,
         string $email,
         JsonConverter $converter = new JsonConverter()
@@ -57,10 +56,6 @@ class ProjectApiAuthController extends AbstractController
         $scores = $user->getScores()->toArray();
         foreach($transactions as $transaction) {
             $transId = $transaction->getId();
-            // /**
-            //  * @var User $user
-            //  */
-            // $user = $transaction->getUserId();
             /**
              * @var DateTime $registered
              */
@@ -73,7 +68,6 @@ class ProjectApiAuthController extends AbstractController
                 $data['transactions'],
                 [
                     'id' => $transId,
-                    // 'user-id' => $user->getId(),
                     'registered' => $registered,
                     'descr' => $descr,
                     'amount' => $amount
@@ -81,11 +75,6 @@ class ProjectApiAuthController extends AbstractController
             );
         }
         foreach($scores as $score) {
-            // $scoreId = $score->getId();
-            // /**
-            //  * @var User $user
-            //  */
-            // $user = $score->getUserId();
             /**
              * @var DateTime $registered
              */
@@ -96,8 +85,6 @@ class ProjectApiAuthController extends AbstractController
             array_push(
                 $data['transactions'],
                 [
-                    // 'id' => $scoreId,
-                    // 'player' => $user->getAcronym(),
                     'registered' => $registered,
                     'score' => $points,
                 ]
@@ -129,65 +116,6 @@ class ProjectApiAuthController extends AbstractController
                 'balance' => $balance
             ];
             $data[] = $info;
-        }
-        $response = $converter->convert(new JsonResponse($data));
-        return $response;
-    }
-
-    #[Route('/proj/api/transactions', name: "api-transactions", methods: ['GET'])]
-    public function apiTransactions(
-        EntityManagerInterface $entityManager,
-        JsonConverter $converter = new JsonConverter()
-    ): Response {
-        // $transactions = $entityManager->getRepository(Transaction::class)->findAll();
-        $transactions = $entityManager->getRepository(Transaction::class)->findBy([], ['id' => 'DESC']);
-        $data = [];
-        foreach($transactions as $transaction) {
-            /**
-             * @var DateTime $registered
-             */
-            $registered = $transaction->getRegistered();
-            $registered = $registered->format('Y-m-d');
-            /**
-             * @var User $user
-             */
-            $user = $transaction->getUserid();
-            $data[] = [
-                'id' => $transaction->getId(),
-                'user' => $user->getAcronym(),
-                'registered' => $registered,
-                'descr' => $transaction->getDescr(),
-                'amount' => $transaction->getAmount(),
-            ];
-        }
-        $response = $converter->convert(new JsonResponse($data));
-        return $response;
-    }
-
-    #[Route('/proj/api/leaderboard', name: "api-leaderboard", methods: ['GET'])]
-    public function apiLeaderboard(
-        EntityManagerInterface $entityManager,
-        JsonConverter $converter = new JsonConverter()
-    ): Response {
-        // $scores = $entityManager->getRepository(Score::class)->findAll();
-        $scores = $entityManager->getRepository(Score::class)->findBy([], ['points' => 'DESC'], 10);
-        $data = [];
-
-        foreach($scores as $score) {
-            /**
-             * @var User $user
-             */
-            $user = $score->getUserid();
-            /**
-             * @var DateTime $registered
-             */
-            $registered = $score->getRegistered();
-            $registered = $registered->format('Y-m-d');
-            $data[] = [
-                'user' => $user->getAcronym(),
-                'registered' => $registered,
-                'points' => $score->getPoints(),
-            ];
         }
         $response = $converter->convert(new JsonResponse($data));
         return $response;

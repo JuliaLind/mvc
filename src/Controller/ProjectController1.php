@@ -18,7 +18,7 @@ use App\Project\Register;
 /**
  * The main controller class
  */
-class ProjectMainController extends AbstractController
+class ProjectController1 extends AbstractController
 {
     #[Route("/proj", name: "proj")]
     public function projLanding(
@@ -58,6 +58,23 @@ class ProjectMainController extends AbstractController
         return $this->render('proj/profile.html.twig', $data);
     }
 
+    #[Route("/proj/shop", name: "shop")]
+    public function projShop(
+        SessionInterface $session
+    ): Response {
+        /**
+         * @var int $userId
+         */
+        $userId = $session->get("user") ?? null;
+        if($userId == null) {
+            return $this->redirectToRoute('proj');
+        }
+        $data = [
+            'url' => "proj"
+        ];
+        return $this->render('proj/shop.html.twig', $data);
+    }
+
     #[Route("/proj/transactions", name: "proj-trans")]
     public function projTrans(
         SessionInterface $session,
@@ -81,32 +98,5 @@ class ProjectMainController extends AbstractController
             )
         ];
         return $this->render('proj/transactions.html.twig', $data);
-    }
-
-    #[Route("/proj/api", name: "proj-api")]
-    public function projApiLanding(): Response
-    {
-        $data = [
-            'url' => "api"
-        ];
-        return $this->render('proj/api.html.twig', $data);
-    }
-
-    #[Route("/proj/about", name: "proj-about")]
-    public function projAbout(): Response
-    {
-        $data = [
-            'url' => "about"
-        ];
-        return $this->render('proj/api.html.twig', $data);
-    }
-
-    #[Route("/proj/rules", name: "proj-rules")]
-    public function projRules(): Response
-    {
-        $data = [
-            'url' => "rules"
-        ];
-        return $this->render('proj/rules.html.twig', $data);
     }
 }

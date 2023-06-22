@@ -25,7 +25,7 @@ use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 /**
  * The main controller class
  */
-class ProjectAuthController extends AbstractController
+class ProjectController2 extends AbstractController
 {
     #[Route("/proj/register", name: "register", methods: ['POST'])]
     public function projRegister(
@@ -87,24 +87,6 @@ class ProjectAuthController extends AbstractController
         return $this->redirectToRoute('proj');
     }
 
-    #[Route("/proj/purchase/{coins<\d+>}", name: "purchase", methods: ['POST'])]
-    public function projPurchase(
-        int $coins,
-        EntityManagerInterface $entityManager,
-        SessionInterface $session
-    ): Response {
-        /**
-         * @var int $userId
-         */
-        $userId = $session->get("user");
-
-        $register = new Register($entityManager, $userId);
-        $register->transaction($coins, 'Purchase');
-        $balance = $register->getBalance();
-        $this->addFlash('notice', "You have successfully purchsed {$coins} coins. Your new balance is {$balance} coins");
-        return $this->redirectToRoute('shop');
-    }
-
     #[Route("/proj/login", name: "login", methods: ['POST'])]
     public function projLogin(
         Request $request,
@@ -147,38 +129,5 @@ class ProjectAuthController extends AbstractController
     ): Response {
         $session->clear();
         return $this->redirectToRoute('proj');
-    }
-
-    #[Route("/proj/shop", name: "shop")]
-    public function projShop(): Response
-    {
-        $data = [
-            'url' => "proj"
-        ];
-        return $this->render('proj/shop.html.twig', $data);
-    }
-
-    #[Route("/proj/select-amount", name: "select-amount")]
-    public function selectAmount(
-        SessionInterface $session,
-        EntityManagerInterface $entityManager,
-    ): Response {
-        /**
-         * @var int $userId
-         */
-        $userId = $session->get("user");
-
-        $register = new Register($entityManager, $userId);
-        $balance = $register->getBalance();
-
-        if ($balance < 10) {
-            $this->addFlash('warning', "You do not have enough coins, the minimum amount to bet is 10 coins. Purchase more coins in the shop");
-            return $this->redirectToRoute('proj-shop');
-        }
-        $data = [
-            'url' => "proj",
-            'balance' => $balance,
-        ];
-        return $this->render('proj/select-amount.html.twig', $data);
     }
 }

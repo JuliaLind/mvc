@@ -26,7 +26,7 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Project\Game;
 use App\ProjectGrid\Grid;
 
-class ProjectGameController extends AbstractController
+class ProjectController3 extends AbstractController
 {
     #[Route("/proj/init", name: "proj-init")]
     public function projInit(
@@ -77,15 +77,15 @@ class ProjectGameController extends AbstractController
         $game = $session->get("game");
         $finished = $game->oneRound($row, $col);
         if ($finished === true) {
-            $wonAmount = $game->evaluate();
-            if ($wonAmount > 0) {
-                /**
-                 * @var int $userId
-                 */
-                $userId = $session->get("user");
-                $register = new Register($entityManager, $userId);
-                $register->transaction($wonAmount, 'return (bet + profit)');
-            }
+            /**
+             * @var int $userId
+             */
+            $userId = $session->get("user");
+            $game->evaluate($entityManager, $userId);
+            // $wonAmount = $game->evaluate($entityManager, $userId);
+            // if ($wonAmount > 0) {
+
+            // }
         }
         $session->set("game", $game);
         return $this->redirectToRoute('proj-play');
@@ -109,7 +109,6 @@ class ProjectGameController extends AbstractController
             // 'url' => "proj",
             'url' => "",
         ];
-
 
         if ($state['finished'] === true) {
             $this->addFlash('notice', $data['message']);

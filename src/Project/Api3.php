@@ -10,7 +10,7 @@ use App\ProjectRules\MoveEvaluator;
 
 use Symfony\Component\HttpFoundation\Request;
 
-class ApiResults
+class Api3
 {
     /**
      * @return array<mixed>

@@ -16,12 +16,12 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 use App\Helpers\JsonConverter;
 
-use App\Project\ApiGame;
-use App\Project\ApiNew;
-use App\Project\ApiResults;
+use App\Project\Api1;
+use App\Project\Api2;
+use App\Project\Api3;
 use App\Project\Game;
 
-class ProjectApiController extends AbstractController
+class ProjectApiController1 extends AbstractController
 {
     #[Route('/proj/api/bot-plays', name: "api-bot-plays", methods: ['POST'])]
     public function apiOneRound(
@@ -29,9 +29,9 @@ class ProjectApiController extends AbstractController
         JsonConverter $converter = new JsonConverter()
     ): Response {
         /**
-         * @var ApiGame $game
+         * @var Api1 $game
          */
-        $game = $session->get("api-game") ?? new ApiGame();
+        $game = $session->get("api-game") ?? new Api1();
         $data = $game->oneRound();
         $response = $converter->convert(new JsonResponse($data));
         $session->set("api-game", $game);
@@ -39,10 +39,10 @@ class ProjectApiController extends AbstractController
     }
 
     #[Route('/proj/api/place-card/{row<\d+>}/{col<\d+>}', name: "api-place-card", methods: ['POST'])]
-    public function apiNew(
+    public function apiPlaceCard(
         int $row,
         int $col,
-        ApiNew $game = new ApiNew(),
+        Api2 $game = new Api2(),
         JsonConverter $converter = new JsonConverter()
     ): Response {
         $data = $game->oneRound($row, $col);
@@ -52,7 +52,7 @@ class ProjectApiController extends AbstractController
 
     #[Route('/proj/api/results', name: "api-results", methods: ['POST'])]
     public function apiResults(
-        ApiResults $game = new ApiResults(),
+        Api3 $game = new Api3(),
         JsonConverter $converter = new JsonConverter()
     ): Response {
         $data = $game->results();
