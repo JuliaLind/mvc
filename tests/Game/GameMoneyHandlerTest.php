@@ -45,17 +45,4 @@ class GameMoneyHandlerTest extends TestCase
         $res = $gameHandler->selectAmount($game, $roundHandler);
         $this->assertEquals($exp, $res);
     }
-
-    /**
-     * Tests the bet method
-     */
-    public function testBet(): void
-    {
-        $gameHandler = new GameMoneyHandler();
-        $game = $this->createMock(Game21Easy::class);
-        $game->expects($this->once())
-            ->method('addToMoneyPot')
-            ->with($this->equalTo(30));
-        $gameHandler->bet(30, $game);
-    }
 }

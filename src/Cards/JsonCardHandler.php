@@ -12,17 +12,17 @@ use Symfony\Component\HttpFoundation\JsonResponse;
  */
 class JsonCardHandler
 {
-    /**
-     * Returns an array with data for /card/deck route
-     * @return array<string,string|array<string>>
-     */
-    public function getDeckRouteData(DeckOfCards $deck): array
-    {
-        $data = [
-            'cards' => $deck->getAsString(),
-        ];
-        return $data;
-    }
+    // /**
+    //  * Returns an array with data for /card/deck route
+    //  * @return array<string,string|array<string>>
+    //  */
+    // public function getDeckRouteData(DeckOfCards $deck): array
+    // {
+    //     $data = [
+    //         'cards' => $deck->getAsString(),
+    //     ];
+    //     return $data;
+    // }
 
     /**
      * Returns an array with data for /card/deck route

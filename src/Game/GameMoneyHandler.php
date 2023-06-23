@@ -24,13 +24,4 @@ class GameMoneyHandler
         $data = array_merge($nextRoundData, $data);
         return $data;
     }
-
-    /**
-     * Updates the amount of money in the game obejcts moneypot
-     * @return void
-     */
-    public function bet(int $amount, Game21Easy $game): void
-    {
-        $game->addToMoneyPot($amount);
-    }
 }

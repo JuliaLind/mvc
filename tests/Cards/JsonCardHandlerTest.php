@@ -19,22 +19,22 @@ class JsonCardHandlerTest extends TestCase
         $this->assertInstanceOf("\App\Cards\JsonCardHandler", $cardHandler);
     }
 
-    /**
-     * Tests that getRouteData method returns correct data
-     */
-    public function testGetDeckRouteData(): void
-    {
-        $cardHandler = new JsonCardHandler();
-        $deck = $this->createMock(DeckOfCards::class);
-        $deck->expects($this->once())
-            ->method('getAsString')
-            ->willReturn(['a card', 'another card']);
-        $exp = [
-            'cards' => ['a card', 'another card'],
-        ];
-        $res = $cardHandler->getDeckRouteData($deck);
-        $this->assertEquals($exp, $res);
-    }
+    // /**
+    //  * Tests that getRouteData method returns correct data
+    //  */
+    // public function testGetDeckRouteData(): void
+    // {
+    //     $cardHandler = new JsonCardHandler();
+    //     $deck = $this->createMock(DeckOfCards::class);
+    //     $deck->expects($this->once())
+    //         ->method('getAsString')
+    //         ->willReturn(['a card', 'another card']);
+    //     $exp = [
+    //         'cards' => ['a card', 'another card'],
+    //     ];
+    //     $res = $cardHandler->getDeckRouteData($deck);
+    //     $this->assertEquals($exp, $res);
+    // }
 
     /**
      * Tests that getDataForDraw method returns correct data
