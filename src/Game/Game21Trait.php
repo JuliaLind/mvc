@@ -10,10 +10,7 @@ require __DIR__ . "/../../vendor/autoload.php";
  */
 trait Game21Trait
 {
-    /**
-     * @var int $GOAL the goal points to reach.
-     */
-    protected const GOAL = 21;
+    protected int $goal=21;
     protected Player21 $player;
     protected Player21 $bank;
     protected Player21 $winner;
@@ -32,12 +29,12 @@ trait Game21Trait
         $player = $this->player;
         $handValue = $player->handValue();
 
-        if ($handValue > self::GOAL) {
+        if ($handValue > $this->goal) {
             $this->winner = $this->bank;
             return true;
         }
         if ($this->cardsLeft() > 0) {
-            if ($handValue === self::GOAL) {
+            if ($handValue === $this->goal) {
                 $this->bankPlaying = true;
             }
             return false;
@@ -47,18 +44,18 @@ trait Game21Trait
 
     protected function bankWinsOnEqual(int $bankHandValue, int $playerHandValue): bool
     {
-        return $bankHandValue === self::GOAL || $bankHandValue === $playerHandValue;
+        return $bankHandValue === $this->goal || $bankHandValue === $playerHandValue;
     }
 
     protected function hasBankMoreThan21(int $bankHandValue): bool
     {
-        return $bankHandValue > self::GOAL;
+        return $bankHandValue > $this->goal;
     }
 
     protected function hasBankBestScore(int $bankHandValue, int $playerHandValue): bool
     {
-        $diffBank = self::GOAL - $bankHandValue;
-        $diffPlayer = self::GOAL - $playerHandValue;
+        $diffBank = $this->goal - $bankHandValue;
+        $diffPlayer = $this->goal - $playerHandValue;
         return $diffBank < $diffPlayer;
     }
 
