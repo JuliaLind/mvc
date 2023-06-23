@@ -6,26 +6,24 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 
 use Symfony\Component\HttpFoundation\JsonResponse;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
-
 use App\Helpers\JsonConverter;
-
-use App\Repository\UserRepository;
-use App\Repository\TransactionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
 use App\Entity\Transaction;
 use App\Entity\Score;
-use App\Project\Register;
-
 use Datetime;
 
+/**
+ * Contains API routes for the project
+ */
 class ProjectApiController3 extends AbstractController
 {
+    /**
+     * Shows all transactions in database
+     */
     #[Route('/proj/api/transactions', name: "api-transactions", methods: ['GET'])]
     public function apiTransactions(
         EntityManagerInterface $entityManager,
@@ -55,6 +53,9 @@ class ProjectApiController3 extends AbstractController
         return $response;
     }
 
+    /**
+     * Shows the top ten scores in database
+     */
     #[Route('/proj/api/leaderboard', name: "api-leaderboard", methods: ['GET'])]
     public function apiLeaderboard(
         EntityManagerInterface $entityManager,
