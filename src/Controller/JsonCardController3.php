@@ -19,7 +19,7 @@ use App\Cards\Player;
 use App\Helpers\JsonConverter;
 
 /**
- * Controller for json routes
+ * Controller for json card routes
  */
 class JsonCardController3 extends AbstractController
 {

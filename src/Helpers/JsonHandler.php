@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 use Datetime;
 
 /**
- * Helper class to handle the routes in JsonController
+ * Helper class to get data for some of the API routes
  */
 class JsonHandler
 {

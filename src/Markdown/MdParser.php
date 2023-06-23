@@ -2,7 +2,6 @@
 
 namespace App\Markdown;
 
-use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
 use Anax\TextFilter\TextFilter;
 
 /**

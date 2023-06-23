@@ -15,7 +15,7 @@ use App\Library\BookNotFoundException;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Controller for json routes
+ * Controller for json library routes
  */
 class JsonLibraryController extends AbstractController
 {

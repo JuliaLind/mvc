@@ -21,7 +21,7 @@ use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class for the library controller
+ * Class for library routes
  */
 class LibraryController extends AbstractController
 {

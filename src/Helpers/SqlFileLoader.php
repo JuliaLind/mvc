@@ -5,7 +5,7 @@ namespace App\Helpers;
 use Doctrine\DBAL\Connection;
 
 /**
- * Resets database from file
+ * Loads sql file to database
  */
 class SqlFileLoader
 {

@@ -22,8 +22,6 @@ class GameHandlerLanding
             $finished = $game->gameOver();
         }
 
-
-
         return [
             'about' => $parser->getParsedText($filename),
             'page' => "game",

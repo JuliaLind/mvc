@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
- * Helper class to handle the routes in MainController
+ * Helper class for pretty printing json respongs object
  */
 class JsonConverter
 {

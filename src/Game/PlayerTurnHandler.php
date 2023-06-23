@@ -5,7 +5,7 @@ namespace App\Game;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Helper class to handle game in the Game21Controller
+ * Helper class to handle players turn in Game 21
  */
 class PlayerTurnHandler
 {

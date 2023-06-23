@@ -21,7 +21,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Helpers\JsonConverter;
 
 /**
- * Controller class for the 21 card game
+ * Controller class for the 21 card game json route
  */
 class JsonGame21Controller extends AbstractController
 {

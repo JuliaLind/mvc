@@ -5,7 +5,7 @@ namespace App\Game;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Class representing the easy version of the 21 card game
+ * Helper class for handling Game 21
  */
 class RoundHandler
 {

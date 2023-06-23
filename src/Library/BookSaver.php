@@ -5,8 +5,6 @@ namespace App\Library;
 use App\Entity\Book;
 use App\Repository\BookRepository;
 
-use Symfony\Component\HttpFoundation\Request;
-
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**

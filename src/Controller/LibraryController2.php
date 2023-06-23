@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class for the library controller
+ * Class for the library routes
  */
 class LibraryController2 extends AbstractController
 {

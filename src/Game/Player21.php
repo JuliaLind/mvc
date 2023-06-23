@@ -38,7 +38,7 @@ class Player21
         return $this->money;
     }
 
-        /**
+    /**
      * Increases player's money
      *
      * @param int $money the amount of money to add

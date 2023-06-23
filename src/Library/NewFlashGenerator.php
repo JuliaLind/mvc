@@ -7,7 +7,7 @@ use App\Entity\Book;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Generates flash messages for the Library
+ * Generates flash messages for when user adds new book to the Library
  */
 class NewFlashGenerator
 {
