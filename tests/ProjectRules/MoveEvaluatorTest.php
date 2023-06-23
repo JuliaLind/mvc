@@ -47,8 +47,8 @@ class MoveEvaluatorTest extends TestCase
         $card = "14D";
 
         $exp = [
-            'row-rule' => "",
-            'col-rule' => "",
+            'row-rule' => "One Pair",
+            'col-rule' => "One Pair",
             'slot' => [0, 0]
         ];
 
@@ -101,8 +101,6 @@ class MoveEvaluatorTest extends TestCase
             'col-rule' => "",
             'slot' => [0, 4]
         ];
-
-
         $res = $evaluator->suggestion($rows, $card, $deck);
 
         $this->assertEquals($exp, $res);
@@ -128,7 +126,7 @@ class MoveEvaluatorTest extends TestCase
         $exp = [
             'row-rule' => "",
             'col-rule' => "",
-            'slot' => [4, 3]
+            'slot' => [2, 4]
         ];
 
 

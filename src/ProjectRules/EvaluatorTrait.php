@@ -72,7 +72,8 @@ trait EvaluatorTrait
      * @param array<string> $deck
      * @return array<string,string|int>
      */
-    public function checkForRule(array $hands, int $index, array $deck, string $card) {
+    public function checkForRule(array $hands, int $index, array $deck, string $card)
+    {
         $data = [
             'points' => 0,
             'rule' => ""
@@ -96,4 +97,3 @@ trait EvaluatorTrait
         return $data;
     }
 }
- 

@@ -7,7 +7,6 @@ use App\ProjectGrid\EmptyCellFinder;
 use App\ProjectGrid\EmptyCellFinder2;
 use App\ProjectGrid\ColumnGetter;
 
-
 trait EvaluatorTrait2
 {
     /**
@@ -28,7 +27,7 @@ trait EvaluatorTrait2
         $bestHand = 0;
         $maxPoints = 0;
 
-        for ($j = 0; $j <= 5; $j++) {
+        for ($j = 0; $j <= 4; $j++) {
             $data = $this->checkForRule($hands, $j, $deck, $card);
             $handPoints = $data['points'];
             $handRule = $data['rule'];
@@ -46,4 +45,3 @@ trait EvaluatorTrait2
         ];
     }
 }
- 

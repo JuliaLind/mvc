@@ -25,15 +25,22 @@ class Api3
         $deck->shuffle();
         while ($grid->getCardCount() < 25) {
             $card = $deck->deal();
+            /**
+             * @var array<string,array<int,int>|int|string> $suggestion
+             */
             $suggestion = $moveEvaluator->suggestion($grid->getCards(), $card, $deck->getCards());
+            /**
+             * @var array<int>
+             */
+            $slot = $suggestion['slot'];
             /**
              * @var int $row
              */
-            $row = $suggestion['slot'][0];
+            $row = $slot[0];
             /**
              * @var int $col
              */
-            $col = $suggestion['slot'][1];
+            $col = $slot[1];
             $grid->addCard($row, $col, $card);
         }
         $results = $winEvaluator->results($grid->getCards());

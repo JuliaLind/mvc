@@ -9,144 +9,129 @@ use App\ProjectGrid\ColumnGetter;
 
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  */
 class MoveEvaluator
 {
-    private RuleStats $rules;
-    private EmptyCellFinder $finder;
-    private EmptyCellFinder2 $finder2;
-    private ColumnGetter $colGetter;
-    private string $rowRuleName = "";
-    private string $colRuleName = "";
-    private string $card;
-    /**
-     * @var array<string> $deck
-     */
-    private array $deck;
-    private int $rowNr = -1;
-    private int $colNr = -1;
+    use EvaluatorTrait;
+    use EvaluatorTrait2;
+
 
     /**
-     * @var array<string,string|array<int>> $data
+     * @var array<array<string,string|RuleStatInterface|int>>
      */
-    private array $data;
+    private array $rules;
+    private EmptyCellFinder $finder;
+    private ColumnGetter $colGetter;
 
     public function __construct(
         EmptyCellFinder $finder = new EmptyCellFinder(),
-        RuleStats $rules = new RuleStats(),
+        RuleStats2 $stats= new RuleStats2(),
         ColumnGetter $colGetter = new ColumnGetter(),
-        EmptyCellFinder2 $finder2 = new EmptyCellFinder2(),
     ) {
-        $this->rules = $rules;
+        $this->rules = $stats->getRules();
         $this->finder = $finder;
-        $this->finder2 = $finder2;
         $this->colGetter = $colGetter;
     }
 
-    /**
-     * @param array<array<string>> $rows
-     * @param array<array<string>> $cols
-     */
-    protected function setSlot(int $rowNr, int $ruleNr, array $rows, array $cols): bool
-    {
-        $finder = $this->finder;
-
-        $rules = $this->rules;
-        $deck = $this->deck;
-        $card = $this->card;
-
         /**
-         * @var array<array<string,string|RuleStatInterface>> $allRules
-         */
-        $allRules = $rules->getRules();
-        $rule = $allRules[$ruleNr];
-
-        if($rules->checkSingle($rows, $rowNr, $deck, $card, $ruleNr)) {
-            $this->rowNr = $rowNr;
-            /**
-             * @var string $name
-             */
-            $name = $rule['name'];
-            $this->rowRuleName = $name;
-
-            // $emptyCells = $finder->single($rows[$rowNr], $rowNr, true);
-            $emptyCells = $finder->single($rows[$rowNr], $rowNr);
-
-            $ruleCount = count($allRules);
-
-            for ($i = 0; $i < $ruleCount; $i++) {
-                foreach($emptyCells as $cell) {
-                    $colNr = $cell[1];
-                    $this->colNr = $colNr;
-                    if ($rules->checkSingle($cols, $colNr, $deck, $card, $i)) {
-                        /**
-                         * @var string $name
-                         */
-                        $name = $allRules[$i]['name'];
-                        $this->colRuleName = $name;
-                        return true;
-                    };
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    /**
+     * @param array<int,array<string,int|string>> $pointsRows
+     * @param array<int,array<string,int|string>> $pointsCols
      * @param array<array<string>> $rows
-     * @param array<array<string>> $cols
+     * @return array<string,array<int,int>|int|string>
      */
-    protected function checkRowColForRule(int $index, int $ruleNr, $rows, $cols): bool
+    public function slot(array $pointsRows, array $pointsCols, int $bestRow, array $rows, bool $inverted=false): array
     {
-        if ($this->setSlot($index, $ruleNr, $rows, $cols)) {
-            $this->data = [
-                'row-rule' => $this->rowRuleName,
-                'col-rule' => $this->colRuleName,
-                'slot' => [$this->rowNr, $this->colNr]
-            ];
-            return true;
+        $slot = [];
+        /**
+         * @var string $rowRule
+         */
+        $rowRule = $pointsRows[$bestRow]['rule'];
+        $colRule = "";
+        $row = [];
+        if (array_key_exists($bestRow, $rows)) {
+            $row = $rows[$bestRow];
         }
-        if ($this->setSlot($index, $ruleNr, $cols, $rows)) {
-            $this->data = [
-                'row-rule' => $this->colRuleName,
-                'col-rule' => $this->rowRuleName,
-                'slot' => [$this->colNr, $this->rowNr]
-            ];
-            return true;
+        $emptySlots = $this->finder->single($row, $bestRow);
+        $colPoints = 0;
+
+        foreach($emptySlots as $emptySlot) {
+            $col = $emptySlot[1];
+            /**
+             * @var int $pointsCol
+             */
+            $pointsCol = $pointsCols[$col]['points'];
+            if ($pointsCol >= $colPoints) {
+                $colPoints = $pointsCol;
+                $slot = $emptySlot;
+                /**
+                 * @var string $colRule
+                 */
+                $colRule = $pointsCols[$col]['rule'];
+            }
         }
-        return false;
+        if ($inverted) {
+            return [
+                'col-rule' => $rowRule,
+                'row-rule' => $colRule,
+                'slot' => [$slot[1], $slot[0]]
+            ];
+        }
+        return [
+            'col-rule' => $colRule,
+            'row-rule' => $rowRule,
+            'slot' => $slot
+        ];
     }
 
     /**
      * @param array<array<string>> $rows
      * @param array<string> $deck
-     * @return array<string,string|array<int>>
+     * @return array<string,array<int,int>|int|string>
      */
     public function suggestion(array $rows, string $card, array $deck): array
     {
-        $this->rowRuleName = "";
-        $this->colRuleName = "";
-        $ruleCount = 9;
+        if ($rows === []) {
+            $data = $this->checkForRule([0 => []], 0, $deck, $card);
+            /**
+             * @var string $rule
+             */
+            $rule = $data['rule'];
+            return [
+                'col-rule' => $rule,
+                'row-rule' => $rule,
+                'slot' => [0, 0]
+            ];
+        }
         /**
          * @var array<array<string>> $cols
          */
         $cols = $this->colGetter->all($rows);
-        $this->card = $card;
-        $this->deck = $deck;
 
-        for ($i = 0; $i < $ruleCount; $i++) {
-            for ($j = 0; $j <= 5; $j++) {
-                if ($this->checkRowColForRule($j, $i, $rows, $cols)) {
-                    return $this->data;
-                }
-            }
+        $rowData = $this->points($rows, $deck, $card);
+        $colData = $this->points($cols, $deck, $card);
+        $maxRowPoints = $rowData['max'];
+        $maxColPoints = $colData['max'];
+        /**
+         * @var int $bestRow;
+         */
+        $bestRow = $rowData['bestHand'];
+        /**
+         * @var int $bestCol;
+         */
+        $bestCol = $colData['bestHand'];
+        /**
+         * @var array<int,array<string,int|string>> $pointsRows
+         */
+        $pointsRows = $rowData['points'];
+        /**
+         * @var array<int,array<string,int|string>> $pointsCols
+         */
+        $pointsCols = $colData['points'];
+
+        if ($maxRowPoints >= $maxColPoints) {
+            return $this->slot($pointsRows, $pointsCols, $bestRow, $rows);
         }
-        $data = [
-            'row-rule' => "",
-            'col-rule' => "",
-            'slot' => $this->finder2->oneCell($rows, $cols)
-        ];
-        return $data;
+        return $this->slot($pointsCols, $pointsRows, $bestCol, $cols, true);
     }
 }
