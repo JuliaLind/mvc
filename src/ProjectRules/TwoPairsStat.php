@@ -14,7 +14,7 @@ class TwoPairsStat extends RuleStat implements RuleStatInterface
      * same rank required to score the rule
      */
     protected int $minCountRank;
-    protected int $rank;
+    // protected int $rank;
 
     /**
      * Constructor
@@ -40,7 +40,7 @@ class TwoPairsStat extends RuleStat implements RuleStatInterface
          */
         $ranksHand = $uniqueCountHand['ranks'];
         $rank = intval(substr($card, 0, -1));
-        $this->rank = $rank;
+        // $this->rank = $rank;
 
         /**
          * @var array<string> $allCards

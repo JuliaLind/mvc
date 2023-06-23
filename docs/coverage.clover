@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687558306">
-  <project timestamp="1687558306">
+<coverage generated="1687558554">
+  <project timestamp="1687558554">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -3113,7 +3113,7 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/TwoPairsStat.php">
       <class name="App\ProjectRules\TwoPairsStat" namespace="global">
-        <metrics complexity="6" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="10" coveredelements="10"/>
+        <metrics complexity="6" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="9" coveredelements="9"/>
       </class>
       <line num="22" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="12"/>
       <line num="24" type="stmt" count="12"/>
@@ -3122,10 +3122,9 @@
       <line num="36" type="stmt" count="9"/>
       <line num="41" type="stmt" count="9"/>
       <line num="42" type="stmt" count="9"/>
-      <line num="43" type="stmt" count="9"/>
       <line num="48" type="stmt" count="9"/>
       <line num="50" type="stmt" count="9"/>
-      <metrics loc="53" ncloc="34" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="10" coveredelements="10"/>
+      <metrics loc="53" ncloc="32" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="9" coveredelements="9"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/TwoPairsTrait.php">
       <class name="App\ProjectRules\TwoPairsTrait" namespace="global">
@@ -3144,18 +3143,17 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/TwoPairsTrait2.php">
       <class name="App\ProjectRules\TwoPairsTrait2" namespace="global">
-        <metrics complexity="4" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="9" coveredelements="0"/>
+        <metrics complexity="4" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
       </class>
       <line num="25" type="method" name="check2" visibility="public" complexity="4" crap="20" count="0"/>
       <line num="27" type="stmt" count="0"/>
       <line num="32" type="stmt" count="0"/>
       <line num="37" type="stmt" count="0"/>
       <line num="39" type="stmt" count="0"/>
-      <line num="40" type="stmt" count="0"/>
       <line num="41" type="stmt" count="0"/>
       <line num="42" type="stmt" count="0"/>
       <line num="45" type="stmt" count="0"/>
-      <metrics loc="48" ncloc="33" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="9" coveredelements="0"/>
+      <metrics loc="48" ncloc="32" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/WinEvaluator.php">
       <class name="App\ProjectRules\WinEvaluator" namespace="global">
@@ -3267,6 +3265,6 @@
       <line num="39" type="stmt" count="0"/>
       <metrics loc="68" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="152" loc="8609" ncloc="6359" classes="137" methods="360" coveredmethods="260" conditionals="0" coveredconditionals="0" statements="2003" coveredstatements="1380" elements="2363" coveredelements="1640"/>
+    <metrics files="152" loc="8609" ncloc="6356" classes="137" methods="360" coveredmethods="260" conditionals="0" coveredconditionals="0" statements="2001" coveredstatements="1379" elements="2361" coveredelements="1639"/>
   </project>
 </coverage>

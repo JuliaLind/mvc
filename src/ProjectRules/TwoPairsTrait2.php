@@ -37,7 +37,7 @@ trait TwoPairsTrait2
         $allCards = array_merge($hand, $deck);
 
         foreach(array_keys($ranksHand) as $rank) {
-            $this->rank = $rank;
+            // $this->rank = $rank;
             if (count($hand) > count($ranksHand) && $this->searcher->checkRankQuant($allCards, $rank, $this->minCountRank)) {
                 return true;
             }
