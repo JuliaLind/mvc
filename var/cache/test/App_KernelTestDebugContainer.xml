@@ -639,6 +639,8 @@
     </service>
     <service id="App\Game\RoundHandler" class="App\Game\RoundHandler" autowire="true" autoconfigure="true"/>
     <service id="App\Game\RoundHandler2" class="App\Game\RoundHandler2" autowire="true" autoconfigure="true"/>
+    <service id="App\Game\ValueConverter" class="App\Game\ValueConverter" autowire="true" autoconfigure="true"/>
+    <service id="App\Game\ValueConverter2" class="App\Game\ValueConverter2" autowire="true" autoconfigure="true"/>
     <service id="App\Helpers\JsonConverter" class="App\Helpers\JsonConverter" autowire="true" autoconfigure="true"/>
     <service id="App\Helpers\JsonHandler" class="App\Helpers\JsonHandler" autowire="true" autoconfigure="true"/>
     <service id="App\Helpers\JsonHandler2" class="App\Helpers\JsonHandler2" autowire="true" autoconfigure="true"/>
@@ -1876,6 +1878,8 @@
         <argument key="App\Game\PlayerTurnHandler" type="service_closure" id="App\Game\PlayerTurnHandler" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game\RoundHandler" type="service_closure" id="App\Game\RoundHandler" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game\RoundHandler2" type="service_closure" id="App\Game\RoundHandler2" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Game\ValueConverter" type="service_closure" id="App\Game\ValueConverter" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Game\ValueConverter2" type="service_closure" id="App\Game\ValueConverter2" on-invalid="ignore_uninitialized"/>
         <argument key="App\Helpers\JsonConverter" type="service_closure" id="App\Helpers\JsonConverter" on-invalid="ignore_uninitialized"/>
         <argument key="App\Helpers\JsonHandler" type="service_closure" id="App\Helpers\JsonHandler" on-invalid="ignore_uninitialized"/>
         <argument key="App\Helpers\JsonHandler2" type="service_closure" id="App\Helpers\JsonHandler2" on-invalid="ignore_uninitialized"/>

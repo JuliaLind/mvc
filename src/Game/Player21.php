@@ -12,6 +12,7 @@ class Player21
 {
     use PlayerTrait;
     use Player21Trait;
+    // use Player21Trait2;
 
     protected int $money=0;
 
@@ -55,35 +56,5 @@ class Player21
     {
         $this->money -= $money;
         return $money;
-    }
-
-    protected function checkIfBad(int $minHandValue, int $value): int
-    {
-        if ($minHandValue + $value > self::GOAL) {
-            return 1;
-        }
-        return 0;
-    }
-
-    /**
-     * Returns the risk of current player getting
-     * above 21 with next drawn card
-     * @return float the risk of getting "fat" with next card 0-1
-     */
-    public function estimateRisk(DeckOfCards $deck): float
-    {
-        $minHandValue = $this->minHandValue();
-        $cardsLeft = $deck->getCardCount();
-        $possibleCards = $deck->getValues();
-        $badCards = 0;
-        $risk = 0;
-        if ($cardsLeft != 0) {
-            foreach ($possibleCards as $value) {
-                $value = $this->adjAceValueToOne($value);
-                $badCards += $this->checkIfBad($minHandValue, $value);
-            }
-            $risk = $badCards / $cardsLeft;
-        }
-        return $risk;
     }
 }

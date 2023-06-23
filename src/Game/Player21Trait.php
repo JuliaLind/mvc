@@ -2,6 +2,8 @@
 
 namespace App\Game;
 
+require __DIR__ . "/../../vendor/autoload.php";
+
 use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
@@ -10,22 +12,7 @@ use App\Cards\CardHand;
  */
 trait Player21Trait
 {
-    /**
-     * @var int $GOAL the goal points to reach.
-     */
-    protected const GOAL = 21;
     protected CardHand $hand;
-
-    /**
-     * Adjusts if ace should be valued at 14 or at 1
-     */
-    protected function adjAceValue(int $pointSum, int $value): int
-    {
-        if ($value === 14 && $pointSum + $value > self::GOAL) {
-            $value = 1;
-        }
-        return $value;
-    }
 
     /**
      * Adjusts ace-value to 1
@@ -46,13 +33,13 @@ trait Player21Trait
      *
      * @return int
      */
-    public function handValue(): int
+    public function handValue(ValueConverter $converter = new ValueConverter()): int
     {
         $values = $this->hand->getValues();
         asort($values);
         $pointSum = 0;
         foreach ($values as $value) {
-            $pointSum += $this->adjAceValue($pointSum, $value);
+            $pointSum += $converter->adjAceValue($pointSum, $value);
         }
         return $pointSum;
     }
@@ -73,5 +60,27 @@ trait Player21Trait
             $pointSum += $this->adjAceValueToOne($value);
         }
         return $pointSum;
+    }
+
+    /**
+     * Returns the risk of current player getting
+     * above 21 with next drawn card
+     * @return float the risk of getting "fat" with next card 0-1
+     */
+    public function estimateRisk(DeckOfCards $deck, ValueConverter2 $converter = new ValueConverter2()): float
+    {
+        $minHandValue = $this->minHandValue();
+        $cardsLeft = $deck->getCardCount();
+        $possibleCards = $deck->getValues();
+        $badCards = 0;
+        $risk = 0;
+        if ($cardsLeft != 0) {
+            foreach ($possibleCards as $value) {
+                $value = $this->adjAceValueToOne($value);
+                $badCards += $converter->checkIfBad($minHandValue, $value);
+            }
+            $risk = $badCards / $cardsLeft;
+        }
+        return $risk;
     }
 }
