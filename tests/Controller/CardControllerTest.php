@@ -53,4 +53,13 @@ class CardControllerTest extends WebTestCase
         $this->assertSelectorTextContains('p', 'Cards left: 31');
         $this->assertSelectorTextContains('h1', 'Draw 7 cards for 3 players');
     }
+
+    public function testCard(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/card');
+        $this->assertResponseIsSuccessful();
+        $this->assertRouteSame('card');
+        $this->assertSelectorTextContains('h1', 'Kortspel');
+    }
 }

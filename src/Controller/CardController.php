@@ -10,6 +10,7 @@ use App\Cards\DeckOfCards;
 use App\Cards\Player;
 
 use App\Cards\CardHandler;
+use App\Cards\CardLandingHandler;
 use App\Cards\CardDeckHandler;
 use App\Cards\PlayerCreator;
 
@@ -129,5 +130,13 @@ class CardController extends AbstractController
         $session->set("deck", $deck);
 
         return $this->render('card/draw.html.twig', $data);
+    }
+
+    #[Route("/card", name: "card")]
+    public function card(
+        CardLandingHandler $cardHandler=new CardLandingHandler()
+    ): Response {
+        $data = $cardHandler->getMainData();
+        return $this->render('card/home.html.twig', $data);
     }
 }

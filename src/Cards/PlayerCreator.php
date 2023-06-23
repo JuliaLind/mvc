@@ -6,7 +6,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 use App\Markdown\MdParser;
 
 /**
- * Helper class to handle the routes in CardController
+ * Creates a number of players
  */
 class PlayerCreator
 {

@@ -21,7 +21,7 @@ return [
     'draw' => [[], ['_controller' => 'App\\Controller\\CardController::draw'], [], [['text', '/card/deck/draw']], [], [], []],
     'drawMany' => [['number'], ['_controller' => 'App\\Controller\\CardController::drawMany'], ['number' => '\\d+'], [['variable', '/', '\\d+', 'number', true], ['text', '/card/deck/draw']], [], [], []],
     'deal' => [['players', 'cards'], ['_controller' => 'App\\Controller\\CardController::deal'], ['players' => '\\d+', 'cards' => '\\d+'], [['variable', '/', '\\d+', 'cards', true], ['variable', '/', '\\d+', 'players', true], ['text', '/card/deck/deal']], [], [], []],
-    'card' => [[], ['_controller' => 'App\\Controller\\CardLandingController::card'], [], [['text', '/card']], [], [], []],
+    'card' => [[], ['_controller' => 'App\\Controller\\CardController::card'], [], [['text', '/card']], [], [], []],
     'gameMain' => [[], ['_controller' => 'App\\Controller\\Game21Controller::main'], [], [['text', '/game']], [], [], []],
     'gameDoc' => [[], ['_controller' => 'App\\Controller\\Game21Controller::gameDoc'], [], [['text', '/game/doc']], [], [], []],
     'init' => [['level'], ['level' => 0, '_controller' => 'App\\Controller\\Game21Controller::init'], ['level' => '\\d+'], [['variable', '/', '\\d+', 'level', true], ['text', '/game/init']], [], [], []],

@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class LibraryUpdateBookControllerTest extends WebTestCase
+class LibraryController2Test extends WebTestCase
 {
     public function testUpdateForm(): void
     {

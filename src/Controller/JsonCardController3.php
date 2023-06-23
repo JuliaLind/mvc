@@ -16,37 +16,32 @@ use App\Cards\JsonCardHandler;
 use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 use App\Cards\Player;
-use App\Cards\PlayerCreator;
 use App\Helpers\JsonConverter;
 
 /**
  * Controller for json routes
  */
-class JsonCardDealController extends AbstractController
+class JsonCardController3 extends AbstractController
 {
     /**
-     * Route where a number of cards is dealt to a number of players
+     * Route where a number of cards at a time is drawn and displayed
      * from the deck of cards that was created in the 'shuffle' route
      * or in the 'deck' route
      */
-    #[Route('/api/deck/deal/{players<\d+>}/{cards<\d+>}', name: "jsonDeal", methods: ['POST'])]
-    public function jsonDeal(
+    #[Route('/api/deck/draw/{number<\d+>}', name: "jsonDrawMany", methods: ['POST'])]
+    public function jsonDrawMany(
         SessionInterface $session,
-        int $players,
-        int $cards,
+        int $number,
+        Player $player=new Player(),
         JsonCardHandler $cardHandler = new JsonCardHandler(),
-        PlayerCreator $creator = new PlayerCreator(),
         JsonConverter $converter = new JsonConverter()
     ): Response {
         /**
          * @var DeckOfCards $deck The deck of cards.
          */
         $deck = $session->get("deck") ?? new DeckOfCards();
-        /**
-         * @var array<Player> $arr with player objects
-         */
-        $arr = $creator->createPlayers($players);
-        $data = $cardHandler->getDataForDraw($deck, $arr, $cards);
+        $session->set("deck", $deck);
+        $data = $cardHandler->getDataForDraw($deck, [$player], $number);
         $response = $converter->convert(new JsonResponse($data));
         return $response;
     }

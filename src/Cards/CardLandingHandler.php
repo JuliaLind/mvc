@@ -11,6 +11,7 @@ use App\Markdown\MdParser;
 class CardLandingHandler
 {
     /**
+     * Returns data for the Cards landing page
      * @return array<string,array<int,array<string,string>>|string>
      */
     public function getMainData()

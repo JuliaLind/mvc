@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class JsonCardDeckControllerTest extends WebTestCase
+class JsonCardController2Test extends WebTestCase
 {
     public function testJsonDeck(): void
     {

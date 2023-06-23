@@ -19,7 +19,7 @@ use App\Helpers\JsonConverter;
 /**
  * Controller for json routes
  */
-class JsonCardDeckController extends AbstractController
+class JsonCardController2 extends AbstractController
 {
     /**
     * Creates and shows json representation of a deck of cards

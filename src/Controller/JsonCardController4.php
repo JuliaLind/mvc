@@ -22,7 +22,7 @@ use App\Helpers\JsonConverter;
 /**
  * Controller for json routes
  */
-class JsonDealOneCardController extends AbstractController
+class JsonCardController4 extends AbstractController
 {
     /**
      * Route where one card at a time is drawn and displayed

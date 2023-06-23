@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Class for the library controller
  */
-class LibraryUpdateBookController extends AbstractController
+class LibraryController2 extends AbstractController
 {
     /**
      * Form for editing details of a book
