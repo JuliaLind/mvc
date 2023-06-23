@@ -52,7 +52,8 @@ class EmptyCellFinderTest extends TestCase
         $finder = new EmptyCellFinder();
         $row = $this->rows[1];
         $exp = [[1, 0], [1, 2], [1, 4]];
-        $res = $finder->single($row, 1, true);
+        // $res = $finder->single($row, 1, true);
+        $res = $finder->single($row, 1);
         $this->assertEquals($exp, $res);
     }
 

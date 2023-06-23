@@ -4,7 +4,7 @@ namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
 
-class FourOfAKindStatNotOkTest extends TestCase
+class FourOfAKindStat2Test extends TestCase
 {
     public function testCheckNotOk(): void
     {

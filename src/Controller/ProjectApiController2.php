@@ -17,7 +17,6 @@ use App\Entity\Score;
 use App\Project\Register;
 use Datetime;
 
-
 /**
  * Contains API routes for the project
  */

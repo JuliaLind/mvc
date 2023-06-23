@@ -22,7 +22,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
- * Controller for routes where cards are displayed
+ * Controller for Card routes
  */
 class CardController extends AbstractController
 {

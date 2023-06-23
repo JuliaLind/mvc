@@ -4,7 +4,7 @@ namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
 
-class FourOfAKindStatOkTest extends TestCase
+class FourOfAKindStat1Test extends TestCase
 {
     public function testCheckOk(): void
     {
@@ -43,7 +43,7 @@ class FourOfAKindStatOkTest extends TestCase
         $deck = ["4S", "4D", "14D", "4C", "5S"];
         $card = "4H";
         $res = $rule->check($hand, $deck, $card);
-        $this->assertFalse($res);
+        $this->assertTrue($res);
     }
 
     public function testCheckNotOk2(): void

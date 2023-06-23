@@ -20,7 +20,7 @@ use App\Cards\PlayerCreator;
 use App\Helpers\JsonConverter;
 
 /**
- * Controller for json routes
+ * Controller for json card routes
  */
 class JsonCardController extends AbstractController
 {

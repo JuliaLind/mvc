@@ -69,7 +69,8 @@ class MoveEvaluator
             $name = $rule['name'];
             $this->rowRuleName = $name;
 
-            $emptyCells = $finder->single($rows[$rowNr], $rowNr, true);
+            // $emptyCells = $finder->single($rows[$rowNr], $rowNr, true);
+            $emptyCells = $finder->single($rows[$rowNr], $rowNr);
 
             $ruleCount = count($allRules);
 

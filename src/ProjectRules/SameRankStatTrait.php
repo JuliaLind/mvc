@@ -57,7 +57,9 @@ trait SameRankStatTrait
          */
         $allCards = array_merge([...$hand, $card], $deck);
 
-        return array_key_exists($rank, $ranksHand) && $this->checkCountRanks() && $this->searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
+        // return array_key_exists($rank, $ranksHand) && $this->checkCountRanks() && $this->searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
+
+        return ((array_key_exists($rank, $ranksHand) && $this->checkCountRanks()) || count($ranksHand) == 0) && $this->searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
     }
 
     /**

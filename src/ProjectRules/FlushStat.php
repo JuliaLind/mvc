@@ -32,8 +32,6 @@ class FlushStat extends Rule implements RuleStatInterface
     /**
      * @param array<string> $hand
      * @param array<string> $deck
-     * @return bool true if rule is still possible given passed value
-     * otherwise false
      */
     public function check(array $hand, array $deck, string $card): bool
     {
@@ -48,8 +46,6 @@ class FlushStat extends Rule implements RuleStatInterface
     /**
      * @param array<string> $hand
      * @param array<string> $deck
-     * @return bool true if rule is still possible given passed value
-     * otherwise false
      */
     public function check2(array $hand, array $deck): bool
     {
@@ -61,4 +57,16 @@ class FlushStat extends Rule implements RuleStatInterface
 
         return $this->setSuit($uniqueCountHand) && $this->checkInDeck($deck, $hand);
     }
+
+    // /**
+    //  * @param array<string> $deck
+    //  */
+    // public function check3(array $deck): bool
+    // {
+    //     /**
+    //      * @var array<string,array<int,int>> $uniqueCountDeck
+    //      */
+    //     $uniqueCountDeck = $this->cardCounter->count($deck);
+    //     return max($uniqueCountDeck['suits']) >= 5;
+    // }
 }

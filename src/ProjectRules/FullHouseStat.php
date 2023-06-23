@@ -25,7 +25,7 @@ class FullHouseStat extends Rule implements RuleStatInterface
         return $this->check2($newHand, $deck);
     }
 
-        /**
+    /**
      * @param array<string> $hand
      * @param array<string> $deck
      * @return bool true if rule is still possible given passed value
