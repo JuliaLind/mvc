@@ -52,35 +52,4 @@ class ProjectApiController3 extends AbstractController
         $response = $converter->convert(new JsonResponse($data));
         return $response;
     }
-
-    /**
-     * Shows the top ten scores in database
-     */
-    #[Route('/proj/api/leaderboard', name: "api-leaderboard", methods: ['GET'])]
-    public function apiLeaderboard(
-        EntityManagerInterface $entityManager,
-        JsonConverter $converter = new JsonConverter()
-    ): Response {
-        $scores = $entityManager->getRepository(Score::class)->findBy([], ['points' => 'DESC'], 10);
-        $data = [];
-
-        foreach($scores as $score) {
-            /**
-             * @var User $user
-             */
-            $user = $score->getUserid();
-            /**
-             * @var DateTime $registered
-             */
-            $registered = $score->getRegistered();
-            $registered = $registered->format('Y-m-d');
-            $data[] = [
-                'user' => $user->getAcronym(),
-                'registered' => $registered,
-                'points' => $score->getPoints(),
-            ];
-        }
-        $response = $converter->convert(new JsonResponse($data));
-        return $response;
-    }
 }

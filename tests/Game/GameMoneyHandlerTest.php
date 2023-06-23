@@ -24,7 +24,7 @@ class GameMoneyHandlerTest extends TestCase
     public function testSelectAmount(): void
     {
         $gameHandler = new GameMoneyHandler();
-        $roundHandler = $this->createMock(RoundHandler::class);
+        $roundHandler = $this->createMock(RoundHandler2::class);
         $game = $this->createMock(Game21Easy::class);
         $roundHandler->expects($this->once())
             ->method('nextRound')->with($this->identicalTo($game))

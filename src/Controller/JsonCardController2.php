@@ -37,24 +37,4 @@ class JsonCardController2 extends AbstractController
         $response = $converter->convert(new JsonResponse($data));
         return $response;
     }
-
-
-    /**
-     * Creates and shows json representation of a deck of cards
-     * in shuffled order
-     */
-    #[Route('/api/deck/shuffle', name: "jsonShuffle", methods: ['POST'])]
-    public function jsonShuffle(
-        SessionInterface $session,
-        JsonCardHandler $cardHandler = new JsonCardHandler(),
-        JsonConverter $converter = new JsonConverter()
-    ): Response {
-        $deck = new DeckOfCards();
-        $deck->shuffle();
-        $session->set("deck", $deck);
-        $data = $cardHandler->getDeckRouteData($deck);
-
-        $response = $converter->convert(new JsonResponse($data));
-        return $response;
-    }
 }

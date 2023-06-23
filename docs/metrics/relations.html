@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-23 17:57:44        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-23 21:30:48        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -93,7 +93,7 @@
                             <path d="M0 0h24v24H0z" fill="none">
                             <path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z">
                         </svg>
-                        Violations (13)
+                        Violations (15)
                     </a>
                 </li>
                                     <li>
@@ -335,14 +335,15 @@
         "relations": []
     },
     {
-        "name": "\\App\\Controller\\ProjectController8",
+        "name": "\\App\\Controller\\ProjectApiController6",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Repository\\ScoreRepository",
-            "\\Doctrine\\ORM\\EntityManagerInterface"
+            "\\Doctrine\\ORM\\EntityManagerInterface",
+            "\\App\\Helpers\\JsonConverter",
+            "\\App\\Project\\Register",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
     },
     {
@@ -354,6 +355,39 @@
         "name": "\\Symfony\\Component\\HttpFoundation\\Response",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\Doctrine\\ORM\\EntityManagerInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Helpers\\JsonConverter",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+        ]
+    },
+    {
+        "name": "\\App\\Project\\Register",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Controller\\ProjectController8",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Repository\\ScoreRepository",
+            "\\Doctrine\\ORM\\EntityManagerInterface"
+        ]
     },
     {
         "name": "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
@@ -370,9 +404,35 @@
         ]
     },
     {
-        "name": "\\Doctrine\\ORM\\EntityManagerInterface",
+        "name": "\\App\\Controller\\JsonCardController5",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Cards\\JsonCardHandler",
+            "\\App\\Helpers\\JsonConverter",
+            "\\App\\Cards\\DeckOfCards",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\JsonController2",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\App\\Helpers\\JsonHandler2",
+            "\\App\\Helpers\\JsonConverter",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+        ]
+    },
+    {
+        "name": "\\App\\Helpers\\JsonHandler2",
+        "size": 3000,
+        "relations": [
+            "\\Datetime"
+        ]
     },
     {
         "name": "\\App\\Controller\\ProjectApiController1",
@@ -383,15 +443,6 @@
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\Helpers\\JsonConverter",
             "\\App\\Project\\Api1",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
-            "\\App\\Project\\Api2",
-            "\\App\\Project\\Api3"
-        ]
-    },
-    {
-        "name": "\\App\\Helpers\\JsonConverter",
-        "size": 3000,
-        "relations": [
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
     },
@@ -406,57 +457,20 @@
         ]
     },
     {
-        "name": "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Project\\Api2",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectGrid\\Grid",
-            "\\App\\ProjectCard\\Deck",
-            "\\App\\ProjectGrid\\GridGraphic"
-        ]
-    },
-    {
-        "name": "\\App\\Project\\Api3",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\MoveEvaluator",
-            "\\App\\ProjectRules\\WinEvaluator",
-            "\\App\\ProjectGrid\\GridGraphic",
-            "\\App\\ProjectGrid\\Grid",
-            "\\App\\ProjectCard\\Deck"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\JsonLibraryController",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Repository\\BookRepository",
-            "\\App\\Helpers\\JsonConverter"
-        ]
-    },
-    {
-        "name": "\\App\\Repository\\BookRepository",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Controller\\LibraryController",
+        "name": "\\App\\Controller\\LibraryController4",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\App\\Repository\\BookRepository",
             "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\App\\Library\\LibraryHandler",
-            "\\Doctrine\\DBAL\\Connection",
-            "\\App\\Helpers\\SqlFileLoader"
+            "\\App\\Library\\LibraryHandler"
         ]
+    },
+    {
+        "name": "\\App\\Repository\\BookRepository",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\Symfony\\Component\\HttpFoundation\\Request",
@@ -479,15 +493,24 @@
         ]
     },
     {
-        "name": "\\Doctrine\\DBAL\\Connection",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Helpers\\SqlFileLoader",
+        "name": "\\App\\Controller\\JsonLibraryController",
         "size": 3000,
         "relations": [
-            "\\Doctrine\\DBAL\\Connection"
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\App\\Repository\\BookRepository",
+            "\\App\\Helpers\\JsonConverter"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\LibraryController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\App\\Repository\\BookRepository",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\App\\Library\\LibraryHandler"
         ]
     },
     {
@@ -500,11 +523,6 @@
             "\\Doctrine\\ORM\\EntityManagerInterface",
             "\\App\\Project\\Register"
         ]
-    },
-    {
-        "name": "\\App\\Project\\Register",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\App\\Controller\\ProjectController4",
@@ -540,6 +558,17 @@
         "relations": []
     },
     {
+        "name": "\\App\\Controller\\ProjectApiController5",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Helpers\\JsonConverter",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\ProjectController6",
         "size": 3000,
         "relations": [
@@ -560,6 +589,45 @@
             "\\App\\Helpers\\JsonConverter",
             "\\App\\Project\\Register",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjectApiController8",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\App\\Project\\Api3",
+            "\\App\\Helpers\\JsonConverter",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+        ]
+    },
+    {
+        "name": "\\App\\Project\\Api3",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\MoveEvaluator",
+            "\\App\\ProjectRules\\WinEvaluator",
+            "\\App\\ProjectGrid\\GridGraphic",
+            "\\App\\ProjectGrid\\Grid",
+            "\\App\\ProjectCard\\Deck"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Game21Controller6",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Game\\GameHandler"
+        ]
+    },
+    {
+        "name": "\\App\\Game\\GameHandler",
+        "size": 3000,
+        "relations": [
+            "\\App\\Game\\Game21Interface"
         ]
     },
     {
@@ -596,6 +664,24 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\Game21Controller7",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Game\\PlayerTurnHandler"
+        ]
+    },
+    {
+        "name": "\\App\\Game\\PlayerTurnHandler",
+        "size": 3000,
+        "relations": [
+            "\\App\\Game\\RoundHandler",
+            "\\App\\Game\\Game21Easy"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\ProjectApiController3",
         "size": 3000,
         "relations": [
@@ -612,9 +698,25 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Repository\\BookRepository",
-            "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\App\\Library\\LibraryHandler"
+            "\\App\\Repository\\BookRepository"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Game21Controller2",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Game\\BanksTurnHandler"
+        ]
+    },
+    {
+        "name": "\\App\\Game\\BanksTurnHandler",
+        "size": 3000,
+        "relations": [
+            "\\App\\Game\\RoundHandler",
+            "\\App\\Game\\Game21Easy"
         ]
     },
     {
@@ -626,22 +728,37 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\Game21Controller4",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Game\\GameInitiator"
+        ]
+    },
+    {
+        "name": "\\App\\Game\\GameInitiator",
+        "size": 3000,
+        "relations": [
+            "\\App\\Game\\Game21Interface",
+            "\\App\\Game\\Game21Easy",
+            "\\App\\Game\\Game21Hard"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\JsonController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Helpers\\JsonHandler",
-            "\\App\\Helpers\\JsonConverter",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\App\\Helpers\\JsonHandler"
         ]
     },
     {
         "name": "\\App\\Helpers\\JsonHandler",
         "size": 3000,
-        "relations": [
-            "\\Datetime"
-        ]
+        "relations": []
     },
     {
         "name": "\\App\\Controller\\JsonCardController",
@@ -664,12 +781,7 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Game\\GameHandlerLanding",
-            "\\App\\Game\\GameInitiator",
-            "\\App\\Game\\GameMoneyHandler",
-            "\\App\\Game\\PlayerTurnHandler",
-            "\\App\\Game\\BanksTurnHandler",
-            "\\App\\Game\\GameHandler"
+            "\\App\\Game\\GameHandlerLanding"
         ]
     },
     {
@@ -677,46 +789,6 @@
         "size": 3000,
         "relations": [
             "\\App\\Markdown\\MdParser"
-        ]
-    },
-    {
-        "name": "\\App\\Game\\GameInitiator",
-        "size": 3000,
-        "relations": [
-            "\\App\\Game\\Game21Interface",
-            "\\App\\Game\\Game21Easy",
-            "\\App\\Game\\Game21Hard"
-        ]
-    },
-    {
-        "name": "\\App\\Game\\GameMoneyHandler",
-        "size": 3000,
-        "relations": [
-            "\\App\\Game\\Game21Easy",
-            "\\App\\Game\\RoundHandler"
-        ]
-    },
-    {
-        "name": "\\App\\Game\\PlayerTurnHandler",
-        "size": 3000,
-        "relations": [
-            "\\App\\Game\\RoundHandler",
-            "\\App\\Game\\Game21Easy"
-        ]
-    },
-    {
-        "name": "\\App\\Game\\BanksTurnHandler",
-        "size": 3000,
-        "relations": [
-            "\\App\\Game\\RoundHandler",
-            "\\App\\Game\\Game21Easy"
-        ]
-    },
-    {
-        "name": "\\App\\Game\\GameHandler",
-        "size": 3000,
-        "relations": [
-            "\\App\\Game\\Game21Interface"
         ]
     },
     {
@@ -729,6 +801,17 @@
             "\\App\\Cards\\JsonCardHandler",
             "\\App\\Helpers\\JsonConverter",
             "\\App\\Cards\\DeckOfCards",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjectApiController7",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Doctrine\\ORM\\EntityManagerInterface",
+            "\\App\\Helpers\\JsonConverter",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
     },
@@ -787,6 +870,24 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\Game21Controller3",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Game\\GameMoneyHandler"
+        ]
+    },
+    {
+        "name": "\\App\\Game\\GameMoneyHandler",
+        "size": 3000,
+        "relations": [
+            "\\App\\Game\\Game21Easy",
+            "\\App\\Game\\RoundHandler2"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\JsonCardController4",
         "size": 3000,
         "relations": [
@@ -835,6 +936,36 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\ProjectApiController4",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\App\\Project\\Api2",
+            "\\App\\Helpers\\JsonConverter",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+        ]
+    },
+    {
+        "name": "\\App\\Project\\Api2",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectGrid\\Grid",
+            "\\App\\ProjectCard\\Deck",
+            "\\App\\ProjectGrid\\GridGraphic"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Game21Controller5",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Game\\GameMoneyHandler"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\CardController",
         "size": 3000,
         "relations": [
@@ -847,6 +978,28 @@
             "\\App\\Cards\\Player",
             "\\App\\Cards\\PlayerCreator",
             "\\App\\Cards\\CardLandingHandler"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\LibraryController3",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Doctrine\\DBAL\\Connection",
+            "\\App\\Helpers\\SqlFileLoader"
+        ]
+    },
+    {
+        "name": "\\Doctrine\\DBAL\\Connection",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Helpers\\SqlFileLoader",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\DBAL\\Connection"
         ]
     },
     {
@@ -950,7 +1103,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\RuleStats",
+        "name": "\\App\\ProjectRules\\RuleStats2",
         "size": 3000,
         "relations": [
             "\\App\\ProjectRules\\RoyalFlushStat",
@@ -1077,29 +1230,12 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\MoveEvaluator2",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectGrid\\EmptyCellFinder",
-            "\\App\\ProjectRules\\RuleStats2",
-            "\\App\\ProjectGrid\\ColumnGetter"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\RuleStats2",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RoyalFlushStat",
-            "\\App\\ProjectRules\\StraightFlushStat",
-            "\\App\\ProjectRules\\SameOfAKindStat",
-            "\\App\\ProjectRules\\FullHouseStat",
-            "\\App\\ProjectRules\\FlushStat",
-            "\\App\\ProjectRules\\StraightStat",
-            "\\App\\ProjectRules\\TwoPairsStat"
-        ]
-    },
-    {
         "name": "\\App\\ProjectRules\\SameRankStatTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\TwoPairsTrait",
         "size": 3000,
         "relations": []
     },
@@ -1125,6 +1261,19 @@
         "relations": []
     },
     {
+        "name": "\\App\\ProjectRules\\RuleStats",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RoyalFlushStat",
+            "\\App\\ProjectRules\\StraightFlushStat",
+            "\\App\\ProjectRules\\SameOfAKindStat",
+            "\\App\\ProjectRules\\FullHouseStat",
+            "\\App\\ProjectRules\\FlushStat",
+            "\\App\\ProjectRules\\StraightStat",
+            "\\App\\ProjectRules\\TwoPairsStat"
+        ]
+    },
+    {
         "name": "\\App\\ProjectRules\\StraightFlushStatTrait",
         "size": 3000,
         "relations": []
@@ -1136,6 +1285,11 @@
     },
     {
         "name": "\\App\\ProjectRules\\WinEvaluator",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\TwoPairsTrait2",
         "size": 3000,
         "relations": []
     },
@@ -1322,9 +1476,11 @@
         "relations": []
     },
     {
-        "name": "\\App\\Game\\RoundHandler",
+        "name": "\\App\\Game\\RoundHandler2",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\App\\Game\\Player21"
+        ]
     },
     {
         "name": "\\App\\Game\\PlayerTrait",
@@ -1332,6 +1488,11 @@
         "relations": [
             "\\App\\Cards\\DeckOfCards"
         ]
+    },
+    {
+        "name": "\\App\\Game\\RoundHandler",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Game\\GameAttrHandler2Trait",

@@ -25,6 +25,7 @@ class Game21Easy extends Game implements Game21Interface
     protected bool $roundOver=false;
     protected bool $bankPlaying=false;
     protected int $currentRound=0;
+    protected string $level="easy";
 
     /**
      * Constructor
@@ -235,7 +236,7 @@ class Game21Easy extends Game implements Game21Interface
             'currentRound'=>$this->currentRound,
             'moneyPot'=>$this->moneyPot->currentAmount(),
             'roundOver'=>$this->roundOver,
-            'level' => 'easy',
+            'level' => $this->level,
         ];
         return $data;
     }

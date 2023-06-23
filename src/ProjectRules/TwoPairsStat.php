@@ -6,7 +6,8 @@ use App\ProjectCard\CardCounter;
 
 class TwoPairsStat extends RuleStat implements RuleStatInterface
 {
-    // use SameRankStatTrait;
+    use TwoPairsTrait;
+    use TwoPairsTrait2;
 
     /**
      * @var int $minContRank the minimum number of cards of
@@ -47,56 +48,5 @@ class TwoPairsStat extends RuleStat implements RuleStatInterface
         $allCards = array_merge([...$hand, $card], $deck);
 
         return (array_key_exists($rank, $ranksHand) && count($hand) > count($ranksHand) && $this->searcher->checkRankQuant($allCards, $rank, $this->minCountRank)) || (count($ranksHand) == 0 && $this->checkInDeck($deck, $rank));
-    }
-
-    /**
-     * @param array<string> $deck
-     */
-    public function checkInDeck(array $deck, int $rank): bool
-    {
-        $uniqueCountDeck = $this->cardCounter->count($deck);
-        /**
-         * @var array<int,int> $ranksDeck
-         */
-        $ranksDeck = $uniqueCountDeck['ranks'];
-        if (array_key_exists($rank, $ranksDeck)) {
-            foreach($ranksDeck as $rank2 => $count) {
-                if ($rank2 != $rank && $count >= 2) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    /**
-     * @param array<string> $hand
-     * @param array<string> $deck
-     * @return bool true if rule is still possible given passed value
-     * otherwise false
-     */
-    public function check2(array $hand, array $deck): bool
-    {
-        $uniqueCountHand = $this->cardCounter->count($hand);
-
-        /**
-         * @var array<int,int> $ranksHand
-         */
-        $ranksHand = $uniqueCountHand['ranks'];
-
-        /**
-         * @var array<string> $allCards
-         */
-        $allCards = array_merge($hand, $deck);
-
-        $check = false;
-        foreach(array_keys($ranksHand) as $rank) {
-            $this->rank = $rank;
-            $check = count($hand) > count($ranksHand) && $this->searcher->checkRankQuant($allCards, $rank, $this->minCountRank);
-            if ($check === true) {
-                break;
-            }
-        }
-        return $check;
     }
 }

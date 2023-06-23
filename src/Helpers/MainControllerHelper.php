@@ -11,13 +11,19 @@ use App\Markdown\MdParser;
  */
 class MainControllerHelper
 {
+    public MdParser $parser;
+
+    public function __construct(MdParser $parser = new MdParser())
+    {
+        $this->parser = $parser;
+    }
     /**
      * @return array<string,string>
      */
-    public function standardData(string $page, MdParser $parser = new MdParser()): array
+    public function standardData(string $page): array
     {
         $filename = "markdown/{$page}.md";
-        $parsedText = $parser->getParsedText($filename);
+        $parsedText = $this->parser->getParsedText($filename);
         $data = [
             'title' => ucfirst($page),
             'text' => $parsedText,
@@ -35,7 +41,7 @@ class MainControllerHelper
     /**
      * @return array<string,string>
      */
-    public function reportData(MdParser $parser = new MdParser()): array
+    public function reportData(): array
     {
         $data = [
             'page' => "report",
@@ -43,7 +49,7 @@ class MainControllerHelper
         ];
         for ($i = 1; $i <= 7; $i++) {
             $filename = "markdown/kmom0{$i}.md";
-            $data["kmom0{$i}"] = $parser->getParsedText($filename);
+            $data["kmom0{$i}"] = $this->parser->getParsedText($filename);
         }
         return $data;
     }

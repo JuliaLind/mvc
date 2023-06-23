@@ -2,22 +2,38 @@
 
 namespace App\Game;
 
+require __DIR__ . "/../../vendor/autoload.php";
+
+use App\Cards\DeckOfCards;
+
 /**
  * Class representing the hard version of the 21 card game
  */
 class Game21Hard extends Game21Easy
 {
     /**
-     * Returns status data for current game
+     * Constructor
      *
-     * @return array<mixed>
+     * @param Player21 $player
+     * @param DeckOfCards $deck
      */
-    public function getGameStatus(): array
+    public function __construct(Player21 $player=new Player21(), DeckOfCards $deck=new DeckOfCards())
     {
-        $data = parent::getGameStatus();
-        $data['level'] = 'hard';
-        return $data;
+        parent::__construct($player, $deck);
+
+        $this->level = 'hard';
     }
+    // /**
+    //  * Returns status data for current game
+    //  *
+    //  * @return array<mixed>
+    //  */
+    // public function getGameStatus(): array
+    // {
+    //     $data = parent::getGameStatus();
+    //     $data['level'] = 'hard';
+    //     return $data;
+    // }
 
     /**
      * Deals cards to the bank. Stops when risk of bank getting "fat" is

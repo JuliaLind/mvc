@@ -14,7 +14,7 @@ class GameMoneyHandler
      * for the route's template
      * @return array<int|string>
      */
-    public function selectAmount(Game21Easy $game, RoundHandler $handler = new RoundHandler()): array
+    public function selectAmount(Game21Easy $game, RoundHandler2 $handler = new RoundHandler2()): array
     {
         $nextRoundData = $handler->nextRound($game);
         $data = [

@@ -24,7 +24,6 @@ class MainControllerHelperTest extends TestCase
      */
     public function testStandardData(): void
     {
-        $helper = new MainControllerHelper();
         $page = "home";
         $parser = $this->createMock(MdParser::class);
         $filename = "markdown/{$page}.md";
@@ -33,14 +32,14 @@ class MainControllerHelperTest extends TestCase
         ->method('getParsedText')
         ->with($filename)
         ->willReturn("Test");
-
+        $helper = new MainControllerHelper($parser);
         $exp = [
             'title' => 'Home',
             'text' => "Test",
             'page' => "home",
             'url' => "/",
         ];
-        $res = $helper->standardData($page, $parser);
+        $res = $helper->standardData($page);
 
         $this->assertEquals($exp, $res);
     }
@@ -50,8 +49,6 @@ class MainControllerHelperTest extends TestCase
      */
     public function testReportData(): void
     {
-        $helper = new MainControllerHelper();
-        // $filename = "markdown/home.md";
         $parser = $this->createMock(MdParser::class);
 
         $filenames = [];
@@ -65,13 +62,13 @@ class MainControllerHelperTest extends TestCase
         $parser->expects($this->exactly(7))
         ->method('getParsedText')
         ->will($this->onConsecutiveCalls(...$returnVals));
-
+        $helper = new MainControllerHelper($parser);
         $exp = [
             'page' => "report",
             'url' => "/report",
             ...$data
         ];
-        $res = $helper->reportData($parser);
+        $res = $helper->reportData();
 
         $this->assertEquals($exp, $res);
     }
