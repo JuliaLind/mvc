@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelTestDebugContainer::class, false)) {
 
 return new \Container5BtpBsi\App_KernelTestDebugContainer([
     'container.build_hash' => '5BtpBsi',
-    'container.build_id' => '450cc7d8',
-    'container.build_time' => 1687539048,
+    'container.build_id' => '9cc50aa5',
+    'container.build_time' => 1687543020,
 ], __DIR__.\DIRECTORY_SEPARATOR.'Container5BtpBsi');

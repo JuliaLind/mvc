@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-23 00:13:41        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-23 17:57:44        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -491,20 +491,6 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\JsonDealManyCardsController",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Cards\\Player",
-            "\\App\\Cards\\JsonCardHandler",
-            "\\App\\Helpers\\JsonConverter",
-            "\\App\\Cards\\DeckOfCards",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
-        ]
-    },
-    {
         "name": "\\App\\Controller\\ProjectController7",
         "size": 3000,
         "relations": [
@@ -554,20 +540,6 @@
         "relations": []
     },
     {
-        "name": "\\App\\Controller\\JsonCardDealController",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Cards\\JsonCardHandler",
-            "\\App\\Cards\\PlayerCreator",
-            "\\App\\Helpers\\JsonConverter",
-            "\\App\\Cards\\DeckOfCards",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
-        ]
-    },
-    {
         "name": "\\App\\Controller\\ProjectController6",
         "size": 3000,
         "relations": [
@@ -591,20 +563,6 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\JsonDealOneCardController",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Cards\\Player",
-            "\\App\\Cards\\JsonCardHandler",
-            "\\App\\Helpers\\JsonConverter",
-            "\\App\\Cards\\DeckOfCards",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
-        ]
-    },
-    {
         "name": "\\App\\Controller\\JsonGame21Controller",
         "size": 3000,
         "relations": [
@@ -624,12 +582,13 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\JsonCardDeckController",
+        "name": "\\App\\Controller\\JsonCardController3",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Cards\\Player",
             "\\App\\Cards\\JsonCardHandler",
             "\\App\\Helpers\\JsonConverter",
             "\\App\\Cards\\DeckOfCards",
@@ -648,10 +607,14 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\CardLandingController",
+        "name": "\\App\\Controller\\LibraryController2",
         "size": 3000,
         "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\App\\Repository\\BookRepository",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\App\\Library\\LibraryHandler"
         ]
     },
     {
@@ -678,6 +641,20 @@
         "size": 3000,
         "relations": [
             "\\Datetime"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\JsonCardController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Cards\\JsonCardHandler",
+            "\\App\\Cards\\PlayerCreator",
+            "\\App\\Helpers\\JsonConverter",
+            "\\App\\Cards\\DeckOfCards",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
     },
     {
@@ -743,14 +720,16 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\LibraryUpdateBookController",
+        "name": "\\App\\Controller\\JsonCardController2",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Repository\\BookRepository",
-            "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\App\\Library\\LibraryHandler"
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Cards\\JsonCardHandler",
+            "\\App\\Helpers\\JsonConverter",
+            "\\App\\Cards\\DeckOfCards",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
     },
     {
@@ -805,6 +784,20 @@
             "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
             "\\Doctrine\\Persistence\\ManagerRegistry",
             "\\App\\Entity\\Transaction"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\JsonCardController4",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Cards\\Player",
+            "\\App\\Cards\\JsonCardHandler",
+            "\\App\\Helpers\\JsonConverter",
+            "\\App\\Cards\\DeckOfCards",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
     },
     {
@@ -1049,6 +1042,16 @@
         "relations": []
     },
     {
+        "name": "\\App\\ProjectRules\\EvaluatorTrait2",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\EvaluatorTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\ProjectRules\\StraightFlushStat",
         "size": 3000,
         "relations": []
@@ -1074,12 +1077,29 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\SameRankStatTrait",
+        "name": "\\App\\ProjectRules\\MoveEvaluator2",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\App\\ProjectGrid\\EmptyCellFinder",
+            "\\App\\ProjectRules\\RuleStats2",
+            "\\App\\ProjectGrid\\ColumnGetter"
+        ]
     },
     {
-        "name": "\\App\\ProjectRules\\SameRankSingleStatTrait",
+        "name": "\\App\\ProjectRules\\RuleStats2",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RoyalFlushStat",
+            "\\App\\ProjectRules\\StraightFlushStat",
+            "\\App\\ProjectRules\\SameOfAKindStat",
+            "\\App\\ProjectRules\\FullHouseStat",
+            "\\App\\ProjectRules\\FlushStat",
+            "\\App\\ProjectRules\\StraightStat",
+            "\\App\\ProjectRules\\TwoPairsStat"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\SameRankStatTrait",
         "size": 3000,
         "relations": []
     },
@@ -1098,6 +1118,11 @@
             "\\App\\ProjectRules\\RuleStat",
             "\\App\\ProjectRules\\RuleStatInterface"
         ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\SameRankSingleStatTrait",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\ProjectRules\\StraightFlushStatTrait",
