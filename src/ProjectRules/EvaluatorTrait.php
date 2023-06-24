@@ -42,27 +42,32 @@ trait EvaluatorTrait
          * @var RuleStatInterface $possible
          */
         $possible = $rule['possible'];
-        if (array_key_exists($index, $hands) && count($hands[$index]) < 5 && $possible->check($hands[$index], $deck, $card)) {
-            // points + 1 to prioritize started row over empty row
-            return [
-                'points' => $rulePoints + 1,
-                'rule' => $ruleName
-            ];
-        }
-        if (!array_key_exists($index, $hands)) {
-            if ($possibleWhenEmpty) {
+        if (array_key_exists($index, $hands)) {
+            if (count($hands[$index]) === 5) {
                 return [
-                    'points' => $rulePoints,
+                    'points' => -1,
+                    'rule' => ""
+                ];
+            }
+            if ($possible->check($hands[$index], $deck, $card)) {
+                return [
+                    'points' => $rulePoints + 1,
                     'rule' => $ruleName
                 ];
             }
             return [
-                'points' => 1,
+                'points' => 0,
                 'rule' => ""
             ];
         }
+        if ($possibleWhenEmpty) {
+            return [
+                'points' => $rulePoints,
+                'rule' => $ruleName
+            ];
+        }
         return [
-            'points' => 0,
+            'points' => 1,
             'rule' => ""
         ];
     }

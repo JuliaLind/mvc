@@ -16,6 +16,17 @@ class MoveEvaluator
     use EvaluatorTrait;
     use EvaluatorTrait2;
 
+    /**
+     * @var array<array<string>> $cols
+     */
+    protected array $cols;
+    /**
+     * @var array<array<string>> $rows
+     */
+    protected array $rows;
+
+    protected EmptyCellFinder2 $finder2;
+
 
     /**
      * @var array<array<string,string|RuleStatInterface|int>>
@@ -26,15 +37,17 @@ class MoveEvaluator
 
     public function __construct(
         EmptyCellFinder $finder = new EmptyCellFinder(),
+        EmptyCellFinder2 $finder2 = new EmptyCellFinder2(),
         RuleStats2 $stats= new RuleStats2(),
         ColumnGetter $colGetter = new ColumnGetter(),
     ) {
         $this->rules = $stats->getRules();
         $this->finder = $finder;
+        $this->finder2 = $finder2;
         $this->colGetter = $colGetter;
     }
 
-        /**
+    /**
      * @param array<int,array<string,int|string>> $pointsRows
      * @param array<int,array<string,int|string>> $pointsCols
      * @param array<array<string>> $rows
@@ -42,7 +55,8 @@ class MoveEvaluator
      */
     public function slot(array $pointsRows, array $pointsCols, int $bestRow, array $rows, bool $inverted=false): array
     {
-        $slot = [];
+        // $slot = $this->finder2->oneCell($this->rows, $this->cols);
+
         /**
          * @var string $rowRule
          */
@@ -53,6 +67,7 @@ class MoveEvaluator
             $row = $rows[$bestRow];
         }
         $emptySlots = $this->finder->single($row, $bestRow);
+        $slot = $emptySlots[0];
         $colPoints = 0;
 
         foreach($emptySlots as $emptySlot) {
@@ -107,6 +122,8 @@ class MoveEvaluator
          * @var array<array<string>> $cols
          */
         $cols = $this->colGetter->all($rows);
+        // $this->rows = $rows;
+        // $this->cols = $cols;
 
         $rowData = $this->points($rows, $deck, $card);
         $colData = $this->points($cols, $deck, $card);
