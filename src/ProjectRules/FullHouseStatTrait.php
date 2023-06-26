@@ -6,6 +6,9 @@ use App\ProjectCard\CardCounter;
 
 trait FullHouseStatTrait
 {
+    use FullHouseStatTrait4;
+    use FullHouseStatTrait5;
+
     /**
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksAll
@@ -15,12 +18,14 @@ trait FullHouseStatTrait
         $three = false;
         $two = false;
         foreach (array_keys($ranksHand) as $rank) {
-            if ($three === false && $ranksAll[$rank] >= 3) {
+            // if ($three === false && $ranksAll[$rank] >= 3) {
+            if ($this->checkThree($three, $ranksAll[$rank])) {
                 $three = true;
             } elseif ($ranksAll[$rank] >= 2) {
                 $two = true;
             }
-            if ($three && $two) {
+            // if ($three && $two) {
+            if ($this->checkBoth($three, $two)) {
                 return true;
             }
         }

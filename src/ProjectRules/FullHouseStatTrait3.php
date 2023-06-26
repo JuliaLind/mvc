@@ -6,15 +6,8 @@ use App\ProjectCard\CardCounter;
 
 trait FullHouseStatTrait3
 {
-    private function checkThree(bool $three, int $rank): bool
-    {
-        return $three === false && $rank >= 3;
-    }
-
-    private function checkBoth(bool $three, bool $two): bool
-    {
-        return $three && $two;
-    }
+    use FullHouseStatTrait4;
+    use FullHouseStatTrait5;
 
     /**
      * @param array<string> $deck

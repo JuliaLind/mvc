@@ -22,8 +22,9 @@ trait EvaluatorTrait6
     /**
      * @param array<array<string>> $hands
      * @param array<string> $deck
+     * @return array<string,string|int>
      */
-    abstract public function checkForRule(array $hands, int $index, array $deck, string $card): bool;
+    abstract public function checkForRule(array $hands, int $index, array $deck, string $card);
 
     /**
      * @param array<array<string>> $hands
