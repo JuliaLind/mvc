@@ -71,7 +71,6 @@ class ProjectController3 extends AbstractController
         EntityManagerInterface $entityManager
     ): Response {
         $session->set("show-suggestion", false);
-        $session->set("show-suggestion2", false);
         /**
          * @var Game $game
          */
@@ -117,28 +116,15 @@ class ProjectController3 extends AbstractController
             return $this->render('proj/place-card.html.twig', $data);
         }
 
-        if ($session->get("show-suggestion2")) {
-            /**
-             * @var array<string,mixed> $data2
-             */
-            $data2 = $data['suggestion2'];
-            /**
-             * @var string $message
-             */
-            $message = $data2['message'];
-            $this->addFlash('notice', $message);
-            return $this->render('proj/game-display-suggest2.html.twig', $data);
-        }
-
         if ($session->get("show-suggestion")) {
             /**
-             * @var array<string,mixed> $data1
+             * @var array<string,mixed> $data
              */
-            $data1 = $data['suggestion1'];
+            $data = $data['suggestion'];
             /**
              * @var string $message
              */
-            $message = $data1['message'];
+            $message = $data['message'];
             $this->addFlash('notice', $message);
             return $this->render('proj/game-display-suggest.html.twig', $data);
         }

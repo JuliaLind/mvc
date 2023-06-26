@@ -55,11 +55,10 @@ class ProjectController7 extends AbstractController
         return $this->redirectToRoute('proj-play');
     }
 
-    #[Route('/proj/purchase-suggestion/{type<\d+>}', name: "purchase-suggestion", methods: ['POST'])]
+    #[Route('/proj/purchase-suggestion', name: "purchase-suggestion", methods: ['POST'])]
     public function showSuggestion(
         SessionInterface $session,
         EntityManagerInterface $entityManager,
-        int $type
     ): Response {
         /**
          * @var int $userId
@@ -67,23 +66,8 @@ class ProjectController7 extends AbstractController
         $userId = $session->get("user");
         $register = new Register($entityManager, $userId);
         try {
-            switch($type) {
-                case 1:
-                    $register->debit(30, 'show-suggestion cheat');
-                    $session->set("show-suggestion", true);
-                    $session->set("show-suggestion-2", false);
-                    break;
-                case 2:
-                    $register->debit(60, 'show-suggestion cheat extra-smart');
-                    /**
-                     * @var Game $game
-                     */
-                    $game = $session->get("game");
-                    $game->playerSuggest(2);
-                    $session->set("game", $game);
-                    $session->set("show-suggestion-2", true);
-                    break;
-            }
+            $register->debit(30, 'show-suggestion cheat');
+            $session->set("show-suggestion", true);
             return $this->redirectToRoute('proj-play');
         } catch (NotEnoughCoinsException) {
             $this->addFlash('warning', "You do not have enough coins to use this cheat. Purchase more coins in the shop");

@@ -68,7 +68,7 @@ return [
     'purchase' => [['coins'], ['_controller' => 'App\\Controller\\ProjectController6::projPurchase'], ['coins' => '\\d+'], [['variable', '/', '\\d+', 'coins', true], ['text', '/proj/purchase']], [], [], []],
     'select-amount' => [[], ['_controller' => 'App\\Controller\\ProjectController6::selectAmount'], [], [['text', '/proj/select-amount']], [], [], []],
     'undo' => [[], ['_controller' => 'App\\Controller\\ProjectController7::undo'], [], [['text', '/proj/undo']], [], [], []],
-    'purchase-suggestion' => [['type'], ['_controller' => 'App\\Controller\\ProjectController7::showSuggestion'], ['type' => '\\d+'], [['variable', '/', '\\d+', 'type', true], ['text', '/proj/purchase-suggestion']], [], [], []],
+    'purchase-suggestion' => [[], ['_controller' => 'App\\Controller\\ProjectController7::showSuggestion'], [], [['text', '/proj/purchase-suggestion']], [], [], []],
     'deck-peek' => [[], ['_controller' => 'App\\Controller\\ProjectController7::deckPeek'], [], [['text', '/proj/deck-peek']], [], [], []],
     'purchase-peek' => [[], ['_controller' => 'App\\Controller\\ProjectController7::purchasePeekCheat'], [], [['text', '/proj/purchase-peek-cheat']], [], [], []],
     'proj-scores-single' => [[], ['_controller' => 'App\\Controller\\ProjectController8::projScoresSingle'], [], [['text', '/proj/scores-single']], [], [], []],
