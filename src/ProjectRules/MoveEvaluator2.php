@@ -18,6 +18,7 @@ class MoveEvaluator2
     use EvaluatorTrait4;
     use EvaluatorTrait5;
     use EvaluatorTrait6;
+    use EvaluatorTrait7;
 
     /**
      * @var array<array<string>> $cols

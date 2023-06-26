@@ -7,22 +7,17 @@ use App\ProjectCard\CardCounter;
 trait FullHouseStatTrait
 {
     /**
-     * @param array<string> $deck
+     * @param array<int,int> $ranksHand
+     * @param array<int,int> $ranksAll
      */
-    public function check3(array $deck): bool
+    private function subCheck($ranksHand, $ranksAll): bool
     {
-        $uniqueCountDeck = $this->cardCounter->count($deck);
-        /**
-         * @var array<int,int> $ranksDeck
-         */
-        $ranksDeck = $uniqueCountDeck['ranks'];
-
         $three = false;
         $two = false;
-        foreach ($ranksDeck as $rank) {
-            if ($three === false && $rank >= 3) {
+        foreach (array_keys($ranksHand) as $rank) {
+            if ($three === false && $ranksAll[$rank] >= 3) {
                 $three = true;
-            } elseif ($rank >= 2) {
+            } elseif ($ranksAll[$rank] >= 2) {
                 $two = true;
             }
             if ($three && $two) {
@@ -30,5 +25,22 @@ trait FullHouseStatTrait
             }
         }
         return false;
+    }
+
+    /**
+     * @param array<int,int> $ranksHand
+     */
+    private function subCheck2($ranksHand): bool
+    {
+        return count($ranksHand) <= 2 && max($ranksHand) <= 3;
+    }
+
+    /**
+     * @param array<int,int> $ranksHand
+     * @param array<int,int> $ranksDeck
+     */
+    private function subCheck3($ranksHand, $ranksDeck): bool
+    {
+        return count($ranksHand) === 1 && ((max($ranksHand) === 2 && max($ranksDeck) >= 3) || (max($ranksHand) === 3 && max($ranksDeck) >= 2));
     }
 }
