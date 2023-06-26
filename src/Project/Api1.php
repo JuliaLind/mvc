@@ -44,7 +44,7 @@ class Api1
             $this->reset();
         }
         $card = $this->deck->deal();
-        $deck = array_slice($this->deck->getCards(), 26);
+        $deck = $this->deck->possibleCards();
         $suggestion = $evaluator->suggestion($this->player->getCards(), $card, $deck);
         $slot = $suggestion['slot'];
         /**
@@ -64,6 +64,7 @@ class Api1
             'row' => $slot[0],
             'col' => $slot[1]
         ];
+        $this->deck->deal();
         return $data;
     }
 }

@@ -10,27 +10,21 @@ use App\ProjectGrid\ColumnGetter;
 trait TwoPairsTrait
 {
     /**
-     * @var array<array<string,string|RuleStatInterface|int>>
+     * @param array<string> $cardArray
      */
-    private array $rules;
-    private EmptyCellFinder $finder;
-    private ColumnGetter $colGetter;
-
-    /**
-     * @param array<string> $deck
-     */
-    public function checkInDeck(array $deck, int $rank): bool
+    public function check3(array $cardArray): bool
     {
-        $uniqueCountDeck = $this->cardCounter->count($deck);
+        $countUniqueCards = $this->cardCounter->count($cardArray);
         /**
-         * @var array<int,int> $ranksDeck
+         * @var array<int,int> $rankCount
          */
-        $ranksDeck = $uniqueCountDeck['ranks'];
-        if (!array_key_exists($rank, $ranksDeck)) {
-            return false;
-        }
-        foreach($ranksDeck as $rank2 => $count) {
-            if ($rank2 != $rank && $count >= 2) {
+        $rankCount = $countUniqueCards['ranks'];
+        $pairs = 0;
+        foreach ($rankCount as $rank) {
+            if ($rank >= 2) {
+                $pairs += 1;
+            }
+            if ($pairs === 2) {
                 return true;
             }
         }

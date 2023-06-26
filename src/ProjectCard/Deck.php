@@ -62,6 +62,8 @@ class Deck
                 array_push($cards, $deck[$index]);
             }
         }
+        // return $cards;
+        (usort($cards, fn ($card1, $card2) => (intval(substr($card1, 0, -1)) - intval(substr($card2, 0, -1)))));
         return $cards;
     }
 }

@@ -52,11 +52,9 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
     }
 
 
-        /**
+    /**
      * @param array<string> $hand
      * @param array<string> $deck
-     * @return bool true if rule is still possible given passed value
-     * otherwise false
      */
     public function check2(array $hand, array $deck): bool
     {
@@ -66,6 +64,28 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
         $uniqueCountHand = $this->cardCounter->count($hand);
 
         $allCards = array_merge($hand, $deck);
+
         return $this->setSuit($uniqueCountHand) && $this->checkRank($uniqueCountHand) && $this->checkForCards($allCards, $this->minRank);
+    }
+
+
+    /**
+     * @param array<string> $deck
+     */
+    public function check3(array $deck): bool
+    {
+        /**
+         * @var array<string,array<int>> $cardsBySuit
+         */
+        $cardsBySuit = $this->cardCounter->groupBySuit($deck);
+        foreach($cardsBySuit as $suit => $rankArr) {
+            $this->suit = $suit;
+            if (count($rankArr) >= 5) {
+                if ($this->checkForCards($deck, $this->minRank) === true) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

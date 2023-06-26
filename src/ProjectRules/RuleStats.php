@@ -10,7 +10,7 @@ use App\ProjectCard\EmptyCellFinder;
 class RuleStats
 {
     /**
-     * @var array<array<string,string|RuleStatInterface>>
+     * @var array<array<string,string|RuleStatInterface|int>>
      */
     protected $rules = [];
 
@@ -19,45 +19,54 @@ class RuleStats
         $this->rules = [
             [
                 'name' => 'Royal Flush',
+                'points' => 100,
                 'possible' => new RoyalFlushStat()
             ],
             [
                 'name' => 'Straight Flush',
+                'points' => 75,
                 'possible' => new StraightFlushStat()
             ],
             [
                 'name' => 'Four Of A Kind',
+                'points' => 50,
                 'possible' => new SameOfAKindStat(4)
             ],
             [
                 'name' => 'Full House',
+                'points' => 25,
                 'possible' => new FullHouseStat()
             ],
             [
                 'name' => 'Flush',
+                'points' => 20,
                 'possible' => new FlushStat()
             ],
             [
                 'name' => 'Straight',
+                'points' => 15,
                 'possible' => new StraightStat()
             ],
             [
                 'name' => 'Three Of A Kind',
+                'points' => 10,
                 'possible' => new SameOfAKindStat(3)
             ],
             [
                 'name' => 'Two Pairs',
+                'points' => 5,
                 'possible' => new TwoPairsStat()
             ],
             [
                 'name' => 'One Pair',
+                'points' => 2,
                 'possible' => new SameOfAKindStat(2)
             ],
         ];
     }
 
     /**
-     * @return array<array<string,string|RuleStatInterface>>
+     * @return array<array<string,RuleStatInterface|int|string>>
      */
     public function getRules(): array
     {
@@ -65,30 +74,10 @@ class RuleStats
     }
 
     /**
-     * @param array<array<string,string|RuleStatInterface>> $rules
+     * @param array<array<string,RuleStatInterface|int|string>> $rules
      */
     public function setRules($rules): void
     {
         $this->rules = $rules;
-    }
-
-    /**
-     * @param int $ruleNr
-     * @param array<array<string>> $rows
-     * @param array<string> $deck
-     */
-    public function checkSingle($rows, int $rowNr, $deck, string $card, $ruleNr): bool
-    {
-        if (array_key_exists($rowNr, $rows) && count($rows[$rowNr]) < 5) {
-            $hand = $rows[$rowNr];
-            $rules = $this->rules;
-            $rule = $rules[$ruleNr];
-            /**
-             * @var RuleStatInterface $possible
-             */
-            $possible = $rule['possible'];
-            return ($possible->check($hand, $deck, $card));
-        }
-        return false;
     }
 }

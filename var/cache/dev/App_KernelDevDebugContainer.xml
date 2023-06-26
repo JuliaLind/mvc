@@ -722,7 +722,13 @@
     <service id="App\ProjectRules\MoveEvaluator" class="App\ProjectRules\MoveEvaluator" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectGrid\EmptyCellFinder"/>
       <argument type="service" id="App\ProjectGrid\EmptyCellFinder2"/>
-      <argument type="service" id="App\ProjectRules\RuleStats2"/>
+      <argument type="service" id="App\ProjectRules\RuleStats"/>
+      <argument type="service" id="App\ProjectGrid\ColumnGetter"/>
+    </service>
+    <service id="App\ProjectRules\MoveEvaluator2" class="App\ProjectRules\MoveEvaluator2" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectGrid\EmptyCellFinder"/>
+      <argument type="service" id="App\ProjectGrid\EmptyCellFinder2"/>
+      <argument type="service" id="App\ProjectRules\RuleStats"/>
       <argument type="service" id="App\ProjectGrid\ColumnGetter"/>
     </service>
     <service id="App\ProjectRules\RoyalFlush" class="App\ProjectRules\RoyalFlush" autowire="true" autoconfigure="true"/>
@@ -735,7 +741,6 @@
       <argument type="service" id="App\ProjectCard\CardSearcher"/>
     </service>
     <service id="App\ProjectRules\RuleStats" class="App\ProjectRules\RuleStats" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectRules\RuleStats2" class="App\ProjectRules\RuleStats2" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\Rules" class="App\ProjectRules\Rules" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\SameOfAKind" class="App\ProjectRules\SameOfAKind" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\SameOfAKindStat" class="App\ProjectRules\SameOfAKindStat" autowire="true" autoconfigure="true"/>
@@ -751,7 +756,10 @@
     <service id="App\ProjectRules\TwoPairs" class="App\ProjectRules\TwoPairs" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectCard\CardCounter"/>
     </service>
-    <service id="App\ProjectRules\TwoPairsStat" class="App\ProjectRules\TwoPairsStat" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectRules\TwoPairsStat" class="App\ProjectRules\TwoPairsStat" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\ProjectCard\CardCounter"/>
+      <argument type="service" id="App\ProjectCard\CardSearcher"/>
+    </service>
     <service id="App\ProjectRules\WinEvaluator" class="App\ProjectRules\WinEvaluator" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectRules\Rules"/>
       <argument type="service" id="App\ProjectGrid\ColumnGetter"/>

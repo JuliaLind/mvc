@@ -28,7 +28,7 @@ trait EvaluatorTrait
         array $deck,
         string $card,
         array $rule,
-        bool $possibleWhenEmpty
+        // bool $possibleWhenEmpty
     ): array {
         /**
          * @var string $ruleName
@@ -50,8 +50,13 @@ trait EvaluatorTrait
                 ];
             }
             if ($possible->check($hands[$index], $deck, $card)) {
+                $points = $rulePoints + 1;
+                if ($points >= 10) {
+                    // some additional points to prioritized the already started rows/cols over empty
+                    $points += count($hands[$index]);
+                }
                 return [
-                    'points' => $rulePoints + 1,
+                    'points' => $points,
                     'rule' => $ruleName
                 ];
             }
@@ -60,13 +65,15 @@ trait EvaluatorTrait
                 'rule' => ""
             ];
         }
-        if ($possibleWhenEmpty) {
+
+        if ($possible->check([], $deck, $card)) {
             return [
                 'points' => $rulePoints,
                 'rule' => $ruleName
             ];
         }
         return [
+            // extra point to prioritize empty row/column
             'points' => 1,
             'rule' => ""
         ];
@@ -87,15 +94,9 @@ trait EvaluatorTrait
         $ruleCount = count($rules);
         for ($i = 0; $i < $ruleCount; $i++) {
             $rule = $rules[$i];
-            /**
-             * @var RuleStatInterface $possible
-             */
-            $possible = $rule['possible'];
-            $possibleWhenEmpty = $possible->check([], $deck, $card);
-
-            $data = $this->checkSingleRule($hands, $index, $deck, $card, $rule, $possibleWhenEmpty);
+            $data = $this->checkSingleRule($hands, $index, $deck, $card, $rule);
             $handPoints = $data['points'];
-            if ($handPoints > 0) {
+            if ($handPoints > 1) {
                 break;
             }
         }

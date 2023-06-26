@@ -89,11 +89,11 @@ class Game
          */
         $colRule = $suggestion['col-rule'];
 
-        if ($rowRule != "" && $colRule != "") {
+        if ($rowRule != "None" && $colRule != "None") {
             $message = "Place card in row {$row} column {$col} for possible {$rowRule} horizontally and/or {$colRule} vertically.";
-        } elseif ($rowRule != "") {
+        } elseif ($rowRule != "None") {
             $message = "Place card in row {$row} column {$col} for possible {$rowRule} horizontally.";
-        } elseif ($colRule != "") {
+        } elseif ($colRule != "None") {
             $message = "Place card in row {$row} column {$col} for possible {$colRule} vertically.";
         }
 
@@ -224,7 +224,8 @@ class Game
             'finished' => $this->finished,
             'placedCards' => $this->player->getCardCount(),
             'deckCardCount' => count($this->deck->getCards()),
-            'playerPossibleCards' => array_reverse($this->deck->possibleCards()),
+            'playerPossibleCards' => $this->deck->possibleCards(),
+            // 'playerPossibleCards' => array_reverse($this->deck->possibleCards()),
             'lastRound' => $this->lastRound
         ];
     }

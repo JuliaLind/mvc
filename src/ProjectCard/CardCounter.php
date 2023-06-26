@@ -8,12 +8,14 @@ namespace App\ProjectCard;
  */
 class CardCounter
 {
+    use CardCounterTrait;
+
     /**
      * @SuppressWarnings(PHPMD.ElseExpression)
      * @param array<mixed> $arr
      * @return array<array<int|string,int>>
      */
-    private function newCount(int|string $value, array $arr): array
+    private function subCount(int|string $value, array $arr): array
     {
         if (!array_key_exists($value, $arr)) {
             $arr[$value] = 1;
@@ -22,7 +24,6 @@ class CardCounter
         }
         return $arr;
     }
-
 
     /**
      * @param array<string> $cards
@@ -33,8 +34,8 @@ class CardCounter
         $ranks = [];
         $suits = [];
         foreach($cards as $card) {
-            $ranks = $this->newCount(intval(substr($card, 0, -1)), $ranks);
-            $suits = $this->newCount($card[-1], $suits);
+            $ranks = $this->subCount(intval(substr($card, 0, -1)), $ranks);
+            $suits = $this->subCount($card[-1], $suits);
         }
         return [
             'ranks' => $ranks,

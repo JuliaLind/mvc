@@ -44,4 +44,27 @@ class StraightFlushStat extends RuleStat implements RuleStatInterface
         $allCards = array_merge($hand, $deck);
         return $this->setSuit($uniqueCountHand) && $this->setRankLimits($uniqueCountHand) && $this->checkAllPossible($allCards);
     }
+
+
+    /**
+     * @param array<string> $deck
+     */
+    public function check3(array $deck): bool
+    {
+        /**
+         * @var array<string,array<int>> $cardsBySuit
+         */
+        $cardsBySuit = $this->cardCounter->groupBySuit($deck);
+        foreach($cardsBySuit as $suit => $rankArr) {
+            $this->suit = $suit;
+            if (count($rankArr) >= 5) {
+                $this->minRank = min($rankArr);
+                $this->maxRank = max($rankArr);
+                if ($this->checkAllPossible($deck) === true) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

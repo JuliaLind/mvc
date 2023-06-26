@@ -35,4 +35,13 @@ class ThreeOfAKindStatTest extends TestCase
         $res = $rule->check($hand, $deck, $card);
         $this->assertFalse($res);
     }
+
+    public function testCheck3Ok(): void
+    {
+        $deck = ["14C", "8C", "8D", "8H", "7C"];
+
+        $rule = new SameOfAKindStat(3);
+        $res = $rule->check3($deck);
+        $this->assertTrue($res);
+    }
 }

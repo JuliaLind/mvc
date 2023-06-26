@@ -53,4 +53,15 @@ class RoyalFlushStatTest extends TestCase
         $res = $rule->check($hand, $deck, $card);
         $this->assertTrue($res);
     }
+
+    public function testCheckOk3(): void
+    {
+        $hand = [];
+        $card = "14D";
+        $deck = ["11D","10D", "12D", "13D"];
+
+        $rule = new RoyalFlushStat();
+        $res = $rule->check($hand, $deck, $card);
+        $this->assertTrue($res);
+    }
 }

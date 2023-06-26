@@ -14,6 +14,7 @@ trait SameSuitTrait
 {
     protected string $suit;
 
+
     /**
      * @param array<string,array<int,int>> $uniqueCountHand
      */

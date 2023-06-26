@@ -58,15 +58,15 @@ class FlushStat extends Rule implements RuleStatInterface
         return $this->setSuit($uniqueCountHand) && $this->checkInDeck($deck, $hand);
     }
 
-    // /**
-    //  * @param array<string> $deck
-    //  */
-    // public function check3(array $deck): bool
-    // {
-    //     /**
-    //      * @var array<string,array<int,int>> $uniqueCountDeck
-    //      */
-    //     $uniqueCountDeck = $this->cardCounter->count($deck);
-    //     return max($uniqueCountDeck['suits']) >= 5;
-    // }
+    /**
+     * @param array<string> $deck
+     */
+    public function check3(array $deck): bool
+    {
+        /**
+         * @var array<string,array<int,int>> $uniqueCountDeck
+         */
+        $uniqueCountDeck = $this->cardCounter->count($deck);
+        return $deck != [] && max($uniqueCountDeck['suits']) >= 5;
+    }
 }

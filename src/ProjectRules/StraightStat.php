@@ -63,4 +63,22 @@ class StraightStat extends RuleStat implements RuleStatInterface
         $allCards = array_merge($hand, $deck);
         return $this->setRankLimits($uniqueCountHand) && $this->checkAllPossible($allCards);
     }
+
+    /**
+     * @param array<string> $deck
+     */
+    public function check3(array $deck): bool
+    {
+        if ($deck === []) {
+            return false;
+        }
+        /**
+         * @var array<string,array<int,int>> $uniqueCountDeck
+         */
+        $uniqueCountDeck = $this->cardCounter->count($deck);
+        $ranksDeck = $uniqueCountDeck['ranks'];
+        $this->minRank = min(array_keys($ranksDeck));
+        $this->maxRank = max(array_keys($ranksDeck));
+        return $this->checkAllPossible($deck);
+    }
 }

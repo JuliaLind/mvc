@@ -7,41 +7,60 @@ use App\ProjectGrid\EmptyCellFinder;
 use App\ProjectGrid\EmptyCellFinder2;
 use App\ProjectGrid\ColumnGetter;
 
+/**
+ * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+ */
 trait EvaluatorTrait2
 {
     /**
-     * @var array<array<string,string|RuleStatInterface|int>>
+     * @param array<int,array<string,int|string>> $pointsRows
+     * @param array<int,array<string,int|string>> $pointsCols
+     * @param array<array<string>> $rows
+     * @return array<string,array<int,int>|int|string>
      */
-    private array $rules;
-    private EmptyCellFinder $finder;
-    private ColumnGetter $colGetter;
-
-    /**
-     * @param array<array<string>> $hands
-     * @param array<string> $deck
-     * @return  array<string,array<int,array<string,int|string>>|int|string>
-     */
-    public function points(array $hands, array $deck, string $card): array
+    public function slot(array $pointsRows, array $pointsCols, int $bestRow, array $rows, bool $inverted=false): array
     {
-        $pointsHands = [];
-        $bestHand = 0;
-        $maxPoints = 0;
+        // $slot = $this->finder2->oneCell($this->rows, $this->cols);
 
-        for ($j = 0; $j <= 4; $j++) {
-            $data = $this->checkForRule($hands, $j, $deck, $card);
-            $handPoints = $data['points'];
-            $handRule = $data['rule'];
-            if ($handPoints >= $maxPoints) {
-                $maxPoints = $handPoints;
-                $bestHand = $j;
+        /**
+         * @var string $rowRule
+         */
+        $rowRule = $pointsRows[$bestRow]['rule'];
+        $colRule = "";
+        $row = [];
+        if (array_key_exists($bestRow, $rows)) {
+            $row = $rows[$bestRow];
+        }
+        $emptySlots = $this->finder->single($row, $bestRow);
+        $slot = $emptySlots[0];
+        $colPoints = 0;
+
+        foreach($emptySlots as $emptySlot) {
+            $col = $emptySlot[1];
+            /**
+             * @var int $pointsCol
+             */
+            $pointsCol = $pointsCols[$col]['points'];
+            if ($pointsCol >= $colPoints) {
+                $colPoints = $pointsCol;
+                $slot = $emptySlot;
+                /**
+                 * @var string $colRule
+                 */
+                $colRule = $pointsCols[$col]['rule'];
             }
-            $pointsHands[$j]['rule'] = $handRule;
-            $pointsHands[$j]['points'] = $handPoints;
+        }
+        if ($inverted === true) {
+            return [
+                'col-rule' => $rowRule,
+                'row-rule' => $colRule,
+                'slot' => [$slot[1], $slot[0]]
+            ];
         }
         return [
-            'max' => $maxPoints,
-            'bestHand' => $bestHand,
-            'points' => $pointsHands
+            'col-rule' => $colRule,
+            'row-rule' => $rowRule,
+            'slot' => $slot
         ];
     }
 }

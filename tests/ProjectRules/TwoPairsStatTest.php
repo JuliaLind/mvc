@@ -35,4 +35,17 @@ class TwoPairsStatTest extends TestCase
         $res = $rule->check($hand, $deck, $card);
         $this->assertFalse($res);
     }
+
+    public function testCheck2NotOk(): void
+    {
+        $rule = new TwoPairsStat();
+        $hand = ["11C", "13S", "9S", "9C"];
+        $deck = [
+            "2S", "12H", "2C", "4C",
+            "5S", "10D", "14D", "6C"
+        ];
+
+        $res = $rule->check2($hand, $deck);
+        $this->assertFalse($res);
+    }
 }
