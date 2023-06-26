@@ -8,6 +8,8 @@ class FullHouseStat extends Rule implements RuleStatInterface
 {
     use FullHouseStatTrait2;
     use FullHouseStatTrait3;
+    use FullHouseStatTrait4;
+    use FullHouseStatTrait5;
 
     /**
      * @param array<string> $hand
