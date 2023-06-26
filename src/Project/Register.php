@@ -37,7 +37,7 @@ class Register
         $transaction->setDescr($text);
         $transaction->setAmount($coins);
 
-        $transaction->setUserId($this->user);
+        $transaction->setUser($this->user);
         $this->manager->persist($transaction);
         $this->manager->flush();
     }
@@ -49,7 +49,7 @@ class Register
          */
         $repo = $this->manager->getRepository(Transaction::class);
         $balance = 0;
-        $transactions = $repo->findBy(['userid' => $this->user]);
+        $transactions = $repo->findBy(['user' => $this->user]);
         foreach($transactions as $transaction) {
             $balance += $transaction->getAmount();
         }

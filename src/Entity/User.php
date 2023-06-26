@@ -33,13 +33,13 @@ class User
     /**
      * @var Collection<int,Transaction> $transactions
      */
-    #[ORM\OneToMany(mappedBy: 'userid', targetEntity: Transaction::class)]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Transaction::class)]
     private Collection $transactions;
 
     /**
      * @var Collection<int,Score> $scores
      */
-    #[ORM\OneToMany(mappedBy: 'userid', targetEntity: Score::class)]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Score::class)]
     private Collection $scores;
 
     public function __construct()
@@ -114,7 +114,7 @@ class User
     {
         if (!$this->transactions->contains($transaction)) {
             $this->transactions->add($transaction);
-            $transaction->setUserid($this);
+            $transaction->setUser($this);
         }
 
         return $this;
@@ -124,8 +124,8 @@ class User
     {
         if ($this->transactions->removeElement($transaction)) {
             // set the owning side to null (unless already changed)
-            if ($transaction->getUserid() === $this) {
-                $transaction->setUserid(null);
+            if ($transaction->getUser() === $this) {
+                $transaction->setUser(null);
             }
         }
 
@@ -144,7 +144,7 @@ class User
     {
         if (!$this->scores->contains($score)) {
             $this->scores->add($score);
-            $score->setUserid($this);
+            $score->setUser($this);
         }
 
         return $this;
@@ -154,8 +154,8 @@ class User
     {
         if ($this->scores->removeElement($score)) {
             // set the owning side to null (unless already changed)
-            if ($score->getUserid() === $this) {
-                $score->setUserid(null);
+            if ($score->getUser() === $this) {
+                $score->setUser(null);
             }
         }
 

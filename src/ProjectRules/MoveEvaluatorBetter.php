@@ -10,7 +10,7 @@ use App\ProjectGrid\ColumnGetter;
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class MoveEvaluator2
+class MoveEvaluatorBetter
 {
     use EvaluatorTrait;
     use EvaluatorTrait2;
@@ -51,6 +51,48 @@ class MoveEvaluator2
         $this->colGetter = $colGetter;
     }
 
+    /**
+     * @param array<array<string>> $hands
+     * @param array<int,array<string,int|string>> $pointsWithCard
+     * @param array<int,array<string,int|string>> $pointsWithoutCard
+     * @return array<string,mixed>
+     */
+    private function bestHand(array $hands, array $pointsWithCard, array $pointsWithoutCard): array
+    {
+        $pointsHands = [];
+        $currentMax = -100;
+        $bestHand = 0;
+        for ($i=0; $i <= 4; $i++) {
+            /**
+             * @var int $pointsHwithCard
+             */
+            $pointsHwithCard = $pointsWithCard[$i]['points'];
+            /**
+             * @var int $pointsHwithoutCard
+             */
+            $pointsHwithoutCard = $pointsWithoutCard[$i]['points'];
+
+
+            $diff = $pointsHwithCard - $pointsHwithoutCard;
+            $ruleWithCard = $pointsWithCard[$i]['rule'];
+            $ruleWithoutCard = $pointsWithoutCard[$i]['rule'];
+            $pointsHands[$i] = [
+                'rule' => $ruleWithCard,
+                'rule-without-card' => $ruleWithoutCard,
+                'points' => $diff
+            ];
+            if ($diff >= $currentMax && array_key_exists($i, $hands) && count($hands[$i]) < 5) {
+                $currentMax = $diff;
+                $bestHand = $i;
+            }
+        }
+        return [
+            'points-hands' => $pointsHands,
+            'max-points' => $currentMax,
+            'best-hand' => $bestHand
+        ];
+    }
+
 
     /**
      * @param array<array<string>> $rows
@@ -88,61 +130,34 @@ class MoveEvaluator2
          * @var array<int,array<string,int|string>> $pointsCwithoutCard
          */
         $pointsCwithoutCard = $colData2['points'];
+        $dataRows = $this->bestHand($rows, $pointsRowsWithCard, $pointsRwithoutCard);
+        $dataCols = $this->bestHand($cols, $pointsColsWithCard, $pointsCwithoutCard);
+        /**
+         * @var array<int,array<string,int|string>> $pointsRows
+         */
+        $pointsRows = $dataRows['points-hands'];
+        /**
+         * @var int $maxRowPoints
+         */
+        $maxRowPoints = $dataRows['max-points'];
+        /**
+         * @var int $bestRow
+         */
+        $bestRow = $dataRows['best-hand'];
+        /**
+         * @var array<int,array<string,int|string>> $pointsCols
+         */
+        $pointsCols = $dataCols['points-hands'];
+        /**
+         * @var int $maxColPoints
+         */
+        $maxColPoints = $dataCols['max-points'];
+        /**
+         * @var int $bestCol
+         */
+        $bestCol = $dataCols['best-hand'];
 
-        $pointsRows = [];
-        $pointsCols = [];
-        // because most diff (points with card - points without card) equals to
-        // 0 - 100 (lowest score with card and highest wihtout card)
-        $maxRowPoints = -100;
-        $maxColPoints = -100;
-        $bestRow = 0;
-        $bestCol = 0;
-
-        for ($i=0; $i <= 4; $i++) {
-            /**
-             * @var int $pointsRowWithCard
-             */
-            $pointsRowWithCard = $pointsRowsWithCard[$i]['points'];
-            /**
-             * @var int $pointsRowWithoutCard
-             */
-            $pointsRowWithoutCard = $pointsRwithoutCard[$i]['points'];
-            /**
-             * @var int $pointsColWithCard
-             */
-            $pointsColWithCard = $pointsColsWithCard[$i]['points'];
-            /**
-             * @var int $pointsColWithoutCard
-             */
-            $pointsColWithoutCard = $pointsCwithoutCard[$i]['points'];
-
-            $rowDiff = $pointsRowWithCard - $pointsRowWithoutCard;
-            $colDiff = $pointsColWithCard - $pointsColWithoutCard;
-            $rowRuleWithCard = $pointsRowsWithCard[$i]['rule'];
-            $rowRuleWithoutCard = $pointsRwithoutCard[$i]['rule'];
-            $colRuleWithCard = $pointsColsWithCard[$i]['rule'];
-            $colRuleWithoutCard = $pointsCwithoutCard[$i]['rule'];
-            $pointsRows[$i] = [
-                'row-rule-with-card' => $rowRuleWithCard,
-                'row-rule-without-card' => $rowRuleWithoutCard,
-                'points' => $rowDiff
-            ];
-            if ($rowDiff >= $maxRowPoints) {
-                $maxRowPoints = $rowDiff;
-                $bestRow = $i;
-            }
-            $pointsCols[$i] = [
-                'col-rule-with-card' => $colRuleWithCard,
-                'col-rule-without-card' => $colRuleWithoutCard,
-                'points' => $colDiff
-            ];
-            if ($colDiff >= $maxColPoints) {
-                $maxColPoints = $colDiff;
-                $bestCol = $i;
-            }
-        }
-
-        $handRules = $this->extractRuleNames($pointsRows, $pointsCols, $pointsRwithoutCard, $pointsCwithoutCard);
+        $handRules = $this->extractRuleNames($pointsRowsWithCard, $pointsColsWithCard, $pointsRwithoutCard, $pointsCwithoutCard);
 
         if ($maxRowPoints >= $maxColPoints) {
             $data = $this->slot($pointsRows, $pointsCols, $bestRow, $rows);

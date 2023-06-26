@@ -40,7 +40,7 @@ class ProjectApiController3 extends AbstractController
             /**
              * @var User $user
              */
-            $user = $transaction->getUserid();
+            $user = $transaction->getUser();
             $data[] = [
                 'id' => $transaction->getId(),
                 'user' => $user->getAcronym(),

@@ -1,0 +1,54 @@
+{% extends 'base-project.html.twig' %}
+
+{% block title %}Casino{% endblock %}
+
+{% block body %}
+
+
+<div class="outer-grid-container">
+
+{{ include('proj/incl/house-grid.html.twig') }}
+
+<div class="center-grid">
+<div class="slot grid-row-0 grid-col-0"><img src="{{ asset(card['img']) }}" alt="{{ card['alt'] }}"></div>
+{{ include('flash.html.twig') }}
+</div>
+
+<h2 class="grid-col-2 grid-row-0">You</h2>
+<form id="grid-form" method="post" action="">
+<div class="game-grid player-grid">
+    {% for k in 0..4 %}
+        {% for l in 0..4 %}
+            {% if player[k][l]['alt'] != "" %}
+                <div class="slot grid-row-{{k}} grid-col-{{l}}"><img src="{{ asset(player[k][l]['img']) }}" alt="{{ player[k][l]['alt'] }}"></div>
+            {% elseif slot[0] == k and slot[1] == l %}
+                <button class="slot clickable player-slot suggested grid-row{{k}} grid-col-{{l}}" type="submit" onClick="this.form.action='{{ path('proj-round', {row: k, col: l}) }}';">SUGGESTED</button>
+            {% else %}
+                <button class="slot clickable player-slot grid-row{{k}} grid-col-{{l}}" type="submit" onClick="this.form.action='{{ path('proj-round', {row: k, col: l}) }}';"></button>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</div>
+</form>
+
+{# 
+// use when player clicks on suggestion
+<div class="game-grid player-grid">
+    {% for k in 0..4 %}
+        {% for l in 0..4 %}
+            {% if player[k][l] != "" %}
+                <div class="slot grid-row-{{k}} grid-col-{{l}}"><img src="{{ asset(player[k][l]['img']) }}" alt="{{ house[k][l]['alt'] }}"></div>
+            {% elseif message != "" and slot[0] == k and slot[1] == l %}
+                <button class="slot empty-slot player-slot suggested grid-row{{k}} grid-col-{{l}}" type="submit" onClick="this.form.action='{{ path('proj-round', {row: k, col: l}) }}';">SUGGESTED</button>
+            {% else %}
+                <button class="slot empty-slot player-slot grid-row{{k}} grid-col-{{l}}" type="submit" onClick="this.form.action='{{ path('proj-round', {row: k, col: l}) }}';"></button>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</div> #}
+
+</div>
+
+
+
+{% endblock %}

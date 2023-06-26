@@ -7,6 +7,7 @@ use App\ProjectGrid\Grid;
 use App\ProjectGrid\GridGraphic;
 use App\ProjectRules\WinEvaluator;
 use App\ProjectRules\MoveEvaluator;
+use App\ProjectRules\MoveEvaluatorBetter;
 use Datetime;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -24,16 +25,23 @@ class Game
     private string $card;
     private bool $finished = false;
     private MoveEvaluator $moveEvaluator;
+    private MoveEvaluatorBetter $moveEvaluator2;
     private WinEvaluator $winEvaluator;
     /**
      * @var array<string,array<string,array<array<string,int|string>>|int>|string> $results
      */
     private array $results = [];
     private string $message = "";
+
     /**
-     * @var array<int> $suggestedSlot
+     * @var array<string,array<int,int|string>|int|string> $suggestion1
      */
-    private array $suggestedSlot;
+    private array $suggestion1 = ["message" => ""];
+    /**
+     * @var array<string,array<int,int|string>|int|string> $suggestion2
+     */
+    private array $suggestion2 = [];
+
 
     /**
      * @var array<int> $fromSlot
@@ -56,11 +64,13 @@ class Game
         array $grids,
         Deck $deck = new Deck(),
         MoveEvaluator $moveEvaluator=new MoveEvaluator(),
+        MoveEvaluatorBetter $moveEvaluator2=new MoveEvaluatorBetter(),
         WinEvaluator $winEvaluator=new WinEvaluator()
     ) {
         $this->house = $grids['house'];
         $this->player = $grids['player'];
         $this->moveEvaluator = $moveEvaluator;
+        $this->moveEvaluator2 = $moveEvaluator2;
         $this->winEvaluator = $winEvaluator;
         $deck->shuffle();
         $this->deck = $deck;
@@ -68,16 +78,16 @@ class Game
         $this->playerSuggest();
     }
 
-
-    public function playerSuggest(): void
+    /**
+     * @param array<string,array<int,int|string>|int|string> $suggestion
+     */
+    private function createMessage(array $suggestion): string
     {
-        $suggestion = $this->moveEvaluator->suggestion($this->player->getCards(), $this->card, $this->deck->possibleCards());
-        $message = "";
         /**
          * @var array<int> $slot
          */
         $slot = $suggestion["slot"];
-        $this->suggestedSlot = $slot;
+        // $this->suggestedSlot = $slot;
         $row = $slot[0];
         $col = $slot[1];
         /**
@@ -88,16 +98,32 @@ class Game
          * @var string $colRule
          */
         $colRule = $suggestion['col-rule'];
-
-        if ($rowRule != "None" && $colRule != "None") {
+        $message = "";
+        if ($rowRule != "" && $colRule != "") {
             $message = "Place card in row {$row} column {$col} for possible {$rowRule} horizontally and/or {$colRule} vertically.";
-        } elseif ($rowRule != "None") {
+        } elseif ($rowRule != "") {
             $message = "Place card in row {$row} column {$col} for possible {$rowRule} horizontally.";
-        } elseif ($colRule != "None") {
+        } elseif ($colRule != "") {
             $message = "Place card in row {$row} column {$col} for possible {$colRule} vertically.";
         }
+        return $message;
+    }
 
-        $this->message = $message;
+
+    public function playerSuggest(int $type=1): void
+    {
+        switch ($type) {
+            case 2:
+                $suggestion2 = $this->moveEvaluator2->suggestion($this->player->getCards(), $this->card, $this->deck->possibleCards());
+                $this->suggestion2 = $suggestion2;
+                $this->suggestion2['message'] = $this->createMessage($suggestion2);
+                break;
+            default:
+                $suggestion1 = $this->moveEvaluator->suggestion($this->player->getCards(), $this->card, $this->deck->possibleCards());
+                $this->suggestion1 = $suggestion1;
+                $this->suggestion1['message'] = $this->createMessage($suggestion1);
+                break;
+        }
     }
 
     public function setFromSlot(int $row, int $col): void
@@ -112,6 +138,7 @@ class Game
         $this->player->addCard($row, $col, $card);
         $this->fromSlot = [];
         $this->playerSuggest();
+        $this->suggestion2 = [];
     }
 
     public function undoLastRound(): void
@@ -135,6 +162,7 @@ class Game
         if (!($this->checkIfFinished($this->house->getCardCount()))) {
             $this->card = $this->deck->deal();
             $this->playerSuggest();
+            $this->suggestion2 = [];
             return false;
         }
         return true;
@@ -143,7 +171,7 @@ class Game
     private function housePlaceCard(): void
     {
         $card = $this->deck->deal();
-        $suggestion = $this->moveEvaluator->suggestion($this->house->getCards(), $card, $this->deck->possibleCards());
+        $suggestion = $this->moveEvaluator2->suggestion($this->house->getCards(), $card, $this->deck->possibleCards());
         /**
          * @var array<int> $slot
          */
@@ -162,6 +190,8 @@ class Game
 
     public function evaluate(EntityManagerInterface $manager, int $userId): void
     {
+        $this->suggestion1 = [];
+        $this->suggestion2 = ['message' => ""];
         $playerData = $this->winEvaluator->results($this->player->getCards());
         /**
          * @var int $playerTotal
@@ -191,7 +221,7 @@ class Game
             date_default_timezone_set('Europe/Stockholm');
             $score->setRegistered(new DateTime());
             $score->setPoints($playerTotal);
-            $score->setUserid($user);
+            $score->setUser($user);
             $manager->persist($score);
             $manager->flush();
         }
@@ -216,7 +246,8 @@ class Game
                 'alt' => $this->card
             ],
             'message' => $this->message,
-            'slot' => $this->suggestedSlot,
+            'suggestion1' => $this->suggestion1,
+            'suggestion2' => $this->suggestion2,
             'results' => $this->results,
             'house' => $grid->graphic($this->house->getCards()),
             'player' => $grid->graphic($this->player->getCards()),
@@ -225,8 +256,7 @@ class Game
             'placedCards' => $this->player->getCardCount(),
             'deckCardCount' => count($this->deck->getCards()),
             'playerPossibleCards' => $this->deck->possibleCards(),
-            // 'playerPossibleCards' => array_reverse($this->deck->possibleCards()),
-            'lastRound' => $this->lastRound
+            'lastRound' => $this->lastRound,
         ];
     }
 

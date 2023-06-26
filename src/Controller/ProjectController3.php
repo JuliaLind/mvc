@@ -71,6 +71,7 @@ class ProjectController3 extends AbstractController
         EntityManagerInterface $entityManager
     ): Response {
         $session->set("show-suggestion", false);
+        $session->set("show-suggestion2", false);
         /**
          * @var Game $game
          */
@@ -82,10 +83,6 @@ class ProjectController3 extends AbstractController
              */
             $userId = $session->get("user");
             $game->evaluate($entityManager, $userId);
-            // $wonAmount = $game->evaluate($entityManager, $userId);
-            // if ($wonAmount > 0) {
-
-            // }
         }
         $session->set("game", $game);
         return $this->redirectToRoute('proj-play');
@@ -120,8 +117,29 @@ class ProjectController3 extends AbstractController
             return $this->render('proj/place-card.html.twig', $data);
         }
 
+        if ($session->get("show-suggestion2")) {
+            /**
+             * @var array<string,mixed> $data2
+             */
+            $data2 = $data['suggestion2'];
+            /**
+             * @var string $message
+             */
+            $message = $data2['message'];
+            $this->addFlash('notice', $message);
+            return $this->render('proj/game-display-suggest2.html.twig', $data);
+        }
+
         if ($session->get("show-suggestion")) {
-            $this->addFlash('notice', $data['message']);
+            /**
+             * @var array<string,mixed> $data1
+             */
+            $data1 = $data['suggestion1'];
+            /**
+             * @var string $message
+             */
+            $message = $data1['message'];
+            $this->addFlash('notice', $message);
             return $this->render('proj/game-display-suggest.html.twig', $data);
         }
         /**

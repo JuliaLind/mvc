@@ -70,7 +70,7 @@ class ProjectController1 extends AbstractController
             return $this->redirectToRoute('proj');
         }
         $data = [
-            'url' => "proj"
+            'url' => ""
         ];
         return $this->render('proj/shop.html.twig', $data);
     }
@@ -92,7 +92,7 @@ class ProjectController1 extends AbstractController
         $data = [
             'url' => "",
             'transactions' => $repo->findBy(
-                ['userid' => $user],
+                ['user' => $user],
                 ['id' => 'DESC']
             )
         ];

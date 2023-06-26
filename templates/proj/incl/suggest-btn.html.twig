@@ -1,7 +1,7 @@
 
-<form method="post" action="{{ path('show-suggestion') }}">
-<button type="submit" class="btn {% if message != "" %}blink-btn{% else %}stnd-btn{% endif %}">
-Slot suggestion | 30 coins
+<form method="post" action="{{ path('purchase-suggestion', {type: 1}) }}">
+<button type="submit" class="btn {% if suggestion1['message'] != "" %}blink-btn{% else %}stnd-btn{% endif %}">
+Suggestion | 30 coins
 </button>
 </form>
 

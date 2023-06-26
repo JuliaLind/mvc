@@ -36,7 +36,7 @@ class ProjectApiController7 extends AbstractController
             /**
              * @var User $user
              */
-            $user = $score->getUserid();
+            $user = $score->getUser();
             /**
              * @var DateTime $registered
              */

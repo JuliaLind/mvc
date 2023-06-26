@@ -21,7 +21,8 @@
         {% for l in 0..4 %}
             {% if player[k][l]['alt'] != "" %}
                 <div class="slot grid-row-{{k}} grid-col-{{l}}"><img src="{{ asset(player[k][l]['img']) }}" alt="{{ player[k][l]['alt'] }}"></div>
-            {% elseif slot[0] == k and slot[1] == l %}
+            {# {% elseif slot[0] == k and slot[1] == l %} #}
+            {% elseif suggestion1['slot'][0] == k and suggestion1['slot'][1] == l %}
                 <button class="slot clickable player-slot suggested grid-row{{k}} grid-col-{{l}}" type="submit" onClick="this.form.action='{{ path('proj-round', {row: k, col: l}) }}';">SUGGESTED</button>
             {% else %}
                 <button class="slot clickable player-slot grid-row{{k}} grid-col-{{l}}" type="submit" onClick="this.form.action='{{ path('proj-round', {row: k, col: l}) }}';"></button>

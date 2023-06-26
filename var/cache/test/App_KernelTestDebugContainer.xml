@@ -702,7 +702,7 @@
       <argument type="service" id="App\ProjectRules\RuleStats"/>
       <argument type="service" id="App\ProjectGrid\ColumnGetter"/>
     </service>
-    <service id="App\ProjectRules\MoveEvaluator2" class="App\ProjectRules\MoveEvaluator2" autowire="true" autoconfigure="true">
+    <service id="App\ProjectRules\MoveEvaluatorBetter" class="App\ProjectRules\MoveEvaluatorBetter" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectGrid\EmptyCellFinder"/>
       <argument type="service" id="App\ProjectGrid\EmptyCellFinder2"/>
       <argument type="service" id="App\ProjectRules\RuleStats"/>
@@ -1926,7 +1926,7 @@
         <argument key="App\ProjectRules\FullHouse" type="service_closure" id="App\ProjectRules\FullHouse" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\FullHouseStat" type="service_closure" id="App\ProjectRules\FullHouseStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\MoveEvaluator" type="service_closure" id="App\ProjectRules\MoveEvaluator" on-invalid="ignore_uninitialized"/>
-        <argument key="App\ProjectRules\MoveEvaluator2" type="service_closure" id="App\ProjectRules\MoveEvaluator2" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectRules\MoveEvaluatorBetter" type="service_closure" id="App\ProjectRules\MoveEvaluatorBetter" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\RoyalFlush" type="service_closure" id="App\ProjectRules\RoyalFlush" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\RoyalFlushStat" type="service_closure" id="App\ProjectRules\RoyalFlushStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\Rule" type="service_closure" id="App\ProjectRules\Rule" on-invalid="ignore_uninitialized"/>

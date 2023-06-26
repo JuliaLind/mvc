@@ -33,7 +33,7 @@ trait EvaluatorTrait2
         }
         $emptySlots = $this->finder->single($row, $bestRow);
         $slot = $emptySlots[0];
-        $colPoints = 0;
+        $colPoints = -1000;
 
         foreach($emptySlots as $emptySlot) {
             $col = $emptySlot[1];

@@ -56,7 +56,6 @@ return [
         '/proj/register-form' => [[['_route' => 'register-form', '_controller' => 'App\\Controller\\ProjectController5::projRegisterForm'], null, null, null, false, false, null]],
         '/proj/select-amount' => [[['_route' => 'select-amount', '_controller' => 'App\\Controller\\ProjectController6::selectAmount'], null, null, null, false, false, null]],
         '/proj/undo' => [[['_route' => 'undo', '_controller' => 'App\\Controller\\ProjectController7::undo'], null, ['POST' => 0], null, false, false, null]],
-        '/proj/show-suggestion' => [[['_route' => 'show-suggestion', '_controller' => 'App\\Controller\\ProjectController7::showSuggestion'], null, ['POST' => 0], null, false, false, null]],
         '/proj/deck-peek' => [[['_route' => 'deck-peek', '_controller' => 'App\\Controller\\ProjectController7::deckPeek'], null, ['GET' => 0], null, false, false, null]],
         '/proj/purchase-peek-cheat' => [[['_route' => 'purchase-peek', '_controller' => 'App\\Controller\\ProjectController7::purchasePeekCheat'], null, ['POST' => 0], null, false, false, null]],
         '/proj/scores-single' => [[['_route' => 'proj-scores-single', '_controller' => 'App\\Controller\\ProjectController8::projScoresSingle'], null, null, null, false, false, null]],
@@ -94,7 +93,10 @@ return [
                     .'|move\\-card/(\\d+)/(\\d+)(*:436)'
                     .'|p(?'
                         .'|ick\\-card/(\\d+)(*:463)'
-                        .'|urchase/(\\d+)(*:484)'
+                        .'|urchase(?'
+                            .'|/(\\d+)(*:487)'
+                            .'|\\-suggestion/(\\d+)(*:513)'
+                        .')'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -116,8 +118,9 @@ return [
         406 => [[['_route' => 'set-fromslot', '_controller' => 'App\\Controller\\ProjectController4::setFromSlot'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
         436 => [[['_route' => 'move-card', '_controller' => 'App\\Controller\\ProjectController4::moveCard'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
         463 => [[['_route' => 'pick-card', '_controller' => 'App\\Controller\\ProjectController4::pickCard'], ['balance'], null, null, false, true, null]],
-        484 => [
-            [['_route' => 'purchase', '_controller' => 'App\\Controller\\ProjectController6::projPurchase'], ['coins'], ['POST' => 0], null, false, true, null],
+        487 => [[['_route' => 'purchase', '_controller' => 'App\\Controller\\ProjectController6::projPurchase'], ['coins'], ['POST' => 0], null, false, true, null]],
+        513 => [
+            [['_route' => 'purchase-suggestion', '_controller' => 'App\\Controller\\ProjectController7::showSuggestion'], ['type'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
