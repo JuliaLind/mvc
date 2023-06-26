@@ -7,7 +7,12 @@ use App\ProjectCard\CardCounter;
 trait FullHouseStatTrait2
 {
     use FullHouseStatTrait;
-    // use FullHouseStatTrait3;
+
+
+    /**
+     * @param array<string> $deck
+     */
+    abstract public function check3(array $deck): bool;
 
     /**
      * @param array<string> $hand

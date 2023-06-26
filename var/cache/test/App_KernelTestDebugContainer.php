@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelTestDebugContainer::class, false)) {
 
 return new \ContainerUri25MM\App_KernelTestDebugContainer([
     'container.build_hash' => 'Uri25MM',
-    'container.build_id' => 'f6ae0eb4',
-    'container.build_time' => 1687743750,
+    'container.build_id' => 'ea500dfb',
+    'container.build_time' => 1687744368,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerUri25MM');

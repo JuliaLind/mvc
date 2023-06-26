@@ -14,19 +14,5 @@ class TwoPairs extends Rule implements RuleInterface
     public function check(array $hand): bool
     {
         return $this->check3($hand);
-        // $uniqueCount = $this->cardCounter->count($hand);
-
-        // /**
-        //  * @var array<int,int> $uniqueRanks
-        //  */
-        // $uniqueRanks = $uniqueCount['ranks'];
-
-        // $pairs = 0;
-        // foreach($uniqueRanks as $rankCount) {
-        //     if ($rankCount >= 2) {
-        //         $pairs += 1;
-        //     }
-        // }
-        // return $pairs === 2;
     }
 }
