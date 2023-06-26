@@ -6,6 +6,16 @@ use App\ProjectCard\CardCounter;
 
 trait FullHouseStatTrait3
 {
+    private function checkThree(bool $three, int $rank): bool
+    {
+        return $three === false && $rank >= 3;
+    }
+
+    private function checkBoth(bool $three, bool $two): bool
+    {
+        return $three && $two;
+    }
+
     /**
      * @param array<string> $deck
      */
@@ -20,12 +30,12 @@ trait FullHouseStatTrait3
         $three = false;
         $two = false;
         foreach ($ranksDeck as $rank) {
-            if ($three === false && $rank >= 3) {
+            if ($this->checkThree($three, $rank)) {
                 $three = true;
             } elseif ($rank >= 2) {
                 $two = true;
             }
-            if ($three && $two) {
+            if ($this->checkBoth($three, $two)) {
                 return true;
             }
         }
