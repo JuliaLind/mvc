@@ -19,6 +19,12 @@ trait EvaluatorTrait3
     /**
      * @param array<array<string>> $hands
      * @param array<string> $deck
+     */
+    abstract public function checkForRule2(array $hands, int $index, array $deck): bool;
+
+    /**
+     * @param array<array<string>> $hands
+     * @param array<string> $deck
      * @return  array<string,array<int,array<string,int|string>>|int|string>
      */
     public function pointsWithoutCard(array $hands, array $deck): array

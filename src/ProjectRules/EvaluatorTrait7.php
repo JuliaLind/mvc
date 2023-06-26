@@ -5,6 +5,12 @@ namespace App\ProjectRules;
 trait EvaluatorTrait7
 {
     /**
+     * @param array<array<string>> $hands
+     * @param array<string> $deck
+     */
+    abstract public function checkForRule(array $hands, int $index, array $deck, string $card): bool;
+
+    /**
      * @param array<string> $deck
      * @return array<string,array<int,int|string>|string>
      */
