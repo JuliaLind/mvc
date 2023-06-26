@@ -92,40 +92,8 @@ trait EvaluatorTrait
         $possible = $rule['possible'];
         if (array_key_exists($index, $hands)) {
             return $this->pointsAndName1($hands[$index], $deck, $card, $rulePoints, $ruleName, $possible);
-            // if (count($hands[$index]) === 5) {
-            //     return [
-            //         'points' => -1,
-            //         'rule' => ""
-            //     ];
-            // }
-            // if ($possible->check($hands[$index], $deck, $card)) {
-            //     $points = $rulePoints + 1;
-            //     if ($points >= 10) {
-            //         // some additional points to prioritized the already started rows/cols over empty
-            //         $points += count($hands[$index]);
-            //     }
-            //     return [
-            //         'points' => $points,
-            //         'rule' => $ruleName
-            //     ];
-            // }
-            // return [
-            //     'points' => 0,
-            //     'rule' => ""
-            // ];
         }
         return $this->pointsAndName2($deck, $card, $rulePoints, $ruleName, $possible);
-        // if ($possible->check([], $deck, $card)) {
-        //     return [
-        //         'points' => $rulePoints,
-        //         'rule' => $ruleName
-        //     ];
-        // }
-        // return [
-        //     // extra point to prioritize empty row/column
-        //     'points' => 1,
-        //     'rule' => ""
-        // ];
     }
 
     /**
