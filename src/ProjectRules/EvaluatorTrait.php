@@ -18,55 +18,41 @@ trait EvaluatorTrait
 
     /**
      * @param array<string> $deck
-     * @param array<array<string>> $hands
-     * @param array<string,string|RuleStatInterface|int> $rule
-     * @return array<string,string|int>
+     * @param array<string> $hand
+     * @return array<string,int|string>>
      */
-    public function checkSingleRule(
-        array $hands,
-        int $index,
-        array $deck,
-        string $card,
-        array $rule,
-        // bool $possibleWhenEmpty
-    ): array {
-        /**
-         * @var string $ruleName
-         */
-        $ruleName = $rule['name'];
-        /**
-         * @var int $rulePoints
-         */
-        $rulePoints = $rule['points'];
-        /**
-         * @var RuleStatInterface $possible
-         */
-        $possible = $rule['possible'];
-        if (array_key_exists($index, $hands)) {
-            if (count($hands[$index]) === 5) {
-                return [
-                    'points' => -1,
-                    'rule' => ""
-                ];
-            }
-            if ($possible->check($hands[$index], $deck, $card)) {
-                $points = $rulePoints + 1;
-                if ($points >= 10) {
-                    // some additional points to prioritized the already started rows/cols over empty
-                    $points += count($hands[$index]);
-                }
-                return [
-                    'points' => $points,
-                    'rule' => $ruleName
-                ];
-            }
+    private function pointsAndName1(array $hand, array $deck, string $card, int $rulePoints, string $ruleName, RuleStatInterface $rule): array
+    {
+        if (count($hand) === 5) {
             return [
-                'points' => 0,
+                'points' => -1,
                 'rule' => ""
             ];
         }
+        if ($rule->check($hand, $deck, $card)) {
+            $points = $rulePoints + 1;
+            if ($points >= 10) {
+                // some additional points to prioritized the already started rows/cols over empty
+                $points += count($hand);
+            }
+            return [
+                'points' => $points,
+                'rule' => $ruleName
+            ];
+        }
+        return [
+            'points' => 0,
+            'rule' => ""
+        ];
+    }
 
-        if ($possible->check([], $deck, $card)) {
+    /**
+     * @param array<string> $deck
+     * @return array<string,int|string>>
+     */
+    private function pointsAndName2(array $deck, string $card, int $rulePoints, string $ruleName, RuleStatInterface $rule): array
+    {
+        if ($rule->check([], $deck, $card)) {
             return [
                 'points' => $rulePoints,
                 'rule' => $ruleName
@@ -77,6 +63,69 @@ trait EvaluatorTrait
             'points' => 1,
             'rule' => ""
         ];
+    }
+    /**
+     * @param array<string> $deck
+     * @param array<array<string>> $hands
+     * @param array<string,string|RuleStatInterface|int> $rule
+     * @return array<string,string|int>
+     */
+    public function checkSingleRule(
+        array $hands,
+        int $index,
+        array $deck,
+        string $card,
+        array $rule,
+    ): array {
+        /**
+         * @var string $ruleName
+         */
+        $ruleName = $rule['name'];
+        /**
+         * @var int $rulePoints
+         */
+        $rulePoints = $rule['points'];
+
+        /**
+         * @var RuleStatInterface $possible
+         */
+        $possible = $rule['possible'];
+        if (array_key_exists($index, $hands)) {
+            return $this->pointsAndName1($hands[$index], $deck, $card, $rulePoints, $ruleName, $possible);
+            // if (count($hands[$index]) === 5) {
+            //     return [
+            //         'points' => -1,
+            //         'rule' => ""
+            //     ];
+            // }
+            // if ($possible->check($hands[$index], $deck, $card)) {
+            //     $points = $rulePoints + 1;
+            //     if ($points >= 10) {
+            //         // some additional points to prioritized the already started rows/cols over empty
+            //         $points += count($hands[$index]);
+            //     }
+            //     return [
+            //         'points' => $points,
+            //         'rule' => $ruleName
+            //     ];
+            // }
+            // return [
+            //     'points' => 0,
+            //     'rule' => ""
+            // ];
+        }
+        return $this->pointsAndName2($deck, $card, $rulePoints, $ruleName, $possible);
+        // if ($possible->check([], $deck, $card)) {
+        //     return [
+        //         'points' => $rulePoints,
+        //         'rule' => $ruleName
+        //     ];
+        // }
+        // return [
+        //     // extra point to prioritize empty row/column
+        //     'points' => 1,
+        //     'rule' => ""
+        // ];
     }
 
     /**
