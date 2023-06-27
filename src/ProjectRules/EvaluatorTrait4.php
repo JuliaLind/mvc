@@ -24,20 +24,40 @@ trait EvaluatorTrait4
      */
     private function pointsAndName3(array $hand, array $deck, int $rulePoints, string $ruleName, RuleStatInterface $rule): array
     {
-        if (count($hand) === 5) {
+        // if (count($hand) === 5) {
+        //     return [
+        //         'points' => -1,
+        //         'rule' => ""
+        //     ];
+        // }
+        // if ($rule->check2($hand, $deck)) {
+        //     $points = $rulePoints + 1;
+        //     if ($points >= 5) {
+        //         // some additional points to prioritized the already started rows/cols over empty
+        //         $points += count($hand);
+        //     }
+        //     return [
+        //         'points' => $points,
+        //         'rule' => $ruleName
+        //     ];
+        // }
+        // return [
+        //     'points' => 0,
+        //     'rule' => ""
+        // ];
+
+        if (count($hand) < 5 && $rule->check2($hand, $deck)) {
+            // $points = $rulePoints + 1;
+            // if ($points >= 5) {
+            //     // some additional points to prioritized the already started rows/cols over empty
+            //     $points += count($hand);
+            // }
+            // return [
+            //     'points' => $points,
+            //     'rule' => $ruleName
+            // ];
             return [
-                'points' => -1,
-                'rule' => ""
-            ];
-        }
-        if ($rule->check2($hand, $deck)) {
-            $points = $rulePoints + 1;
-            if ($points >= 5) {
-                // some additional points to prioritized the already started rows/cols over empty
-                $points += count($hand);
-            }
-            return [
-                'points' => $points,
+                'points' => $rulePoints,
                 'rule' => $ruleName
             ];
         }
@@ -59,8 +79,12 @@ trait EvaluatorTrait4
                 'rule' => $ruleName
             ];
         }
+        // return [
+        //     'points' => 1,
+        //     'rule' => ""
+        // ];
         return [
-            'points' => 1,
+            'points' => 0,
             'rule' => ""
         ];
     }
@@ -76,7 +100,6 @@ trait EvaluatorTrait4
         int $index,
         array $deck,
         array $rule,
-        // bool $possibleWhenEmpty
     ): array {
         /**
          * @var string $ruleName
@@ -92,39 +115,8 @@ trait EvaluatorTrait4
         $possible = $rule['possible'];
         if (array_key_exists($index, $hands)) {
             return $this->pointsAndName3($hands[$index], $deck, $rulePoints, $ruleName, $possible);
-            // if (count($hands[$index]) === 5) {
-            //     return [
-            //         'points' => -1,
-            //         'rule' => ""
-            //     ];
-            // }
-            // if ($possible->check2($hands[$index], $deck)) {
-            //     $points = $rulePoints + 1;
-            //     if ($points >= 5) {
-            //         // some additional points to prioritized the already started rows/cols over empty
-            //         $points += count($hands[$index]);
-            //     }
-            //     return [
-            //         'points' => $points,
-            //         'rule' => $ruleName
-            //     ];
-            // }
-            // return [
-            //     'points' => 0,
-            //     'rule' => ""
-            // ];
         }
         return $this->pointsAndName4($deck, $rulePoints, $ruleName, $possible);
-        // if ($possible->check3($deck)) {
-        //     return [
-        //         'points' => $rulePoints,
-        //         'rule' => $ruleName
-        //     ];
-        // }
-        // return [
-        //     'points' => 1,
-        //     'rule' => ""
-        // ];
     }
 
     /**

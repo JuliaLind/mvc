@@ -87,6 +87,14 @@ class ProjectController3 extends AbstractController
         return $this->redirectToRoute('proj-play');
     }
 
+    #[Route('/proj/unset-suggestion', name: "proj-unset-suggest", methods: ['GET'])]
+    public function projUnsetSuggest(
+        SessionInterface $session,
+    ): Response {
+        $session->set("show-suggestion", false);
+        return $this->redirectToRoute('proj-play');
+    }
+
     #[Route("/proj/play", name: "proj-play")]
     public function projPlay(
         SessionInterface $session,
@@ -118,13 +126,13 @@ class ProjectController3 extends AbstractController
 
         if ($session->get("show-suggestion")) {
             /**
-             * @var array<string,mixed> $data
+             * @var array<string,mixed> $suggestion
              */
-            $data = $data['suggestion'];
+            $suggestion = $data['suggestion'];
             /**
              * @var string $message
              */
-            $message = $data['message'];
+            $message = $suggestion['message'];
             $this->addFlash('notice', $message);
             return $this->render('proj/game-display-suggest.html.twig', $data);
         }

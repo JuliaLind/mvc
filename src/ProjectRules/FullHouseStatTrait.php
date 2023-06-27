@@ -20,13 +20,11 @@ trait FullHouseStatTrait
         $three = false;
         $two = false;
         foreach (array_keys($ranksHand) as $rank) {
-            // if ($three === false && $ranksAll[$rank] >= 3) {
             if ($this->checkThree($three, $ranksAll[$rank])) {
                 $three = true;
             } elseif ($ranksAll[$rank] >= 2) {
                 $two = true;
             }
-            // if ($three && $two) {
             if ($this->checkBoth($three, $two)) {
                 return true;
             }

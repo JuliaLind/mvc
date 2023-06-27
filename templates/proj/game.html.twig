@@ -17,7 +17,7 @@ picked card, deck#}
 
 <div class="center-grid">
 {{ include('flash.html.twig') }}
-<div class="slot grid-row-0 grid-col-0"><img src="{{ asset(card['img']) }}" alt="{{ card['alt'] }}"></div>
+<div class="slot the-card grid-row-0 grid-col-0"><img src="{{ asset(card['img']) }}" alt="{{ card['alt'] }}"></div>
 <div class="btn-container">
 <div class="balance">Your balance: {{balance}} coins</div>
 {{ include('proj/incl/undo-btn.html.twig') }}

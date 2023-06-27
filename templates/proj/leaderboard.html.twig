@@ -10,16 +10,18 @@
 <h1 class="title">Leaderboard top 10</h1>
 <table class="points trans">
     <tr>
+        <th>Pos</th>
         <th>Date</th>
         <th>Gamer name</th>
         <th>Points</th>
     </tr>
-{% for score in scores %}
+{% for i, score in scores %}
     <tr>
+        <td>{{ i + 1}}</td>
         <td>
             {{ score.registered|date("Y-m-d") }}
             </td>
-        <td>{{ score.userid.acronym }}</td>
+        <td>{{ score.user.acronym }}</td>
         <td>{{ score.points }}</td>
     </tr>
 {% endfor %}

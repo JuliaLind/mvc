@@ -35,7 +35,7 @@ class ProjectController8 extends AbstractController
         $data = [
             'url' => "",
             'scores' => $repo->findBy(
-                ['userid' => $user],
+                ['user' => $user],
                 ['points' => 'DESC'],
                 10
             )

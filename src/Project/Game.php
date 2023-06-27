@@ -15,6 +15,8 @@ use App\Entity\Score;
 
 use Symfony\Component\HttpFoundation\Request;
 
+require __DIR__ . "/../../vendor/autoload.php";
+
 class Game
 {
     private int $pot;
@@ -121,6 +123,7 @@ class Game
         $this->player->addCard($row, $col, $card);
         $this->fromSlot = [];
         $this->playerSuggest();
+
     }
 
     public function undoLastRound(): void
@@ -185,11 +188,11 @@ class Game
         $houseTotal = $houseData['total'];
         $winner = "House";
         $lastPart = "";
-        // $amount = 0;
 
         if ($playerTotal >= $houseTotal) {
             $winner = "You";
-            $amount = ($this->pot + ($playerTotal - $houseTotal)) * 2;
+            // $amount = ($this->pot + ($playerTotal - $houseTotal)) * 2;
+            $amount = $this->pot * 2;
             $lastPart = " and received {$amount} coins";
 
             /**
@@ -197,7 +200,7 @@ class Game
              */
             $user = $manager->getRepository(User::class)->find($userId);
             $register = new Register($manager, $userId);
-            $register->transaction($amount, 'return (bet + profit)');
+            $register->transaction($amount, 'return (bet x 2)');
             $score = new Score();
             date_default_timezone_set('Europe/Stockholm');
             $score->setRegistered(new DateTime());
@@ -212,7 +215,6 @@ class Game
             'house' => $houseData
         ];
         $this->pot = 0;
-        // return $amount;
     }
 
     /**

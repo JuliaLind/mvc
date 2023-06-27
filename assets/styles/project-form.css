@@ -201,7 +201,7 @@
 
 .project .register-link .balance {
     font-weight: 600;
-    color: var(--form-neon);
+    color: var(--alt-neon);
 }
 
 /* .project .wrapper.register:hover .register-link p a { */

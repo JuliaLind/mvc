@@ -725,12 +725,6 @@
       <argument type="service" id="App\ProjectRules\RuleStats"/>
       <argument type="service" id="App\ProjectGrid\ColumnGetter"/>
     </service>
-    <service id="App\ProjectRules\MoveEvaluatorBetter" class="App\ProjectRules\MoveEvaluatorBetter" autowire="true" autoconfigure="true">
-      <argument type="service" id="App\ProjectGrid\EmptyCellFinder"/>
-      <argument type="service" id="App\ProjectGrid\EmptyCellFinder2"/>
-      <argument type="service" id="App\ProjectRules\RuleStats"/>
-      <argument type="service" id="App\ProjectGrid\ColumnGetter"/>
-    </service>
     <service id="App\ProjectRules\RoyalFlush" class="App\ProjectRules\RoyalFlush" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\RoyalFlushStat" class="App\ProjectRules\RoyalFlushStat" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\Rule" class="App\ProjectRules\Rule" autowire="true" autoconfigure="true">
@@ -7101,7 +7095,7 @@
         <argument key="repo" type="service_closure" id="App\Repository\ScoreRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.ZP1PEj3" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.AAH3Yfr" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CardController::card" type="service_closure" id=".service_locator.VptkjFl"/>
@@ -7149,6 +7143,7 @@
         <argument key="App\Controller\ProjectApiController7::apiLeaderboard" type="service_closure" id=".service_locator.7oOFMGT"/>
         <argument key="App\Controller\ProjectApiController8::apiResults" type="service_closure" id=".service_locator.FYjUH8F"/>
         <argument key="App\Controller\ProjectController1::projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController1::projShop" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController1::projTrans" type="service_closure" id=".service_locator.OsH1muE"/>
         <argument key="App\Controller\ProjectController2::projLogin" type="service_closure" id=".service_locator.J..d_da"/>
         <argument key="App\Controller\ProjectController2::projRegister" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -7212,6 +7207,7 @@
         <argument key="App\Controller\ProjectApiController7:apiLeaderboard" type="service_closure" id=".service_locator.7oOFMGT"/>
         <argument key="App\Controller\ProjectApiController8:apiResults" type="service_closure" id=".service_locator.FYjUH8F"/>
         <argument key="App\Controller\ProjectController1:projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController1:projShop" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController1:projTrans" type="service_closure" id=".service_locator.OsH1muE"/>
         <argument key="App\Controller\ProjectController2:projLogin" type="service_closure" id=".service_locator.J..d_da"/>
         <argument key="App\Controller\ProjectController2:projRegister" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -8246,12 +8242,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.ZP1PEj3"/>
+      <argument type="service" id=".service_locator.AAH3Yfr"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.ZP1PEj3"/>
+      <argument type="service" id=".service_locator.AAH3Yfr"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9196,7 +9192,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.ZP1PEj3"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.AAH3Yfr"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9227,7 +9223,7 @@
     <service id=".service_locator.0TqkSw4" alias=".service_locator.FYjUH8F"/>
     <service id=".service_locator.hjZjVN0" alias=".service_locator.OsH1muE"/>
     <service id=".service_locator.sB0QlrM" alias=".service_locator.VxD2oRa"/>
-    <service id=".service_locator.ADMRV1K" alias=".service_locator.ZP1PEj3"/>
+    <service id=".service_locator.srl9..X" alias=".service_locator.AAH3Yfr"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>

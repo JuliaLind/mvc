@@ -60,7 +60,8 @@ class ProjectController1 extends AbstractController
 
     #[Route("/proj/shop", name: "shop")]
     public function projShop(
-        SessionInterface $session
+        SessionInterface $session,
+        EntityManagerInterface $entityManager,
     ): Response {
         /**
          * @var int $userId
@@ -69,8 +70,10 @@ class ProjectController1 extends AbstractController
         if($userId == null) {
             return $this->redirectToRoute('proj');
         }
+        $register = new Register($entityManager, $userId);
         $data = [
-            'url' => ""
+            'url' => "",
+            'balance' => $register->getBalance()
         ];
         return $this->render('proj/shop.html.twig', $data);
     }
@@ -89,12 +92,14 @@ class ProjectController1 extends AbstractController
          * @var User $user
          */
         $user = $entityManager->getRepository(User::class)->find($userId);
+        $register = new Register($entityManager, $userId);
         $data = [
             'url' => "",
             'transactions' => $repo->findBy(
                 ['user' => $user],
                 ['id' => 'DESC']
-            )
+            ),
+            'balance' => $register->getBalance()
         ];
         return $this->render('proj/transactions.html.twig', $data);
     }

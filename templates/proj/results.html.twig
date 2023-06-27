@@ -15,19 +15,19 @@
 {% endfor %}
 {% for row in 0..4 %}
     <div class="result row-res grid-row-{{row}}">
-    <span class="rule-name">{{ results['house']['rows'][row]['name'] }},
+    <span class="rule-name">{{ results['house']['rows'][row]['name'] }}:
     </span>
     <span class="rule-points">
-    {{ results['house']['rows'][row]['points'] }} points
+    {{ results['house']['rows'][row]['points'] }}
     </span>
     </div>
 {% endfor %}
 {% for col in 0..4 %}
     <div class="result col-res grid-col-{{col}}">
-    <span class="rule-name">{{results['house']['cols'][col]['name']}},
+    <span class="rule-name">{{results['house']['cols'][col]['name']}}:
     </span>
     <span class="rule-points"> 
-    {{results['house']['cols'][col]['points']}} points
+    {{results['house']['cols'][col]['points']}}
     </span>
     </div>
 {% endfor %}
@@ -51,20 +51,20 @@
 {% for row in 0..4 %}
     <div class="result row-res grid-row-{{row}}">
     <span class="rule-name">
-    {{ results['player']['rows'][row]['name'] }},
+    {{ results['player']['rows'][row]['name'] }}:
     </span>
     <span class="rule-points">
-    {{ results['player']['rows'][row]['points'] }} points
+    {{ results['player']['rows'][row]['points'] }}
     </span>
     </div>
 {% endfor %}
 {% for col in 0..4 %}
     <div class="result col-res grid-col-{{col}}">
     <span class="rule-name">
-    {{results['player']['cols'][col]['name']}},
+    {{results['player']['cols'][col]['name']}}:
     </span>
     <span class="rule-points">
-    {{results['player']['cols'][col]['points']}} points
+    {{results['player']['cols'][col]['points']}}
     </span>
     </div>
 {% endfor %}

@@ -19,7 +19,7 @@ trait EvaluatorTrait
     /**
      * @param array<string> $deck
      * @param array<string> $hand
-     * @return array<string,int|string>>
+     * @return array<string,float|int|string>>
      */
     private function pointsAndName1(array $hand, array $deck, string $card, int $rulePoints, string $ruleName, RuleStatInterface $rule): array
     {
@@ -33,7 +33,7 @@ trait EvaluatorTrait
             $points = $rulePoints + 1;
             if ($points >= 10) {
                 // some additional points to prioritized the already started rows/cols over empty
-                $points += count($hand);
+                $points += count($hand) * $points * 0.10;
             }
             return [
                 'points' => $points,
@@ -68,7 +68,7 @@ trait EvaluatorTrait
      * @param array<string> $deck
      * @param array<array<string>> $hands
      * @param array<string,string|RuleStatInterface|int> $rule
-     * @return array<string,string|int>
+     * @return array<string,string|float|int>
      */
     public function checkSingleRule(
         array $hands,
@@ -99,7 +99,7 @@ trait EvaluatorTrait
     /**
      * @param array<array<string>> $hands
      * @param array<string> $deck
-     * @return array<string,string|int>
+     * @return array<string,string|float|int>
      */
     public function checkForRule(array $hands, int $index, array $deck, string $card)
     {

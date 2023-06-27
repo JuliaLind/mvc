@@ -31,17 +31,11 @@ trait EvaluatorTrait3
     public function pointsWithoutCard(array $hands, array $deck): array
     {
         $pointsHands = [];
-        // $bestHand = 0;
-        // $maxPoints = 0;
 
         for ($j = 0; $j <= 4; $j++) {
             $data = $this->checkForRule2($hands, $j, $deck);
             $handPoints = $data['points'];
             $handRule = $data['rule'];
-            // if ($handPoints >= $maxPoints) {
-            //     $maxPoints = $handPoints;
-            //     $bestHand = $j;
-            // }
             $pointsHands[$j]['rule'] = $handRule;
             $pointsHands[$j]['points'] = $handPoints;
         }

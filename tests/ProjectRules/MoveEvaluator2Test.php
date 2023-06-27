@@ -384,8 +384,8 @@ class MoveEvaluator2Test extends TestCase
 
         $exp = [
             'row-rule' => "Full House",
-            'col-rule' => "Full House",
-            'slot' => [3, 1],
+            'col-rule' => "Flush",
+            'slot' => [3, 2],
             'row-rules-with-card' => ["", "Full House", "Straight", "Full House", ""],
             'row-rules-without-card' => ["Full House", "Flush", "Straight", "Flush", "Straight"],
             'col-rules-with-card' => ["", "Full House" ,"Flush", "Two Pairs", ""],

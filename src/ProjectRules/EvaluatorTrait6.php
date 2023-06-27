@@ -22,14 +22,14 @@ trait EvaluatorTrait6
     /**
      * @param array<array<string>> $hands
      * @param array<string> $deck
-     * @return array<string,string|int>
+     * @return array<string,array<int,array<string,float|int|string>>|float|int|string>
      */
     abstract public function checkForRule(array $hands, int $index, array $deck, string $card);
 
     /**
      * @param array<array<string>> $hands
      * @param array<string> $deck
-     * @return  array<string,array<int,array<string,int|string>>|int|string>
+     * @return array<string,array<int,array<string,float|int|string>>|float|int|string>
      */
     public function points(array $hands, array $deck, string $card): array
     {

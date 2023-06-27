@@ -55,8 +55,7 @@ class MoveEvaluator
     /**
      * @param array<array<string>> $rows
      * @param array<string> $deck
-     * @return array<string,array<int|string>|int|string>
-     * array<string,array<int,int>|int|string>
+     * @return array<string,array<int|string>|int|string>array<string,array<int,int>|int|string>
      */
     public function suggestion(array $rows, string $card, array $deck): array
     {
@@ -73,11 +72,11 @@ class MoveEvaluator
         $colData = $this->points($cols, $deck, $card);
 
         /**
-         * @var int $maxRowPoints
+         * @var int|float $maxRowPoints
          */
         $maxRowPoints = $rowData['max'];
         /**
-         * @var int $maxColPoints
+         * @var int|float $maxColPoints
          */
         $maxColPoints = $colData['max'];
         /**
@@ -118,6 +117,5 @@ class MoveEvaluator
         $data = $this->slot($pointsCols, $pointsRows, $bestCol, $cols, true);
         $data = array_merge($data, $handRules);
         return $data;
-        // return $this->slot($pointsCols, $pointsRows, $bestCol, $cols, true);
     }
 }

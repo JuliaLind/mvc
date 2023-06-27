@@ -1,6 +1,6 @@
 
 <form method="post" action="{{ path('purchase-suggestion') }}">
-<button type="submit" class="btn {% if suggestion1['message'] != "" %}blink-btn{% else %}stnd-btn{% endif %}">
+<button type="submit" class="btn {% if suggestion['message'] != "" %}blink-btn{% else %}active-btn{% endif %}">
 Suggestion | 30 coins
 </button>
 </form>

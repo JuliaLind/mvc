@@ -55,6 +55,7 @@ return [
         '/proj/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\ProjectController2::projLogin'], null, ['POST' => 0], null, false, false, null]],
         '/proj/logout' => [[['_route' => 'logout', '_controller' => 'App\\Controller\\ProjectController2::projLogout'], null, ['GET' => 0], null, false, false, null]],
         '/proj/init' => [[['_route' => 'proj-init', '_controller' => 'App\\Controller\\ProjectController3::projInit'], null, null, null, false, false, null]],
+        '/proj/unset-suggestion' => [[['_route' => 'proj-unset-suggest', '_controller' => 'App\\Controller\\ProjectController3::projUnsetSuggest'], null, ['GET' => 0], null, false, false, null]],
         '/proj/play' => [[['_route' => 'proj-play', '_controller' => 'App\\Controller\\ProjectController3::projPlay'], null, null, null, false, false, null]],
         '/proj/api' => [[['_route' => 'proj-api', '_controller' => 'App\\Controller\\ProjectController5::projApiLanding'], null, null, null, false, false, null]],
         '/proj/about' => [[['_route' => 'proj-about', '_controller' => 'App\\Controller\\ProjectController5::projAbout'], null, null, null, false, false, null]],
@@ -62,6 +63,7 @@ return [
         '/proj/register-form' => [[['_route' => 'register-form', '_controller' => 'App\\Controller\\ProjectController5::projRegisterForm'], null, null, null, false, false, null]],
         '/proj/select-amount' => [[['_route' => 'select-amount', '_controller' => 'App\\Controller\\ProjectController6::selectAmount'], null, null, null, false, false, null]],
         '/proj/undo' => [[['_route' => 'undo', '_controller' => 'App\\Controller\\ProjectController7::undo'], null, ['POST' => 0], null, false, false, null]],
+        '/proj/purchase-suggestion' => [[['_route' => 'purchase-suggestion', '_controller' => 'App\\Controller\\ProjectController7::showSuggestion'], null, ['POST' => 0], null, false, false, null]],
         '/proj/deck-peek' => [[['_route' => 'deck-peek', '_controller' => 'App\\Controller\\ProjectController7::deckPeek'], null, ['GET' => 0], null, false, false, null]],
         '/proj/purchase-peek-cheat' => [[['_route' => 'purchase-peek', '_controller' => 'App\\Controller\\ProjectController7::purchasePeekCheat'], null, ['POST' => 0], null, false, false, null]],
         '/proj/scores-single' => [[['_route' => 'proj-scores-single', '_controller' => 'App\\Controller\\ProjectController8::projScoresSingle'], null, null, null, false, false, null]],
@@ -114,10 +116,7 @@ return [
                     .'|move\\-card/(\\d+)/(\\d+)(*:601)'
                     .'|p(?'
                         .'|ick\\-card/(\\d+)(*:628)'
-                        .'|urchase(?'
-                            .'|/(\\d+)(*:652)'
-                            .'|\\-suggestion/(\\d+)(*:678)'
-                        .')'
+                        .'|urchase/(\\d+)(*:649)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -146,9 +145,8 @@ return [
         571 => [[['_route' => 'set-fromslot', '_controller' => 'App\\Controller\\ProjectController4::setFromSlot'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
         601 => [[['_route' => 'move-card', '_controller' => 'App\\Controller\\ProjectController4::moveCard'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
         628 => [[['_route' => 'pick-card', '_controller' => 'App\\Controller\\ProjectController4::pickCard'], ['balance'], null, null, false, true, null]],
-        652 => [[['_route' => 'purchase', '_controller' => 'App\\Controller\\ProjectController6::projPurchase'], ['coins'], ['POST' => 0], null, false, true, null]],
-        678 => [
-            [['_route' => 'purchase-suggestion', '_controller' => 'App\\Controller\\ProjectController7::showSuggestion'], ['type'], ['POST' => 0], null, false, true, null],
+        649 => [
+            [['_route' => 'purchase', '_controller' => 'App\\Controller\\ProjectController6::projPurchase'], ['coins'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

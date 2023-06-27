@@ -82,7 +82,7 @@ class ProjectApiController2 extends AbstractController
             $points = $score->getPoints();
 
             array_push(
-                $data['transactions'],
+                $data['scores'],
                 [
                     'registered' => $registered,
                     'score' => $points,
