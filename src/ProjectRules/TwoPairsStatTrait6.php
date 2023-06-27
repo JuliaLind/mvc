@@ -2,11 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\Deck;
-use App\ProjectGrid\EmptyCellFinder;
-use App\ProjectGrid\EmptyCellFinder2;
-use App\ProjectGrid\ColumnGetter;
-
 trait TwoPairsStatTrait6
 {
     /**

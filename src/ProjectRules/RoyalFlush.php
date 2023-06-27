@@ -2,8 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\CardCounter;
-
 /**
  * Royal Flush Rule
  * Ace, King, Queen, Jack, Ten of same suit

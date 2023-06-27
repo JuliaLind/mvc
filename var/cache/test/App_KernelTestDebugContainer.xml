@@ -698,7 +698,6 @@
     </service>
     <service id="App\ProjectRules\MoveEvaluator" class="App\ProjectRules\MoveEvaluator" autowire="true" autoconfigure="true">
       <argument type="service" id="App\ProjectGrid\EmptyCellFinder"/>
-      <argument type="service" id="App\ProjectGrid\EmptyCellFinder2"/>
       <argument type="service" id="App\ProjectRules\RuleStats"/>
       <argument type="service" id="App\ProjectGrid\ColumnGetter"/>
     </service>

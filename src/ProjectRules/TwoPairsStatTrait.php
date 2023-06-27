@@ -2,24 +2,11 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\Deck;
-use App\ProjectGrid\EmptyCellFinder;
-use App\ProjectGrid\EmptyCellFinder2;
-use App\ProjectGrid\ColumnGetter;
-
 trait TwoPairsStatTrait
 {
     use TwoPairsStatTrait3;
     use TwoPairsStatTrait4;
     use TwoPairsStatTrait5;
-
-    /**
-     * @var array<array<string,string|RuleStatInterface|int>>
-     */
-    private array $rules;
-    private EmptyCellFinder $finder;
-    private ColumnGetter $colGetter;
-
 
     /**
      * @param array<string> $hand

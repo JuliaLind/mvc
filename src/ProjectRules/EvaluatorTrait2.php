@@ -2,11 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\Deck;
-use App\ProjectGrid\EmptyCellFinder;
-use App\ProjectGrid\EmptyCellFinder2;
-use App\ProjectGrid\ColumnGetter;
-
 /**
  * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  */
@@ -20,8 +15,6 @@ trait EvaluatorTrait2
      */
     public function slot(array $pointsRows, array $pointsCols, int $bestRow, array $rows, bool $inverted=false): array
     {
-        // $slot = $this->finder2->oneCell($this->rows, $this->cols);
-
         /**
          * @var string $rowRule
          */

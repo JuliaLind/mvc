@@ -2,9 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\CardCounter;
-use App\ProjectCard\CardSearcher;
-
 class StraightFlushStat extends RuleStat implements RuleStatInterface
 {
     use RankLimitsTrait;

@@ -2,8 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\CardCounter;
-
 class TwoPairsStat extends RuleStat implements RuleStatInterface
 {
     use TwoPairsTrait;

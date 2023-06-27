@@ -2,8 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\CardCounter;
-
 trait FullHouseStatTrait3
 {
     abstract private function checkThree(bool $three, int $rank): bool;

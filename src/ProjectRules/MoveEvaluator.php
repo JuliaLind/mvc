@@ -2,9 +2,7 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\Deck;
 use App\ProjectGrid\EmptyCellFinder;
-use App\ProjectGrid\EmptyCellFinder2;
 use App\ProjectGrid\ColumnGetter;
 
 /**
@@ -14,7 +12,6 @@ class MoveEvaluator
 {
     use EvaluatorTrait;
     use EvaluatorTrait2;
-
     use EvaluatorTrait3;
     use EvaluatorTrait4;
     use EvaluatorTrait5;
@@ -25,12 +22,6 @@ class MoveEvaluator
      * @var array<array<string>> $cols
      */
     protected array $cols;
-    /**
-     * @var array<array<string>> $rows
-     */
-    protected array $rows;
-
-    protected EmptyCellFinder2 $finder2;
 
 
     /**
@@ -42,13 +33,11 @@ class MoveEvaluator
 
     public function __construct(
         EmptyCellFinder $finder = new EmptyCellFinder(),
-        EmptyCellFinder2 $finder2 = new EmptyCellFinder2(),
         RuleStats $stats= new RuleStats(),
         ColumnGetter $colGetter = new ColumnGetter(),
     ) {
         $this->rules = $stats->getRules();
         $this->finder = $finder;
-        $this->finder2 = $finder2;
         $this->colGetter = $colGetter;
     }
 

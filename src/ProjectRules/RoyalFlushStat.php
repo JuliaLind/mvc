@@ -2,9 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\CardCounter;
-use App\ProjectCard\CardSearcher;
-
 /**
  * Calculates it possible for a hand
  * to score the RoyalFlush rule
@@ -38,8 +35,6 @@ class RoyalFlushStat extends RuleStat implements RuleStatInterface
     /**
      * @param array<string> $hand
      * @param array<string> $deck
-     * @return bool true if rule is still possible given passed value
-     * otherwise false
      */
     public function check(array $hand, array $deck, string $card): bool
     {

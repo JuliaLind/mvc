@@ -2,8 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\CardCounter;
-
 class FullHouseStat extends Rule implements RuleStatInterface
 {
     use FullHouseStatTrait2;

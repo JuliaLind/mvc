@@ -2,8 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\CardCounter;
-
 class FullHouse extends Rule implements RuleInterface
 {
     /**

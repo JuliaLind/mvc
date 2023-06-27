@@ -2,8 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\CardCounter;
-
 class Straight extends Rule implements RuleInterface
 {
     protected int $maxRank;

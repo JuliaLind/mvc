@@ -2,21 +2,8 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\Deck;
-use App\ProjectGrid\EmptyCellFinder;
-use App\ProjectGrid\EmptyCellFinder2;
-use App\ProjectGrid\ColumnGetter;
-
 trait EvaluatorTrait4
 {
-    /**
-     * @var array<array<string,string|RuleStatInterface|int>>
-     */
-    private array $rules;
-    private EmptyCellFinder $finder;
-    private ColumnGetter $colGetter;
-
-
     /**
      * @param array<string> $deck
      * @param array<string> $hand
@@ -24,38 +11,7 @@ trait EvaluatorTrait4
      */
     private function pointsAndName3(array $hand, array $deck, int $rulePoints, string $ruleName, RuleStatInterface $rule): array
     {
-        // if (count($hand) === 5) {
-        //     return [
-        //         'points' => -1,
-        //         'rule' => ""
-        //     ];
-        // }
-        // if ($rule->check2($hand, $deck)) {
-        //     $points = $rulePoints + 1;
-        //     if ($points >= 5) {
-        //         // some additional points to prioritized the already started rows/cols over empty
-        //         $points += count($hand);
-        //     }
-        //     return [
-        //         'points' => $points,
-        //         'rule' => $ruleName
-        //     ];
-        // }
-        // return [
-        //     'points' => 0,
-        //     'rule' => ""
-        // ];
-
         if (count($hand) < 5 && $rule->check2($hand, $deck)) {
-            // $points = $rulePoints + 1;
-            // if ($points >= 5) {
-            //     // some additional points to prioritized the already started rows/cols over empty
-            //     $points += count($hand);
-            // }
-            // return [
-            //     'points' => $points,
-            //     'rule' => $ruleName
-            // ];
             return [
                 'points' => $rulePoints,
                 'rule' => $ruleName
@@ -79,10 +35,6 @@ trait EvaluatorTrait4
                 'rule' => $ruleName
             ];
         }
-        // return [
-        //     'points' => 1,
-        //     'rule' => ""
-        // ];
         return [
             'points' => 0,
             'rule' => ""

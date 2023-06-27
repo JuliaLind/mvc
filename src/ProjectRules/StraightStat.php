@@ -2,9 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\CardCounter;
-use App\ProjectCard\CardSearcher;
-
 class StraightStat extends RuleStat implements RuleStatInterface
 {
     use RankLimitsTrait;
@@ -30,8 +27,6 @@ class StraightStat extends RuleStat implements RuleStatInterface
     /**
      * @param array<string> $hand
      * @param array<string> $deck
-     * @return bool true if rule is still possible given passed value
-     * otherwise false
      */
     public function check(array $hand, array $deck, string $card): bool
     {
@@ -46,8 +41,6 @@ class StraightStat extends RuleStat implements RuleStatInterface
     /**
      * @param array<string> $hand
      * @param array<string> $deck
-     * @return bool true if rule is still possible given passed value
-     * otherwise false
      */
     public function check2(array $hand, array $deck): bool
     {

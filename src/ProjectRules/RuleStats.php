@@ -2,8 +2,6 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\EmptyCellFinder;
-
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */

@@ -2,20 +2,8 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\Deck;
-use App\ProjectGrid\EmptyCellFinder;
-use App\ProjectGrid\EmptyCellFinder2;
-use App\ProjectGrid\ColumnGetter;
-
 trait EvaluatorTrait3
 {
-    /**
-     * @var array<array<string,string|RuleStatInterface|int>>
-     */
-    private array $rules;
-    private EmptyCellFinder $finder;
-    private ColumnGetter $colGetter;
-
     /**
      * @param array<array<string>> $hands
      * @param array<string> $deck
