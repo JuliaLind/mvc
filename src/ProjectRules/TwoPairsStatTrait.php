@@ -10,6 +10,9 @@ use App\ProjectGrid\ColumnGetter;
 trait TwoPairsStatTrait
 {
     use TwoPairsStatTrait3;
+    use TwoPairsStatTrait4;
+    use TwoPairsStatTrait5;
+
     /**
      * @var array<array<string,string|RuleStatInterface|int>>
      */

@@ -7625,3 +7625,14 @@ eb552e,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/play,1687829516
 5ba098,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/move-card/1/2,1687829519,,302
 1146ad,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/play,1687829519,,200
 e8a0e5,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1687829519,,200
+b73154,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1687830458,,200
+c1e33d,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/select-amount,1687830461,,200
+13160e,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/init,1687830462,,302
+6ff8c8,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/play,1687830462,,200
+5b76c5,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1687830462,,200
+947c7b,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/one-round/0/0,1687830463,,302
+2edc02,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/play,1687830463,,200
+d26762,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1687830463,,200
+07d1d7,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/purchase-suggestion,1687830465,,302
+a320b3,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/play,1687830465,,200
+001449,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1687830465,,200

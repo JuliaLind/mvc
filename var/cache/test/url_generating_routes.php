@@ -57,6 +57,7 @@ return [
     'logout' => [[], ['_controller' => 'App\\Controller\\ProjectController2::projLogout'], [], [['text', '/proj/logout']], [], [], []],
     'proj-init' => [[], ['_controller' => 'App\\Controller\\ProjectController3::projInit'], [], [['text', '/proj/init']], [], [], []],
     'proj-round' => [['row', 'col'], ['_controller' => 'App\\Controller\\ProjectController3::projRound'], ['row' => '\\d+', 'col' => '\\d+'], [['variable', '/', '\\d+', 'col', true], ['variable', '/', '\\d+', 'row', true], ['text', '/proj/one-round']], [], [], []],
+    'proj-unset-suggest' => [[], ['_controller' => 'App\\Controller\\ProjectController3::projUnsetSuggest'], [], [['text', '/proj/unset-suggestion']], [], [], []],
     'proj-play' => [[], ['_controller' => 'App\\Controller\\ProjectController3::projPlay'], [], [['text', '/proj/play']], [], [], []],
     'set-fromslot' => [['row', 'col'], ['_controller' => 'App\\Controller\\ProjectController4::setFromSlot'], ['row' => '\\d+', 'col' => '\\d+'], [['variable', '/', '\\d+', 'col', true], ['variable', '/', '\\d+', 'row', true], ['text', '/proj/set-fromslot']], [], [], []],
     'move-card' => [['row', 'col'], ['_controller' => 'App\\Controller\\ProjectController4::moveCard'], ['row' => '\\d+', 'col' => '\\d+'], [['variable', '/', '\\d+', 'col', true], ['variable', '/', '\\d+', 'row', true], ['text', '/proj/move-card']], [], [], []],

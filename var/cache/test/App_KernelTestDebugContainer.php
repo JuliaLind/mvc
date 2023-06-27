@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelTestDebugContainer::class, false)) {
 
 return new \ContainerEmLwsi9\App_KernelTestDebugContainer([
     'container.build_hash' => 'EmLwsi9',
-    'container.build_id' => 'b6007373',
-    'container.build_time' => 1687815505,
+    'container.build_id' => '30940d05',
+    'container.build_time' => 1687830445,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerEmLwsi9');

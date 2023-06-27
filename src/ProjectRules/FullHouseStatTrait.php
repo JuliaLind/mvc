@@ -6,8 +6,6 @@ use App\ProjectCard\CardCounter;
 
 trait FullHouseStatTrait
 {
-    // use FullHouseStatTrait4;
-    // use FullHouseStatTrait5;
     abstract private function checkThree(bool $three, int $rank): bool;
     abstract private function checkBoth(bool $three, bool $two): bool;
 
@@ -30,22 +28,5 @@ trait FullHouseStatTrait
             }
         }
         return false;
-    }
-
-    /**
-     * @param array<int,int> $ranksHand
-     */
-    private function subCheck2($ranksHand): bool
-    {
-        return count($ranksHand) <= 2 && max($ranksHand) <= 3;
-    }
-
-    /**
-     * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
-     */
-    private function subCheck3($ranksHand, $ranksDeck): bool
-    {
-        return count($ranksHand) === 1 && ((max($ranksHand) === 2 && max($ranksDeck) >= 3) || (max($ranksHand) === 3 && max($ranksDeck) >= 2));
     }
 }

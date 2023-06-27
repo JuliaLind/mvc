@@ -7,6 +7,8 @@ use App\ProjectCard\CardCounter;
 trait FullHouseStatTrait2
 {
     use FullHouseStatTrait;
+    use FullHouseStatTrait6;
+    use FullHouseStatTrait7;
 
 
     /**

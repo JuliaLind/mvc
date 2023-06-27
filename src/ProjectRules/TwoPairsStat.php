@@ -9,6 +9,8 @@ class TwoPairsStat extends RuleStat implements RuleStatInterface
     use TwoPairsTrait;
     use TwoPairsStatTrait;
     use TwoPairsStatTrait2;
+    use TwoPairsStatTrait6;
+    use TwoPairsStatTrait7;
 
 
     /**
