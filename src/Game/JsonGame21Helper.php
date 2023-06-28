@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 /**
  * Helper class to handle game in the Game21Controller
  */
-class JsonGameHandler
+class JsonGame21Helper
 {
     /**
      * Returns data for the Json route where current game is idsplayed

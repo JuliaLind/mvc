@@ -14,8 +14,6 @@ class TwoPairsStat extends RuleStat implements RuleStatInterface
     /**
      * @param array<string> $hand
      * @param array<string> $deck
-     * @return bool true if rule is still possible given passed value
-     * otherwise false
      */
     public function check(array $hand, array $deck, string $card): bool
     {

@@ -10,7 +10,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use App\Helpers\JsonConverter;
 use App\Project\Game;
 
 /**
@@ -24,7 +23,6 @@ class ProjectApiController5 extends AbstractController
     #[Route('/proj/api/game-state', name: "api-game-state")]
     public function apiGameState(
         SessionInterface $session,
-        JsonConverter $converter = new JsonConverter()
     ): Response {
         /**
          * @var Game $game
@@ -39,7 +37,6 @@ class ProjectApiController5 extends AbstractController
                 ...$state
             ];
         }
-        $response = $converter->convert(new JsonResponse($data));
-        return $response;
+        return $this->json($data);
     }
 }

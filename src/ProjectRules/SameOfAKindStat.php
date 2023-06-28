@@ -26,6 +26,7 @@ class SameOfAKindStat extends RuleStat implements RuleStatInterface
          * @var array<int,int> $ranksDeck
          */
         $ranksDeck = $uniqueCountDeck['ranks'];
-        return $deck != [] && max($ranksDeck) >= $this->minCountRank;
+
+        return max($ranksDeck) >= $this->minCountRank;
     }
 }

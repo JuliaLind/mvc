@@ -5,13 +5,13 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
+// use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\DateTime;
 
 use App\Helpers\MainControllerHelper;
-use App\Helpers\LuckyRouteData;
+use App\Random\LuckyMonkey;
 
 use App\Markdown\MdParser;
 
@@ -60,9 +60,9 @@ class MainController extends AbstractController
      */
     #[Route("/lucky", name: "lucky")]
     public function number(
-        LuckyRouteData $helper=new LuckyRouteData()
+        LuckyMonkey $monkey=new LuckyMonkey()
     ): Response {
-        $data = $helper->luckyData();
+        $data = $monkey->data();
         return $this->render('lucky.html.twig', $data);
     }
 

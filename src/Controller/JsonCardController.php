@@ -8,20 +8,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-use App\Cards\JsonCardHandler;
-use App\Cards\DeckOfCards;
-use App\Cards\CardHand;
-use App\Cards\Player;
-use App\Cards\PlayerCreator;
-use App\Helpers\JsonConverter;
 
-/**
- * Controller for json card routes
- */
+use App\Cards\DeckOfCards;
+use App\Cards\Player;
+
 class JsonCardController extends AbstractController
 {
     /**
@@ -34,20 +26,26 @@ class JsonCardController extends AbstractController
         SessionInterface $session,
         int $players,
         int $cards,
-        JsonCardHandler $cardHandler = new JsonCardHandler(),
-        PlayerCreator $creator = new PlayerCreator(),
-        JsonConverter $converter = new JsonConverter()
     ): Response {
         /**
          * @var DeckOfCards $deck The deck of cards.
          */
         $deck = $session->get("deck") ?? new DeckOfCards();
-        /**
-         * @var array<Player> $arr with player objects
-         */
-        $arr = $creator->createPlayers($players);
-        $data = $cardHandler->getDataForDraw($deck, $arr, $cards);
-        $response = $converter->convert(new JsonResponse($data));
-        return $response;
+        $playerData = [];
+        for ($i = 1; $i <= $players; $i++) {
+            $player = new Player("player {$i}");
+            $player->drawMany($deck, $cards);
+            $playerData[] = [
+                'playerName' => $player->getName(),
+                'cards' => $player->showHandAsString(),
+            ];
+        };
+
+        $data = [
+            'players' => $playerData,
+            'cardsLeft' => $deck->getCardCount(),
+        ];
+        $session->set("deck", $deck);
+        return $this->json($data);
     }
 }

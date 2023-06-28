@@ -320,26 +320,25 @@
       <tag name="routing.route_loader"/>
     </service>
     <service id="App\Cards\Card" class="App\Cards\Card" autowire="true" autoconfigure="true"/>
-    <service id="App\Cards\CardDeckHandler" class="App\Cards\CardDeckHandler" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\CardGraphic" class="App\Cards\CardGraphic" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\CardHand" class="App\Cards\CardHand" autowire="true" autoconfigure="true"/>
-    <service id="App\Cards\CardHandler" class="App\Cards\CardHandler" autowire="true" autoconfigure="true"/>
-    <service id="App\Cards\CardLandingHandler" class="App\Cards\CardLandingHandler" autowire="true" autoconfigure="true"/>
-    <service id="App\Cards\DeckOfCards" class="App\Cards\DeckOfCards" autowire="true" autoconfigure="true"/>
+    <service id="App\Cards\DeckOfCards" class="App\Cards\DeckOfCards" public="true"/>
     <service id="App\Cards\DeckOfCardsExt" class="App\Cards\DeckOfCardsExt" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\GameException" class="App\Cards\GameException" autowire="true" autoconfigure="true"/>
-    <service id="App\Cards\JsonCardHandler" class="App\Cards\JsonCardHandler" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\NoCardsLeftException" class="App\Cards\NoCardsLeftException" autowire="true" autoconfigure="true"/>
-    <service id="App\Cards\Player" class="App\Cards\Player" autowire="true" autoconfigure="true">
-      <argument>Player 1</argument>
-      <argument type="service" id="App\Cards\CardHand"/>
-    </service>
-    <service id="App\Cards\PlayerCreator" class="App\Cards\PlayerCreator" autowire="true" autoconfigure="true"/>
+    <service id="App\Cards\Player" class="App\Cards\Player" public="true"/>
     <service id="App\Controller\CardController" class="App\Controller\CardController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\CardController"/>
+      </call>
+    </service>
+    <service id="App\Controller\CardController2" class="App\Controller\CardController2" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\CardController2"/>
       </call>
     </service>
     <service id="App\Controller\Game21Controller" class="App\Controller\Game21Controller" public="true" autowire="true" autoconfigure="true">
@@ -628,7 +627,7 @@
     <service id="App\Game\GameInitiator" class="App\Game\GameInitiator" autowire="true" autoconfigure="true"/>
     <service id="App\Game\GameMoneyHandler" class="App\Game\GameMoneyHandler" autowire="true" autoconfigure="true"/>
     <service id="App\Game\GameMoneyHandler2" class="App\Game\GameMoneyHandler2" autowire="true" autoconfigure="true"/>
-    <service id="App\Game\JsonGameHandler" class="App\Game\JsonGameHandler" autowire="true" autoconfigure="true"/>
+    <service id="App\Game\JsonGame21Helper" class="App\Game\JsonGame21Helper" autowire="true" autoconfigure="true"/>
     <service id="App\Game\MoneyPot" class="App\Game\MoneyPot" autowire="true" autoconfigure="true"/>
     <service id="App\Game\Player21" class="App\Game\Player21" autowire="true" autoconfigure="true">
       <argument>You</argument>
@@ -641,10 +640,6 @@
     <service id="App\Game\RoundHandler2" class="App\Game\RoundHandler2" autowire="true" autoconfigure="true"/>
     <service id="App\Game\ValueConverter" class="App\Game\ValueConverter" autowire="true" autoconfigure="true"/>
     <service id="App\Game\ValueConverter2" class="App\Game\ValueConverter2" autowire="true" autoconfigure="true"/>
-    <service id="App\Helpers\JsonConverter" class="App\Helpers\JsonConverter" autowire="true" autoconfigure="true"/>
-    <service id="App\Helpers\JsonHandler" class="App\Helpers\JsonHandler" autowire="true" autoconfigure="true"/>
-    <service id="App\Helpers\JsonHandler2" class="App\Helpers\JsonHandler2" autowire="true" autoconfigure="true"/>
-    <service id="App\Helpers\LuckyRouteData" class="App\Helpers\LuckyRouteData" autowire="true" autoconfigure="true"/>
     <service id="App\Helpers\MainControllerHelper" class="App\Helpers\MainControllerHelper" autowire="true" autoconfigure="true">
       <argument type="service" id="App\Markdown\MdParser"/>
     </service>
@@ -734,6 +729,8 @@
       <argument type="service" id="App\ProjectRules\Rules"/>
       <argument type="service" id="App\ProjectGrid\ColumnGetter"/>
     </service>
+    <service id="App\Random\LuckyMonkey" class="App\Random\LuckyMonkey" autowire="true" autoconfigure="true"/>
+    <service id="App\Random\Quote" class="App\Random\Quote" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -1852,17 +1849,10 @@
     <service id="test.private_services_locator" class="Symfony\Component\DependencyInjection\ServiceLocator" public="true">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Cards\CardDeckHandler" type="service_closure" id="App\Cards\CardDeckHandler" on-invalid="ignore_uninitialized"/>
         <argument key="App\Cards\CardHand" type="service_closure" id="App\Cards\CardHand" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Cards\CardHandler" type="service_closure" id="App\Cards\CardHandler" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Cards\CardLandingHandler" type="service_closure" id="App\Cards\CardLandingHandler" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Cards\DeckOfCards" type="service_closure" id="App\Cards\DeckOfCards" on-invalid="ignore_uninitialized"/>
         <argument key="App\Cards\DeckOfCardsExt" type="service_closure" id="App\Cards\DeckOfCardsExt" on-invalid="ignore_uninitialized"/>
         <argument key="App\Cards\GameException" type="service_closure" id="App\Cards\GameException" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Cards\JsonCardHandler" type="service_closure" id="App\Cards\JsonCardHandler" on-invalid="ignore_uninitialized"/>
         <argument key="App\Cards\NoCardsLeftException" type="service_closure" id="App\Cards\NoCardsLeftException" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Cards\Player" type="service_closure" id="App\Cards\Player" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Cards\PlayerCreator" type="service_closure" id="App\Cards\PlayerCreator" on-invalid="ignore_uninitialized"/>
         <argument key="App\DataFixtures\AppFixtures" type="service_closure" id="App\DataFixtures\AppFixtures" on-invalid="ignore_uninitialized"/>
         <argument key="App\DataFixtures\BookFixture" type="service_closure" id="App\DataFixtures\BookFixture" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game\BanksTurnHandler" type="service_closure" id="App\Game\BanksTurnHandler" on-invalid="ignore_uninitialized"/>
@@ -1874,7 +1864,7 @@
         <argument key="App\Game\GameInitiator" type="service_closure" id="App\Game\GameInitiator" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game\GameMoneyHandler" type="service_closure" id="App\Game\GameMoneyHandler" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game\GameMoneyHandler2" type="service_closure" id="App\Game\GameMoneyHandler2" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Game\JsonGameHandler" type="service_closure" id="App\Game\JsonGameHandler" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Game\JsonGame21Helper" type="service_closure" id="App\Game\JsonGame21Helper" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game\MoneyPot" type="service_closure" id="App\Game\MoneyPot" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game\Player21" type="service_closure" id="App\Game\Player21" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game\PlayerTurnHandler" type="service_closure" id="App\Game\PlayerTurnHandler" on-invalid="ignore_uninitialized"/>
@@ -1882,10 +1872,6 @@
         <argument key="App\Game\RoundHandler2" type="service_closure" id="App\Game\RoundHandler2" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game\ValueConverter" type="service_closure" id="App\Game\ValueConverter" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game\ValueConverter2" type="service_closure" id="App\Game\ValueConverter2" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Helpers\JsonConverter" type="service_closure" id="App\Helpers\JsonConverter" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Helpers\JsonHandler" type="service_closure" id="App\Helpers\JsonHandler" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Helpers\JsonHandler2" type="service_closure" id="App\Helpers\JsonHandler2" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Helpers\LuckyRouteData" type="service_closure" id="App\Helpers\LuckyRouteData" on-invalid="ignore_uninitialized"/>
         <argument key="App\Helpers\MainControllerHelper" type="service_closure" id="App\Helpers\MainControllerHelper" on-invalid="ignore_uninitialized"/>
         <argument key="App\Library\BookNotFoundException" type="service_closure" id="App\Library\BookNotFoundException" on-invalid="ignore_uninitialized"/>
         <argument key="App\Library\BookRemover" type="service_closure" id="App\Library\BookRemover" on-invalid="ignore_uninitialized"/>
@@ -1931,6 +1917,8 @@
         <argument key="App\ProjectRules\TwoPairs" type="service_closure" id="App\ProjectRules\TwoPairs" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\TwoPairsStat" type="service_closure" id="App\ProjectRules\TwoPairsStat" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\WinEvaluator" type="service_closure" id="App\ProjectRules\WinEvaluator" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Random\LuckyMonkey" type="service_closure" id="App\Random\LuckyMonkey" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Random\Quote" type="service_closure" id="App\Random\Quote" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\ScoreRepository" type="service_closure" id="App\Repository\ScoreRepository" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\TransactionRepository" type="service_closure" id="App\Repository\TransactionRepository" on-invalid="ignore_uninitialized"/>
@@ -2671,7 +2659,7 @@
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" type="service_closure" id="webpack_encore.entrypoint_lookup_collection" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader.filesystem" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
-        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.AAH3Yfr" on-invalid="ignore_uninitialized"/>
+        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.sl3j2Pa" on-invalid="ignore_uninitialized"/>
         <argument key="doctrine.id_generator_locator" type="service_closure" id=".service_locator.KLVvNIq" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
         <argument key="Psr\Log\LoggerInterface $requestLogger" type="service_closure" id="monolog.logger.request" on-invalid="ignore_uninitialized"/>
@@ -7047,6 +7035,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CardController" class="App\Controller\CardController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CardController" class="App\Controller\CardController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CardController" class="App\Controller\CardController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CardController2" class="App\Controller\CardController2" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CardController2" class="App\Controller\CardController2" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CardController2" class="App\Controller\CardController2" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Game21Controller" class="App\Controller\Game21Controller" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Game21Controller" class="App\Controller\Game21Controller" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Game21Controller" class="App\Controller\Game21Controller" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7201,31 +7192,16 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.zgz1dKt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.wEG24Lz" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="cardHandler" type="service_closure" id="App\Cards\CardDeckHandler"/>
         <argument key="deck" type="service_closure" id="App\Cards\DeckOfCards"/>
       </argument>
     </service>
-    <service id=".service_locator.TbQnfRD" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.RnGvXe2" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="cardHandler" type="service_closure" id="App\Cards\CardHandler"/>
         <argument key="player" type="service_closure" id="App\Cards\Player"/>
-      </argument>
-    </service>
-    <service id=".service_locator.WQSKPJO" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="cardHandler" type="service_closure" id="App\Cards\CardHandler"/>
-        <argument key="creator" type="service_closure" id="App\Cards\PlayerCreator"/>
-      </argument>
-    </service>
-    <service id=".service_locator.VptkjFl" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="cardHandler" type="service_closure" id="App\Cards\CardLandingHandler"/>
       </argument>
     </service>
     <service id=".service_locator..jNOpKJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7270,53 +7246,16 @@
         <argument key="gameHandler" type="service_closure" id="App\Game\PlayerTurnHandler"/>
       </argument>
     </service>
-    <service id=".service_locator.ZQEfZjZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.CAB_TcZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="cardHandler" type="service_closure" id="App\Cards\JsonCardHandler"/>
-        <argument key="converter" type="service_closure" id="App\Helpers\JsonConverter"/>
-        <argument key="creator" type="service_closure" id="App\Cards\PlayerCreator"/>
+        <argument key="quote" type="service_closure" id="App\Random\Quote"/>
       </argument>
     </service>
-    <service id=".service_locator.csp0YFR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.JsvBhwz" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="converter" type="service_closure" id="App\Helpers\JsonConverter"/>
-      </argument>
-    </service>
-    <service id=".service_locator.WaMDEoP" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="cardHandler" type="service_closure" id="App\Cards\JsonCardHandler"/>
-        <argument key="converter" type="service_closure" id="App\Helpers\JsonConverter"/>
-        <argument key="player" type="service_closure" id="App\Cards\Player"/>
-      </argument>
-    </service>
-    <service id=".service_locator.4z88Q58" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="handler" type="service_closure" id="App\Helpers\JsonHandler"/>
-      </argument>
-    </service>
-    <service id=".service_locator.sOf6UT6" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="converter" type="service_closure" id="App\Helpers\JsonConverter"/>
-        <argument key="handler" type="service_closure" id="App\Helpers\JsonHandler2"/>
-      </argument>
-    </service>
-    <service id=".service_locator.vq74bGk" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="converter" type="service_closure" id="App\Helpers\JsonConverter"/>
-        <argument key="gameHandler" type="service_closure" id="App\Game\JsonGameHandler"/>
-      </argument>
-    </service>
-    <service id=".service_locator.RWtt3GP" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="bookRepository" type="service_closure" id="App\Repository\BookRepository"/>
-        <argument key="converter" type="service_closure" id="App\Helpers\JsonConverter"/>
+        <argument key="gameHandler" type="service_closure" id="App\Game\JsonGame21Helper"/>
       </argument>
     </service>
     <service id=".service_locator.B2ZeSAD" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7345,37 +7284,28 @@
         <argument key="helper" type="service_closure" id="App\Helpers\MainControllerHelper"/>
       </argument>
     </service>
-    <service id=".service_locator.JOjFqhp" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.JU9_2rw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="helper" type="service_closure" id="App\Helpers\LuckyRouteData"/>
-      </argument>
-    </service>
-    <service id=".service_locator.7oOFMGT" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="converter" type="service_closure" id="App\Helpers\JsonConverter"/>
-        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
-      </argument>
-    </service>
-    <service id=".service_locator.xuMLcQJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="converter" type="service_closure" id="App\Helpers\JsonConverter"/>
-        <argument key="game" type="service_closure" id="App\Project\Api2"/>
-      </argument>
-    </service>
-    <service id=".service_locator.FYjUH8F" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="converter" type="service_closure" id="App\Helpers\JsonConverter"/>
-        <argument key="game" type="service_closure" id="App\Project\Api3"/>
+        <argument key="monkey" type="service_closure" id="App\Random\LuckyMonkey"/>
       </argument>
     </service>
     <service id=".service_locator.aKM6MDa" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.lOUItmd" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="game" type="service_closure" id="App\Project\Api2"/>
+      </argument>
+    </service>
+    <service id=".service_locator.zsKtAx3" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="game" type="service_closure" id="App\Project\Api3"/>
       </argument>
     </service>
     <service id=".service_locator.OsH1muE" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7404,15 +7334,13 @@
         <argument key="repo" type="service_closure" id="App\Repository\ScoreRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.AAH3Yfr" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.sl3j2Pa" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\CardController::card" type="service_closure" id=".service_locator.VptkjFl"/>
-        <argument key="App\Controller\CardController::deal" type="service_closure" id=".service_locator.WQSKPJO"/>
-        <argument key="App\Controller\CardController::deck" type="service_closure" id=".service_locator.zgz1dKt"/>
-        <argument key="App\Controller\CardController::draw" type="service_closure" id=".service_locator.TbQnfRD"/>
-        <argument key="App\Controller\CardController::drawMany" type="service_closure" id=".service_locator.TbQnfRD"/>
-        <argument key="App\Controller\CardController::shuffle" type="service_closure" id=".service_locator.zgz1dKt"/>
+        <argument key="App\Controller\CardController2::draw" type="service_closure" id=".service_locator.RnGvXe2"/>
+        <argument key="App\Controller\CardController2::drawMany" type="service_closure" id=".service_locator.RnGvXe2"/>
+        <argument key="App\Controller\CardController::deck" type="service_closure" id=".service_locator.wEG24Lz"/>
+        <argument key="App\Controller\CardController::shuffle" type="service_closure" id=".service_locator.wEG24Lz"/>
         <argument key="App\Controller\Game21Controller2::bankPlaying" type="service_closure" id=".service_locator.2mgl6YI"/>
         <argument key="App\Controller\Game21Controller3::selectAmount" type="service_closure" id=".service_locator.Q9850KJ"/>
         <argument key="App\Controller\Game21Controller4::init" type="service_closure" id=".service_locator.aLUT_A_"/>
@@ -7421,16 +7349,14 @@
         <argument key="App\Controller\Game21Controller7::playerDraw" type="service_closure" id=".service_locator.aN97.3Q"/>
         <argument key="App\Controller\Game21Controller::gameDoc" type="service_closure" id=".service_locator..jNOpKJ"/>
         <argument key="App\Controller\Game21Controller::main" type="service_closure" id=".service_locator..jNOpKJ"/>
-        <argument key="App\Controller\JsonCardController2::jsonDeck" type="service_closure" id=".service_locator.csp0YFR"/>
-        <argument key="App\Controller\JsonCardController3::jsonDrawMany" type="service_closure" id=".service_locator.WaMDEoP"/>
-        <argument key="App\Controller\JsonCardController4::jsonDraw" type="service_closure" id=".service_locator.WaMDEoP"/>
-        <argument key="App\Controller\JsonCardController5::jsonShuffle" type="service_closure" id=".service_locator.csp0YFR"/>
-        <argument key="App\Controller\JsonCardController::jsonDeal" type="service_closure" id=".service_locator.ZQEfZjZ"/>
-        <argument key="App\Controller\JsonController2::jsonQuote" type="service_closure" id=".service_locator.sOf6UT6"/>
-        <argument key="App\Controller\JsonController::apis" type="service_closure" id=".service_locator.4z88Q58"/>
-        <argument key="App\Controller\JsonGame21Controller::jsonGame" type="service_closure" id=".service_locator.vq74bGk"/>
+        <argument key="App\Controller\JsonCardController2::jsonDeck" type="service_closure" id=".service_locator.wEG24Lz"/>
+        <argument key="App\Controller\JsonCardController3::jsonDrawMany" type="service_closure" id=".service_locator.RnGvXe2"/>
+        <argument key="App\Controller\JsonCardController4::jsonDraw" type="service_closure" id=".service_locator.RnGvXe2"/>
+        <argument key="App\Controller\JsonCardController5::jsonShuffle" type="service_closure" id=".service_locator.wEG24Lz"/>
+        <argument key="App\Controller\JsonController2::jsonQuote" type="service_closure" id=".service_locator.CAB_TcZ"/>
+        <argument key="App\Controller\JsonGame21Controller::jsonGame" type="service_closure" id=".service_locator.JsvBhwz"/>
         <argument key="App\Controller\JsonLibraryController::showABookByIsbn" type="service_closure" id=".service_locator.B2ZeSAD"/>
-        <argument key="App\Controller\JsonLibraryController::showAllBooks" type="service_closure" id=".service_locator.RWtt3GP"/>
+        <argument key="App\Controller\JsonLibraryController::showAllBooks" type="service_closure" id=".service_locator.B2ZeSAD"/>
         <argument key="App\Controller\LibraryController2::updateBookForm" type="service_closure" id=".service_locator.B2ZeSAD"/>
         <argument key="App\Controller\LibraryController3::resetBook" type="service_closure" id=".service_locator.g9rwp3J"/>
         <argument key="App\Controller\LibraryController4::updateBook" type="service_closure" id=".service_locator.dD9JOvL"/>
@@ -7441,16 +7367,14 @@
         <argument key="App\Controller\MainController::about" type="service_closure" id=".service_locator.o.hPovE"/>
         <argument key="App\Controller\MainController::home" type="service_closure" id=".service_locator.o.hPovE"/>
         <argument key="App\Controller\MainController::metrics" type="service_closure" id=".service_locator.o.hPovE"/>
-        <argument key="App\Controller\MainController::number" type="service_closure" id=".service_locator.JOjFqhp"/>
+        <argument key="App\Controller\MainController::number" type="service_closure" id=".service_locator.JU9_2rw"/>
         <argument key="App\Controller\MainController::report" type="service_closure" id=".service_locator.o.hPovE"/>
-        <argument key="App\Controller\ProjectApiController1::apiOneRound" type="service_closure" id=".service_locator.csp0YFR"/>
-        <argument key="App\Controller\ProjectApiController2::apiUser" type="service_closure" id=".service_locator.7oOFMGT"/>
-        <argument key="App\Controller\ProjectApiController3::apiTransactions" type="service_closure" id=".service_locator.7oOFMGT"/>
-        <argument key="App\Controller\ProjectApiController4::apiPlaceCard" type="service_closure" id=".service_locator.xuMLcQJ"/>
-        <argument key="App\Controller\ProjectApiController5::apiGameState" type="service_closure" id=".service_locator.csp0YFR"/>
-        <argument key="App\Controller\ProjectApiController6::apiUsers" type="service_closure" id=".service_locator.7oOFMGT"/>
-        <argument key="App\Controller\ProjectApiController7::apiLeaderboard" type="service_closure" id=".service_locator.7oOFMGT"/>
-        <argument key="App\Controller\ProjectApiController8::apiResults" type="service_closure" id=".service_locator.FYjUH8F"/>
+        <argument key="App\Controller\ProjectApiController2::apiUser" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectApiController3::apiTransactions" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectApiController4::apiPlaceCard" type="service_closure" id=".service_locator.lOUItmd"/>
+        <argument key="App\Controller\ProjectApiController6::apiUsers" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectApiController7::apiLeaderboard" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectApiController8::apiResults" type="service_closure" id=".service_locator.zsKtAx3"/>
         <argument key="App\Controller\ProjectController1::projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController1::projShop" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController1::projTrans" type="service_closure" id=".service_locator.OsH1muE"/>
@@ -7471,12 +7395,10 @@
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
-        <argument key="App\Controller\CardController:card" type="service_closure" id=".service_locator.VptkjFl"/>
-        <argument key="App\Controller\CardController:deal" type="service_closure" id=".service_locator.WQSKPJO"/>
-        <argument key="App\Controller\CardController:deck" type="service_closure" id=".service_locator.zgz1dKt"/>
-        <argument key="App\Controller\CardController:draw" type="service_closure" id=".service_locator.TbQnfRD"/>
-        <argument key="App\Controller\CardController:drawMany" type="service_closure" id=".service_locator.TbQnfRD"/>
-        <argument key="App\Controller\CardController:shuffle" type="service_closure" id=".service_locator.zgz1dKt"/>
+        <argument key="App\Controller\CardController2:draw" type="service_closure" id=".service_locator.RnGvXe2"/>
+        <argument key="App\Controller\CardController2:drawMany" type="service_closure" id=".service_locator.RnGvXe2"/>
+        <argument key="App\Controller\CardController:deck" type="service_closure" id=".service_locator.wEG24Lz"/>
+        <argument key="App\Controller\CardController:shuffle" type="service_closure" id=".service_locator.wEG24Lz"/>
         <argument key="App\Controller\Game21Controller2:bankPlaying" type="service_closure" id=".service_locator.2mgl6YI"/>
         <argument key="App\Controller\Game21Controller3:selectAmount" type="service_closure" id=".service_locator.Q9850KJ"/>
         <argument key="App\Controller\Game21Controller4:init" type="service_closure" id=".service_locator.aLUT_A_"/>
@@ -7485,16 +7407,14 @@
         <argument key="App\Controller\Game21Controller7:playerDraw" type="service_closure" id=".service_locator.aN97.3Q"/>
         <argument key="App\Controller\Game21Controller:gameDoc" type="service_closure" id=".service_locator..jNOpKJ"/>
         <argument key="App\Controller\Game21Controller:main" type="service_closure" id=".service_locator..jNOpKJ"/>
-        <argument key="App\Controller\JsonCardController2:jsonDeck" type="service_closure" id=".service_locator.csp0YFR"/>
-        <argument key="App\Controller\JsonCardController3:jsonDrawMany" type="service_closure" id=".service_locator.WaMDEoP"/>
-        <argument key="App\Controller\JsonCardController4:jsonDraw" type="service_closure" id=".service_locator.WaMDEoP"/>
-        <argument key="App\Controller\JsonCardController5:jsonShuffle" type="service_closure" id=".service_locator.csp0YFR"/>
-        <argument key="App\Controller\JsonCardController:jsonDeal" type="service_closure" id=".service_locator.ZQEfZjZ"/>
-        <argument key="App\Controller\JsonController2:jsonQuote" type="service_closure" id=".service_locator.sOf6UT6"/>
-        <argument key="App\Controller\JsonController:apis" type="service_closure" id=".service_locator.4z88Q58"/>
-        <argument key="App\Controller\JsonGame21Controller:jsonGame" type="service_closure" id=".service_locator.vq74bGk"/>
+        <argument key="App\Controller\JsonCardController2:jsonDeck" type="service_closure" id=".service_locator.wEG24Lz"/>
+        <argument key="App\Controller\JsonCardController3:jsonDrawMany" type="service_closure" id=".service_locator.RnGvXe2"/>
+        <argument key="App\Controller\JsonCardController4:jsonDraw" type="service_closure" id=".service_locator.RnGvXe2"/>
+        <argument key="App\Controller\JsonCardController5:jsonShuffle" type="service_closure" id=".service_locator.wEG24Lz"/>
+        <argument key="App\Controller\JsonController2:jsonQuote" type="service_closure" id=".service_locator.CAB_TcZ"/>
+        <argument key="App\Controller\JsonGame21Controller:jsonGame" type="service_closure" id=".service_locator.JsvBhwz"/>
         <argument key="App\Controller\JsonLibraryController:showABookByIsbn" type="service_closure" id=".service_locator.B2ZeSAD"/>
-        <argument key="App\Controller\JsonLibraryController:showAllBooks" type="service_closure" id=".service_locator.RWtt3GP"/>
+        <argument key="App\Controller\JsonLibraryController:showAllBooks" type="service_closure" id=".service_locator.B2ZeSAD"/>
         <argument key="App\Controller\LibraryController2:updateBookForm" type="service_closure" id=".service_locator.B2ZeSAD"/>
         <argument key="App\Controller\LibraryController3:resetBook" type="service_closure" id=".service_locator.g9rwp3J"/>
         <argument key="App\Controller\LibraryController4:updateBook" type="service_closure" id=".service_locator.dD9JOvL"/>
@@ -7505,16 +7425,14 @@
         <argument key="App\Controller\MainController:about" type="service_closure" id=".service_locator.o.hPovE"/>
         <argument key="App\Controller\MainController:home" type="service_closure" id=".service_locator.o.hPovE"/>
         <argument key="App\Controller\MainController:metrics" type="service_closure" id=".service_locator.o.hPovE"/>
-        <argument key="App\Controller\MainController:number" type="service_closure" id=".service_locator.JOjFqhp"/>
+        <argument key="App\Controller\MainController:number" type="service_closure" id=".service_locator.JU9_2rw"/>
         <argument key="App\Controller\MainController:report" type="service_closure" id=".service_locator.o.hPovE"/>
-        <argument key="App\Controller\ProjectApiController1:apiOneRound" type="service_closure" id=".service_locator.csp0YFR"/>
-        <argument key="App\Controller\ProjectApiController2:apiUser" type="service_closure" id=".service_locator.7oOFMGT"/>
-        <argument key="App\Controller\ProjectApiController3:apiTransactions" type="service_closure" id=".service_locator.7oOFMGT"/>
-        <argument key="App\Controller\ProjectApiController4:apiPlaceCard" type="service_closure" id=".service_locator.xuMLcQJ"/>
-        <argument key="App\Controller\ProjectApiController5:apiGameState" type="service_closure" id=".service_locator.csp0YFR"/>
-        <argument key="App\Controller\ProjectApiController6:apiUsers" type="service_closure" id=".service_locator.7oOFMGT"/>
-        <argument key="App\Controller\ProjectApiController7:apiLeaderboard" type="service_closure" id=".service_locator.7oOFMGT"/>
-        <argument key="App\Controller\ProjectApiController8:apiResults" type="service_closure" id=".service_locator.FYjUH8F"/>
+        <argument key="App\Controller\ProjectApiController2:apiUser" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectApiController3:apiTransactions" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectApiController4:apiPlaceCard" type="service_closure" id=".service_locator.lOUItmd"/>
+        <argument key="App\Controller\ProjectApiController6:apiUsers" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectApiController7:apiLeaderboard" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectApiController8:apiResults" type="service_closure" id=".service_locator.zsKtAx3"/>
         <argument key="App\Controller\ProjectController1:projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController1:projShop" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController1:projTrans" type="service_closure" id=".service_locator.OsH1muE"/>
@@ -7933,6 +7851,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\CardController2" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\CardController2"/>
+      <argument>App\Controller\CardController2</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
     <service id=".service_locator.jIxfAsi.App\Controller\Game21Controller" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Game21Controller"/>
       <argument>App\Controller\Game21Controller</argument>
@@ -8338,12 +8262,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.AAH3Yfr"/>
+      <argument type="service" id=".service_locator.sl3j2Pa"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.AAH3Yfr"/>
+      <argument type="service" id=".service_locator.sl3j2Pa"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9060,7 +8984,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.AAH3Yfr"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.sl3j2Pa"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9081,16 +9005,9 @@
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.XDGmiR3" alias=".1_ServiceLocator~PcGQYYq"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
-    <service id=".service_locator.y4NDzPL" alias=".service_locator.ZQEfZjZ"/>
-    <service id=".service_locator._bWkSTM" alias=".service_locator.WaMDEoP"/>
-    <service id=".service_locator.EyAzoHU" alias=".service_locator.sOf6UT6"/>
-    <service id=".service_locator.4awfFdA" alias=".service_locator.vq74bGk"/>
-    <service id=".service_locator.0B72jtA" alias=".service_locator.7oOFMGT"/>
-    <service id=".service_locator.NbOaifQ" alias=".service_locator.xuMLcQJ"/>
-    <service id=".service_locator.0TqkSw4" alias=".service_locator.FYjUH8F"/>
     <service id=".service_locator.hjZjVN0" alias=".service_locator.OsH1muE"/>
     <service id=".service_locator.sB0QlrM" alias=".service_locator.VxD2oRa"/>
-    <service id=".service_locator.srl9..X" alias=".service_locator.AAH3Yfr"/>
+    <service id=".service_locator.h0RyO1v" alias=".service_locator.sl3j2Pa"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.fTeS4zl" alias=".service_locator.iwVv_YN"/>
@@ -9120,10 +9037,8 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id="doctrine.dbal.connection_factory" alias="dama.doctrine.dbal.connection_factory"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
-    <service id=".service_locator.u4Pcc_." alias=".service_locator.zgz1dKt"/>
-    <service id=".service_locator.M3_eTo7" alias=".service_locator.TbQnfRD"/>
-    <service id=".service_locator.eXm1Mxj" alias=".service_locator.WQSKPJO"/>
-    <service id=".service_locator.Hlz3zMv" alias=".service_locator.VptkjFl"/>
+    <service id=".service_locator.xW6YIrj" alias=".service_locator.wEG24Lz"/>
+    <service id=".service_locator.pRU0WGJ" alias=".service_locator.RnGvXe2"/>
     <service id=".service_locator.GTcC9qI" alias=".service_locator..jNOpKJ"/>
     <service id=".service_locator.mm3Dgvz" alias=".service_locator.2mgl6YI"/>
     <service id=".service_locator.lndUTNt" alias=".service_locator.Q9850KJ"/>
@@ -9131,22 +9046,16 @@
     <service id=".service_locator.OFAIsSE" alias=".service_locator.QpqmR2W"/>
     <service id=".service_locator.3jnYMMS" alias=".service_locator.Hyo_7pF"/>
     <service id=".service_locator.JIa5O6K" alias=".service_locator.aN97.3Q"/>
-    <service id=".service_locator.qLMj6Do" alias=".service_locator.ZQEfZjZ"/>
-    <service id=".service_locator.hWHPenp" alias=".service_locator.csp0YFR"/>
-    <service id=".service_locator.kXLWcni" alias=".service_locator.WaMDEoP"/>
-    <service id=".service_locator.XVrnk5n" alias=".service_locator.4z88Q58"/>
-    <service id=".service_locator.BBsFXco" alias=".service_locator.sOf6UT6"/>
-    <service id=".service_locator.UWtdJ_G" alias=".service_locator.vq74bGk"/>
-    <service id=".service_locator.SVanb7X" alias=".service_locator.RWtt3GP"/>
+    <service id=".service_locator.2J6_Zz5" alias=".service_locator.CAB_TcZ"/>
+    <service id=".service_locator.JVMlr7o" alias=".service_locator.JsvBhwz"/>
     <service id=".service_locator.7fc3RCT" alias=".service_locator.B2ZeSAD"/>
     <service id=".service_locator.XTNpwuX" alias=".service_locator.dD9JOvL"/>
     <service id=".service_locator.yrKL7dC" alias=".service_locator.g9rwp3J"/>
     <service id=".service_locator.X4dkjsX" alias=".service_locator.o.hPovE"/>
-    <service id=".service_locator.hvw6Aja" alias=".service_locator.JOjFqhp"/>
-    <service id=".service_locator.rq0YjiN" alias=".service_locator.7oOFMGT"/>
-    <service id=".service_locator.jXd9ehm" alias=".service_locator.xuMLcQJ"/>
-    <service id=".service_locator.xA9n761" alias=".service_locator.FYjUH8F"/>
+    <service id=".service_locator.ReGx9JW" alias=".service_locator.JU9_2rw"/>
     <service id=".service_locator.bInR.ll" alias=".service_locator.aKM6MDa"/>
+    <service id=".service_locator.lDnTxd8" alias=".service_locator.lOUItmd"/>
+    <service id=".service_locator.qWHvC52" alias=".service_locator.zsKtAx3"/>
     <service id=".service_locator.3ZhCy_8" alias=".service_locator.OsH1muE"/>
     <service id=".service_locator.sxVTQ8c" alias=".service_locator.J..d_da"/>
     <service id=".service_locator.wxPxzEn" alias=".service_locator.VxD2oRa"/>

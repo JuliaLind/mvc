@@ -8,36 +8,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
-// use App\Cards\JsonCardHandler;
 use App\Cards\DeckOfCards;
-use App\Helpers\JsonConverter;
 
-/**
- * Controller for json card routes
- */
 class JsonCardController2 extends AbstractController
 {
     /**
-    * Creates and shows json representation of a deck of cards
-    * in sorted order
+    * Creates a new deck of cards and shows as Json
     */
     #[Route('/api/deck', name: "jsonDeck", methods: ['GET'])]
     public function jsonDeck(
         SessionInterface $session,
-        // JsonCardHandler $cardHandler = new JsonCardHandler(),
-        JsonConverter $converter = new JsonConverter()
+        DeckOfCards $deck = new DeckOfCards()
     ): Response {
-        $deck = new DeckOfCards();
         $session->set("deck", $deck);
-        // $data = $cardHandler->getDeckRouteData($deck);
         $data = [
             'cards' => $deck->getAsString(),
         ];
-        $response = $converter->convert(new JsonResponse($data));
-        return $response;
+        return $this->json($data);
     }
 }

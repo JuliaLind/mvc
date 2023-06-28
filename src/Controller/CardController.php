@@ -9,16 +9,16 @@ use App\Cards\CardHand;
 use App\Cards\DeckOfCards;
 use App\Cards\Player;
 
-use App\Cards\CardHandler;
-use App\Cards\CardLandingHandler;
-use App\Cards\CardDeckHandler;
-use App\Cards\PlayerCreator;
+
+// use App\Cards\CardLandingHandler;
+
+
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-use Symfony\Component\HttpFoundation\Request;
+// use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
@@ -33,11 +33,16 @@ class CardController extends AbstractController
     #[Route('/card/deck', name: "deck", methods: ['GET'])]
     public function deck(
         SessionInterface $session,
-        CardDeckHandler $cardHandler=new CardDeckHandler(),
         DeckOfCards $deck=new DeckOfCards()
     ): Response {
-        $data = $cardHandler->getDeckRouteData($deck);
+        $data = [
+            'title' => "New deck",
+            'cards' => $deck->getImgLinks(),
+            'page' => "deck card no-header",
+            'url' => "/card",
+        ];
         $session->set("deck", $deck);
+
         return $this->render('card/deck.html.twig', $data);
     }
 
@@ -48,95 +53,55 @@ class CardController extends AbstractController
     #[Route('/card/deck/shuffle', name: "shuffle", methods: ['POST'])]
     public function shuffle(
         SessionInterface $session,
-        CardDeckHandler $cardHandler=new CardDeckHandler(),
         DeckOfCards $deck=new DeckOfCards()
     ): Response {
         $deck->shuffle();
-        $data = $cardHandler->getDeckRouteData($deck);
-        $data['title'] = "Shuffled deck";
+        $data = [
+            'title' => "Shuffled deck",
+            'cards' => $deck->getImgLinks(),
+            'page' => "deck card no-header",
+            'url' => "/card",
+        ];
         $session->set("deck", $deck);
 
         return $this->render('card/deck.html.twig', $data);
     }
 
-    /**
-     * Route where one card at a time is drawn and displayed
-     * from the deck of cards that was created in the 'shuffle' route
-     * or in the 'deck' route
-     */
-    #[Route('/card/deck/draw', name: "draw", methods: ['POST'])]
-    public function draw(
-        SessionInterface $session,
-        CardHandler $cardHandler=new CardHandler(),
-        Player $player=new Player()
-    ): Response {
-        /**
-         * @var DeckOfCards $deck The deck of cards.
-         */
-        $deck = $session->get("deck") ?? new DeckOfCards();
-        $data = $cardHandler->getDataForDraw($deck, [$player]);
-        $session->set("deck", $deck);
-
-        return $this->render('card/draw.html.twig', $data);
-    }
-
-    /**
-     * Route where a number of cards at a time is drawn and displayed
-     * from the deck of cards that was created in the 'shuffle' route
-     * or in the 'deck' route
-     */
-    #[Route('/card/deck/draw/{number<\d+>}', name: "drawMany", methods: ['POST'])]
-    public function drawMany(
-        SessionInterface $session,
-        int $number,
-        CardHandler $cardHandler=new CardHandler(),
-        Player $player=new Player()
-    ): Response {
-        /**
-         * @var DeckOfCards $deck The deck of cards.
-         */
-        $deck = $session->get("deck") ?? new DeckOfCards();
-        $data = $cardHandler->getDataForDraw($deck, [$player], $number);
-
-        $session->set("deck", $deck);
-
-        return $this->render('card/draw.html.twig', $data);
-    }
-
-    /**
-     * Route where a number of cards is dealt to a number of players
-     * from the deck of cards that was created in the 'shuffle' route
-     * or in the 'deck' route
-     */
-    #[Route('/card/deck/deal/{players<\d+>}/{cards<\d+>}', name: "deal", methods: ['POST'])]
-    public function deal(
-        SessionInterface $session,
-        int $players,
-        int $cards,
-        CardHandler $cardHandler = new CardHandler(),
-        PlayerCreator $creator = new PlayerCreator()
-    ): Response {
-        /**
-         * @var DeckOfCards $deck The deck of cards.
-         */
-        $deck = $session->get("deck") ?? new DeckOfCards();
-
-        /**
-         * @var array<Player> $arr with player objects
-         */
-        $arr = $creator->createPlayers($players);
-        $data = $cardHandler->getDataForDraw($deck, $arr, $cards);
-
-        $session->set("deck", $deck);
-
-        return $this->render('card/draw.html.twig', $data);
-    }
-
     #[Route("/card", name: "card")]
     public function card(
-        CardLandingHandler $cardHandler=new CardLandingHandler()
+        // CardLandingHandler $cardHandler=new CardLandingHandler()
     ): Response {
-        $data = $cardHandler->getMainData();
+        $data = [
+            'page' => "landing",
+            'url' => "/card",
+            'cardRoutes' => [
+                [
+                    'link' => "deck",
+                    'method' => 'GET',
+                    'route' => '/card/deck'
+                ],
+                [
+                    'link' => "shuffle",
+                    'method' => 'POST',
+                    'route' => '/card/deck/shuffle'
+                ],
+                [
+                    'link' => "draw",
+                    'method' => 'POST',
+                    'route' => '/card/deck/draw'
+                ],
+                [
+                    'link' => "drawMany",
+                    'method' => 'POST',
+                    'route' => '/card/deck/draw/5'
+                ],
+                [
+                    'link' => "deal",
+                    'method' => 'POST',
+                    'route' => '/card/deck/deal/3/5'
+                ],
+            ],
+        ];
         return $this->render('card/home.html.twig', $data);
     }
 }

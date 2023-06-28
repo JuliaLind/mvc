@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Helpers\JsonConverter;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
 use App\Entity\Transaction;
@@ -29,7 +28,6 @@ class ProjectApiController2 extends AbstractController
     public function apiUser(
         EntityManagerInterface $entityManager,
         string $email,
-        JsonConverter $converter = new JsonConverter()
     ): Response {
         /**
          * @var User $user
@@ -89,7 +87,6 @@ class ProjectApiController2 extends AbstractController
                 ]
             );
         }
-        $response = $converter->convert(new JsonResponse($data));
-        return $response;
+        return $this->json($data);
     }
 }

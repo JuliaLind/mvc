@@ -5,9 +5,8 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 
-use App\Game\JsonGameHandler;
+use App\Game\JsonGame21Helper;
 use App\Game\Game21Interface;
-use App\Game\Game21Easy;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -31,15 +30,13 @@ class JsonGame21Controller extends AbstractController
     #[Route('/api/game', name: "jsonGame", methods: ['GET'])]
     public function jsonGame(
         SessionInterface $session,
-        JsonGameHandler $gameHandler=new JsonGameHandler(),
-        JsonConverter $converter = new JsonConverter()
+        JsonGame21Helper $gameHandler=new JsonGame21Helper(),
     ): Response {
         /**
-         * @var Game21Easy $game The current game of 21.
+         * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21") ?? null;
         $data = $gameHandler->jsonGame($game);
-        $response = $converter->convert(new JsonResponse($data));
-        return $response;
+        return $this->json($data);
     }
 }

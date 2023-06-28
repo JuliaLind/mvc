@@ -5,18 +5,15 @@ namespace App\Game;
 use PHPUnit\Framework\TestCase;
 use App\Markdown\MdParser;
 
-/**
- * Test cases for class GameHandler.
- */
-class JsonGameHandlerTest extends TestCase
+class JsonGame21HelperTest extends TestCase
 {
     /**
      * Construct object and check
      */
     public function testCreateObject(): void
     {
-        $gameHandler = new JsonGameHandler();
-        $this->assertInstanceOf("\App\Game\JsonGameHandler", $gameHandler);
+        $gameHandler = new JsonGame21Helper();
+        $this->assertInstanceOf("\App\Game\JsonGame21Helper", $gameHandler);
     }
 
     /**
@@ -25,7 +22,7 @@ class JsonGameHandlerTest extends TestCase
      */
     public function testJsonGame(): void
     {
-        $gameHandler = new JsonGameHandler();
+        $gameHandler = new JsonGame21Helper();
         $game = $this->createMock(Game21Easy::class);
         $game->method('getRisk')->willReturn("47.83%");
         $game->method('getPlayerData')->willReturn([

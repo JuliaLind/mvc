@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Helpers\JsonConverter;
+
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
 use App\Entity\Transaction;
@@ -27,7 +27,6 @@ class ProjectApiController3 extends AbstractController
     #[Route('/proj/api/transactions', name: "api-transactions", methods: ['GET'])]
     public function apiTransactions(
         EntityManagerInterface $entityManager,
-        JsonConverter $converter = new JsonConverter()
     ): Response {
         $transactions = $entityManager->getRepository(Transaction::class)->findBy([], ['id' => 'DESC']);
         $data = [];
@@ -49,7 +48,6 @@ class ProjectApiController3 extends AbstractController
                 'amount' => $transaction->getAmount(),
             ];
         }
-        $response = $converter->convert(new JsonResponse($data));
-        return $response;
+        return $this->json($data);
     }
 }

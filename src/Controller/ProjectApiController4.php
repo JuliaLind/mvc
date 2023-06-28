@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use App\Helpers\JsonConverter;
 use App\Project\Api2;
 
 /**
@@ -27,10 +26,8 @@ class ProjectApiController4 extends AbstractController
         int $row,
         int $col,
         Api2 $game = new Api2(),
-        JsonConverter $converter = new JsonConverter()
     ): Response {
         $data = $game->oneRound($row, $col);
-        $response = $converter->convert(new JsonResponse($data));
-        return $response;
+        return $this->json($data);
     }
 }

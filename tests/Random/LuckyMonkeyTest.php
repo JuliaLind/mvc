@@ -1,39 +1,39 @@
 <?php
 
-namespace App\Helpers;
+namespace App\Random;
 
 use PHPUnit\Framework\TestCase;
 
 /**
  * Test cases for class LuckyRouteDataTest class.
  */
-class LuckyRouteDataTest extends TestCase
+class LuckyMonkeyTest extends TestCase
 {
     /**
      * Construct object and check
      */
     public function testCreateObject(): void
     {
-        $helper = new LuckyRouteData();
-        $this->assertInstanceOf("\App\Helpers\LuckyRouteData", $helper);
+        $helper = new LuckyMonkey();
+        $this->assertInstanceOf("\App\Random\LuckyMonkey", $helper);
     }
 
     /**
      * Tests that luckyData method returns
      * expected Data
      */
-    public function testLuckyData(): void
+    public function testData(): void
     {
-        $helper = new LuckyRouteData();
-        $monkey = <<<EOD
+        $monkey = new LuckyMonkey();
+        $img = <<<EOD
         <img class="monkey" id="monkey" src="img/monkey.png" style="margin-left: 4%; margin-top: 4%;" alt="apa">
         EOD;
         $exp = [
             'page' => "lucky",
-            'monkey' => $monkey,
+            'monkey' => $img,
             'url' => "/lucky",
         ];
-        $res = $helper->luckyData();
+        $res = $monkey->data();
         $this->assertEquals($exp, $res);
     }
 }

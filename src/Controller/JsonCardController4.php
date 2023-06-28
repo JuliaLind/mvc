@@ -8,20 +8,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
-use App\Cards\JsonCardHandler;
 use App\Cards\DeckOfCards;
-use App\Cards\CardHand;
 use App\Cards\Player;
 
-use App\Helpers\JsonConverter;
-
-/**
- * Controller for json card routes
- */
 class JsonCardController4 extends AbstractController
 {
     /**
@@ -33,16 +23,22 @@ class JsonCardController4 extends AbstractController
     public function jsonDraw(
         SessionInterface $session,
         Player $player=new Player(),
-        JsonCardHandler $cardHandler = new JsonCardHandler(),
-        JsonConverter $converter = new JsonConverter()
     ): Response {
         /**
          * @var DeckOfCards $deck The deck of cards.
          */
         $deck = $session->get("deck") ?? new DeckOfCards();
-        $data = $cardHandler->getDataForDraw($deck, [$player]);
+        $player->draw($deck);
+        $data = [
+            'players' => [
+                [
+                    'playerName' => 'Player 1',
+                    'cards' => $player->showHandAsString(),
+                ]
+            ],
+            'cardsLeft' => $deck->getCardCount(),
+        ];
         $session->set("deck", $deck);
-        $response = $converter->convert(new JsonResponse($data));
-        return $response;
+        return $this->json($data);
     }
 }

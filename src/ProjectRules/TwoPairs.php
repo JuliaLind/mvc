@@ -5,9 +5,9 @@ namespace App\ProjectRules;
 class TwoPairs extends Rule implements RuleInterface
 {
     use TwoPairsTrait;
+
     /**
      * @param array<string> $hand
-     * @return bool true if rule is fullfilled otherwise false
      */
     public function check(array $hand): bool
     {

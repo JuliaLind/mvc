@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-27 01:48:38        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-28 01:38:29        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -93,7 +93,7 @@
                             <path d="M0 0h24v24H0z" fill="none">
                             <path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z">
                         </svg>
-                        Violations (14)
+                        Violations (13)
                     </a>
                 </li>
                                     <li>
@@ -277,16 +277,6 @@
         "relations": []
     },
     {
-        "name": "\\App\\Cards\\CardDeckHandler",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Cards\\DeckOfCards",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\Cards\\Card",
         "size": 3000,
         "relations": []
@@ -297,17 +287,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\Cards\\CardHandler",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Cards\\Player",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Cards\\JsonCardHandler",
+        "name": "\\App\\Cards\\DeckOfCards",
         "size": 3000,
         "relations": []
     },
@@ -325,12 +305,7 @@
         ]
     },
     {
-        "name": "\\App\\Cards\\PlayerCreator",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Cards\\CardLandingHandler",
+        "name": "\\App\\Cards\\Player",
         "size": 3000,
         "relations": []
     },
@@ -341,9 +316,7 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Helpers\\JsonConverter",
-            "\\App\\Project\\Register",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\App\\Project\\Register"
         ]
     },
     {
@@ -362,19 +335,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\Helpers\\JsonConverter",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
-        ]
-    },
-    {
         "name": "\\App\\Project\\Register",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
         "size": 3000,
         "relations": []
     },
@@ -410,9 +371,7 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Helpers\\JsonConverter",
-            "\\App\\Cards\\DeckOfCards",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\App\\Cards\\DeckOfCards"
         ]
     },
     {
@@ -421,17 +380,21 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Helpers\\JsonHandler2",
-            "\\App\\Helpers\\JsonConverter",
+            "\\App\\Random\\Quote",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
     },
     {
-        "name": "\\App\\Helpers\\JsonHandler2",
+        "name": "\\App\\Random\\Quote",
         "size": 3000,
         "relations": [
             "\\Datetime"
         ]
+    },
+    {
+        "name": "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Controller\\ProjectApiController1",
@@ -440,9 +403,7 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Helpers\\JsonConverter",
-            "\\App\\Project\\Api1",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\App\\Project\\Api1"
         ]
     },
     {
@@ -497,8 +458,7 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Repository\\BookRepository",
-            "\\App\\Helpers\\JsonConverter"
+            "\\App\\Repository\\BookRepository"
         ]
     },
     {
@@ -541,7 +501,7 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\App\\Helpers\\MainControllerHelper",
-            "\\App\\Helpers\\LuckyRouteData"
+            "\\App\\Random\\LuckyMonkey"
         ]
     },
     {
@@ -552,7 +512,7 @@
         ]
     },
     {
-        "name": "\\App\\Helpers\\LuckyRouteData",
+        "name": "\\App\\Random\\LuckyMonkey",
         "size": 3000,
         "relations": []
     },
@@ -562,9 +522,18 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\CardController2",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Helpers\\JsonConverter",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\App\\Cards\\Player",
+            "\\App\\Cards\\DeckOfCards"
         ]
     },
     {
@@ -585,9 +554,7 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Helpers\\JsonConverter",
-            "\\App\\Project\\Register",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\App\\Project\\Register"
         ]
     },
     {
@@ -596,9 +563,7 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Project\\Api3",
-            "\\App\\Helpers\\JsonConverter",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\App\\Project\\Api3"
         ]
     },
     {
@@ -636,13 +601,11 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Game\\JsonGameHandler",
-            "\\App\\Helpers\\JsonConverter",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\App\\Game\\JsonGame21Helper"
         ]
     },
     {
-        "name": "\\App\\Game\\JsonGameHandler",
+        "name": "\\App\\Game\\JsonGame21Helper",
         "size": 3000,
         "relations": [
             "\\App\\Game\\Game21Interface"
@@ -656,10 +619,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\Cards\\Player",
-            "\\App\\Cards\\JsonCardHandler",
-            "\\App\\Helpers\\JsonConverter",
-            "\\App\\Cards\\DeckOfCards",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\App\\Cards\\DeckOfCards"
         ]
     },
     {
@@ -686,9 +646,7 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Helpers\\JsonConverter",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\Doctrine\\ORM\\EntityManagerInterface"
         ]
     },
     {
@@ -750,14 +708,8 @@
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Helpers\\JsonHandler"
+            "\\Symfony\\Component\\HttpFoundation\\Response"
         ]
-    },
-    {
-        "name": "\\App\\Helpers\\JsonHandler",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\App\\Controller\\JsonCardController",
@@ -766,11 +718,8 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Cards\\JsonCardHandler",
-            "\\App\\Cards\\PlayerCreator",
-            "\\App\\Helpers\\JsonConverter",
             "\\App\\Cards\\DeckOfCards",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\App\\Cards\\Player"
         ]
     },
     {
@@ -797,9 +746,7 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Helpers\\JsonConverter",
-            "\\App\\Cards\\DeckOfCards",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\App\\Cards\\DeckOfCards"
         ]
     },
     {
@@ -808,9 +755,7 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Helpers\\JsonConverter",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\Doctrine\\ORM\\EntityManagerInterface"
         ]
     },
     {
@@ -893,10 +838,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\Cards\\Player",
-            "\\App\\Cards\\JsonCardHandler",
-            "\\App\\Helpers\\JsonConverter",
-            "\\App\\Cards\\DeckOfCards",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\App\\Cards\\DeckOfCards"
         ]
     },
     {
@@ -939,9 +881,7 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Project\\Api2",
-            "\\App\\Helpers\\JsonConverter",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\App\\Project\\Api2"
         ]
     },
     {
@@ -977,12 +917,7 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Cards\\CardDeckHandler",
-            "\\App\\Cards\\DeckOfCards",
-            "\\App\\Cards\\CardHandler",
-            "\\App\\Cards\\Player",
-            "\\App\\Cards\\PlayerCreator",
-            "\\App\\Cards\\CardLandingHandler"
+            "\\App\\Cards\\DeckOfCards"
         ]
     },
     {

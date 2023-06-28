@@ -9,10 +9,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Helpers\JsonConverter;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
-use App\Entity\Transaction;
 use App\Entity\Score;
 use Datetime;
 
@@ -27,7 +25,6 @@ class ProjectApiController7 extends AbstractController
     #[Route('/proj/api/leaderboard', name: "api-leaderboard", methods: ['GET'])]
     public function apiLeaderboard(
         EntityManagerInterface $entityManager,
-        JsonConverter $converter = new JsonConverter()
     ): Response {
         $scores = $entityManager->getRepository(Score::class)->findBy([], ['points' => 'DESC'], 10);
         $data = [];
@@ -48,7 +45,6 @@ class ProjectApiController7 extends AbstractController
                 'points' => $score->getPoints(),
             ];
         }
-        $response = $converter->convert(new JsonResponse($data));
-        return $response;
+        return $this->json($data);
     }
 }

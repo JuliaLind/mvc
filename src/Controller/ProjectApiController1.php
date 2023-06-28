@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-use App\Helpers\JsonConverter;
+
 
 use App\Project\Api1;
 
@@ -30,7 +30,6 @@ class ProjectApiController1 extends AbstractController
     #[Route('/proj/api/bot-plays', name: "api-bot-plays", methods: ['POST'])]
     public function apiOneRound(
         SessionInterface $session,
-        JsonConverter $converter = new JsonConverter()
     ): Response {
         /**
          * @var Api1 $game
@@ -38,8 +37,8 @@ class ProjectApiController1 extends AbstractController
         $game = $session->get("api-game") ?? new Api1();
         $data = $game->oneRound();
 
-        $response = $converter->convert(new JsonResponse($data));
+
         $session->set("api-game", $game);
-        return $response;
+        return $this->json($data);
     }
 }

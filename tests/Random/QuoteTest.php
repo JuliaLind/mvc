@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers;
+namespace App\Random;
 
 use Datetime;
 
@@ -22,17 +22,17 @@ function random_int(int $min, int $max): int
 /**
  * Test cases for class JsonHandler.
  */
-class JsonHandler2Test extends TestCase
+class QuoteTest extends TestCase
 {
     /**
      * Tests that generateQuote method returns
      * expected Data
      */
-    public function testGenerateQuote(): void
+    public function testGenerate(): void
     {
-        $handler = new JsonHandler2();
+        $quote = new Quote();
         $mockedDate = new DateTime();
-        $handler->generateQuote($mockedDate);
+        $quote->generate($mockedDate);
         $exp = [
             'quote' => <<<EOD
             "Any fool can write code that a computer can understand. 
@@ -40,7 +40,7 @@ class JsonHandler2Test extends TestCase
             EOD,
             'timestamp' => $mockedDate->format('Y-m-d H:i:s'),
         ];
-        $res = $handler->generateQuote();
+        $res = $quote->generate();
         $this->assertEquals($exp, $res);
     }
 

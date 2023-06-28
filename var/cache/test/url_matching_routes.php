@@ -10,8 +10,8 @@ return [
     [ // $staticRoutes
         '/card/deck' => [[['_route' => 'deck', '_controller' => 'App\\Controller\\CardController::deck'], null, ['GET' => 0], null, false, false, null]],
         '/card/deck/shuffle' => [[['_route' => 'shuffle', '_controller' => 'App\\Controller\\CardController::shuffle'], null, ['POST' => 0], null, false, false, null]],
-        '/card/deck/draw' => [[['_route' => 'draw', '_controller' => 'App\\Controller\\CardController::draw'], null, ['POST' => 0], null, false, false, null]],
         '/card' => [[['_route' => 'card', '_controller' => 'App\\Controller\\CardController::card'], null, null, null, false, false, null]],
+        '/card/deck/draw' => [[['_route' => 'draw', '_controller' => 'App\\Controller\\CardController2::draw'], null, ['POST' => 0], null, false, false, null]],
         '/game' => [[['_route' => 'gameMain', '_controller' => 'App\\Controller\\Game21Controller::main'], null, ['GET' => 0], null, false, false, null]],
         '/game/doc' => [[['_route' => 'gameDoc', '_controller' => 'App\\Controller\\Game21Controller::gameDoc'], null, ['GET' => 0], null, false, false, null]],
         '/game/bank-playing' => [[['_route' => 'bankPlaying', '_controller' => 'App\\Controller\\Game21Controller2::bankPlaying'], null, ['POST' => 0], null, false, false, null]],
@@ -101,8 +101,8 @@ return [
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
-        31 => [[['_route' => 'drawMany', '_controller' => 'App\\Controller\\CardController::drawMany'], ['number'], ['POST' => 0], null, false, true, null]],
-        53 => [[['_route' => 'deal', '_controller' => 'App\\Controller\\CardController::deal'], ['players', 'cards'], ['POST' => 0], null, false, true, null]],
+        31 => [[['_route' => 'drawMany', '_controller' => 'App\\Controller\\CardController2::drawMany'], ['number'], ['POST' => 0], null, false, true, null]],
+        53 => [[['_route' => 'deal', '_controller' => 'App\\Controller\\CardController2::deal'], ['players', 'cards'], ['POST' => 0], null, false, true, null]],
         85 => [[['_route' => 'init', 'level' => 0, '_controller' => 'App\\Controller\\Game21Controller4::init'], ['level'], ['POST' => 0], null, false, true, null]],
         101 => [[['_route' => 'bet', '_controller' => 'App\\Controller\\Game21Controller5::bet'], ['amount'], ['POST' => 0], null, false, true, null]],
         142 => [[['_route' => 'jsonDeal', '_controller' => 'App\\Controller\\JsonCardController::jsonDeal'], ['players', 'cards'], ['POST' => 0], null, false, true, null]],

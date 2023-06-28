@@ -1,4 +1,8 @@
 services:
   App\Helpers\SqlFileLoader:
     public: true
+  App\Cards\DeckOfCards:
+    public: true
+  App\Cards\Player:
+    public: true
       

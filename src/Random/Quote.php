@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers;
+namespace App\Random;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
@@ -9,13 +9,13 @@ use Datetime;
 /**
  * Helper class to get data for some of the API routes
  */
-class JsonHandler2
+class Quote
 {
     /**
      * Returns a daily quote and the date, time when the page was loaded
      * @return array<string>
      */
-    public function generateQuote(
+    public function generate(
         DateTime  $time = new DateTime()
     ): array {
         $quotes = [

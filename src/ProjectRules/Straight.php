@@ -27,7 +27,6 @@ class Straight extends Rule implements RuleInterface
 
     /**
      * @param array<string> $hand
-     * @return bool true if rule is fullfilled otherwise false
      */
     public function check(array $hand): bool
     {

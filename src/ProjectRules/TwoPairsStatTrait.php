@@ -11,8 +11,6 @@ trait TwoPairsStatTrait
     /**
      * @param array<string> $hand
      * @param array<string> $deck
-     * @return bool true if rule is still possible given passed value
-     * otherwise false
      */
     public function check2(array $hand, array $deck): bool
     {

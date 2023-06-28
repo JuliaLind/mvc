@@ -8,12 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Helpers\JsonConverter;
-use App\Helpers\JsonHandler2;
 
-/**
- * Controller for json routes
- */
+use App\Random\Quote;
+
 class JsonController2 extends AbstractController
 {
     /**
@@ -22,12 +19,14 @@ class JsonController2 extends AbstractController
      */
     #[Route('/api/quote', name: "quote")]
     public function jsonQuote(
-        JsonHandler2 $handler = new JsonHandler2(),
-        JsonConverter $converter = new JsonConverter()
+        Quote $quote = new Quote(),
     ): Response {
         date_default_timezone_set('Europe/Stockholm');
-        $data = $handler->generateQuote();
-        $response = $converter->convert(new JsonResponse($data));
+        $data = $quote->generate();
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
         return $response;
     }
 }
