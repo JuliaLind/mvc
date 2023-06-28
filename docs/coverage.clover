@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687995984">
-  <project timestamp="1687995984">
+<coverage generated="1687996430">
+  <project timestamp="1687996430">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -1667,26 +1667,26 @@
         <metrics complexity="5" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="19" coveredelements="19"/>
       </class>
       <line num="5" type="stmt" count="1"/>
-      <line num="24" type="method" name="minHandValue" visibility="public" complexity="2" crap="2" count="5"/>
-      <line num="26" type="stmt" count="5"/>
-      <line num="27" type="stmt" count="5"/>
-      <line num="28" type="stmt" count="5"/>
-      <line num="29" type="stmt" count="5"/>
-      <line num="30" type="stmt" count="2"/>
+      <line num="29" type="method" name="minHandValue" visibility="public" complexity="2" crap="2" count="5"/>
+      <line num="31" type="stmt" count="5"/>
       <line num="32" type="stmt" count="5"/>
-      <line num="40" type="method" name="estimateRisk" visibility="public" complexity="3" crap="3" count="4"/>
-      <line num="42" type="stmt" count="4"/>
-      <line num="43" type="stmt" count="4"/>
-      <line num="44" type="stmt" count="4"/>
-      <line num="45" type="stmt" count="4"/>
-      <line num="46" type="stmt" count="4"/>
+      <line num="33" type="stmt" count="5"/>
+      <line num="34" type="stmt" count="5"/>
+      <line num="35" type="stmt" count="2"/>
+      <line num="37" type="stmt" count="5"/>
+      <line num="45" type="method" name="estimateRisk" visibility="public" complexity="3" crap="3" count="4"/>
       <line num="47" type="stmt" count="4"/>
       <line num="48" type="stmt" count="4"/>
       <line num="49" type="stmt" count="4"/>
       <line num="50" type="stmt" count="4"/>
+      <line num="51" type="stmt" count="4"/>
       <line num="52" type="stmt" count="4"/>
+      <line num="53" type="stmt" count="4"/>
       <line num="54" type="stmt" count="4"/>
-      <metrics loc="57" ncloc="42" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="20" coveredelements="20"/>
+      <line num="55" type="stmt" count="4"/>
+      <line num="57" type="stmt" count="4"/>
+      <line num="59" type="stmt" count="4"/>
+      <metrics loc="62" ncloc="44" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="20" coveredelements="20"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Game/Player21Trait3.php">
       <class name="App\Game\Player21Trait3" namespace="global">
@@ -3224,9 +3224,9 @@
       <class name="App\ProjectRules\TwoPairsTrait2" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </class>
-      <line num="10" type="method" name="check" visibility="public" complexity="1" crap="1" count="6"/>
-      <line num="12" type="stmt" count="6"/>
-      <metrics loc="15" ncloc="12" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      <line num="15" type="method" name="check" visibility="public" complexity="1" crap="1" count="6"/>
+      <line num="17" type="stmt" count="6"/>
+      <metrics loc="20" ncloc="14" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/WinEvaluator.php">
       <class name="App\ProjectRules\WinEvaluator" namespace="global">
@@ -3381,6 +3381,6 @@
       <line num="39" type="stmt" count="0"/>
       <metrics loc="68" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="165" loc="8465" ncloc="6458" classes="148" methods="333" coveredmethods="230" conditionals="0" coveredconditionals="0" statements="2066" coveredstatements="1458" elements="2399" coveredelements="1688"/>
+    <metrics files="165" loc="8475" ncloc="6462" classes="148" methods="333" coveredmethods="230" conditionals="0" coveredconditionals="0" statements="2066" coveredstatements="1458" elements="2399" coveredelements="1688"/>
   </project>
 </coverage>

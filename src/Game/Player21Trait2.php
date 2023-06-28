@@ -15,6 +15,11 @@ trait Player21Trait2
     protected CardHand $hand;
 
     /**
+     * Adjusts ace-value to 1
+     */
+    abstract protected function adjAceValueToOne(int $value): int;
+
+    /**
      * Returns the current min hand value.
      * Used for calculating risk for getting fat
      * Ace is always valued at 1
