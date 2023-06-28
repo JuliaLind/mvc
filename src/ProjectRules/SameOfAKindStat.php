@@ -2,17 +2,21 @@
 
 namespace App\ProjectRules;
 
-class SameOfAKindStat extends RuleStat implements RuleStatInterface
+use App\ProjectCard\CardCounter;
+use App\ProjectCard\CardSearcher;
+
+class SameOfAKindStat implements RuleStatInterface
 {
     use SameRankStatTrait;
     use SameRankSingleStatTrait;
 
-    /**
-     * Constructor
-     */
-    public function __construct(int $minCountRank)
-    {
-        parent::__construct();
+    public function __construct(
+        int $minCountRank,
+        CardCounter $cardCounter = new CardCounter(),
+        CardSearcher $searcher = new CardSearcher()
+    ) {
+        $this->cardCounter = $cardCounter;
+        $this->searcher = $searcher;
         $this->minCountRank = $minCountRank;
     }
 

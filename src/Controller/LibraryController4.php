@@ -20,7 +20,6 @@ class LibraryController4 extends AbstractController
     public function updateBook(
         BookRepository $bookRepository,
         Request $request,
-        // LibraryHandler $handler = new LibraryHandler()
     ): Response {
         $bookId = $request->get('book_id');
         /**

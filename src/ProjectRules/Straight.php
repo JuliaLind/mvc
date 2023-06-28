@@ -2,15 +2,20 @@
 
 namespace App\ProjectRules;
 
-class Straight extends Rule implements RuleInterface
+use App\ProjectCard\CardCounter;
+
+class Straight implements RuleInterface
 {
     protected int $maxRank;
     protected int $minRank;
     protected int $uniqueSuits;
+    protected CardCounter $cardCounter;
 
-    public function __construct(int $uniqueSuits=4)
-    {
-        parent::__construct();
+    public function __construct(
+        int $uniqueSuits=4,
+        CardCounter $cardCounter = new CardCounter()
+    ) {
+        $this->cardCounter = $cardCounter;
         $this->uniqueSuits = $uniqueSuits;
     }
 

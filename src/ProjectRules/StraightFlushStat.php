@@ -2,12 +2,26 @@
 
 namespace App\ProjectRules;
 
-class StraightFlushStat extends RuleStat implements RuleStatInterface
+use App\ProjectCard\CardCounter;
+use App\ProjectCard\CardSearcher;
+
+class StraightFlushStat implements RuleStatInterface
 {
     use RankLimitsTrait;
     use StraightFlushStatTrait;
     use StraightStatTrait;
     use SameSuitTrait;
+
+    protected CardSearcher $searcher;
+    protected CardCounter $cardCounter;
+
+    public function __construct(
+        CardCounter $cardCounter = new CardCounter(),
+        CardSearcher $searcher = new CardSearcher()
+    ) {
+        $this->cardCounter = $cardCounter;
+        $this->searcher = $searcher;
+    }
 
     /**
      * @param array<string> $hand

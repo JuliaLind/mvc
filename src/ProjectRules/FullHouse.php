@@ -2,8 +2,18 @@
 
 namespace App\ProjectRules;
 
-class FullHouse extends Rule implements RuleInterface
+use App\ProjectCard\CardCounter;
+
+class FullHouse implements RuleInterface
 {
+    protected CardCounter $cardCounter;
+
+    public function __construct(
+        CardCounter $cardCounter = new CardCounter()
+    ) {
+        $this->cardCounter = $cardCounter;
+    }
+
     /**
      * @param array<string> $hand
      * @return bool true if rule is fullfilled otherwise false

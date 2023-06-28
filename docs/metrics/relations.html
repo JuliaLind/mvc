@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-28 02:48:21        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-28 15:20:52        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -93,7 +93,7 @@
                             <path d="M0 0h24v24H0z" fill="none">
                             <path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z">
                         </svg>
-                        Violations (10)
+                        Violations (11)
                     </a>
                 </li>
                                     <li>
@@ -588,11 +588,11 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Game\\JsonGame21Helper"
+            "\\App\\Game\\GameApi"
         ]
     },
     {
-        "name": "\\App\\Game\\JsonGame21Helper",
+        "name": "\\App\\Game\\GameApi",
         "size": 3000,
         "relations": [
             "\\App\\Game\\Game21Interface"
@@ -616,14 +616,14 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Game\\PlayerTurnHandler"
+            "\\App\\Game\\PlayersTurn"
         ]
     },
     {
-        "name": "\\App\\Game\\PlayerTurnHandler",
+        "name": "\\App\\Game\\PlayersTurn",
         "size": 3000,
         "relations": [
-            "\\App\\Game\\RoundHandler",
+            "\\App\\Game\\EndRound",
             "\\App\\Game\\Game21Easy"
         ]
     },
@@ -652,14 +652,14 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Game\\BanksTurnHandler"
+            "\\App\\Game\\BanksTurn"
         ]
     },
     {
-        "name": "\\App\\Game\\BanksTurnHandler",
+        "name": "\\App\\Game\\BanksTurn",
         "size": 3000,
         "relations": [
-            "\\App\\Game\\RoundHandler",
+            "\\App\\Game\\EndRound",
             "\\App\\Game\\Game21Easy"
         ]
     },
@@ -678,16 +678,22 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Game\\GameInitiator"
+            "\\App\\Game\\Game21Easy",
+            "\\App\\Game\\Game21Hard"
         ]
     },
     {
-        "name": "\\App\\Game\\GameInitiator",
+        "name": "\\App\\Game\\Game21Easy",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Game\\Game21Hard",
         "size": 3000,
         "relations": [
-            "\\App\\Game\\Game21Interface",
             "\\App\\Game\\Game21Easy",
-            "\\App\\Game\\Game21Hard"
+            "\\App\\Game\\Player21",
+            "\\App\\Cards\\DeckOfCards"
         ]
     },
     {
@@ -798,17 +804,25 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\LibraryController7",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\Game21Controller3",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Game\\RoundHandler2"
+            "\\App\\Game\\NextRound"
         ]
     },
     {
-        "name": "\\App\\Game\\RoundHandler2",
+        "name": "\\App\\Game\\NextRound",
         "size": 3000,
         "relations": [
             "\\App\\Game\\Player21"
@@ -878,6 +892,14 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\LibraryController6",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\Game21Controller5",
         "size": 3000,
         "relations": [
@@ -894,6 +916,15 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\Cards\\DeckOfCards"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\LibraryController5",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\App\\Repository\\BookRepository"
         ]
     },
     {
@@ -994,12 +1025,12 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\Rule",
+        "name": "\\App\\ProjectRules\\RuleStatInterface",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\RuleStatInterface",
+        "name": "\\App\\ProjectCard\\CardCounter",
         "size": 3000,
         "relations": []
     },
@@ -1020,21 +1051,6 @@
             "\\App\\ProjectRules\\StraightStat",
             "\\App\\ProjectRules\\TwoPairsStat"
         ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\RuleStat",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectCard\\CardCounter",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectCard\\CardSearcher",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\App\\ProjectRules\\RankLimitsTrait",
@@ -1072,36 +1088,41 @@
         "name": "\\App\\ProjectRules\\Straight",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\Rule",
-            "\\App\\ProjectRules\\RuleInterface"
+            "\\App\\ProjectRules\\RuleInterface",
+            "\\App\\ProjectCard\\CardCounter"
         ]
     },
     {
         "name": "\\App\\ProjectRules\\FullHouse",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\Rule",
-            "\\App\\ProjectRules\\RuleInterface"
+            "\\App\\ProjectRules\\RuleInterface",
+            "\\App\\ProjectCard\\CardCounter"
         ]
     },
     {
         "name": "\\App\\ProjectRules\\Flush",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\Rule",
-            "\\App\\ProjectRules\\RuleInterface"
+            "\\App\\ProjectRules\\RuleInterface",
+            "\\App\\ProjectCard\\CardCounter"
         ]
     },
     {
         "name": "\\App\\ProjectRules\\TwoPairs",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\Rule",
-            "\\App\\ProjectRules\\RuleInterface"
+            "\\App\\ProjectRules\\RuleInterface",
+            "\\App\\ProjectCard\\CardCounter"
         ]
     },
     {
         "name": "\\App\\ProjectRules\\StraightStat",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectCard\\CardSearcher",
         "size": 3000,
         "relations": []
     },
@@ -1129,6 +1150,11 @@
     },
     {
         "name": "\\App\\ProjectRules\\StraightFlushStat",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\FullHouseStatTrait8",
         "size": 3000,
         "relations": []
     },
@@ -1201,16 +1227,18 @@
         "name": "\\App\\ProjectRules\\RoyalFlushStat",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\RuleStat",
-            "\\App\\ProjectRules\\RuleStatInterface"
+            "\\App\\ProjectRules\\RuleStatInterface",
+            "\\App\\ProjectCard\\CardCounter",
+            "\\App\\ProjectCard\\CardSearcher"
         ]
     },
     {
         "name": "\\App\\ProjectRules\\TwoPairsStat",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\RuleStat",
-            "\\App\\ProjectRules\\RuleStatInterface"
+            "\\App\\ProjectRules\\RuleStatInterface",
+            "\\App\\ProjectCard\\CardCounter",
+            "\\App\\ProjectCard\\CardSearcher"
         ]
     },
     {
@@ -1272,6 +1300,11 @@
     },
     {
         "name": "\\App\\ProjectRules\\EvaluatorTrait5",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\TwoPairsTrait2",
         "size": 3000,
         "relations": []
     },
@@ -1382,20 +1415,6 @@
     {
         "name": "\\App\\Game\\Player21Trait",
         "size": 3000,
-        "relations": [
-            "\\App\\Game\\ValueConverter",
-            "\\App\\Cards\\DeckOfCards",
-            "\\App\\Game\\ValueConverter2"
-        ]
-    },
-    {
-        "name": "\\App\\Game\\ValueConverter",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Game\\ValueConverter2",
-        "size": 3000,
         "relations": []
     },
     {
@@ -1404,7 +1423,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\Game\\Game21Easy",
+        "name": "\\App\\Game\\EndRound",
         "size": 3000,
         "relations": []
     },
@@ -1440,7 +1459,14 @@
         ]
     },
     {
-        "name": "\\App\\Game\\Game21Hard",
+        "name": "\\App\\Game\\Player21Trait3",
+        "size": 3000,
+        "relations": [
+            "\\App\\Game\\ValueConverter"
+        ]
+    },
+    {
+        "name": "\\App\\Game\\ValueConverter",
         "size": 3000,
         "relations": []
     },
@@ -1452,7 +1478,17 @@
         ]
     },
     {
-        "name": "\\App\\Game\\RoundHandler",
+        "name": "\\App\\Game\\Game21FlashTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Game\\ValueConverter2",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Game\\Game21Trait3",
         "size": 3000,
         "relations": []
     },
@@ -1464,7 +1500,25 @@
         ]
     },
     {
+        "name": "\\App\\Game\\Player21Trait2",
+        "size": 3000,
+        "relations": [
+            "\\App\\Cards\\DeckOfCards",
+            "\\App\\Game\\ValueConverter2"
+        ]
+    },
+    {
+        "name": "\\App\\Game\\Game21Trait4",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Game\\Game21Trait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Game\\Game21Trait2",
         "size": 3000,
         "relations": []
     }

@@ -25,7 +25,6 @@ class Game21Controller extends AbstractController
     public function main(
         SessionInterface $session,
         MdParser $parser = new MdParser()
-        // GameHandlerLanding $gameHandler=new GameHandlerLanding()
     ): Response {
         /**
          * @var Game21Interface $game The current game of 21.
@@ -53,7 +52,6 @@ class Game21Controller extends AbstractController
     #[Route('/game/doc', name: "gameDoc", methods: ['GET'])]
     public function gameDoc(
         MdParser $parser = new MdParser()
-        // GameHandlerLanding $gameHandler=new GameHandlerLanding()
     ): Response {
         $data = [
             'about' => $parser->getParsedText("markdown/doc.md"),

@@ -2,24 +2,21 @@
 
 namespace App\ProjectRules;
 
-class FullHouseStat extends Rule implements RuleStatInterface
+use App\ProjectCard\CardCounter;
+
+class FullHouseStat implements RuleStatInterface
 {
     use FullHouseStatTrait2;
     use FullHouseStatTrait3;
     use FullHouseStatTrait4;
     use FullHouseStatTrait5;
+    use FullHouseStatTrait8;
 
-    /**
-     * @param array<string> $hand
-     * @param array<string> $deck
-     */
-    public function check(array $hand, array $deck, string $card): bool
-    {
-        /**
-         * @var array<string> $newHand
-         */
-        $newHand = [...$hand, $card];
+    protected CardCounter $cardCounter;
 
-        return $this->check2($newHand, $deck);
+    public function __construct(
+        CardCounter $cardCounter = new CardCounter()
+    ) {
+        $this->cardCounter = $cardCounter;
     }
 }

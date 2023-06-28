@@ -6,7 +6,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 
 
-use App\Game\BanksTurnHandler;
+use App\Game\BanksTurn;
 use App\Game\Game21Easy;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,13 +25,13 @@ class Game21Controller2 extends AbstractController
     #[Route('/game/bank-playing', name: "bankPlaying", methods: ['POST'])]
     public function bankPlaying(
         SessionInterface $session,
-        BanksTurnHandler $gameHandler=new BanksTurnHandler()
+        BanksTurn $banksTurn=new BanksTurn()
     ): Response {
         /**
          * @var Game21Easy $game The current game of 21.
          */
         $game = $session->get("game21");
-        $flash = $gameHandler->bankDraw($game);
+        $flash = $banksTurn->main($game);
         $session->set("game21", $game);
 
         $this->addFlash(...$flash);

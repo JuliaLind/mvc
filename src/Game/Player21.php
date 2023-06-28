@@ -12,7 +12,8 @@ class Player21
 {
     use PlayerTrait;
     use Player21Trait;
-    // use Player21Trait2;
+    use Player21Trait2;
+    use Player21Trait3;
 
     protected int $money=0;
 

@@ -5,17 +5,13 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 
-
-use App\Game\GameInitiator;
 use App\Game\Game21Easy;
+use App\Game\Game21Hard;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-/**
- * Controller class for the 21 card game
- */
 class Game21Controller4 extends AbstractController
 {
     /**
@@ -27,9 +23,11 @@ class Game21Controller4 extends AbstractController
     public function init(
         SessionInterface $session,
         int $level=0,
-        GameInitiator $gameHandler=new GameInitiator()
+        Game21Easy $game = new Game21Easy()
     ): Response {
-        $game = $gameHandler->init($level);
+        if ($level === 2) {
+            $game = new Game21Hard();
+        }
         $session->set("game21", $game);
 
         return $this->redirectToRoute('selectAmount');

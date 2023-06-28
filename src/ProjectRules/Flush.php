@@ -2,9 +2,19 @@
 
 namespace App\ProjectRules;
 
-class Flush extends Rule implements RuleInterface
+use App\ProjectCard\CardCounter;
+
+class Flush implements RuleInterface
 {
     use SameSuitTrait;
+
+    protected CardCounter $cardCounter;
+
+    public function __construct(
+        CardCounter $cardCounter = new CardCounter()
+    ) {
+        $this->cardCounter = $cardCounter;
+    }
 
     /**
      * @param array<string> $hand

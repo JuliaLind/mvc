@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 use App\Game\GameHandler;
 use App\Game\Game21Easy;
-use App\Game\PlayerTurnHandler;
+use App\Game\PlayersTurn;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,13 +25,13 @@ class Game21Controller7 extends AbstractController
     #[Route('/game/draw', name: "playerDraw", methods: ['POST'])]
     public function playerDraw(
         SessionInterface $session,
-        PlayerTurnHandler $gameHandler=new PlayerTurnHandler()
+        PlayersTurn $playersTurn=new PlayersTurn()
     ): Response {
         /**
          * @var Game21Easy $game The current game of 21.
          */
         $game = $session->get("game21");
-        $flash = $gameHandler->playerDraw($game);
+        $flash = $playersTurn->main($game);
         $this->addFlash(...$flash);
 
         $session->set("game21", $game);

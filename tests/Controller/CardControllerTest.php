@@ -6,11 +6,7 @@ use App\Cards\DeckOfCards;
 use App\Cards\Player;
 use App\Cards\CardGraphic;
 
-use Symfony\Bundle\FrameworkBundle\KernelBrowser;
-use Symfony\Component\BrowserKit\Cookie;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
-// use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -62,5 +58,7 @@ class CardControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
         $this->assertRouteSame('card');
         $this->assertSelectorTextContains('h1', 'Kortspel');
+        $content = strval($client->getResponse()->getContent());
+        $this->assertStringContainsString('type="submit" value=/card/deck/deal/3/5', $content);
     }
 }

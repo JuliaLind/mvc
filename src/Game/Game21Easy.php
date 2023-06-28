@@ -12,14 +12,13 @@ use App\Cards\DeckOfCards;
 class Game21Easy extends Game implements Game21Interface
 {
     use Game21Trait;
+    use Game21Trait3;
+    use Game21Trait4;
     use BettingGameTrait;
     use GameAttrHandlerTrait;
     use GameAttrHandler2Trait;
+    use Game21FlashTrait;
 
-    // /**
-    //  * @var int $GOAL the goal points to reach.
-    //  */
-    // protected const GOAL = 21;
     protected Player21 $winner;
     protected Player21 $player;
     protected Player21 $bank;
@@ -96,77 +95,5 @@ class Game21Easy extends Game implements Game21Interface
         while (($bank->handValue() < 17) && ($this->cardsLeft() > 0)) {
             $bank->draw($this->deck);
         }
-    }
-
-    /**
-     * Returns array with flash message type and the message
-     *
-     * @return array<string>
-     */
-    public function generateFlash(): array
-    {
-        $type = "";
-        $message = "";
-        $winner = $this->winner->getName();
-
-        if ($this->roundOver === true) {
-            $type = "notice";
-            if ($winner === "Bank") {
-                $type = "warning";
-            }
-            $message = "Round over, {$winner} won!";
-        }
-        if ($this->finished === true) {
-            $message = "Game over, {$winner} won!";
-        }
-        return [$type, $message];
-    }
-
-    /**
-     * Returns name, graphic representation, money amount and current
-     * value of hand for each of player and bank
-     *
-     * @return array<array<mixed>>
-     */
-    public function getPlayerData(): array
-    {
-        $players = [];
-        foreach ([$this->bank, $this->player] as $player) {
-            $name = $player->getName();
-            $cards = $player->showHandGraphic();
-            $money = $player->getMoney();
-            $handValue = $player->handValue();
-            $players[] = [
-                'name' => $name,
-                'cards' => $cards,
-                'money' => $money,
-                'handValue' => $handValue,
-            ];
-        }
-        return $players;
-    }
-
-    /**
-     * Returns status data for current game
-     *
-     * @return  array<mixed>
-     */
-    public function getGameStatus(): array
-    {
-
-        $winner = $this->winner->getName();
-
-
-        $data = [
-            'bankPlaying'=>$this->bankPlaying,
-            'winner'=>$winner,
-            'cardsLeft'=>$this->cardsLeft(),
-            'finished'=>$this->finished,
-            'currentRound'=>$this->currentRound,
-            'moneyPot'=>$this->moneyPot->currentAmount(),
-            'roundOver'=>$this->roundOver,
-            'level' => $this->level,
-        ];
-        return $data;
     }
 }

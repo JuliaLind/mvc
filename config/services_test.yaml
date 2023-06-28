@@ -5,4 +5,11 @@ services:
     public: true
   App\Cards\Player:
     public: true
+  App\Markdown\MdParser:
+    public: true
+  App\Game\NextRound:
+    public: true
+  App\Game\EndRound:
+    public: true
+
       

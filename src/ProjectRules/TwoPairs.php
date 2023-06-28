@@ -2,15 +2,19 @@
 
 namespace App\ProjectRules;
 
-class TwoPairs extends Rule implements RuleInterface
+use App\ProjectCard\CardCounter;
+
+class TwoPairs implements RuleInterface
 {
     use TwoPairsTrait;
+    use TwoPairsTrait2;
 
-    /**
-     * @param array<string> $hand
-     */
-    public function check(array $hand): bool
-    {
-        return $this->check3($hand);
+    protected CardCounter $cardCounter;
+
+    public function __construct(
+        CardCounter $cardCounter = new CardCounter()
+    ) {
+        $this->cardCounter = $cardCounter;
     }
+
 }

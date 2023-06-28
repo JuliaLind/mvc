@@ -2,20 +2,29 @@
 
 namespace App\ProjectRules;
 
+use App\ProjectCard\CardCounter;
+use App\ProjectCard\CardSearcher;
+
 /**
  * Calculates it possible for a hand
  * to score the RoyalFlush rule
  * Ace, King, Queen, Jack, Ten of same suit
  *
  */
-class RoyalFlushStat extends RuleStat implements RuleStatInterface
+class RoyalFlushStat implements RuleStatInterface
 {
     use StraightFlushStatTrait;
     use SameSuitTrait;
 
-    public function __construct()
-    {
-        parent::__construct();
+    protected CardSearcher $searcher;
+    protected CardCounter $cardCounter;
+
+    public function __construct(
+        CardCounter $cardCounter = new CardCounter(),
+        CardSearcher $searcher = new CardSearcher()
+    ) {
+        $this->cardCounter = $cardCounter;
+        $this->searcher = $searcher;
         $this->maxRank = 14;
         $this->minRank = 10;
     }
