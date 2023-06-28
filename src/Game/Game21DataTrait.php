@@ -6,17 +6,18 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 use App\Cards\DeckOfCards;
 
-trait Game21Trait4
+trait Game21DataTrait
 {
     protected Player21 $winner;
     protected Player21 $player;
     protected Player21 $bank;
     protected bool $roundOver=false;
+    protected bool $finished=false;
     protected bool $bankPlaying=false;
     protected int $currentRound=0;
-    protected string $level="easy";
-
-    abstract protected function cardsLeft(): int;
+    protected string $level;
+    protected DeckOfCards $deck;
+    protected MoneyPot $moneyPot;
 
     /**
      * Returns name, graphic representation, money amount and current
@@ -52,15 +53,14 @@ trait Game21Trait4
 
         $winner = $this->winner->getName();
 
-
         $data = [
-            'bankPlaying'=>$this->bankPlaying,
-            'winner'=>$winner,
-            'cardsLeft'=>$this->cardsLeft(),
-            'finished'=>$this->finished,
-            'currentRound'=>$this->currentRound,
-            'moneyPot'=>$this->moneyPot->currentAmount(),
-            'roundOver'=>$this->roundOver,
+            'bankPlaying' => $this->bankPlaying,
+            'winner' => $winner,
+            'cardsLeft' => $this->deck->getCardCount(),
+            'finished' => $this->finished,
+            'currentRound' => $this->currentRound,
+            'moneyPot' => $this->moneyPot->currentAmount(),
+            'roundOver' => $this->roundOver,
             'level' => $this->level,
         ];
         return $data;

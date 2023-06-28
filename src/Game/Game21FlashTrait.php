@@ -26,18 +26,20 @@ trait Game21FlashTrait
      *
      * @return array<string>
      */
-    public function generateFlash(): array
+    protected function generateFlash(): array
     {
         $type = "";
         $message = "";
         $winner = $this->winner->getName();
 
-        if ($this->roundOver === true) {
+        if ($this->roundOver) {
             $type = $this->messageType($winner);
-            $message = "Round over, {$winner} won!";
-        }
-        if ($this->finished === true) {
-            $message = "Game over, {$winner} won!";
+            $what = "Game";
+            if (!$this->finished) {
+                $what = "Round";
+            }
+            return [$type, "{$what} over, {$winner} won!"];
+
         }
         return [$type, $message];
     }

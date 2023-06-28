@@ -10,10 +10,8 @@ require __DIR__ . "/../../vendor/autoload.php";
  */
 class CardHand
 {
-    /**
-     * @var array<CardGraphic|null> $cards Array for holding cards.
-     */
-    private $cards = [];
+    use CardDataTrait;
+
 
     /**
      * Draws a number of cards from the deck and adds to the
@@ -54,58 +52,11 @@ class CardHand
     {
         $cards = [];
         foreach ($this->cards as $card) {
-            if ($card) {
-                $cards[] = [
-                    'link' => $card->getImgLink(),
-                    'descr' => $card->getAsString(),
-                ];
-            }
+            $cards[] = [
+                'link' => $card->getImgLink(),
+                'descr' => $card->getAsString(),
+            ];
         }
         return $cards;
-    }
-
-    /**
-     * Returns array with description of each card.
-     *
-     * @return array<string>
-     */
-    public function getAsString(): array
-    {
-        $cards = [];
-        foreach ($this->cards as $card) {
-            if ($card) {
-                $cards[] = $card->getAsString();
-            }
-
-        }
-        return $cards;
-    }
-
-    /**
-     * Returns array with each card's integer value.
-     *
-     * @return array<int>
-     */
-    public function getValues(): array
-    {
-        $cards = [];
-        foreach ($this->cards as $card) {
-            if ($card) {
-                $cards[] = $card->getIntValue();
-            }
-
-        }
-        return $cards;
-    }
-
-    /**
-     * Returns the count of cards the hand is currently
-     * holding
-     *
-     * @return int
-     */
-    public function getCardCount(): int
-    {
-        return count($this->cards);
     }
 }

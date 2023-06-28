@@ -10,10 +10,8 @@ require __DIR__ . "/../../vendor/autoload.php";
  */
 class DeckOfCards
 {
-    /**
-     * @var array<CardGraphic> $cards array containing Cards.
-     */
-    protected array $cards = [];
+    use CardDataTrait;
+
 
     /**
      * Constructor, creates a set of cards
@@ -44,15 +42,6 @@ class DeckOfCards
     }
 
     /**
-     * Returns the number of counts left in the deck
-     * @return int
-     */
-    public function getCardCount(): int
-    {
-        return count($this->cards);
-    }
-
-    /**
      * Returns array with paths to card images.
      *
      * @return array<string>
@@ -66,33 +55,6 @@ class DeckOfCards
         return $cards;
     }
 
-    /**
-     * Returns array with description of each card.
-     *
-     * @return array<string>
-     */
-    public function getAsString(): array
-    {
-        $cards = [];
-        foreach ($this->cards as $card) {
-            $cards[] = $card->getAsString();
-        }
-        return $cards;
-    }
-
-    /**
-     * Returns array with each card's integer value.
-     *
-     * @return array<int>
-     */
-    public function getValues(): array
-    {
-        $cards = [];
-        foreach ($this->cards as $card) {
-            $cards[] = $card->getIntValue();
-        }
-        return $cards;
-    }
 
     /**
      * Randomly shuffles the ramining cards in the deck
@@ -115,19 +77,4 @@ class DeckOfCards
     {
         $this->cards = $cards;
     }
-
-    // public function sortByColor(): void
-    // {
-    //     usort($this->card, fn ($card1, $card2) => strcmp($card1->getColor(), $card2->getColor()));
-    // }
-
-    // public function sortByValue(): void
-    // {
-    //     usort($this->card, fn ($card1, $card2) => ($card1->getIntValue() - $card2->getIntValue()));
-    // }
-
-    // public function sortBySuit(): void
-    // {
-    //     (usort($this->deck, fn ($card1, $card2) => strcmp($card1->getSuit(), $card2->getSuit())));
-    // }
 }

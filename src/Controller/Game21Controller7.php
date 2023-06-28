@@ -5,9 +5,7 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 
-use App\Game\GameHandler;
-use App\Game\Game21Easy;
-use App\Game\PlayersTurn;
+use App\Game\Game21Interface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,13 +23,12 @@ class Game21Controller7 extends AbstractController
     #[Route('/game/draw', name: "playerDraw", methods: ['POST'])]
     public function playerDraw(
         SessionInterface $session,
-        PlayersTurn $playersTurn=new PlayersTurn()
     ): Response {
         /**
-         * @var Game21Easy $game The current game of 21.
+         * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
-        $flash = $playersTurn->main($game);
+        $flash = $game->playersTurn();
         $this->addFlash(...$flash);
 
         $session->set("game21", $game);

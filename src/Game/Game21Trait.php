@@ -4,44 +4,36 @@ namespace App\Game;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
+use App\Cards\DeckOfCards;
 
 trait Game21Trait
 {
-    use Game21Trait2;
-
-    protected int $goal=21;
     protected Player21 $player;
     protected Player21 $bank;
-    protected Player21 $winner;
     protected bool $bankPlaying=false;
+    protected DeckOfCards $deck;
 
     /**
-     * Called after the bank is finished with drawing cards.
-     * Sets the winner of the round.
-     *
-     * @return void
+     * Returns the currently playing party - player or bank
+     * @return Player21
      */
-    public function evaluateBank(): void
+    protected function currentPlayer(): Player21
     {
-        $bank = $this->bank;
-        $player = $this->player;
+        $currentPlayer = $this->player;
+        if ($this->bankPlaying === true) {
+            $currentPlayer = $this->bank;
+        }
+        return $currentPlayer;
+    }
 
-        $bankHandValue = $bank->handValue();
-        $playerHandValue = $player->handValue();
-
-        if ($this->hasBankMoreThan21($bankHandValue) === true) {
-            $this->winner = $player;
-            return;
-        }
-        if ($this->bankWinsOnEqual($bankHandValue, $playerHandValue) === true) {
-            $this->winner = $bank;
-            return;
-        }
-        if ($this->hasBankBestScore($bankHandValue, $playerHandValue) === true) {
-            $this->winner = $bank;
-            return;
-        }
-        $this->winner = $player;
-        return;
+    /**
+     * Returns the risk of getting "fat" with
+     * next card for currently playing party - player or bank
+     * @return string
+     */
+    public function getRisk(): string
+    {
+        $risk = strVal(round($this->currentPlayer()->estimateRisk($this->deck) * 100, 2));
+        return $risk . ' %';
     }
 }

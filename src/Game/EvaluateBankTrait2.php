@@ -8,7 +8,7 @@ require __DIR__ . "/../../vendor/autoload.php";
  * Trait to be used in betting games
  * between a player and a bank
  */
-trait Game21Trait2
+trait EvaluateBankTrait2
 {
     protected int $goal=21;
 

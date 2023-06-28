@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-28 15:20:52        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-28 23:47:22        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -278,6 +278,11 @@
     },
     {
         "name": "\\App\\Cards\\Card",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Cards\\CardDataTrait",
         "size": 3000,
         "relations": []
     },
@@ -615,16 +620,7 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Game\\PlayersTurn"
-        ]
-    },
-    {
-        "name": "\\App\\Game\\PlayersTurn",
-        "size": 3000,
-        "relations": [
-            "\\App\\Game\\EndRound",
-            "\\App\\Game\\Game21Easy"
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface"
         ]
     },
     {
@@ -651,16 +647,7 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Game\\BanksTurn"
-        ]
-    },
-    {
-        "name": "\\App\\Game\\BanksTurn",
-        "size": 3000,
-        "relations": [
-            "\\App\\Game\\EndRound",
-            "\\App\\Game\\Game21Easy"
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface"
         ]
     },
     {
@@ -685,15 +672,17 @@
     {
         "name": "\\App\\Game\\Game21Easy",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\App\\Game\\Game21",
+            "\\App\\Game\\Game21Interface"
+        ]
     },
     {
         "name": "\\App\\Game\\Game21Hard",
         "size": 3000,
         "relations": [
-            "\\App\\Game\\Game21Easy",
-            "\\App\\Game\\Player21",
-            "\\App\\Cards\\DeckOfCards"
+            "\\App\\Game\\Game21",
+            "\\App\\Game\\Game21Interface"
         ]
     },
     {
@@ -817,15 +806,7 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Game\\NextRound"
-        ]
-    },
-    {
-        "name": "\\App\\Game\\NextRound",
-        "size": 3000,
-        "relations": [
-            "\\App\\Game\\Player21"
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface"
         ]
     },
     {
@@ -1423,15 +1404,17 @@
         "relations": []
     },
     {
-        "name": "\\App\\Game\\EndRound",
+        "name": "\\App\\Game\\Game21DataTrait",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\App\\Game\\Game",
+        "name": "\\App\\Game\\Game21",
         "size": 3000,
         "relations": [
-            "\\App\\Cards\\DeckOfCards"
+            "\\App\\Game\\Player21",
+            "\\App\\Cards\\DeckOfCards",
+            "\\App\\Game\\MoneyPot"
         ]
     },
     {
@@ -1440,23 +1423,14 @@
         "relations": []
     },
     {
-        "name": "\\App\\Game\\Player21",
+        "name": "\\App\\Game\\EvaluateBankTrait2",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\App\\Game\\MoneyPot",
+        "name": "\\App\\Game\\PlayersTurnTrait",
         "size": 3000,
-        "relations": [
-            "\\App\\Game\\Player21"
-        ]
-    },
-    {
-        "name": "\\App\\Game\\GameAttrHandlerTrait",
-        "size": 3000,
-        "relations": [
-            "\\App\\Game\\MoneyPot"
-        ]
+        "relations": []
     },
     {
         "name": "\\App\\Game\\Player21Trait3",
@@ -1471,6 +1445,11 @@
         "relations": []
     },
     {
+        "name": "\\App\\Game\\BanksTurnTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Game\\PlayerTrait",
         "size": 3000,
         "relations": [
@@ -1478,26 +1457,48 @@
         ]
     },
     {
+        "name": "\\App\\Game\\NextRoundTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\Game\\Player21"
+        ]
+    },
+    {
+        "name": "\\App\\Game\\Player21",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Game\\EvaluatePlayerTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Game\\DealBankHardTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Game\\Game21FlashTrait",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\App\\Game\\ValueConverter2",
+        "name": "\\App\\Game\\EvaluateBankTrait",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\App\\Game\\Game21Trait3",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Game\\GameAttrHandler2Trait",
+        "name": "\\App\\Game\\MoneyPot",
         "size": 3000,
         "relations": [
             "\\App\\Game\\Player21"
         ]
+    },
+    {
+        "name": "\\App\\Game\\ValueConverter2",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Game\\Player21Trait2",
@@ -1508,19 +1509,23 @@
         ]
     },
     {
-        "name": "\\App\\Game\\Game21Trait4",
+        "name": "\\App\\Game\\DealBankEasyTrait",
         "size": 3000,
         "relations": []
     },
     {
         "name": "\\App\\Game\\Game21Trait",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\App\\Game\\Player21"
+        ]
     },
     {
-        "name": "\\App\\Game\\Game21Trait2",
+        "name": "\\App\\Game\\EndRoundTrait",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\App\\Game\\Player21"
+        ]
     }
 ];
 

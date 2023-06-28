@@ -2,18 +2,21 @@
 
 namespace App\Game;
 
+use App\Cards\DeckOfCards;
+
 require __DIR__ . "/../../vendor/autoload.php";
 
 
-trait Game21Trait3
+trait EvaluatePlayerTrait
 {
     protected int $goal=21;
     protected Player21 $player;
     protected Player21 $bank;
     protected Player21 $winner;
     protected bool $bankPlaying=false;
+    protected DeckOfCards $deck;
 
-    abstract protected function cardsLeft(): int;
+
 
     /**
      * Called after the player has picked a card.
@@ -21,7 +24,7 @@ trait Game21Trait3
      * @return bool true if player lost otherwise
      * false
      */
-    public function evaluate(): bool
+    protected function evaluate(): bool
     {
         $player = $this->player;
         $handValue = $player->handValue();
@@ -30,10 +33,8 @@ trait Game21Trait3
             $this->winner = $this->bank;
             return true;
         }
-        if ($this->cardsLeft() > 0) {
-            if ($handValue === $this->goal) {
-                $this->bankPlaying = true;
-            }
+        if ($this->deck->getCardCount() > 0) {
+            $this->bankPlaying = ($handValue === $this->goal);
             return false;
         }
         return true;

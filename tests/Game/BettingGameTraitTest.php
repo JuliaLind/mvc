@@ -11,11 +11,6 @@ class BettingGameTraitTest extends TestCase
 {
     use BettingGameTrait;
 
-    protected MoneyPot $moneyPot;
-    protected Player21 $player;
-    protected Player21 $bank;
-    protected Player21 $winner;
-
     protected function setUp(): void
     {
         $player = $this->createMock(Player21::class);
@@ -79,20 +74,5 @@ class BettingGameTraitTest extends TestCase
             ->with($this->equalTo(10), $this->equalTo([$this->player, $this->bank]));
         $this->moneyPot = $pot;
         $this->addToMoneyPot(35);
-    }
-
-    public function testIsWinnerOk(): void
-    {
-        $winner = $this->createMock(Player21::class);
-        $winner->method('getName')->willReturn("real winner");
-        $this->winner = $winner;
-        $res = $this->isWinner();
-        $this->assertTrue($res);
-    }
-
-    public function testIsWinnerNotOk(): void
-    {
-        $res = $this->isWinner();
-        $this->assertFalse($res);
     }
 }

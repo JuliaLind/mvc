@@ -18,9 +18,8 @@ trait BettingGameTrait
     /**
      * Returns the lower of money of what
      * the bank or the player has
-     * @return int
      */
-    public function getInvestLimit(): int
+    protected function getInvestLimit(): int
     {
         $limit = $this->player->getMoney();
         $money = $this->bank->getMoney();
@@ -43,13 +42,5 @@ trait BettingGameTrait
             $amount = $limit;
         }
         $this->moneyPot->addMoney($amount, [$this->player, $this->bank]);
-    }
-
-    /**
-     * Check if there is a winner
-     */
-    public function isWinner(): bool
-    {
-        return $this->winner->getName() != '';
     }
 }

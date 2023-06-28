@@ -6,8 +6,8 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 
 
-use App\Game\NextRound;
-use App\Game\Game21Easy;
+
+use App\Game\Game21Interface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,13 +18,12 @@ class Game21Controller3 extends AbstractController
     #[Route('/game/select-amount', name: "selectAmount", methods: ['GET'])]
     public function selectAmount(
         SessionInterface $session,
-        NextRound $nextRound = new nextRound()
     ): Response {
         /**
-         * @var Game21Easy $game The current game of 21.
+         * @var Game21Interface $game The current game of 21.
          */
         $game = $session->get("game21");
-        $nextRoundData = $nextRound->main($game);
+        $nextRoundData = $game->nextRound();
         $data = [
             'page' => "game no-header card",
             'url' => "/game",
