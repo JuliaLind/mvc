@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\Book;
 use App\Repository\BookRepository;
 
-use App\Library\LibraryHandler;
+use App\Library\IsbnAlreadyInUseException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,27 +25,40 @@ class LibraryController4 extends AbstractController
     public function updateBook(
         BookRepository $bookRepository,
         Request $request,
-        LibraryHandler $handler = new LibraryHandler()
+        // LibraryHandler $handler = new LibraryHandler()
     ): Response {
+        $bookId = $request->get('book_id');
         /**
-         * @var array<int,Book|array<string>|bool> $data
+         * @var Book $book
          */
-        $data = $handler->updateOne($request, $bookRepository);
-        list($flash, $book, $wentWell) = [...$data];
-
+        $book = $bookRepository->find($bookId);
         /**
-         * @var array<string,string> $flash
+         * @var string $title
          */
-        $this->addFlash(...$flash);
+        $title = $request->get('title');
+        /**
+         * @var string $isbn
+         */
+        $isbn = $request->get('isbn');
+        /**
+         * @var string $author
+         */
+        $author = $request->get('author');
+        /**
+         * @var string $imgLink
+         */
+        $imgLink = $request->get('image');
 
-        switch ($wentWell) {
-            case true:
-                /**
-                 * @var Book $book
-                 */
-                return $this->redirectToRoute('read_one', array('isbn'=>$book->getIsbn()));
-            default:
-                return $this->redirectToRoute("update_form", array('isbn'=>$request->get('original_isbn')));
+        $book->setTitle($title);
+        $book->setIsbn($isbn);
+        $book->setAuthor($author);
+        $book->setImg($imgLink);
+        try {
+            $bookRepository->save($book, true);
+            return $this->redirectToRoute('read_one', array('isbn'=>$isbn));
+        } catch (IsbnAlreadyInUseException) {
+            $this->addFlash("warning", "En annan bok med isbn '{$book->getIsbn()}' finns redan i systemet");
+            return $this->redirectToRoute("update_form", array('isbn'=>$request->get('original_isbn')));
         }
     }
 }

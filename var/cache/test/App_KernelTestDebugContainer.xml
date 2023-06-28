@@ -645,19 +645,8 @@
     </service>
     <service id="App\Helpers\SqlFileLoader" class="App\Helpers\SqlFileLoader" public="true"/>
     <service id="App\Library\BookNotFoundException" class="App\Library\BookNotFoundException" autowire="true" autoconfigure="true"/>
-    <service id="App\Library\BookRemover" class="App\Library\BookRemover" autowire="true" autoconfigure="true"/>
-    <service id="App\Library\BookSaver" class="App\Library\BookSaver" autowire="true" autoconfigure="true"/>
-    <service id="App\Library\BookUpdator" class="App\Library\BookUpdator" autowire="true" autoconfigure="true"/>
     <service id="App\Library\IsbnAlreadyInUseException" class="App\Library\IsbnAlreadyInUseException" autowire="true" autoconfigure="true"/>
     <service id="App\Library\LibraryException" class="App\Library\LibraryException" autowire="true" autoconfigure="true"/>
-    <service id="App\Library\LibraryHandler" class="App\Library\LibraryHandler" autowire="true" autoconfigure="true">
-      <argument type="service" id="App\Library\BookSaver"/>
-      <argument type="service" id="App\Library\BookUpdator"/>
-      <argument type="service" id="App\Library\BookRemover"/>
-    </service>
-    <service id="App\Library\NewFlashGenerator" class="App\Library\NewFlashGenerator" autowire="true" autoconfigure="true"/>
-    <service id="App\Library\RemoveFlashGenerator" class="App\Library\RemoveFlashGenerator" autowire="true" autoconfigure="true"/>
-    <service id="App\Library\UpdateFlashGenerator" class="App\Library\UpdateFlashGenerator" autowire="true" autoconfigure="true"/>
     <service id="App\Markdown\MdParser" class="App\Markdown\MdParser" autowire="true" autoconfigure="true"/>
     <service id="App\Project\Api1" class="App\Project\Api1" autowire="true" autoconfigure="true"/>
     <service id="App\Project\Api2" class="App\Project\Api2" autowire="true" autoconfigure="true"/>
@@ -1874,15 +1863,8 @@
         <argument key="App\Game\ValueConverter2" type="service_closure" id="App\Game\ValueConverter2" on-invalid="ignore_uninitialized"/>
         <argument key="App\Helpers\MainControllerHelper" type="service_closure" id="App\Helpers\MainControllerHelper" on-invalid="ignore_uninitialized"/>
         <argument key="App\Library\BookNotFoundException" type="service_closure" id="App\Library\BookNotFoundException" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Library\BookRemover" type="service_closure" id="App\Library\BookRemover" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Library\BookSaver" type="service_closure" id="App\Library\BookSaver" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Library\BookUpdator" type="service_closure" id="App\Library\BookUpdator" on-invalid="ignore_uninitialized"/>
         <argument key="App\Library\IsbnAlreadyInUseException" type="service_closure" id="App\Library\IsbnAlreadyInUseException" on-invalid="ignore_uninitialized"/>
         <argument key="App\Library\LibraryException" type="service_closure" id="App\Library\LibraryException" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Library\LibraryHandler" type="service_closure" id="App\Library\LibraryHandler" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Library\NewFlashGenerator" type="service_closure" id="App\Library\NewFlashGenerator" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Library\RemoveFlashGenerator" type="service_closure" id="App\Library\RemoveFlashGenerator" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Library\UpdateFlashGenerator" type="service_closure" id="App\Library\UpdateFlashGenerator" on-invalid="ignore_uninitialized"/>
         <argument key="App\Markdown\MdParser" type="service_closure" id="App\Markdown\MdParser" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\Api1" type="service_closure" id="App\Project\Api1" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\Api2" type="service_closure" id="App\Project\Api2" on-invalid="ignore_uninitialized"/>
@@ -2659,7 +2641,7 @@
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" type="service_closure" id="webpack_encore.entrypoint_lookup_collection" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader.filesystem" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
-        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.sl3j2Pa" on-invalid="ignore_uninitialized"/>
+        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.1OLtp2J" on-invalid="ignore_uninitialized"/>
         <argument key="doctrine.id_generator_locator" type="service_closure" id=".service_locator.KLVvNIq" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
         <argument key="Psr\Log\LoggerInterface $requestLogger" type="service_closure" id="monolog.logger.request" on-invalid="ignore_uninitialized"/>
@@ -7264,13 +7246,6 @@
         <argument key="bookRepository" type="service_closure" id="App\Repository\BookRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.dD9JOvL" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="bookRepository" type="service_closure" id="App\Repository\BookRepository"/>
-        <argument key="handler" type="service_closure" id="App\Library\LibraryHandler"/>
-      </argument>
-    </service>
     <service id=".service_locator.g9rwp3J" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7334,7 +7309,7 @@
         <argument key="repo" type="service_closure" id="App\Repository\ScoreRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.sl3j2Pa" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.1OLtp2J" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CardController2::draw" type="service_closure" id=".service_locator.RnGvXe2"/>
@@ -7359,9 +7334,9 @@
         <argument key="App\Controller\JsonLibraryController::showAllBooks" type="service_closure" id=".service_locator.B2ZeSAD"/>
         <argument key="App\Controller\LibraryController2::updateBookForm" type="service_closure" id=".service_locator.B2ZeSAD"/>
         <argument key="App\Controller\LibraryController3::resetBook" type="service_closure" id=".service_locator.g9rwp3J"/>
-        <argument key="App\Controller\LibraryController4::updateBook" type="service_closure" id=".service_locator.dD9JOvL"/>
-        <argument key="App\Controller\LibraryController::createBook" type="service_closure" id=".service_locator.dD9JOvL"/>
-        <argument key="App\Controller\LibraryController::deleteBookByIsbn" type="service_closure" id=".service_locator.dD9JOvL"/>
+        <argument key="App\Controller\LibraryController4::updateBook" type="service_closure" id=".service_locator.B2ZeSAD"/>
+        <argument key="App\Controller\LibraryController::createBook" type="service_closure" id=".service_locator.B2ZeSAD"/>
+        <argument key="App\Controller\LibraryController::deleteBookByIsbn" type="service_closure" id=".service_locator.B2ZeSAD"/>
         <argument key="App\Controller\LibraryController::showAllBooks" type="service_closure" id=".service_locator.B2ZeSAD"/>
         <argument key="App\Controller\LibraryController::showBookByIsbn" type="service_closure" id=".service_locator.B2ZeSAD"/>
         <argument key="App\Controller\MainController::about" type="service_closure" id=".service_locator.o.hPovE"/>
@@ -7417,9 +7392,9 @@
         <argument key="App\Controller\JsonLibraryController:showAllBooks" type="service_closure" id=".service_locator.B2ZeSAD"/>
         <argument key="App\Controller\LibraryController2:updateBookForm" type="service_closure" id=".service_locator.B2ZeSAD"/>
         <argument key="App\Controller\LibraryController3:resetBook" type="service_closure" id=".service_locator.g9rwp3J"/>
-        <argument key="App\Controller\LibraryController4:updateBook" type="service_closure" id=".service_locator.dD9JOvL"/>
-        <argument key="App\Controller\LibraryController:createBook" type="service_closure" id=".service_locator.dD9JOvL"/>
-        <argument key="App\Controller\LibraryController:deleteBookByIsbn" type="service_closure" id=".service_locator.dD9JOvL"/>
+        <argument key="App\Controller\LibraryController4:updateBook" type="service_closure" id=".service_locator.B2ZeSAD"/>
+        <argument key="App\Controller\LibraryController:createBook" type="service_closure" id=".service_locator.B2ZeSAD"/>
+        <argument key="App\Controller\LibraryController:deleteBookByIsbn" type="service_closure" id=".service_locator.B2ZeSAD"/>
         <argument key="App\Controller\LibraryController:showAllBooks" type="service_closure" id=".service_locator.B2ZeSAD"/>
         <argument key="App\Controller\LibraryController:showBookByIsbn" type="service_closure" id=".service_locator.B2ZeSAD"/>
         <argument key="App\Controller\MainController:about" type="service_closure" id=".service_locator.o.hPovE"/>
@@ -8262,12 +8237,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.sl3j2Pa"/>
+      <argument type="service" id=".service_locator.1OLtp2J"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.sl3j2Pa"/>
+      <argument type="service" id=".service_locator.1OLtp2J"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8984,7 +8959,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.sl3j2Pa"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.1OLtp2J"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9007,7 +8982,7 @@
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.hjZjVN0" alias=".service_locator.OsH1muE"/>
     <service id=".service_locator.sB0QlrM" alias=".service_locator.VxD2oRa"/>
-    <service id=".service_locator.h0RyO1v" alias=".service_locator.sl3j2Pa"/>
+    <service id=".service_locator.VlfdUSp" alias=".service_locator.1OLtp2J"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.fTeS4zl" alias=".service_locator.iwVv_YN"/>
@@ -9049,7 +9024,6 @@
     <service id=".service_locator.2J6_Zz5" alias=".service_locator.CAB_TcZ"/>
     <service id=".service_locator.JVMlr7o" alias=".service_locator.JsvBhwz"/>
     <service id=".service_locator.7fc3RCT" alias=".service_locator.B2ZeSAD"/>
-    <service id=".service_locator.XTNpwuX" alias=".service_locator.dD9JOvL"/>
     <service id=".service_locator.yrKL7dC" alias=".service_locator.g9rwp3J"/>
     <service id=".service_locator.X4dkjsX" alias=".service_locator.o.hPovE"/>
     <service id=".service_locator.ReGx9JW" alias=".service_locator.JU9_2rw"/>

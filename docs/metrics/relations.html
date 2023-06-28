@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-28 01:38:29        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-28 02:19:20        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -93,7 +93,7 @@
                             <path d="M0 0h24v24H0z" fill="none">
                             <path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z">
                         </svg>
-                        Violations (13)
+                        Violations (11)
                     </a>
                 </li>
                                     <li>
@@ -423,34 +423,24 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\App\\Repository\\BookRepository",
-            "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\App\\Library\\LibraryHandler"
+            "\\Symfony\\Component\\HttpFoundation\\Request"
         ]
     },
     {
         "name": "\\App\\Repository\\BookRepository",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\Book",
+            "\\App\\Library\\IsbnAlreadyInUseException",
+            "\\App\\Library\\BookNotFoundException"
+        ]
     },
     {
         "name": "\\Symfony\\Component\\HttpFoundation\\Request",
         "size": 3000,
         "relations": []
-    },
-    {
-        "name": "\\App\\Library\\LibraryHandler",
-        "size": 3000,
-        "relations": [
-            "\\App\\Library\\BookSaver",
-            "\\App\\Library\\BookUpdator",
-            "\\App\\Library\\BookRemover",
-            "\\App\\Library\\UpdateFlashGenerator",
-            "\\App\\Library\\NewFlashGenerator",
-            "\\App\\Library\\RemoveFlashGenerator",
-            "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\App\\Entity\\Book",
-            "\\App\\Repository\\BookRepository"
-        ]
     },
     {
         "name": "\\App\\Controller\\JsonLibraryController",
@@ -469,8 +459,13 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\App\\Repository\\BookRepository",
             "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\App\\Library\\LibraryHandler"
+            "\\App\\Entity\\Book"
         ]
+    },
+    {
+        "name": "\\App\\Entity\\Book",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Controller\\ProjectController7",
@@ -987,11 +982,6 @@
         ]
     },
     {
-        "name": "\\App\\Entity\\Book",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\Library\\IsbnAlreadyInUseException",
         "size": 3000,
         "relations": [
@@ -1338,52 +1328,10 @@
         "relations": []
     },
     {
-        "name": "\\App\\Library\\BookRemover",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\Library\\LibraryException",
         "size": 3000,
         "relations": [
             "\\Exception"
-        ]
-    },
-    {
-        "name": "\\App\\Library\\BookSaver",
-        "size": 3000,
-        "relations": [
-            "\\App\\Repository\\BookRepository",
-            "\\App\\Entity\\Book"
-        ]
-    },
-    {
-        "name": "\\App\\Library\\BookUpdator",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\App\\Entity\\Book"
-        ]
-    },
-    {
-        "name": "\\App\\Library\\UpdateFlashGenerator",
-        "size": 3000,
-        "relations": [
-            "\\App\\Entity\\Book"
-        ]
-    },
-    {
-        "name": "\\App\\Library\\NewFlashGenerator",
-        "size": 3000,
-        "relations": [
-            "\\App\\Entity\\Book"
-        ]
-    },
-    {
-        "name": "\\App\\Library\\RemoveFlashGenerator",
-        "size": 3000,
-        "relations": [
-            "\\App\\Entity\\Book"
         ]
     },
     {
