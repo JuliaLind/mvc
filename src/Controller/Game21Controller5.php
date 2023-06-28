@@ -5,8 +5,6 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 
-
-use App\Game\GameMoneyHandler2;
 use App\Game\Game21Easy;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,13 +25,12 @@ class Game21Controller5 extends AbstractController
     public function bet(
         SessionInterface $session,
         int $amount,
-        GameMoneyHandler2 $gameHandler=new GameMoneyHandler2()
     ): Response {
         /**
          * @var Game21Easy $game The current game of 21.
          */
         $game = $session->get("game21");
-        $gameHandler->bet($amount, $game);
+        $game->addToMoneyPot($amount);
         $session->set("game21", $game);
         return $this->redirectToRoute('play');
     }

@@ -5,9 +5,9 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 
-use App\Game\GameHandler;
+
 use App\Game\Game21Easy;
-use App\Game\PlayerTurnHandler;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,13 +25,21 @@ class Game21Controller6 extends AbstractController
     #[Route('/game/play', name: "play", methods: ['GET'])]
     public function play(
         SessionInterface $session,
-        GameHandler $gameHandler=new GameHandler()
     ): Response {
         /**
          * @var Game21Easy $game The current game of 21.
          */
         $game = $session->get("game21");
-        $data = $gameHandler->play($game);
+        $data = [
+            'players' => $game->getPlayerData(),
+            'risk'=> $game->getRisk(),
+            'page' => "game no-header card",
+            'url' => "/game",
+            'title' => 'Game 21'
+        ];
+
+        $data = array_merge($game->getGameStatus(), $data);
+
         return $this->render('game21/draw.html.twig', $data);
     }
 }

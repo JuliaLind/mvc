@@ -5,8 +5,6 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 
-// ;
-// use App\Game\GameHandlerLanding;
 use App\Game\Game21Interface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;

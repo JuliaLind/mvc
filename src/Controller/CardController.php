@@ -4,21 +4,13 @@ namespace App\Controller;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-use App\Cards\CardGraphic;
-use App\Cards\CardHand;
+
 use App\Cards\DeckOfCards;
 use App\Cards\Player;
-
-
-// use App\Cards\CardLandingHandler;
-
-
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
-// use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
