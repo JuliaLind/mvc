@@ -53,7 +53,7 @@ class LibraryController extends AbstractController
         $book->setImg($imgLink);
         try {
             $bookRepository->save($book, true);
-            $this->addFlash("notice", "Boken '{$book->getTitle()}' är registrerad. Klicka på kryset till höger för att gå till översikten");
+            $this->addFlash("notice", "Boken '{$title}' är registrerad. Klicka på kryset till höger för att gå till översikten");
             return $this->redirectToRoute("read_one", array('isbn'=>$isbn));
         } catch (IsbnAlreadyInUseException) {
             $this->addFlash("warning", "En bok med isbn '{$isbn}' finns redan i systemet. ISBN nummer måste vara unik");

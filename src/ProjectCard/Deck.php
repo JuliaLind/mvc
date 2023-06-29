@@ -17,10 +17,10 @@ class Deck
         $this->cards = $cardFactory->fullSet();
     }
 
-    public function shuffle(): void
-    {
-        shuffle($this->cards);
-    }
+    // public function shuffle(): void
+    // {
+    //     shuffle($this->cards);
+    // }
 
     public function deal(): string
     {

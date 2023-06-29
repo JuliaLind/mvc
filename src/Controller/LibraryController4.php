@@ -51,7 +51,7 @@ class LibraryController4 extends AbstractController
             $bookRepository->save($book, true);
             return $this->redirectToRoute('read_one', array('isbn'=>$isbn));
         } catch (IsbnAlreadyInUseException) {
-            $this->addFlash("warning", "En annan bok med isbn '{$book->getIsbn()}' finns redan i systemet");
+            $this->addFlash("warning", "En annan bok med isbn '{$isbn}' finns redan i systemet");
             return $this->redirectToRoute("update_form", array('isbn'=>$request->get('original_isbn')));
         }
     }

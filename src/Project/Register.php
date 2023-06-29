@@ -9,6 +9,7 @@ use App\Entity\Transaction;
 use App\Entity\User;
 use Datetime;
 use App\Repository\TransactionRepository;
+use App\Entity\Score;
 
 class Register
 {
@@ -65,6 +66,18 @@ class Register
             throw new NotEnoughCoinsException();
         }
         $this->transaction(-$amount, $text);
+    }
+
+    public function score(
+        int $points
+    ): void {
+        $score = new Score();
+        date_default_timezone_set('Europe/Stockholm');
+        $score->setRegistered(new DateTime());
+        $score->setPoints($points);
+        $score->setUser($this->user);
+        $this->manager->persist($score);
+        $this->manager->flush();
     }
 
 }

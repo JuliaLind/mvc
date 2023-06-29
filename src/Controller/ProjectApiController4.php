@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use App\Project\Api2;
+use App\Project\ApiGame2;
 
 /**
  * Contains API routes for the project
@@ -25,7 +25,7 @@ class ProjectApiController4 extends AbstractController
     public function apiPlaceCard(
         int $row,
         int $col,
-        Api2 $game = new Api2(),
+        ApiGame2 $game = new ApiGame2(),
     ): Response {
         $data = $game->oneRound($row, $col);
         return $this->json($data);

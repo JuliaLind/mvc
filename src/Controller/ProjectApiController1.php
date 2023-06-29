@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 
 
-use App\Project\Api1;
+use App\Project\ApiGame1;
 
 /**
  * Contains API routes for the project
@@ -32,9 +32,9 @@ class ProjectApiController1 extends AbstractController
         SessionInterface $session,
     ): Response {
         /**
-         * @var Api1 $game
+         * @var ApiGame1 $game
          */
-        $game = $session->get("api-game") ?? new Api1();
+        $game = $session->get("api-game") ?? new ApiGame1();
         $data = $game->oneRound();
 
 

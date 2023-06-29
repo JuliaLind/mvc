@@ -10,7 +10,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 class CardFactory
 {
     /**
-     * Returns an array with 52 playing cards
+     * Returns an shuffled array with 52 playing cards
      *
      * @return array<string>
      */
@@ -26,6 +26,7 @@ class CardFactory
                 array_push($cards, $card);
             }
         }
+        shuffle($cards);
         return $cards;
     }
 }

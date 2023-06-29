@@ -4,13 +4,10 @@ namespace App\Project;
 
 use App\ProjectCard\Deck;
 use App\ProjectGrid\Grid;
-use App\ProjectGrid\GridGraphic;
 use App\ProjectRules\WinEvaluator;
 use App\ProjectRules\MoveEvaluator;
 
-use Symfony\Component\HttpFoundation\Request;
-
-class Api3
+class ApiGame3
 {
     /**
      * @return array<mixed>
@@ -18,11 +15,9 @@ class Api3
     public function results(
         MoveEvaluator $moveEvaluator = new MoveEvaluator(),
         WinEvaluator $winEvaluator = new WinEvaluator(),
-        GridGraphic $gridGraphic = new GridGraphic(),
         Grid $grid = new Grid(),
         Deck $deck = new Deck(),
     ): array {
-        $deck->shuffle();
         while ($grid->getCardCount() < 25) {
             $card = $deck->deal();
             /**
@@ -46,7 +41,7 @@ class Api3
         $results = $winEvaluator->results($grid->getCards());
         return [
             "results" => $results,
-            "grid" => $gridGraphic->graphic($grid->getCards()),
+            "grid" => $grid->getCards(),
             "remaining cards" => $deck->getCards()
         ];
     }

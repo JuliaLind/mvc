@@ -25,6 +25,6 @@ class CardFactoryTest extends TestCase
         $this->assertInstanceOf("\App\ProjectCard\CardFactory", $cardFactory);
 
         $res = $cardFactory->fullSet();
-        $this->assertEquals($cards, $res);
+        $this->assertEqualsCanonicalizing($cards, $res);
     }
 }
