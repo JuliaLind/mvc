@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1688121940">
-  <project timestamp="1688121940">
+<coverage generated="1688122709">
+  <project timestamp="1688122709">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -1831,7 +1831,7 @@
       </class>
       <line num="18" type="method" name="adjAceValue" visibility="public" complexity="3" crap="3" count="3"/>
       <line num="20" type="stmt" count="3"/>
-      <line num="21" type="stmt" count="2"/>
+      <line num="21" type="stmt" count="1"/>
       <line num="23" type="stmt" count="3"/>
       <metrics loc="26" ncloc="17" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
     </file>
