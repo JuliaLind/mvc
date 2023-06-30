@@ -5,24 +5,14 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
 use Doctrine\ORM\EntityManagerInterface;
-
-use App\Repository\TransactionRepository;
-use App\Repository\UserRepository;
 use App\Entity\User;
-use App\Entity\Transaction;
-use Datetime;
 use App\Project\NotEnoughCoinsException;
-use App\Project\Register;
-
+use App\Project\RegisterFactory;
 use Symfony\Component\HttpFoundation\Request;
-
 use App\Project\Game;
 use App\ProjectGrid\Grid;
 
@@ -33,14 +23,15 @@ class ProjectController4 extends AbstractController
         int $row,
         int $col,
         SessionInterface $session,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface $entityManager,
+        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
          */
         $userId = $session->get("user");
 
-        $register = new Register($entityManager, $userId);
+        $register = $factory->create($entityManager, $userId);
         try {
             $register->debit(50, 'move-a-card cheat');
         } catch (NotEnoughCoinsException) {
@@ -89,7 +80,6 @@ class ProjectController4 extends AbstractController
         }
         $data = [
             ...$state,
-            // 'url' => "proj",
             'url' => ""
         ];
         $this->addFlash('notice', "Click on the card you want to move");

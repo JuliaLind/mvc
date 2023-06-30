@@ -5,9 +5,9 @@ namespace App\ProjectRules;
 trait TwoPairsTrait2
 {
     /**
-     * @param array<string> $cardArray
+     * @param array<string> $cards
      */
-    abstract public function check3(array $cardArray): bool;
+    abstract public function check3(array $cards): bool;
 
     /**
      * @param array<string> $hand

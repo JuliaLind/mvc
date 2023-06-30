@@ -12,9 +12,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Project\Game;
 
-/**
- * Contains API routes for the project
- */
 class ProjectApiController5 extends AbstractController
 {
     /**

@@ -2,40 +2,18 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\CardCounter;
-use App\ProjectCard\CardSearcher;
-
 class StraightFlushStat implements RuleStatInterface
 {
+    use FirstCheckTrait;
     use RankLimitsTrait;
     use StraightFlushStatTrait;
-    use StraightStatTrait;
     use SameSuitTrait;
+    use GroupBySuitTrait;
+    use StraightStatTrait3;
+    use CountByRankTrait;
+    use CountBySuitTrait;
+    use SearchSpecificCardTrait;
 
-    protected CardSearcher $searcher;
-    protected CardCounter $cardCounter;
-
-    public function __construct(
-        CardCounter $cardCounter = new CardCounter(),
-        CardSearcher $searcher = new CardSearcher()
-    ) {
-        $this->cardCounter = $cardCounter;
-        $this->searcher = $searcher;
-    }
-
-    /**
-     * @param array<string> $hand
-     * @param array<string> $deck
-     */
-    public function check(array $hand, array $deck, string $card): bool
-    {
-        /**
-         * @var array<string> $newHand
-         */
-        $newHand = [...$hand, $card];
-
-        return $this->check2($newHand, $deck);
-    }
 
     /**
      * @param array<string> $hand
@@ -43,13 +21,17 @@ class StraightFlushStat implements RuleStatInterface
      */
     public function check2(array $hand, array $deck): bool
     {
-        /**
-         * @var array<string,array<int,int>> $uniqueCountHand
-         */
-        $uniqueCountHand = $this->cardCounter->count($hand);
-
+        if (!$this->setSuit($hand)) {
+            return false;
+        }
         $allCards = array_merge($hand, $deck);
-        return $this->setSuit($uniqueCountHand) && $this->setRankLimits($uniqueCountHand) && $this->checkAllPossible($allCards);
+        /**
+         * @var array<string,array<int>> $cardsBySuit
+         */
+        $cardsBySuit = $this->groupBySuit($allCards);
+        $ranks = $cardsBySuit[$this->suit];
+
+        return $this->setRankLimits($hand) && $this->checkAllPossible($ranks, min($ranks), max($ranks) - 4);
     }
 
 
@@ -61,13 +43,14 @@ class StraightFlushStat implements RuleStatInterface
         /**
          * @var array<string,array<int>> $cardsBySuit
          */
-        $cardsBySuit = $this->cardCounter->groupBySuit($deck);
-        foreach($cardsBySuit as $suit => $rankArr) {
-            $this->suit = $suit;
-            if (count($rankArr) >= 5) {
-                $this->minRank = min($rankArr);
-                $this->maxRank = max($rankArr);
-                if ($this->checkAllPossible($deck) === true) {
+        $cardsBySuit = $this->groupBySuit($deck);
+
+        foreach($cardsBySuit as $ranks) {
+            /**
+             * @var array<int> $ranks
+             */
+            if (count($ranks) >= 5) {
+                if ($this->checkAllPossible($ranks, min($ranks), max($ranks) - 4) === true) {
                     return true;
                 }
             }

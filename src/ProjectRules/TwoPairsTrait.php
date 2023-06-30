@@ -5,18 +5,24 @@ namespace App\ProjectRules;
 trait TwoPairsTrait
 {
     /**
-     * @param array<string> $cardArray
+     * @param array<string> $cards
+     * @return  array<array<int|string,int>>
      */
-    public function check3(array $cardArray): bool
+    abstract private function countByRank($cards): array;
+
+    /**
+     * @param array<string> $cards
+     */
+    public function check3(array $cards): bool
     {
-        $countUniqueCards = $this->cardCounter->count($cardArray);
         /**
-         * @var array<int,int> $rankCount
+         * @var array<int,int> $ranks
          */
-        $rankCount = $countUniqueCards['ranks'];
+        $ranks = $this->countByRank($cards);
+
         $pairs = 0;
-        foreach ($rankCount as $rank) {
-            if ($rank >= 2) {
+        foreach ($ranks as $rankCount) {
+            if ($rankCount >= 2) {
                 $pairs += 1;
             }
             if ($pairs === 2) {

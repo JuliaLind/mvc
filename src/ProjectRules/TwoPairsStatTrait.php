@@ -4,9 +4,11 @@ namespace App\ProjectRules;
 
 trait TwoPairsStatTrait
 {
-    use TwoPairsStatTrait3;
-    use TwoPairsStatTrait4;
-    use TwoPairsStatTrait5;
+    /**
+     * @param array<string> $cards
+     * @return  array<array<int|string,int>>
+     */
+    abstract private function countByRank($cards): array;
 
     /**
      * @param array<string> $hand
@@ -14,16 +16,15 @@ trait TwoPairsStatTrait
      */
     public function check2(array $hand, array $deck): bool
     {
-        $uniqueCountHand = $this->cardCounter->count($hand);
         /**
          * @var array<int,int> $ranksHand
          */
-        $ranksHand = $uniqueCountHand['ranks'];
-        $uniqueCountDeck = $this->cardCounter->count($deck);
+        $ranksHand = $this->countByRank($hand);
+
         /**
          * @var array<int,int> $ranksDeck
          */
-        $ranksDeck = $uniqueCountDeck['ranks'];
+        $ranksDeck = $this->countByRank($deck);
 
 
         if (count($hand) > count($ranksHand)) {

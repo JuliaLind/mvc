@@ -2,19 +2,12 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\CardCounter;
-
 class TwoPairs implements RuleInterface
 {
     use TwoPairsTrait;
     use TwoPairsTrait2;
-
-    protected CardCounter $cardCounter;
-
-    public function __construct(
-        CardCounter $cardCounter = new CardCounter()
-    ) {
-        $this->cardCounter = $cardCounter;
-    }
-
+    use TwoPairsStatTrait3;
+    use TwoPairsStatTrait4;
+    use TwoPairsStatTrait5;
+    use CountByRankTrait;
 }

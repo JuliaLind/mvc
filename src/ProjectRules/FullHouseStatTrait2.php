@@ -4,15 +4,25 @@ namespace App\ProjectRules;
 
 trait FullHouseStatTrait2
 {
-    use FullHouseStatTrait;
-    use FullHouseStatTrait6;
-    use FullHouseStatTrait7;
-
-
     /**
      * @param array<string> $deck
      */
     abstract public function check3(array $deck): bool;
+    abstract private function subCheck($ranksHand, $ranksAll): bool;
+    /**
+     * @param array<int,int> $ranksHand
+     */
+    abstract private function subCheck2($ranksHand): bool;
+    /**
+     * @param array<int,int> $ranksHand
+     * @param array<int,int> $ranksDeck
+     */
+    abstract private function subCheck3($ranksHand, $ranksDeck): bool;
+    /**
+     * @param array<string> $cards
+     * @return  array<array<int|string,int>>
+     */
+    abstract private function countByRank($cards): array;
 
     /**
      * @param array<string> $hand
@@ -20,25 +30,23 @@ trait FullHouseStatTrait2
      */
     public function check2(array $hand, array $deck): bool
     {
-        $uniqueCountHand = $this->cardCounter->count($hand);
         /**
          * @var array<int,int> $ranksHand
          */
-        $ranksHand = $uniqueCountHand['ranks'];
-        $uniqueCountDeck = $this->cardCounter->count($deck);
+        $ranksHand = $this->countByRank($hand);
         /**
          * @var array<int,int> $ranksDeck
          */
-        $ranksDeck = $uniqueCountDeck['ranks'];
+        $ranksDeck = $this->countByRank($deck);
+
         $allCards = array_merge($hand, $deck);
-        $uniqueCountAllCards = $this->cardCounter->count($allCards);
         /**
          * @var array<int,int> $ranksAll
          */
-        $ranksAll = $uniqueCountAllCards['ranks'];
+        $ranksAll = $this->countByRank($allCards);
 
         if (count($hand) === 1) {
-            $rank = array_keys($ranksHand)[0];
+            $rank = array_key_first($ranksHand);
             return in_array($rank, array_keys($ranksDeck)) && $this->check3($allCards);
         }
         return $this->subCheck3($ranksHand, $ranksDeck) || ($this->subCheck2($ranksHand) && $this->subCheck($ranksHand, $ranksAll));

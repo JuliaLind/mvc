@@ -1,8 +1,5 @@
 <?php
 
-
-// ta eventuellt bort denna
-
 namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
@@ -10,23 +7,23 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 trait SameSuitTrait
 {
-    protected string $suit;
-
+    private string $suit;
+    abstract private function countBySuit($cards): array;
 
     /**
-     * @param array<string,array<int,int>> $uniqueCountHand
+     * @param array<string> $hand
      */
-    protected function setSuit(array $uniqueCountHand): bool
+    private function setSuit(array $hand): bool
     {
         /**
-         * @var array<string,int> $suitsHand
+         * @var array<string,int> $suits
          */
-        $suitsHand = $uniqueCountHand['suits'];
+        $suits = $this->countBySuit($hand);
         /**
          * @var string $suit
          */
-        $suit = array_key_first($suitsHand);
+        $suit = array_key_first($suits);
         $this->suit = $suit;
-        return count($suitsHand) === 1;
+        return count($suits) === 1;
     }
 }

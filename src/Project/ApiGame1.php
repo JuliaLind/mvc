@@ -2,9 +2,8 @@
 
 namespace App\Project;
 
-use App\ProjectCard\Deck;
 use App\ProjectGrid\Grid;
-use App\ProjectRules\MoveEvaluator;
+use App\ProjectRules\RuleEvaluator;
 
 class ApiGame1
 {
@@ -26,14 +25,14 @@ class ApiGame1
     /**
      * @return array<mixed>
      */
-    public function oneRound(MoveEvaluator $evaluator = new MoveEvaluator()): array
+    public function oneRound(RuleEvaluator $evaluator = new RuleEvaluator()): array
     {
         if ($this->grid->getCardCount() === 25) {
             $this->reset();
         }
         $card = $this->deck->deal();
         $deck = $this->deck->possibleCards();
-        $suggestion = $evaluator->suggestion($this->grid->getCards(), $card, $deck);
+        $suggestion = $evaluator->suggestion($this->grid, $card, $deck);
         $slot = $suggestion['slot'];
         /**
          * @var array<int> $slot
@@ -44,7 +43,7 @@ class ApiGame1
             'placed cards' => $this->grid->getCardCount(),
             "picked card" => $card,
             "suggestion" => $suggestion,
-            "grid" => $this->grid->getCards(),
+            "grid" => $this->grid->getRows(),
             "possible cards" => $deck,
             "remaining cards in deck" => $this->deck->getCards(),
         ];

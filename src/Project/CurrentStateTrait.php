@@ -5,8 +5,6 @@ namespace App\Project;
 require __DIR__ . "/../../vendor/autoload.php";
 
 use App\ProjectGrid\Grid;
-use App\ProjectCard\Deck;
-use App\ProjectGrid\GridGraphic;
 
 trait CurrentStateTrait
 {
@@ -38,7 +36,7 @@ trait CurrentStateTrait
     /**
      * @return array<mixed>
      */
-    public function currentState(GridGraphic $grid = new GridGraphic()): array
+    public function currentState(): array
     {
         return [
             'bet' => $this->pot,
@@ -49,8 +47,8 @@ trait CurrentStateTrait
             'message' => $this->message,
             'suggestion' => $this->suggestion,
             'results' => $this->results,
-            'house' => $grid->graphic($this->house->getCards()),
-            'player' => $grid->graphic($this->player->getCards()),
+            'house' => $this->house->graphic(),
+            'player' => $this->player->graphic(),
             'fromSlot' => $this->fromSlot,
             'finished' => $this->finished,
             'placedCards' => $this->player->getCardCount(),

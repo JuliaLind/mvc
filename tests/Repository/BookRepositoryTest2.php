@@ -68,7 +68,7 @@ class BookRepositoryTest2 extends KernelTestCase
         $book->setImg('https://newbookimg.com');
         $bookRepository->save($book, true);
 
-        $bookRepository->findOneByIsbn('0909090909090');
+        $book = $bookRepository->findOneByIsbn('0909090909090');
 
         $this->assertSame('New Book', $book->getTitle());
     }

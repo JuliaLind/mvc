@@ -5,21 +5,14 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
 use Doctrine\ORM\EntityManagerInterface;
-use App\Repository\TransactionRepository;
 use App\Repository\UserRepository;
 use App\Entity\User;
-use App\Entity\Transaction;
-use Datetime;
-use App\Project\Register;
-
+use App\Project\RegisterFactory;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 
 /**
@@ -29,10 +22,10 @@ class ProjectController2 extends AbstractController
 {
     #[Route("/proj/register", name: "register", methods: ['POST'])]
     public function projRegister(
-        // UserRepository $userRepo,
         EntityManagerInterface $entityManager,
         Request $request,
-        SessionInterface $session
+        SessionInterface $session,
+        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var string $email
@@ -80,7 +73,7 @@ class ProjectController2 extends AbstractController
          */
         $userId = $user->getId();
 
-        $register = new Register($entityManager, $userId);
+        $register = $factory->create($entityManager, $userId);
         $register->transaction(1000, 'Free registration bonus');
 
         $session->set("user", $userId);

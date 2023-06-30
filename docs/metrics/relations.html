@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-29 08:56:57        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-30 10:47:00        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -93,7 +93,7 @@
                             <path d="M0 0h24v24H0z" fill="none">
                             <path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z">
                         </svg>
-                        Violations (9)
+                        Violations (5)
                     </a>
                 </li>
                                     <li>
@@ -321,7 +321,7 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\Register"
+            "\\App\\Project\\RegisterFactory"
         ]
     },
     {
@@ -340,7 +340,15 @@
         "relations": []
     },
     {
-        "name": "\\App\\Project\\Register",
+        "name": "\\App\\Project\\RegisterFactory",
+        "size": 3000,
+        "relations": [
+            "\\App\\Project\\Register",
+            "\\Doctrine\\ORM\\EntityManagerInterface"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\LuckyMonkey",
         "size": 3000,
         "relations": []
     },
@@ -352,7 +360,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\Repository\\ScoreRepository",
-            "\\Doctrine\\ORM\\EntityManagerInterface"
+            "\\App\\Repository\\UserRepository"
         ]
     },
     {
@@ -367,6 +375,15 @@
             "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
             "\\Doctrine\\Persistence\\ManagerRegistry",
             "\\App\\Entity\\Score"
+        ]
+    },
+    {
+        "name": "\\App\\Repository\\UserRepository",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\User"
         ]
     },
     {
@@ -385,12 +402,12 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Random\\Quote",
+            "\\App\\Controller\\Quote",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
     },
     {
-        "name": "\\App\\Random\\Quote",
+        "name": "\\App\\Controller\\Quote",
         "size": 3000,
         "relations": [
             "\\Datetime"
@@ -416,8 +433,8 @@
         "size": 3000,
         "relations": [
             "\\App\\ProjectGrid\\Grid",
-            "\\App\\ProjectCard\\Deck",
-            "\\App\\ProjectRules\\MoveEvaluator"
+            "\\App\\Project\\Deck",
+            "\\App\\ProjectRules\\RuleEvaluator"
         ]
     },
     {
@@ -472,6 +489,16 @@
         "relations": []
     },
     {
+        "name": "\\App\\Controller\\MdParser",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Anax\\TextFilter\\TextFilter",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Controller\\ProjectController7",
         "size": 3000,
         "relations": [
@@ -479,7 +506,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\Register"
+            "\\App\\Project\\RegisterFactory"
         ]
     },
     {
@@ -490,7 +517,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\Register"
+            "\\App\\Project\\RegisterFactory"
         ]
     },
     {
@@ -499,21 +526,16 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Helpers\\MainControllerHelper",
-            "\\App\\Random\\LuckyMonkey"
+            "\\App\\Controller\\MainControllerHelper",
+            "\\App\\Controller\\LuckyMonkey"
         ]
     },
     {
-        "name": "\\App\\Helpers\\MainControllerHelper",
+        "name": "\\App\\Controller\\MainControllerHelper",
         "size": 3000,
         "relations": [
-            "\\App\\Markdown\\MdParser"
+            "\\App\\Controller\\MdParser"
         ]
-    },
-    {
-        "name": "\\App\\Random\\LuckyMonkey",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\App\\Controller\\ProjectApiController5",
@@ -543,8 +565,18 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Doctrine\\ORM\\EntityManagerInterface",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Project\\Register"
+            "\\App\\Project\\RegisterFactory"
         ]
+    },
+    {
+        "name": "\\App\\Controller\\SqlFileLoader",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Doctrine\\DBAL\\Connection",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Controller\\ProjectApiController2",
@@ -553,7 +585,7 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\Register"
+            "\\App\\Project\\RegisterFactory"
         ]
     },
     {
@@ -569,10 +601,9 @@
         "name": "\\App\\Project\\ApiGame3",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\MoveEvaluator",
-            "\\App\\ProjectRules\\WinEvaluator",
+            "\\App\\ProjectRules\\RuleEvaluator",
             "\\App\\ProjectGrid\\Grid",
-            "\\App\\ProjectCard\\Deck"
+            "\\App\\Project\\Deck"
         ]
     },
     {
@@ -613,6 +644,11 @@
         ]
     },
     {
+        "name": "\\Datetime",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Controller\\Game21Controller7",
         "size": 3000,
         "relations": [
@@ -627,7 +663,16 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Doctrine\\ORM\\EntityManagerInterface"
+            "\\App\\Repository\\TransactionRepository"
+        ]
+    },
+    {
+        "name": "\\App\\Repository\\TransactionRepository",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\Transaction"
         ]
     },
     {
@@ -709,13 +754,8 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Markdown\\MdParser"
+            "\\App\\Controller\\MdParser"
         ]
-    },
-    {
-        "name": "\\App\\Markdown\\MdParser",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\App\\Controller\\JsonCardController2",
@@ -745,7 +785,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Request",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\Register",
+            "\\App\\Project\\RegisterFactory",
             "\\App\\ProjectGrid\\Grid",
             "\\App\\Project\\Game"
         ]
@@ -759,8 +799,8 @@
         "name": "\\App\\Project\\Game",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectCard\\Deck",
-            "\\App\\ProjectRules\\MoveEvaluator"
+            "\\App\\Project\\Deck",
+            "\\App\\ProjectRules\\RuleEvaluator"
         ]
     },
     {
@@ -771,17 +811,8 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\Register",
+            "\\App\\Project\\RegisterFactory",
             "\\App\\Repository\\TransactionRepository"
-        ]
-    },
-    {
-        "name": "\\App\\Repository\\TransactionRepository",
-        "size": 3000,
-        "relations": [
-            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
-            "\\Doctrine\\Persistence\\ManagerRegistry",
-            "\\App\\Entity\\Transaction"
         ]
     },
     {
@@ -821,8 +852,8 @@
             "\\Doctrine\\ORM\\EntityManagerInterface",
             "\\Symfony\\Component\\HttpFoundation\\Request",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Project\\RegisterFactory",
             "\\App\\Entity\\User",
-            "\\App\\Project\\Register",
             "\\App\\Repository\\UserRepository"
         ]
     },
@@ -835,15 +866,6 @@
             "\\Doctrine\\Common\\Collections\\Collection",
             "\\App\\Entity\\Transaction",
             "\\App\\Entity\\Score"
-        ]
-    },
-    {
-        "name": "\\App\\Repository\\UserRepository",
-        "size": 3000,
-        "relations": [
-            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
-            "\\Doctrine\\Persistence\\ManagerRegistry",
-            "\\App\\Entity\\User"
         ]
     },
     {
@@ -860,7 +882,7 @@
         "size": 3000,
         "relations": [
             "\\App\\ProjectGrid\\Grid",
-            "\\App\\ProjectCard\\Deck"
+            "\\App\\Project\\Deck"
         ]
     },
     {
@@ -906,25 +928,25 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Doctrine\\DBAL\\Connection",
-            "\\App\\Helpers\\SqlFileLoader"
+            "\\App\\Controller\\SqlFileLoader"
         ]
     },
     {
-        "name": "\\Doctrine\\DBAL\\Connection",
+        "name": "\\App\\ProjectGrid\\RowsColsTrait",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\App\\Helpers\\SqlFileLoader",
+        "name": "\\App\\ProjectGrid\\RemoveCardTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectGrid\\AddCardTrait",
         "size": 3000,
         "relations": [
-            "\\Doctrine\\DBAL\\Connection"
+            "\\App\\ProjectGrid\\SlotNotEmptyException"
         ]
-    },
-    {
-        "name": "\\App\\ProjectGrid\\EmptyCellFinder",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\App\\ProjectGrid\\SlotNotEmptyException",
@@ -934,17 +956,12 @@
         ]
     },
     {
-        "name": "\\App\\ProjectGrid\\GridGraphic",
+        "name": "\\App\\ProjectGrid\\CardCountTrait",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\App\\ProjectGrid\\EmptyCellFinder2",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectGrid\\ColumnGetter",
+        "name": "\\App\\ProjectGrid\\GraphicTrait",
         "size": 3000,
         "relations": []
     },
@@ -987,7 +1004,12 @@
         ]
     },
     {
-        "name": "\\Anax\\TextFilter\\TextFilter",
+        "name": "\\App\\ProjectRules\\RoyalFlushStatTrait2",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\FlushStatTrait4",
         "size": 3000,
         "relations": []
     },
@@ -1002,27 +1024,9 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectCard\\CardCounter",
+        "name": "\\App\\ProjectRules\\GroupBySuitTrait",
         "size": 3000,
         "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\MoveEvaluator",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\RuleStats",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RoyalFlushStat",
-            "\\App\\ProjectRules\\StraightFlushStat",
-            "\\App\\ProjectRules\\SameOfAKindStat",
-            "\\App\\ProjectRules\\FullHouseStat",
-            "\\App\\ProjectRules\\FlushStat",
-            "\\App\\ProjectRules\\StraightStat",
-            "\\App\\ProjectRules\\TwoPairsStat"
-        ]
     },
     {
         "name": "\\App\\ProjectRules\\RankLimitsTrait",
@@ -1040,71 +1044,12 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\EvaluatorTrait3",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\Rules",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\RoyalFlush",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\Straight"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\Straight",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface",
-            "\\App\\ProjectCard\\CardCounter"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\FullHouse",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface",
-            "\\App\\ProjectCard\\CardCounter"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\Flush",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface",
-            "\\App\\ProjectCard\\CardCounter"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\TwoPairs",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface",
-            "\\App\\ProjectCard\\CardCounter"
-        ]
-    },
-    {
         "name": "\\App\\ProjectRules\\StraightStat",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\App\\ProjectCard\\CardSearcher",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\EvaluatorTrait2",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\EvaluatorTrait7",
+        "name": "\\App\\ProjectRules\\ExtractRuleNamesTrait",
         "size": 3000,
         "relations": []
     },
@@ -1114,7 +1059,17 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\EvaluatorTrait",
+        "name": "\\App\\ProjectRules\\MinRankLimitsTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\CheckFullHandTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\RuleNameTrait2",
         "size": 3000,
         "relations": [
             "\\App\\ProjectRules\\RuleStatInterface"
@@ -1136,7 +1091,32 @@
         "relations": []
     },
     {
+        "name": "\\App\\ProjectRules\\FlushStatTrait3",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\ProjectRules\\FullHouseStatTrait2",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\StraightStatTrait2",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\StraightFlush",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\FullHouseTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\FlushStatTrait2",
         "size": 3000,
         "relations": []
     },
@@ -1156,22 +1136,12 @@
         "relations": []
     },
     {
+        "name": "\\App\\ProjectRules\\RoyalFlush",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\ProjectRules\\StraightStatTrait",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\EvaluatorTrait6",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\FullHouseStatTrait",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\SameRankStatTrait",
         "size": 3000,
         "relations": []
     },
@@ -1181,12 +1151,104 @@
         "relations": []
     },
     {
+        "name": "\\App\\ProjectRules\\SameOfAKindStatTrait3",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\FinalResultsTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectGrid\\Grid"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\FirstCheckTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\CountByRankTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\ProjectRules\\TwoPairsStatTrait4",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\SameRankSingleStatTrait",
+        "name": "\\App\\ProjectRules\\CheckWithoutCardTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleStatInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\SuggestionTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectGrid\\Grid"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\CountBySuitTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\EmptyCellTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\CheckWithCardTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleStatInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\SearchSpecificCardTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\StraightStatTrait3",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\RulesWithoutCardTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\RuleNameTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleStatInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\SameOfAKindStatTrait2",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\PointsAndRuleNameTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleStatInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\SubCountTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\SlotTrait",
         "size": 3000,
         "relations": []
     },
@@ -1196,25 +1258,17 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\RoyalFlushStat",
+        "name": "\\App\\ProjectRules\\StraightFlushStatTrait",
         "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleStatInterface",
-            "\\App\\ProjectCard\\CardCounter",
-            "\\App\\ProjectCard\\CardSearcher"
-        ]
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\CheckEmptyGridTrait",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\ProjectRules\\TwoPairsStat",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleStatInterface",
-            "\\App\\ProjectCard\\CardCounter",
-            "\\App\\ProjectCard\\CardSearcher"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\StraightFlushStatTrait",
         "size": 3000,
         "relations": []
     },
@@ -1229,7 +1283,27 @@
         "relations": []
     },
     {
+        "name": "\\App\\ProjectRules\\TwoPairs",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\ProjectRules\\FullHouseStatTrait4",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\FullHouse",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\SameOfAKindStatTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\Flush",
         "size": 3000,
         "relations": []
     },
@@ -1239,11 +1313,35 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\EvaluatorTrait4",
+        "name": "\\App\\ProjectRules\\RuleEvaluator",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\RoyalFlushStat",
         "size": 3000,
         "relations": [
             "\\App\\ProjectRules\\RuleStatInterface"
         ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\Straight",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\PointsAndRuleNameTrait2",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleStatInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\RulesWithCardTrait",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\ProjectRules\\FullHouseStatTrait5",
@@ -1252,6 +1350,11 @@
     },
     {
         "name": "\\App\\ProjectRules\\FullHouseStatTrait7",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\RoyalFlushStatTrait",
         "size": 3000,
         "relations": []
     },
@@ -1266,12 +1369,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\WinEvaluator",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\EvaluatorTrait5",
+        "name": "\\App\\ProjectRules\\CountSuitAndRankTrait",
         "size": 3000,
         "relations": []
     },
@@ -1286,12 +1384,9 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectCard\\Deck",
+        "name": "\\App\\Project\\Deck",
         "size": 3000,
-        "relations": [
-            "\\App\\ProjectCard\\CardFactory",
-            "\\App\\ProjectCard\\NoCardsException"
-        ]
+        "relations": []
     },
     {
         "name": "\\App\\Project\\OneRoundTrait",
@@ -1303,16 +1398,7 @@
         "size": 3000,
         "relations": [
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\ProjectRules\\WinEvaluator",
             "\\App\\Project\\RegisterFactory"
-        ]
-    },
-    {
-        "name": "\\App\\Project\\RegisterFactory",
-        "size": 3000,
-        "relations": [
-            "\\App\\Project\\Register",
-            "\\Doctrine\\ORM\\EntityManagerInterface"
         ]
     },
     {
@@ -1323,9 +1409,12 @@
     {
         "name": "\\App\\Project\\CurrentStateTrait",
         "size": 3000,
-        "relations": [
-            "\\App\\ProjectGrid\\GridGraphic"
-        ]
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\NoCardsException",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Project\\PlayerSuggestTrait",
@@ -1333,7 +1422,7 @@
         "relations": []
     },
     {
-        "name": "\\Datetime",
+        "name": "\\App\\Project\\Register",
         "size": 3000,
         "relations": []
     },
@@ -1349,6 +1438,11 @@
     },
     {
         "name": "\\App\\Project\\SuggestMessageTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\CardFactory",
         "size": 3000,
         "relations": []
     },
@@ -1408,21 +1502,6 @@
     },
     {
         "name": "\\DateTimeInterface",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectCard\\NoCardsException",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectCard\\CardFactory",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectCard\\CardCounterTrait",
         "size": 3000,
         "relations": []
     },

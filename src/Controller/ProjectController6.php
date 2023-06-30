@@ -5,39 +5,28 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
 use Doctrine\ORM\EntityManagerInterface;
-use App\Repository\TransactionRepository;
-use App\Repository\UserRepository;
 use App\Entity\User;
-use App\Entity\Transaction;
-use Datetime;
-use App\Project\Register;
-
+use App\Project\RegisterFactory;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 
-/**
- * The main controller class
- */
 class ProjectController6 extends AbstractController
 {
     #[Route("/proj/purchase/{coins<\d+>}", name: "purchase", methods: ['POST'])]
     public function projPurchase(
         int $coins,
         EntityManagerInterface $entityManager,
-        SessionInterface $session
+        SessionInterface $session,
+        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
          */
         $userId = $session->get("user") ?? null;
-        $register = new Register($entityManager, $userId);
+        $register = $factory->create($entityManager, $userId);
         $register->transaction($coins, 'Purchase');
         $balance = $register->getBalance();
         $this->addFlash('notice', "You have successfully purchsed {$coins} coins. Your new balance is {$balance} coins");
@@ -48,13 +37,14 @@ class ProjectController6 extends AbstractController
     public function selectAmount(
         SessionInterface $session,
         EntityManagerInterface $entityManager,
+        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
          */
         $userId = $session->get("user");
 
-        $register = new Register($entityManager, $userId);
+        $register = $factory->create($entityManager, $userId);
         $balance = $register->getBalance();
 
         if ($balance < 10) {

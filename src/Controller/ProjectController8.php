@@ -8,21 +8,19 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Doctrine\ORM\EntityManagerInterface;
 
 use App\Entity\User;
-use App\Repository\TransactionRepository;
 use App\Repository\ScoreRepository;
-use App\Project\Game;
-use App\Project\Register;
+
+use App\Repository\UserRepository;
 
 class ProjectController8 extends AbstractController
 {
     #[Route("/proj/scores-single", name: "proj-scores-single")]
     public function projScoresSingle(
         SessionInterface $session,
-        ScoreRepository $repo,
-        EntityManagerInterface $entityManager,
+        ScoreRepository $scoreRepo,
+        UserRepository $userRepo,
     ): Response {
         /**
          * @var int $userId
@@ -31,10 +29,10 @@ class ProjectController8 extends AbstractController
         /**
          * @var User $user
          */
-        $user = $entityManager->getRepository(User::class)->find($userId);
+        $user = $userRepo->find($userId);
         $data = [
             'url' => "",
-            'scores' => $repo->findBy(
+            'scores' => $scoreRepo->findBy(
                 ['user' => $user],
                 ['points' => 'DESC'],
                 10

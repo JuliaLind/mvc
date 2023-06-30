@@ -6,7 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\DataFixtures\BookFixture;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\DBAL\Connection;
-use App\Helpers\SqlFileLoader;
+
+// use App\Helpers\SqlFileLoader;
 
 class LibraryControllerTest extends WebTestCase
 {

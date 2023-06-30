@@ -2,34 +2,34 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\CardCounter;
-
 require __DIR__ . "/../../vendor/autoload.php";
 
 
+// KANSKE TA BOR DENNA
+
 trait SameRankTrait
 {
-    protected CardCounter $cardCounter;
-
     /**
      * @var int $minCountRank the minimum number of cards of
      * same rank required to score the rule
      */
-    protected int $minCountRank;
+    private int $minCountRank;
+    /**
+     * @param array<string> $cards
+     * @return array<int,int>
+     */
+    abstract private function countByRank($cards): array;
 
     /**
      * @param array<string> $hand
-     * @return bool true if rule is fullfilled otherwise false
      */
     public function check(array $hand): bool
     {
-        $uniqueCount = $this->cardCounter->count($hand);
-
         /**
          * @var array<int,int> $uniqueRanks
          */
-        $uniqueRanks = $uniqueCount['ranks'];
+        $ranks = $this->countByRank($hand);
 
-        return max($uniqueRanks) >= $this->minCountRank;
+        return max($ranks) >= $this->minCountRank;
     }
 }

@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
-use App\Project\Register;
+use App\Project\RegisterFactory;
 
 /**
  * Contains API routes for the project
@@ -24,6 +24,7 @@ class ProjectApiController6 extends AbstractController
     #[Route('/proj/api/users', name: "api-users", methods: ['GET'])]
     public function apiUsers(
         EntityManagerInterface $entityManager,
+        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         $users = $entityManager->getRepository(User::class)->findAll();
         $data = [];
@@ -32,7 +33,7 @@ class ProjectApiController6 extends AbstractController
              * @var int $userId
              */
             $userId = $user->getId();
-            $register = new Register($entityManager, $userId);
+            $register = $factory->create($entityManager, $userId);
             $balance = $register->getBalance();
             $info = [
                 'id' => $userId,

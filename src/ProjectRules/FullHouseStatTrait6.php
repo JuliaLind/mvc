@@ -4,11 +4,8 @@ namespace App\ProjectRules;
 
 trait FullHouseStatTrait6
 {
-    /**
-     * @param array<int,int> $ranksHand
-     */
-    private function subCheck2($ranksHand): bool
+    private function checkThree(bool $three, int $rank): bool
     {
-        return count($ranksHand) <= 2 && max($ranksHand) <= 3;
+        return $three === false && $rank >= 3;
     }
 }

@@ -7,44 +7,28 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 trait RankLimitsTrait
 {
-    protected int $maxRank;
-    protected int $minRank;
+    private int $maxRank;
+    private int $minRank;
+    /**
+     * @param array<string> $cards
+     * @return  array<array<int|string,int>>
+     */
+    abstract private function countByRank($cards): array;
 
     /**
-     * @param array<string,array<int,int>> $uniqueCountHand
+     * @param array<string> $hand
      */
-    protected function setRankLimits(array $uniqueCountHand): bool
+    private function setRankLimits(array $hand): bool
     {
         /**
-         * @var array<int,int> $ranksHand
+         * @var array<int,int> $ranks
          */
-        $ranksHand = $uniqueCountHand['ranks'];
-        $ranks = array_keys($ranksHand);
+        $ranks = $this->countByRank($hand);
 
         $maxRank = max($ranks);
         $minRank = min($ranks);
-
         $this->maxRank = $maxRank;
         $this->minRank = $minRank;
         return $maxRank - $minRank <= 4;
-    }
-
-    /**
-     * @return array<string,int>
-     */
-    protected function minRankLimits(): array
-    {
-        $minMinRank = $this->maxRank - 4;
-        if ($minMinRank < 2) {
-            $minMinRank = 2;
-        }
-        $maxMinRank = $this->minRank;
-        if ($maxMinRank > 10) {
-            $maxMinRank = 10;
-        }
-        return [
-            'min' => $minMinRank,
-            'max' => $maxMinRank
-        ];
     }
 }

@@ -5,9 +5,9 @@ namespace App\Project;
 require __DIR__ . "/../../vendor/autoload.php";
 
 use Doctrine\ORM\EntityManagerInterface;
-use App\ProjectRules\WinEvaluator;
+
 use App\ProjectGrid\Grid;
-use App\ProjectCard\Deck;
+use App\ProjectRules\RuleEvaluator;
 
 trait EvaluateTrait
 {
@@ -16,6 +16,8 @@ trait EvaluateTrait
     private Deck $deck;
     private int $pot=0;
     private string $message = "";
+    private RuleEvaluator $evaluator;
+
     /**
      * @var array<string,array<string,array<array<string,int|string>>|int>|string> $results
      */
@@ -25,16 +27,16 @@ trait EvaluateTrait
      */
     private array $suggestion = ["message" => ""];
 
-    public function evaluate(EntityManagerInterface $manager, int $userId, WinEvaluator $evaluator=new WinEvaluator(), RegisterFactory $factory = new RegisterFactory()): void
+    public function evaluate(EntityManagerInterface $manager, int $userId, RegisterFactory $factory = new RegisterFactory()): void
     {
         $this->suggestion = ['message' => ""];
-
-        $playerData = $evaluator->results($this->player->getCards());
+        $evaluator = $this->evaluator;
+        $playerData = $evaluator->results($this->player);
         /**
          * @var int $playerTotal
          */
         $playerTotal = $playerData['total'];
-        $houseData = $evaluator->results($this->house->getCards());
+        $houseData = $evaluator->results($this->house);
         /**
          * @var int $houseTotal
          */

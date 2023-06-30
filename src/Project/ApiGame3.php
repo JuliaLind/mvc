@@ -2,10 +2,8 @@
 
 namespace App\Project;
 
-use App\ProjectCard\Deck;
 use App\ProjectGrid\Grid;
-use App\ProjectRules\WinEvaluator;
-use App\ProjectRules\MoveEvaluator;
+use App\ProjectRules\RuleEvaluator;
 
 class ApiGame3
 {
@@ -13,8 +11,7 @@ class ApiGame3
      * @return array<mixed>
      */
     public function results(
-        MoveEvaluator $moveEvaluator = new MoveEvaluator(),
-        WinEvaluator $winEvaluator = new WinEvaluator(),
+        RuleEvaluator $evaluator = new RuleEvaluator(),
         Grid $grid = new Grid(),
         Deck $deck = new Deck(),
     ): array {
@@ -23,7 +20,7 @@ class ApiGame3
             /**
              * @var array<string,array<int,int>|int|string> $suggestion
              */
-            $suggestion = $moveEvaluator->suggestion($grid->getCards(), $card, $deck->getCards());
+            $suggestion = $evaluator->suggestion($grid, $card, $deck->getCards());
             /**
              * @var array<int>
              */
@@ -38,10 +35,10 @@ class ApiGame3
             $col = $slot[1];
             $grid->addCard($row, $col, $card);
         }
-        $results = $winEvaluator->results($grid->getCards());
+        $results = $evaluator->results($grid);
         return [
             "results" => $results,
-            "grid" => $grid->getCards(),
+            "grid" => $grid->getRows(),
             "remaining cards" => $deck->getCards()
         ];
     }

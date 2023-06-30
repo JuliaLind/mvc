@@ -5,24 +5,14 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
 use Doctrine\ORM\EntityManagerInterface;
-
-use App\Repository\TransactionRepository;
-use App\Repository\UserRepository;
 use App\Entity\User;
-use App\Entity\Transaction;
-use Datetime;
 use App\Project\NotEnoughCoinsException;
-use App\Project\Register;
-
+use App\Project\RegisterFactory;
 use Symfony\Component\HttpFoundation\Request;
-
 use App\Project\Game;
 use App\ProjectGrid\Grid;
 
@@ -33,6 +23,7 @@ class ProjectController3 extends AbstractController
         Request $request,
         SessionInterface $session,
         EntityManagerInterface $entityManager,
+        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
@@ -42,7 +33,8 @@ class ProjectController3 extends AbstractController
          * @var int $bet
          */
         $bet = $request->get("bet");
-        $register = new Register($entityManager, $userId);
+
+        $register = $factory->create($entityManager, $userId);
 
         try {
             $register->debit($bet, 'Bet');
@@ -99,6 +91,7 @@ class ProjectController3 extends AbstractController
     public function projPlay(
         SessionInterface $session,
         EntityManagerInterface $entityManager,
+        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var Game $game
@@ -110,7 +103,6 @@ class ProjectController3 extends AbstractController
         $state = $game->currentState();
         $data = [
             ...$state,
-            // 'url' => "proj",
             'url' => "",
         ];
 
@@ -140,7 +132,7 @@ class ProjectController3 extends AbstractController
          * @var int $userId
          */
         $userId = $session->get("user");
-        $register = new Register($entityManager, $userId);
+        $register = $factory->create($entityManager, $userId);
         $data['balance'] = $register->getBalance();
         return $this->render('proj/game.html.twig', $data);
     }

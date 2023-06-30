@@ -2,7 +2,6 @@
 
 namespace App\Project;
 
-use App\ProjectCard\Deck;
 use App\ProjectGrid\Grid;
 
 class ApiGame2
@@ -17,7 +16,7 @@ class ApiGame2
 
         return [
             "placement" => "You placed card '{$card}' on row {$row} column {$col}",
-            "grid" => $grid->getCards(),
+            "grid" => $grid->getRows(),
             "remaining cards" => $deck->getCards()
         ];
     }

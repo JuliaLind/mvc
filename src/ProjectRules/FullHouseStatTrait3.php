@@ -7,19 +7,24 @@ trait FullHouseStatTrait3
     abstract private function checkThree(bool $three, int $rank): bool;
     abstract private function checkBoth(bool $three, bool $two): bool;
     /**
+     * @param array<string> $cards
+     * @return  array<array<int|string,int>>
+     */
+    abstract private function countByRank($cards): array;
+
+    /**
      * @param array<string> $deck
      */
     public function check3(array $deck): bool
     {
-        $uniqueCountDeck = $this->cardCounter->count($deck);
         /**
-         * @var array<int,int> $ranksDeck
+         * @var array<int,int> $ranks
          */
-        $ranksDeck = $uniqueCountDeck['ranks'];
+        $ranks = $this->countByRank($deck);
 
         $three = false;
         $two = false;
-        foreach ($ranksDeck as $rank) {
+        foreach ($ranks as $rank) {
             if ($this->checkThree($three, $rank)) {
                 $three = true;
             } elseif ($rank >= 2) {

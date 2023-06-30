@@ -10,10 +10,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\TransactionRepository;
 use App\Entity\User;
 use App\Entity\Transaction;
-use App\Entity\Score;
 use Datetime;
 
 /**
@@ -26,9 +25,9 @@ class ProjectApiController3 extends AbstractController
      */
     #[Route('/proj/api/transactions', name: "api-transactions", methods: ['GET'])]
     public function apiTransactions(
-        EntityManagerInterface $entityManager,
+        TransactionRepository $repo,
     ): Response {
-        $transactions = $entityManager->getRepository(Transaction::class)->findBy([], ['id' => 'DESC']);
+        $transactions = $repo->findBy([], ['id' => 'DESC']);
         $data = [];
         foreach($transactions as $transaction) {
             /**

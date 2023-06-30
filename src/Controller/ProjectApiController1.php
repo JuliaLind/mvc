@@ -6,21 +6,12 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 
 use Symfony\Component\HttpFoundation\JsonResponse;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
-
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
-
-
 use App\Project\ApiGame1;
 
-/**
- * Contains API routes for the project
- */
 class ProjectApiController1 extends AbstractController
 {
     /**
@@ -36,8 +27,6 @@ class ProjectApiController1 extends AbstractController
          */
         $game = $session->get("api-game") ?? new ApiGame1();
         $data = $game->oneRound();
-
-
         $session->set("api-game", $game);
         return $this->json($data);
     }

@@ -8,21 +8,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
 use Doctrine\ORM\EntityManagerInterface;
-
-use App\Repository\TransactionRepository;
-use App\Repository\UserRepository;
 use App\Entity\User;
-use App\Entity\Transaction;
-use Datetime;
 use App\Project\NotEnoughCoinsException;
-use App\Project\Register;
-
+use App\Project\RegisterFactory;
 use Symfony\Component\HttpFoundation\Request;
-
 use App\Project\Game;
 use App\ProjectGrid\Grid;
 
@@ -31,14 +22,15 @@ class ProjectController7 extends AbstractController
     #[Route('/proj/undo', name: "undo", methods: ['POST'])]
     public function undo(
         SessionInterface $session,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface $entityManager,
+        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
          */
         $userId = $session->get("user");
 
-        $register = new Register($entityManager, $userId);
+        $register = $factory->create($entityManager, $userId);
         try {
             $register->debit(10, 'undo last move cheat');
         } catch (NotEnoughCoinsException) {
@@ -59,12 +51,13 @@ class ProjectController7 extends AbstractController
     public function showSuggestion(
         SessionInterface $session,
         EntityManagerInterface $entityManager,
+        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
          */
         $userId = $session->get("user");
-        $register = new Register($entityManager, $userId);
+        $register = $factory->create($entityManager, $userId);
         try {
             $register->debit(30, 'show-suggestion cheat');
             $session->set("show-suggestion", true);
@@ -98,13 +91,14 @@ class ProjectController7 extends AbstractController
     #[Route('/proj/purchase-peek-cheat', name: "purchase-peek", methods: ['POST'])]
     public function purchasePeekCheat(
         SessionInterface $session,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface $entityManager,
+        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
          */
         $userId = $session->get("user");
-        $register = new Register($entityManager, $userId);
+        $register = $factory->create($entityManager, $userId);
         try {
             $register->debit(120, 'peek in deck cheat');
         } catch (NotEnoughCoinsException) {

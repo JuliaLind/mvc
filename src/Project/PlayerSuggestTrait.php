@@ -5,15 +5,14 @@ namespace App\Project;
 require __DIR__ . "/../../vendor/autoload.php";
 
 use App\ProjectGrid\Grid;
-use App\ProjectCard\Deck;
-use App\ProjectRules\MoveEvaluator;
+use App\ProjectRules\RuleEvaluator;
 
 trait PlayerSuggestTrait
 {
     private Grid $player;
     private string $card;
     private Deck $deck;
-    private MoveEvaluator $moveEvaluator;
+    private RuleEvaluator $evaluator;
 
     /**
      * @var array<string,array<int,int|string>|int|string> $suggestion
@@ -28,7 +27,7 @@ trait PlayerSuggestTrait
 
     private function playerSuggest(): void
     {
-        $suggestion = $this->moveEvaluator->suggestion($this->player->getCards(), $this->card, $this->deck->possibleCards());
+        $suggestion = $this->evaluator->suggestion($this->player, $this->card, $this->deck->possibleCards());
         $this->suggestion = $suggestion;
         $this->suggestion['message'] = $this->createMessage($suggestion);
     }

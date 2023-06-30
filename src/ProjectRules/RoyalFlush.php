@@ -7,27 +7,25 @@ namespace App\ProjectRules;
  * Ace, King, Queen, Jack, Ten of same suit
  *
  */
-class RoyalFlush extends Straight
+class RoyalFlush implements RuleInterface
 {
-    protected int $maxRank;
-    protected int $minRank;
-
-    public function __construct(int $suit=1)
-    {
-        parent::__construct($suit);
-        $this->minRank = 10;
-        $this->maxRank = 14;
-    }
+    use CountSuitAndRankTrait;
 
     /**
-     * @param array<int,int> $uniqueRanks
-     * @return bool true if rule is fullfilled otherwise false
+     * @param array<string> $hand
      */
-    protected function evaluateRanks(array $uniqueRanks): bool
+    public function check(array $hand): bool
     {
-        $maxRank = max(array_keys($uniqueRanks));
-        $minRank = min(array_keys($uniqueRanks));
+        $uniqueCount = $this->countSuitAndRank($hand);
+        /**
+         * @var array<string,int> $suits
+         */
+        $suits = $uniqueCount['suits'];
+        /**
+         * @var array<int,int> $ranks
+         */
+        $ranks = $uniqueCount['ranks'];
 
-        return $maxRank === $this->maxRank && $minRank === $this->minRank;
+        return count($suits) === 1 && count($ranks) === 5 && max(array_keys($ranks)) === 14 && min(array_keys($ranks)) === 10;
     }
 }

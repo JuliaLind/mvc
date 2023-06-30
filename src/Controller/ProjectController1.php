@@ -9,11 +9,10 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
-
 use App\Entity\User;
 use App\Repository\TransactionRepository;
 use App\Project\Game;
-use App\Project\Register;
+use App\Project\RegisterFactory;
 
 /**
  * The main controller class
@@ -24,6 +23,7 @@ class ProjectController1 extends AbstractController
     public function projLanding(
         SessionInterface $session,
         EntityManagerInterface $entityManager,
+        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
@@ -44,7 +44,8 @@ class ProjectController1 extends AbstractController
          */
         $game = $session->get("game") ?? null;
 
-        $register = new Register($entityManager, $userId);
+
+        $register = $factory->create($entityManager, $userId);
 
         $data = [
             ...$data,
@@ -62,6 +63,7 @@ class ProjectController1 extends AbstractController
     public function projShop(
         SessionInterface $session,
         EntityManagerInterface $entityManager,
+        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
@@ -70,7 +72,7 @@ class ProjectController1 extends AbstractController
         if($userId == null) {
             return $this->redirectToRoute('proj');
         }
-        $register = new Register($entityManager, $userId);
+        $register = $factory->create($entityManager, $userId);
         $data = [
             'url' => "",
             'balance' => $register->getBalance()
@@ -83,6 +85,7 @@ class ProjectController1 extends AbstractController
         SessionInterface $session,
         TransactionRepository $repo,
         EntityManagerInterface $entityManager,
+        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
@@ -92,7 +95,7 @@ class ProjectController1 extends AbstractController
          * @var User $user
          */
         $user = $entityManager->getRepository(User::class)->find($userId);
-        $register = new Register($entityManager, $userId);
+        $register = $factory->create($entityManager, $userId);
         $data = [
             'url' => "",
             'transactions' => $repo->findBy(

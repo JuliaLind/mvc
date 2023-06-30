@@ -5,22 +5,11 @@ namespace App\ProjectRules;
 trait FullHouseStatTrait8
 {
     /**
-     * @param array<string> $hand
-     * @param array<string> $deck
+     * @param array<int,int> $ranksHand
+     * @param array<int,int> $ranksDeck
      */
-    abstract public function check2(array $hand, array $deck): bool;
-
-    /**
-     * @param array<string> $hand
-     * @param array<string> $deck
-     */
-    public function check(array $hand, array $deck, string $card): bool
+    private function subCheck3($ranksHand, $ranksDeck): bool
     {
-        /**
-         * @var array<string> $newHand
-         */
-        $newHand = [...$hand, $card];
-
-        return $this->check2($newHand, $deck);
+        return count($ranksHand) === 1 && ((max($ranksHand) === 2 && max($ranksDeck) >= 3) || (max($ranksHand) === 3 && max($ranksDeck) >= 2));
     }
 }

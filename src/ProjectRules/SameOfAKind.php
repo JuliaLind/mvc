@@ -2,22 +2,31 @@
 
 namespace App\ProjectRules;
 
-use App\ProjectCard\CardCounter;
-
 class SameOfAKind implements RuleInterface
 {
-    use SameRankTrait;
+    use CountByRankTrait;
 
-    protected CardCounter $cardCounter;
+    private int $minCountRank;
 
     /**
      * Constructor
      */
     public function __construct(
         int $minCountRank,
-        CardCounter $cardCounter = new CardCounter()
     ) {
-        $this->cardCounter = $cardCounter;
         $this->minCountRank = $minCountRank;
+    }
+
+    /**
+     * @param array<string> $hand
+     */
+    public function check(array $hand): bool
+    {
+        /**
+         * @var array<int,int> $ranks
+         */
+        $ranks = $this->countByRank($hand);
+
+        return max($ranks) >= $this->minCountRank;
     }
 }

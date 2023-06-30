@@ -5,13 +5,14 @@ namespace App\Project;
 require __DIR__ . "/../../vendor/autoload.php";
 
 use App\ProjectGrid\Grid;
-use App\ProjectCard\Deck;
+use App\ProjectRules\RuleEvaluator;
 
 trait OneRoundTrait
 {
     private Grid $player;
     private Grid $house;
     private Deck $deck;
+    private RuleEvaluator $evaluator;
     /**
      * @var array<string,array<int>>> $lastRound
      */
@@ -35,7 +36,7 @@ trait OneRoundTrait
     private function housePlaceCard(): void
     {
         $card = $this->deck->deal();
-        $suggestion = $this->moveEvaluator->suggestion($this->house->getCards(), $card, $this->deck->possibleCards());
+        $suggestion = $this->evaluator->suggestion($this->house, $card, $this->deck->possibleCards());
         /**
          * @var array<int> $slot
          */

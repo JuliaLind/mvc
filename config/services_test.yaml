@@ -1,11 +1,11 @@
 services:
-  App\Helpers\SqlFileLoader:
+  App\Controller\SqlFileLoader:
     public: true
   App\Cards\DeckOfCards:
     public: true
   App\Cards\Player:
     public: true
-  App\Markdown\MdParser:
+  App\Controller\MdParser:
     public: true
   App\Game\NextRound:
     public: true

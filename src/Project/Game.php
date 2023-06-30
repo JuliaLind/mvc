@@ -2,9 +2,8 @@
 
 namespace App\Project;
 
-use App\ProjectCard\Deck;
 use App\ProjectGrid\Grid;
-use App\ProjectRules\MoveEvaluator;
+use App\ProjectRules\RuleEvaluator;
 
 
 use Symfony\Component\HttpFoundation\Request;
@@ -27,7 +26,7 @@ class Game
     private Grid $player;
     private Deck $deck;
     private string $card;
-    private MoveEvaluator $moveEvaluator;
+    private RuleEvaluator $evaluator;
 
     /**
      * @param array<Grid> $grids
@@ -35,11 +34,11 @@ class Game
     public function __construct(
         array $grids,
         Deck $deck = new Deck(),
-        MoveEvaluator $moveEvaluator=new MoveEvaluator(),
+        RuleEvaluator $evaluator=new RuleEvaluator(),
     ) {
         $this->house = $grids['house'];
         $this->player = $grids['player'];
-        $this->moveEvaluator = $moveEvaluator;
+        $this->evaluator = $evaluator;
         $this->deck = $deck;
         $this->card = $this->deck->deal();
         $this->playerSuggest();

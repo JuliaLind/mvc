@@ -15,7 +15,6 @@ trait SuggestMessageTrait
          * @var array<int> $slot
          */
         $slot = $suggestion["slot"];
-        // $this->suggestedSlot = $slot;
         $row = $slot[0];
         $col = $slot[1];
         /**
