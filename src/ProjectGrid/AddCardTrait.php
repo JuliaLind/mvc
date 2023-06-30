@@ -4,6 +4,9 @@ namespace App\ProjectGrid;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
+/**
+ * Trait for adding a card to the grid
+ */
 trait AddCardTrait
 {
     /**
@@ -13,6 +16,9 @@ trait AddCardTrait
 
     private int $cardCount = 0;
 
+    /**
+     * Adds a card to the grid and increases the card count attr by 1
+     */
     public function addCard(int $row, int $col, string $card): void
     {
         $grid = $this->grid;

@@ -3,7 +3,7 @@
 namespace App\ProjectGrid;
 
 /**
- * Class representing a grid for cards
+ * Class representing 5x5 grid for placing cards
  */
 class Grid
 {
@@ -12,4 +12,5 @@ class Grid
     use GraphicTrait;
     use RemoveCardTrait;
     use RowsColsTrait;
+    use SlotGraphicTrait;
 }

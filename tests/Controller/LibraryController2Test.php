@@ -22,7 +22,7 @@ class LibraryController2Test extends WebTestCase
             'POST',
             '/library/update_one',
             [
-            'book_id' => 7,
+            'book_id' => 1,
             'title' => 'Updated Book',
             'isbn' => '0123456789010',
             'image' => 'https://newimglink.com',
@@ -41,7 +41,7 @@ class LibraryController2Test extends WebTestCase
             'POST',
             '/library/update_one',
             [
-            'book_id' => 7,
+            'book_id' => 1,
             'title' => 'Updated Book',
             'isbn' => '0123459999010',
             'image' => 'https://newimglink.com',
@@ -60,7 +60,7 @@ class LibraryController2Test extends WebTestCase
             'POST',
             '/library/update_one',
             [
-            'book_id' => 7,
+            'book_id' => 1,
             'title' => 'Updated Book',
             'isbn' => '0123456789011',
             'image' => 'https://newimglink.com',

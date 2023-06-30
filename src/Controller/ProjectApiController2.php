@@ -16,9 +16,6 @@ use App\Entity\Score;
 use App\Project\RegisterFactory;
 use Datetime;
 
-/**
- * Contains API routes for the project
- */
 class ProjectApiController2 extends AbstractController
 {
     /**
@@ -46,48 +43,14 @@ class ProjectApiController2 extends AbstractController
             'email' => $user->getEmail(),
             'hash' => $user->getHash(),
             'balance' => $balance,
-            'transactions' => [],
-            'scores' => []
+            'transactions' => $entityManager->getRepository(Transaction::class)->findBy(
+                ['user' => $user],
+                ['id' => 'DESC']
+            ),
+            'scores' => $entityManager->getRepository(Score::class)->findBy(
+                ['user' => $user],
+            )
         ];
-
-        $transactions = $user->getTransactions()->toArray();
-        $scores = $user->getScores()->toArray();
-        foreach($transactions as $transaction) {
-            $transId = $transaction->getId();
-            /**
-             * @var DateTime $registered
-             */
-            $registered = $transaction->getRegistered();
-            $registered = $registered->format('Y-m-d');
-            $descr = $transaction->getDescr();
-            $amount = $transaction->getAmount();
-
-            array_push(
-                $data['transactions'],
-                [
-                    'id' => $transId,
-                    'registered' => $registered,
-                    'descr' => $descr,
-                    'amount' => $amount
-                ]
-            );
-        }
-        foreach($scores as $score) {
-            /**
-             * @var DateTime $registered
-             */
-            $registered = $score->getRegistered();
-            $registered = $registered->format('Y-m-d');
-            $points = $score->getPoints();
-
-            array_push(
-                $data['scores'],
-                [
-                    'registered' => $registered,
-                    'score' => $points,
-                ]
-            );
-        }
         return $this->json($data);
     }
 }

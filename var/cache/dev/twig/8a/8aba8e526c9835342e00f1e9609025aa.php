@@ -76,37 +76,35 @@ class __TwigTemplate_51828569c2ba34fb47708c210c044c8f extends Template
             </div>
 
             <div class=\"inputbox\">
-            <input id=\"isbn\" name=\"isbn\" type=\"text\" readonly=\"readonly\" value=\"";
+            <input id=\"isbn\" name=\"isbn\" class=\"is-filled\" type=\"text\" required=\"required\" maxlength=\"13\" required pattern=\"[0-9]{13}\" value=\"";
         // line 18
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 18, $this->source); })()), "isbn", [], "any", false, false, false, 18), "html", null, true);
         echo "\">
-            ";
-        // line 20
-        echo "            <span>ISBN (13 siffror)</span>
+            <span>ISBN (13 siffror)</span>
             </div>
 
             <div class=\"inputbox\">
             <input id=\"author\" name=\"author\" class=\"is-filled\" type=\"text\" required=\"required\" minlength=\"1\" max-length=\"255\" value=\"";
-        // line 24
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 24, $this->source); })()), "author", [], "any", false, false, false, 24), "html", null, true);
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 23, $this->source); })()), "author", [], "any", false, false, false, 23), "html", null, true);
         echo "\">
             <span>Författare</span>
             </div>
 
             <div class=\"inputbox\">
             <input id=\"image\" name=\"image\" class=\"is-filled\" type=\"url\" required=\"required\" minlength=\"1\" max-length=\"255\" value=\"";
-        // line 29
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 29, $this->source); })()), "img", [], "any", false, false, false, 29), "html", null, true);
+        // line 28
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 28, $this->source); })()), "img", [], "any", false, false, false, 28), "html", null, true);
         echo "\">
             <span>Url länk till bild</span>
             </div>
             <input type=\"hidden\" value=\"";
-        // line 32
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 32, $this->source); })()), "id", [], "any", false, false, false, 32), "html", null, true);
+        // line 31
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 31, $this->source); })()), "id", [], "any", false, false, false, 31), "html", null, true);
         echo "\" name=\"book_id\">
             <input type=\"hidden\" value=\"";
-        // line 33
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 33, $this->source); })()), "isbn", [], "any", false, false, false, 33), "html", null, true);
+        // line 32
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 32, $this->source); })()), "isbn", [], "any", false, false, false, 32), "html", null, true);
         echo "\" name=\"original_isbn\">
             <input type=\"submit\" class=\"btn\" value=\"Spara\" name=\"do\">
             <p>Samtliga fält är obligatoriska</p>
@@ -176,7 +174,7 @@ class __TwigTemplate_51828569c2ba34fb47708c210c044c8f extends Template
 
     public function getDebugInfo()
     {
-        return array (  109 => 33,  105 => 32,  99 => 29,  91 => 24,  85 => 20,  81 => 18,  73 => 13,  68 => 11,  61 => 9,  55 => 6,  49 => 3,  43 => 1,);
+        return array (  107 => 32,  103 => 31,  97 => 28,  89 => 23,  81 => 18,  73 => 13,  68 => 11,  61 => 9,  55 => 6,  49 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -198,8 +196,7 @@ class __TwigTemplate_51828569c2ba34fb47708c210c044c8f extends Template
             </div>
 
             <div class=\"inputbox\">
-            <input id=\"isbn\" name=\"isbn\" type=\"text\" readonly=\"readonly\" value=\"{{ book.isbn }}\">
-            {# <input id=\"isbn\" name=\"isbn\" class=\"is-filled\" type=\"text\" required=\"required\" maxlength=\"13\" required pattern=\"[0-9]{13}\" value=\"{{ book.isbn }}\"> #}
+            <input id=\"isbn\" name=\"isbn\" class=\"is-filled\" type=\"text\" required=\"required\" maxlength=\"13\" required pattern=\"[0-9]{13}\" value=\"{{ book.isbn }}\">
             <span>ISBN (13 siffror)</span>
             </div>
 

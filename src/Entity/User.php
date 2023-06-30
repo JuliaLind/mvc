@@ -30,23 +30,23 @@ class User
     private ?string $hash = null;
 
 
-    /**
-     * @var Collection<int,Transaction> $transactions
-     */
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Transaction::class)]
-    private Collection $transactions;
+    // /**
+    //  * @var Collection<int,Transaction> $transactions
+    //  */
+    // #[ORM\OneToMany(mappedBy: 'user', targetEntity: Transaction::class)]
+    // private Collection $transactions;
 
-    /**
-     * @var Collection<int,Score> $scores
-     */
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Score::class)]
-    private Collection $scores;
+    // /**
+    //  * @var Collection<int,Score> $scores
+    //  */
+    // #[ORM\OneToMany(mappedBy: 'user', targetEntity: Score::class)]
+    // private Collection $scores;
 
-    public function __construct()
-    {
-        $this->transactions = new ArrayCollection();
-        $this->scores = new ArrayCollection();
-    }
+    // public function __construct()
+    // {
+    //     $this->transactions = new ArrayCollection();
+    //     $this->scores = new ArrayCollection();
+    // }
 
     public function getId(): int
     {
@@ -102,63 +102,63 @@ class User
     //     return $balance;
     // }
 
-    /**
-     * @return Collection<int, Transaction>
-     */
-    public function getTransactions(): Collection
-    {
-        return $this->transactions;
-    }
+    // /**
+    //  * @return Collection<int, Transaction>
+    //  */
+    // public function getTransactions(): Collection
+    // {
+    //     return $this->transactions;
+    // }
 
-    public function addTransaction(Transaction $transaction): self
-    {
-        if (!$this->transactions->contains($transaction)) {
-            $this->transactions->add($transaction);
-            $transaction->setUser($this);
-        }
+    // public function addTransaction(Transaction $transaction): self
+    // {
+    //     if (!$this->transactions->contains($transaction)) {
+    //         $this->transactions->add($transaction);
+    //         $transaction->setUser($this);
+    //     }
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    public function removeTransaction(Transaction $transaction): self
-    {
-        if ($this->transactions->removeElement($transaction)) {
-            // set the owning side to null (unless already changed)
-            if ($transaction->getUser() === $this) {
-                $transaction->setUser(null);
-            }
-        }
+    // public function removeTransaction(Transaction $transaction): self
+    // {
+    //     if ($this->transactions->removeElement($transaction)) {
+    //         // set the owning side to null (unless already changed)
+    //         if ($transaction->getUser() === $this) {
+    //             $transaction->setUser(null);
+    //         }
+    //     }
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    /**
-     * @return Collection<int, Score>
-     */
-    public function getScores(): Collection
-    {
-        return $this->scores;
-    }
+    // /**
+    //  * @return Collection<int, Score>
+    //  */
+    // public function getScores(): Collection
+    // {
+    //     return $this->scores;
+    // }
 
-    public function addScore(Score $score): self
-    {
-        if (!$this->scores->contains($score)) {
-            $this->scores->add($score);
-            $score->setUser($this);
-        }
+    // public function addScore(Score $score): self
+    // {
+    //     if (!$this->scores->contains($score)) {
+    //         $this->scores->add($score);
+    //         $score->setUser($this);
+    //     }
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    public function removeScore(Score $score): self
-    {
-        if ($this->scores->removeElement($score)) {
-            // set the owning side to null (unless already changed)
-            if ($score->getUser() === $this) {
-                $score->setUser(null);
-            }
-        }
+    // public function removeScore(Score $score): self
+    // {
+    //     if ($this->scores->removeElement($score)) {
+    //         // set the owning side to null (unless already changed)
+    //         if ($score->getUser() === $this) {
+    //             $score->setUser(null);
+    //         }
+    //     }
 
-        return $this;
-    }
+    //     return $this;
+    // }
 }

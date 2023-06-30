@@ -7846,3 +7846,9 @@ feb37c,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/bot-plays,
 ecdf86,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/bot-plays,1688023352,,200
 710028,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/bot-plays,1688023362,,200
 c7aae7,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/bot-plays,1688023371,,200
+ab244b,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1688155324,,200
+99c672,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1688155326,,200
+e06e42,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api,1688155328,,200
+a0256b,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api/user/jane@bth.se,1688155337,,200
+00ebd7,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api/transactions,1688155359,,200
+87224a,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1688155378,,200

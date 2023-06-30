@@ -8,15 +8,10 @@ class AddCardTraitTest extends TestCase
 {
     use AddCardTrait;
 
-    protected function setUp(): void
-    {
-        $this->grid[3][2] = "12C";
-    }
-
-
 
     public function testAddCard(): void
     {
+        $this->addCard(3, 2, "12C");
         $this->addCard(4, 2, "5C");
         $this->addCard(3, 3, "6C");
         $this->addCard(1, 1, "7C");

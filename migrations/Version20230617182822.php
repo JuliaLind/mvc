@@ -21,9 +21,9 @@ final class Version20230617182822 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE score (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, userid_id INTEGER NOT NULL, registered DATE NOT NULL, points INTEGER NOT NULL, CONSTRAINT FK_3299375158E0A285 FOREIGN KEY (userid_id) REFERENCES user (id) NOT DEFERRABLE INITIALLY IMMEDIATE)');
+        $this->addSql('CREATE TABLE score (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, user_id INTEGER NOT NULL, registered DATE NOT NULL, points INTEGER NOT NULL, CONSTRAINT FK_3299375158E0A285 FOREIGN KEY (userid_id) REFERENCES user (id) NOT DEFERRABLE INITIALLY IMMEDIATE)');
         $this->addSql('CREATE INDEX IDX_3299375158E0A285 ON score (userid_id)');
-        $this->addSql('CREATE TABLE "transaction" (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, userid_id INTEGER NOT NULL, registered DATE NOT NULL, descr VARCHAR(100) NOT NULL, amount INTEGER NOT NULL, CONSTRAINT FK_723705D158E0A285 FOREIGN KEY (userid_id) REFERENCES user (id) NOT DEFERRABLE INITIALLY IMMEDIATE)');
+        $this->addSql('CREATE TABLE "transaction" (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, userid_id INTEGER NOT NULL, registered DATE NOT NULL, descr VARCHAR(100) NOT NULL, amount INTEGER NOT NULL, CONSTRAINT FK_723705D158E0A285 FOREIGN KEY (user_id) REFERENCES user (id) NOT DEFERRABLE INITIALLY IMMEDIATE)');
         $this->addSql('CREATE INDEX IDX_723705D158E0A285 ON "transaction" (userid_id)');
         $this->addSql('CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, email VARCHAR(100) NOT NULL, acronym VARCHAR(50) NOT NULL, hash VARCHAR(100) NOT NULL)');
         $this->addSql('DROP TABLE product');

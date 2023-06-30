@@ -16,9 +16,9 @@ use App\Project\RegisterFactory;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 
 /**
- * The main controller class
+ * Controller for handling user registration, login and logout
  */
-class ProjectController2 extends AbstractController
+class ProjectAuthController extends AbstractController
 {
     #[Route("/proj/register", name: "register", methods: ['POST'])]
     public function projRegister(
@@ -120,6 +120,8 @@ class ProjectController2 extends AbstractController
     public function projLogout(
         SessionInterface $session
     ): Response {
+
+        // ändra denna till unset sen!
         $session->clear();
         return $this->redirectToRoute('proj');
     }

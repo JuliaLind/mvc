@@ -4,6 +4,9 @@ namespace App\ProjectGrid;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
+/**
+ * Trait for removing a card from the grid
+ */
 trait RemoveCardTrait
 {
     /**
@@ -13,6 +16,9 @@ trait RemoveCardTrait
 
     private int $cardCount = 0;
 
+    /**
+     * Removes a card from the grid and dicreases the card count attr by 1
+     */
     public function removeCard(int $row, int $col): string
     {
         if (!array_key_exists($row, $this->grid) || !array_key_exists($col, $this->grid[$row])) {

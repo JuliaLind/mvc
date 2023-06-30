@@ -50,7 +50,7 @@ trait EvaluateTrait
             $lastPart = " and received {$amount} coins";
 
             $register = $factory->create($manager, $userId);
-            $register->transaction($amount, 'return (bet x 2)');
+            $register->transaction($amount, 'Return (bet x 2)');
             $register->score($playerTotal);
         }
         $this->message = "Game finished, You got {$playerTotal} points and House got {$houseTotal} points. {$winner} won{$lastPart}";

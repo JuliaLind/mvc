@@ -4,8 +4,6 @@ namespace App\Entity;
 
 use PHPUnit\Framework\TestCase;
 
-use App\Repository\BookRepository;
-
 /**
  * Test cases for class Book.
  */
