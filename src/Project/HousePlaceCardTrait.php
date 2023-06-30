@@ -12,6 +12,10 @@ trait HousePlaceCardTrait
     private Deck $deck;
     private RuleEvaluator $evaluator;
     private Grid $house;
+    /**
+     * @var array<string,array<int>>> $lastRound
+     */
+    private array $lastRound = [];
 
 
     private function housePlaceCard(): void

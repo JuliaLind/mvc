@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1688127822">
-  <project timestamp="1688127822">
+<coverage generated="1688128335">
+  <project timestamp="1688128335">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -1551,10 +1551,10 @@
       <line num="17" type="stmt" count="3"/>
       <line num="20" type="method" name="hasBankMoreThan21" visibility="protected" complexity="1" crap="1" count="2"/>
       <line num="22" type="stmt" count="2"/>
-      <line num="25" type="method" name="hasBankBestScore" visibility="protected" complexity="1" crap="1" count="2"/>
-      <line num="27" type="stmt" count="2"/>
-      <line num="28" type="stmt" count="2"/>
-      <line num="29" type="stmt" count="2"/>
+      <line num="25" type="method" name="hasBankBestScore" visibility="protected" complexity="1" crap="1" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="29" type="stmt" count="1"/>
       <metrics loc="32" ncloc="28" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Game/EvaluatePlayerTrait.php">
@@ -2055,13 +2055,13 @@
         <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
       </class>
       <line num="5" type="stmt" count="1"/>
-      <line num="17" type="method" name="housePlaceCard" visibility="private" complexity="1" crap="2" count="0"/>
-      <line num="19" type="stmt" count="0"/>
-      <line num="20" type="stmt" count="0"/>
+      <line num="21" type="method" name="housePlaceCard" visibility="private" complexity="1" crap="2" count="0"/>
+      <line num="23" type="stmt" count="0"/>
       <line num="24" type="stmt" count="0"/>
-      <line num="25" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <metrics loc="29" ncloc="26" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="1" elements="7" coveredelements="1"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <metrics loc="33" ncloc="27" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="1" elements="7" coveredelements="1"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Project/MoveACardTrait.php">
       <class name="App\Project\MoveACardTrait" namespace="global">
@@ -2097,17 +2097,17 @@
         <metrics complexity="2" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="10" coveredelements="0"/>
       </class>
       <line num="5" type="stmt" count="1"/>
-      <line num="25" type="method" name="oneRound" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="27" type="stmt" count="0"/>
+      <line num="26" type="method" name="oneRound" visibility="public" complexity="2" crap="6" count="0"/>
       <line num="28" type="stmt" count="0"/>
       <line num="29" type="stmt" count="0"/>
       <line num="30" type="stmt" count="0"/>
       <line num="31" type="stmt" count="0"/>
       <line num="32" type="stmt" count="0"/>
-      <line num="34" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
       <line num="35" type="stmt" count="0"/>
       <line num="36" type="stmt" count="0"/>
-      <metrics loc="41" ncloc="38" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="1" elements="11" coveredelements="1"/>
+      <line num="37" type="stmt" count="0"/>
+      <metrics loc="42" ncloc="39" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="1" elements="11" coveredelements="1"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Project/PlayerSuggestTrait.php">
       <class name="App\Project\PlayerSuggestTrait" namespace="global">
@@ -3410,6 +3410,6 @@
       <line num="39" type="stmt" count="0"/>
       <metrics loc="68" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="195" loc="8466" ncloc="6468" classes="171" methods="310" coveredmethods="135" conditionals="0" coveredconditionals="0" statements="1938" coveredstatements="828" elements="2248" coveredelements="963"/>
+    <metrics files="195" loc="8471" ncloc="6470" classes="171" methods="310" coveredmethods="135" conditionals="0" coveredconditionals="0" statements="1938" coveredstatements="828" elements="2248" coveredelements="963"/>
   </project>
 </coverage>

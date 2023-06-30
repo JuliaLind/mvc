@@ -20,6 +20,7 @@ trait OneRoundTrait
     private array $lastRound = [];
     private Grid $player;
 
+    abstract private function housePlaceCard(): void;
     abstract private function playerSuggest(): void;
 
     public function oneRound(int $row, int $col): bool
