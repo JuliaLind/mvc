@@ -2,12 +2,10 @@
 
 namespace App\DataFixtures;
 
-use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Book;
 
-#[CodeCoverageIgnore]
 class BookFixture extends Fixture
 {
     public function load(ObjectManager $manager): void

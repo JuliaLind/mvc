@@ -48,9 +48,7 @@ return [
         '/proj' => [[['_route' => 'proj', '_controller' => 'App\\Controller\\ProjectController1::projLanding'], null, null, null, false, false, null]],
         '/proj/shop' => [[['_route' => 'shop', '_controller' => 'App\\Controller\\ProjectController1::projShop'], null, null, null, false, false, null]],
         '/proj/transactions' => [[['_route' => 'proj-trans', '_controller' => 'App\\Controller\\ProjectController1::projTrans'], null, null, null, false, false, null]],
-        '/proj/init' => [[['_route' => 'proj-init', '_controller' => 'App\\Controller\\ProjectController3::projInit'], null, null, null, false, false, null]],
         '/proj/unset-suggestion' => [[['_route' => 'proj-unset-suggest', '_controller' => 'App\\Controller\\ProjectController3::projUnsetSuggest'], null, ['GET' => 0], null, false, false, null]],
-        '/proj/play' => [[['_route' => 'proj-play', '_controller' => 'App\\Controller\\ProjectController3::projPlay'], null, null, null, false, false, null]],
         '/proj/api' => [[['_route' => 'proj-api', '_controller' => 'App\\Controller\\ProjectController5::projApiLanding'], null, null, null, false, false, null]],
         '/proj/about' => [[['_route' => 'proj-about', '_controller' => 'App\\Controller\\ProjectController5::projAbout'], null, null, null, false, false, null]],
         '/proj/rules' => [[['_route' => 'proj-rules', '_controller' => 'App\\Controller\\ProjectController5::projRules'], null, null, null, false, false, null]],
@@ -62,6 +60,8 @@ return [
         '/proj/purchase-peek-cheat' => [[['_route' => 'purchase-peek', '_controller' => 'App\\Controller\\ProjectController7::purchasePeekCheat'], null, ['POST' => 0], null, false, false, null]],
         '/proj/scores-single' => [[['_route' => 'proj-scores-single', '_controller' => 'App\\Controller\\ProjectController8::projScoresSingle'], null, null, null, false, false, null]],
         '/proj/leaderboard' => [[['_route' => 'proj-leaderboard', '_controller' => 'App\\Controller\\ProjectController8::projLeaderboard'], null, null, null, false, false, null]],
+        '/proj/init' => [[['_route' => 'proj-init', '_controller' => 'App\\Controller\\ProjectController9::projInit'], null, null, null, false, false, null]],
+        '/proj/play' => [[['_route' => 'proj-play', '_controller' => 'App\\Controller\\ProjectController9::projPlay'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

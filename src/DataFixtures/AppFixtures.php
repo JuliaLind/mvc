@@ -2,7 +2,7 @@
 
 namespace App\DataFixtures;
 
-use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
+// use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -11,7 +11,6 @@ use App\Entity\Transaction;
 use App\Entity\User;
 use Datetime;
 
-#[CodeCoverageIgnore]
 class AppFixtures extends Fixture
 {
     /**
@@ -19,8 +18,6 @@ class AppFixtures extends Fixture
      */
     public function load(ObjectManager $manager): void
     {
-        // $product = new Product();
-        // $manager->persist($product);
         $julia = new User();
         $julia->setEmail("julia@bth.se");
         $julia->setAcronym("Julia");
@@ -145,6 +142,5 @@ class AppFixtures extends Fixture
         $manager->persist($transaction8);
 
         $manager->flush();
-
     }
 }

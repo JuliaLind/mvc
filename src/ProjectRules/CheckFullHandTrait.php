@@ -4,8 +4,14 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
+
 trait CheckFullHandTrait
 {
+    /**
+     * @var array<array<string,string|RuleInterface|RuleStatInterface|int>>
+     */
+    private array $rules;
+
     /**
      * @param array<string> $hand
      * @return array<string,string|int>

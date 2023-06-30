@@ -55,10 +55,8 @@ return [
     'proj' => [[], ['_controller' => 'App\\Controller\\ProjectController1::projLanding'], [], [['text', '/proj']], [], [], []],
     'shop' => [[], ['_controller' => 'App\\Controller\\ProjectController1::projShop'], [], [['text', '/proj/shop']], [], [], []],
     'proj-trans' => [[], ['_controller' => 'App\\Controller\\ProjectController1::projTrans'], [], [['text', '/proj/transactions']], [], [], []],
-    'proj-init' => [[], ['_controller' => 'App\\Controller\\ProjectController3::projInit'], [], [['text', '/proj/init']], [], [], []],
     'proj-round' => [['row', 'col'], ['_controller' => 'App\\Controller\\ProjectController3::projRound'], ['row' => '\\d+', 'col' => '\\d+'], [['variable', '/', '\\d+', 'col', true], ['variable', '/', '\\d+', 'row', true], ['text', '/proj/one-round']], [], [], []],
     'proj-unset-suggest' => [[], ['_controller' => 'App\\Controller\\ProjectController3::projUnsetSuggest'], [], [['text', '/proj/unset-suggestion']], [], [], []],
-    'proj-play' => [[], ['_controller' => 'App\\Controller\\ProjectController3::projPlay'], [], [['text', '/proj/play']], [], [], []],
     'set-fromslot' => [['row', 'col'], ['_controller' => 'App\\Controller\\ProjectController4::setFromSlot'], ['row' => '\\d+', 'col' => '\\d+'], [['variable', '/', '\\d+', 'col', true], ['variable', '/', '\\d+', 'row', true], ['text', '/proj/set-fromslot']], [], [], []],
     'move-card' => [['row', 'col'], ['_controller' => 'App\\Controller\\ProjectController4::moveCard'], ['row' => '\\d+', 'col' => '\\d+'], [['variable', '/', '\\d+', 'col', true], ['variable', '/', '\\d+', 'row', true], ['text', '/proj/move-card']], [], [], []],
     'pick-card' => [['balance'], ['_controller' => 'App\\Controller\\ProjectController4::pickCard'], ['balance' => '\\d+'], [['variable', '/', '\\d+', 'balance', true], ['text', '/proj/pick-card']], [], [], []],
@@ -74,4 +72,6 @@ return [
     'purchase-peek' => [[], ['_controller' => 'App\\Controller\\ProjectController7::purchasePeekCheat'], [], [['text', '/proj/purchase-peek-cheat']], [], [], []],
     'proj-scores-single' => [[], ['_controller' => 'App\\Controller\\ProjectController8::projScoresSingle'], [], [['text', '/proj/scores-single']], [], [], []],
     'proj-leaderboard' => [[], ['_controller' => 'App\\Controller\\ProjectController8::projLeaderboard'], [], [['text', '/proj/leaderboard']], [], [], []],
+    'proj-init' => [[], ['_controller' => 'App\\Controller\\ProjectController9::projInit'], [], [['text', '/proj/init']], [], [], []],
+    'proj-play' => [[], ['_controller' => 'App\\Controller\\ProjectController9::projPlay'], [], [['text', '/proj/play']], [], [], []],
 ];

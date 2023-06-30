@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-30 21:15:11        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-06-30 22:53:40        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -489,6 +489,33 @@
         "relations": []
     },
     {
+        "name": "\\App\\Controller\\ProjectController9",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Doctrine\\ORM\\EntityManagerInterface",
+            "\\App\\Project\\RegisterFactory",
+            "\\App\\ProjectGrid\\Grid",
+            "\\App\\Project\\Game"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectGrid\\Grid",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\Game",
+        "size": 3000,
+        "relations": [
+            "\\App\\Project\\Deck",
+            "\\App\\ProjectRules\\RuleEvaluator"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\MdParser",
         "size": 3000,
         "relations": []
@@ -782,25 +809,8 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Request",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\RegisterFactory",
-            "\\App\\ProjectGrid\\Grid",
-            "\\App\\Project\\Game"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectGrid\\Grid",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Project\\Game",
-        "size": 3000,
-        "relations": [
-            "\\App\\Project\\Deck",
-            "\\App\\ProjectRules\\RuleEvaluator"
+            "\\Doctrine\\ORM\\EntityManagerInterface"
         ]
     },
     {
