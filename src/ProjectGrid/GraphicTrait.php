@@ -32,7 +32,7 @@ trait GraphicTrait
     }
 
     /**
-     * @return array<int,mixed>>>
+     * @return array<int,mixed>
      */
     public function graphic(): array
     {

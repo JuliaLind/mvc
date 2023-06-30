@@ -671,6 +671,7 @@
     <service id="App\Project\RegisterFactory" class="App\Project\RegisterFactory" autowire="true" autoconfigure="true"/>
     <service id="App\Project\UserNotRegisteredException" class="App\Project\UserNotRegisteredException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\Grid" class="App\ProjectGrid\Grid" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectGrid\SlotEmptyException" class="App\ProjectGrid\SlotEmptyException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\SlotNotEmptyException" class="App\ProjectGrid\SlotNotEmptyException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\Flush" class="App\ProjectRules\Flush" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\FlushStat" class="App\ProjectRules\FlushStat" autowire="true" autoconfigure="true"/>
@@ -1837,6 +1838,7 @@
         <argument key="App\Project\RegisterFactory" type="service_closure" id="App\Project\RegisterFactory" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\UserNotRegisteredException" type="service_closure" id="App\Project\UserNotRegisteredException" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\Grid" type="service_closure" id="App\ProjectGrid\Grid" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectGrid\SlotEmptyException" type="service_closure" id="App\ProjectGrid\SlotEmptyException" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\SlotNotEmptyException" type="service_closure" id="App\ProjectGrid\SlotNotEmptyException" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\Flush" type="service_closure" id="App\ProjectRules\Flush" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\FlushStat" type="service_closure" id="App\ProjectRules\FlushStat" on-invalid="ignore_uninitialized"/>

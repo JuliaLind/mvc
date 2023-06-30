@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1688128781">
-  <project timestamp="1688128781">
+<coverage generated="1688134583">
+  <project timestamp="1688134583">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -2225,25 +2225,23 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectGrid/AddCardTrait.php">
       <class name="App\ProjectGrid\AddCardTrait" namespace="global">
-        <metrics complexity="3" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+        <metrics complexity="3" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
       </class>
-      <line num="5" type="stmt" count="1"/>
-      <line num="16" type="method" name="addCard" visibility="public" complexity="3" crap="12" count="0"/>
-      <line num="18" type="stmt" count="0"/>
-      <line num="19" type="stmt" count="0"/>
-      <line num="20" type="stmt" count="0"/>
-      <line num="22" type="stmt" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <metrics loc="26" ncloc="23" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="1" elements="7" coveredelements="1"/>
+      <line num="16" type="method" name="addCard" visibility="public" complexity="3" crap="3" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="1"/>
+      <line num="20" type="stmt" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <metrics loc="26" ncloc="23" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectGrid/CardCountTrait.php">
       <class name="App\ProjectGrid\CardCountTrait" namespace="global">
-        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </class>
-      <line num="5" type="stmt" count="1"/>
-      <line num="11" type="method" name="getCardCount" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="13" type="stmt" count="0"/>
-      <metrics loc="16" ncloc="16" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="1" elements="3" coveredelements="1"/>
+      <line num="11" type="method" name="getCardCount" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="13" type="stmt" count="1"/>
+      <metrics loc="16" ncloc="16" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectGrid/GraphicTrait.php">
       <class name="App\ProjectGrid\GraphicTrait" namespace="global">
@@ -2279,33 +2277,40 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectGrid/RemoveCardTrait.php">
       <class name="App\ProjectGrid\RemoveCardTrait" namespace="global">
-        <metrics complexity="2" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="7" coveredelements="0"/>
+        <metrics complexity="4" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
       </class>
-      <line num="5" type="stmt" count="1"/>
-      <line num="16" type="method" name="removeCard" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="18" type="stmt" count="0"/>
-      <line num="19" type="stmt" count="0"/>
-      <line num="20" type="stmt" count="0"/>
-      <line num="21" type="stmt" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <metrics loc="27" ncloc="24" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="1" elements="8" coveredelements="1"/>
+      <line num="16" type="method" name="removeCard" visibility="public" complexity="4" crap="4" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <metrics loc="30" ncloc="27" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectGrid/RowsColsTrait.php">
       <class name="App\ProjectGrid\RowsColsTrait" namespace="global">
-        <metrics complexity="4" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="9" coveredelements="0"/>
+        <metrics complexity="4" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="9" coveredelements="9"/>
+      </class>
+      <line num="17" type="method" name="getCols" visibility="public" complexity="3" crap="3" count="2"/>
+      <line num="19" type="stmt" count="2"/>
+      <line num="20" type="stmt" count="2"/>
+      <line num="21" type="stmt" count="2"/>
+      <line num="22" type="stmt" count="2"/>
+      <line num="23" type="stmt" count="2"/>
+      <line num="26" type="stmt" count="2"/>
+      <line num="32" type="method" name="getRows" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <metrics loc="37" ncloc="28" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="9" coveredelements="9"/>
+    </file>
+    <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectGrid/SlotEmptyException.php">
+      <class name="App\ProjectGrid\SlotEmptyException" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </class>
       <line num="5" type="stmt" count="1"/>
-      <line num="17" type="method" name="getCols" visibility="public" complexity="3" crap="12" count="0"/>
-      <line num="19" type="stmt" count="0"/>
-      <line num="20" type="stmt" count="0"/>
-      <line num="21" type="stmt" count="0"/>
-      <line num="22" type="stmt" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <line num="32" type="method" name="getRows" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="34" type="stmt" count="0"/>
-      <metrics loc="37" ncloc="28" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="1" elements="10" coveredelements="1"/>
+      <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="1" coveredelements="1"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectGrid/SlotNotEmptyException.php">
       <class name="App\ProjectGrid\SlotNotEmptyException" namespace="global">
@@ -3410,6 +3415,6 @@
       <line num="39" type="stmt" count="0"/>
       <metrics loc="68" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="195" loc="8479" ncloc="6473" classes="171" methods="310" coveredmethods="135" conditionals="0" coveredconditionals="0" statements="1938" coveredstatements="828" elements="2248" coveredelements="963"/>
+    <metrics files="196" loc="8494" ncloc="6488" classes="171" methods="310" coveredmethods="140" conditionals="0" coveredconditionals="0" statements="1937" coveredstatements="846" elements="2247" coveredelements="986"/>
   </project>
 </coverage>
