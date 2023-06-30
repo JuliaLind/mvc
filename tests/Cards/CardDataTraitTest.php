@@ -4,7 +4,6 @@ namespace App\Cards;
 
 use PHPUnit\Framework\TestCase;
 
-
 class CardDataTraitTest extends TestCase
 {
     use CardDataTrait;

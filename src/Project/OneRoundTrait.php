@@ -9,14 +9,17 @@ use App\ProjectRules\RuleEvaluator;
 
 trait OneRoundTrait
 {
-    private Grid $player;
-    private Grid $house;
+    private string $card;
     private Deck $deck;
     private RuleEvaluator $evaluator;
+    private bool $finished=false;
+    private Grid $house;
     /**
      * @var array<string,array<int>>> $lastRound
      */
     private array $lastRound = [];
+    private Grid $player;
+
     abstract private function playerSuggest(): void;
 
     public function oneRound(int $row, int $col): bool
@@ -33,15 +36,5 @@ trait OneRoundTrait
         return false;
     }
 
-    private function housePlaceCard(): void
-    {
-        $card = $this->deck->deal();
-        $suggestion = $this->evaluator->suggestion($this->house, $card, $this->deck->possibleCards());
-        /**
-         * @var array<int> $slot
-         */
-        $slot = $suggestion['slot'];
-        $this->lastRound['house'] = $slot;
-        $this->house->addCard($slot[0], $slot[1], $card);
-    }
+
 }

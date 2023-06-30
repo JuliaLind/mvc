@@ -12,11 +12,12 @@ trait MoveACardTrait
      * @var array<int> $fromSlot
      */
     private array $fromSlot = [];
-    private Grid $player;
     /**
      * @var array<string,array<int>>> $lastRound
      */
     private array $lastRound = [];
+    private Grid $player;
+
     abstract private function playerSuggest(): void;
 
     public function setFromSlot(int $row, int $col): void

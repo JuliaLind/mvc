@@ -20,6 +20,7 @@ trait SameOfAKindStatTrait
     abstract private function countByRank($cards): array;
 
     abstract private function subCheck(int $countHand, int $countRank): bool;
+    abstract private function subCheck2(int $rankCount): bool;
 
 
     /**

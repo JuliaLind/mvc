@@ -11,7 +11,12 @@ trait SuggestionTrait
      * @return array<string,array<int,int|string>|string>
      */
     abstract private function emptyGridSuggestion(array $deck, string $card);
-
+    /**
+     * @param array<int,array<string,int|string>> $rowDataWithCard
+     * @param array<int,array<string,int|string>> $colDataWithCard
+     * @return array<string,array<int,string>>
+     */
+    abstract private function extractRuleNames(array $rowDataWithCard, array $colDataWithCard): array;
     /**
      * @param array<array<string>> $hands
      * @param array<string> $deck

@@ -9,6 +9,22 @@ trait TwoPairsStatTrait
      * @return  array<array<int|string,int>>
      */
     abstract private function countByRank($cards): array;
+    /**
+     * @param array<string> $hand
+     * @param array<int,int> $ranksHand
+     * @param array<int,int> $ranksDeck
+     */
+    abstract private function subCheck4($hand, $ranksHand, $ranksDeck): bool;
+    /**
+     * @param array<int,int> $ranksHand
+     * @param array<int,int> $ranksDeck
+     */
+    abstract private function subCheck5(array $ranksHand, array $ranksDeck): bool;
+    /**
+     * @param array<int,int> $ranksHand
+     * @param array<int,int> $ranksDeck
+     */
+    abstract private function subCheck6(array $ranksHand, array $ranksDeck): bool;
 
     /**
      * @param array<string> $hand

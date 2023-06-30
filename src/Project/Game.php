@@ -5,28 +5,25 @@ namespace App\Project;
 use App\ProjectGrid\Grid;
 use App\ProjectRules\RuleEvaluator;
 
-
-use Symfony\Component\HttpFoundation\Request;
-
 require __DIR__ . "/../../vendor/autoload.php";
 
 class Game
 {
-    use SuggestMessageTrait;
-    use PlayerSuggestTrait;
-    use MoveACardTrait;
-    use UndoLastRoundTrait;
-    use OneRoundTrait;
-    use EvaluateTrait;
     use CurrentStateTrait;
+    use EvaluateTrait;
+    use HousePlaceCardTrait;
+    use MoveACardTrait;
+    use OneRoundTrait;
+    use PlayerSuggestTrait;
     use PotTrait;
+    use SuggestMessageTrait;
+    use UndoLastRoundTrait;
 
-
+    private string $card;
+    private Deck $deck;
+    private RuleEvaluator $evaluator;
     private Grid $house;
     private Grid $player;
-    private Deck $deck;
-    private string $card;
-    private RuleEvaluator $evaluator;
 
     /**
      * @param array<Grid> $grids
