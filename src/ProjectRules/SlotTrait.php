@@ -2,9 +2,6 @@
 
 namespace App\ProjectRules;
 
-/**
- * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
- */
 trait SlotTrait
 {
     /**
@@ -14,6 +11,7 @@ trait SlotTrait
     abstract private function single(array $hand, int $index): array;
 
     /**
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      * @param array<int,array<string,int|string>> $pointsRows
      * @param array<int,array<string,int|string>> $pointsCols
      * @param array<array<string>> $rows

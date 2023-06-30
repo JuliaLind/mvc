@@ -17,6 +17,16 @@ trait SuggestionTrait
      * @return array<string,array<int,string>>
      */
     abstract private function extractRuleNames(array $rowDataWithCard, array $colDataWithCard): array;
+
+    /**
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     * @param array<int,array<string,int|string>> $pointsRows
+     * @param array<int,array<string,int|string>> $pointsCols
+     * @param array<array<string>> $rows
+     * @return array<string,array<int,int>|int|string>
+     */
+    abstract private function slot(array $pointsRows, array $pointsCols, int $bestRow, array $rows, bool $inverted=false): array;
+
     /**
      * @param array<array<string>> $hands
      * @param array<string> $deck
