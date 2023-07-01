@@ -29,7 +29,8 @@ class FlushStatTrait2Test extends TestCase
      * @param array<string> $deck
      * @param array<string> $hand
      */
-    private function checkInDeck(array $deck, array $hand): bool {
+    private function checkInDeck(array $deck, array $hand): bool
+    {
         $this->arg1 = $deck;
         $this->arg2 = $hand;
         return $this->checkInDeck;
@@ -40,7 +41,8 @@ class FlushStatTrait2Test extends TestCase
      * @SuppressWarnings(PHPMD.UnusedPrivateMethod)
      * @param array<string> $hand
      */
-    private function setSuit(array $hand): bool {
+    private function setSuit(array $hand): bool
+    {
         $this->arg3 = $hand;
         return $this->setSuit;
     }

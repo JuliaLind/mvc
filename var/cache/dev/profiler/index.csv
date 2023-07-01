@@ -7858,3 +7858,6 @@ a9f4d1,::1,GET,http://localhost/dbwebb/mvc/me/report/public/card,1688172961,,200
 76d4c2,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library,1688172985,,200
 1e81f0,::1,GET,http://localhost/dbwebb/mvc/me/report/public/game,1688172990,,200
 d79091,::1,GET,http://localhost/dbwebb/mvc/me/report/public/game/doc,1688172993,,200
+458568,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/rules,1688176702,,200
+ba528b,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1688176703,,200
+a720da,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/leaderboard,1688176704,,200

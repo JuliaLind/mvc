@@ -32,7 +32,7 @@ class LibraryController5 extends AbstractController
         return $this->render('library/show_single.html.twig', $data);
     }
 
-        /**
+    /**
      * Deletes a book
      */
     #[Route('/library/delete/{isbn}', name: 'book_delete_by_isbn', methods: ['POST'])]
@@ -49,7 +49,7 @@ class LibraryController5 extends AbstractController
         return $this->redirectToRoute('read_many');
     }
 
-        /**
+    /**
      * Displays all books
      */
     #[Route('/library/read_many', name: 'read_many')]
