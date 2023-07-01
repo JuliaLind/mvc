@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Entity\User;
 use App\Project\NotEnoughCoinsException;
 use App\Project\RegisterFactory;
 use Symfony\Component\HttpFoundation\Request;
@@ -53,55 +52,5 @@ class ProjectController9 extends AbstractController
         $session->set("show-suggestion", false);
         $session->set("deck-peek", false);
         return $this->redirectToRoute('proj-play');
-    }
-
-    #[Route("/proj/play", name: "proj-play")]
-    public function projPlay(
-        SessionInterface $session,
-        EntityManagerInterface $entityManager,
-        RegisterFactory $factory = new RegisterFactory()
-    ): Response {
-        /**
-         * @var Game $game
-         */
-        $game = $session->get("game") ?? null;
-        if ($game == null) {
-            return $this->redirectToRoute('proj');
-        }
-        $state = $game->currentState();
-        $data = [
-            ...$state,
-            'url' => "",
-        ];
-
-        if ($state['finished'] === true) {
-            $this->addFlash('notice', $data['message']);
-            return $this->render('proj/results.html.twig', $data);
-        }
-
-        if (count($state['fromSlot']) > 0) {
-            $this->addFlash('notice', "Click on an empty slot to which you want to move the selected card");
-            return $this->render('proj/place-card.html.twig', $data);
-        }
-
-        if ($session->get("show-suggestion")) {
-            /**
-             * @var array<string,mixed> $suggestion
-             */
-            $suggestion = $data['suggestion'];
-            /**
-             * @var string $message
-             */
-            $message = $suggestion['message'];
-            $this->addFlash('notice', $message);
-            return $this->render('proj/game-display-suggest.html.twig', $data);
-        }
-        /**
-         * @var int $userId
-         */
-        $userId = $session->get("user");
-        $register = $factory->create($entityManager, $userId);
-        $data['balance'] = $register->getBalance();
-        return $this->render('proj/game.html.twig', $data);
     }
 }

@@ -53,8 +53,9 @@ return [
     'login' => [[], ['_controller' => 'App\\Controller\\ProjectAuthController::projLogin'], [], [['text', '/proj/login']], [], [], []],
     'logout' => [[], ['_controller' => 'App\\Controller\\ProjectAuthController::projLogout'], [], [['text', '/proj/logout']], [], [], []],
     'proj' => [[], ['_controller' => 'App\\Controller\\ProjectController1::projLanding'], [], [['text', '/proj']], [], [], []],
-    'shop' => [[], ['_controller' => 'App\\Controller\\ProjectController1::projShop'], [], [['text', '/proj/shop']], [], [], []],
-    'proj-trans' => [[], ['_controller' => 'App\\Controller\\ProjectController1::projTrans'], [], [['text', '/proj/transactions']], [], [], []],
+    'shop' => [[], ['_controller' => 'App\\Controller\\ProjectController10::projShop'], [], [['text', '/proj/shop']], [], [], []],
+    'proj-trans' => [[], ['_controller' => 'App\\Controller\\ProjectController10::projTrans'], [], [['text', '/proj/transactions']], [], [], []],
+    'proj-play' => [[], ['_controller' => 'App\\Controller\\ProjectController11::projPlay'], [], [['text', '/proj/play']], [], [], []],
     'proj-round' => [['row', 'col'], ['_controller' => 'App\\Controller\\ProjectController3::projRound'], ['row' => '\\d+', 'col' => '\\d+'], [['variable', '/', '\\d+', 'col', true], ['variable', '/', '\\d+', 'row', true], ['text', '/proj/one-round']], [], [], []],
     'proj-unset-suggest' => [[], ['_controller' => 'App\\Controller\\ProjectController3::projUnsetSuggest'], [], [['text', '/proj/unset-suggestion']], [], [], []],
     'set-fromslot' => [['row', 'col'], ['_controller' => 'App\\Controller\\ProjectController4::setFromSlot'], ['row' => '\\d+', 'col' => '\\d+'], [['variable', '/', '\\d+', 'col', true], ['variable', '/', '\\d+', 'row', true], ['text', '/proj/set-fromslot']], [], [], []],
@@ -73,5 +74,4 @@ return [
     'proj-scores-single' => [[], ['_controller' => 'App\\Controller\\ProjectController8::projScoresSingle'], [], [['text', '/proj/scores-single']], [], [], []],
     'proj-leaderboard' => [[], ['_controller' => 'App\\Controller\\ProjectController8::projLeaderboard'], [], [['text', '/proj/leaderboard']], [], [], []],
     'proj-init' => [[], ['_controller' => 'App\\Controller\\ProjectController9::projInit'], [], [['text', '/proj/init']], [], [], []],
-    'proj-play' => [[], ['_controller' => 'App\\Controller\\ProjectController9::projPlay'], [], [['text', '/proj/play']], [], [], []],
 ];
