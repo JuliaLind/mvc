@@ -652,18 +652,33 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController8"/>
       </call>
     </service>
+    <service id="App\Controller\ProjectController9" class="App\Controller\ProjectController9" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController9"/>
+      </call>
+    </service>
+    <service id="App\Controller\ProjectController10" class="App\Controller\ProjectController10" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController10"/>
+      </call>
+    </service>
+    <service id="App\Controller\ProjectController11" class="App\Controller\ProjectController11" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController11"/>
+      </call>
+    </service>
     <service id="App\Controller\Quote" class="App\Controller\Quote" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\SqlFileLoader" class="App\Controller\SqlFileLoader" autowire="true" autoconfigure="true"/>
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
     <service id="App\DataFixtures\BookFixture" class="App\DataFixtures\BookFixture" autowire="true" autoconfigure="true">
-      <tag name="doctrine.fixture.orm"/>
-    </service>
-    <service id="App\DataFixtures\TransactionFixture" class="App\DataFixtures\TransactionFixture" autowire="true" autoconfigure="true">
-      <tag name="doctrine.fixture.orm"/>
-    </service>
-    <service id="App\DataFixtures\UserFixture" class="App\DataFixtures\UserFixture" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
     <service id="App\Game\Game21" class="App\Game\Game21" autowire="true" autoconfigure="true">
@@ -2824,14 +2839,6 @@
         <argument>-100</argument>
       </call>
       <call method="addListener">
-        <argument>Symfony\Component\Messenger\Event\WorkerRunningEvent</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="messenger.listener.dispatch_pcntl_signal_listener"/>
-          <argument>onWorkerRunning</argument>
-        </argument>
-        <argument>100</argument>
-      </call>
-      <call method="addListener">
         <argument>Symfony\Component\Messenger\Event\WorkerStartedEvent</argument>
         <argument type="collection">
           <argument type="service_closure" id="messenger.listener.stop_worker_on_restart_signal_listener"/>
@@ -2846,14 +2853,6 @@
           <argument>onWorkerRunning</argument>
         </argument>
         <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>Symfony\Component\Messenger\Event\WorkerStartedEvent</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="messenger.listener.stop_worker_on_sigterm_signal_listener"/>
-          <argument>onWorkerStarted</argument>
-        </argument>
-        <argument>100</argument>
       </call>
       <call method="addListener">
         <argument>Symfony\Component\Messenger\Event\WorkerMessageFailedEvent</argument>
@@ -6403,14 +6402,6 @@
             <argument key="fixture" type="service" id="App\DataFixtures\BookFixture"/>
             <argument key="groups" type="collection"/>
           </argument>
-          <argument type="collection">
-            <argument key="fixture" type="service" id="App\DataFixtures\TransactionFixture"/>
-            <argument key="groups" type="collection"/>
-          </argument>
-          <argument type="collection">
-            <argument key="fixture" type="service" id="App\DataFixtures\UserFixture"/>
-            <argument key="groups" type="collection"/>
-          </argument>
         </argument>
       </call>
     </service>
@@ -6543,14 +6534,19 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController8" class="App\Controller\ProjectController8" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController8" class="App\Controller\ProjectController8" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectController8" class="App\Controller\ProjectController8" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController9" class="App\Controller\ProjectController9" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController9" class="App\Controller\ProjectController9" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectController9" class="App\Controller\ProjectController9" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController10" class="App\Controller\ProjectController10" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController10" class="App\Controller\ProjectController10" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectController10" class="App\Controller\ProjectController10" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController11" class="App\Controller\ProjectController11" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController11" class="App\Controller\ProjectController11" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectController11" class="App\Controller\ProjectController11" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\BookFixture" class="App\DataFixtures\BookFixture" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\BookFixture" class="App\DataFixtures\BookFixture" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\TransactionFixture" class="App\DataFixtures\TransactionFixture" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\DataFixtures\TransactionFixture" class="App\DataFixtures\TransactionFixture" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UserFixture" class="App\DataFixtures\UserFixture" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\DataFixtures\UserFixture" class="App\DataFixtures\UserFixture" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ScoreRepository" class="App\Repository\ScoreRepository" autowire="true" abstract="true"/>
@@ -6992,14 +6988,6 @@
         <argument key="userRepo" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator._VPKpni" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
-        <argument key="factory" type="service_closure" id="App\Project\RegisterFactory"/>
-        <argument key="repo" type="service_closure" id="App\Repository\TransactionRepository"/>
-      </argument>
-    </service>
     <service id=".service_locator.i.nXIC_" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7013,7 +7001,15 @@
         <argument key="repo" type="service_closure" id="App\Repository\ScoreRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.57WcFX6" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator._VPKpni" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="factory" type="service_closure" id="App\Project\RegisterFactory"/>
+        <argument key="repo" type="service_closure" id="App\Repository\TransactionRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.jmA.Fv." class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CardController2::draw" type="service_closure" id=".service_locator.RnGvXe2"/>
@@ -7051,11 +7047,10 @@
         <argument key="App\Controller\ProjectApiController8::apiResults" type="service_closure" id=".service_locator.UDDP5dP"/>
         <argument key="App\Controller\ProjectAuthController::projLogin" type="service_closure" id=".service_locator.J..d_da"/>
         <argument key="App\Controller\ProjectAuthController::projRegister" type="service_closure" id=".service_locator.Mg9ucUm"/>
+        <argument key="App\Controller\ProjectController10::projShop" type="service_closure" id=".service_locator.Mg9ucUm"/>
+        <argument key="App\Controller\ProjectController10::projTrans" type="service_closure" id=".service_locator._VPKpni"/>
+        <argument key="App\Controller\ProjectController11::projPlay" type="service_closure" id=".service_locator.Mg9ucUm"/>
         <argument key="App\Controller\ProjectController1::projLanding" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController1::projShop" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController1::projTrans" type="service_closure" id=".service_locator._VPKpni"/>
-        <argument key="App\Controller\ProjectController3::projInit" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController3::projPlay" type="service_closure" id=".service_locator.Mg9ucUm"/>
         <argument key="App\Controller\ProjectController3::projRound" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController4::setFromSlot" type="service_closure" id=".service_locator.Mg9ucUm"/>
         <argument key="App\Controller\ProjectController6::projPurchase" type="service_closure" id=".service_locator.Mg9ucUm"/>
@@ -7065,6 +7060,7 @@
         <argument key="App\Controller\ProjectController7::undo" type="service_closure" id=".service_locator.Mg9ucUm"/>
         <argument key="App\Controller\ProjectController8::projLeaderboard" type="service_closure" id=".service_locator.j7c.8f."/>
         <argument key="App\Controller\ProjectController8::projScoresSingle" type="service_closure" id=".service_locator.i.nXIC_"/>
+        <argument key="App\Controller\ProjectController9::projInit" type="service_closure" id=".service_locator.Mg9ucUm"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -7104,11 +7100,10 @@
         <argument key="App\Controller\ProjectApiController8:apiResults" type="service_closure" id=".service_locator.UDDP5dP"/>
         <argument key="App\Controller\ProjectAuthController:projLogin" type="service_closure" id=".service_locator.J..d_da"/>
         <argument key="App\Controller\ProjectAuthController:projRegister" type="service_closure" id=".service_locator.Mg9ucUm"/>
+        <argument key="App\Controller\ProjectController10:projShop" type="service_closure" id=".service_locator.Mg9ucUm"/>
+        <argument key="App\Controller\ProjectController10:projTrans" type="service_closure" id=".service_locator._VPKpni"/>
+        <argument key="App\Controller\ProjectController11:projPlay" type="service_closure" id=".service_locator.Mg9ucUm"/>
         <argument key="App\Controller\ProjectController1:projLanding" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController1:projShop" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController1:projTrans" type="service_closure" id=".service_locator._VPKpni"/>
-        <argument key="App\Controller\ProjectController3:projInit" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController3:projPlay" type="service_closure" id=".service_locator.Mg9ucUm"/>
         <argument key="App\Controller\ProjectController3:projRound" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController4:setFromSlot" type="service_closure" id=".service_locator.Mg9ucUm"/>
         <argument key="App\Controller\ProjectController6:projPurchase" type="service_closure" id=".service_locator.Mg9ucUm"/>
@@ -7118,6 +7113,7 @@
         <argument key="App\Controller\ProjectController7:undo" type="service_closure" id=".service_locator.Mg9ucUm"/>
         <argument key="App\Controller\ProjectController8:projLeaderboard" type="service_closure" id=".service_locator.j7c.8f."/>
         <argument key="App\Controller\ProjectController8:projScoresSingle" type="service_closure" id=".service_locator.i.nXIC_"/>
+        <argument key="App\Controller\ProjectController9:projInit" type="service_closure" id=".service_locator.Mg9ucUm"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
       </argument>
@@ -7896,6 +7892,24 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController9" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectController9"/>
+      <argument>App\Controller\ProjectController9</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController10" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectController10"/>
+      <argument>App\Controller\ProjectController10</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController11" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectController11"/>
+      <argument>App\Controller\ProjectController11</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
     <service id=".service_locator.wSgjnB6" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8162,12 +8176,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.57WcFX6"/>
+      <argument type="service" id=".service_locator.jmA.Fv."/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.57WcFX6"/>
+      <argument type="service" id=".service_locator.jmA.Fv."/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9112,7 +9126,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.57WcFX6"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.jmA.Fv."/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9135,7 +9149,7 @@
     <service id=".service_locator.XDGmiR3" alias=".1_ServiceLocator~PcGQYYq"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.AWsFaZA" alias=".service_locator._VPKpni"/>
-    <service id=".service_locator.UP6jXb_" alias=".service_locator.57WcFX6"/>
+    <service id=".service_locator.hn62gMn" alias=".service_locator.jmA.Fv."/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>
@@ -9201,9 +9215,9 @@
     <service id=".service_locator.bInR.ll" alias=".service_locator.aKM6MDa"/>
     <service id=".service_locator.kgLd3mz" alias=".service_locator.UDDP5dP"/>
     <service id=".service_locator.sxVTQ8c" alias=".service_locator.J..d_da"/>
-    <service id=".service_locator.JhuZ61q" alias=".service_locator._VPKpni"/>
     <service id=".service_locator._4_GdpS" alias=".service_locator.i.nXIC_"/>
     <service id=".service_locator.8ax3mVW" alias=".service_locator.j7c.8f."/>
+    <service id=".service_locator.JhuZ61q" alias=".service_locator._VPKpni"/>
     <service id=".service_locator.eAaUVIw" alias=".service_locator.jIxfAsi"/>
     <service id=".service_locator.u6DWx23" alias=".service_locator.cXsfP3P"/>
     <service id=".service_locator.pFwChgS" alias=".service_locator.UkE3SaZ"/>

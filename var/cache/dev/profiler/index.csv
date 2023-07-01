@@ -7852,3 +7852,9 @@ e06e42,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api,1688155328,
 a0256b,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api/user/jane@bth.se,1688155337,,200
 00ebd7,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api/transactions,1688155359,,200
 87224a,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1688155378,,200
+956ae4,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1688172949,,200
+2ff8a6,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1688172957,,200
+a9f4d1,::1,GET,http://localhost/dbwebb/mvc/me/report/public/card,1688172961,,200
+76d4c2,::1,GET,http://localhost/dbwebb/mvc/me/report/public/library,1688172985,,200
+1e81f0,::1,GET,http://localhost/dbwebb/mvc/me/report/public/game,1688172990,,200
+d79091,::1,GET,http://localhost/dbwebb/mvc/me/report/public/game/doc,1688172993,,200

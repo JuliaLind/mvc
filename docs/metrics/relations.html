@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-06-30 23:59:42        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-07-01 00:55:44        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -1530,15 +1530,39 @@
         "relations": []
     },
     {
+        "name": "\\App\\DataFixtures\\AddScoreTrait",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Persistence\\ObjectManager",
+            "\\App\\Entity\\User",
+            "\\App\\Entity\\Score",
+            "\\Datetime"
+        ]
+    },
+    {
         "name": "\\App\\DataFixtures\\AppFixtures",
         "size": 3000,
         "relations": [
             "\\Doctrine\\Bundle\\FixturesBundle\\Fixture",
+            "\\Doctrine\\Persistence\\ObjectManager"
+        ]
+    },
+    {
+        "name": "\\App\\DataFixtures\\AddUserTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\Entity\\User",
+            "\\Doctrine\\Persistence\\ObjectManager"
+        ]
+    },
+    {
+        "name": "\\App\\DataFixtures\\AddTransactionTrait",
+        "size": 3000,
+        "relations": [
             "\\Doctrine\\Persistence\\ObjectManager",
             "\\App\\Entity\\User",
-            "\\App\\Entity\\Score",
-            "\\Datetime",
-            "\\App\\Entity\\Transaction"
+            "\\App\\Entity\\Transaction",
+            "\\Datetime"
         ]
     },
     {
