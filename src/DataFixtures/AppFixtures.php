@@ -5,11 +5,6 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-// use App\Entity\Score;
-// use App\Entity\Transaction;
-// use App\Entity\User;
-// use Datetime;
-
 class AppFixtures extends Fixture
 {
     use AddUserTrait;

@@ -15,10 +15,6 @@ trait FlushStatTrait2
      * @param array<string> $newHand
      */
     abstract private function checkInDeck(array $deck, array $newHand): bool;
-    /**
-     * @param array<string> $hand
-     */
-    abstract private function setSuit(array $hand): bool;
 
 
     /**
