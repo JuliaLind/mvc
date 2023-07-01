@@ -70,22 +70,22 @@ class BookRepository extends ServiceEntityRepository
         $this->saveToDB($flush);
     }
 
-   public function findOneByIsbn(string $isbn): Book
-   {
-       /**
-        * @var Book $book
-        */
-       $book = $this->createQueryBuilder('b')
-          ->andWhere('b.isbn = :val')
-          ->setParameter('val', $isbn)
-          ->getQuery()
-          ->getOneOrNullResult()
-       ;
-       if (!is_a($book, "App\Entity\Book")) {
-           throw new BookNotFoundException();
-       }
-       return $book;
-   }
+    public function findOneByIsbn(string $isbn): Book
+    {
+        /**
+         * @var Book $book
+         */
+        $book = $this->createQueryBuilder('b')
+           ->andWhere('b.isbn = :val')
+           ->setParameter('val', $isbn)
+           ->getQuery()
+           ->getOneOrNullResult()
+        ;
+        if (!is_a($book, "App\Entity\Book")) {
+            throw new BookNotFoundException();
+        }
+        return $book;
+    }
 
     //    /**
     //     * @return Book[] Returns an array of Book objects
