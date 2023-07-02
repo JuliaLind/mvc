@@ -2,6 +2,10 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Determins if the Straight rule is scored or
+ * possible to score
+ */
 class Straight implements RuleInterface
 {
     use AdditionalValueTrait;
@@ -15,6 +19,9 @@ class Straight implements RuleInterface
     use StraightTrait2;
     use StraightTrait3;
 
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->name = "Straight";

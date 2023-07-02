@@ -3,8 +3,8 @@
 namespace App\ProjectRules;
 
 /**
- * Class for determining if a full hand has scored
- * the Two Pairs Rule.
+ * Determins if the Two Pairs rule is scored or
+ * possible to score
  */
 class TwoPairs implements RuleInterface
 {

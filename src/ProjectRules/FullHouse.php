@@ -2,6 +2,10 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Determins if the Full House rule is scored or
+ * possible to score
+ */
 class FullHouse implements RuleInterface
 {
     use AdditionalValueTrait;

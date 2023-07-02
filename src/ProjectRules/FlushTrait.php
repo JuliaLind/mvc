@@ -1,8 +1,5 @@
 <?php
 
-
-// ta eventuellt bort denna
-
 namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
@@ -11,6 +8,10 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait FlushTrait
 {
     /**
+     * From FlushTrait3
+     *
+     * Determins if a Flush is possible
+     * to get given cards in hand and cards in deck
      * @param array<string> $deck
      * @param array<string> $newHand
      */

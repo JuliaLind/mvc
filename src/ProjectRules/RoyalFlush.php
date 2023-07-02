@@ -3,9 +3,8 @@
 namespace App\ProjectRules;
 
 /**
- * Royal Flush Rule
- * Ace, King, Queen, Jack, Ten of same suit
- *
+ * Determins if the Royal Flush rule is scored or
+ * possible to score
  */
 class RoyalFlush implements RuleInterface
 {

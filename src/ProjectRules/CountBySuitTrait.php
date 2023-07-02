@@ -8,6 +8,8 @@ trait CountBySuitTrait
 
     /**
      * Used in the following traits:
+     * FlushScoredTrait,
+     * FlushTrait3
      *
      * Returns an associative array
      * where keys are the suits present amongst
