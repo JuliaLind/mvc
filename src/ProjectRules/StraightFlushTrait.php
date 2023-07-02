@@ -69,31 +69,4 @@ trait StraightFlushTrait
 
         return $this->setRankLimits($hand) && $this->checkAllPossible($ranks, min($ranks), max($ranks) - 4);
     }
-
-
-    /**
-     * Used when hand is empty. Returns true if the
-     * rule is possible to score with the cards that
-     * will be dealt from deck
-     * @param array<string> $deck
-     */
-    public function possibleDeckOnly(array $deck): bool
-    {
-        /**
-         * @var array<string,array<int>> $cardsBySuit
-         */
-        $cardsBySuit = $this->groupBySuit($deck);
-
-        foreach($cardsBySuit as $ranks) {
-            /**
-             * @var array<int> $ranks
-             */
-            if (count($ranks) >= 5) {
-                if ($this->checkAllPossible($ranks, min($ranks), max($ranks) - 4) === true) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
 }

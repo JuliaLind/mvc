@@ -21,6 +21,7 @@ class StraightFlush implements RuleInterface
     use StraightFlushScoredTrait;
     use StraightFlushTrait;
     use StraightFlushTrait2;
+    use StraightFlushTrait3;
     use StraightTrait3;
 
     /**
