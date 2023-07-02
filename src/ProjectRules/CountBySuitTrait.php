@@ -7,6 +7,12 @@ trait CountBySuitTrait
     use SubCountTrait;
 
     /**
+     * Used in the following traits:
+     *
+     * Returns an associative array
+     * where keys are the suits present amongst
+     * the cards and the values are the count of
+     * each suit
      * @param array<string> $cards
      * @return array<string,int>
      */

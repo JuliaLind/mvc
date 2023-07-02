@@ -11,6 +11,7 @@ class TwoPairs implements RuleInterface
     use AdditionalValueTrait;
     use CountByRankTrait;
     use RuleDataTrait;
+    use TwoPairsScoredTrait;
     use TwoPairsTrait;
     use TwoPairsTrait2;
     use TwoPairsTrait3;
@@ -26,20 +27,5 @@ class TwoPairs implements RuleInterface
     {
         $this->name = "Two Pairs";
         $this->points = 5;
-    }
-
-    /**
-     * Returns true if the TwoPairs rules is scored,
-     * otherwise false.
-     * @param array<string> $hand
-     */
-    public function scored(array $hand): bool
-    {
-        /**
-         * @var array<int,int> $ranks
-         */
-        $ranks = $this->countByRank($hand);
-        $counts = array_count_values($ranks);
-        return array_key_exists(2, $counts) && $counts[2] === 2;
     }
 }

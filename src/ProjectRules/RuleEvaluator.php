@@ -5,7 +5,8 @@ namespace App\ProjectRules;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ * Evaluates the highest rules scored (when the grid is full)
+ * and highest possible rule(s) to score for hands that have less than 5 cards
  */
 class RuleEvaluator
 {

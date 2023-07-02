@@ -721,20 +721,13 @@
     <service id="App\ProjectGrid\SlotEmptyException" class="App\ProjectGrid\SlotEmptyException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\SlotNotEmptyException" class="App\ProjectGrid\SlotNotEmptyException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\Flush" class="App\ProjectRules\Flush" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectRules\FlushStat" class="App\ProjectRules\FlushStat" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\FullHouse" class="App\ProjectRules\FullHouse" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectRules\FullHouseStat" class="App\ProjectRules\FullHouseStat" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\RoyalFlush" class="App\ProjectRules\RoyalFlush" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectRules\RoyalFlushStat" class="App\ProjectRules\RoyalFlushStat" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\RuleEvaluator" class="App\ProjectRules\RuleEvaluator" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\SameOfAKind" class="App\ProjectRules\SameOfAKind" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectRules\SameOfAKindStat" class="App\ProjectRules\SameOfAKindStat" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\Straight" class="App\ProjectRules\Straight" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\StraightFlush" class="App\ProjectRules\StraightFlush" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectRules\StraightFlushStat" class="App\ProjectRules\StraightFlushStat" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectRules\StraightStat" class="App\ProjectRules\StraightStat" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\TwoPairs" class="App\ProjectRules\TwoPairs" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectRules\TwoPairsStat" class="App\ProjectRules\TwoPairsStat" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>

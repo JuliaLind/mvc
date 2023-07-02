@@ -7,6 +7,7 @@ class FullHouse implements RuleInterface
     use AdditionalValueTrait;
     use CountByRankTrait;
     use FirstCheckTrait;
+    use FullHouseScoredTrait;
     use FullHouseTrait2;
     use FullHouseTrait3;
     use FullHouseTrait4;
@@ -20,18 +21,5 @@ class FullHouse implements RuleInterface
     {
         $this->name = "Full House";
         $this->points = 25;
-    }
-
-    /**
-     * @param array<string> $hand
-     */
-    public function scored(array $hand): bool
-    {
-        /**
-        * @var array<int,int> $ranks
-        */
-        $ranks = $this->countByRank($hand);
-
-        return count($ranks) === 2 && max($ranks) === 3;
     }
 }

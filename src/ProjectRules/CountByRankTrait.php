@@ -12,7 +12,10 @@ trait CountByRankTrait
 
     /**
      * Used in the following Traits:
-     * TwoPairsStatTrait2
+     * StraightScoredTrait,
+     * FullHouseScoredTrait,
+     * TwoPairsScoredTrait
+     *
      * Returns an associative array
      * where keys are the ranks present amongst
      * the cards and the values are the count of

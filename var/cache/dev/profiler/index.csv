@@ -7882,3 +7882,5 @@ bac6b5,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/unset-suggesti
 189692,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/play,1688255657,,200
 6b4d83,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1688255657,,200
 98910a,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1688255668,,200
+ae5775,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1688328695,,200
+47fd31,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/rules,1688328696,,200
