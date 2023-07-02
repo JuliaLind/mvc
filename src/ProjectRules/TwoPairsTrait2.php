@@ -58,6 +58,14 @@ trait TwoPairsTrait2
     abstract private function subCheck6(array $ranksHand, array $ranksDeck): bool;
 
     /**
+     * @param array<int,int> $ranksHand
+     * @param array<int,int> $ranksDeck
+     */
+    private function subCheck7(array $ranksHand, array $ranksDeck): bool {
+        return array_key_exists(array_keys($ranksHand)[0], $ranksDeck) && max($ranksDeck) >= 2;
+    }
+
+    /**
      * Checks if the Two Pairs rule is possible if the
      * dealt card is not placed in hand. (Based on the cards
      * already in hand and the cards in the deck). Note! The
@@ -83,7 +91,7 @@ trait TwoPairsTrait2
          * of the same rank as the card in hand
          */
         if (count($hand) === 1) {
-            return (array_key_exists(array_keys($ranksHand)[0], $ranksDeck) && max($ranksDeck) >= 2) || $this->possibleDeckOnly($deck);
+            return $this->subcheck7($ranksHand, $ranksDeck) || $this->possibleDeckOnly($deck);
         }
         if (count($hand) > count($ranksHand)) {
             return $this->subCheck4($hand, $ranksHand, $ranksDeck) || $this->subCheck5($ranksHand, $ranksDeck);
