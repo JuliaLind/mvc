@@ -4,6 +4,7 @@ namespace App\ProjectRules;
 
 class StraightFlushStat implements RuleStatInterface
 {
+    use AdditionalValueTrait;
     use CountByRankTrait;
     use CountBySuitTrait;
     use FirstCheckTrait;
@@ -18,7 +19,7 @@ class StraightFlushStat implements RuleStatInterface
      * @param array<string> $hand
      * @param array<string> $deck
      */
-    public function check2(array $hand, array $deck): bool
+    public function possibleWithoutCard(array $hand, array $deck): bool
     {
         if (!$this->setSuit($hand)) {
             return false;
@@ -37,7 +38,7 @@ class StraightFlushStat implements RuleStatInterface
     /**
      * @param array<string> $deck
      */
-    public function check3(array $deck): bool
+    public function possibleDeckOnly(array $deck): bool
     {
         /**
          * @var array<string,array<int>> $cardsBySuit

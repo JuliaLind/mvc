@@ -28,7 +28,7 @@ trait SameOfAKindStatTrait2
      * @return bool true if rule is still possible given passed value
      * otherwise false
      */
-    public function check2(array $hand, array $deck): bool
+    public function possibleWithoutCard(array $hand, array $deck): bool
     {
         /**
          * @var array<int,int> $ranksHand

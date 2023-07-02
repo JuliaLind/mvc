@@ -15,7 +15,7 @@ trait FlushStatTrait3
     /**
      * @param array<string> $deck
      */
-    public function check3(array $deck): bool
+    public function possibleDeckOnly(array $deck): bool
     {
         /**
          * @var array<string,int> $suits

@@ -6,6 +6,7 @@ use App\ProjectCard\CardCounter;
 
 class FullHouseStat implements RuleStatInterface
 {
+    use AdditionalValueTrait;
     use CountByRankTrait;
     use FirstCheckTrait;
     use FullHouseStatTrait2;

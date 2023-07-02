@@ -7,7 +7,7 @@ trait FullHouseStatTrait2
     /**
      * @param array<string> $deck
      */
-    abstract public function check3(array $deck): bool;
+    abstract public function possibleDeckOnly(array $deck): bool;
 
     abstract private function subCheck($ranksHand, $ranksAll): bool;
     /**
@@ -29,7 +29,7 @@ trait FullHouseStatTrait2
      * @param array<string> $hand
      * @param array<string> $deck
      */
-    public function check2(array $hand, array $deck): bool
+    public function possibleWithoutCard(array $hand, array $deck): bool
     {
         /**
          * @var array<int,int> $ranksHand
@@ -48,7 +48,7 @@ trait FullHouseStatTrait2
 
         if (count($hand) === 1) {
             $rank = array_key_first($ranksHand);
-            return in_array($rank, array_keys($ranksDeck)) && $this->check3($allCards);
+            return in_array($rank, array_keys($ranksDeck)) && $this->possibleDeckOnly($allCards);
         }
         return $this->subCheck3($ranksHand, $ranksDeck) || ($this->subCheck2($ranksHand) && $this->subCheck($ranksHand, $ranksAll));
     }

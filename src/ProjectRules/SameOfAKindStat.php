@@ -4,6 +4,7 @@ namespace App\ProjectRules;
 
 class SameOfAKindStat implements RuleStatInterface
 {
+    use AdditionalValueTrait;
     use CountByRankTrait;
     use SameOfAKindStatTrait;
     use SameOfAKindStatTrait2;
@@ -18,7 +19,7 @@ class SameOfAKindStat implements RuleStatInterface
     /**
      * @param array<string> $deck
      */
-    public function check3(array $deck): bool
+    public function possibleDeckOnly(array $deck): bool
     {
         /**
          * @var array<int,int> $ranksDeck

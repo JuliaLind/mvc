@@ -10,7 +10,7 @@ trait RuleNameTrait
      */
     private function ruleName(array $hand, array $deck, string $ruleName, RuleStatInterface $rule): string
     {
-        if (count($hand) < 5 && $rule->check2($hand, $deck)) {
+        if (count($hand) < 5 && $rule->possibleWithoutCard($hand, $deck)) {
             return $ruleName;
         }
         return "";

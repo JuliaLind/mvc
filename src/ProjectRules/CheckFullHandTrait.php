@@ -11,6 +11,9 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait CheckFullHandTrait
 {
     /**
+     * Associative array that for each rule contains name of the rule,
+     * points, class for determining if the rule is scored (for full hand)
+     * and class for determining if the rule is possible to score
      * @var array<array<string,string|RuleInterface|RuleStatInterface|int>>
      */
     private array $rules;
@@ -39,7 +42,7 @@ trait CheckFullHandTrait
              * @var RuleInterface $rule
              */
             $rule = $options['scored'];
-            if ($rule->check($hand)) {
+            if ($rule->scored($hand)) {
                 $result['name'] = $name;
                 /**
                  * @var int $points

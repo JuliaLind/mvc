@@ -22,20 +22,21 @@ class FirstCheckTraitTest extends TestCase
      * @param array<string> $hand
      * @param array<string> $deck
      */
-    public function check2(array $hand, array $deck): bool
+    public function possibleWithoutCard(array $hand, array $deck): bool
     {
         $this->arg1 = $hand;
         $this->arg2 = $deck;
         return true;
     }
 
-    public function testCheck(): void
+    public function testPossibleWithCard(): void
     {
         $hand = ["14C", "8D", "5H"];
         $card = "3S";
         $deck = ["8S", "2S", "4H", "7H"];
-        $res = $this->check($hand, $deck, $card);
+        $res = $this->possibleWithCard($hand, $deck, $card);
         $this->assertTrue($res);
+        $this->assertEquals(3, $this->additionalValue);
 
         $this->assertEquals([...$hand, $card], $this->arg1);
         $this->assertEquals($deck, $this->arg2);

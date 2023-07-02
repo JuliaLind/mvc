@@ -13,23 +13,34 @@ namespace App\ProjectRules;
 trait FirstCheckTrait
 {
     /**
-     * @param array<string> $hand
-     * @param array<string> $deck
+     * 1 point for every card that already is in hand
+     * and contributes to the rule
      */
-    abstract public function check2(array $hand, array $deck): bool;
+    private int $additionalValue = 0;
 
     /**
      * @param array<string> $hand
      * @param array<string> $deck
      */
-    public function check(array $hand, array $deck, string $card): bool
+    abstract public function possibleWithoutCard(array $hand, array $deck): bool;
+
+    /**
+     * @param array<string> $hand
+     * @param array<string> $deck
+     */
+    public function possibleWithCard(array $hand, array $deck, string $card): bool
     {
+        $this->additionalValue = 0;
         /**
          * @var array<string> $newHand
          */
         $newHand = [...$hand, $card];
 
-        return $this->check2($newHand, $deck);
+        if ($this->possibleWithoutCard($newHand, $deck)) {
+            $this->additionalValue = count($hand);
+            return true;
+        }
+        return false;
     }
 
 }

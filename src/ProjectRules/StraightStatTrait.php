@@ -32,7 +32,7 @@ trait StraightStatTrait
      * @param array<string> $hand
      * @param array<string> $deck
      */
-    public function check2(array $hand, array $deck): bool
+    public function possibleWithoutCard(array $hand, array $deck): bool
     {
         $ranks = $this->countByRank($hand);
 
@@ -55,11 +55,8 @@ trait StraightStatTrait
     /**
      * @param array<string> $deck
      */
-    public function check3(array $deck): bool
+    public function possibleDeckOnly(array $deck): bool
     {
-        // if ($deck === []) {
-        //     return false;
-        // }
         $ranks = $this->countByRank($deck);
         $minMinRank = min(array_keys($ranks));
         $maxMinRank = max(array_keys($ranks)) - 4;

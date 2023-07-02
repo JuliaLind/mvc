@@ -5,6 +5,9 @@ namespace App\ProjectRules;
 trait CheckWithCardTrait
 {
     /**
+     * Associative array that for each rule contains name of the rule,
+     * points, class for determining if the rule is scored (for full hand)
+     * and class for determining if the rule is possible to score
      * @var array<array<string,string|RuleInterface|RuleStatInterface|int>>
      */
     private array $rules;
@@ -15,11 +18,11 @@ trait CheckWithCardTrait
      * the dealt card into a hand that already
      * contains at least one card, returns the name
      * of the rule and the adjusted number of points (
-     * for rules Three Of A Kind and up 10% of the 
+     * for rules Three Of A Kind and up 10% of the
      * ordinary rule points is added for each card that
-     * is already placed in the checked hand to 
-     * prioritize a hand that is closer to score, if 
-     * there are two hands where same rule is possible 
+     * is already placed in the checked hand to
+     * prioritize a hand that is closer to score, if
+     * there are two hands where same rule is possible
      * to score. If the hand is already full returns -1
      * @param array<string> $deck
      * @param array<string> $hand

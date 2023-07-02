@@ -9,7 +9,7 @@ class StraightFlush implements RuleInterface
     /**
      * @param array<string> $hand
      */
-    public function check(array $hand): bool
+    public function scored(array $hand): bool
     {
         $uniqueCount = $this->countSuitAndRank($hand);
         /**

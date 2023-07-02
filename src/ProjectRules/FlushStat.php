@@ -4,6 +4,7 @@ namespace App\ProjectRules;
 
 class FlushStat implements RuleStatInterface
 {
+    use AdditionalValueTrait;
     use CountBySuitTrait;
     use FirstCheckTrait;
     use FlushStatTrait2;

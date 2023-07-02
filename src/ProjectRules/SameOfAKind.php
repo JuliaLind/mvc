@@ -20,7 +20,7 @@ class SameOfAKind implements RuleInterface
     /**
      * @param array<string> $hand
      */
-    public function check(array $hand): bool
+    public function scored(array $hand): bool
     {
         /**
          * @var array<int,int> $ranks

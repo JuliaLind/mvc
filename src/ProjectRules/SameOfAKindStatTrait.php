@@ -8,6 +8,12 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait SameOfAKindStatTrait
 {
     /**
+     * 1 point for every card that already is in hand
+     * and contributes to the rule
+     */
+    private int $additionalValue = 0;
+
+    /**
      * @var int $minContRank the minimum number of cards of
      * same rank required to score the rule
      */
@@ -29,8 +35,9 @@ trait SameOfAKindStatTrait
      * @return bool true if rule is still possible given passed value
      * otherwise false
      */
-    public function check(array $hand, array $deck, string $card): bool
+    public function possibleWithCard(array $hand, array $deck, string $card): bool
     {
+        $this->additionalValue = 0;
         /**
          * @var array<int,int> $ranksHand
          */
@@ -48,6 +55,10 @@ trait SameOfAKindStatTrait
          */
         $ranksAll= $this->countByRank($allCards);
 
-        return ((array_key_exists($rank, $ranksHand) && $this->subCheck(count($hand), $ranksHand[$rank])) || count($ranksHand) == 0) && $this->subCheck2($ranksAll[$rank]);
+        if (((array_key_exists($rank, $ranksHand) && $this->subCheck(count($hand), $ranksHand[$rank])) || count($ranksHand) == 0) && $this->subCheck2($ranksAll[$rank])) {
+            $this->additionalValue = $ranksHand[$rank];
+            return true;
+        }
+        return false;
     }
 }

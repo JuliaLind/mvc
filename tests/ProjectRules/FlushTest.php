@@ -10,11 +10,11 @@ class FlushTest extends TestCase
     {
         $flush = new Flush();
         $hand = ["14H", "8D", "4C", "10S", "5C"];
-        $res = $flush->check($hand);
+        $res = $flush->scored($hand);
         $this->assertFalse($res);
 
         $hand = ["14H", "8H", "4H", "10S", "5H"];
-        $res = $flush->check($hand);
+        $res = $flush->scored($hand);
         $this->assertFalse($res);
     }
 
@@ -22,7 +22,7 @@ class FlushTest extends TestCase
     {
         $flush = new Flush();
         $hand = ["14H", "8H", "4H", "10H", "5H"];
-        $res = $flush->check($hand);
+        $res = $flush->scored($hand);
         $this->assertTrue($res);
     }
 }

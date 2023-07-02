@@ -4,6 +4,7 @@ namespace App\ProjectRules;
 
 class RoyalFlushStat implements RuleStatInterface
 {
+    use AdditionalValueTrait;
     use CountByRankTrait;
     use CountSuitAndRankTrait;
     use FirstCheckTrait;

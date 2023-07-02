@@ -47,12 +47,12 @@ class FlushStatTrait2Test extends TestCase
         return $this->setSuit;
     }
 
-    public function testCheck2(): void
+    public function testPossibleWithoutCard(): void
     {
         $hand = ["14C", "8D", "5H"];
         $deck = ["8S", "2S", "4H", "7H"];
 
-        $res = $this->check2($hand, $deck);
+        $res = $this->possibleWithoutCard($hand, $deck);
         $this->assertFalse($res);
 
         $this->assertEquals([], $this->arg1);
@@ -60,17 +60,17 @@ class FlushStatTrait2Test extends TestCase
         $this->assertEquals($hand, $this->arg3);
 
         $this->checkInDeck = true;
-        $res = $this->check2($hand, $deck);
+        $res = $this->possibleWithoutCard($hand, $deck);
         $this->assertFalse($res);
 
         $this->setSuit = true;
-        $res = $this->check2($hand, $deck);
+        $res = $this->possibleWithoutCard($hand, $deck);
         $this->assertTrue($res);
         $this->assertEquals($deck, $this->arg1);
         $this->assertEquals($hand, $this->arg2);
 
         $this->checkInDeck = false;
-        $res = $this->check2($hand, $deck);
+        $res = $this->possibleWithoutCard($hand, $deck);
         $this->assertFalse($res);
     }
 

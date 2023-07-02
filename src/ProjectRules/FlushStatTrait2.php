@@ -21,7 +21,7 @@ trait FlushStatTrait2
      * @param array<string> $hand
      * @param array<string> $deck
      */
-    public function check2(array $hand, array $deck): bool
+    public function possibleWithoutCard(array $hand, array $deck): bool
     {
         return $this->setSuit($hand) && $this->checkInDeck($deck, $hand);
     }

@@ -9,7 +9,7 @@ class Flush implements RuleInterface
     /**
      * @param array<string> $hand
      */
-    public function check(array $hand): bool
+    public function scored(array $hand): bool
     {
         $suitCount = $this->countBySuit($hand);
 

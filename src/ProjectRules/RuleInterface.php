@@ -8,8 +8,10 @@ namespace App\ProjectRules;
 interface RuleInterface
 {
     /**
+     * Returns true if the rule is scored,
+     * otherwise false. Starting position is that none
+     * of the higher rules has been scored
      * @param array<string> $hand
-     * @return bool true if rule is fullfilled otherwise false
      */
-    public function check(array $hand);
+    public function scored(array $hand): bool;
 }

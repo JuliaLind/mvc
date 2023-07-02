@@ -9,7 +9,7 @@ trait RuleNameTrait2
      */
     private function ruleNameEmptyHand(array $deck, string $ruleName, RuleStatInterface $rule): string
     {
-        if ($rule->check3($deck)) {
+        if ($rule->possibleDeckOnly($deck)) {
             return $ruleName;
         }
         return "";

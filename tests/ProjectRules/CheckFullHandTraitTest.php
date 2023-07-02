@@ -23,7 +23,7 @@ class CheckFullHandTraitTest extends TestCase
         $twoPairs = $this->createMock(TwoPairs::class);
         $onePair = $this->createMock(SameOfAKind::class);
         foreach([$royalFlush, $straightFlush, $fourOfAKind, $fullHouse, $flush,$straight, $threeOfAKind, $twoPairs, $onePair] as $rule) {
-            $rule->expects($this->never())->method('check');
+            $rule->expects($this->never())->method('scored');
         }
         // $royalFlushStat = $this->createMock(RoyalFlushStat::class);
         // $straightFlushStat = $this->createMock(StraightFlushStat::class);
@@ -96,7 +96,7 @@ class CheckFullHandTraitTest extends TestCase
     {
         $hand = ["card1", "card2", "card3", "card4", "card5"];
         $royalFlush = $this->createMock(RoyalFlush::class);
-        $royalFlush->expects($this->once())->method('check')->with($this->equalTo($hand))
+        $royalFlush->expects($this->once())->method('scored')->with($this->equalTo($hand))
         ->willReturn(true);
         $this->rules[0]['scored'] = $royalFlush;
         $exp = [
@@ -116,22 +116,22 @@ class CheckFullHandTraitTest extends TestCase
         $fullHouse =$this->createMock(FullHouse::class);
 
         $royalFlush->expects($this->once())
-        ->method('check')
+        ->method('scored')
         ->with($this->equalTo($hand))
         ->willReturn(false);
 
         $straightFlush->expects($this->once())
-        ->method('check')
+        ->method('scored')
         ->with($this->equalTo($hand))
         ->willReturn(false);
 
         $fourOfAKind->expects($this->once())
-        ->method('check')
+        ->method('scored')
         ->with($this->equalTo($hand))
         ->willReturn(false);
 
         $fullHouse->expects($this->once())
-        ->method('check')
+        ->method('scored')
         ->with($this->equalTo($hand))
         ->willReturn(true);
 
@@ -161,7 +161,7 @@ class CheckFullHandTraitTest extends TestCase
         $twoPairs = $this->createMock(TwoPairs::class);
         $onePair = $this->createMock(SameOfAKind::class);
         foreach([$royalFlush, $straightFlush, $fourOfAKind, $fullHouse, $flush,$straight, $threeOfAKind, $twoPairs, $onePair] as $index => $rule) {
-            $rule->expects($this->once())->method('check')->with($this->equalTo($hand))
+            $rule->expects($this->once())->method('scored')->with($this->equalTo($hand))
             ->willReturn(false);
             $this->rules[$index]['scored'] = $rule;
         }

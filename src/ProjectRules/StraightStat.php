@@ -4,6 +4,7 @@ namespace App\ProjectRules;
 
 class StraightStat implements RuleStatInterface
 {
+    use AdditionalValueTrait;
     use CountByRankTrait;
     use FirstCheckTrait;
     use MinRankLimitsTrait;
