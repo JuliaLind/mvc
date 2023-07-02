@@ -11,6 +11,14 @@ trait SameSuitTrait
     abstract private function countBySuit($cards): array;
 
     /**
+     * Used in the following traits:
+     * FlushTrait,
+     * StraightFlushTrait
+     *
+     * Sets suit attribute to the suit of the
+     * first card in the hand and
+     * returns true if all cards in the hand are
+     * of the same suit
      * @param array<string> $hand
      */
     private function setSuit(array $hand): bool

@@ -14,7 +14,11 @@ trait CountByRankTrait
      * Used in the following Traits:
      * StraightScoredTrait,
      * FullHouseScoredTrait,
-     * TwoPairsScoredTrait
+     * TwoPairsScoredTrait,
+     * SameOfAKindTrait3,
+     * RankLimitsTrait,
+     * StraightTrait,
+     * TwoPairsTrait
      *
      * Returns an associative array
      * where keys are the ranks present amongst

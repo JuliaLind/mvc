@@ -5,6 +5,13 @@ namespace App\ProjectRules;
 trait GroupBySuitTrait
 {
     /**
+     * Used in the following traits:
+     * StraightFlushTrait
+     *
+     * Returns an associative array with keys
+     * correspoding to suits present in the cards
+     * array and values - arrays containing the ranks
+     * of each suit present in the card-array
      * @param array<string> $cards
      * @return array<string,array<int,int>>
      */

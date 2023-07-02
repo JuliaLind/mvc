@@ -16,8 +16,21 @@ trait FlushTrait
      */
     abstract private function checkInDeck(array $deck, array $newHand): bool;
 
+    /**
+     * From SameSuitTrait.
+     * Sets suit attribute to the suit of the
+     * first card in the hand and
+     * returns true if all cards in the hand are
+     * of the same suit
+     * @param array<string> $hand
+     */
+    abstract private function setSuit(array $hand): bool;
+
 
     /**
+     * From StraightFlushTrait
+     * Returns true if the rule is possible
+     * to score without the dealt card
      * @param array<string> $hand
      * @param array<string> $deck
      */

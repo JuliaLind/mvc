@@ -11,6 +11,19 @@ trait TwoPairsTrait
     private int $additionalValue = 0;
 
     /**
+     * From CountByRankTrait.
+     *
+     * Returns an associative array
+     * where keys are the ranks present amongst
+     * the cards and the values are the count of
+     * each rank
+     * @param array<string> $cards
+     * @return  array<array<int|string,int>>
+     */
+    abstract private function countByRank($cards): array;
+
+
+    /**
      * From TwoPairsStatTrait4
      * Method called on after ensuring the hand
      * already contains one pair
