@@ -4,7 +4,7 @@ namespace App\ProjectRules;
 
 class TwoPairsStat implements RuleStatInterface
 {
-    use TwoPairsTrait;
+    use CountByRankTrait;
     use TwoPairsStatTrait;
     use TwoPairsStatTrait2;
     use TwoPairsStatTrait3;
@@ -12,7 +12,8 @@ class TwoPairsStat implements RuleStatInterface
     use TwoPairsStatTrait5;
     use TwoPairsStatTrait6;
     use TwoPairsStatTrait7;
-    use CountByRankTrait;
+    use TwoPairsTrait;
+
 
     /**
      * @param array<string> $hand

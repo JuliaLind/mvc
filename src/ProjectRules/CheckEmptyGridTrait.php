@@ -2,9 +2,18 @@
 
 namespace App\ProjectRules;
 
+
+/**
+ * Trait for getting a slot-suggestion for a new/empty grid.
+ * Used by the class RuleEvaluator
+ */
 trait CheckEmptyGridTrait
 {
     /**
+     * Calculates and returns name and number of points (adjusted/weighted)
+     * for the best rule possible to achieve with the dealt card, cards
+     * in the hand (row or column) and the cards the user is yet to pick from
+     * the deck
      * @param array<array<string>> $hands
      * @param array<string> $deck
      * @return array<string,string|int>
@@ -12,6 +21,10 @@ trait CheckEmptyGridTrait
     abstract private function handRuleWith(array $hands, int $index, array $deck, string $card);
 
     /**
+     * Used for a new/empty array. Always suggests the first empty slot
+     * (top-left/ row 0-col 0, and displays which rule will be psosible to achieve
+     * at best calculated based on the dealt card and the cards the user is
+     * yet to pick from the deck
      * @param array<string> $deck
      * @return array<string,array<int,int|string>|string>
      */

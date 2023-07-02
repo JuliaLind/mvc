@@ -68,6 +68,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/app-datafixtures.html" class="">DataFixtures</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/app-entity.html" class="">Entity</a>
                 
             </li>
@@ -76,15 +80,19 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-helpers.html" class="">Helpers</a>
-                
-            </li>
-                    <li>
                 <a href="namespaces/app-library.html" class="">Library</a>
                 
             </li>
                     <li>
-                <a href="namespaces/app-markdown.html" class="">Markdown</a>
+                <a href="namespaces/app-project.html" class="">Project</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-projectgrid.html" class="">ProjectGrid</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-projectrules.html" class="">ProjectRules</a>
                 
             </li>
                     <li>
@@ -142,7 +150,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/Game21Controller.php"><a href="files/src-controller-game21controller.html"><abbr title="src/Controller/Game21Controller.php">Game21Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
@@ -163,23 +171,6 @@
 
 <dl class="phpdocumentor-table-of-contents">
                         <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Controller-Game21Controller.html#method_bankPlaying">bankPlaying()</a>
-    <span>
-                                &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
-</dt>
-<dd>Route where cards are drawn by the bank
-Redirets to play-route</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Controller-Game21Controller.html#method_bet">bet()</a>
-    <span>
-                                &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
-</dt>
-<dd>In this route the selected amount is moved from
-each bank and player to the moneypot. Redirects to the
-play route</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Controller-Game21Controller.html#method_gameDoc">gameDoc()</a>
     <span>
                                 &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
@@ -188,42 +179,12 @@ play route</dd>
 the initial version of the game</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Controller-Game21Controller.html#method_init">init()</a>
-    <span>
-                                &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
-</dt>
-<dd>Route for initiating the game. Creates an object of class
-Game21Easy or Game21Hard, samves to session and redirects
-to route for selecting amount to bet</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Controller-Game21Controller.html#method_main">main()</a>
     <span>
                                 &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
 </dt>
 <dd>Main route. Contains description of the game and buttons
 for starting/resuming the game</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Controller-Game21Controller.html#method_play">play()</a>
-    <span>
-                                &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
-</dt>
-<dd>Route where the current game is displayed.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Controller-Game21Controller.html#method_playerDraw">playerDraw()</a>
-    <span>
-                                &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
-</dt>
-<dd>Route where a card is drawn by the player.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Controller-Game21Controller.html#method_selectAmount">selectAmount()</a>
-    <span>
-                                &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
-</dt>
-<dd>Route for selecting amount to bet in the current round.</dd>
 
         </dl>
 
@@ -244,121 +205,6 @@ for starting/resuming the game</dd>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_bankPlaying">
-        bankPlaying()
-        <a href="classes/App-Controller-Game21Controller.html#method_bankPlaying" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/Game21Controller.php"><a href="files/src-controller-game21controller.html"><abbr title="src/Controller/Game21Controller.php">Game21Controller.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">141</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Route where cards are drawn by the bank
-Redirets to play-route</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">bankPlaying</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-BanksTurnHandler.html"><abbr title="\App\Game\BanksTurnHandler">BanksTurnHandler</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$gameHandler</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new BanksTurnHandler()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$session</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$gameHandler</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-BanksTurnHandler.html"><abbr title="\App\Game\BanksTurnHandler">BanksTurnHandler</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">new BanksTurnHandler()</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_bet">
-        bet()
-        <a href="classes/App-Controller-Game21Controller.html#method_bet" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/Game21Controller.php"><a href="files/src-controller-game21controller.html"><abbr title="src/Controller/Game21Controller.php">Game21Controller.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">102</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">In this route the selected amount is moved from
-each bank and player to the moneypot. Redirects to the
-play route</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">bet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$amount</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-GameMoneyHandler.html"><abbr title="\App\Game\GameMoneyHandler">GameMoneyHandler</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$gameHandler</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new GameMoneyHandler()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$session</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$amount</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$gameHandler</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-GameMoneyHandler.html"><abbr title="\App\Game\GameMoneyHandler">GameMoneyHandler</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">new GameMoneyHandler()</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_gameDoc">
         gameDoc()
         <a href="classes/App-Controller-Game21Controller.html#method_gameDoc" class="headerlink"><i class="fas fa-link"></i></a>
@@ -366,7 +212,7 @@ play route</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/Game21Controller.php"><a href="files/src-controller-game21controller.html"><abbr title="src/Controller/Game21Controller.php">Game21Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
@@ -375,77 +221,15 @@ the initial version of the game</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">gameDoc</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-GameHandlerLanding.html"><abbr title="\App\Game\GameHandlerLanding">GameHandlerLanding</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$gameHandler</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new GameHandlerLanding()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">gameDoc</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Controller-MdParser.html"><abbr title="\App\Controller\MdParser">MdParser</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$parser</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new MdParser()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$gameHandler</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-GameHandlerLanding.html"><abbr title="\App\Game\GameHandlerLanding">GameHandlerLanding</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">new GameHandlerLanding()</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_init">
-        init()
-        <a href="classes/App-Controller-Game21Controller.html#method_init" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/Game21Controller.php"><a href="files/src-controller-game21controller.html"><abbr title="src/Controller/Game21Controller.php">Game21Controller.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">66</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Route for initiating the game. Creates an object of class
-Game21Easy or Game21Hard, samves to session and redirects
-to route for selecting amount to bet</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">init</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$level</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-GameInitiator.html"><abbr title="\App\Game\GameInitiator">GameInitiator</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$gameHandler</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new GameInitiator()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$session</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$level</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$gameHandler</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-GameInitiator.html"><abbr title="\App\Game\GameInitiator">GameInitiator</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">new GameInitiator()</span>            </dt>
+                <span class="phpdocumentor-signature__argument__name">$parser</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Controller-MdParser.html"><abbr title="\App\Controller\MdParser">MdParser</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">new MdParser()</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
@@ -473,7 +257,7 @@ to route for selecting amount to bet</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/Game21Controller.php"><a href="files/src-controller-game21controller.html"><abbr title="src/Controller/Game21Controller.php">Game21Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -482,7 +266,7 @@ for starting/resuming the game</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">main</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-GameHandlerLanding.html"><abbr title="\App\Game\GameHandlerLanding">GameHandlerLanding</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$gameHandler</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new GameHandlerLanding()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">main</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Controller-MdParser.html"><abbr title="\App\Controller\MdParser">MdParser</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$parser</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new MdParser()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -496,171 +280,9 @@ for starting/resuming the game</p>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$gameHandler</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-GameHandlerLanding.html"><abbr title="\App\Game\GameHandlerLanding">GameHandlerLanding</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">new GameHandlerLanding()</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_play">
-        play()
-        <a href="classes/App-Controller-Game21Controller.html#method_play" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/Game21Controller.php"><a href="files/src-controller-game21controller.html"><abbr title="src/Controller/Game21Controller.php">Game21Controller.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">161</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Route where the current game is displayed.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">play</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-GameHandler.html"><abbr title="\App\Game\GameHandler">GameHandler</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$gameHandler</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new GameHandler()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
-
-        <section class="phpdocumentor-description"><p>Shows buttons for the user to choose next action</p>
-</section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$session</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$gameHandler</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-GameHandler.html"><abbr title="\App\Game\GameHandler">GameHandler</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">new GameHandler()</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_playerDraw">
-        playerDraw()
-        <a href="classes/App-Controller-Game21Controller.html#method_playerDraw" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/Game21Controller.php"><a href="files/src-controller-game21controller.html"><abbr title="src/Controller/Game21Controller.php">Game21Controller.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">121</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Route where a card is drawn by the player.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">playerDraw</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-PlayerTurnHandler.html"><abbr title="\App\Game\PlayerTurnHandler">PlayerTurnHandler</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$gameHandler</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new PlayerTurnHandler()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
-
-        <section class="phpdocumentor-description"><p>Redirects to play-route</p>
-</section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$session</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$gameHandler</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-PlayerTurnHandler.html"><abbr title="\App\Game\PlayerTurnHandler">PlayerTurnHandler</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">new PlayerTurnHandler()</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_selectAmount">
-        selectAmount()
-        <a href="classes/App-Controller-Game21Controller.html#method_selectAmount" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/Game21Controller.php"><a href="files/src-controller-game21controller.html"><abbr title="src/Controller/Game21Controller.php">Game21Controller.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">82</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Route for selecting amount to bet in the current round.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">selectAmount</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-GameMoneyHandler.html"><abbr title="\App\Game\GameMoneyHandler">GameMoneyHandler</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$gameHandler</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new GameMoneyHandler()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
-
-        <section class="phpdocumentor-description"><p>Initiates the current round.</p>
-</section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$session</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$gameHandler</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-GameMoneyHandler.html"><abbr title="\App\Game\GameMoneyHandler">GameMoneyHandler</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">new GameMoneyHandler()</span>            </dt>
+                <span class="phpdocumentor-signature__argument__name">$parser</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Controller-MdParser.html"><abbr title="\App\Controller\MdParser">MdParser</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">new MdParser()</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 

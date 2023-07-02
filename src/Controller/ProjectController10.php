@@ -4,21 +4,25 @@ namespace App\Controller;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
+use App\Entity\User;
+use App\Project\RegisterFactory;
+use App\Repository\TransactionRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Doctrine\ORM\EntityManagerInterface;
-use App\Entity\User;
-use App\Repository\TransactionRepository;
-
-use App\Project\RegisterFactory;
 
 /**
- * The main controller class
+ * Controller related to the Project. Contains routes
+ * for the shop-page and for the page that displays all
+ * transactions for a signle user
  */
 class ProjectController10 extends AbstractController
 {
+    /**
+     * Leaders to the shop-page where user can purchase coins
+     */
     #[Route("/proj/shop", name: "shop")]
     public function projShop(
         SessionInterface $session,
@@ -40,6 +44,9 @@ class ProjectController10 extends AbstractController
         return $this->render('proj/shop.html.twig', $data);
     }
 
+    /**
+     * Route that leades to page where all user's transactions are displayed
+     */
     #[Route("/proj/transactions", name: "proj-trans")]
     public function projTrans(
         SessionInterface $session,

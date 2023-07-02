@@ -68,6 +68,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/app-datafixtures.html" class="">DataFixtures</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/app-entity.html" class="">Entity</a>
                 
             </li>
@@ -76,15 +80,19 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-helpers.html" class="">Helpers</a>
-                
-            </li>
-                    <li>
                 <a href="namespaces/app-library.html" class="">Library</a>
                 
             </li>
                     <li>
-                <a href="namespaces/app-markdown.html" class="">Markdown</a>
+                <a href="namespaces/app-project.html" class="">Project</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-projectgrid.html" class="">ProjectGrid</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-projectrules.html" class="">ProjectRules</a>
                 
             </li>
                     <li>
@@ -132,6 +140,10 @@
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/App-Game-Game21Interface.html"><abbr title="\App\Game\Game21Interface">Game21Interface</abbr></a></dt>
         <dd>Interface to be implemented by the classes Game21Easy and Game21Hard</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/App-ProjectRules-RuleInterface.html"><abbr title="\App\ProjectRules\RuleInterface">RuleInterface</abbr></a></dt>
+        <dd>Interface to be implemented by the classes Game21Easy and Game21Hard</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/App-ProjectRules-RuleStatInterface.html"><abbr title="\App\ProjectRules\RuleStatInterface">RuleStatInterface</abbr></a></dt>
+        <dd>Interface to be implemented by the classes Game21Easy and Game21Hard</dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-Card.html"><abbr title="\App\Cards\Card">Card</abbr></a></dt>
         <dd>Class representing a playing Card</dd>
@@ -147,15 +159,14 @@ graphic representation (i.e. svg image)</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-Player.html"><abbr title="\App\Cards\Player">Player</abbr></a></dt>
         <dd>Class representing a Player</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-CardController.html"><abbr title="\App\Controller\CardController">CardController</abbr></a></dt>
-        <dd>Controller for routes where cards are displayed</dd>
+        <dd>Controller for Card routes</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-Game21Controller.html"><abbr title="\App\Controller\Game21Controller">Game21Controller</abbr></a></dt>
         <dd>Controller class for the 21 card game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonController.html"><abbr title="\App\Controller\JsonController">JsonController</abbr></a></dt>
-        <dd>Controller for json routes</dd>
+        <dd>Controller that contains the route for API landing page</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-MainController.html"><abbr title="\App\Controller\MainController">MainController</abbr></a></dt>
-        <dd>The main controller class</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-Game.html"><abbr title="\App\Game\Game">Game</abbr></a></dt>
-        <dd>Base class for a card game</dd>
+        <dd>Controller contains routes for some of the
+&quot;ordinary&quot; pages</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-Game21Easy.html"><abbr title="\App\Game\Game21Easy">Game21Easy</abbr></a></dt>
         <dd>Class representing the easy version of the 21 card game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-Game21Hard.html"><abbr title="\App\Game\Game21Hard">Game21Hard</abbr></a></dt>
@@ -166,106 +177,421 @@ graphic representation (i.e. svg image)</dd>
         <dd>Class representing a Player in the 21 game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Kernel.html"><abbr title="\App\Kernel">Kernel</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Markdown-MdParser.html"><abbr title="\App\Markdown\MdParser">MdParser</abbr></a></dt>
-        <dd>Class that reads content from a markdown file and
-uses TextFilter class to return the content coverted
-to html</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-LibraryController.html"><abbr title="\App\Controller\LibraryController">LibraryController</abbr></a></dt>
-        <dd>Class for the library controller</dd>
+        <dd>Controller that contains route for saving a new
+book to the Library</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Entity-Book.html"><abbr title="\App\Entity\Book">Book</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-CardDeckHandler.html"><abbr title="\App\Cards\CardDeckHandler">CardDeckHandler</abbr></a></dt>
-        <dd>Helper class to handle the routes in CardController</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-CardHandler.html"><abbr title="\App\Cards\CardHandler">CardHandler</abbr></a></dt>
-        <dd>Helper class to handle the routes in CardController</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-CardLandingHandler.html"><abbr title="\App\Cards\CardLandingHandler">CardLandingHandler</abbr></a></dt>
-        <dd>Helper class to handle the landing routes in CardController</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-GameException.html"><abbr title="\App\Cards\GameException">GameException</abbr></a></dt>
         <dd>Exception class for Game</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-JsonCardHandler.html"><abbr title="\App\Cards\JsonCardHandler">JsonCardHandler</abbr></a></dt>
-        <dd>Helper class to handle the routes in CardController</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-NoCardsLeftException.html"><abbr title="\App\Cards\NoCardsLeftException">NoCardsLeftException</abbr></a></dt>
         <dd>Exception class thown when there are no cards
 left do draw</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Cards-PlayerCreator.html"><abbr title="\App\Cards\PlayerCreator">PlayerCreator</abbr></a></dt>
-        <dd>Helper class to handle the routes in CardController</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-CardLandingController.html"><abbr title="\App\Controller\CardLandingController">CardLandingController</abbr></a></dt>
-        <dd>Controller for routes where cards are displayed</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonCardDealController.html"><abbr title="\App\Controller\JsonCardDealController">JsonCardDealController</abbr></a></dt>
-        <dd>Controller for json routes</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonCardDeckController.html"><abbr title="\App\Controller\JsonCardDeckController">JsonCardDeckController</abbr></a></dt>
-        <dd>Controller for json routes</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonDealManyCardsController.html"><abbr title="\App\Controller\JsonDealManyCardsController">JsonDealManyCardsController</abbr></a></dt>
-        <dd>Controller for json routes</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonDealOneCardController.html"><abbr title="\App\Controller\JsonDealOneCardController">JsonDealOneCardController</abbr></a></dt>
-        <dd>Controller for json routes</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonGame21Controller.html"><abbr title="\App\Controller\JsonGame21Controller">JsonGame21Controller</abbr></a></dt>
-        <dd>Controller class for the 21 card game</dd>
+        <dd>Controller that contain route for displaying the current state
+of 21 card game as json</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonLibraryController.html"><abbr title="\App\Controller\JsonLibraryController">JsonLibraryController</abbr></a></dt>
-        <dd>Controller for json routes</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-LibraryUpdateBookController.html"><abbr title="\App\Controller\LibraryUpdateBookController">LibraryUpdateBookController</abbr></a></dt>
-        <dd>Class for the library controller</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-BanksTurnHandler.html"><abbr title="\App\Game\BanksTurnHandler">BanksTurnHandler</abbr></a></dt>
-        <dd>Helper class to handle game in the Game21Controller</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-GameHandler.html"><abbr title="\App\Game\GameHandler">GameHandler</abbr></a></dt>
-        <dd>Helper class to handle game in the Game21Controller</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-GameHandlerLanding.html"><abbr title="\App\Game\GameHandlerLanding">GameHandlerLanding</abbr></a></dt>
-        <dd>Helper class to handle the landing page and the docs page in the Game21Controller</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-GameInitiator.html"><abbr title="\App\Game\GameInitiator">GameInitiator</abbr></a></dt>
-        <dd>Helper class to handle game in the Game21Controller</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-GameMoneyHandler.html"><abbr title="\App\Game\GameMoneyHandler">GameMoneyHandler</abbr></a></dt>
-        <dd>Helper class to handle game in the Game21Controller</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-JsonGameHandler.html"><abbr title="\App\Game\JsonGameHandler">JsonGameHandler</abbr></a></dt>
-        <dd>Helper class to handle game in the Game21Controller</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-PlayerTurnHandler.html"><abbr title="\App\Game\PlayerTurnHandler">PlayerTurnHandler</abbr></a></dt>
-        <dd>Helper class to handle game in the Game21Controller</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-RoundHandler.html"><abbr title="\App\Game\RoundHandler">RoundHandler</abbr></a></dt>
-        <dd>Class representing the easy version of the 21 card game</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Helpers-JsonHandler.html"><abbr title="\App\Helpers\JsonHandler">JsonHandler</abbr></a></dt>
-        <dd>Helper class to handle the routes in JsonController</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Helpers-LuckyRouteData.html"><abbr title="\App\Helpers\LuckyRouteData">LuckyRouteData</abbr></a></dt>
-        <dd>Helper class to handle the routes in MainController</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Helpers-MainControllerHelper.html"><abbr title="\App\Helpers\MainControllerHelper">MainControllerHelper</abbr></a></dt>
-        <dd>Helper class to handle the routes in MainController</dd>
+        <dd>Controller for API routes related to the libarary</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-BookNotFoundException.html"><abbr title="\App\Library\BookNotFoundException">BookNotFoundException</abbr></a></dt>
         <dd>Exception class trhown when isbn number is alerady in use</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-BookRemover.html"><abbr title="\App\Library\BookRemover">BookRemover</abbr></a></dt>
-        <dd>Helper class to handle som of the
-funcitonality in the LibraryController</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-BookSaver.html"><abbr title="\App\Library\BookSaver">BookSaver</abbr></a></dt>
-        <dd>Helper class to handle som of the
-funcitonality in the LibraryController</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-BookUpdator.html"><abbr title="\App\Library\BookUpdator">BookUpdator</abbr></a></dt>
-        <dd>Helper class to handle som of the
-funcitonality in the LibraryController</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-IsbnAlreadyInUseException.html"><abbr title="\App\Library\IsbnAlreadyInUseException">IsbnAlreadyInUseException</abbr></a></dt>
         <dd>Exception class trhown when isbn number is alerady in use</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-LibraryException.html"><abbr title="\App\Library\LibraryException">LibraryException</abbr></a></dt>
         <dd>Exception class for Library</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-NewFlashGenerator.html"><abbr title="\App\Library\NewFlashGenerator">NewFlashGenerator</abbr></a></dt>
-        <dd>Generates flash messages for the Library</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-RemoveFlashGenerator.html"><abbr title="\App\Library\RemoveFlashGenerator">RemoveFlashGenerator</abbr></a></dt>
-        <dd>Generates flash messages for the Library</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-SqlFileLoader.html"><abbr title="\App\Library\SqlFileLoader">SqlFileLoader</abbr></a></dt>
-        <dd>Resets database from file</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Library-UpdateFlashGenerator.html"><abbr title="\App\Library\UpdateFlashGenerator">UpdateFlashGenerator</abbr></a></dt>
-        <dd>Generates flash messages for the Library</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-CardController2.html"><abbr title="\App\Controller\CardController2">CardController2</abbr></a></dt>
+        <dd>Controller for Card routes</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-Game21Controller2.html"><abbr title="\App\Controller\Game21Controller2">Game21Controller2</abbr></a></dt>
+        <dd>Controller for the 21 card game</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-Game21Controller3.html"><abbr title="\App\Controller\Game21Controller3">Game21Controller3</abbr></a></dt>
+        <dd>Controller for the 21 card game</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-Game21Controller4.html"><abbr title="\App\Controller\Game21Controller4">Game21Controller4</abbr></a></dt>
+        <dd>Controller for the 21 card game</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-Game21Controller5.html"><abbr title="\App\Controller\Game21Controller5">Game21Controller5</abbr></a></dt>
+        <dd>Controller for the 21 card game</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-Game21Controller6.html"><abbr title="\App\Controller\Game21Controller6">Game21Controller6</abbr></a></dt>
+        <dd>Controller for the 21 card game</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-Game21Controller7.html"><abbr title="\App\Controller\Game21Controller7">Game21Controller7</abbr></a></dt>
+        <dd>Controller for the 21 card game</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonCardController.html"><abbr title="\App\Controller\JsonCardController">JsonCardController</abbr></a></dt>
+        <dd>Controller for API card routes</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonCardController2.html"><abbr title="\App\Controller\JsonCardController2">JsonCardController2</abbr></a></dt>
+        <dd>Controller for API card routes</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonCardController3.html"><abbr title="\App\Controller\JsonCardController3">JsonCardController3</abbr></a></dt>
+        <dd>Controller for API card routes</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonCardController4.html"><abbr title="\App\Controller\JsonCardController4">JsonCardController4</abbr></a></dt>
+        <dd>Controller for API card routes</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonCardController5.html"><abbr title="\App\Controller\JsonCardController5">JsonCardController5</abbr></a></dt>
+        <dd>Controller for API card routes</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-JsonController2.html"><abbr title="\App\Controller\JsonController2">JsonController2</abbr></a></dt>
+        <dd>Controller that contains the quote-api route</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-LibraryController2.html"><abbr title="\App\Controller\LibraryController2">LibraryController2</abbr></a></dt>
+        <dd>Controller that contains route that leads
+to the route with form for updating a book</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-LibraryController3.html"><abbr title="\App\Controller\LibraryController3">LibraryController3</abbr></a></dt>
+        <dd>Controller that contains the route for resetting
+the Book table in the database</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-LibraryController4.html"><abbr title="\App\Controller\LibraryController4">LibraryController4</abbr></a></dt>
+        <dd>Controller tht contains route where book data is updated</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-LibraryController5.html"><abbr title="\App\Controller\LibraryController5">LibraryController5</abbr></a></dt>
+        <dd>Controller that contains routes related to the library</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-LibraryController6.html"><abbr title="\App\Controller\LibraryController6">LibraryController6</abbr></a></dt>
+        <dd>Controller contains route for the library landing page</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-LibraryController7.html"><abbr title="\App\Controller\LibraryController7">LibraryController7</abbr></a></dt>
+        <dd>Controller contains route that leads to form
+for adding a new book</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-LuckyMonkey.html"><abbr title="\App\Controller\LuckyMonkey">LuckyMonkey</abbr></a></dt>
+        <dd>Helper class to get data for the lucky route</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-MainControllerHelper.html"><abbr title="\App\Controller\MainControllerHelper">MainControllerHelper</abbr></a></dt>
+        <dd>Helper class to get data for routes in the main controller</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-MdParser.html"><abbr title="\App\Controller\MdParser">MdParser</abbr></a></dt>
+        <dd>Class that reads content from a markdown file and
+uses TextFilter class to return the content coverted
+to html</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectApiController1.html"><abbr title="\App\Controller\ProjectApiController1">ProjectApiController1</abbr></a></dt>
+        <dd>Controller related to the project. Contains API route where
+&#039;bot&#039; places a new card into grid</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectApiController2.html"><abbr title="\App\Controller\ProjectApiController2">ProjectApiController2</abbr></a></dt>
+        <dd>Controller class related to the Project. Contains API route
+for displaying data for a single user</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectApiController3.html"><abbr title="\App\Controller\ProjectApiController3">ProjectApiController3</abbr></a></dt>
+        <dd>Controller related to the Project. Contains API route where
+all transactions in the database are dispayed</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectApiController4.html"><abbr title="\App\Controller\ProjectApiController4">ProjectApiController4</abbr></a></dt>
+        <dd>Controller class related to the Project. Contains the
+API route for placing a card into an empty grid</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectApiController5.html"><abbr title="\App\Controller\ProjectApiController5">ProjectApiController5</abbr></a></dt>
+        <dd>Controller class related to the Project.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectApiController6.html"><abbr title="\App\Controller\ProjectApiController6">ProjectApiController6</abbr></a></dt>
+        <dd>Controller related to the Project. Contains API route that displays
+all users int he database</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectApiController7.html"><abbr title="\App\Controller\ProjectApiController7">ProjectApiController7</abbr></a></dt>
+        <dd>Controller class related to the Project. Contains API route that
+displays the top 10 scores in the database</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectApiController8.html"><abbr title="\App\Controller\ProjectApiController8">ProjectApiController8</abbr></a></dt>
+        <dd>Controller class related to the Project. Contains route where
+a fully filled Grid and the results of all ten hands are displayed as Json</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectAuthController.html"><abbr title="\App\Controller\ProjectAuthController">ProjectAuthController</abbr></a></dt>
+        <dd>Controller related to the Project. Contains
+routes for handling user registration, login and logout</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectController1.html"><abbr title="\App\Controller\ProjectController1">ProjectController1</abbr></a></dt>
+        <dd>Controller related to the Project. Contains the route
+for the project landing page</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectController10.html"><abbr title="\App\Controller\ProjectController10">ProjectController10</abbr></a></dt>
+        <dd>Controller related to the Project. Contains routes
+for the shop-page and for the page that displays all
+transactions for a signle user</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectController11.html"><abbr title="\App\Controller\ProjectController11">ProjectController11</abbr></a></dt>
+        <dd>Controller related to the Project. Contains the main route
+for the PokerSquare game.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectController3.html"><abbr title="\App\Controller\ProjectController3">ProjectController3</abbr></a></dt>
+        <dd>Controller related to the Project. Contains routes for one game round
+(one round = player places card + bot places card. If the grids
+are fully filled also evaluate results and end game) and route where
+the &quot;suggestion&quot; attribute is unset which is used when the user uses the return-arrow
+from the suggestion-view</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectController4.html"><abbr title="\App\Controller\ProjectController4">ProjectController4</abbr></a></dt>
+        <dd>Controller related to the Project. Contains routes for moving
+a card</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectController5.html"><abbr title="\App\Controller\ProjectController5">ProjectController5</abbr></a></dt>
+        <dd>Controller related to the project. Contains
+routes fot the API-landing page, about-page,
+page that displays rules for the poker square game
+and page with the register-form for registering a
+new User</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectController6.html"><abbr title="\App\Controller\ProjectController6">ProjectController6</abbr></a></dt>
+        <dd>Controller related to the Project. Contains route
+for allocating purchased coins to used and route
+that leads to the page where user selects amount to bet</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectController7.html"><abbr title="\App\Controller\ProjectController7">ProjectController7</abbr></a></dt>
+        <dd>Controller related to the Project. Containts routes for
+purchasing some of the user-cheats</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectController8.html"><abbr title="\App\Controller\ProjectController8">ProjectController8</abbr></a></dt>
+        <dd>Controller related to the Project. Contains routes for displaying
+top 10 scores for a single user and the leaderscore with the
+top 10 scores amongst all users</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectController9.html"><abbr title="\App\Controller\ProjectController9">ProjectController9</abbr></a></dt>
+        <dd>Controller related to the Project. Contains route for initating a new PokerSquare game
+and saving the bet</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-Quote.html"><abbr title="\App\Controller\Quote">Quote</abbr></a></dt>
+        <dd>Helper class to get data for for the API Quote route</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-SqlFileLoader.html"><abbr title="\App\Controller\SqlFileLoader">SqlFileLoader</abbr></a></dt>
+        <dd>Loads sql file to database</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-DataFixtures-AppFixtures.html"><abbr title="\App\DataFixtures\AppFixtures">AppFixtures</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-DataFixtures-BookFixture.html"><abbr title="\App\DataFixtures\BookFixture">BookFixture</abbr></a></dt>
+        <dd>Fixture for testing Library</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Entity-Score.html"><abbr title="\App\Entity\Score">Score</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Entity-Transaction.html"><abbr title="\App\Entity\Transaction">Transaction</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Entity-User.html"><abbr title="\App\Entity\User">User</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-Game21.html"><abbr title="\App\Game\Game21">Game21</abbr></a></dt>
+        <dd>Base class for the 21 card game</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-GameApi.html"><abbr title="\App\Game\GameApi">GameApi</abbr></a></dt>
+        <dd>Helper class to handle game in the Game21Controller</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-ValueConverter.html"><abbr title="\App\Game\ValueConverter">ValueConverter</abbr></a></dt>
+        <dd>Class representing a Player in the 21 game</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-ValueConverter2.html"><abbr title="\App\Game\ValueConverter2">ValueConverter2</abbr></a></dt>
+        <dd>Class representing a Player in the 21 game</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-ApiGame1.html"><abbr title="\App\Project\ApiGame1">ApiGame1</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-ApiGame2.html"><abbr title="\App\Project\ApiGame2">ApiGame2</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-ApiGame3.html"><abbr title="\App\Project\ApiGame3">ApiGame3</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-CardFactory.html"><abbr title="\App\Project\CardFactory">CardFactory</abbr></a></dt>
+        <dd>Class representing CardFactory</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-Deck.html"><abbr title="\App\Project\Deck">Deck</abbr></a></dt>
+        <dd>Class representing a deck of cards</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-Game.html"><abbr title="\App\Project\Game">Game</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-NoCardsException.html"><abbr title="\App\Project\NoCardsException">NoCardsException</abbr></a></dt>
+        <dd>Exception class thown when there are no cards</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-NotEnoughCoinsException.html"><abbr title="\App\Project\NotEnoughCoinsException">NotEnoughCoinsException</abbr></a></dt>
+        <dd>Exception class thown when the suer does not have
+enough coins to cover for a transaction</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-Register.html"><abbr title="\App\Project\Register">Register</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-RegisterFactory.html"><abbr title="\App\Project\RegisterFactory">RegisterFactory</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-UserNotRegisteredException.html"><abbr title="\App\Project\UserNotRegisteredException">UserNotRegisteredException</abbr></a></dt>
+        <dd>Exception class thown when the suer does not have
+enough coins to cover for a transaction</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectGrid-Grid.html"><abbr title="\App\ProjectGrid\Grid">Grid</abbr></a></dt>
+        <dd>Class representing 5x5 grid for placing cards</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectGrid-SlotEmptyException.html"><abbr title="\App\ProjectGrid\SlotEmptyException">SlotEmptyException</abbr></a></dt>
+        <dd>Raised when a card is added to a slot that already is filled</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectGrid-SlotNotEmptyException.html"><abbr title="\App\ProjectGrid\SlotNotEmptyException">SlotNotEmptyException</abbr></a></dt>
+        <dd>Raised when trying to remove a card from an already empty slot</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-Flush.html"><abbr title="\App\ProjectRules\Flush">Flush</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-FlushStat.html"><abbr title="\App\ProjectRules\FlushStat">FlushStat</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-FullHouse.html"><abbr title="\App\ProjectRules\FullHouse">FullHouse</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-FullHouseStat.html"><abbr title="\App\ProjectRules\FullHouseStat">FullHouseStat</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-RoyalFlush.html"><abbr title="\App\ProjectRules\RoyalFlush">RoyalFlush</abbr></a></dt>
+        <dd>Royal Flush Rule
+Ace, King, Queen, Jack, Ten of same suit</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-RoyalFlushStat.html"><abbr title="\App\ProjectRules\RoyalFlushStat">RoyalFlushStat</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-RuleEvaluator.html"><abbr title="\App\ProjectRules\RuleEvaluator">RuleEvaluator</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-SameOfAKind.html"><abbr title="\App\ProjectRules\SameOfAKind">SameOfAKind</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-SameOfAKindStat.html"><abbr title="\App\ProjectRules\SameOfAKindStat">SameOfAKindStat</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-Straight.html"><abbr title="\App\ProjectRules\Straight">Straight</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-StraightFlush.html"><abbr title="\App\ProjectRules\StraightFlush">StraightFlush</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-StraightFlushStat.html"><abbr title="\App\ProjectRules\StraightFlushStat">StraightFlushStat</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-StraightStat.html"><abbr title="\App\ProjectRules\StraightStat">StraightStat</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-TwoPairs.html"><abbr title="\App\ProjectRules\TwoPairs">TwoPairs</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-TwoPairsStat.html"><abbr title="\App\ProjectRules\TwoPairsStat">TwoPairsStat</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Repository-ScoreRepository.html"><abbr title="\App\Repository\ScoreRepository">ScoreRepository</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Repository-TransactionRepository.html"><abbr title="\App\Repository\TransactionRepository">TransactionRepository</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Repository-UserRepository.html"><abbr title="\App\Repository\UserRepository">UserRepository</abbr></a></dt>
+        <dd></dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-BettingGameTrait.html"><abbr title="\App\Game\BettingGameTrait">BettingGameTrait</abbr></a></dt>
         <dd>Trait to be used in betting games
 between a player and a bank</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-GameAttrHandler2Trait.html"><abbr title="\App\Game\GameAttrHandler2Trait">GameAttrHandler2Trait</abbr></a></dt>
-        <dd>Trait has setter and getter methods
-to facilitate testing of the Game21Easy
-and Game21Hard classes</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-GameAttrHandlerTrait.html"><abbr title="\App\Game\GameAttrHandlerTrait">GameAttrHandlerTrait</abbr></a></dt>
-        <dd>Trait has setter and getter methods
-to facilitate testing of the Game21Easy
-and Game21Hard classes</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-PlayerTrait.html"><abbr title="\App\Game\PlayerTrait">PlayerTrait</abbr></a></dt>
         <dd>Trate for bas methods for a player</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Cards-CardDataTrait.html"><abbr title="\App\Cards\CardDataTrait">CardDataTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-DataFixtures-AddScoreTrait.html"><abbr title="\App\DataFixtures\AddScoreTrait">AddScoreTrait</abbr></a></dt>
+        <dd>Trait used by AppFixtures class</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-DataFixtures-AddTransactionTrait.html"><abbr title="\App\DataFixtures\AddTransactionTrait">AddTransactionTrait</abbr></a></dt>
+        <dd>Trait used by AppFixtures class</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-DataFixtures-AddUserTrait.html"><abbr title="\App\DataFixtures\AddUserTrait">AddUserTrait</abbr></a></dt>
+        <dd>Trait used by AppFixtures class</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-BanksTurnTrait.html"><abbr title="\App\Game\BanksTurnTrait">BanksTurnTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-DealBankEasyTrait.html"><abbr title="\App\Game\DealBankEasyTrait">DealBankEasyTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-DealBankHardTrait.html"><abbr title="\App\Game\DealBankHardTrait">DealBankHardTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-EndRoundTrait.html"><abbr title="\App\Game\EndRoundTrait">EndRoundTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-EvaluateBankTrait.html"><abbr title="\App\Game\EvaluateBankTrait">EvaluateBankTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-EvaluateBankTrait2.html"><abbr title="\App\Game\EvaluateBankTrait2">EvaluateBankTrait2</abbr></a></dt>
+        <dd>Trait to be used in betting games
+between a player and a bank</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-EvaluatePlayerTrait.html"><abbr title="\App\Game\EvaluatePlayerTrait">EvaluatePlayerTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-Game21DataTrait.html"><abbr title="\App\Game\Game21DataTrait">Game21DataTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-Game21FlashTrait.html"><abbr title="\App\Game\Game21FlashTrait">Game21FlashTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-Game21Trait.html"><abbr title="\App\Game\Game21Trait">Game21Trait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-NextRoundTrait.html"><abbr title="\App\Game\NextRoundTrait">NextRoundTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-Player21Trait.html"><abbr title="\App\Game\Player21Trait">Player21Trait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-Player21Trait2.html"><abbr title="\App\Game\Player21Trait2">Player21Trait2</abbr></a></dt>
+        <dd>Trate for bas methods for a player</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-Player21Trait3.html"><abbr title="\App\Game\Player21Trait3">Player21Trait3</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-PlayersTurnTrait.html"><abbr title="\App\Game\PlayersTurnTrait">PlayersTurnTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-CurrentStateTrait.html"><abbr title="\App\Project\CurrentStateTrait">CurrentStateTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-EvaluateTrait.html"><abbr title="\App\Project\EvaluateTrait">EvaluateTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-HousePlaceCardTrait.html"><abbr title="\App\Project\HousePlaceCardTrait">HousePlaceCardTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-MoveACardTrait.html"><abbr title="\App\Project\MoveACardTrait">MoveACardTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-OneRoundTrait.html"><abbr title="\App\Project\OneRoundTrait">OneRoundTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-PlayerSuggestTrait.html"><abbr title="\App\Project\PlayerSuggestTrait">PlayerSuggestTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-PotTrait.html"><abbr title="\App\Project\PotTrait">PotTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-SuggestMessageTrait.html"><abbr title="\App\Project\SuggestMessageTrait">SuggestMessageTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-UndoLastRoundTrait.html"><abbr title="\App\Project\UndoLastRoundTrait">UndoLastRoundTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectGrid-AddCardTrait.html"><abbr title="\App\ProjectGrid\AddCardTrait">AddCardTrait</abbr></a></dt>
+        <dd>Trait for adding a card to the grid</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectGrid-CardCountTrait.html"><abbr title="\App\ProjectGrid\CardCountTrait">CardCountTrait</abbr></a></dt>
+        <dd>Trait for retrieving the count of cards placed in the grid</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectGrid-GraphicTrait.html"><abbr title="\App\ProjectGrid\GraphicTrait">GraphicTrait</abbr></a></dt>
+        <dd>Trait for getting a graphic representation (img links and alt text)
+of the Grid. Emtpy slots are represented with emtpy strings</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectGrid-RemoveCardTrait.html"><abbr title="\App\ProjectGrid\RemoveCardTrait">RemoveCardTrait</abbr></a></dt>
+        <dd>Trait for removing a card from the grid</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectGrid-RowsColsTrait.html"><abbr title="\App\ProjectGrid\RowsColsTrait">RowsColsTrait</abbr></a></dt>
+        <dd>Trait for getting arrays with vertical hands
+respectively horisontal hands in the grid</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectGrid-SlotGraphicTrait.html"><abbr title="\App\ProjectGrid\SlotGraphicTrait">SlotGraphicTrait</abbr></a></dt>
+        <dd>Trait for getting a graphic representation
+of a slot in a grid (img link and alt text).</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-CheckEmptyGridTrait.html"><abbr title="\App\ProjectRules\CheckEmptyGridTrait">CheckEmptyGridTrait</abbr></a></dt>
+        <dd>Trait for getting a slot-suggestion for a new/empty grid.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-CheckFullHandTrait.html"><abbr title="\App\ProjectRules\CheckFullHandTrait">CheckFullHandTrait</abbr></a></dt>
+        <dd>Trait for checking which rule is scored (if any)
+for a full hand.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-CheckWithCardTrait.html"><abbr title="\App\ProjectRules\CheckWithCardTrait">CheckWithCardTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-CheckWithoutCardTrait.html"><abbr title="\App\ProjectRules\CheckWithoutCardTrait">CheckWithoutCardTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-CountByRankTrait.html"><abbr title="\App\ProjectRules\CountByRankTrait">CountByRankTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-CountBySuitTrait.html"><abbr title="\App\ProjectRules\CountBySuitTrait">CountBySuitTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-CountSuitAndRankTrait.html"><abbr title="\App\ProjectRules\CountSuitAndRankTrait">CountSuitAndRankTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-EmptyCellTrait.html"><abbr title="\App\ProjectRules\EmptyCellTrait">EmptyCellTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-ExtractRuleNamesTrait.html"><abbr title="\App\ProjectRules\ExtractRuleNamesTrait">ExtractRuleNamesTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FinalResultsTrait.html"><abbr title="\App\ProjectRules\FinalResultsTrait">FinalResultsTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FirstCheckTrait.html"><abbr title="\App\ProjectRules\FirstCheckTrait">FirstCheckTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FlushStatTrait2.html"><abbr title="\App\ProjectRules\FlushStatTrait2">FlushStatTrait2</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FlushStatTrait3.html"><abbr title="\App\ProjectRules\FlushStatTrait3">FlushStatTrait3</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FlushStatTrait4.html"><abbr title="\App\ProjectRules\FlushStatTrait4">FlushStatTrait4</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FullHouseStatTrait2.html"><abbr title="\App\ProjectRules\FullHouseStatTrait2">FullHouseStatTrait2</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FullHouseStatTrait3.html"><abbr title="\App\ProjectRules\FullHouseStatTrait3">FullHouseStatTrait3</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FullHouseStatTrait4.html"><abbr title="\App\ProjectRules\FullHouseStatTrait4">FullHouseStatTrait4</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FullHouseStatTrait5.html"><abbr title="\App\ProjectRules\FullHouseStatTrait5">FullHouseStatTrait5</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FullHouseStatTrait6.html"><abbr title="\App\ProjectRules\FullHouseStatTrait6">FullHouseStatTrait6</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FullHouseStatTrait7.html"><abbr title="\App\ProjectRules\FullHouseStatTrait7">FullHouseStatTrait7</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FullHouseStatTrait8.html"><abbr title="\App\ProjectRules\FullHouseStatTrait8">FullHouseStatTrait8</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FullHouseTrait.html"><abbr title="\App\ProjectRules\FullHouseTrait">FullHouseTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-GroupBySuitTrait.html"><abbr title="\App\ProjectRules\GroupBySuitTrait">GroupBySuitTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-MinRankLimitsTrait.html"><abbr title="\App\ProjectRules\MinRankLimitsTrait">MinRankLimitsTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-PointsAndRuleNameTrait.html"><abbr title="\App\ProjectRules\PointsAndRuleNameTrait">PointsAndRuleNameTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-PointsAndRuleNameTrait2.html"><abbr title="\App\ProjectRules\PointsAndRuleNameTrait2">PointsAndRuleNameTrait2</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-RankLimitsTrait.html"><abbr title="\App\ProjectRules\RankLimitsTrait">RankLimitsTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-RoyalFlushStatTrait.html"><abbr title="\App\ProjectRules\RoyalFlushStatTrait">RoyalFlushStatTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-RoyalFlushStatTrait2.html"><abbr title="\App\ProjectRules\RoyalFlushStatTrait2">RoyalFlushStatTrait2</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-RuleNameTrait.html"><abbr title="\App\ProjectRules\RuleNameTrait">RuleNameTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-RuleNameTrait2.html"><abbr title="\App\ProjectRules\RuleNameTrait2">RuleNameTrait2</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-RulesWithCardTrait.html"><abbr title="\App\ProjectRules\RulesWithCardTrait">RulesWithCardTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-RulesWithoutCardTrait.html"><abbr title="\App\ProjectRules\RulesWithoutCardTrait">RulesWithoutCardTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SameOfAKindStatTrait.html"><abbr title="\App\ProjectRules\SameOfAKindStatTrait">SameOfAKindStatTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SameOfAKindStatTrait2.html"><abbr title="\App\ProjectRules\SameOfAKindStatTrait2">SameOfAKindStatTrait2</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SameOfAKindStatTrait3.html"><abbr title="\App\ProjectRules\SameOfAKindStatTrait3">SameOfAKindStatTrait3</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SameRankTrait.html"><abbr title="\App\ProjectRules\SameRankTrait">SameRankTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SameSuitTrait.html"><abbr title="\App\ProjectRules\SameSuitTrait">SameSuitTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SearchSpecificCardTrait.html"><abbr title="\App\ProjectRules\SearchSpecificCardTrait">SearchSpecificCardTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SlotTrait.html"><abbr title="\App\ProjectRules\SlotTrait">SlotTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-StraightFlushStatTrait.html"><abbr title="\App\ProjectRules\StraightFlushStatTrait">StraightFlushStatTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-StraightStatTrait.html"><abbr title="\App\ProjectRules\StraightStatTrait">StraightStatTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-StraightStatTrait2.html"><abbr title="\App\ProjectRules\StraightStatTrait2">StraightStatTrait2</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-StraightStatTrait3.html"><abbr title="\App\ProjectRules\StraightStatTrait3">StraightStatTrait3</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SubCountTrait.html"><abbr title="\App\ProjectRules\SubCountTrait">SubCountTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SuggestionTrait.html"><abbr title="\App\ProjectRules\SuggestionTrait">SuggestionTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsStatTrait.html"><abbr title="\App\ProjectRules\TwoPairsStatTrait">TwoPairsStatTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsStatTrait2.html"><abbr title="\App\ProjectRules\TwoPairsStatTrait2">TwoPairsStatTrait2</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsStatTrait3.html"><abbr title="\App\ProjectRules\TwoPairsStatTrait3">TwoPairsStatTrait3</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsStatTrait4.html"><abbr title="\App\ProjectRules\TwoPairsStatTrait4">TwoPairsStatTrait4</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsStatTrait5.html"><abbr title="\App\ProjectRules\TwoPairsStatTrait5">TwoPairsStatTrait5</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsStatTrait6.html"><abbr title="\App\ProjectRules\TwoPairsStatTrait6">TwoPairsStatTrait6</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsStatTrait7.html"><abbr title="\App\ProjectRules\TwoPairsStatTrait7">TwoPairsStatTrait7</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait.html"><abbr title="\App\ProjectRules\TwoPairsTrait">TwoPairsTrait</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait2.html"><abbr title="\App\ProjectRules\TwoPairsTrait2">TwoPairsTrait2</abbr></a></dt>
+        <dd></dd>
     
     </dl>
 

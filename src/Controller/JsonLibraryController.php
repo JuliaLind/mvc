@@ -14,7 +14,7 @@ use App\Library\BookNotFoundException;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Controller for json library routes
+ * Controller for API routes related to the libarary
  */
 class JsonLibraryController extends AbstractController
 {
@@ -29,6 +29,9 @@ class JsonLibraryController extends AbstractController
         return $this->json($books);
     }
 
+    /**
+     * Displays data for one book as Json
+     */
     #[Route('/api/library/book/{isbn}', name: 'single_book_json')]
     public function showABookByIsbn(
         BookRepository $bookRepository,

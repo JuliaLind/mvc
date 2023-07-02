@@ -11,6 +11,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Cards\DeckOfCards;
 
+/**
+ * Controller for API card routes
+ */
 class JsonCardController2 extends AbstractController
 {
     /**

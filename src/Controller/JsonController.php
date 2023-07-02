@@ -8,10 +8,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Controller that contains the route for API landing page
+ */
 class JsonController extends AbstractController
 {
     /**
-     * Contains links to and descriptions of all json routes
+     * Contains links to and descriptions of all api routes
      */
     #[Route("/api", name: "api")]
     public function apis(): Response

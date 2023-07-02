@@ -15,7 +15,8 @@ use App\Entity\Score;
 use Datetime;
 
 /**
- * Contains API routes for the project
+ * Controller class related to the Project. Contains API route that
+ * displays the top 10 scores in the database
  */
 class ProjectApiController7 extends AbstractController
 {

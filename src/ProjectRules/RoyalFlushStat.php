@@ -6,11 +6,12 @@ class RoyalFlushStat implements RuleStatInterface
 {
     use CountByRankTrait;
     use CountSuitAndRankTrait;
-    use StraightFlushStatTrait;
-    use SearchSpecificCardTrait;
-    use GroupBySuitTrait;
     use FirstCheckTrait;
+    use GroupBySuitTrait;
+    use SearchSpecificCardTrait;
+    use StraightFlushStatTrait;
+    use StraightStatTrait2;
     use RoyalFlushStatTrait;
     use RoyalFlushStatTrait2;
-    use StraightStatTrait2;
+
 }

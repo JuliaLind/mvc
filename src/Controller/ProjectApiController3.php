@@ -16,7 +16,8 @@ use App\Entity\Transaction;
 use Datetime;
 
 /**
- * Contains API routes for the project
+ * Controller related to the Project. Contains API route where
+ * all transactions in the database are dispayed
  */
 class ProjectApiController3 extends AbstractController
 {

@@ -9,7 +9,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class for the library routes
+ * Controller that contains route that leads
+ * to the route with form for updating a book
  */
 class LibraryController2 extends AbstractController
 {

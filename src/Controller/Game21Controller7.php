@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
- * Controller class for the 21 card game
+ * Controller for the 21 card game
  */
 class Game21Controller7 extends AbstractController
 {

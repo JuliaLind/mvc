@@ -11,6 +11,14 @@ class AppFixtures extends Fixture
     use AddScoreTrait;
     use AddTransactionTrait;
 
+    /**
+     * Fixtures for testing database
+     * classes related to the project.
+     * Loads 3 enities of class User,
+     * 4 entities of class Score and
+     * 11 entities of class Transaction
+     * to the test database
+     */
     public function load(ObjectManager $manager): void
     {
         $julia = $this->addUser($manager, "julia@bth.se", "Julia", "julia");

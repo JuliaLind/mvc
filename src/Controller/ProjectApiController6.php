@@ -14,7 +14,8 @@ use App\Entity\User;
 use App\Project\RegisterFactory;
 
 /**
- * Contains API routes for the project
+ * Controller related to the Project. Contains API route that displays
+ * all users int he database
  */
 class ProjectApiController6 extends AbstractController
 {

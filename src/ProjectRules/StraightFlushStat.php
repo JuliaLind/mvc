@@ -4,16 +4,15 @@ namespace App\ProjectRules;
 
 class StraightFlushStat implements RuleStatInterface
 {
-    use FirstCheckTrait;
-    use RankLimitsTrait;
-    use StraightFlushStatTrait;
-    use SameSuitTrait;
-    use GroupBySuitTrait;
-    use StraightStatTrait3;
     use CountByRankTrait;
     use CountBySuitTrait;
+    use FirstCheckTrait;
+    use GroupBySuitTrait;
+    use RankLimitsTrait;
+    use SameSuitTrait;
     use SearchSpecificCardTrait;
-
+    use StraightFlushStatTrait;
+    use StraightStatTrait3;
 
     /**
      * @param array<string> $hand

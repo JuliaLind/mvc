@@ -2,6 +2,14 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Used by the following classes:
+ * FlushStat
+ * FullHouseStat
+ * RoyalFlushStat
+ * StraightFlushStat
+ * StraightStat
+ */
 trait FirstCheckTrait
 {
     /**

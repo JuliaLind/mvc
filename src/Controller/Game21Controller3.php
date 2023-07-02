@@ -13,8 +13,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
+/**
+ * Controller for the 21 card game
+ */
 class Game21Controller3 extends AbstractController
 {
+    /**
+     * Route that leads to form where user selects amount to bet
+     */
     #[Route('/game/select-amount', name: "selectAmount", methods: ['GET'])]
     public function selectAmount(
         SessionInterface $session,

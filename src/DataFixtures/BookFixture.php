@@ -6,13 +6,17 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Book;
 
+/**
+ * Fixture for testing Library
+ */
 class BookFixture extends Fixture
 {
+    /**
+     * Adds three entites of class Book to
+     * the test database
+     */
     public function load(ObjectManager $manager): void
     {
-        // $product = new Product();
-        // $manager->persist($product);
-
         for ($i = 0; $i < 3; $i++) {
             $book = new Book();
             $book->setTitle("Book {$i}");

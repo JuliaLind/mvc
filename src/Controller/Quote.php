@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 use Datetime;
 
 /**
- * Helper class to get data for some of the API routes
+ * Helper class to get data for for the API Quote route
  */
 class Quote
 {
@@ -43,6 +43,4 @@ class Quote
             'timestamp' => $time->format('Y-m-d H:i:s'),
         ];
     }
-
-
 }

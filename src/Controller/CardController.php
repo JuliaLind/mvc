@@ -59,9 +59,11 @@ class CardController extends AbstractController
         return $this->render('card/deck.html.twig', $data);
     }
 
+    /**
+     * Route for the card landing page
+     */
     #[Route("/card", name: "card")]
     public function card(
-        // CardLandingHandler $cardHandler=new CardLandingHandler()
     ): Response {
         $data = [
             'page' => "landing",

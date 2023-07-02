@@ -68,6 +68,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/app-datafixtures.html" class="">DataFixtures</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/app-entity.html" class="">Entity</a>
                 
             </li>
@@ -76,15 +80,19 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-helpers.html" class="">Helpers</a>
-                
-            </li>
-                    <li>
                 <a href="namespaces/app-library.html" class="">Library</a>
                 
             </li>
                     <li>
-                <a href="namespaces/app-markdown.html" class="">Markdown</a>
+                <a href="namespaces/app-project.html" class="">Project</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-projectgrid.html" class="">ProjectGrid</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-projectrules.html" class="">ProjectRules</a>
                 
             </li>
                     <li>
@@ -142,11 +150,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/JsonGame21Controller.php"><a href="files/src-controller-jsongame21controller.html"><abbr title="src/Controller/JsonGame21Controller.php">JsonGame21Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Controller class for the 21 card game</p>
+            <p class="phpdocumentor-summary">Controller that contain route for displaying the current state
+of 21 card game as json</p>
 
 
 
@@ -195,7 +204,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/JsonGame21Controller.php"><a href="files/src-controller-jsongame21controller.html"><abbr title="src/Controller/JsonGame21Controller.php">JsonGame21Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
@@ -203,7 +212,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">jsonGame</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-JsonGameHandler.html"><abbr title="\App\Game\JsonGameHandler">JsonGameHandler</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$gameHandler</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new JsonGameHandler()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">jsonGame</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-GameApi.html"><abbr title="\App\Game\GameApi">GameApi</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$gameApi</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new GameApi()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -217,9 +226,9 @@
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$gameHandler</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-JsonGameHandler.html"><abbr title="\App\Game\JsonGameHandler">JsonGameHandler</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">new JsonGameHandler()</span>            </dt>
+                <span class="phpdocumentor-signature__argument__name">$gameApi</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-GameApi.html"><abbr title="\App\Game\GameApi">GameApi</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">new GameApi()</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 

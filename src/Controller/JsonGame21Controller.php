@@ -15,7 +15,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
- * Controller class for the 21 card game json route
+ * Controller that contain route for displaying the current state
+ * of 21 card game as json
  */
 class JsonGame21Controller extends AbstractController
 {

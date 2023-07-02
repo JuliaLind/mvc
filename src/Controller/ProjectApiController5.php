@@ -12,6 +12,11 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Project\Game;
 
+/**
+ * Controller class related to the Project.
+ * Contains route for displaying data for
+ * the current Poker Square Game
+ */
 class ProjectApiController5 extends AbstractController
 {
     /**

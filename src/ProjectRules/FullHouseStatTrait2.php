@@ -8,6 +8,7 @@ trait FullHouseStatTrait2
      * @param array<string> $deck
      */
     abstract public function check3(array $deck): bool;
+
     abstract private function subCheck($ranksHand, $ranksAll): bool;
     /**
      * @param array<int,int> $ranksHand

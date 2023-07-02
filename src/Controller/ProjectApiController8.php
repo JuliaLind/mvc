@@ -9,13 +9,12 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
 use App\Project\ApiGame3;
 
 /**
- * Contains API routes for the project
+ * Controller class related to the Project. Contains route where
+ * a fully filled Grid and the results of all ten hands are displayed as Json
  */
 class ProjectApiController8 extends AbstractController
 {

@@ -4,17 +4,21 @@ namespace App\Controller;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use Doctrine\ORM\EntityManagerInterface;
-use App\Project\NotEnoughCoinsException;
-use App\Project\RegisterFactory;
-use Symfony\Component\HttpFoundation\Request;
 use App\Project\Game;
 use App\ProjectGrid\Grid;
+use App\Project\NotEnoughCoinsException;
+use App\Project\RegisterFactory;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Controller related to the Project. Contains route for initating a new PokerSquare game
+ * and saving the bet
+ */
 class ProjectController9 extends AbstractController
 {
     #[Route("/proj/init", name: "proj-init")]

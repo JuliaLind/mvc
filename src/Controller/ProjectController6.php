@@ -13,8 +13,17 @@ use App\Entity\User;
 use App\Project\RegisterFactory;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 
+/**
+ * Controller related to the Project. Contains route
+ * for allocating purchased coins to used and route
+ * that leads to the page where user selects amount to bet
+ */
 class ProjectController6 extends AbstractController
 {
+    /**
+     * Allocates the purchased amount of coins to user by adding
+     * a new transaction to the database
+     */
     #[Route("/proj/purchase/{coins<\d+>}", name: "purchase", methods: ['POST'])]
     public function projPurchase(
         int $coins,
@@ -33,6 +42,11 @@ class ProjectController6 extends AbstractController
         return $this->redirectToRoute('shop');
     }
 
+    /**
+     * Leads to the page where user can select amount to bet.
+     * If the user has less than 10 coins (minium amount to bet)
+     * then the user is re-directed to the Shop
+     */
     #[Route("/proj/select-amount", name: "select-amount")]
     public function selectAmount(
         SessionInterface $session,

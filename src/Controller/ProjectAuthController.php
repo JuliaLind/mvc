@@ -16,7 +16,8 @@ use App\Project\RegisterFactory;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 
 /**
- * Controller for handling user registration, login and logout
+ * Controller related to the Project. Contains
+ * routes for handling user registration, login and logout
  */
 class ProjectAuthController extends AbstractController
 {

@@ -68,6 +68,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/app-datafixtures.html" class="">DataFixtures</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/app-entity.html" class="">Entity</a>
                 
             </li>
@@ -76,15 +80,19 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-helpers.html" class="">Helpers</a>
-                
-            </li>
-                    <li>
                 <a href="namespaces/app-library.html" class="">Library</a>
                 
             </li>
                     <li>
-                <a href="namespaces/app-markdown.html" class="">Markdown</a>
+                <a href="namespaces/app-project.html" class="">Project</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-projectgrid.html" class="">ProjectGrid</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-projectrules.html" class="">ProjectRules</a>
                 
             </li>
                     <li>
@@ -164,32 +172,11 @@
 to the moneypot</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Game-Game21Interface.html#method_deal">deal()</a>
+    <a href="classes/App-Game-Game21Interface.html#method_banksTurn">banksTurn()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: array&lt;string|int, string&gt;    </span>
 </dt>
-<dd>Deals a card to the player</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Game-Game21Interface.html#method_dealBank">dealBank()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Deals cards to the bank</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Game-Game21Interface.html#method_evaluate">evaluate()</a>
-    <span>
-                                &nbsp;: bool    </span>
-</dt>
-<dd>Called after a card has been dealed to the player</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Game-Game21Interface.html#method_evaluateBank">evaluateBank()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Called after the bank is finished drawing cards</dd>
+<dd>Handles bank&#039;s turn to draw</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game21Interface.html#method_gameOver">gameOver()</a>
@@ -197,13 +184,6 @@ to the moneypot</dd>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>Returns bool indicator if game is over or not</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Game-Game21Interface.html#method_generateFlash">generateFlash()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, string&gt;    </span>
-</dt>
-<dd>Generates a flash message</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game21Interface.html#method_getGameStatus">getGameStatus()</a>
@@ -226,6 +206,21 @@ to the moneypot</dd>
 </dt>
 <dd>Returns the risk as string for the currently playing
 party</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Game-Game21Interface.html#method_nextRound">nextRound()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, int&gt;    </span>
+</dt>
+<dd>Increases number of currenRound attribute by 1
+and resets for next round.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Game-Game21Interface.html#method_playersTurn">playersTurn()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Handles player&#039;s turn to draw</dd>
 
         </dl>
 
@@ -251,7 +246,7 @@ party</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game21Interface.php"><a href="files/src-game-game21interface.html"><abbr title="src/Game/Game21Interface.php">Game21Interface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
@@ -288,130 +283,33 @@ to the moneypot</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_deal">
-        deal()
-        <a href="classes/App-Game-Game21Interface.html#method_deal" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_banksTurn">
+        banksTurn()
+        <a href="classes/App-Game-Game21Interface.html#method_banksTurn" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game21Interface.php"><a href="files/src-game-game21interface.html"><abbr title="src/Game/Game21Interface.php">Game21Interface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Deals a card to the player</p>
+        <p class="phpdocumentor-summary">Handles bank&#039;s turn to draw</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">deal</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">banksTurn</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
             &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_dealBank">
-        dealBank()
-        <a href="classes/App-Game-Game21Interface.html#method_dealBank" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game21Interface.php"><a href="files/src-game-game21interface.html"><abbr title="src/Game/Game21Interface.php">Game21Interface.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+            <section class="phpdocumentor-description"><p>with class and message for flashmessage</p>
+</section>
 
-    </aside>
-
-        <p class="phpdocumentor-summary">Deals cards to the bank</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">dealBank</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_evaluate">
-        evaluate()
-        <a href="classes/App-Game-Game21Interface.html#method_evaluate" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game21Interface.php"><a href="files/src-game-game21interface.html"><abbr title="src/Game/Game21Interface.php">Game21Interface.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">44</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Called after a card has been dealed to the player</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">evaluate</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_evaluateBank">
-        evaluateBank()
-        <a href="classes/App-Game-Game21Interface.html#method_evaluateBank" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game21Interface.php"><a href="files/src-game-game21interface.html"><abbr title="src/Game/Game21Interface.php">Game21Interface.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">58</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Called after the bank is finished drawing cards</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">evaluateBank</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -455,39 +353,6 @@ to the moneypot</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_generateFlash">
-        generateFlash()
-        <a href="classes/App-Game-Game21Interface.html#method_generateFlash" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game21Interface.php"><a href="files/src-game-game21interface.html"><abbr title="src/Game/Game21Interface.php">Game21Interface.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">65</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Generates a flash message</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">generateFlash</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_getGameStatus">
         getGameStatus()
         <a href="classes/App-Game-Game21Interface.html#method_getGameStatus" class="headerlink"><i class="fas fa-link"></i></a>
@@ -495,7 +360,7 @@ to the moneypot</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game21Interface.php"><a href="files/src-game-game21interface.html"><abbr title="src/Game/Game21Interface.php">Game21Interface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">72</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
@@ -528,7 +393,7 @@ to the moneypot</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game21Interface.php"><a href="files/src-game-game21interface.html"><abbr title="src/Game/Game21Interface.php">Game21Interface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
@@ -561,7 +426,7 @@ to the moneypot</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game21Interface.php"><a href="files/src-game-game21interface.html"><abbr title="src/Game/Game21Interface.php">Game21Interface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -580,6 +445,78 @@ party</p>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
         
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_nextRound">
+        nextRound()
+        <a href="classes/App-Game-Game21Interface.html#method_nextRound" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game21Interface.php"><a href="files/src-game-game21interface.html"><abbr title="src/Game/Game21Interface.php">Game21Interface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">69</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Increases number of currenRound attribute by 1
+and resets for next round.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">nextRound</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>Returns an associative array with investment
+limit, player's money and nr of next round</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_playersTurn">
+        playersTurn()
+        <a href="classes/App-Game-Game21Interface.html#method_playersTurn" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game21Interface.php"><a href="files/src-game-game21interface.html"><abbr title="src/Game/Game21Interface.php">Game21Interface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">59</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Handles player&#039;s turn to draw</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">playersTurn</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>with class and message for flashmessage</p>
+</section>
+
     
 </article>
             </section>

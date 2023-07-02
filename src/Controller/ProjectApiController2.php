@@ -16,6 +16,10 @@ use App\Entity\Score;
 use App\Project\RegisterFactory;
 use Datetime;
 
+/**
+ * Controller class related to the Project. Contains API route
+ * for displaying data for a single user
+ */
 class ProjectApiController2 extends AbstractController
 {
     /**

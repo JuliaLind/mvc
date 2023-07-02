@@ -199,6 +199,10 @@
     align-items: center;
 }
 
+button.return-arr {
+    background-color: unset;
+}
+
 .project .return-arr:hover {
     text-shadow:
     0 0 7px var(--form-neon),

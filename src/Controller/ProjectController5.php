@@ -15,7 +15,11 @@ use App\Project\Game;
 use App\Project\Register;
 
 /**
- * The main controller class
+ * Controller related to the project. Contains
+ * routes fot the API-landing page, about-page,
+ * page that displays rules for the poker square game
+ * and page with the register-form for registering a
+ * new User
  */
 class ProjectController5 extends AbstractController
 {

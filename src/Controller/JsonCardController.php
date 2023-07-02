@@ -14,6 +14,9 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Cards\DeckOfCards;
 use App\Cards\Player;
 
+/**
+ * Controller for API card routes
+ */
 class JsonCardController extends AbstractController
 {
     /**

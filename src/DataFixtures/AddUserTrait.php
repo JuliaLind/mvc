@@ -7,8 +7,14 @@ require __DIR__ . "/../../vendor/autoload.php";
 use App\Entity\User;
 use Doctrine\Persistence\ObjectManager;
 
+/**
+ * Trait used by AppFixtures class
+ */
 trait AddUserTrait
 {
+    /**
+     * Adds a user to the test database
+     */
     private function addUser(
         ObjectManager $manager,
         string $email,

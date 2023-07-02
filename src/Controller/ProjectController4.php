@@ -16,8 +16,15 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Project\Game;
 use App\ProjectGrid\Grid;
 
+/**
+ * Controller related to the Project. Contains routes for moving
+ * a card
+ */
 class ProjectController4 extends AbstractController
 {
+    /**
+     * Route for saving the slot row and id from which the user wants to remove the card
+     */
     #[Route('/proj/set-fromslot/{row<\d+>}/{col<\d+>}', name: "set-fromslot", methods: ['POST'])]
     public function setFromSlot(
         int $row,
@@ -49,6 +56,9 @@ class ProjectController4 extends AbstractController
     }
 
 
+    /**
+     * Route for moving the card to the new slot chosen by user
+     */
     #[Route('/proj/move-card/{row<\d+>}/{col<\d+>}', name: "move-card", methods: ['POST'])]
     public function moveCard(
         int $row,
@@ -64,6 +74,11 @@ class ProjectController4 extends AbstractController
         return $this->redirectToRoute('proj-play');
     }
 
+    /**
+     * Route that renders the template where placed cards are clickable.
+     * If the user does not have enough coins to purchase the cheat the user
+     * is redirected back to the main game
+     */
     #[Route('/proj/pick-card/{balance<\d+>}', name: "pick-card")]
     public function pickCard(
         SessionInterface $session,

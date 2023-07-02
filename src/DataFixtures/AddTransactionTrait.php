@@ -9,8 +9,14 @@ use Doctrine\Persistence\ObjectManager;
 use App\Entity\Transaction;
 use Datetime;
 
+/**
+ * Trait used by AppFixtures class
+ */
 trait AddTransactionTrait
 {
+    /**
+     * Adds a transaction to the test database
+     */
     private function addTransaction(
         ObjectManager $manager,
         User $user,

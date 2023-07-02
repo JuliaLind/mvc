@@ -68,6 +68,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/app-datafixtures.html" class="">DataFixtures</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/app-entity.html" class="">Entity</a>
                 
             </li>
@@ -76,15 +80,19 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-helpers.html" class="">Helpers</a>
-                
-            </li>
-                    <li>
                 <a href="namespaces/app-library.html" class="">Library</a>
                 
             </li>
                     <li>
-                <a href="namespaces/app-markdown.html" class="">Markdown</a>
+                <a href="namespaces/app-project.html" class="">Project</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-projectgrid.html" class="">ProjectGrid</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/app-projectrules.html" class="">ProjectRules</a>
                 
             </li>
                     <li>
@@ -136,7 +144,7 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="classes/App-Game-PlayerTrait.html"><abbr title="\App\Game\PlayerTrait">PlayerTrait</abbr></a>                    </span>
+                            <a href="classes/App-Game-PlayerTrait.html"><abbr title="\App\Game\PlayerTrait">PlayerTrait</abbr></a>,                             <a href="classes/App-Game-Player21Trait.html"><abbr title="\App\Game\Player21Trait">Player21Trait</abbr></a>,                             <a href="classes/App-Game-Player21Trait2.html"><abbr title="\App\Game\Player21Trait2">Player21Trait2</abbr></a>,                             <a href="classes/App-Game-Player21Trait3.html"><abbr title="\App\Game\Player21Trait3">Player21Trait3</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
@@ -162,15 +170,8 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -constant -protected">
-    <a href="classes/App-Game-Player21.html#constant_GOAL">GOAL</a>
-    <span>
-        &nbsp;= 21                            </span>
-</dt>
-<dd></dd>
-
                     <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/App-Game-PlayerTrait.html#property_hand">$hand</a>
+    <a href="classes/App-Game-Player21Trait3.html#property_hand">$hand</a>
     <span>
                         &nbsp;: <a href="classes/App-Cards-CardHand.html"><abbr title="\App\Cards\CardHand">CardHand</abbr></a>            </span>
 </dt>
@@ -219,7 +220,7 @@
 <dd>Removes all cards from player&#039;s hand</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Game-Player21.html#method_estimateRisk">estimateRisk()</a>
+    <a href="classes/App-Game-Player21Trait2.html#method_estimateRisk">estimateRisk()</a>
     <span>
                                 &nbsp;: float    </span>
 </dt>
@@ -255,7 +256,7 @@ above 21 with next drawn card</dd>
 <dd>Getter of player&#039;s name</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Game-Player21.html#method_handValue">handValue()</a>
+    <a href="classes/App-Game-Player21Trait3.html#method_handValue">handValue()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
@@ -269,7 +270,7 @@ above 21 with next drawn card</dd>
 <dd>Increases player&#039;s money</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Game-Player21.html#method_minHandValue">minHandValue()</a>
+    <a href="classes/App-Game-Player21Trait2.html#method_minHandValue">minHandValue()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
@@ -292,66 +293,17 @@ svg-image path and description for each card
 (to use for the alt text).</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/App-Game-Player21.html#method_adjAceValue">adjAceValue()</a>
-    <span>
-                                &nbsp;: int    </span>
-</dt>
-<dd>Adjusts if ace should be valued at 14 or at 1</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/App-Game-Player21.html#method_adjAceValueToOne">adjAceValueToOne()</a>
+    <a href="classes/App-Game-Player21Trait2.html#method_adjAceValueToOne">adjAceValueToOne()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
 <dd>Adjusts ace-value to 1</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/App-Game-Player21.html#method_checkIfBad">checkIfBad()</a>
-    <span>
-                                &nbsp;: int    </span>
-</dt>
-<dd></dd>
 
         </dl>
 
 
 
         
-    <section class="phpdocumentor-constants">
-        <h3 class="phpdocumentor-elements__header" id="constants">
-            Constants
-            <a href="classes/App-Game-Player21.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
-        </h3>
-                    <article class="phpdocumentor-element -constant -protected ">
-    <h4 class="phpdocumentor-element__name" id="constant_GOAL">
-        GOAL
-        <a href="classes/App-Game-Player21.html#constant_GOAL" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21.php"><a href="files/src-game-player21.html"><abbr title="src/Game/Player21.php">Player21.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">18</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">int</span>
-    <span class="phpdocumentor-signature__name">GOAL</span>
-    = <span class="phpdocumentor-signature__default-value">21</span>
-</code>
-
-
-    
-        <section class="phpdocumentor-description"><p>the goal points to reach.</p>
-</section>
-
-    
-
-</article>
-            </section>
 
         
     <section class="phpdocumentor-properties">
@@ -368,14 +320,14 @@ svg-image path and description for each card
 >
     <h4 class="phpdocumentor-element__name" id="property_hand">
         $hand
-        <a href="classes/App-Game-PlayerTrait.html#property_hand" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game-Player21Trait3.html#property_hand" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/PlayerTrait.php"><a href="files/src-game-playertrait.html"><abbr title="src/Game/PlayerTrait.php">PlayerTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21Trait3.php"><a href="files/src-game-player21trait3.html"><abbr title="src/Game/Player21Trait3.php">Player21Trait3.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
@@ -409,7 +361,7 @@ svg-image path and description for each card
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21.php"><a href="files/src-game-player21.html"><abbr title="src/Game/Player21.php">Player21.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
@@ -479,7 +431,7 @@ svg-image path and description for each card
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21.php"><a href="files/src-game-player21.html"><abbr title="src/Game/Player21.php">Player21.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -534,7 +486,7 @@ svg-image path and description for each card
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21.php"><a href="files/src-game-player21.html"><abbr title="src/Game/Player21.php">Player21.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
@@ -653,12 +605,12 @@ svg-image path and description for each card
 >
     <h4 class="phpdocumentor-element__name" id="method_estimateRisk">
         estimateRisk()
-        <a href="classes/App-Game-Player21.html#method_estimateRisk" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game-Player21Trait2.html#method_estimateRisk" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21.php"><a href="files/src-game-player21.html"><abbr title="src/Game/Player21.php">Player21.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21Trait2.php"><a href="files/src-game-player21trait2.html"><abbr title="src/Game/Player21Trait2.php">Player21Trait2.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">135</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -667,7 +619,7 @@ above 21 with next drawn card</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">estimateRisk</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Cards-DeckOfCards.html"><abbr title="\App\Cards\DeckOfCards">DeckOfCards</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+                    <span class="phpdocumentor-signature__name">estimateRisk</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Cards-DeckOfCards.html"><abbr title="\App\Cards\DeckOfCards">DeckOfCards</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-ValueConverter2.html"><abbr title="\App\Game\ValueConverter2">ValueConverter2</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$converter</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new ValueConverter2()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -676,6 +628,14 @@ above 21 with next drawn card</p>
                 <span class="phpdocumentor-signature__argument__name">$deck</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Cards-DeckOfCards.html"><abbr title="\App\Cards\DeckOfCards">DeckOfCards</abbr></a></span>
                             </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$converter</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-ValueConverter2.html"><abbr title="\App\Game\ValueConverter2">ValueConverter2</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">new ValueConverter2()</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
@@ -771,7 +731,7 @@ above 21 with next drawn card</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21.php"><a href="files/src-game-player21.html"><abbr title="src/Game/Player21.php">Player21.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
@@ -832,12 +792,12 @@ above 21 with next drawn card</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_handValue">
         handValue()
-        <a href="classes/App-Game-Player21.html#method_handValue" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game-Player21Trait3.html#method_handValue" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21.php"><a href="files/src-game-player21.html"><abbr title="src/Game/Player21.php">Player21.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21Trait3.php"><a href="files/src-game-player21trait3.html"><abbr title="src/Game/Player21Trait3.php">Player21Trait3.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">93</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
@@ -845,14 +805,25 @@ above 21 with next drawn card</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">handValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+                    <span class="phpdocumentor-signature__name">handValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-ValueConverter.html"><abbr title="\App\Game\ValueConverter">ValueConverter</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$converter</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new ValueConverter()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
         <section class="phpdocumentor-description"><p>Ace is valued as 14 unless the hand value
 is above 21, then ace is valued at 1. Each
 ace is valued separately</p>
 </section>
 
-    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$converter</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Game-ValueConverter.html"><abbr title="\App\Game\ValueConverter">ValueConverter</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">new ValueConverter()</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -874,7 +845,7 @@ ace is valued separately</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21.php"><a href="files/src-game-player21.html"><abbr title="src/Game/Player21.php">Player21.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
@@ -914,12 +885,12 @@ ace is valued separately</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_minHandValue">
         minHandValue()
-        <a href="classes/App-Game-Player21.html#method_minHandValue" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game-Player21Trait2.html#method_minHandValue" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21.php"><a href="files/src-game-player21.html"><abbr title="src/Game/Player21.php">Player21.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21Trait2.php"><a href="files/src-game-player21trait2.html"><abbr title="src/Game/Player21Trait2.php">Player21Trait2.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">111</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
@@ -1014,68 +985,16 @@ svg-image path and description for each card
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_adjAceValue">
-        adjAceValue()
-        <a href="classes/App-Game-Player21.html#method_adjAceValue" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21.php"><a href="files/src-game-player21.html"><abbr title="src/Game/Player21.php">Player21.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">66</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Adjusts if ace should be valued at 14 or at 1</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">adjAceValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pointSum</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$pointSum</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$value</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-                                                        "
+                        -abstract                                "
 >
     <h4 class="phpdocumentor-element__name" id="method_adjAceValueToOne">
         adjAceValueToOne()
-        <a href="classes/App-Game-Player21.html#method_adjAceValueToOne" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game-Player21Trait2.html#method_adjAceValueToOne" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21.php"><a href="files/src-game-player21.html"><abbr title="src/Game/Player21.php">Player21.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21Trait2.php"><a href="files/src-game-player21trait2.html"><abbr title="src/Game/Player21Trait2.php">Player21Trait2.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -1083,63 +1002,11 @@ svg-image path and description for each card
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">adjAceValueToOne</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">adjAceValueToOne</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$value</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_checkIfBad">
-        checkIfBad()
-        <a href="classes/App-Game-Player21.html#method_checkIfBad" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player21.php"><a href="files/src-game-player21.html"><abbr title="src/Game/Player21.php">Player21.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">122</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">checkIfBad</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$minHandValue</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$minHandValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$value</span>
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>

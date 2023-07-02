@@ -4,7 +4,6 @@ namespace App\ProjectRules;
 
 class SameOfAKindStat implements RuleStatInterface
 {
-    // use SameRankTrait;
     use CountByRankTrait;
     use SameOfAKindStatTrait;
     use SameOfAKindStatTrait2;

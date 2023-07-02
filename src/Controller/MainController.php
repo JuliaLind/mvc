@@ -8,10 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-// use App\Markdown\MdParser;
-
 /**
- * The main controller class
+ * Controller contains routes for some of the
+ * "ordinary" pages
  */
 class MainController extends AbstractController
 {

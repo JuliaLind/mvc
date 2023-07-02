@@ -13,6 +13,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Project\ApiGame2;
 
+/**
+ * Controller class related to the Project. Contains the
+ * API route for placing a card into an empty grid
+ */
 class ProjectApiController4 extends AbstractController
 {
     /**

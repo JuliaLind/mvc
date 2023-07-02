@@ -9,8 +9,14 @@ use Doctrine\Persistence\ObjectManager;
 use App\Entity\Score;
 use Datetime;
 
+/**
+ * Trait used by AppFixtures class
+ */
 trait AddScoreTrait
 {
+    /**
+     * Adds a score to the test-database
+     */
     private function addScore(
         ObjectManager $manager,
         User $user,

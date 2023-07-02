@@ -5,6 +5,9 @@ namespace App\ProjectRules;
 trait CheckWithoutCardTrait
 {
     /**
+     * If a rule is possible to score in the hand
+     * without the dealt card returns the name
+     * of the rule
      * @param array<string> $deck
      * @param array<string> $hand
      */

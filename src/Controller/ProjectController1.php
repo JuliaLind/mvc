@@ -15,7 +15,8 @@ use App\Project\Game;
 use App\Project\RegisterFactory;
 
 /**
- * The main controller class
+ * Controller related to the Project. Contains the route
+ * for the project landing page
  */
 class ProjectController1 extends AbstractController
 {

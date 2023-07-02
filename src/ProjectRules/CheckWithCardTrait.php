@@ -11,6 +11,16 @@ trait CheckWithCardTrait
 
 
     /**
+     * If a rule is possible to score after placing
+     * the dealt card into a hand that already
+     * contains at least one card, returns the name
+     * of the rule and the adjusted number of points (
+     * for rules Three Of A Kind and up 10% of the 
+     * ordinary rule points is added for each card that
+     * is already placed in the checked hand to 
+     * prioritize a hand that is closer to score, if 
+     * there are two hands where same rule is possible 
+     * to score. If the hand is already full returns -1
      * @param array<string> $deck
      * @param array<string> $hand
      * @return array<string,float|int|string>>
@@ -18,6 +28,9 @@ trait CheckWithCardTrait
     abstract private function pointsAndName(array $hand, array $deck, string $card, int $rulePoints, string $ruleName, RuleStatInterface $rule): array;
 
     /**
+     * If a rule is possible to score after placing
+     * the dealt card into a hand that is empty,
+     *  returns the name and the points for the rule
      * @param array<string> $deck
      * @return array<string,int|string>>
      */
@@ -56,6 +69,10 @@ trait CheckWithCardTrait
     }
 
     /**
+     * Calculates and returns name and number of points (adjusted/weighted)
+     * for the best rule possible to achieve with the dealt card, cards
+     * in the hand (row or column) and the cards the user is yet to pick from
+     * the deck
      * @param array<array<string>> $hands
      * @param array<string> $deck
      * @return array<string,string|float|int>
