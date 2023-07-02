@@ -6,7 +6,7 @@ trait TwoPairsTrait2
 {
     /**
      * From CountByRankTrait
-     * 
+     *
      * Returns an associative array
      * where keys are the ranks present amongst
      * the cards and the values are the count of
@@ -24,7 +24,7 @@ trait TwoPairsTrait2
 
     /**
      * From TwoPairsStatTrait
-     * 
+     *
      * Called if the hand already contains a pair.
      * Returns true if either of the following conditions is fulfilled:
      * 1. The hand contains 4 cards of two ranks
@@ -37,7 +37,7 @@ trait TwoPairsTrait2
 
     /**
      * From TwoPairsStatTrait8
-     * 
+     *
      * Called in the hand already contains a pair.
      * Checks if any of the cards in the hand is
      * present in the deck. Note that the deck will
@@ -51,7 +51,7 @@ trait TwoPairsTrait2
     abstract private function subCheck5(array $ranksHand, array $ranksDeck): bool;
     /**
      * From TwoPairsStatTrait9
-     * 
+     *
      * Called if the hand does not already contain
      * a pair and the hand contains two or three cards.
      * Checks if at least two of the ranks present
@@ -63,7 +63,7 @@ trait TwoPairsTrait2
 
     /**
      * From TwoPairsTrait10
-     * 
+     *
      * Called if the card conains only one card.
      * Returns true if the deck contains at least one card
      * of the same rank as the card in hand and at least one pair.

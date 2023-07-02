@@ -6,7 +6,7 @@ trait TwoPairsTrait10
 {
     /**
      * Used in TwoPairsTrait2
-     * 
+     *
      * Called if the card conains only one card.
      * Returns true if the deck contains at least one card
      * of the same rank as the card in hand and at least one pair.

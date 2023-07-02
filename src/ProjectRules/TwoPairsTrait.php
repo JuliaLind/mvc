@@ -90,7 +90,7 @@ trait TwoPairsTrait
          */
         $ranksDeck = $this->countByRank($deck);
 
-        if (count($hand) > count($ranksHand) && $this->subCheck($hand, $rank, $ranksHand, $ranksDeck)) {
+        if (count($hand) > count($ranksHand)) {
             return $this->subCheck($hand, $rank, $ranksHand, $ranksDeck);
         }
 
