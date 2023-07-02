@@ -10,9 +10,10 @@ trait StraightTrait3
     /**
      * Used in the following traits:
      * StraightTrait,
+     * StraightFlushTrait
      *
      * Given an array of ranks and the lowest min-rank
-     * and the highest min rank that a straight
+     * and the highest min-rank that a straight
      * can have, determins if it is possible to
      * achieve a straight
      * @param array<int> $ranks

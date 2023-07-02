@@ -2,6 +2,10 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Determins if StarightFlush rule is scored
+ * or possible to score
+ */
 class StraightFlush implements RuleInterface
 {
     use AdditionalValueTrait;
@@ -19,8 +23,9 @@ class StraightFlush implements RuleInterface
     use StraightFlushTrait2;
     use StraightTrait3;
 
-
-
+    /**
+     * Counstructor
+     */
     public function __construct()
     {
         $this->name = "Straight Flush";

@@ -8,6 +8,17 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait StraightFlushTrait
 {
     /**
+     * From StraightTrait3.
+     *
+     * Given an array of ranks and the lowest min-rank
+     * and the highest min rank that a straight
+     * can have, determins if it is possible to
+     * achieve a straight
+     * @param array<int> $ranks
+     */
+    abstract private function checkAllPossible($ranks, int $minMinRank, int $maxMinRank): bool;
+
+    /**
      * From SameSuitTrait.
      * Sets suit attribute to the suit of the
      * first card in the hand and

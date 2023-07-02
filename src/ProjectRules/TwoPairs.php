@@ -21,6 +21,7 @@ class TwoPairs implements RuleInterface
     use TwoPairsTrait7;
     use TwoPairsTrait8;
     use TwoPairsTrait9;
+    use TwoPairsTrait10;
 
 
     public function __construct()
