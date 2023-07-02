@@ -5,10 +5,7 @@ namespace App\ProjectRules;
 trait CheckWithCardTrait
 {
     /**
-     * Associative array that for each rule contains name of the rule,
-     * points, class for determining if the rule is scored (for full hand)
-     * and class for determining if the rule is possible to score
-     * @var array<array<string,string|RuleInterface|RuleStatInterface|int>>
+     * @var array<RuleInterface> $rules
      */
     private array $rules;
 
@@ -28,7 +25,7 @@ trait CheckWithCardTrait
      * @param array<string> $hand
      * @return array<string,float|int|string>>
      */
-    abstract private function pointsAndName(array $hand, array $deck, string $card, int $rulePoints, string $ruleName, RuleStatInterface $rule): array;
+    abstract private function pointsAndName(array $hand, array $deck, string $card, RuleInterface $rule): array;
 
     /**
      * If a rule is possible to score after placing
@@ -37,12 +34,11 @@ trait CheckWithCardTrait
      * @param array<string> $deck
      * @return array<string,int|string>>
      */
-    abstract private function pointsAndNameEmptyHand(array $deck, string $card, int $rulePoints, string $ruleName, RuleStatInterface $rule): array;
+    abstract private function pointsAndNameEmptyHand(array $deck, string $card, RuleInterface $rule): array;
 
     /**
      * @param array<string> $deck
      * @param array<array<string>> $hands
-     * @param array<string,string|RuleInterface|RuleStatInterface|int> $rule
      * @return array<string,string|float|int>
      */
     private function checkSingleRuleWith(
@@ -50,25 +46,12 @@ trait CheckWithCardTrait
         int $index,
         array $deck,
         string $card,
-        array $rule,
+        RuleInterface $rule,
     ): array {
-        /**
-         * @var string $ruleName
-         */
-        $ruleName = $rule['name'];
-        /**
-         * @var int $rulePoints
-         */
-        $rulePoints = $rule['points'];
-
-        /**
-         * @var RuleStatInterface $possible
-         */
-        $possible = $rule['possible'];
         if (array_key_exists($index, $hands)) {
-            return $this->pointsAndName($hands[$index], $deck, $card, $rulePoints, $ruleName, $possible);
+            return $this->pointsAndName($hands[$index], $deck, $card, $rule);
         }
-        return $this->pointsAndNameEmptyHand($deck, $card, $rulePoints, $ruleName, $possible);
+        return $this->pointsAndNameEmptyHand($deck, $card, $rule);
     }
 
     /**
@@ -87,9 +70,8 @@ trait CheckWithCardTrait
             'rule' => ""
         ];
         $rules = $this->rules;
-        $ruleCount = count($rules);
-        for ($i = 0; $i < $ruleCount; $i++) {
-            $rule = $rules[$i];
+
+        foreach ($rules as $rule) {
             $data = $this->checkSingleRuleWith($hands, $index, $deck, $card, $rule);
             $handPoints = $data['points'];
             if ($handPoints > 1) {

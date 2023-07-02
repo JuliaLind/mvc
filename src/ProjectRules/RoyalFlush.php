@@ -9,7 +9,23 @@ namespace App\ProjectRules;
  */
 class RoyalFlush implements RuleInterface
 {
+    use AdditionalValueTrait;
+    use CountByRankTrait;
     use CountSuitAndRankTrait;
+    use FirstCheckTrait;
+    use GroupBySuitTrait;
+    use RoyalFlushTrait;
+    use RoyalFlushTrait2;
+    use SearchSpecificCardTrait;
+    use StraightFlushTrait2;
+    use StraightTrait2;
+    use RuleDataTrait;
+
+    public function __construct()
+    {
+        $this->name = "Royal Flush";
+        $this->points = 100;
+    }
 
     /**
      * @param array<string> $hand

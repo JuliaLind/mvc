@@ -7,10 +7,10 @@ trait RuleNameTrait2
     /**
      * @param array<string> $deck
      */
-    private function ruleNameEmptyHand(array $deck, string $ruleName, RuleStatInterface $rule): string
+    private function ruleNameEmptyHand(array $deck, RuleInterface $rule): string
     {
         if ($rule->possibleDeckOnly($deck)) {
-            return $ruleName;
+            return $rule->getName();
         }
         return "";
     }

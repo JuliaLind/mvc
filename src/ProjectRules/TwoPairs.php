@@ -8,7 +8,25 @@ namespace App\ProjectRules;
  */
 class TwoPairs implements RuleInterface
 {
+    use AdditionalValueTrait;
     use CountByRankTrait;
+    use RuleDataTrait;
+    use TwoPairsTrait;
+    use TwoPairsTrait2;
+    use TwoPairsTrait3;
+    use TwoPairsTrait4;
+    use TwoPairsTrait5;
+    use TwoPairsTrait6;
+    use TwoPairsTrait7;
+    use TwoPairsTrait8;
+    use TwoPairsTrait9;
+
+
+    public function __construct()
+    {
+        $this->name = "Two Pairs";
+        $this->points = 5;
+    }
 
     /**
      * Returns true if the TwoPairs rules is scored,

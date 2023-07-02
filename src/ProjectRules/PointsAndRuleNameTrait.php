@@ -18,7 +18,7 @@ trait PointsAndRuleNameTrait
      * @param array<string> $hand
      * @return array<string,float|int|string>>
      */
-    private function pointsAndName(array $hand, array $deck, string $card, int $rulePoints, string $ruleName, RuleStatInterface $rule): array
+    private function pointsAndName(array $hand, array $deck, string $card, RuleInterface $rule): array
     {
         if (count($hand) === 5) {
             return [
@@ -30,10 +30,10 @@ trait PointsAndRuleNameTrait
             /**
              * To weight points taking into consideration cards already in hand
              */
-            $points = $rulePoints + 1 + $rule->getAdditionalValue();
+            $points = $rule->getPoints() + 1 + $rule->getAdditionalValue();
             return [
                 'points' => $points,
-                'rule' => $ruleName
+                'rule' => $rule->getName()
             ];
         }
         return [

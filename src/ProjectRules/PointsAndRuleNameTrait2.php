@@ -8,12 +8,12 @@ trait PointsAndRuleNameTrait2
      * @param array<string> $deck
      * @return array<string,int|string>>
      */
-    private function pointsAndNameEmptyHand(array $deck, string $card, int $rulePoints, string $ruleName, RuleStatInterface $rule): array
+    private function pointsAndNameEmptyHand(array $deck, string $card, RuleInterface $rule): array
     {
         if ($rule->possibleWithCard([], $deck, $card)) {
             return [
-                'points' => $rulePoints,
-                'rule' => $ruleName
+                'points' => $rule->getPoints(),
+                'rule' => $rule->getName()
             ];
         }
         return [
