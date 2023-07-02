@@ -17,63 +17,44 @@ trait TwoPairsTrait2
     abstract private function countByRank($cards): array;
 
     /**
-     * Checks if the array with cards contains at least two pairs
-     * @param array<string> $cards
+     * From TwoPairsTrait11.
+     *
+     * Returns true if the hand contains only one card and
+     * either of the following two conditions is fulfilled:
+     * 1. The deck contains two pairs
+     * 2. The deck contains one pair and one card of
+     * the same rank as the card in hand
+     *
+     * @param array<string> $hand
+     * @param array<string> $deck
+     * @param array<int,int> $ranksHand
+     * @param array<int,int> $ranksDeck
      */
-    abstract public function possibleDeckOnly(array $cards): bool;
+    abstract private function subCheck8(array $hand, array $deck, array $ranksHand, array $ranksDeck): bool;
 
     /**
-     * From TwoPairsStatTrait
+     * From TwoPairsTrait12
      *
-     * Called if the hand already contains a pair.
-     * Returns true if either of the following conditions is fulfilled:
-     * 1. The hand contains 4 cards of two ranks
-     * 2. The hand contains three cards or less
+     * Returns true if the hand contains two pairs or it
+     * is possible to score two pairs together with the cards in
+     * the deck
      * @param array<string> $hand
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    abstract private function subCheck4($hand, $ranksHand, $ranksDeck): bool;
+    abstract private function subCheck9(array $hand, array $ranksHand, array $ranksDeck): bool;
 
     /**
-     * From TwoPairsStatTrait8
+     * From TwoPairsTrait12.
      *
-     * Called in the hand already contains a pair.
-     * Checks if any of the cards in the hand is
-     * present in the deck. Note that the deck will
-     * not contain the same rank as the pair in
-     * the hand, because the otherwise the Three
-     * Of A kind rulw would already have returned
-     * true
+     * Returns true if the number of cards is 2 or 3
+     * and the ranks of at least two cards in the hand
+     * also are present in the deck
+     * @param array<string> $hand
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    abstract private function subCheck5(array $ranksHand, array $ranksDeck): bool;
-    /**
-     * From TwoPairsStatTrait9
-     *
-     * Called if the hand does not already contain
-     * a pair and the hand contains two or three cards.
-     * Checks if at least two of the ranks present
-     * in the hand are also present in the deck
-     * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
-     */
-    abstract private function subCheck6(array $ranksHand, array $ranksDeck): bool;
-
-    /**
-     * From TwoPairsTrait10
-     *
-     * Called if the card conains only one card.
-     * Returns true if the deck contains at least one card
-     * of the same rank as the card in hand and at least one pair.
-     * Note that the pair in deck will not be of the same rank
-     * as the card in hand, otherwise a higher rule would have
-     * already returned true
-     * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
-     */
-    abstract private function subCheck7(array $ranksHand, array $ranksDeck): bool;
+    abstract private function subCheck10(array $hand, array $ranksHand, array $ranksDeck): bool;
 
     /**
      * Checks if the Two Pairs rule is possible if the
@@ -95,20 +76,16 @@ trait TwoPairsTrait2
          */
         $ranksDeck = $this->countByRank($deck);
 
-        /**
-         * If the hand contains only one card check either if the deck
-         * contains two pairs or if the deck contains one pair + a card
-         * of the same rank as the card in hand
-         */
-        if (count($hand) === 1) {
-            return $this->subcheck7($ranksHand, $ranksDeck) || $this->possibleDeckOnly($deck);
-        }
-        if (count($hand) > count($ranksHand)) {
-            return $this->subCheck4($hand, $ranksHand, $ranksDeck) || $this->subCheck5($ranksHand, $ranksDeck);
-        }
-        if (count($hand) <= 3) {
-            return $this->subCheck6($ranksHand, $ranksDeck);
-        }
-        return false;
+        return $this->subCheck8($hand, $deck, $ranksHand, $ranksDeck) || $this->subCheck9($hand, $ranksHand, $ranksDeck) || $this->subCheck10($hand, $ranksHand, $ranksDeck);
+        // if (count($hand) === 1) {
+        //     return $this->subcheck7($ranksHand, $ranksDeck) || $this->possibleDeckOnly($deck);
+        // }
+        // if (count($hand) > count($ranksHand)) {
+        //     return $this->subCheck4($hand, $ranksHand, $ranksDeck) || $this->subCheck5($ranksHand, $ranksDeck);
+        // }
+        // if (count($hand) <= 3) {
+        //     return $this->subCheck6($ranksHand, $ranksDeck);
+        // }
+        // return false;
     }
 }

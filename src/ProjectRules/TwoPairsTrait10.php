@@ -5,7 +5,7 @@ namespace App\ProjectRules;
 trait TwoPairsTrait10
 {
     /**
-     * Used in TwoPairsTrait2
+     * Used in TwoPairsTrait11
      *
      * Called if the card conains only one card.
      * Returns true if the deck contains at least one card

@@ -35,11 +35,14 @@ trait TwoPairsTrait7
         return count($hand) <= 3 && (array_key_exists($rank, $ranksDeck) || max($ranksDeck) >= 2);
     }
     /**
-     * Used in TwoPairsStatTrait2
+     * Used in TwoPairsStatTrait12
      * Called if the hand already contains a pair.
      * Returns true if either of the following conditions is fulfilled:
      * 1. The hand contains 4 cards of two ranks
-     * 2. The hand contains three cards or less
+     * 2. The hand contains three cards or less and either
+     * the deck contains another pair or a card of the same
+     * rank as the card in the hand that is not paired
+     * a pair or the deck contains
      * @param array<string> $hand
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck

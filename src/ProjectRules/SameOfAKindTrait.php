@@ -54,8 +54,11 @@ trait SameOfAKindTrait
          */
         $ranksAll= $this->countByRank($allCards);
 
-        if ((array_key_exists($rank, $ranksHand) && $this->subCheck(count($hand), $ranksHand[$rank])) || (count($ranksHand) == 0 && $this->subCheck2($ranksAll[$rank]))) {
+        if (array_key_exists($rank, $ranksHand) && $this->subCheck(count($hand), $ranksHand[$rank])) {
             $this->additionalValue = $ranksHand[$rank];
+            return true;
+        }
+        if (count($ranksHand) === 0 && $this->subCheck2($ranksAll[$rank])) {
             return true;
         }
         return false;

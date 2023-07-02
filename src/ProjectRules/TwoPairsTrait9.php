@@ -5,7 +5,7 @@ namespace App\ProjectRules;
 trait TwoPairsTrait9
 {
     /**
-     * Used in TwoPairsStatTrait2
+     * Used in TwoPairsStatTrait13
      * Called if the hand does not already contain
      * a pair and the hand contains two or three cards.
      *  Checks if at least two of the ranks present
