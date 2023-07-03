@@ -5,6 +5,10 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
+/**
+ * Class for loading fixtures for the database-tables
+ * User, Score and Transaction
+ */
 class AppFixtures extends Fixture
 {
     use AddUserTrait;

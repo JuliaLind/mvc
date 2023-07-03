@@ -6,12 +6,20 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 use App\Cards\DeckOfCards;
 
+/**
+ * Generates flash message to be displayed at the end of a round
+ * or at the end of a game
+ */
 trait Game21FlashTrait
 {
     protected Player21 $winner;
     protected bool $roundOver=false;
     protected bool $finished=false;
 
+    /**
+     * Determines the class of the message, warning or notice.
+     * Notice is used when player has won and worning when the bank has won
+     */
     protected function messageType(string $winner): string
     {
         $type = "notice";

@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @SuppressWarnings(PHPMD.ShortVariable)
+ * Represents a book in the Library
  */
 #[ORM\Entity(repositoryClass: BookRepository::class)]
 class Book
@@ -33,11 +34,17 @@ class Book
         return $this->id;
     }
 
+    /**
+     * Returns title of the book
+     */
     public function getTitle(): ?string
     {
         return $this->title;
     }
 
+    /**
+     * Sets title of the book
+     */
     public function setTitle(string $title): self
     {
         $this->title = $title;
@@ -45,11 +52,17 @@ class Book
         return $this;
     }
 
+    /**
+     * Returns the ISBN number of the book
+     */
     public function getIsbn(): ?string
     {
         return $this->isbn;
     }
 
+    /**
+     * Sets ISBN of the book, should be 10 digits (as string)
+     */
     public function setIsbn(string $isbn): self
     {
         $this->isbn = $isbn;
@@ -57,11 +70,17 @@ class Book
         return $this;
     }
 
+    /**
+     * Returns name of the authour of the book
+     */
     public function getAuthor(): ?string
     {
         return $this->author;
     }
 
+    /**
+     * Sets the author of the book
+     */
     public function setAuthor(string $author): self
     {
         $this->author = $author;
@@ -69,11 +88,17 @@ class Book
         return $this;
     }
 
+    /**
+     * Returns link to the image of the book. Should be the full path inkl https:// or http://
+     */
     public function getImg(): ?string
     {
         return $this->img;
     }
 
+    /**
+     * Sets link to an image of the book. Should be the full path inkl https:// or http://
+     */
     public function setImg(string $img): self
     {
         $this->img = $img;

@@ -2,6 +2,10 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Class for the rules Four Of A Kind, Three Of A Kind
+ * and One Pair.
+ */
 class SameOfAKind implements RuleInterface
 {
     use AdditionalValueTrait;
@@ -12,6 +16,11 @@ class SameOfAKind implements RuleInterface
     use SameOfAKindTrait4;
     use RuleDataTrait;
 
+    /**
+     * Minimum number of cards of the same rank required to score
+     * the rule. 4 for FourOfAKind, 3 for ThreeOfAKind
+     * and 2 for OnePair
+     */
     private int $minCountRank;
 
     /**
@@ -38,6 +47,9 @@ class SameOfAKind implements RuleInterface
     }
 
     /**
+     * Determines if the rule has been scored by comparing the maximum
+     * number of ranks in the hand to the minimum number of ranks needed to score
+     * the rule
      * @param array<string> $hand
      */
     public function scored(array $hand): bool
