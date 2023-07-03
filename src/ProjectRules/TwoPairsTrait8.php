@@ -7,16 +7,12 @@ trait TwoPairsTrait8
     /**
      * Used in the following traits:
      * TwoPairTrait12,
+     * TwoPairsTrait5,
      * TwoPairsTrait6,
      * TwoPairsTrait13
      *
-     * Called in the hand already contains a pair.
-     * Checks if any of the cards in the hand is
-     * present in the deck. Note that the deck will
-     * not contain the same rank as the pair in
-     * the hand, because the otherwise the Three
-     * Of A kind rulw would already have returned
-     * true
+     * Checks if any of the ranks in the hand is
+     * present in the deck.
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */

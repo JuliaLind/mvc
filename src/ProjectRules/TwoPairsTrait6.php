@@ -7,13 +7,8 @@ trait TwoPairsTrait6
     /**
      * From TwoPairsTrait8
      *
-     * Called in the hand already contains a pair.
-     * Checks if any of the cards in the hand is
-     * present in the deck. Note that the deck will
-     * not contain the same rank as the pair in
-     * the hand, because the otherwise the Three
-     * Of A kind rulw would already have returned
-     * true
+     * Checks if any of the ranks in the hand is
+     * present in the deck.
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
@@ -34,8 +29,12 @@ trait TwoPairsTrait6
      */
     private function check3(int $rank, array $ranksHand, array $ranksDeck): bool
     {
-        if (array_key_exists($rank, $ranksHand)) {
-            return $this->matchOneInDeck($ranksHand, $ranksDeck);
+        // if (array_key_exists($rank, $ranksHand)) {
+        //     return $this->matchOneInDeck($ranksHand, $ranksDeck);
+        // }
+        // return false;
+        if (array_sum($ranksHand) <= 3) {
+            return array_key_exists($rank, $ranksHand) && $this->matchOneInDeck($ranksHand, $ranksDeck);
         }
         return false;
     }

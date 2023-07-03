@@ -18,7 +18,7 @@ trait TwoPairsTrait5
          * @var int $maxRankDeck
          */
         $maxRankDeck = max($ranksDeck);
-        return (array_key_exists($rank, $ranksHand) && $maxRankDeck >= 2);
+        return array_sum($ranksHand) <= 2 && array_key_exists($rank, $ranksHand) && $maxRankDeck >= 2;
     }
 
     /**
@@ -32,7 +32,7 @@ trait TwoPairsTrait5
      */
     private function checkForTwoPairs2(int $rank, array $ranksHand, array $ranksDeck): bool
     {
-        return array_key_exists($rank, $ranksDeck) && array_key_exists(array_keys($ranksHand)[0], $ranksDeck);
+        return array_sum($ranksHand) <= 3 && array_key_exists($rank, $ranksDeck) && $this->matchOneInDeck($ranksHand, $ranksDeck);
     }
 
     /**
@@ -47,8 +47,18 @@ trait TwoPairsTrait5
      */
     private function checkForTwoPairs3(int $rank, array $ranksDeck): bool
     {
-        return (array_key_exists($rank, $ranksDeck) && max($ranksDeck) >= 2);
+        return array_key_exists($rank, $ranksDeck) && max($ranksDeck) >= 2;
     }
+
+    /**
+     * From TwoPairsTrait8
+     *
+     * Checks if any of the ranks in the hand is
+     * present in the deck.
+     * @param array<int,int> $ranksHand
+     * @param array<int,int> $ranksDeck
+     */
+    abstract private function matchOneInDeck(array $ranksHand, array $ranksDeck): bool;
 
     /**
      * Used in TwoPairsTrait
@@ -67,6 +77,6 @@ trait TwoPairsTrait5
      */
     private function check2(int $rank, array $ranksHand, array $ranksDeck): bool
     {
-        return array_sum($ranksHand) === 1 && ($this->checkForTwoPairs1($rank, $ranksHand, $ranksDeck) || $this->checkForTwoPairs2($rank, $ranksHand, $ranksDeck) || $this->checkForTwoPairs3($rank, $ranksDeck));
+        return $this->checkForTwoPairs1($rank, $ranksHand, $ranksDeck) || $this->checkForTwoPairs2($rank, $ranksHand, $ranksDeck) || (array_sum($ranksHand) === 1 && $this->checkForTwoPairs3($rank, $ranksDeck));
     }
 }

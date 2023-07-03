@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 class TwoPairsTrait5Pt2Test extends TestCase
 {
     use TwoPairsTrait5;
+    use TwoPairsTrait8;
 
     public function testCheck2Ok(): void
     {
