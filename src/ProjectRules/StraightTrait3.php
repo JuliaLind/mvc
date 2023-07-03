@@ -32,14 +32,6 @@ trait StraightTrait3
         $possible = true;
         for ($minRank = $minMinRank; $minRank <= $maxMinRank; $minRank++) {
             $possible = $this->checkForRanks($ranks, $minRank);
-            // $maxRank = $minRank - 4;
-            // $possible = true;
-            // for ($rank = $minRank; $rank <= $maxRank; $rank++) {
-            //     if (!in_array($rank, $ranks)) {
-            //         $possible == false;
-            //         break;
-            //     }
-            // }
         }
         return $possible;
     }

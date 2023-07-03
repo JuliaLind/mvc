@@ -19,7 +19,6 @@ trait StraightTrait2
         $maxRank = $minRank + 4;
 
         for ($rank = $minRank; $rank <= $maxRank; $rank++) {
-            // if (!array_key_exists($rank, $ranks)) {
             if (!in_array($rank, $ranks)) {
                 return false;
             }
