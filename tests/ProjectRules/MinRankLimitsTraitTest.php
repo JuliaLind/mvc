@@ -8,8 +8,6 @@ class MinRankLimitsTraitTest extends TestCase
 {
     use MinRankLimitsTrait;
 
-
-
     public function testMinRankLimitsOk(): void
     {
         $this->minRank = 7;

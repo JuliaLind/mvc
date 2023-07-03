@@ -59,7 +59,7 @@ trait FinalResultsTrait
     /**
      * Calculates and returns for each hand (horizontally and vertically)
      * the highest score rule and points for that rule, and the total points
-     * for all the hands
+     * for all the ten hands
      * @return array<string,array<array<string,int|string>>|int>
      */
     public function results(Grid $grid): array

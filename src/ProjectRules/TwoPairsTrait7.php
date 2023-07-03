@@ -5,16 +5,10 @@ namespace App\ProjectRules;
 trait TwoPairsTrait7
 {
     /**
+     * From TwoPairsTrait14
+     *
      * Called if the hand already contains one pair
-     * Returns true if the hand contains four cards whereof two pairs
-     * @param array<int,int> $ranksHand
-     */
-    private function fourCardsTwoPairs(array $ranksHand): bool
-    {
-        return array_sum($ranksHand) === 4 && min($ranksHand) === 2;
-    }
-
-    /**
+     *
      * Returns true if the hand contains three cards and
      * either the deck contains at least two cards of same rank or
      * at least one card of the same rank as the not paired card
@@ -24,14 +18,20 @@ trait TwoPairsTrait7
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    private function threeCardsTwoPairs(array $ranksHand, array $ranksDeck): bool
+    abstract private function threeCardsTwoPairs(array $ranksHand, array $ranksDeck): bool;
+
+    /**
+     * Called if the hand already contains one pair
+     * Returns true if the hand contains four cards whereof two pairs
+     * @param array<int,int> $ranksHand
+     */
+    private function fourCardsTwoPairs(array $ranksHand): bool
     {
-        /**
-         * @var int $rank
-         */
-        $rank = array_keys($ranksHand, min($ranksHand));
-        return array_sum($ranksHand) <= 3 && (array_key_exists($rank, $ranksDeck) || max($ranksDeck) >= 2);
+        return array_sum($ranksHand) === 4 && min($ranksHand) === 2;
     }
+
+
+
     /**
      * Used in TwoPairsStatTrait12
      *
