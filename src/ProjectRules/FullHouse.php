@@ -15,7 +15,6 @@ class FullHouse implements RuleInterface
     use FullHouseTrait2;
     use FullHouseTrait3;
     use FullHouseTrait4;
-    use FullHouseTrait6;
     use FullHouseTrait7;
     use FullHouseTrait8;
     use RuleDataTrait;
