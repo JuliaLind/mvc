@@ -14,11 +14,12 @@ trait FullHouseScoredTrait
      * the cards and the values are the count of
      * each rank
      * @param array<string> $cards
-     * @return  array<array<int|string,int>>
+     * @return array<array<int|string,int>>
      */
     abstract private function countByRank($cards): array;
 
     /**
+     * Returns true if the Full House rule is scored
      * @param array<string> $hand
      */
     public function scored(array $hand): bool

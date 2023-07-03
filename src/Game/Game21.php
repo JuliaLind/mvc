@@ -20,15 +20,9 @@ class Game21
     use EvaluateBankTrait2;
     use EvaluatePlayerTrait;
 
-    protected Player21 $winner;
-    protected Player21 $player;
-    protected Player21 $bank;
-    protected bool $roundOver=false;
-    protected bool $bankPlaying=false;
-    protected int $currentRound=0;
-    protected DeckOfCards $deck;
-    protected bool $finished=false;
-
+    /**
+     * Constructor
+     */
     public function __construct(Player21 $player=new Player21(), DeckOfCards $deck=new DeckOfCards())
     {
         $this->deck = $deck;

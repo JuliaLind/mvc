@@ -22,8 +22,7 @@ trait StraightFlushTrait2
      * RoyalFlushTrait,
      * RoyalFlushTrait2,
      * StraightTrait2
-     * 
-     * 
+     *
      * @param array<string> $cards
      */
     private function checkForCards(array $cards, int $minRank, string $suit): bool
