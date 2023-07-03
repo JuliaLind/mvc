@@ -8,6 +8,12 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait SameOfAKindTrait3
 {
     /**
+     * @var int $minCountRank the minimum number of cards of
+     * same rank required to score the rule
+     */
+    private int $minCountRank;
+
+    /**
      * From CountByRankTrait
      * Returns an associative array
      * where keys are the ranks present amongst

@@ -8,7 +8,10 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait StraightTrait2
 {
     /**
-     * Used in StraightTrait3
+     * Used in:
+     * StraightTrait3,
+     * RoyalFlushTrait2
+     *
      * Returns true if a straight where the 'minRank' is the
      * lowest rank is possible in the given ranks,
      * otherwise returns false
