@@ -8085,3 +8085,4 @@ c01cc7,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/results,16
 f4629d,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/results,1688334946,,200
 7f1705,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/results,1688334951,,200
 bc9220,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/results,1688334957,,200
+72b06f,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api,1688375341,,200
