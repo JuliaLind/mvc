@@ -40,7 +40,9 @@ trait TwoPairsTrait5
      * Returns true if the rank of the dealt card exists in the deck and if
      * the deck contains at lest two cards of same rank. Note that
      * the deck will not contain more than 1 card of the rank because otherwise
-     * one of the higher rules would have already returned true
+     * one of the higher rules would have already returned true.
+     * Even if the card already in hand tecnically will not contribute to the rule,
+     * the rule is still possible because of the two available slots
      * @param array<int,int> $ranksDeck
      */
     private function checkForTwoPairs3(int $rank, array $ranksDeck): bool

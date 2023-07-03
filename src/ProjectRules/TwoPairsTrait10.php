@@ -16,7 +16,7 @@ trait TwoPairsTrait10
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    private function subCheck7(array $ranksHand, array $ranksDeck): bool
+    private function oneCardTwoPairs(array $ranksHand, array $ranksDeck): bool
     {
         return array_key_exists(array_keys($ranksHand)[0], $ranksDeck) && max($ranksDeck) >= 2;
     }

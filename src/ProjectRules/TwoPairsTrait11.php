@@ -22,7 +22,7 @@ trait TwoPairsTrait11
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    abstract private function subCheck7(array $ranksHand, array $ranksDeck): bool;
+    abstract private function oneCardTwoPairs(array $ranksHand, array $ranksDeck): bool;
 
     /**
      * Used in TwoPairsTrait2
@@ -38,6 +38,7 @@ trait TwoPairsTrait11
      */
     private function check4(array $deck, array $ranksHand, array $ranksDeck): bool
     {
-        return (array_sum($ranksHand) === 1 && ($this->subCheck7($ranksHand, $ranksDeck) || $this->possibleDeckOnly($deck)));
+        // return (array_sum($ranksHand) === 1 && ($this->oneCardTwoPairs($ranksHand, $ranksDeck) || $this->possibleDeckOnly($deck)));
+        return $this->oneCardTwoPairs($ranksHand, $ranksDeck) || $this->possibleDeckOnly($deck);
     }
 }

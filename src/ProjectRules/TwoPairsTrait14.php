@@ -9,7 +9,7 @@ trait TwoPairsTrait14
      *
      * Called if the hand already contains one pair
      *
-     * Returns true if the hand contains three cards and
+     * Returns true if the hand contains three or two cards and
      * either the deck contains at least two cards of same rank or
      * at least one card of the same rank as the not paired card
      * in hand (Note the deck will not contain a card of the same

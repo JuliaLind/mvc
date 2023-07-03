@@ -5,7 +5,7 @@ namespace App\ProjectRules;
 trait TwoPairsTrait13
 {
     /**
-     * From TwoPairsStatTrait9
+     * From TwoPairsTrait9
      *
      * Called if the hand does not already contain
      * a pair and the hand contains two or three cards.
@@ -14,7 +14,7 @@ trait TwoPairsTrait13
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    abstract private function subCheck6(array $ranksHand, array $ranksDeck): bool;
+    abstract private function threeCardsTwoPairsAlt(array $ranksHand, array $ranksDeck): bool;
 
 
     /**
@@ -28,6 +28,8 @@ trait TwoPairsTrait13
      */
     private function check6(array $ranksHand, array $ranksDeck): bool
     {
-        return array_sum($ranksHand) <= 3 && $this->subCheck6($ranksHand, $ranksDeck);
+        $nrOfCards = array_sum($ranksHand);
+        return ($nrOfCards <= 3 && $this->threeCardsTwoPairsAlt($ranksHand, $ranksDeck)) || ($nrOfCards <= 2 && $this->threeCardsTwoPairsAlt($ranksHand, $ranksDeck, 1) && max($ranksDeck) >= 2);
+        // return array_sum($ranksHand) <= 3 && $this->threeCardsTwoPairsAlt($ranksHand, $ranksDeck);
     }
 }

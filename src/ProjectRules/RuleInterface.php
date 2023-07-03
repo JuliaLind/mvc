@@ -29,8 +29,9 @@ interface RuleInterface
     /**
      * Returns true if the rule is possible to score without the card
      * based on only cards in hand and the possible cards from deck,
-     * Starting position is that none
-     * of the higher rules can be scored
+     * Starting position is that none of the higher rules can be scored
+     * Note! The hand cannot be empty, for an empty hand the possibleDeckOnly()
+     * method should be used
      * @param array<string> $hand
      * @param array<string> $deck
      */

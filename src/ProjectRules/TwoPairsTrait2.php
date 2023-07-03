@@ -35,7 +35,7 @@ trait TwoPairsTrait2
     /**
      * From TwoPairsTrait12
      *
-     * Returns true if the hand contains two pairs or it
+     * Returns true if the hand contains two pairs or one pair and it
      * is possible to score two pairs together with the cards in
      * the deck
      * @param array<int,int> $ranksHand
@@ -46,8 +46,8 @@ trait TwoPairsTrait2
     /**
      * From TwoPairsTrait13.
      *
-     * Returns true if the number of cards is 2 or 3
-     * and the ranks of at least two cards in the hand
+     * Returns true if the hand contains 2 or 3 cards
+     * and the ranks of at least two cards in the hand are
      * also are present in the deck
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
@@ -58,7 +58,7 @@ trait TwoPairsTrait2
      * Checks if the Two Pairs rule is possible if the
      * dealt card is not placed in hand. (Based on the cards
      * already in hand and the cards in the deck). Note! The
-     * hand cannot be empty, for empty hand use the check3 method
+     * hand cannot be empty, for empty hand use the PossibleDeckOnly method
      * @param array<string> $hand
      * @param array<string> $deck
      */
@@ -74,6 +74,13 @@ trait TwoPairsTrait2
          */
         $ranksDeck = $this->countByRank($deck);
 
-        return $this->check4($deck, $ranksHand, $ranksDeck) || $this->check5($ranksHand, $ranksDeck) || $this->check6($ranksHand, $ranksDeck);
+        if (array_sum($ranksHand) === 1) {
+            return $this->check4($deck, $ranksHand, $ranksDeck);
+        }
+        if (array_sum($ranksHand) > count($ranksHand)) {
+            return $this->check5($ranksHand, $ranksDeck);
+        }
+        return $this->check6($ranksHand, $ranksDeck);
+        // return $this->check4($deck, $ranksHand, $ranksDeck) || $this->check5($ranksHand, $ranksDeck) || $this->check6($ranksHand, $ranksDeck);
     }
 }

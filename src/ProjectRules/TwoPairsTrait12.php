@@ -40,7 +40,7 @@ trait TwoPairsTrait12
     /**
      * Used in TwoPairsTrait2
      *
-     * Returns true if the hand contains two pairs or it
+     * Returns true if the hand contains two pairs or one pair and it
      * is possible to score two pairs together with the cards in
      * the deck
      * @param array<int,int> $ranksHand
@@ -48,6 +48,7 @@ trait TwoPairsTrait12
      */
     private function check5(array $ranksHand, array $ranksDeck): bool
     {
-        return array_sum($ranksHand) > count($ranksHand) && ($this->findSecondPair($ranksHand, $ranksDeck) || $this->matchOneInDeck($ranksHand, $ranksDeck));
+        return $this->findSecondPair($ranksHand, $ranksDeck) || $this->matchOneInDeck($ranksHand, $ranksDeck);
+        // return array_sum($ranksHand) > count($ranksHand) && ($this->findSecondPair($ranksHand, $ranksDeck) || $this->matchOneInDeck($ranksHand, $ranksDeck));
     }
 }
