@@ -47,12 +47,11 @@ trait TwoPairsTrait5
      * 2. the deck contains at least one card of the
      * same rank as the card in the hand and at least
      * one card of the same rank as the dealt card
-     * @param array<string> $hand
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    private function check2(array $hand, int $rank, array $ranksHand, array $ranksDeck): bool
+    private function check2(int $rank, array $ranksHand, array $ranksDeck): bool
     {
-        return count($hand) === 1 && ($this->checkForTwoPairs1($rank, $ranksHand, $ranksDeck) || $this->checkForTwoPairs2($rank, $ranksHand, $ranksDeck));
+        return array_sum($ranksHand) === 1 && ($this->checkForTwoPairs1($rank, $ranksHand, $ranksDeck) || $this->checkForTwoPairs2($rank, $ranksHand, $ranksDeck));
     }
 }

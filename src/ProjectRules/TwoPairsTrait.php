@@ -29,11 +29,10 @@ trait TwoPairsTrait
      * Method called on after ensuring the hand
      * already contains one pair
      * to check if second pair is possible
-     * @param array<string> $hand
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    abstract private function check1(array $hand, int $rank, array $ranksHand, array $ranksDeck): bool;
+    abstract private function check1(int $rank, array $ranksHand, array $ranksDeck): bool;
 
     /**
      * From TwoPairsTrait5
@@ -48,11 +47,10 @@ trait TwoPairsTrait
      * 2. the deck contains at least one card of the
      * same rank as the card in the hand and at least
      * one card of the same rank as the dealt card
-     * @param array<string> $hand
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    abstract private function check2(array $hand, int $rank, array $ranksHand, array $ranksDeck): bool;
+    abstract private function check2(int $rank, array $ranksHand, array $ranksDeck): bool;
 
     /**
      * From TwoPairsTrait6
@@ -93,11 +91,11 @@ trait TwoPairsTrait
          */
         $ranksDeck = $this->countByRank($deck);
 
-        if (count($hand) > count($ranksHand)) {
-            return $this->check1($hand, $rank, $ranksHand, $ranksDeck);
+        if (array_sum($ranksHand) > count($ranksHand)) {
+            return $this->check1($rank, $ranksHand, $ranksDeck);
         }
 
-        if (count($hand) === count($ranksHand) && ($this->check2($hand, $rank, $ranksHand, $ranksDeck) || $this->check3($rank, $ranksHand, $ranksDeck))) {
+        if (array_sum($ranksHand) === count($ranksHand) && ($this->check2($rank, $ranksHand, $ranksDeck) || $this->check3($rank, $ranksHand, $ranksDeck))) {
             $this->additionalValue = 1;
             return true;
         }

@@ -11,20 +11,20 @@ trait TwoPairsTrait4
     private int $additionalValue = 0;
 
     /**
+     * Used in TwoPairsTrait
+     *
      * Method called on after ensuring the hand already contains
      * one pair, to check if second pair is possible.
-     * Used in TwoPairsStatTrait
-     * @param array<string> $hand
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    private function check1(array $hand, int $rank, array $ranksHand, array $ranksDeck): bool
+    private function check1(int $rank, array $ranksHand, array $ranksDeck): bool
     {
         if (array_key_exists($rank, $ranksHand)) {
             $this->additionalValue = 3;
             return true;
         }
-        if (count($hand) < 4 && array_key_exists($rank, $ranksDeck)) {
+        if (array_sum($ranksHand) < 4 && array_key_exists($rank, $ranksDeck)) {
             $this->additionalValue = 2;
             return true;
         }
