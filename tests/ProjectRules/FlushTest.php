@@ -6,6 +6,19 @@ use PHPUnit\Framework\TestCase;
 
 class FlushTest extends TestCase
 {
+    public function testCreateObject(): void
+    {
+        $rule = new Flush();
+
+        $res = $rule->getName();
+        $exp = "Flush";
+        $this->assertEquals($exp, $res);
+
+        $res = $rule->getPoints();
+        $exp = 20;
+        $this->assertEquals($exp, $res);
+    }
+
     public function testCheckNotOk(): void
     {
         $flush = new Flush();

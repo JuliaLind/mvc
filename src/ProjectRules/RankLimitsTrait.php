@@ -39,8 +39,8 @@ trait RankLimitsTrait
          */
         $ranks = $this->countByRank($hand);
 
-        $maxRank = max($ranks);
-        $minRank = min($ranks);
+        $maxRank = max(array_keys($ranks));
+        $minRank = min(array_keys($ranks));
         $this->maxRank = $maxRank;
         $this->minRank = $minRank;
         return $maxRank - $minRank <= 4;
