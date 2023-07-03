@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelTestDebugContainer::class, false)) {
 
 return new \ContainerUtRm3Cc\App_KernelTestDebugContainer([
     'container.build_hash' => 'UtRm3Cc',
-    'container.build_id' => 'ea32e1d2',
-    'container.build_time' => 1688383611,
+    'container.build_id' => '2576395d',
+    'container.build_time' => 1688384895,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerUtRm3Cc');

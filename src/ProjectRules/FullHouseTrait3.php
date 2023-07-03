@@ -4,8 +4,16 @@ namespace App\ProjectRules;
 
 trait FullHouseTrait3
 {
-    abstract private function checkThree(bool $three, int $rank): bool;
-    abstract private function checkBoth(bool $three, bool $two): bool;
+    /**
+     * From FullHouseTrait6
+     *
+     * @param bool $three - false if three of the same rank has not been checked before
+     * @param int $countRank - number of cards of the same rank
+     * @return bool - returns true if three has not been checked previously and
+     * the count of a rank is 3 or 4
+     */
+    abstract private function checkThree(int $three, int $rank): bool;
+
     /**
      * @param array<string> $cards
      * @return  array<array<int|string,int>>
@@ -22,15 +30,17 @@ trait FullHouseTrait3
          */
         $ranks = $this->countByRank($deck);
 
-        $three = false;
-        $two = false;
+        // $three = false;
+        // $two = false;
+        $three = 0;
+        $two = 0;
         foreach ($ranks as $rank) {
             if ($this->checkThree($three, $rank)) {
-                $three = true;
+                $three = 1;
             } elseif ($rank >= 2) {
-                $two = true;
+                $two = 1;
             }
-            if ($this->checkBoth($three, $two)) {
+            if ($two + $three === 2) {
                 return true;
             }
         }
