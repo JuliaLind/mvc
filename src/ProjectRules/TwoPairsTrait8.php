@@ -5,7 +5,10 @@ namespace App\ProjectRules;
 trait TwoPairsTrait8
 {
     /**
-     * Used in TwoPairStatTrait12
+     * Used in the following traits:
+     * TwoPairStatTrait12,
+     * TwoPairsTrait6
+     *
      * Called in the hand already contains a pair.
      * Checks if any of the cards in the hand is
      * present in the deck. Note that the deck will

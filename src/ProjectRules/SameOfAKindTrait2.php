@@ -47,7 +47,6 @@ trait SameOfAKindTrait2
 
         $check = false;
         foreach(array_keys($ranksHand) as $rank) {
-            // $this->rank = $rank;
             $check = $this->subCheck(count($hand), $ranksHand[$rank]) && $this->subCheck2($ranksAll[$rank]);
             if ($check === true) {
                 break;

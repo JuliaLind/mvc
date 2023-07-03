@@ -12,10 +12,11 @@ trait RoyalFlushTrait2
      * @return array<string,array<int,int>>
      */
     abstract private function groupBySuit($cards): array;
+
     /**
      * @param array<int> $ranks
      */
-    abstract private function checkForRanks($ranks, int $minRank): bool;
+    abstract private function checkForRanks(array $ranks, int $minRank): bool;
 
     /**
      * @param array<string> $deck

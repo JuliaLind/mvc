@@ -18,9 +18,15 @@ trait StraightFlushTrait2
     abstract private function searchSpecificCard(array $cards, int $rank, string $suit): bool;
 
     /**
+     * Userd in the following traits:
+     * RoyalFlushTrait,
+     * RoyalFlushTrait2,
+     * StraightTrait2
+     * 
+     * 
      * @param array<string> $cards
      */
-    private function checkForCards($cards, int $minRank, string $suit): bool
+    private function checkForCards(array $cards, int $minRank, string $suit): bool
     {
         $maxRank = $minRank + 4;
 

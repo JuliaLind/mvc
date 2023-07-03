@@ -8,6 +8,15 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait StraightTrait3
 {
     /**
+     * From StraightTrait2
+     * Returns true if a straight where the 'minRank' is the
+     * lowest rank is possible in the given ranks,
+     * otherwise returns false
+     * @param array<int> $ranks
+     */
+    abstract private function checkForRanks(array $ranks, int $minRank): bool;
+
+    /**
      * Used in the following traits:
      * StraightTrait,
      * StraightFlushTrait
@@ -20,16 +29,18 @@ trait StraightTrait3
      */
     private function checkAllPossible($ranks, int $minMinRank, int $maxMinRank): bool
     {
-        $notPossible = false;
+        $possible = true;
         for ($minRank = $minMinRank; $minRank <= $maxMinRank; $minRank++) {
-            $maxRank = $minRank - 4;
-            for ($rank = $minRank; $rank <= $maxRank; $rank++) {
-                $notPossible = !in_array($rank, $ranks);
-                if ($notPossible) {
-                    break;
-                }
-            }
+            $possible = $this->checkForRanks($ranks, $minRank);
+            // $maxRank = $minRank - 4;
+            // $possible = true;
+            // for ($rank = $minRank; $rank <= $maxRank; $rank++) {
+            //     if (!in_array($rank, $ranks)) {
+            //         $possible == false;
+            //         break;
+            //     }
+            // }
         }
-        return $notPossible;
+        return $possible;
     }
 }
