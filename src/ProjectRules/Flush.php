@@ -18,6 +18,9 @@ class Flush implements RuleInterface
     use RuleDataTrait;
     use SameSuitTrait;
 
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->name = "Flush";

@@ -23,12 +23,11 @@ trait TwoPairsTrait13
      * Returns true if the number of cards is 2 or 3
      * and the ranks of at least two cards in the hand
      * also are present in the deck
-     * @param array<string> $hand
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    private function check6(array $hand, array $ranksHand, array $ranksDeck): bool
+    private function check6(array $ranksHand, array $ranksDeck): bool
     {
-        return count($hand) <= 3 && $this->subCheck6($ranksHand, $ranksDeck);
+        return array_sum($ranksHand) <= 3 && $this->subCheck6($ranksHand, $ranksDeck);
     }
 }

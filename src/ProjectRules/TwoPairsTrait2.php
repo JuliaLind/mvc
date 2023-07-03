@@ -30,7 +30,7 @@ trait TwoPairsTrait2
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    abstract private function check4(array $hand, array $deck, array $ranksHand, array $ranksDeck): bool;
+    abstract private function check4(array $deck, array $ranksHand, array $ranksDeck): bool;
 
     /**
      * From TwoPairsTrait12
@@ -38,11 +38,10 @@ trait TwoPairsTrait2
      * Returns true if the hand contains two pairs or it
      * is possible to score two pairs together with the cards in
      * the deck
-     * @param array<string> $hand
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    abstract private function check5(array $hand, array $ranksHand, array $ranksDeck): bool;
+    abstract private function check5(array $ranksHand, array $ranksDeck): bool;
 
     /**
      * From TwoPairsTrait13.
@@ -50,11 +49,10 @@ trait TwoPairsTrait2
      * Returns true if the number of cards is 2 or 3
      * and the ranks of at least two cards in the hand
      * also are present in the deck
-     * @param array<string> $hand
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    abstract private function check6(array $hand, array $ranksHand, array $ranksDeck): bool;
+    abstract private function check6(array $ranksHand, array $ranksDeck): bool;
 
     /**
      * Checks if the Two Pairs rule is possible if the
@@ -76,16 +74,6 @@ trait TwoPairsTrait2
          */
         $ranksDeck = $this->countByRank($deck);
 
-        return $this->check4($hand, $deck, $ranksHand, $ranksDeck) || $this->check5($hand, $ranksHand, $ranksDeck) || $this->check6($hand, $ranksHand, $ranksDeck);
-        // if (count($hand) === 1) {
-        //     return $this->subcheck7($ranksHand, $ranksDeck) || $this->possibleDeckOnly($deck);
-        // }
-        // if (count($hand) > count($ranksHand)) {
-        //     return $this->subCheck4($hand, $ranksHand, $ranksDeck) || $this->subCheck5($ranksHand, $ranksDeck);
-        // }
-        // if (count($hand) <= 3) {
-        //     return $this->subCheck6($ranksHand, $ranksDeck);
-        // }
-        // return false;
+        return $this->check4($deck, $ranksHand, $ranksDeck) || $this->check5($ranksHand, $ranksDeck) || $this->check6($ranksHand, $ranksDeck);
     }
 }

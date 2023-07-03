@@ -9,6 +9,7 @@ trait CountSuitAndRankTrait
     /**
      * Used in the following traits:
      * RoyalFlushScoredTrait,
+     * RoyalFLushTrait,
      * StraightFlushScoredTrait,
      *
      * Returns an associative array containing two

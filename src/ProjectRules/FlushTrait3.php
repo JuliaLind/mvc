@@ -25,7 +25,9 @@ trait FlushTrait3
      * FlushTrait,
      *
      * Determins if a Flush is possible
-     * to get given cards in hand and cards in deck
+     * to get given cards in hand and cards in deck,
+     * i.e. if there are enough cards of the suit to cover
+     * fot the unfilled slots in the hand
      * @param array<string> $deck
      * @param array<string> $newHand
      */

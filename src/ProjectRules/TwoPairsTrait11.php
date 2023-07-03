@@ -32,13 +32,12 @@ trait TwoPairsTrait11
      * 2. The deck contains one pair and one card of
      * the same rank as the card in hand
      *
-     * @param array<string> $hand
      * @param array<string> $deck
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    private function check4(array $hand, array $deck, array $ranksHand, array $ranksDeck): bool
+    private function check4(array $deck, array $ranksHand, array $ranksDeck): bool
     {
-        return (count($hand) === 1 && ($this->subCheck7($ranksHand, $ranksDeck) || $this->possibleDeckOnly($deck)));
+        return (array_sum($ranksHand) === 1 && ($this->subCheck7($ranksHand, $ranksDeck) || $this->possibleDeckOnly($deck)));
     }
 }

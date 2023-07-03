@@ -10,6 +10,7 @@ trait StraightFlushTrait2
     private int $maxRank;
     private int $minRank;
     private string $suit;
+
     /**
      * @param array<string> $cards,
      * @param int $rank
@@ -23,6 +24,8 @@ trait StraightFlushTrait2
      * RoyalFlushTrait2,
      * StraightTrait2
      *
+     * Checks if the card array contains all ranks between min-rank
+     * and min-rank + 4 of the given suit
      * @param array<string> $cards
      */
     private function checkForCards(array $cards, int $minRank, string $suit): bool

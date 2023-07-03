@@ -20,6 +20,7 @@ trait FlushScoredTrait
     abstract private function countBySuit($cards): array;
 
     /**
+     * Returns true if the Flush rule has been scored
      * @param array<string> $hand
      */
     public function scored(array $hand): bool

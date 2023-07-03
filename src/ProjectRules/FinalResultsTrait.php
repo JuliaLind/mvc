@@ -26,7 +26,8 @@ trait FinalResultsTrait
      * @param array<array<string>> $hands
      * @return array<string,array<array<string,int|string>>|int>
      */
-    private function resultsOneDirection(array $hands): array {
+    private function resultsOneDirection(array $hands): array
+    {
         $data = [];
         $total = 0;
         /**
