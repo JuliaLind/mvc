@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1688419633">
-  <project timestamp="1688419633">
+<coverage generated="1688420483">
+  <project timestamp="1688420483">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -3358,17 +3358,17 @@
       <line num="50" type="stmt" count="6"/>
       <line num="78" type="method" name="check2" visibility="private" complexity="4" crap="4" count="9"/>
       <line num="80" type="stmt" count="9"/>
-      <metrics loc="85" ncloc="31" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="9" coveredelements="9"/>
+      <metrics loc="83" ncloc="30" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="9" coveredelements="9"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/TwoPairsTrait6.php">
       <class name="App\ProjectRules\TwoPairsTrait6" namespace="global">
-        <metrics complexity="3" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="2" elements="4" coveredelements="2"/>
+        <metrics complexity="3" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
       </class>
-      <line num="30" type="method" name="check3" visibility="private" complexity="3" crap="3.33" count="7"/>
-      <line num="36" type="stmt" count="7"/>
+      <line num="30" type="method" name="check3" visibility="private" complexity="3" crap="3" count="8"/>
+      <line num="36" type="stmt" count="8"/>
       <line num="37" type="stmt" count="7"/>
-      <line num="39" type="stmt" count="0"/>
-      <metrics loc="42" ncloc="17" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="2" elements="4" coveredelements="2"/>
+      <line num="39" type="stmt" count="1"/>
+      <metrics loc="42" ncloc="17" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/TwoPairsTrait7.php">
       <class name="App\ProjectRules\TwoPairsTrait7" namespace="global">
@@ -3489,6 +3489,6 @@
       <line num="39" type="stmt" count="1"/>
       <metrics loc="68" ncloc="36" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
     </file>
-    <metrics files="207" loc="9958" ncloc="6725" classes="191" methods="321" coveredmethods="221" conditionals="0" coveredconditionals="0" statements="1931" coveredstatements="1138" elements="2252" coveredelements="1359"/>
+    <metrics files="207" loc="9956" ncloc="6724" classes="191" methods="321" coveredmethods="222" conditionals="0" coveredconditionals="0" statements="1931" coveredstatements="1139" elements="2252" coveredelements="1361"/>
   </project>
 </coverage>
