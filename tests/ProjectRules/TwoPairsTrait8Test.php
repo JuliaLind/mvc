@@ -8,7 +8,7 @@ class TwoPairsTrait8Test extends TestCase
 {
     use TwoPairsTrait8;
 
-    public function testSubCheck5Ok(): void
+    public function testMatchOneInDeckOk(): void
     {
         $ranksDeck = [
             5 => 1,
@@ -21,11 +21,11 @@ class TwoPairsTrait8Test extends TestCase
             8 => 1,
             11 => 1
         ];
-        $res = $this->subCheck5($ranksHand, $ranksDeck);
+        $res = $this->matchOneInDeck($ranksHand, $ranksDeck);
         $this->assertTrue($res);
     }
 
-    public function testSubCheckNotOk(): void
+    public function testMatchOneInDeckNotOk(): void
     {
         $ranksDeck = [
             5 => 1,
@@ -38,11 +38,11 @@ class TwoPairsTrait8Test extends TestCase
             9 => 1,
             11 => 1
         ];
-        $res = $this->subCheck5($ranksHand, $ranksDeck);
+        $res = $this->matchOneInDeck($ranksHand, $ranksDeck);
         $this->assertFalse($res);
     }
 
-    public function testSubCheckNotOk2(): void
+    public function testMatchOneInDeckNotOk2(): void
     {
         $ranksDeck = [
             5 => 1,
@@ -51,7 +51,7 @@ class TwoPairsTrait8Test extends TestCase
             14 => 1
         ];
         $ranksHand = [];
-        $res = $this->subCheck5($ranksHand, $ranksDeck);
+        $res = $this->matchOneInDeck($ranksHand, $ranksDeck);
         $this->assertFalse($res);
     }
 }

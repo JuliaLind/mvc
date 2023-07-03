@@ -4,12 +4,12 @@ namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
 
-class FullHouseTrait8Test extends TestCase
+class FullHouseTrait5Test extends TestCase
 {
-    use FullHouseTrait8;
+    use FullHouseTrait5;
 
 
-    public function testSubCheck3Ok(): void
+    public function testCheck1Ok(): void
     {
         $ranksHand = [
             4 => 3,
@@ -20,11 +20,11 @@ class FullHouseTrait8Test extends TestCase
             10 => 2,
         ];
 
-        $res = $this->subCheck3($ranksHand, $ranksDeck);
+        $res = $this->check1($ranksHand, $ranksDeck);
         $this->assertTrue($res);
     }
 
-    public function testSubCheck3Ok2(): void
+    public function testCheck1Ok2(): void
     {
         $ranksHand = [
             4 => 2,
@@ -35,11 +35,11 @@ class FullHouseTrait8Test extends TestCase
             10 => 3,
         ];
 
-        $res = $this->subCheck3($ranksHand, $ranksDeck);
+        $res = $this->check1($ranksHand, $ranksDeck);
         $this->assertTrue($res);
     }
 
-    public function testSubCheckOk3(): void
+    public function testcheck1Ok3(): void
     {
         $ranksHand = [
             4 => 3,
@@ -50,11 +50,11 @@ class FullHouseTrait8Test extends TestCase
             10 => 3,
         ];
 
-        $res = $this->subCheck3($ranksHand, $ranksDeck);
+        $res = $this->check1($ranksHand, $ranksDeck);
         $this->assertTrue($res);
     }
 
-    public function testSubCheck3NotOk(): void
+    public function testcheck1NotOk(): void
     {
         $ranksHand = [
             2 => 1,
@@ -66,11 +66,11 @@ class FullHouseTrait8Test extends TestCase
             5 => 1,
         ];
 
-        $res = $this->subCheck3($ranksHand, $ranksDeck);
+        $res = $this->check1($ranksHand, $ranksDeck);
         $this->assertFalse($res);
     }
 
-    public function testSubCheck3NotOk2(): void
+    public function testcheck1NotOk2(): void
     {
         $ranksHand = [
             4 => 4,
@@ -81,11 +81,11 @@ class FullHouseTrait8Test extends TestCase
             5 => 1,
         ];
 
-        $res = $this->subCheck3($ranksHand, $ranksDeck);
+        $res = $this->check1($ranksHand, $ranksDeck);
         $this->assertFalse($res);
     }
 
-    public function testSubCheck3NotOk3(): void
+    public function testcheck1NotOk3(): void
     {
         $ranksHand = [
             4 => 2,
@@ -96,7 +96,7 @@ class FullHouseTrait8Test extends TestCase
             10 => 2,
         ];
 
-        $res = $this->subCheck3($ranksHand, $ranksDeck);
+        $res = $this->check1($ranksHand, $ranksDeck);
         $this->assertFalse($res);
     }
 }

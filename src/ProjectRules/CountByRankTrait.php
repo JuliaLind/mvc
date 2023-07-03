@@ -14,7 +14,11 @@ trait CountByRankTrait
      * Used in the following Traits:
      * StraightScoredTrait,
      * FullHouseScoredTrait,
+     * FullHouseTrait2,
+     * FullHouseTrait3,
      * TwoPairsScoredTrait,
+     * SameOfAKindTrait,
+     * SameOfAKindTrait2,
      * SameOfAKindTrait3,
      * RankLimitsTrait,
      * StraightTrait,

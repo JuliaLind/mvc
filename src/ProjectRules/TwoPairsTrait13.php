@@ -27,7 +27,7 @@ trait TwoPairsTrait13
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    private function subCheck10(array $hand, array $ranksHand, array $ranksDeck): bool
+    private function check6(array $hand, array $ranksHand, array $ranksDeck): bool
     {
         return count($hand) <= 3 && $this->subCheck6($ranksHand, $ranksDeck);
     }

@@ -16,6 +16,8 @@ trait CheckFullHandTrait
     private array $rules;
 
     /**
+     * Used in FinalResultsTrait
+     *
      * Checks which rule is scored at best (if any)
      * for a full hand. Called when the grid is completely filled.
      * Returns name of the scored rule and the number of poitns (actual, not weighted/adjusted)

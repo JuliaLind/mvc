@@ -36,6 +36,7 @@ trait TwoPairsTrait7
     }
     /**
      * Used in TwoPairsStatTrait12
+     *
      * Called if the hand already contains a pair.
      * Returns true if either of the following conditions is fulfilled:
      * 1. The hand contains 4 cards of two ranks
@@ -47,7 +48,7 @@ trait TwoPairsTrait7
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    private function subCheck4($hand, $ranksHand, $ranksDeck): bool
+    private function findSecondPair($hand, $ranksHand, $ranksDeck): bool
     {
         return $this->fourCardsTwoPairs($hand, $ranksHand) || $this->threeCardsTwoPairs($hand, $ranksHand, $ranksDeck);
     }

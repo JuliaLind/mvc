@@ -18,7 +18,7 @@ trait TwoPairsTrait4
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    private function subCheck(array $hand, int $rank, array $ranksHand, array $ranksDeck): bool
+    private function check1(array $hand, int $rank, array $ranksHand, array $ranksDeck): bool
     {
         if (array_key_exists($rank, $ranksHand)) {
             $this->additionalValue = 3;

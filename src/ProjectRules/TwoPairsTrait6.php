@@ -17,10 +17,10 @@ trait TwoPairsTrait6
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    abstract private function subCheck5(array $ranksHand, array $ranksDeck): bool;
+    abstract private function matchOneInDeck(array $ranksHand, array $ranksDeck): bool;
 
     /**
-     * Used in TwoPairsStatTrait
+     * Used in TwoPairsTrait
      * Called if the hand does not already contain
      * a pair and checks if the hand contains a card
      * of the same ranks as the dealt card and if the deck
@@ -32,15 +32,10 @@ trait TwoPairsTrait6
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    private function subCheck3(int $rank, array $ranksHand, array $ranksDeck): bool
+    private function check3(int $rank, array $ranksHand, array $ranksDeck): bool
     {
         if (array_key_exists($rank, $ranksHand)) {
-            return $this->subCheck5($ranksHand, $ranksDeck);
-            // foreach($ranksHand as $rank2) {
-            //     if (array_key_exists($rank2, $ranksDeck)) {
-            //         return true;
-            //     }
-            // }
+            return $this->matchOneInDeck($ranksHand, $ranksDeck);
         }
         return false;
     }

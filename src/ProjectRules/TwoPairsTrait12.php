@@ -19,7 +19,7 @@ trait TwoPairsTrait12
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    abstract private function subCheck4($hand, $ranksHand, $ranksDeck): bool;
+    abstract private function findSecondPair($hand, $ranksHand, $ranksDeck): bool;
 
     /**
      * From TwoPairsTrait8
@@ -34,7 +34,7 @@ trait TwoPairsTrait12
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    abstract private function subCheck5(array $ranksHand, array $ranksDeck): bool;
+    abstract private function matchOneInDeck(array $ranksHand, array $ranksDeck): bool;
 
 
 
@@ -48,8 +48,8 @@ trait TwoPairsTrait12
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    private function subCheck9(array $hand, array $ranksHand, array $ranksDeck): bool
+    private function check5(array $hand, array $ranksHand, array $ranksDeck): bool
     {
-        return count($hand) > count($ranksHand) && ($this->subCheck4($hand, $ranksHand, $ranksDeck) || $this->subCheck5($ranksHand, $ranksDeck));
+        return count($hand) > count($ranksHand) && ($this->findSecondPair($hand, $ranksHand, $ranksDeck) || $this->matchOneInDeck($ranksHand, $ranksDeck));
     }
 }

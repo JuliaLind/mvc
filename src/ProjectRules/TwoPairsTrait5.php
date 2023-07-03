@@ -36,7 +36,7 @@ trait TwoPairsTrait5
     }
 
     /**
-     * Used in TwoPairsStatTrait
+     * Used in TwoPairsTrait
      * Called on if the hand does not already
      * contains a pair and returns true if the hand
      * contains only 1 card and one of the following is
@@ -51,7 +51,7 @@ trait TwoPairsTrait5
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */
-    private function subCheck2(array $hand, int $rank, array $ranksHand, array $ranksDeck): bool
+    private function check2(array $hand, int $rank, array $ranksHand, array $ranksDeck): bool
     {
         return count($hand) === 1 && ($this->checkForTwoPairs1($rank, $ranksHand, $ranksDeck) || $this->checkForTwoPairs2($rank, $ranksHand, $ranksDeck));
     }

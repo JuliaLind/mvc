@@ -35,6 +35,10 @@ trait CheckWithoutCardTrait
     }
 
     /**
+     * Used in RulesWithoutCardTrait
+     *
+     * Checks one hand for the highest possible rule that can be scored
+     * without the dealt card
      * @param array<array<string>> $hands
      * @param array<string> $deck
      */

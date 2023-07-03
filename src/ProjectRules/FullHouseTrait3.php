@@ -5,12 +5,21 @@ namespace App\ProjectRules;
 trait FullHouseTrait3
 {
     /**
+     * Returns an associative array
+     * where keys are the ranks present amongst
+     * the cards and the values are the count of
+     * each rank
      * @param array<string> $cards
      * @return  array<array<int|string,int>>
      */
     abstract private function countByRank($cards): array;
 
     /**
+     * Used in FullHouseTrait2
+     *
+     * Returns true if the deck contains at least
+     * 3 cards of the same rank and at leat two cards
+     * of same (other) rank
      * @param array<string> $deck
      */
     public function possibleDeckOnly(array $deck): bool

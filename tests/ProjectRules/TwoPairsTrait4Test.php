@@ -8,7 +8,7 @@ class TwoPairsTrait4Test extends TestCase
 {
     use TwoPairsTrait4;
 
-    public function testSubCheckOk(): void
+    public function testCheck1Ok(): void
     {
         $ranksDeck = [
             5 => 1,
@@ -23,12 +23,12 @@ class TwoPairsTrait4Test extends TestCase
         ];
         $hand = ["4H", "8H", "4S", "11C"];
         $rank = 11;
-        $res = $this->subCheck($hand, $rank, $ranksHand, $ranksDeck);
+        $res = $this->check1($hand, $rank, $ranksHand, $ranksDeck);
         $this->assertTrue($res);
         $this->assertEquals(3, $this->additionalValue);
     }
 
-    public function testSubCheckOk2(): void
+    public function testCheck1Ok2(): void
     {
         $ranksDeck = [
             5 => 1,
@@ -42,12 +42,12 @@ class TwoPairsTrait4Test extends TestCase
         ];
         $hand = ["4H", "9H", "4S"];
         $rank = 14;
-        $res = $this->subCheck($hand, $rank, $ranksHand, $ranksDeck);
+        $res = $this->check1($hand, $rank, $ranksHand, $ranksDeck);
         $this->assertTrue($res);
         $this->assertEquals(2, $this->additionalValue);
     }
 
-    public function testSubCheckNotOk(): void
+    public function testCheck1NotOk(): void
     {
         $ranksDeck = [
             5 => 1,
@@ -61,7 +61,7 @@ class TwoPairsTrait4Test extends TestCase
         ];
         $hand = ["4H", "9H", "4S"];
         $rank = 13;
-        $res = $this->subCheck($hand, $rank, $ranksHand, $ranksDeck);
+        $res = $this->check1($hand, $rank, $ranksHand, $ranksDeck);
         $this->assertFalse($res);
         $this->assertEquals(0, $this->additionalValue);
     }
