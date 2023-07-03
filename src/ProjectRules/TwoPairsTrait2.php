@@ -81,6 +81,5 @@ trait TwoPairsTrait2
             return $this->check5($ranksHand, $ranksDeck);
         }
         return $this->check6($ranksHand, $ranksDeck);
-        // return $this->check4($deck, $ranksHand, $ranksDeck) || $this->check5($ranksHand, $ranksDeck) || $this->check6($ranksHand, $ranksDeck);
     }
 }

@@ -49,6 +49,5 @@ trait TwoPairsTrait12
     private function check5(array $ranksHand, array $ranksDeck): bool
     {
         return $this->findSecondPair($ranksHand, $ranksDeck) || $this->matchOneInDeck($ranksHand, $ranksDeck);
-        // return array_sum($ranksHand) > count($ranksHand) && ($this->findSecondPair($ranksHand, $ranksDeck) || $this->matchOneInDeck($ranksHand, $ranksDeck));
     }
 }

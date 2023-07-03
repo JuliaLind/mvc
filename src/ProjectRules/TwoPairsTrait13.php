@@ -16,6 +16,21 @@ trait TwoPairsTrait13
      */
     abstract private function threeCardsTwoPairsAlt(array $ranksHand, array $ranksDeck): bool;
 
+    /**
+     * From TwoPairsTrait8
+     *
+     * Called in the hand already contains a pair.
+     * Checks if any of the cards in the hand is
+     * present in the deck. Note that the deck will
+     * not contain the same rank as the pair in
+     * the hand, because the otherwise the Three
+     * Of A kind rulw would already have returned
+     * true
+     * @param array<int,int> $ranksHand
+     * @param array<int,int> $ranksDeck
+     */
+    abstract private function matchOneInDeck(array $ranksHand, array $ranksDeck): bool;
+
 
     /**
      * Used in TwoPairsTrait2.
@@ -29,7 +44,6 @@ trait TwoPairsTrait13
     private function check6(array $ranksHand, array $ranksDeck): bool
     {
         $nrOfCards = array_sum($ranksHand);
-        return ($nrOfCards <= 3 && $this->threeCardsTwoPairsAlt($ranksHand, $ranksDeck)) || ($nrOfCards <= 2 && $this->threeCardsTwoPairsAlt($ranksHand, $ranksDeck, 1) && max($ranksDeck) >= 2);
-        // return array_sum($ranksHand) <= 3 && $this->threeCardsTwoPairsAlt($ranksHand, $ranksDeck);
+        return ($nrOfCards <= 3 && $this->threeCardsTwoPairsAlt($ranksHand, $ranksDeck)) || ($nrOfCards <= 2 && $this->matchOneInDeck($ranksHand, $ranksDeck) && max($ranksDeck) >= 2);
     }
 }

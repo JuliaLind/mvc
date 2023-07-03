@@ -38,7 +38,6 @@ trait TwoPairsTrait11
      */
     private function check4(array $deck, array $ranksHand, array $ranksDeck): bool
     {
-        // return (array_sum($ranksHand) === 1 && ($this->oneCardTwoPairs($ranksHand, $ranksDeck) || $this->possibleDeckOnly($deck)));
         return $this->oneCardTwoPairs($ranksHand, $ranksDeck) || $this->possibleDeckOnly($deck);
     }
 }

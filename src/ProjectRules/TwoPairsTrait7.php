@@ -33,7 +33,7 @@ trait TwoPairsTrait7
 
 
     /**
-     * Used in TwoPairsStatTrait12
+     * Used in TwoPairsTrait12
      *
      * Called if the hand already contains a pair.
      * Returns true if either of the following conditions is fulfilled:
