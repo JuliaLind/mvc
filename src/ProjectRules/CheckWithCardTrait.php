@@ -73,10 +73,14 @@ trait CheckWithCardTrait
 
         foreach ($rules as $rule) {
             $data = $this->checkSingleRuleWith($hands, $index, $deck, $card, $rule);
-            $handPoints = $data['points'];
-            if ($handPoints > 1) {
+            $name = $data['rule'];
+            if ($name != "") {
                 break;
             }
+            // $handPoints = $data['points'];
+            // if ($handPoints > 1) {
+            //     break;
+            // }
         }
         return $data;
     }

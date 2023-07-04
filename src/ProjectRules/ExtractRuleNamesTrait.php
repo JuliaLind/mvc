@@ -5,38 +5,56 @@ namespace App\ProjectRules;
 trait ExtractRuleNamesTrait
 {
     /**
-     * @param array<int,array<string,int|string>> $rowDataWithCard
-     * @param array<int,array<string,int|string>> $colDataWithCard
+     * @param array<int,array<string,int|string>> $rowData
+     * @param array<int,array<string,int|string>> $colData
      * @return array<string,array<int,string>>
      */
-    private function extractRuleNames(array $rowDataWithCard, array $colDataWithCard): array
+    private function extractRuleNames(array $rowData, array $colData): array
     {
         $rowRulesWithCard = [];
         $colRulesWithCard = [];
+
+        $rowRulesWithout = [];
+        $colRulesWithout = [];
+
         for ($i=0; $i <= 4; $i++) {
-            /*
-             * @var array<string,string|int> $rowData
+            /**
+             * @var array<string,string|int> $rowDataSingle
              */
-            $rowData = $rowDataWithCard[$i];
+            $rowDataSingle = $rowData[$i];
             /**
              * @var string $rowRuleWithCard
              */
-            $rowRuleWithCard = $rowData['rule'];
+            $rowRuleWithCard = $rowDataSingle['rule'];
             $rowRulesWithCard[$i] = $rowRuleWithCard;
 
             /**
-             * @var array<string,string|int> $colData
+             * @var string $rowRuleWithout
              */
-            $colData = $colDataWithCard[$i];
+            $rowRuleWithout = $rowDataSingle['rule-without'];
+            $rowRulesWithout[$i] = $rowRuleWithout;
+
+            /**
+             * @var array<string,string|int> $colDataSingle
+             */
+            $colDataSingle = $colData[$i];
             /**
              * @var string $colRuleWithCard
              */
-            $colRuleWithCard = $colData['rule'];
+            $colRuleWithCard = $colDataSingle['rule'];
             $colRulesWithCard[$i] = $colRuleWithCard;
+
+            /**
+             * @var string $colRuleWithout
+             */
+            $colRuleWithout = $colDataSingle['rule-without'];
+            $colRulesWithout[$i] = $colRuleWithout;
         }
         return [
             'row-rules-with-card' => $rowRulesWithCard,
             'col-rules-with-card' => $colRulesWithCard,
+            'row-rules-without-card' => $rowRulesWithout,
+            'col-rules-without-card' => $colRulesWithout,
         ];
     }
 }

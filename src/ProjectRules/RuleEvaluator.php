@@ -10,6 +10,7 @@ require __DIR__ . "/../../vendor/autoload.php";
  */
 class RuleEvaluator
 {
+    use BestPossibleRulesTrait;
     use EmptyCellTrait;
     use FinalResultsTrait;
     use ExtractRuleNamesTrait;
@@ -21,8 +22,8 @@ class RuleEvaluator
     use PointsAndRuleNameTrait2;
     use RuleNameTrait;
     use RuleNameTrait2;
-    use RulesWithCardTrait;
-    use RulesWithoutCardTrait;
+    // use RulesWithCardTrait;
+    // use RulesWithoutCardTrait;
     use SlotTrait;
     use SuggestionTrait;
 

@@ -30,17 +30,26 @@ trait SuggestionTrait
     abstract private function slot(array $pointsRows, array $pointsCols, int $bestRow, array $rows, bool $inverted=false): array;
 
     /**
-     * @param array<array<string>> $hands
-     * @param array<string> $deck
-     * @return array<int,string>
-     */
-    abstract private function rulesWithoutCard(array $hands, array $deck): array;
-    /**
+     * From BestPossibleRulesTrait
+     *
      * @param array<array<string>> $hands
      * @param array<string> $deck
      * @return array<string,array<int,array<string,float|int|string>>|float|int|string>
      */
-    abstract private function rulesWithCard(array $hands, array $deck, string $card): array;
+    abstract private function rulesHands(array $hands, array $deck, string $card): array;
+
+    // /**
+    //  * @param array<array<string>> $hands
+    //  * @param array<string> $deck
+    //  * @return array<int,string>
+    //  */
+    // abstract private function rulesWithoutCard(array $hands, array $deck): array;
+    // /**
+    //  * @param array<array<string>> $hands
+    //  * @param array<string> $deck
+    //  * @return array<string,array<int,array<string,float|int|string>>|float|int|string>
+    //  */
+    // abstract private function rulesWithCard(array $hands, array $deck, string $card): array;
 
 
     /**
@@ -56,8 +65,10 @@ trait SuggestionTrait
         $cols = $grid->getCols();
 
 
-        $rowData = $this->rulesWithCard($rows, $deck, $card);
-        $colData = $this->rulesWithCard($cols, $deck, $card);
+        // $rowData = $this->rulesWithCard($rows, $deck, $card);
+        // $colData = $this->rulesWithCard($cols, $deck, $card);
+        $rowData = $this->rulesHands($rows, $deck, $card);
+        $colData = $this->rulesHands($cols, $deck, $card);
 
         /**
          * @var int|float $maxRowPoints
@@ -76,26 +87,24 @@ trait SuggestionTrait
          */
         $bestCol = $colData['bestHand'];
         /**
-         * @var array<int,array<string,int|string>> $pointsRows
+         * @var array<int,array<string,int|string>> $rulesRows
          */
-        $pointsRows = $rowData['points'];
+        $rulesRows = $rowData['allRules'];
         /**
-         * @var array<int,array<string,int|string>> $pointsCols
+         * @var array<int,array<string,int|string>> $rulesCols
          */
-        $pointsCols = $colData['points'];
+        $rulesCols = $colData['allRules'];
 
-        $rowRulesWithout = $this->rulesWithoutCard($rows, $deck);
-        $colRulesWithout = $this->rulesWithoutCard($cols, $deck);
-        $handRules = $this->extractRuleNames($pointsRows, $pointsCols);
-        $handRules['row-rules-without-card'] = $rowRulesWithout;
-        $handRules['col-rules-without-card'] = $colRulesWithout;
+
+        $handRules = $this->extractRuleNames($rulesRows, $rulesCols);
+
 
         if ($maxRowPoints >= $maxColPoints) {
-            $data = $this->slot($pointsRows, $pointsCols, $bestRow, $rows);
+            $data = $this->slot($rulesRows, $rulesCols, $bestRow, $rows);
             $data = array_merge($data, $handRules);
             return $data;
         }
-        $data = $this->slot($pointsCols, $pointsRows, $bestCol, $cols, true);
+        $data = $this->slot($rulesCols, $rulesRows, $bestCol, $cols, true);
         $data = array_merge($data, $handRules);
         return $data;
     }
