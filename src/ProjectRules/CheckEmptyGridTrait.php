@@ -20,6 +20,8 @@ trait CheckEmptyGridTrait
     abstract private function handRuleWith(array $hands, int $index, array $deck, string $card);
 
     /**
+     * Used in SuggestionTrait
+     *
      * Used for a new/empty array. Always suggests the first empty slot
      * (top-left/ row 0-col 0, and displays which rule will be psosible toachieve
      * at best calculated based on the dealt card and the cards the user is

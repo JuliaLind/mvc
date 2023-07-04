@@ -7,6 +7,8 @@ use App\ProjectGrid\Grid;
 trait SuggestionTrait
 {
     /**
+     * From CheckEmptyGridTrait
+     *
      * @param array<string> $deck
      * @return array<string,array<int,int|string>|string>
      */

@@ -5,6 +5,24 @@ namespace App\ProjectRules;
 trait PointsAndRuleNameTrait
 {
     /**
+     * Used if a pair or two pairs is possible to score with the
+     * dealt card to ensure that placing the card will not destroy any
+     * of the better rules that can be possible to achieve without card
+     * @param array<string> $hand
+     * @param array<string> $deck
+     */
+    private function betterWithoutCard(array $hand, array $deck): bool
+    {
+        $rules = array_slice($this->rules, 0, -3);
+        foreach ($rules as $rule) {
+            if ($rule->possibleWithoutCard($hand, $deck)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * If a rule is possible to score returns the name
      * of the rule and the adjusted number of points (
      * for rules Three Of A Kind and up 10% of the
@@ -30,7 +48,16 @@ trait PointsAndRuleNameTrait
             /**
              * To weight points taking into consideration cards already in hand
              */
-            $points = $rule->getPoints() + 1 + $rule->getAdditionalValue();
+            $points = $rule->getPoints() + $rule->getAdditionalValue();
+            /**
+             * To en sure that aiming for a pair or two
+             * pairs will not destroy the chances of getting one
+             * of the better rules if there are completely empty rows
+             * avalilable (empty rows have a value of 0.5)
+             */
+            if ($points < 10 && $this->betterWithoutCard($hand, $deck)) {
+                $points = 0.3;
+            }
             return [
                 'points' => $points,
                 'rule' => $rule->getName()
