@@ -10,7 +10,9 @@ trait TwoPairsTrait4
      * Used in TwoPairsTrait
      *
      * Method called on after ensuring the hand already contains
-     * one pair, to check if second pair is possible.
+     * one pair, to check if the card's rank has a
+     * match either in the hand or in the deck (cards the
+     * player will draw)
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */

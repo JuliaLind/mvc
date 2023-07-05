@@ -7,10 +7,13 @@ trait TwoPairsTrait5
     use TwoPairsTrait15;
 
     /**
-     * Called when there is one card in the hand.
-     * Checks if the card in the hand is of the
-     * same rank as the dealt card and if the deck
-     * contains at least two cards of same rank (any)
+     * Called in the hand contains 0-2 cards
+     * and there is not already a parid in the hand.
+     * Checks if the rank of the card
+     * matches any of the ranks
+     * in the hand and the maximum count of
+     * cards of same rank
+     * in the deck is two or more
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksDeck
      */

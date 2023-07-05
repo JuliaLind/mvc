@@ -75,10 +75,6 @@ trait SameOfAKindTrait2
             if ($this->enoughSpaceInHand($countHand, $ranksHand[$rank]) && $this->requiredCount($ranksAll[$rank])) {
                 return true;
             }
-            // $check = $this->enoughSpaceInHand(count($hand), $ranksHand[$rank]) && $this->requiredCount($ranksAll[$rank]);
-            // if ($check === true) {
-            //     return true;
-            // }
         }
         return false;
     }

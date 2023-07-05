@@ -82,4 +82,22 @@ class SameOfAKindTrait2Test extends TestCase
         $res = $this->possibleWithoutCard($hand, $deck);
         $this->assertTrue($res);
     }
+
+    public function testPossibleWithoutCardOk5(): void
+    {
+        $this->minCountRank = 4;
+        $hand = ["9H"];
+        $deck = ["4C", "8S", "4H", "4D", "4S"];
+        $res = $this->possibleWithoutCard($hand, $deck);
+        $this->assertTrue($res);
+    }
+
+    public function testPossibleWithoutCardNotOk5(): void
+    {
+        $this->minCountRank = 4;
+        $hand = ["9H", "4H", "9C"];
+        $deck = ["4C", "8S", "4D", "4S"];
+        $res = $this->possibleWithoutCard($hand, $deck);
+        $this->assertFalse($res);
+    }
 }

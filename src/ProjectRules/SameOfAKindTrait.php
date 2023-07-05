@@ -78,16 +78,9 @@ trait SameOfAKindTrait
         $countRank = 0;
         if (array_key_exists($rank, $ranksHand)) {
             $countRank = $ranksHand[$rank];
+            $this->additionalValue = $ranksHand[$rank];
         }
 
         return $this->enoughSpaceInHand(count($hand), $countRank) && $this->requiredCount($ranksAll[$rank]);
-        // if (array_key_exists($rank, $ranksHand) && $this->enoughSpaceInHand(count($hand), $ranksHand[$rank])) {
-        //     $this->additionalValue = $ranksHand[$rank];
-        //     return true;
-        // }
-        // if (count($ranksHand) === 0 && $this->requiredCount($ranksAll[$rank])) {
-        //     return true;
-        // }
-        // return false;
     }
 }
