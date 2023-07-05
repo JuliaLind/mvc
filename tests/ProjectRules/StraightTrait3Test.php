@@ -43,4 +43,13 @@ class StraightTrait3Test extends TestCase
         $res = $this->checkAllPossible($ranks, $minMinRank, $maxMinRank);
         $this->assertFalse($res);
     }
+
+    public function testCheckAllPoissbleOk3(): void
+    {
+        $ranks = [6, 7, 8, 9, 10, 12, 14];
+        $minMinRank = 4;
+        $maxMinRank = 7;
+        $res = $this->checkAllPossible($ranks, $minMinRank, $maxMinRank);
+        $this->assertTrue($res);
+    }
 }

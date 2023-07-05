@@ -20,4 +20,19 @@ class GroupBySuitTraitTest extends TestCase
         $res = $this->groupBySuit($cards);
         $this->assertEquals($exp, $res);
     }
+
+    public function testGroupBySuit2(): void
+    {
+        $cards = [
+                    "10D",
+                    "9D",
+                    "8D",
+                    "7D"
+                ];
+        $exp = [
+            "D" => [10, 9, 8, 7],
+        ];
+        $res = $this->groupBySuit($cards);
+        $this->assertEquals($exp, $res);
+    }
 }

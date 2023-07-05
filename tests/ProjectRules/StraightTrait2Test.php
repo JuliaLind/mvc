@@ -16,6 +16,15 @@ class StraightTrait2Test extends TestCase
         $this->assertTrue($res);
     }
 
+    public function testCheckForRanksOk2(): void
+    {
+        $ranks = [6, 7, 8, 9, 10, 12, 14];
+        $minRank = 6;
+        $res = $this->checkForRanks($ranks, $minRank);
+        $this->assertTrue($res);
+    }
+
+
     public function testCheckForRanksNotOk(): void
     {
         $ranks = [4, 6, 7, 9, 10, 11, 12, 13];

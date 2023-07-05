@@ -22,9 +22,12 @@ trait StraightTrait3
      */
     private function checkAllPossible($ranks, int $minMinRank, int $maxMinRank): bool
     {
-        $possible = true;
+        $possible = false;
         for ($minRank = $minMinRank; $minRank <= $maxMinRank; $minRank++) {
             $possible = $this->checkForRanks($ranks, $minRank);
+            if ($possible) {
+                return true;
+            }
         }
         return $possible;
     }

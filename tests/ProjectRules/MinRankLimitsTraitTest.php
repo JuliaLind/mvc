@@ -81,7 +81,6 @@ class MinRankLimitsTraitTest extends TestCase
         $this->assertEquals($exp, $res);
     }
 
-
     public function testMinRankLimitsNotOk(): void
     {
         $minRank = 3;

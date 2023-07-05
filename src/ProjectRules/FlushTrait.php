@@ -8,7 +8,6 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait FlushTrait
 {
     use FlushTrait3;
-    // use SameSuitTrait;
 
 
     /**

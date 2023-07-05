@@ -19,14 +19,20 @@ trait GroupBySuitTrait
      */
     private function groupBySuit($cards): array
     {
-        $data = [
-            'D' => [],
-            'H' => [],
-            'C' => [],
-            'S' => []
-        ];
+        // $data = [
+        //     'D' => [],
+        //     'H' => [],
+        //     'C' => [],
+        //     'S' => []
+        // ];
+        $data = [];
         foreach($cards as $card) {
-            $data[$card[-1]][] = intval(substr($card, 0, -1));
+            $suit = $card[-1];
+            $rank = intval(substr($card, 0, -1));
+            if (!array_key_exists($suit, $data)) {
+                $data[$suit] = [];
+            }
+            $data[$suit][] = $rank;
         }
         return $data;
     }

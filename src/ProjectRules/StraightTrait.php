@@ -37,7 +37,7 @@ trait StraightTrait
         if (count($hand) > count($ranks) || $maxRank - $minRank > 4) {
             return false;
         }
-        // $check1 = $this->setRankLimits($hand);
+
         $minRankLimits = $this->minRankLimits($minRank, $maxRank);
         $minMinRank = $minRankLimits['min'];
         $maxMinRank = $minRankLimits['max'];

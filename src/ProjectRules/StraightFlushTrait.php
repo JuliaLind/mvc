@@ -7,7 +7,8 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 trait StraightFlushTrait
 {
-    // use SameSuitTrait;
+    // use CountBySuitTrait;
+    use MinRankLimitsTrait;
 
     /**
      * From StraightTrait3.
@@ -41,29 +42,35 @@ trait StraightFlushTrait
     public function possibleWithoutCard(array $hand, array $deck): bool
     {
         /**
-         * @var array<string,int> $suits
+         * @var array<string,array<int>> $handBySuit
          */
-        $suits = $this->countBySuit($hand);
+        $handBySuit = $this->groupBySuit($hand);
 
-        if (count($suits) > 1) {
+        if (count($handBySuit) > 1) {
             return false;
         }
+        $ranks = array_values($handBySuit)[0];
+        $maxRank = max($ranks);
+        $minRank = min($ranks);
+        if ($maxRank - $minRank > 4) {
+            return false;
+        }
+        $minRankLimits = $this->minRankLimits($minRank, $maxRank);
+        $minMinRank = $minRankLimits['min'];
+        $maxMinRank = $minRankLimits['max'];
+
         /**
          * @var string $suit
          */
-        $suit = array_key_first($suits);
+        $suit = array_key_first($handBySuit);
         $allCards = array_merge($hand, $deck);
         /**
          * @var array<string,array<int>> $cardsBySuit
          */
         $cardsBySuit = $this->groupBySuit($allCards);
-        $ranks = $cardsBySuit[$suit];
-        $maxRank = max(array_keys($ranks));
-        $minRank = min(array_keys($ranks));
-        if ($maxRank - $minRank > 4) {
-            return false;
-        }
+        $allRanks = $cardsBySuit[$suit];
+
         // return $this->setRankLimits($hand) && $this->checkAllPossible($ranks, min($ranks), max($ranks) - 4);
-        return $this->checkAllPossible($ranks, min($ranks), max($ranks) - 4);
+        return $this->checkAllPossible($allRanks, $minMinRank, $maxMinRank);
     }
 }
