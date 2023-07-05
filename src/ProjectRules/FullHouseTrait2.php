@@ -34,6 +34,9 @@ trait FullHouseTrait2
          * @var array<int,int> $ranksHand
          */
         $ranksHand = $this->countByRank($hand);
+        if (count($ranksHand) > 2) {
+            return false;
+        }
         /**
          * @var array<int,int> $ranksDeck
          */
@@ -49,6 +52,7 @@ trait FullHouseTrait2
             $rank = array_key_first($ranksHand);
             return in_array($rank, array_keys($ranksDeck)) && $this->possibleDeckOnly($allCards);
         }
+
         return $this->check1($ranksHand, $ranksDeck) || ($this->check2($ranksHand) && $this->check3($ranksHand, $ranksAll));
     }
 }

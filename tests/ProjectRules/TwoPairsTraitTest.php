@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class TwoPairsTraitTest extends TestCase
 {
+    // use AdditionalValueTrait;
     use CountByRankTrait;
     use TwoPairsTrait;
     use TwoPairsTrait3;

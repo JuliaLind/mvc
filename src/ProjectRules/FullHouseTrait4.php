@@ -7,8 +7,10 @@ trait FullHouseTrait4
     /**
      * Used in FullHouseTrait2
      *
-     * Returns true if it is possible to score a FullHouse
-     * given the ranks in the hand and all ranks (hand + deck)
+     * Returns true if hand contains exactly two ranks and the
+     * count of one of the ranks together with the
+     * card in deck is at least 3, and correspoding for
+     * the other ranks is at least 2
      * @param array<int,int> $ranksHand
      * @param array<int,int> $ranksAll
      */
