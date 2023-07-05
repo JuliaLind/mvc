@@ -8,7 +8,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait FlushTrait
 {
     use FlushTrait3;
-    use SameSuitTrait;
+    // use SameSuitTrait;
 
 
     /**
@@ -20,7 +20,16 @@ trait FlushTrait
      */
     public function possibleWithoutCard(array $hand, array $deck): bool
     {
-        return $this->setSuit($hand) && $this->checkInDeck($deck, $hand);
+        /**
+         * @var array<string,int> $suits
+         */
+        $suits = $this->countBySuit($hand);
+        /**
+         * @var string $suit
+         */
+        $suit = array_key_first($suits);
+
+        return (count($suits) === 1)  && $this->checkInDeck($suit, $deck, count($hand));
     }
 
 }

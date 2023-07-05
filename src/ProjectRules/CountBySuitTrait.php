@@ -11,7 +11,6 @@ trait CountBySuitTrait
      * FlushScoredTrait,
      * FlushTrait2;
      * FlushTrait3,
-     * SameSuitTrait,
      *
      *
      * Returns an associative array

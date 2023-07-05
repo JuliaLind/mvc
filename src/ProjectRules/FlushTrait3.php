@@ -6,7 +6,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 trait FlushTrait3
 {
-    private string $suit;
+    // private string $suit;
 
     /**
      * From CountBySuitTrait.
@@ -20,6 +20,18 @@ trait FlushTrait3
      */
     abstract private function countBySuit($cards): array;
 
+    // /**
+    //  * Used in the following traits:
+    //  * FlushTrait
+    //  *
+    //  * Determins if a Flush is possible
+    //  * to get given cards in hand and cards in deck,
+    //  * i.e. if there are enough cards of the suit to cover
+    //  * fot the unfilled slots in the hand
+    //  * @param array<string> $deck
+    //  * @param array<string> $newHand
+    //  */
+    // private function checkInDeck(string $suit, array $deck, array $newHand): bool
     /**
      * Used in the following traits:
      * FlushTrait
@@ -29,16 +41,15 @@ trait FlushTrait3
      * i.e. if there are enough cards of the suit to cover
      * fot the unfilled slots in the hand
      * @param array<string> $deck
-     * @param array<string> $newHand
      */
-    private function checkInDeck(array $deck, array $newHand): bool
+    private function checkInDeck(string $suit, array $deck, int $countHand): bool
     {
         $suitsDeck = $this->countBySuit($deck);
-        /**
-         * @var string $suit
-         */
-        $suit = $this->suit;
+        // /**
+        //  * @var string $suit
+        //  */
+        // $suit = $this->suit;
 
-        return (array_key_exists($suit, $suitsDeck) && $suitsDeck[$suit] >= (5 - count($newHand)));
+        return (array_key_exists($suit, $suitsDeck) && $suitsDeck[$suit] >= (5 - $countHand));
     }
 }

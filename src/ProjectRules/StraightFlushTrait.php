@@ -7,8 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 trait StraightFlushTrait
 {
-    // use RankLimitsTrait;
-    use SameSuitTrait;
+    // use SameSuitTrait;
 
     /**
      * From StraightTrait3.
@@ -41,15 +40,24 @@ trait StraightFlushTrait
      */
     public function possibleWithoutCard(array $hand, array $deck): bool
     {
-        if (!$this->setSuit($hand)) {
+        /**
+         * @var array<string,int> $suits
+         */
+        $suits = $this->countBySuit($hand);
+
+        if (count($suits) > 1) {
             return false;
         }
+        /**
+         * @var string $suit
+         */
+        $suit = array_key_first($suits);
         $allCards = array_merge($hand, $deck);
         /**
          * @var array<string,array<int>> $cardsBySuit
          */
         $cardsBySuit = $this->groupBySuit($allCards);
-        $ranks = $cardsBySuit[$this->suit];
+        $ranks = $cardsBySuit[$suit];
         $maxRank = max(array_keys($ranks));
         $minRank = min(array_keys($ranks));
         if ($maxRank - $minRank > 4) {

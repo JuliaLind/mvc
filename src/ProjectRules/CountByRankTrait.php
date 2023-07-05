@@ -11,7 +11,6 @@ trait CountByRankTrait
      * FullHouseScoredTrait,
      * FullHouseTrait2,
      * FullHouseTrait3,
-     * RankLimitsTrait,
      * SameOfAKind,
      * SameOfAKindTrait,
      * SameOfAKindTrait2,
