@@ -8,10 +8,7 @@ class TwoPairsTraitTest extends TestCase
 {
     use CountByRankTrait;
     use TwoPairsTrait;
-    use TwoPairsTrait4;
-    use TwoPairsTrait5;
     use TwoPairsTrait3;
-    use TwoPairsTrait6;
     use TwoPairsTrait8;
 
     public function testPossibleWithCardNotOk(): void

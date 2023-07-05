@@ -4,11 +4,7 @@ namespace App\ProjectRules;
 
 trait SlotTrait
 {
-    /**
-     * @param array<string> $hand
-     * @return array<array<int,int>>
-     */
-    abstract private function single(array $hand, int $index): array;
+    use EmptyCellTrait;
 
     /**
      * @SuppressWarnings(PHPMD.BooleanArgumentFlag)

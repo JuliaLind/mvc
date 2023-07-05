@@ -6,7 +6,6 @@ use PHPUnit\Framework\TestCase;
 
 class StraightTrait3Test extends TestCase
 {
-    use StraightTrait2;
     use StraightTrait3;
 
     public function testCheckAllPoissbleOk(): void

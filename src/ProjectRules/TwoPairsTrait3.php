@@ -17,7 +17,7 @@ trait TwoPairsTrait3
 
     /**
      * Called on by the RuleEvaluator class,
-     * but also used in TwoPairsStatTrait2
+     * but also used in TwoPairsTrait11
      * Checks if the array with cards
      * contains at least two pairs
      * @param array<string> $cards

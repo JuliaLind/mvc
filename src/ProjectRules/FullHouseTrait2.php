@@ -4,49 +4,10 @@ namespace App\ProjectRules;
 
 trait FullHouseTrait2
 {
-    /**
-     * From FullhouseTrait3
-     *
-     * Returns true if the deck contains at least
-     * 3 cards of the same rank and at leat two cards
-     * of same (other) rank
-     * @param array<string> $deck
-     */
-    abstract public function possibleDeckOnly(array $deck): bool;
-
-    /**
-     * From FullHouseTrait4
-     *
-     * Returns true if it is possible to score a FullHouse
-     * given the ranks in the hand and all ranks (hand + deck)
-     * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksAll
-     */
-    abstract private function check3($ranksHand, $ranksAll): bool;
-
-    /**
-     * From FullHouseTrait6
-     *
-     * Returns true is the hand contains 2 or less different ranks
-     * and if the maximum number of cards of the same rank in the hand
-     * is 3
-     * @param array<int,int> $ranksHand
-     */
-    abstract private function check2($ranksHand): bool;
-
-    /**
-     * From FullHouseTrait5
-     *
-     * Returns true if the cards in the hand are of the same rank and of the following two
-     * conditions is fulfilled:
-     * 1. maximum number of cards of same rank in the hand is two and the deck contains
-     * at least three cards of same rank
-     * 2. maximum number of cards of same rank in the hand is three and the deck contains
-     * at least three cards of the same rank
-     * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
-     */
-    abstract private function check1($ranksHand, $ranksDeck): bool;
+    use FullHouseTrait3;
+    use FullHouseTrait4;
+    use FullHouseTrait5;
+    use FullHouseTrait6;
 
     /**
      * From CountByRankTrait

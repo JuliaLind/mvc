@@ -7,27 +7,8 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 trait RoyalFlushTrait2
 {
-    /**
-     * From GroupBySuitTrait
-     *
-     * Returns an associative array with keys
-     * correspoding to suits present in the cards
-     * array and values - arrays containing the ranks
-     * of each suit present in the card-array
-     * @param array<string> $cards
-     * @return array<string,array<int,int>>
-     */
-    abstract private function groupBySuit($cards): array;
-
-    /**
-     * From StraightTrait2
-     *
-     * Returns true if a straight where the 'minRank' is the
-     * lowest rank is possible in the given ranks,
-     * otherwise returns false
-     * @param array<int> $ranks
-     */
-    abstract private function checkForRanks(array $ranks, int $minRank): bool;
+    use GroupBySuitTrait;
+    use StraightTrait2;
 
     /**
      * Returns true if is is possible to score a RoyalFlush

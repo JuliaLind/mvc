@@ -7,6 +7,9 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 trait StraightFlushTrait
 {
+    use RankLimitsTrait;
+    use SameSuitTrait;
+
     /**
      * From StraightTrait3.
      *
@@ -18,15 +21,6 @@ trait StraightFlushTrait
      */
     abstract private function checkAllPossible($ranks, int $minMinRank, int $maxMinRank): bool;
 
-    /**
-     * From SameSuitTrait.
-     * Sets suit attribute to the suit of the
-     * first card in the hand and
-     * returns true if all cards in the hand are
-     * of the same suit
-     * @param array<string> $hand
-     */
-    abstract private function setSuit(array $hand): bool;
 
     /**
      * From GroupBySuitTrait
@@ -38,16 +32,6 @@ trait StraightFlushTrait
      * @return array<string,array<int,int>>
      */
     abstract private function groupBySuit($cards): array;
-
-    /**
-     * From RankLimitsTrait.
-     * Sets the minRank and maxRank attributes to the
-     * min rank in the hand and max rank in the hand.
-     * Returns true if the difference between max rank
-     * and min rank is no bigger than 4
-     * @param array<string> $hand
-     */
-    abstract private function setRankLimits(array $hand): bool;
 
     /**
      * Returns true if rule is possible to

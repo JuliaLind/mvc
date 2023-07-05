@@ -7,6 +7,8 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 trait RoyalFlushTrait
 {
+    use RoyalFlushTrait3;
+
     /**
      * From CountSuitAndRankTrait
      *
@@ -21,14 +23,6 @@ trait RoyalFlushTrait
      */
     abstract private function countSuitAndRank($cards): array;
 
-    /**
-     * From StraightFlushTrait2
-     *
-     * Checks if the card array contains all ranks between min-rank
-     * and min-rank + 4 of the given suit
-     * @param array<string> $cards
-     */
-    abstract private function checkForCards(array $cards, int $minRank, string $suit): bool;
 
     /**
      * Returns true if the RoyalFlush rule is possible to score without the dealt card

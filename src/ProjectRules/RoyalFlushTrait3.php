@@ -5,24 +5,17 @@ namespace App\ProjectRules;
 require __DIR__ . "/../../vendor/autoload.php";
 
 
-trait StraightFlushTrait2
+trait RoyalFlushTrait3
 {
+    use SearchSpecificCardTrait;
+
     private int $maxRank;
     private int $minRank;
     private string $suit;
 
     /**
-     * @param array<string> $cards,
-     * @param int $rank
-     * @param string $suit
-     */
-    abstract private function searchSpecificCard(array $cards, int $rank, string $suit): bool;
-
-    /**
      * Userd in the following traits:
      * RoyalFlushTrait,
-     * RoyalFlushTrait2,
-     * StraightTrait2
      *
      * Checks if the card array contains all ranks between min-rank
      * and min-rank + 4 of the given suit

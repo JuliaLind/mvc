@@ -22,7 +22,7 @@ trait FlushTrait3
 
     /**
      * Used in the following traits:
-     * FlushTrait,
+     * FlushTrait
      *
      * Determins if a Flush is possible
      * to get given cards in hand and cards in deck,

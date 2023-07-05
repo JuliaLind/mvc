@@ -4,11 +4,7 @@ namespace App\ProjectRules;
 
 trait TwoPairsTrait4
 {
-    /**
-     * 1 point for every card that already is in hand
-     * and contributes to the rule
-     */
-    private int $additionalValue = 0;
+    use AdditionalValueTrait;
 
     /**
      * Used in TwoPairsTrait

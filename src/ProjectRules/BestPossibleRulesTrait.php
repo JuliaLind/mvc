@@ -7,22 +7,8 @@ namespace App\ProjectRules;
  */
 trait BestPossibleRulesTrait
 {
-    /**
-     * @param array<array<string>> $hands
-     * @param array<string> $deck
-     * @return array<string,array<int,array<string,float|int|string>>|float|int|string>
-     */
-    abstract private function handRuleWith(array $hands, int $index, array $deck, string $card);
-
-    /**
-     * From CheckWithoutCardTrait
-     *
-     * Checks one hand for the highest possible rule that can be scored
-     * without the dealt card
-     * @param array<array<string>> $hands
-     * @param array<string> $deck
-     */
-    abstract private function handRuleWithout(array $hands, int $index, array $deck): string;
+    use CheckWithCardTrait;
+    use CheckWithoutCardTrait;
 
     /**
      * @param array<array<string>> $hands

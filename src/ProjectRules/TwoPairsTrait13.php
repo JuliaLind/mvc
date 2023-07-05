@@ -4,17 +4,7 @@ namespace App\ProjectRules;
 
 trait TwoPairsTrait13
 {
-    /**
-     * From TwoPairsTrait9
-     *
-     * Called if the hand does not already contain
-     * a pair and the hand contains two or three cards.
-     * Checks if at least two of the ranks present
-     * in the hand are also present in the deck
-     * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
-     */
-    abstract private function threeCardsTwoPairsAlt(array $ranksHand, array $ranksDeck): bool;
+    use TwoPairsTrait9;
 
     /**
      * From TwoPairsTrait8

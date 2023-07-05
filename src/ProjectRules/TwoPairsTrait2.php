@@ -4,6 +4,10 @@ namespace App\ProjectRules;
 
 trait TwoPairsTrait2
 {
+    use TwoPairsTrait11;
+    use TwoPairsTrait12;
+    use TwoPairsTrait13;
+
     /**
      * From CountByRankTrait
      *
@@ -16,43 +20,6 @@ trait TwoPairsTrait2
      */
     abstract private function countByRank($cards): array;
 
-    /**
-     * From TwoPairsTrait11.
-     *
-     * Returns true if the hand contains only one card and
-     * either of the following two conditions is fulfilled:
-     * 1. The deck contains two pairs
-     * 2. The deck contains one pair and one card of
-     * the same rank as the card in hand
-     *
-     * @param array<string> $hand
-     * @param array<string> $deck
-     * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
-     */
-    abstract private function check4(array $deck, array $ranksHand, array $ranksDeck): bool;
-
-    /**
-     * From TwoPairsTrait12
-     *
-     * Returns true if the hand contains two pairs or one pair and it
-     * is possible to score two pairs together with the cards in
-     * the deck
-     * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
-     */
-    abstract private function check5(array $ranksHand, array $ranksDeck): bool;
-
-    /**
-     * From TwoPairsTrait13.
-     *
-     * Returns true if the hand contains 2 or 3 cards
-     * and the ranks of at least two cards in the hand are
-     * also are present in the deck
-     * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
-     */
-    abstract private function check6(array $ranksHand, array $ranksDeck): bool;
 
     /**
      * Checks if the Two Pairs rule is possible if the

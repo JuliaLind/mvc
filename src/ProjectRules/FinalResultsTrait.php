@@ -9,16 +9,7 @@ use App\ProjectGrid\Grid;
 
 trait FinalResultsTrait
 {
-    /**
-     * From CheckFullHandTrait
-     *
-     * Checks which rule is scored at best (if any)
-     * for a full hand. Called when the grid is completely filled.
-     * Returns name of the scored rule and the number of poitns (actual, not weighted/adjusted)
-     * @param array<string> $hand
-     * @return array<string,string|int>
-     */
-    abstract private function checkHandForWin($hand): array;
+    use CheckFullHandTrait;
 
     /**
      * Returns results for all five hands in one direction (horizontal

@@ -8,24 +8,12 @@ namespace App\ProjectRules;
  */
 class TwoPairs implements RuleInterface
 {
-    use AdditionalValueTrait;
     use CountByRankTrait;
     use RuleDataTrait;
     use TwoPairsScoredTrait;
     use TwoPairsTrait;
     use TwoPairsTrait2;
-    use TwoPairsTrait3;
-    use TwoPairsTrait4;
-    use TwoPairsTrait5;
-    use TwoPairsTrait6;
-    use TwoPairsTrait7;
     use TwoPairsTrait8;
-    use TwoPairsTrait9;
-    use TwoPairsTrait10;
-    use TwoPairsTrait11;
-    use TwoPairsTrait12;
-    use TwoPairsTrait13;
-    use TwoPairsTrait14;
 
 
     public function __construct()

@@ -4,19 +4,15 @@ namespace App\ProjectRules;
 
 /**
  * Used by the following classes:
- * FlushStat
- * FullHouseStat
- * RoyalFlushStat
- * StraightFlushStat
- * StraightStat
+ * Flush
+ * FullHouse
+ * RoyalFlush
+ * StraightFlush
+ * Straight
  */
 trait FirstCheckTrait
 {
-    /**
-     * 1 point for every card that already is in hand
-     * and contributes to the rule
-     */
-    private int $additionalValue = 0;
+    use AdditionalValueTrait;
 
     /**
      * Return true if the rule is possible to score without the dealt card,

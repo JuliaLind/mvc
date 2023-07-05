@@ -8,15 +8,10 @@ namespace App\ProjectRules;
  */
 class FullHouse implements RuleInterface
 {
-    use AdditionalValueTrait;
     use CountByRankTrait;
     use FirstCheckTrait;
     use FullHouseScoredTrait;
     use FullHouseTrait2;
-    use FullHouseTrait3;
-    use FullHouseTrait4;
-    use FullHouseTrait5;
-    use FullHouseTrait6;
     use RuleDataTrait;
 
     public function __construct()

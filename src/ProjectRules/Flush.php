@@ -8,15 +8,13 @@ namespace App\ProjectRules;
  */
 class Flush implements RuleInterface
 {
-    use AdditionalValueTrait;
     use CountBySuitTrait;
     use FirstCheckTrait;
     use FlushScoredTrait;
     use FlushTrait;
     use FlushTrait2;
-    use FlushTrait3;
     use RuleDataTrait;
-    use SameSuitTrait;
+
 
     /**
      * Constructor

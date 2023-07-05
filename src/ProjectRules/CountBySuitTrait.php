@@ -9,7 +9,10 @@ trait CountBySuitTrait
     /**
      * Used in the following traits:
      * FlushScoredTrait,
-     * FlushTrait3
+     * FlushTrait2;
+     * FlushTrait3,
+     * SameSuitTrait,
+     *
      *
      * Returns an associative array
      * where keys are the suits present amongst

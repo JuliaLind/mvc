@@ -8,8 +8,7 @@ class FlushTraitPt2Test extends TestCase
 {
     use CountBySuitTrait;
     use FlushTrait;
-    use FlushTrait3;
-    use SameSuitTrait;
+
 
     public function testPossibleWithoutCardNotOk(): void
     {

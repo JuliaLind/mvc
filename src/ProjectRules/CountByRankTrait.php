@@ -2,27 +2,26 @@
 
 namespace App\ProjectRules;
 
-/**
- * Used by the following classes:
- * TwoParsStat
- */
 trait CountByRankTrait
 {
     use SubCountTrait;
 
     /**
-     * Used in the following Traits:
-     * StraightScoredTrait,
+     * Used in the following classes and traits:
      * FullHouseScoredTrait,
      * FullHouseTrait2,
      * FullHouseTrait3,
-     * TwoPairsScoredTrait,
+     * RankLimitsTrait,
+     * SameOfAKind,
      * SameOfAKindTrait,
      * SameOfAKindTrait2,
      * SameOfAKindTrait3,
-     * RankLimitsTrait,
+     * StraightScoredTrait,
      * StraightTrait,
-     * TwoPairsTrait
+     * TwoPairsScoredTrait,
+     * TwoPairsTrait,
+     * TwoPairsTrait2,
+     * TwoPairsTrait3,
      *
      * Returns an associative array
      * where keys are the ranks present amongst

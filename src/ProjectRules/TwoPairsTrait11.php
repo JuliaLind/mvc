@@ -4,25 +4,8 @@ namespace App\ProjectRules;
 
 trait TwoPairsTrait11
 {
-    /**
-     * Checks if the array with cards contains at least two pairs
-     * @param array<string> $cards
-     */
-    abstract public function possibleDeckOnly(array $cards): bool;
-
-    /**
-     * From TwoPairsTrait10
-     *
-     * Called if the card conains only one card.
-     * Returns true if the deck contains at least one card
-     * of the same rank as the card in hand and at least one pair.
-     * Note that the pair in deck will not be of the same rank
-     * as the card in hand, otherwise a higher rule would have
-     * already returned true
-     * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
-     */
-    abstract private function oneCardTwoPairs(array $ranksHand, array $ranksDeck): bool;
+    use TwoPairsTrait3;
+    use TwoPairsTrait10;
 
     /**
      * Used in TwoPairsTrait2

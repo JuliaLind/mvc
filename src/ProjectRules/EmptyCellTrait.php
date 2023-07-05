@@ -7,8 +7,12 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait EmptyCellTrait
 {
     /**
-    * @param array<string> $hand
-    * @return array<array<int,int>>
+     * Used in SlotTrait
+     *
+     * Returns an array with coordinates [row,col]
+     * for all empty slots in a hand
+     * @param array<string> $hand
+     * @return array<array<int,int>>
     */
     private function single(array $hand, int $index): array
     {

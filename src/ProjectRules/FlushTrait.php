@@ -7,25 +7,8 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 trait FlushTrait
 {
-    /**
-     * From FlushTrait3
-     *
-     * Determins if a Flush is possible
-     * to get given cards in hand and cards in deck
-     * @param array<string> $deck
-     * @param array<string> $newHand
-     */
-    abstract private function checkInDeck(array $deck, array $newHand): bool;
-
-    /**
-     * From SameSuitTrait.
-     * Sets suit attribute to the suit of the
-     * first card in the hand and
-     * returns true if all cards in the hand are
-     * of the same suit
-     * @param array<string> $hand
-     */
-    abstract private function setSuit(array $hand): bool;
+    use FlushTrait3;
+    use SameSuitTrait;
 
 
     /**

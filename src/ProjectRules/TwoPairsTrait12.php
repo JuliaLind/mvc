@@ -4,21 +4,7 @@ namespace App\ProjectRules;
 
 trait TwoPairsTrait12
 {
-    /**
-     * From TwoPairsTrait7
-     *
-     * Called if the hand already contains a pair.
-     * Returns true if either of the following conditions is
-     * fulfilled:
-     * 1. The hand contains 4 cards of two ranks
-     * 2. The hand contains three cards or less and either
-     * the deck contains another pair or a card of the same
-     * rank as the card in the hand that is not paired
-     * a pair or the deck contains
-     * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
-     */
-    abstract private function findSecondPair($ranksHand, $ranksDeck): bool;
+    use TwoPairsTrait7;
 
     /**
      * From TwoPairsTrait8

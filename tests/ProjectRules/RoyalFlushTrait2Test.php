@@ -7,8 +7,7 @@ use PHPUnit\Framework\TestCase;
 class RoyalFlushTrait2Test extends TestCase
 {
     use RoyalFlushTrait2;
-    use GroupBySuitTrait;
-    use StraightTrait2;
+
 
 
     public function testpossibleDeckOnlyOk(): void

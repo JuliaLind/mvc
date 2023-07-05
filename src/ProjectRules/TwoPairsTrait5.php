@@ -5,6 +5,16 @@ namespace App\ProjectRules;
 trait TwoPairsTrait5
 {
     /**
+     * From TwoPairsTrait8
+     *
+     * Checks if any of the ranks in the hand is
+     * present in the deck.
+     * @param array<int,int> $ranksHand
+     * @param array<int,int> $ranksDeck
+     */
+    abstract private function matchOneInDeck(array $ranksHand, array $ranksDeck): bool;
+
+    /**
      * Called when there is one card in the hand.
      * Checks if the card in the hand is of the
      * same rank as the dealt card and if the deck
@@ -49,16 +59,6 @@ trait TwoPairsTrait5
     {
         return array_key_exists($rank, $ranksDeck) && max($ranksDeck) >= 2;
     }
-
-    /**
-     * From TwoPairsTrait8
-     *
-     * Checks if any of the ranks in the hand is
-     * present in the deck.
-     * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
-     */
-    abstract private function matchOneInDeck(array $ranksHand, array $ranksDeck): bool;
 
     /**
      * Used in TwoPairsTrait

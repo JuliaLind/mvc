@@ -6,8 +6,9 @@ trait GroupBySuitTrait
 {
     /**
      * Used in the following traits:
+     * RoyalFlushTrait2,
      * StraightFlushTrait,
-     * RoyalFlushTrait2
+     * StraightFlushTrait3
      *
      * Returns an associative array with keys
      * correspoding to suits present in the cards

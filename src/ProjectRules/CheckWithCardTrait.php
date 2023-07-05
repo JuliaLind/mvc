@@ -4,37 +4,13 @@ namespace App\ProjectRules;
 
 trait CheckWithCardTrait
 {
+    use PointsAndRuleNameTrait;
+    use PointsAndRuleNameTrait2;
+
     /**
      * @var array<RuleInterface> $rules
      */
     private array $rules;
-
-
-    /**
-     * If a rule is possible to score after placing
-     * the dealt card into a hand that already
-     * contains at least one card, returns the name
-     * of the rule and the adjusted number of points (
-     * for rules Three Of A Kind and up 10% of the
-     * ordinary rule points is added for each card that
-     * is already placed in the checked hand to
-     * prioritize a hand that is closer to score, if
-     * there are two hands where same rule is possible
-     * to score. If the hand is already full returns -1
-     * @param array<string> $deck
-     * @param array<string> $hand
-     * @return array<string,float|int|string>>
-     */
-    abstract private function pointsAndName(array $hand, array $deck, string $card, RuleInterface $rule): array;
-
-    /**
-     * If a rule is possible to score after placing
-     * the dealt card into a hand that is empty,
-     *  returns the name and the points for the rule
-     * @param array<string> $deck
-     * @return array<string,int|string>>
-     */
-    abstract private function pointsAndNameEmptyHand(array $deck, string $card, RuleInterface $rule): array;
 
     /**
      * @param array<string> $deck
