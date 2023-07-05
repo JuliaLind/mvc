@@ -66,13 +66,20 @@ trait SameOfAKindTrait2
          */
         $ranksAll= $this->countByRank($allCards);
 
-        $check = false;
-        foreach(array_keys($ranksHand) as $rank) {
-            $check = $this->enoughSpaceInHand(count($hand), $ranksHand[$rank]) && $this->requiredCount($ranksAll[$rank]);
-            if ($check === true) {
-                break;
-            }
+        $countHand = count($hand);
+        if (5 - count($hand) >= $this->minCountRank && max($ranksAll) >= $this->minCountRank) {
+            return true;
         }
-        return $check;
+
+        foreach(array_keys($ranksHand) as $rank) {
+            if ($this->enoughSpaceInHand($countHand, $ranksHand[$rank]) && $this->requiredCount($ranksAll[$rank])) {
+                return true;
+            }
+            // $check = $this->enoughSpaceInHand(count($hand), $ranksHand[$rank]) && $this->requiredCount($ranksAll[$rank]);
+            // if ($check === true) {
+            //     return true;
+            // }
+        }
+        return false;
     }
 }

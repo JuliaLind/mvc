@@ -23,7 +23,7 @@ class StraightFlushTraitTest extends TestCase
             "6C",
             "6D",
             "9D",
-            "10S",
+            "10C",
             "12H",
             "14H",
             "14S"

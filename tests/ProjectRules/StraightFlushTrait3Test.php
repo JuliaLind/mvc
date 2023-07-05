@@ -41,4 +41,60 @@ class StraightFlushTrait3Test extends TestCase
         $res = $this->possibleDeckOnly($deck);
         $this->assertFalse($res);
     }
+
+    public function testPossibleDeckOnlyOk(): void
+    {
+
+        $deck = [
+            "9D",
+            "10D",
+            "12D",
+            "14H",
+            "11D",
+            "14S",
+            "8D"
+        ];
+        $res = $this->possibleDeckOnly($deck);
+        $this->assertTrue($res);
+    }
+
+    public function testPossibleDeckOnlyOk2(): void
+    {
+
+        $deck = [
+            "2D",
+            "9C",
+            "10D",
+            "4D",
+            "5D",
+            "14H",
+            "11D",
+            "14S",
+            "6D",
+            "7D",
+            "8D"
+        ];
+        $res = $this->possibleDeckOnly($deck);
+        $this->assertTrue($res);
+    }
+
+    public function testPossibleDeckOnlyNotOk3(): void
+    {
+
+        $deck = [
+            "2D",
+            "9C",
+            "10D",
+            "4D",
+            "5D",
+            "14H",
+            "11D",
+            "14S",
+            "6D",
+            "7D",
+            "8C"
+        ];
+        $res = $this->possibleDeckOnly($deck);
+        $this->assertFalse($res);
+    }
 }

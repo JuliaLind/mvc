@@ -70,7 +70,6 @@ trait StraightFlushTrait
         $cardsBySuit = $this->groupBySuit($allCards);
         $allRanks = $cardsBySuit[$suit];
 
-        // return $this->setRankLimits($hand) && $this->checkAllPossible($ranks, min($ranks), max($ranks) - 4);
         return $this->checkAllPossible($allRanks, $minMinRank, $maxMinRank);
     }
 }
