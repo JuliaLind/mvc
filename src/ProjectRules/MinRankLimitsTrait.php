@@ -7,9 +7,6 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 trait MinRankLimitsTrait
 {
-    private int $maxRank;
-    private int $minRank;
-
     /**
      * Used in traits:
      * StraightTrait,
@@ -22,13 +19,13 @@ trait MinRankLimitsTrait
      * cannot be higher than 10
      * @return array<string,int>
      */
-    private function minRankLimits(): array
+    private function minRankLimits(int $minRank, int $maxRank): array
     {
-        $minMinRank = $this->maxRank - 4;
+        $minMinRank = $maxRank - 4;
         if ($minMinRank < 2) {
             $minMinRank = 2;
         }
-        $maxMinRank = $this->minRank;
+        $maxMinRank = $minRank;
         if ($maxMinRank > 10) {
             $maxMinRank = 10;
         }

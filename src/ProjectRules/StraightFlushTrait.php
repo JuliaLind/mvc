@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 trait StraightFlushTrait
 {
-    use RankLimitsTrait;
+    // use RankLimitsTrait;
     use SameSuitTrait;
 
     /**
@@ -50,7 +50,12 @@ trait StraightFlushTrait
          */
         $cardsBySuit = $this->groupBySuit($allCards);
         $ranks = $cardsBySuit[$this->suit];
-
-        return $this->setRankLimits($hand) && $this->checkAllPossible($ranks, min($ranks), max($ranks) - 4);
+        $maxRank = max(array_keys($ranks));
+        $minRank = min(array_keys($ranks));
+        if ($maxRank - $minRank > 4) {
+            return false;
+        }
+        // return $this->setRankLimits($hand) && $this->checkAllPossible($ranks, min($ranks), max($ranks) - 4);
+        return $this->checkAllPossible($ranks, min($ranks), max($ranks) - 4);
     }
 }

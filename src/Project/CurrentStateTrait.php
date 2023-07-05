@@ -51,10 +51,37 @@ trait CurrentStateTrait
             'player' => $this->player->graphic(),
             'fromSlot' => $this->fromSlot,
             'finished' => $this->finished,
-            'placedCards' => $this->player->getCardCount(),
             'deckCardCount' => count($this->deck->getCards()),
             'playerPossibleCards' => $this->deck->possibleCards(),
             'lastRound' => $this->lastRound,
+        ];
+    }
+
+    /**
+     * @return array<mixed>
+     */
+    public function currentStateApi(): array
+    {
+        return [
+            'bet' => $this->pot,
+            'card' => $this->card,
+            'player-suggestion' => $this->suggestion,
+            'results' => $this->results,
+            'house' => $this->house,
+            'player' => $this->player,
+            'placedCards' => $this->player->getCardCount() + $this->house->getCardCount(),
+            'deckCardCount' => count($this->deck->getCards()),
+            'playerPossibleCards' => $this->deck->possibleCards(),
+            'message' => $this->message,
+            'fromSlot' => $this->fromSlot,
+            'lastRound' => $this->lastRound,
+            'finished' => $this->finished,
+            'card-graphic' => [
+                'img' => "img/project/cards/".$this->card.".svg",
+                'alt' => $this->card
+            ],
+            'house-graphic' => $this->house->graphic(),
+            'player-graphic' => $this->player->graphic(),
         ];
     }
 }

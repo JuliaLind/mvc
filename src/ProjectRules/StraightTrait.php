@@ -8,7 +8,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait StraightTrait
 {
     use MinRankLimitsTrait;
-    use RankLimitsTrait;
+    // use RankLimitsTrait;
     use StraightTrait3;
 
     /**
@@ -32,11 +32,14 @@ trait StraightTrait
     {
         $ranks = $this->countByRank($hand);
 
-        if ((count($hand) > count($ranks))) {
+        $maxRank = max(array_keys($ranks));
+        $minRank = min(array_keys($ranks));
+
+        if (count($hand) > count($ranks) || $maxRank - $minRank > 4) {
             return false;
         }
-        $check1 = $this->setRankLimits($hand);
-        $minRankLimits = $this->minRankLimits();
+        // $check1 = $this->setRankLimits($hand);
+        $minRankLimits = $this->minRankLimits($minRank, $maxRank);
         $minMinRank = $minRankLimits['min'];
         $maxMinRank = $minRankLimits['max'];
         $allCards = array_merge($hand, $deck);
@@ -44,8 +47,7 @@ trait StraightTrait
          * @var array<int,int> $ranksAll
          */
         $ranksAll = $this->countByRank($allCards);
-        $check2 = $this->checkAllPossible(array_keys($ranksAll), $minMinRank, $maxMinRank);
-        return $check1 && $check2;
+        return $this->checkAllPossible(array_keys($ranksAll), $minMinRank, $maxMinRank);
     }
 
     /**

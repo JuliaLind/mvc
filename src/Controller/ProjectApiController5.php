@@ -34,7 +34,7 @@ class ProjectApiController5 extends AbstractController
             "status" => "no game initiated"
         ];
         if ($game != null) {
-            $state = $game->currentState();
+            $state = $game->currentStateApi();
             $data = [
                 ...$state
             ];
