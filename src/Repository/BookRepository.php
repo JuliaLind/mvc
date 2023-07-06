@@ -6,9 +6,6 @@ use App\Entity\Book;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-use App\Library\BookNotFoundException;
-use App\Library\IsbnAlreadyInUseException;
-
 /**
  * @extends ServiceEntityRepository<Book>
  * @SuppressWarnings(PHPMD.BooleanArgumentFlag)

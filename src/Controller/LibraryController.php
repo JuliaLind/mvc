@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Book;
 use App\Repository\BookRepository;
-use App\Library\IsbnAlreadyInUseException;
+use App\Repository\IsbnAlreadyInUseException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

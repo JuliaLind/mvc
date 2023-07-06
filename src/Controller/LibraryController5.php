@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Book;
 use App\Repository\BookRepository;
-use App\Library\BookNotFoundException;
+use App\Repository\BookNotFoundException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

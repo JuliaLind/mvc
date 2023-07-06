@@ -5,9 +5,7 @@ namespace App\Repository;
 use PHPUnit\Framework\TestCase;
 
 use App\Entity\Book;
-use App\Library\IsbnAlreadyInUseException;
 use Doctrine\Persistence\ManagerRegistry;
-
 use Doctrine\Persistence\ObjectManager;
 
 /**

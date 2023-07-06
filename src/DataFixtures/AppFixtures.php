@@ -25,26 +25,33 @@ class AppFixtures extends Fixture
      */
     public function load(ObjectManager $manager): void
     {
-        $julia = $this->addUser($manager, "julia@bth.se", "Julia", "julia");
-        $doe = $this->addUser($manager, "doe@bth.se", "John Doe", "doe");
-        $jane = $this->addUser($manager, "jane@bth.se", "Jane Doe", "jane");
+        $julia = $this->addUser($manager, "julia@bth.se", "Julia", "julia"); // id 1
+        $doe = $this->addUser($manager, "doe@bth.se", "John Doe", "doe"); // id 2
+        $jane = $this->addUser($manager, "jane@bth.se", "Jane Doe", "jane"); // id 3
 
-        $this->addScore($manager, $doe, '2023-06-27', 43);
-        $this->addScore($manager, $julia, '2023-06-29', 38);
-        $this->addScore($manager, $doe, '2023-06-30', 70);
-        $this->addScore($manager, $julia, '2023-06-30', 132);
+        $this->addScore($manager, $doe, '2023-06-27', 43); // id 1
+        $this->addScore($manager, $julia, '2023-06-29', 38); // id 2
+        $this->addScore($manager, $doe, '2023-06-30', 70); // id 3
+        $this->addScore($manager, $julia, '2023-06-30', 132); // id 4
 
-        $this->addTransaction($manager, $doe, '2023-06-25', 'Free registration bonus', 1000);
-        $this->addTransaction($manager, $jane, '2023-06-27', 'Free registration bonus', 1000);
-        $this->addTransaction($manager, $julia, '2023-06-27', 'Free registration bonus', 1000);
-        $this->addTransaction($manager, $doe, '2023-06-27', 'Bet', -40);
-        $this->addTransaction($manager, $doe, '2023-06-27', 'Return (bet x 2)', 80);
-        $this->addTransaction($manager, $julia, '2023-06-29', 'Bet', -420);
-        $this->addTransaction($manager, $julia, '2023-06-29', 'Return (bet x 2)', 840);
-        $this->addTransaction($manager, $julia, '2023-06-30', 'Bet', -20);
-        $this->addTransaction($manager, $julia, '2023-06-30', 'Return (bet x 2)', 40);
-        $this->addTransaction($manager, $doe, '2023-06-30', 'Bet', -10);
-        $this->addTransaction($manager, $doe, '2023-06-30', 'Return (bet x 2)', 20);
+        $this->addTransaction($manager, $doe, '2023-06-25', 'Free registration bonus', 1000); // id 1
+        $this->addTransaction($manager, $jane, '2023-06-27', 'Free registration bonus', 1000); // id 2
+        $this->addTransaction($manager, $julia, '2023-06-27', 'Free registration bonus', 1000); // id 3
+        $this->addTransaction($manager, $doe, '2023-06-27', 'Bet', -40); // id 4
+        $this->addTransaction($manager, $doe, '2023-06-27', 'Return (bet x 2)', 80); // id 5
+        $this->addTransaction($manager, $julia, '2023-06-29', 'Bet', -420); // id 6
+        $this->addTransaction($manager, $julia, '2023-06-29', 'Return (bet x 2)', 840); // id 7
+        $this->addTransaction($manager, $julia, '2023-06-30', 'Bet', -20); // id 8
+        $this->addTransaction($manager, $julia, '2023-06-30', 'Return (bet x 2)', 40); // id 9
+        $this->addTransaction($manager, $doe, '2023-06-30', 'Bet', -10); // id 10
+        $this->addTransaction($manager, $doe, '2023-06-30', 'Return (bet x 2)', 20); // id 11
+
+        /**
+         * Balance:
+         * doe: 1000 - 40 + 80 -10 + 20 = 1050
+         * julia: 1000 - 420 + 840 - 20 + 40 = 2440
+         * jane: 1000
+         */
 
         $manager->flush();
     }

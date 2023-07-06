@@ -11,6 +11,10 @@ use Datetime;
 use App\Repository\TransactionRepository;
 use App\Entity\Score;
 
+/**
+ * Registers user score and transactions.
+ * Gets users balance (sum of transactions)
+ */
 class Register
 {
     private EntityManagerInterface $manager;
@@ -28,6 +32,13 @@ class Register
         $this->user = $user;
     }
 
+    /**
+     * Registers a transaction,
+     * the amount is registered in database as is,
+     * i.e. positive is registered as positive and negative and negative.
+     * Use directly only for positive numbers!
+     * For negative numbers use debit() method instead!
+     */
     public function transaction(
         int $coins,
         string $text
@@ -43,6 +54,9 @@ class Register
         $this->manager->flush();
     }
 
+    /**
+     * Get user's balance (sum of all user's transactions)
+     */
     public function getBalance(): int
     {
         /**
@@ -57,6 +71,13 @@ class Register
         return $balance;
     }
 
+    /**
+     * Registers a negative transaction.
+     * Note! amount number should be a positive number
+     * and represent the amount to be debited.
+     * Checks users balance before registering transaction
+     * to ensure there are enough coins to cover for the debit
+     */
     public function debit(
         int $amount,
         string $text
@@ -68,6 +89,9 @@ class Register
         $this->transaction(-$amount, $text);
     }
 
+    /**
+     * Registers a score for the user
+     */
     public function score(
         int $points
     ): void {
@@ -79,5 +103,4 @@ class Register
         $this->manager->persist($score);
         $this->manager->flush();
     }
-
 }

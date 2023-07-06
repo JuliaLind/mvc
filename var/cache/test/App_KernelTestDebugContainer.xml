@@ -675,9 +675,6 @@
     </service>
     <service id="App\Game\ValueConverter" class="App\Game\ValueConverter" autowire="true" autoconfigure="true"/>
     <service id="App\Game\ValueConverter2" class="App\Game\ValueConverter2" autowire="true" autoconfigure="true"/>
-    <service id="App\Library\BookNotFoundException" class="App\Library\BookNotFoundException" autowire="true" autoconfigure="true"/>
-    <service id="App\Library\IsbnAlreadyInUseException" class="App\Library\IsbnAlreadyInUseException" autowire="true" autoconfigure="true"/>
-    <service id="App\Library\LibraryException" class="App\Library\LibraryException" autowire="true" autoconfigure="true"/>
     <service id="App\Project\ApiGame1" class="App\Project\ApiGame1" autowire="true" autoconfigure="true"/>
     <service id="App\Project\ApiGame2" class="App\Project\ApiGame2" autowire="true" autoconfigure="true"/>
     <service id="App\Project\ApiGame3" class="App\Project\ApiGame3" autowire="true" autoconfigure="true"/>
@@ -702,10 +699,13 @@
     <service id="App\ProjectRules\Straight" class="App\ProjectRules\Straight" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\StraightFlush" class="App\ProjectRules\StraightFlush" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\TwoPairs" class="App\ProjectRules\TwoPairs" autowire="true" autoconfigure="true"/>
+    <service id="App\Repository\BookNotFoundException" class="App\Repository\BookNotFoundException" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\IsbnAlreadyInUseException" class="App\Repository\IsbnAlreadyInUseException" autowire="true" autoconfigure="true"/>
+    <service id="App\Repository\LibraryException" class="App\Repository\LibraryException" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\ScoreRepository" class="App\Repository\ScoreRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -1839,9 +1839,6 @@
         <argument key="App\Game\Player21" type="service_closure" id="App\Game\Player21" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game\ValueConverter" type="service_closure" id="App\Game\ValueConverter" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game\ValueConverter2" type="service_closure" id="App\Game\ValueConverter2" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Library\BookNotFoundException" type="service_closure" id="App\Library\BookNotFoundException" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Library\IsbnAlreadyInUseException" type="service_closure" id="App\Library\IsbnAlreadyInUseException" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Library\LibraryException" type="service_closure" id="App\Library\LibraryException" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\ApiGame1" type="service_closure" id="App\Project\ApiGame1" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\ApiGame2" type="service_closure" id="App\Project\ApiGame2" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\ApiGame3" type="service_closure" id="App\Project\ApiGame3" on-invalid="ignore_uninitialized"/>
@@ -1861,7 +1858,10 @@
         <argument key="App\ProjectRules\Straight" type="service_closure" id="App\ProjectRules\Straight" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\StraightFlush" type="service_closure" id="App\ProjectRules\StraightFlush" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\TwoPairs" type="service_closure" id="App\ProjectRules\TwoPairs" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Repository\BookNotFoundException" type="service_closure" id="App\Repository\BookNotFoundException" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Repository\IsbnAlreadyInUseException" type="service_closure" id="App\Repository\IsbnAlreadyInUseException" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Repository\LibraryException" type="service_closure" id="App\Repository\LibraryException" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\ScoreRepository" type="service_closure" id="App\Repository\ScoreRepository" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\TransactionRepository" type="service_closure" id="App\Repository\TransactionRepository" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository" on-invalid="ignore_uninitialized"/>

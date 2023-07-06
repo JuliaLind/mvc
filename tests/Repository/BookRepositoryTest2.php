@@ -1,11 +1,8 @@
 <?php
 
-namespace App\Tests\Repository;
+namespace App\Repository;
 
 use App\Entity\Book;
-use App\Library\BookNotFoundException;
-use App\Repository\BookRepository;
-
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class BookRepositoryTest2 extends KernelTestCase
@@ -24,16 +21,6 @@ class BookRepositoryTest2 extends KernelTestCase
             ->get('doctrine')
             ->getManager();
     }
-
-    // public function testSearchByName()
-    // {
-    //     $product = $this->entityManager
-    //         ->getRepository(Product::class)
-    //         ->findOneBy(['name' => 'Priceless widget'])
-    //     ;
-
-    //     $this->assertSame(14.50, $product->getPrice());
-    // }
 
     public function testFindOneByIsbn(): void
     {

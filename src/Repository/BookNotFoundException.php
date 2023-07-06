@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Library;
+namespace App\Repository;
 
 /**
  * Exception class trhown when isbn number is alerady in use

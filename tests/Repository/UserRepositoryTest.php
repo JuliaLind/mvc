@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Tests\Repository;
+namespace App\Repository;
 
 use App\Entity\User;
-use App\Repository\UserRepository;
+
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Exception;
 

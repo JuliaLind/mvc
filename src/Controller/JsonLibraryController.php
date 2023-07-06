@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\BookRepository;
-use App\Library\BookNotFoundException;
+use App\Repository\BookNotFoundException;
 
 use Symfony\Component\HttpFoundation\Request;
 
