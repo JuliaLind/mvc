@@ -4,7 +4,6 @@ namespace App\ProjectRules;
 
 trait TwoPairsTrait5
 {
-    // use TwoPairsTrait15;
     private int $additionalValue = 0;
 
     /**

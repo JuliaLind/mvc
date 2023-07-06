@@ -53,4 +53,36 @@ class TwoPairsTrait6Pt2Test extends TestCase
         $res = $this->check3($rank, $ranksHand, $ranksDeck);
         $this->assertFalse($res);
     }
+
+    public function testMatchRankOk(): void
+    {
+        $rank = 6;
+        $ranksHand = [
+            2 => 1,
+        ];
+        $ranksDeck = [
+            6 => 1,
+            2 => 1,
+            8 => 1
+        ];
+        $res = $this->matchRank($rank, $ranksHand, $ranksDeck);
+        $this->assertTrue($res);
+        $this->assertEquals(1, $this->additionalValue);
+    }
+
+    public function testMatchRankOk2(): void
+    {
+        $rank = 6;
+        $ranksHand = [
+            2 => 1,
+            6 => 1,
+        ];
+        $ranksDeck = [
+            7 => 1,
+            8 => 1
+        ];
+        $res = $this->matchRank($rank, $ranksHand, $ranksDeck);
+        $this->assertTrue($res);
+        $this->assertEquals(2, $this->additionalValue);
+    }
 }
