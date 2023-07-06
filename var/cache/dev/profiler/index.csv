@@ -8224,3 +8224,5 @@ e86c0a,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/shop,1688653640
 c85a2f,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/shop,1688654260,,200
 702963,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/purchase/10100,1688654262,,302
 acfcf0,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/shop,1688654262,,200
+5cbc17,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1688655676,,200
+17930c,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/scores-single,1688655680,,200

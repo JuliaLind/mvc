@@ -54,6 +54,21 @@ class FullHouseTrait5Test extends TestCase
         $this->assertTrue($res);
     }
 
+    public function testCheck1Ok4(): void
+    {
+        $ranksHand = [
+            10 => 2,
+        ];
+
+        $ranksDeck = [
+            4 => 2,
+            10 => 1,
+        ];
+
+        $res = $this->check1($ranksHand, $ranksDeck);
+        $this->assertTrue($res);
+    }
+
     public function testcheck1NotOk(): void
     {
         $ranksHand = [

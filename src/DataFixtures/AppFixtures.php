@@ -25,15 +25,24 @@ class AppFixtures extends Fixture
      */
     public function load(ObjectManager $manager): void
     {
+        /**
+         * Add users
+         */
         $julia = $this->addUser($manager, "julia@bth.se", "Julia", "julia"); // id 1
         $doe = $this->addUser($manager, "doe@bth.se", "John Doe", "doe"); // id 2
         $jane = $this->addUser($manager, "jane@bth.se", "Jane Doe", "jane"); // id 3
 
+        /**
+         * Add scores
+         */
         $this->addScore($manager, $doe, '2023-06-27', 43); // id 1
         $this->addScore($manager, $julia, '2023-06-29', 38); // id 2
         $this->addScore($manager, $doe, '2023-06-30', 70); // id 3
         $this->addScore($manager, $julia, '2023-06-30', 132); // id 4
 
+        /**
+         * Add transactions
+         */
         $this->addTransaction($manager, $doe, '2023-06-25', 'Free registration bonus', 1000); // id 1
         $this->addTransaction($manager, $jane, '2023-06-27', 'Free registration bonus', 1000); // id 2
         $this->addTransaction($manager, $julia, '2023-06-27', 'Free registration bonus', 1000); // id 3

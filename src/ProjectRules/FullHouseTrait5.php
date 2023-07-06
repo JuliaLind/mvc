@@ -6,7 +6,7 @@ trait FullHouseTrait5
 {
     /**
      * Used In FullHouseTrait2
-     *
+     *called if the hand contains more than 1 card.
      * Returns true if the cards in the hand are of the same rank and of the following two
      * conditions is fulfilled:
      * 1. maximum number of cards of same rank in the hand is two and the deck contains
@@ -18,6 +18,18 @@ trait FullHouseTrait5
      */
     private function check1($ranksHand, $ranksDeck): bool
     {
-        return count($ranksHand) === 1 && ((max($ranksHand) === 2 && max($ranksDeck) >= 3) || (max($ranksHand) === 3 && max($ranksDeck) >= 2));
+        if (count($ranksHand) === 1) {
+            $rank = array_key_first($ranksHand);
+            if ($ranksHand[$rank] === 2) {
+                if (max($ranksDeck) >= 3) {
+                    return true;
+                }
+                if (max($ranksDeck) === 2 && array_key_exists($rank, $ranksDeck)) {
+                    return true;
+                }
+            }
+            return ($ranksHand[$rank] === 3 && max($ranksDeck) >= 2);
+        }
+        return false;
     }
 }
