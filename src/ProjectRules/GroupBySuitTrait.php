@@ -19,12 +19,6 @@ trait GroupBySuitTrait
      */
     private function groupBySuit($cards): array
     {
-        // $data = [
-        //     'D' => [],
-        //     'H' => [],
-        //     'C' => [],
-        //     'S' => []
-        // ];
         $data = [];
         foreach($cards as $card) {
             $suit = $card[-1];
