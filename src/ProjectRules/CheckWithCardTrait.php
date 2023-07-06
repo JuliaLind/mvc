@@ -13,7 +13,11 @@ trait CheckWithCardTrait
     private array $rules;
 
     /**
-     * @param array<string> $deck
+     * Returns the name and weighted* points if the rule is
+     * possible rule to achieve for the hand on index-position
+     * $index with the dealt card and the cards
+     * that ill be dealt from deck
+     * @param array<string> $deck reminaing cards that will be dalt to user from deck
      * @param array<array<string>> $hands
      * @return array<string,string|float|int>
      */
@@ -32,12 +36,13 @@ trait CheckWithCardTrait
 
     /**
      * Calculates and returns name and number of points (adjusted/weighted)
-     * for the best rule possible to achieve with the dealt card, cards
-     * in the hand (row or column) and the cards the user is yet to pick from
-     * the deck
-     * @param array<array<string>> $hands
-     * @param array<string> $deck
+     * for the best rule possible to achieve with the dealt card,
+     * the cards the user is yet to pick from the deck
+     * and the cards in hand on index position $index
+     * @param array<array<string>> $hands five hands, horizontal or vertical
+     * @param array<string> $deck the cards whic user will receive from the deck
      * @return array<string,string|float|int>
+     *
      */
     private function handRuleWith(array $hands, int $index, array $deck, string $card)
     {
@@ -53,10 +58,6 @@ trait CheckWithCardTrait
             if ($name != "") {
                 break;
             }
-            // $handPoints = $data['points'];
-            // if ($handPoints > 1) {
-            //     break;
-            // }
         }
         return $data;
     }

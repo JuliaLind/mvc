@@ -68,18 +68,18 @@ class PointsAndRuleNameTraitTest extends TestCase
         $this->assertEquals($exp, $res);
     }
 
-    // public function testPointsAndNameEmptyHandOk3(): void
-    // {
-    //     $deck = ["2H","3S","3D","6H","9S", "9D","10S","11S","11C","11D","12S","6D","14H","14S"];
-    //     $card = "7C";
-    //     $hand = ["6C","13S","7D"];
-    //     $rule = new TwoPairs();
+    public function testPointsAndNameEmptyHandOk3(): void
+    {
+        $deck = ["2H","3S","3D","6H","9S", "9D","10S","11S","11C","11D","12S","6D","14H","14S"];
+        $card = "7C";
+        $hand = ["6C","13S","7D"];
+        $rule = new TwoPairs();
 
-    //     $exp = [
-    //         'points' => 7,
-    //         'rule' => "Two Pairs"
-    //     ];
-    //     $res = $this->pointsAndName($hand, $deck, $card, $rule);
-    //     $this->assertEquals($exp, $res);
-    // }
+        $exp = [
+            'points' => 7,
+            'rule' => "Two Pairs"
+        ];
+        $res = $this->pointsAndName($hand, $deck, $card, $rule);
+        $this->assertEquals($exp, $res);
+    }
 }
