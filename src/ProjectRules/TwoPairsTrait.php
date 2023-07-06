@@ -49,7 +49,7 @@ trait TwoPairsTrait
         }
 
         if (array_sum($ranksHand) === count($ranksHand) && ($this->check3($rank, $ranksHand, $ranksDeck) || $this->check2($rank, $ranksHand, $ranksDeck))) {
-            $this->additionalValue = 1;
+            // $this->additionalValue = 1;
             return true;
         }
         return false;

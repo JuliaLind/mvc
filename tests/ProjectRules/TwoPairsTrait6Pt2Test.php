@@ -4,12 +4,12 @@ namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
 
-class TwoPairsTrait15Test extends TestCase
+class TwoPairsTrait6Pt2Test extends TestCase
 {
-    use TwoPairsTrait15;
+    use TwoPairsTrait6;
     use TwoPairsTrait8;
 
-    public function testCheckForTwoPairs2Ok(): void
+    public function testCheck3Ok(): void
     {
         $rank = 6;
         $ranksHand = [
@@ -20,11 +20,11 @@ class TwoPairsTrait15Test extends TestCase
             7 => 1,
             8 => 1
         ];
-        $res = $this->checkForTwoPairs2($rank, $ranksHand, $ranksDeck);
+        $res = $this->check3($rank, $ranksHand, $ranksDeck);
         $this->assertTrue($res);
     }
 
-    public function testCheckForTwoPairs2NotOk(): void
+    public function testCheck3NotOk(): void
     {
         $rank = 5;
         $ranksHand = [
@@ -35,11 +35,11 @@ class TwoPairsTrait15Test extends TestCase
             7 => 1,
             8 => 1
         ];
-        $res = $this->checkForTwoPairs2($rank, $ranksHand, $ranksDeck);
+        $res = $this->check3($rank, $ranksHand, $ranksDeck);
         $this->assertFalse($res);
     }
 
-    public function testCheckForTwoPairs2NotOk2(): void
+    public function testCheck3NotOk2(): void
     {
         $rank = 6;
         $ranksHand = [
@@ -50,7 +50,7 @@ class TwoPairsTrait15Test extends TestCase
             7 => 1,
             8 => 1
         ];
-        $res = $this->checkForTwoPairs2($rank, $ranksHand, $ranksDeck);
+        $res = $this->check3($rank, $ranksHand, $ranksDeck);
         $this->assertFalse($res);
     }
 }

@@ -4,7 +4,8 @@ namespace App\ProjectRules;
 
 trait TwoPairsTrait5
 {
-    use TwoPairsTrait15;
+    // use TwoPairsTrait15;
+    private int $additionalValue = 0;
 
     /**
      * Called in the hand contains 0-2 cards
@@ -23,7 +24,11 @@ trait TwoPairsTrait5
          * @var int $maxRankDeck
          */
         $maxRankDeck = max($ranksDeck);
-        return array_sum($ranksHand) <= 2 && array_key_exists($rank, $ranksHand) && $maxRankDeck >= 2;
+        if (array_sum($ranksHand) <= 2 && array_key_exists($rank, $ranksHand) && $maxRankDeck >= 2) {
+            $this->additionalValue = 1;
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -58,6 +63,8 @@ trait TwoPairsTrait5
      */
     private function check2(int $rank, array $ranksHand, array $ranksDeck): bool
     {
-        return $this->checkForTwoPairs1($rank, $ranksHand, $ranksDeck) || $this->checkForTwoPairs2($rank, $ranksHand, $ranksDeck) || (array_sum($ranksHand) === 1 && $this->checkForTwoPairs3($rank, $ranksDeck));
+        // return $this->checkForTwoPairs1($rank, $ranksHand, $ranksDeck) || $this->checkForTwoPairs2($rank, $ranksHand, $ranksDeck) || (array_sum($ranksHand) === 1 && $this->checkForTwoPairs3($rank, $ranksDeck));
+
+        return $this->checkForTwoPairs1($rank, $ranksHand, $ranksDeck) || (array_sum($ranksHand) === 1 && $this->checkForTwoPairs3($rank, $ranksDeck));
     }
 }

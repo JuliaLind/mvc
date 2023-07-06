@@ -4,6 +4,8 @@ namespace App\ProjectRules;
 
 trait TwoPairsTrait6
 {
+    private int $additionalValue = 0;
+
     /**
      * From TwoPairsTrait8
      *
@@ -29,12 +31,19 @@ trait TwoPairsTrait6
      */
     private function check3(int $rank, array $ranksHand, array $ranksDeck): bool
     {
-        // if (array_key_exists($rank, $ranksHand)) {
-        //     return $this->matchOneInDeck($ranksHand, $ranksDeck);
+        // if (array_sum($ranksHand) <= 3) {
+        //     return (array_key_exists($rank, $ranksHand) || array_key_exists($rank, $ranksDeck)) && $this->matchOneInDeck($ranksHand, $ranksDeck);
         // }
-        // return false;
-        if (array_sum($ranksHand) <= 3) {
-            return array_key_exists($rank, $ranksHand) && $this->matchOneInDeck($ranksHand, $ranksDeck);
+
+        if (array_sum($ranksHand) <= 3 && $this->matchOneInDeck($ranksHand, $ranksDeck)) {
+            if (array_key_exists($rank, $ranksHand)) {
+                $this->additionalValue = 2;
+                return true;
+            }
+            if (array_key_exists($rank, $ranksDeck)) {
+                $this->additionalValue = 1;
+                return true;
+            }
         }
         return false;
     }
