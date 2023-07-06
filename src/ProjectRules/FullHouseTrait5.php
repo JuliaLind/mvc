@@ -15,12 +15,6 @@ trait FullHouseTrait5
     {
         if ($countHand === 2) {
             return max($ranksDeck) >= 3 || (max($ranksDeck) === 2 && array_key_exists($rank, $ranksDeck));
-            // if (max($ranksDeck) >= 3) {
-            //     return true;
-            // }
-            // if (max($ranksDeck) === 2 && array_key_exists($rank, $ranksDeck)) {
-            //     return true;
-            // }
         }
         return ($countHand === 3 && max($ranksDeck) >= 2);
     }
@@ -40,8 +34,15 @@ trait FullHouseTrait5
     private function check1($ranksHand, $ranksDeck): bool
     {
         if (count($ranksHand) === 1) {
+            /**
+             * @var int $rank
+             */
             $rank = array_key_first($ranksHand);
-            return $this->check1SubCheck(array_sum($ranksHand), $rank, $ranksDeck);
+            /**
+             * @var int $countHand
+             */
+            $countHand = array_sum($ranksHand);
+            return $this->check1SubCheck($countHand, $rank, $ranksDeck);
         }
         return false;
     }

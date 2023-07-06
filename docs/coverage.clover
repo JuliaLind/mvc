@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1688675255">
-  <project timestamp="1688675255">
+<coverage generated="1688675852">
+  <project timestamp="1688675852">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -2723,10 +2723,10 @@
       <class name="App\ProjectRules\FullHouseTrait5" namespace="global">
         <metrics complexity="7" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="9" coveredelements="9"/>
       </class>
-      <line num="14" type="method" name="check1SubCheck" visibility="private" complexity="5" crap="5" count="9"/>
-      <line num="16" type="stmt" count="9"/>
-      <line num="17" type="stmt" count="6"/>
-      <line num="25" type="stmt" count="3"/>
+      <line num="14" type="method" name="check1SubCheck" visibility="private" complexity="5" crap="5" count="16"/>
+      <line num="16" type="stmt" count="16"/>
+      <line num="17" type="stmt" count="10"/>
+      <line num="25" type="stmt" count="6"/>
       <line num="40" type="method" name="check1" visibility="private" complexity="2" crap="2" count="12"/>
       <line num="42" type="stmt" count="12"/>
       <line num="43" type="stmt" count="9"/>
