@@ -12,6 +12,7 @@ class RuleEvaluator
 {
     use FinalResultsTrait;
     use SuggestionTrait;
+    use RowsToColsTrait;
 
     /**
      * @var array<RuleInterface> $rules

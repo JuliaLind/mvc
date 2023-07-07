@@ -1,6 +1,8 @@
 <?php
 
-namespace App\ProjectGrid;
+namespace App\ProjectRules;
+
+use App\ProjectGrid\Grid;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
@@ -8,7 +10,7 @@ require __DIR__ . "/../../vendor/autoload.php";
  * Trait for getting arrays with vertical hands
  * respectively horisontal hands in the grid
  */
-trait RowsColsTrait
+trait RowsToColsTrait
 {
     /**
      * @var array<array<string>> $grid
@@ -16,14 +18,18 @@ trait RowsColsTrait
     private array $grid = [];
 
     /**
+     * Used in:
+     * FinalResultsTrait,
+     * RowsToColsTrait
+     *
      * Returns a two-dimensional array
      * wich correspons to an "inverted version" of the grid,
      * (i.e. an array with vertical hands)
+     * @param array<array<string>> $rows
      * @return array<array<string>>
      */
-    public function getCols(): array
+    private function getCols($rows): array
     {
-        $rows = $this->grid;
         $cols = [];
         foreach($rows as $row => $cards) {
             foreach($cards as $col => $card) {
@@ -31,15 +37,5 @@ trait RowsColsTrait
             }
         }
         return $cols;
-    }
-
-    /**
-     * Returns the actual grid (.i.e an
-     * array with the horizontal hands)
-     * @return array<array<string>>
-     */
-    public function getRows(): array
-    {
-        return $this->grid;
     }
 }

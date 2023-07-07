@@ -2,11 +2,13 @@
 
 namespace App\ProjectRules;
 
+use App\ProjectGrid\Grid;
 use PHPUnit\Framework\TestCase;
 
 class FinalResultsTraitTest extends TestCase
 {
     use FinalResultsTrait;
+    use RowsToColsTrait;
 
     protected function setUp(): void
     {
@@ -89,6 +91,71 @@ class FinalResultsTraitTest extends TestCase
             ],
             'total' => $total
         ];
+        $this->assertEquals($exp, $res);
+    }
+
+    public function testResults(): void
+    {
+        $grid = $this->createMock(Grid::class);
+
+        $rows = [
+            [ "8H",  "7H",  "6H",  "5H",  "9H"],
+            [ "9S",  "6D",  "6S",  "3D",  "7D"],
+            ["11D",  "9D",  "5D",  "4S",  "7C"],
+            [ "2D",  "5C",  "2C",  "2S",  "2H"],
+            ["13C", "14S", "10H", "11C", "12H"]
+        ];
+        $grid->method('getRows')->willReturn($rows);
+
+        $total = 75 + 2 + 50 + 15 + 2 + 2;
+        $exp = [
+            "rows" => [
+                "0" => [
+                  "name" => "Straight Flush",
+                  "points" => 75
+                ],
+                "1" => [
+                  "name" => "One Pair",
+                  "points" => 2
+                ],
+                "2" => [
+                  "name" => "None",
+                  "points" => 0
+                ],
+                "3" => [
+                  "name" => "Four Of A Kind",
+                  "points" => 50
+                ],
+                "4" => [
+                  "name" => "Straight",
+                  "points" => 15
+                ]
+              ],
+            "cols" => [
+                "0" => [
+                  "name" => "None",
+                  "points" => 0
+                ],
+                "1" => [
+                  "name" => "None",
+                  "points" => 0
+                ],
+                "2" => [
+                  "name" => "One Pair",
+                  "points" => 2
+                ],
+                "3" => [
+                  "name" => "None",
+                  "points" => 0
+                ],
+                "4" => [
+                  "name" => "One Pair",
+                  "points" => 2
+                ]
+            ],
+            "total" => $total
+        ];
+        $res = $this->results($grid);
         $this->assertEquals($exp, $res);
     }
 }

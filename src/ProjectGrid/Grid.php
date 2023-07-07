@@ -11,6 +11,6 @@ class Grid
     use CardCountTrait;
     use GraphicTrait;
     use RemoveCardTrait;
-    use RowsColsTrait;
+    use RowsTrait;
     use SlotGraphicTrait;
 }

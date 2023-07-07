@@ -12,6 +12,17 @@ trait FinalResultsTrait
     use CheckFullHandTrait;
 
     /**
+    * From RowsToColsTrait
+    *
+    * Returns a two-dimensional array
+    * wich correspons to an "inverted version" of the grid,
+    * (i.e. an array with vertical hands)
+    * @param array<array<string>> $rows
+    * @return array<array<string>>
+    */
+    abstract private function getCols($rows): array;
+
+    /**
      * Returns results for all five hands in one direction (horizontal
      * or vetical)
      * @param array<array<string>> $hands
@@ -57,10 +68,11 @@ trait FinalResultsTrait
     {
         $result = [];
         $total = 0;
-
+        $rows = $grid->getRows();
         $hands = [
-            'rows' => $grid->getRows(),
-            'cols' => $grid->getCols()
+            'rows' => $rows,
+            // 'cols' => $grid->getCols()
+            'cols' => $this->getCols($rows)
         ];
         /**
          * @var string $direction

@@ -1,26 +1,16 @@
 <?php
 
-namespace App\ProjectGrid;
+namespace App\ProjectRules;
 
 use PHPUnit\Framework\TestCase;
 
-class RowsColsTraitTest extends TestCase
+class RowsToColsTraitTest extends TestCase
 {
-    use RowsColsTrait;
-
-    public function testGetRows(): void
-    {
-        $this->grid = [
-            1 => [1 => "7C"],
-            3 => [2 => "12C", 3 => "6C"],
-            4 => [2 => "5C"]
-        ];
-        $this->assertSame($this->grid, $this->getRows());
-    }
+    use RowsToColsTrait;
 
     public function testGetCols(): void
     {
-        $this->grid = [
+        $rows = [
             1 => [1 => "7C"                      ],
             3 => [          2 => "12C", 3 => "6C"],
             4 => [          2 => "5C"            ]
@@ -30,15 +20,15 @@ class RowsColsTraitTest extends TestCase
             2 => [3 => "12C", 4 => "5C"],
             3 => [3 => "6C"]
         ];
-        $this->assertSame($exp, $this->getCols());
+        $this->assertSame($exp, $this->getCols($rows));
 
-        $this->grid = [];
-        $this->assertSame([], $this->getCols());
+        $rows = [];
+        $this->assertSame([], $this->getCols($rows));
     }
 
     public function testGetCols2(): void
     {
-        $this->grid = [
+        $rows = [
             0 => [0 => "2H", 1 => "14S", 2 => "2S",           4 => "4C"],
             1 => [           1 => "5D",             3 => "13C"         ],
             2 => [                                  3 => "13D"         ],
@@ -53,6 +43,6 @@ class RowsColsTraitTest extends TestCase
             4 => [0 => "4C"                                            ]
         ];
 
-        $this->assertEquals($exp, $this->getCols());
+        $this->assertEquals($exp, $this->getCols($rows));
     }
 }

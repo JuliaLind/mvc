@@ -15,6 +15,17 @@ trait SuggestionTrait
 
 
     /**
+     * From RowsToColsTrait
+     *
+     * Returns a two-dimensional array
+     * wich correspons to an "inverted version" of the grid,
+     * (i.e. an array with vertical hands)
+     * @param array<array<string>> $rows
+     * @return array<array<string>>
+     */
+    abstract private function getCols($rows): array;
+
+    /**
      * @param array<string> $deck
      * @return array<string,array<int|string>|int|string>array<string,array<int,int>|int|string>
      */
@@ -37,7 +48,8 @@ trait SuggestionTrait
             ];
         }
 
-        $cols = $grid->getCols();
+        // $cols = $grid->getCols();
+        $cols = $this->getCols($rows);
 
         $rowData = $this->rulesHands($rows, $deck, $card);
         $colData = $this->rulesHands($cols, $deck, $card);
