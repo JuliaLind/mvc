@@ -19,6 +19,10 @@ trait SlotTrait
          * @var string $rowRule
          */
         $rowRule = $pointsRows[$bestRow]['rule'];
+        /**
+         * @var int $rowPoints
+         */
+        $rowPoints = $pointsRows[$bestRow]['points'];
         $colRule = "";
         $row = [];
         if (array_key_exists($bestRow, $rows)) {
@@ -48,13 +52,15 @@ trait SlotTrait
             return [
                 'col-rule' => $rowRule,
                 'row-rule' => $colRule,
-                'slot' => [$slot[1], $slot[0]]
+                'slot' => [$slot[1], $slot[0]],
+                'tot-points' => $rowPoints + $colPoints
             ];
         }
         return [
             'col-rule' => $colRule,
             'row-rule' => $rowRule,
-            'slot' => $slot
+            'slot' => $slot,
+            'tot-points' => $rowPoints + $colPoints
         ];
     }
 }

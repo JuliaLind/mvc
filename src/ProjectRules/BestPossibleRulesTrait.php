@@ -37,8 +37,17 @@ trait BestPossibleRulesTrait
              * available (empty rows have a value of 0.5)
              */
             $notPrioritized = ["One Pair", "Two Pairs", ""];
+            $points = [
+                'Royal Flush' => 100,
+                'Straight Flush' => 75,
+                'Four Of A Kind' => 50,
+                'Full House' => 25,
+                'Flush' => 20,
+                'Straight' => 15,
+                'Three Of A Kind' => 10
+            ];
             if(in_array($handRule, $notPrioritized, true) && !in_array($handRuleWithout, $notPrioritized, true)) {
-                $handPoints = $handPoints * 0.01;
+                $handPoints = 0.5 - 0.01 * $points[$handRuleWithout];
             }
             if ($handPoints >= $maxPoints) {
                 $maxPoints = $handPoints;

@@ -42,14 +42,14 @@ trait SuggestionTrait
         $rowData = $this->rulesHands($rows, $deck, $card);
         $colData = $this->rulesHands($cols, $deck, $card);
 
-        /**
-         * @var int|float $maxRowPoints
-         */
-        $maxRowPoints = $rowData['max'];
-        /**
-         * @var int|float $maxColPoints
-         */
-        $maxColPoints = $colData['max'];
+        // /**
+        //  * @var int|float $maxRowPoints
+        //  */
+        // $maxRowPoints = $rowData['max'];
+        // /**
+        //  * @var int|float $maxColPoints
+        //  */
+        // $maxColPoints = $colData['max'];
         /**
          * @var int $bestRow;
          */
@@ -71,13 +71,32 @@ trait SuggestionTrait
         $handRules = $this->extractRuleNames($rulesRows, $rulesCols);
 
 
-        if ($maxRowPoints >= $maxColPoints) {
-            $data = $this->slot($rulesRows, $rulesCols, $bestRow, $rows);
-            $data = array_merge($data, $handRules);
-            return $data;
+        $slot1 = $this->slot($rulesRows, $rulesCols, $bestRow, $rows);
+        /**
+         * @var int $totPoints1
+         */
+        $totPoints1 = $slot1['tot-points'];
+
+        $slot2 = $this->slot($rulesCols, $rulesRows, $bestCol, $cols, true);
+        /**
+         * @var int $totPoints2
+         */
+        $totPoints2 = $slot2['tot-points'];
+
+        $data = $slot1;
+        if ($totPoints2 > $totPoints1) {
+            $data = $slot2;
         }
-        $data = $this->slot($rulesCols, $rulesRows, $bestCol, $cols, true);
         $data = array_merge($data, $handRules);
         return $data;
+
+        // if ($maxRowPoints >= $maxColPoints) {
+        //     $data = $this->slot($rulesRows, $rulesCols, $bestRow, $rows);
+        //     $data = array_merge($data, $handRules);
+        //     return $data;
+        // }
+        // $data = $this->slot($rulesCols, $rulesRows, $bestCol, $cols, true);
+        // $data = array_merge($data, $handRules);
+        // return $data;
     }
 }

@@ -719,6 +719,7 @@
     <service id="App\ProjectGrid\SlotNotEmptyException" class="App\ProjectGrid\SlotNotEmptyException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\Flush" class="App\ProjectRules\Flush" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\FullHouse" class="App\ProjectRules\FullHouse" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectRules\NoEmptySlotsException" class="App\ProjectRules\NoEmptySlotsException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\RoyalFlush" class="App\ProjectRules\RoyalFlush" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\RuleEvaluator" class="App\ProjectRules\RuleEvaluator" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\SameOfAKind" class="App\ProjectRules\SameOfAKind" autowire="true" autoconfigure="true"/>
