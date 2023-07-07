@@ -43,6 +43,9 @@ trait EmptyCellTrait
             if (array_key_exists($row, $hands) && count($hands[$row]) < 5) {
                 $slot = $this->single($hands[$row], $row)[0];
                 break;
+            } elseif (!array_key_exists($row, $hands)) {
+                $slot = [$row, 0];
+                break;
             }
         }
         return $slot;

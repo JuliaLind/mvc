@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1688727775">
-  <project timestamp="1688727775">
+<coverage generated="1688729399">
+  <project timestamp="1688729399">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -1573,11 +1573,11 @@
       <line num="29" type="stmt" count="5"/>
       <line num="30" type="stmt" count="5"/>
       <line num="32" type="stmt" count="5"/>
-      <line num="33" type="stmt" count="2"/>
-      <line num="34" type="stmt" count="2"/>
-      <line num="37" type="stmt" count="3"/>
-      <line num="38" type="stmt" count="2"/>
-      <line num="39" type="stmt" count="2"/>
+      <line num="33" type="stmt" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="4"/>
+      <line num="38" type="stmt" count="3"/>
+      <line num="39" type="stmt" count="3"/>
       <line num="41" type="stmt" count="1"/>
       <line num="42" type="stmt" count="1"/>
       <metrics loc="45" ncloc="41" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="13" coveredelements="13"/>
@@ -1586,14 +1586,14 @@
       <class name="App\Game\EvaluateBankTrait2" namespace="global">
         <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
       </class>
-      <line num="15" type="method" name="bankWinsOnEqual" visibility="protected" complexity="2" crap="2" count="2"/>
-      <line num="17" type="stmt" count="2"/>
+      <line num="15" type="method" name="bankWinsOnEqual" visibility="protected" complexity="2" crap="2" count="3"/>
+      <line num="17" type="stmt" count="3"/>
       <line num="20" type="method" name="hasBankMoreThan21" visibility="protected" complexity="1" crap="1" count="2"/>
       <line num="22" type="stmt" count="2"/>
-      <line num="25" type="method" name="hasBankBestScore" visibility="protected" complexity="1" crap="1" count="1"/>
-      <line num="27" type="stmt" count="1"/>
-      <line num="28" type="stmt" count="1"/>
-      <line num="29" type="stmt" count="1"/>
+      <line num="25" type="method" name="hasBankBestScore" visibility="protected" complexity="1" crap="1" count="2"/>
+      <line num="27" type="stmt" count="2"/>
+      <line num="28" type="stmt" count="2"/>
+      <line num="29" type="stmt" count="2"/>
       <metrics loc="32" ncloc="28" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Game/EvaluatePlayerTrait.php">
@@ -1675,7 +1675,7 @@
       <line num="23" type="method" name="messageType" visibility="protected" complexity="2" crap="2" count="2"/>
       <line num="25" type="stmt" count="2"/>
       <line num="26" type="stmt" count="2"/>
-      <line num="27" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="2"/>
       <line num="29" type="stmt" count="2"/>
       <line num="37" type="method" name="generateFlash" visibility="protected" complexity="3" crap="3" count="2"/>
       <line num="39" type="stmt" count="2"/>
@@ -2532,25 +2532,28 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/EmptyCellTrait.php">
       <class name="App\ProjectRules\EmptyCellTrait" namespace="global">
-        <metrics complexity="8" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="5" elements="16" coveredelements="6"/>
+        <metrics complexity="9" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="19" coveredelements="19"/>
       </class>
-      <line num="19" type="method" name="single" visibility="private" complexity="3" crap="3" count="5"/>
-      <line num="21" type="stmt" count="5"/>
-      <line num="22" type="stmt" count="5"/>
-      <line num="23" type="stmt" count="5"/>
-      <line num="24" type="stmt" count="5"/>
-      <line num="27" type="stmt" count="5"/>
-      <line num="34" type="method" name="oneEmpty" visibility="private" complexity="5" crap="30" count="0"/>
-      <line num="37" type="stmt" count="0"/>
-      <line num="38" type="stmt" count="0"/>
-      <line num="40" type="stmt" count="0"/>
-      <line num="41" type="stmt" count="0"/>
-      <line num="42" type="stmt" count="0"/>
-      <line num="43" type="stmt" count="0"/>
-      <line num="44" type="stmt" count="0"/>
-      <line num="45" type="stmt" count="0"/>
-      <line num="48" type="stmt" count="0"/>
-      <metrics loc="51" ncloc="39" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="5" elements="16" coveredelements="6"/>
+      <line num="19" type="method" name="single" visibility="private" complexity="3" crap="3" count="7"/>
+      <line num="21" type="stmt" count="7"/>
+      <line num="22" type="stmt" count="7"/>
+      <line num="23" type="stmt" count="7"/>
+      <line num="24" type="stmt" count="7"/>
+      <line num="27" type="stmt" count="7"/>
+      <line num="34" type="method" name="oneEmpty" visibility="private" complexity="6" crap="6" count="4"/>
+      <line num="37" type="stmt" count="4"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="40" type="stmt" count="3"/>
+      <line num="41" type="stmt" count="3"/>
+      <line num="42" type="stmt" count="3"/>
+      <line num="43" type="stmt" count="3"/>
+      <line num="44" type="stmt" count="2"/>
+      <line num="45" type="stmt" count="2"/>
+      <line num="46" type="stmt" count="2"/>
+      <line num="47" type="stmt" count="1"/>
+      <line num="48" type="stmt" count="1"/>
+      <line num="51" type="stmt" count="3"/>
+      <metrics loc="54" ncloc="42" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="19" coveredelements="19"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/ExtractRuleNamesTrait.php">
       <class name="App\ProjectRules\ExtractRuleNamesTrait" namespace="global">
@@ -3547,6 +3550,6 @@
       <line num="39" type="stmt" count="1"/>
       <metrics loc="68" ncloc="36" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
     </file>
-    <metrics files="205" loc="9800" ncloc="6739" classes="188" methods="322" coveredmethods="266" conditionals="0" coveredconditionals="0" statements="2000" coveredstatements="1420" elements="2322" coveredelements="1686"/>
+    <metrics files="205" loc="9803" ncloc="6742" classes="188" methods="322" coveredmethods="267" conditionals="0" coveredconditionals="0" statements="2003" coveredstatements="1432" elements="2325" coveredelements="1699"/>
   </project>
 </coverage>
