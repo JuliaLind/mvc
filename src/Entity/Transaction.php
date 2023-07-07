@@ -7,6 +7,8 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * Movement of coints to or from participants
+ * account
  * @SuppressWarnings(PHPMD.ShortVariable)
  */
 #[ORM\Entity(repositoryClass: TransactionRepository::class)]
@@ -36,11 +38,17 @@ class Transaction
         return $this->id;
     }
 
+    /**
+     * Gets the transaction date
+     */
     public function getRegistered(): ?\DateTimeInterface
     {
         return $this->registered;
     }
 
+    /**
+     * Sets the transaction date
+     */
     public function setRegistered(\DateTimeInterface $registered): self
     {
         $this->registered = $registered;
@@ -48,11 +56,17 @@ class Transaction
         return $this;
     }
 
+    /**
+     * Gets the description of the transaction
+     */
     public function getDescr(): ?string
     {
         return $this->descr;
     }
 
+    /**
+     * Sets a description to the transaction
+     */
     public function setDescr(string $descr): self
     {
         $this->descr = $descr;
@@ -60,11 +74,17 @@ class Transaction
         return $this;
     }
 
+    /**
+     * Gets the amount of the transaction
+     */
     public function getAmount(): ?int
     {
         return $this->amount;
     }
 
+    /**
+     * Sets the amount fo the transaction
+     */
     public function setAmount(int $amount): self
     {
         $this->amount = $amount;
@@ -72,11 +92,17 @@ class Transaction
         return $this;
     }
 
+    /**
+     * Gets the user to which the transaction belongs
+     */
     public function getUser(): ?User
     {
         return $this->user;
     }
 
+    /**
+     * Sets the user to which the transaction belongs
+     */
     public function setUser(?User $user): self
     {
         $this->user = $user;
