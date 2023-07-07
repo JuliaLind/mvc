@@ -2,93 +2,104 @@
 
 namespace App\ProjectRules;
 
+use App\ProjectGrid\Grid;
 use PHPUnit\Framework\TestCase;
 
 class EmptyCellTraitTest extends TestCase
 {
     use EmptyCellTrait;
 
-    public function testSingle(): void
+    public function testOneEmptyNotOk(): void
     {
-        $hand = [
-            1 => "card",
-            2 => "card2",
-            4 => "card3"
-        ];
+        $grid = $this->createMock(Grid::class);
+        $grid->method('getCardCount')->willReturn(25);
+        $this->expectException(NoEmptySlotsException::class);
 
-        $exp = [
-            [3, 0],
-            [3, 3]
-        ];
+        $this->oneEmpty($grid);
+    }
 
-        $res = $this->single($hand, 3);
+    public function testOneEmptyOk(): void
+    {
+        $grid = $this->createMock(Grid::class);
+        $rows = [
+            0 => [
+                0 => "card",
+                1 => "card",
+                2 => "card",
+            ],
+            3 => [
+                4 => "card"
+            ]
+        ];
+        $grid->method('getRows')->willReturn($rows);
+        $exp = [0, 3];
+        $res = $this->oneEmpty($grid);
         $this->assertEquals($exp, $res);
     }
 
-    public function testSingle2(): void
+    public function testOneEmptyOk2(): void
     {
-        $hand = [
-            2 => "card",
-            4 => "card2"
+        $grid = $this->createMock(Grid::class);
+        $rows = [
+            0 => [
+                0 => "card",
+                1 => "card",
+                2 => "card",
+                3 => "card",
+                4 => "card",
+            ],
+            3 => [
+                4 => "card"
+            ]
         ];
-
-        $exp = [
-            [3, 0],
-            [3, 1],
-            [3, 3]
-        ];
-
-        $res = $this->single($hand, 3);
+        $grid->method('getRows')->willReturn($rows);
+        $exp = [1, 0];
+        $res = $this->oneEmpty($grid);
         $this->assertEquals($exp, $res);
     }
 
-    public function testSingle3(): void
+    public function testOneEmptyOk3(): void
     {
-        $hand = [
-            0 => "card",
-            4 => "card2"
+        $grid = $this->createMock(Grid::class);
+        $rows = [
+            0 => [
+                0 => "card",
+                1 => "card",
+                2 => "card",
+                3 => "card",
+                4 => "card",
+            ],
+            1 => [
+                0 => "card",
+                1 => "card",
+                2 => "card",
+                3 => "card",
+                4 => "card",
+            ],
+            2 => [
+                0 => "card",
+                1 => "card",
+                2 => "card",
+                3 => "card",
+                4 => "card",
+            ],
+            3 => [
+                0 => "card",
+                1 => "card",
+                2 => "card",
+                3 => "card",
+                4 => "card",
+            ],
+            4 => [
+                0 => "card",
+                2 => "card",
+                3 => "card",
+                4 => "card",
+            ],
         ];
-
-        $exp = [
-            [3, 1],
-            [3, 2],
-            [3, 3]
-        ];
-
-        $res = $this->single($hand, 3);
-        $this->assertEquals($exp, $res);
-    }
-
-    public function testSingle4(): void
-    {
-        $hand = [
-            0 => "card",
-        ];
-
-        $exp = [
-            [3, 1],
-            [3, 2],
-            [3, 3],
-            [3, 4]
-        ];
-
-        $res = $this->single($hand, 3);
-        $this->assertEquals($exp, $res);
-    }
-
-    public function testSingle5(): void
-    {
-        $hand = [];
-
-        $exp = [
-            [3, 0],
-            [3, 1],
-            [3, 2],
-            [3, 3],
-            [3, 4],
-        ];
-
-        $res = $this->single($hand, 3);
+        $grid->method('getRows')->willReturn($rows);
+        $exp = [4, 1];
+        $res = $this->oneEmpty($grid);
         $this->assertEquals($exp, $res);
     }
 }

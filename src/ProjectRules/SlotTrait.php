@@ -7,13 +7,15 @@ trait SlotTrait
     use EmptyCellTrait;
 
     /**
+     * Used in SuggestionTrait
+     *
      * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      * @param array<int,array<string,int|string>> $pointsRows
      * @param array<int,array<string,int|string>> $pointsCols
      * @param array<array<string>> $rows
      * @return array<string,array<int,int>|int|string>
      */
-    private function slot(array $pointsRows, array $pointsCols, int $bestRow, array $rows, bool $inverted=false): array
+    private function bestSlot(array $pointsRows, array $pointsCols, int $bestRow, array $rows, bool $inverted=false): array
     {
         /**
          * @var string $rowRule
@@ -28,10 +30,13 @@ trait SlotTrait
         if (array_key_exists($bestRow, $rows)) {
             $row = $rows[$bestRow];
         }
-        $emptySlots = $this->single($row, $bestRow);
+        $emptySlots = $this->singleHand($row, $bestRow);
         $slot = $emptySlots[0];
-        // $colPoints = -1000;
-        $colPoints = -1;
+        /**
+         * Just a low value to start with, since all the slots are
+         * empty they will all have a higher value (adjusted points)
+         */
+        $colPoints = -200;
 
         foreach($emptySlots as $emptySlot) {
             $col = $emptySlot[1];

@@ -33,4 +33,13 @@ class RuleEvaluator
             new SameOfAKind(2)
         ];
     }
+
+    /**
+     * For testing purposes
+     * @return array<RuleInterface> $rules
+     */
+    public function getRules(): array
+    {
+        return $this->rules;
+    }
 }

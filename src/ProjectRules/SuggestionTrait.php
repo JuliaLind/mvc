@@ -83,13 +83,13 @@ trait SuggestionTrait
         $handRules = $this->extractRuleNames($rulesRows, $rulesCols);
 
 
-        $slot1 = $this->slot($rulesRows, $rulesCols, $bestRow, $rows);
+        $slot1 = $this->bestSlot($rulesRows, $rulesCols, $bestRow, $rows);
         /**
          * @var int $totPoints1
          */
         $totPoints1 = $slot1['tot-weight-points-slot'];
 
-        $slot2 = $this->slot($rulesCols, $rulesRows, $bestCol, $cols, true);
+        $slot2 = $this->bestSlot($rulesCols, $rulesRows, $bestCol, $cols, true);
         /**
          * @var int $totPoints2
          */
