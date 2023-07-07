@@ -8686,3 +8686,12 @@ f7a0d6,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1688688482,,200
 f21cfd,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1688688484,,200
 705269,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api,1688689591,,200
 146de8,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api/game-state,1688689597,,200
+8e10b5,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api/game-state,1688724144,,200
+597a8b,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api,1688724495,,200
+c6709c,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/bot-plays,1688724501,,200
+b6ccc1,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/bot-plays,1688724516,,200
+ac92ea,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/bot-plays,1688724522,,200
+e0191e,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/bot-plays,1688724527,,200
+e71643,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/bot-plays,1688724537,,200
+ba31aa,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/bot-plays,1688724673,,200
+87afea,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/api/bot-plays,1688724709,,200

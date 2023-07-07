@@ -53,14 +53,14 @@ trait SlotTrait
                 'col-rule' => $rowRule,
                 'row-rule' => $colRule,
                 'slot' => [$slot[1], $slot[0]],
-                'tot-points' => $rowPoints + $colPoints
+                'tot-weight-points-slot' => $rowPoints + $colPoints
             ];
         }
         return [
             'col-rule' => $colRule,
             'row-rule' => $rowRule,
             'slot' => $slot,
-            'tot-points' => $rowPoints + $colPoints
+            'tot-weight-points-slot' => $rowPoints + $colPoints
         ];
     }
 }

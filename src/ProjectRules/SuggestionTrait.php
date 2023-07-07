@@ -75,13 +75,13 @@ trait SuggestionTrait
         /**
          * @var int $totPoints1
          */
-        $totPoints1 = $slot1['tot-points'];
+        $totPoints1 = $slot1['tot-weight-points-slot'];
 
         $slot2 = $this->slot($rulesCols, $rulesRows, $bestCol, $cols, true);
         /**
          * @var int $totPoints2
          */
-        $totPoints2 = $slot2['tot-points'];
+        $totPoints2 = $slot2['tot-weight-points-slot'];
 
         $data = $slot1;
         if ($totPoints2 > $totPoints1) {
