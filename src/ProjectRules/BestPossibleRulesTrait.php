@@ -36,7 +36,7 @@ trait BestPossibleRulesTrait
             'Straight' => 15,
             'Three Of A Kind' => 10
         ];
-        if(in_array($ruleWithCard, $notPrioritized, true) && !in_array($ruleWithoutCard, $notPrioritized, true)) {
+        if($weightPoints >= 0 && in_array($ruleWithCard, $notPrioritized, true) && !in_array($ruleWithoutCard, $notPrioritized, true)) {
             $weightPoints = 0.5 - 0.01 * $points[$ruleWithoutCard];
             if ($handNotEmpty) {
                 /**
@@ -58,7 +58,7 @@ trait BestPossibleRulesTrait
     {
         $pointsHands = [];
         $bestHand = 0;
-        $maxPoints = 0;
+        $maxPoints = -200;
 
         for ($j = 0; $j <= 4; $j++) {
             $data = $this->handRuleWith($hands, $j, $deck, $card);

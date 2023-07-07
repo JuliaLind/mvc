@@ -33,7 +33,7 @@ class CheckWithCardTraitPt2Test extends TestCase
         ];
 
         $exp = [
-            'points' => -1,
+            'points' => -200,
             'rule' => ""
         ];
         $res = $this->handRuleWith($hands, 2, $deck, $card);

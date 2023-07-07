@@ -22,7 +22,7 @@ trait PointsAndRuleNameTrait
     {
         if (count($hand) === 5) {
             return [
-                'points' => -1,
+                'points' => -200,
                 'rule' => ""
             ];
         }

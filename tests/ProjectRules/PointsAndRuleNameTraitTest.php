@@ -16,7 +16,7 @@ class PointsAndRuleNameTraitTest extends TestCase
         $rule = new FullHouse();
 
         $exp = [
-            'points' => -1,
+            'points' => -200,
             'rule' => ""
         ];
         $res = $this->pointsAndName($hand, $deck, $card, $rule);

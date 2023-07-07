@@ -19,7 +19,7 @@ class CheckWithCardTraitTest extends TestCase
         $rule = new FullHouse();
 
         $exp = [
-            'points' => -1,
+            'points' => -200,
             'rule' => ""
         ];
         $res = $this->checkSingleRuleWith($hands, 2, $deck, $card, $rule);
