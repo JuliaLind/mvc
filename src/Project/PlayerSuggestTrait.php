@@ -17,12 +17,12 @@ trait PlayerSuggestTrait
     private RuleEvaluator $evaluator;
 
     /**
-     * @var array<string,array<int,int|string>|int|string> $suggestion
+     * @var array<string,array<int,array<string,float|int|string>|int>|int|string> $suggestion
      */
     private array $suggestion = ["message" => ""];
 
     /**
-     * @param array<string,array<int,int|string>|int|string> $suggestion
+     * @param array<string,array<int,array<string,float|int|string>|int>|int|string> $suggestion
      */
     abstract private function createMessage(array $suggestion): string;
 

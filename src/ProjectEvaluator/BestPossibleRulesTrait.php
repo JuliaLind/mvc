@@ -65,11 +65,11 @@ trait BestPossibleRulesTrait
             /**
              * @var float $handPoints
              */
-            $handPoints = $data['points'];
+            $handPoints = $data['weight'];
             /**
              * @var string $handRule
              */
-            $handRule = $data['rule'];
+            $handRule = $data['rule-with-card'];
             /**
              * @var string $handRuleWithout
              */
@@ -81,9 +81,9 @@ trait BestPossibleRulesTrait
                 $bestHand = $j;
             }
 
-            $pointsHands[$j]['rule'] = $handRule;
-            $pointsHands[$j]['points'] = $handPoints;
-            $pointsHands[$j]['rule-without'] =  $handRuleWithout;
+            $pointsHands[$j]['rule-with-card'] = $handRule;
+            $pointsHands[$j]['weight'] = $handPoints;
+            $pointsHands[$j]['rule-without-card'] =  $handRuleWithout;
         }
         return [
             'max' => $maxPoints,

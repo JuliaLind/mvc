@@ -20,13 +20,13 @@ trait PointsAndRuleNameTrait2
         if ($rule->possibleWithCard([], $deck, $card)) {
             $points += $rule->getPoints();
             return [
-                'points' => $points,
-                'rule' => $rule->getName()
+                'weight' => $points,
+                'rule-with-card' => $rule->getName()
             ];
         }
         return [
-            'points' => $points,
-            'rule' => ""
+            'weight' => $points,
+            'rule-with-card' => ""
         ];
     }
 }

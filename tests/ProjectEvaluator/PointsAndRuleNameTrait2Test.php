@@ -17,8 +17,8 @@ class PointsAndRuleNameTrait2Test extends TestCase
         $rule = new RoyalFlush();
 
         $exp = [
-            'points' => 0.5,
-            'rule' => ""
+            'weight' => 0.5,
+            'rule-with-card' => ""
         ];
         $res = $this->pointsAndNameEmptyHand($deck, $card, $rule);
         $this->assertEquals($exp, $res);
@@ -31,8 +31,8 @@ class PointsAndRuleNameTrait2Test extends TestCase
         $rule = new RoyalFlush();
 
         $exp = [
-            'points' => 100.5,
-            'rule' => "Royal Flush"
+            'weight' => 100.5,
+            'rule-with-card' => "Royal Flush"
         ];
         $res = $this->pointsAndNameEmptyHand($deck, $card, $rule);
         $this->assertEquals($exp, $res);

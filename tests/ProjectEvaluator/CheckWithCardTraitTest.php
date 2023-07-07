@@ -23,8 +23,8 @@ class CheckWithCardTraitTest extends TestCase
         $rule = new FullHouse();
 
         $exp = [
-            'points' => -200,
-            'rule' => ""
+            'weight' => -200,
+            'rule-with-card' => ""
         ];
         $res = $this->checkSingleRuleWith($hands, 2, $deck, $card, $rule);
         $this->assertEquals($exp, $res);
@@ -41,8 +41,8 @@ class CheckWithCardTraitTest extends TestCase
         $rule = new RoyalFlush();
 
         $exp = [
-            'points' => 100.5,
-            'rule' => "Royal Flush"
+            'weight' => 100.5,
+            'rule-with-card' => "Royal Flush"
         ];
         $res = $this->checkSingleRuleWith($hands, 3, $deck, $card, $rule);
         $this->assertEquals($exp, $res);
@@ -59,8 +59,8 @@ class CheckWithCardTraitTest extends TestCase
         $rule = new FullHouse();
 
         $exp = [
-            'points' => 0,
-            'rule' => ""
+            'weight' => 0,
+            'rule-with-card' => ""
         ];
         $res = $this->checkSingleRuleWith($hands, 3, $deck, $card, $rule);
         $this->assertEquals($exp, $res);
@@ -77,8 +77,8 @@ class CheckWithCardTraitTest extends TestCase
         $rule = new FullHouse();
 
         $exp = [
-            'points' => 28,
-            'rule' => "Full House"
+            'weight' => 28,
+            'rule-with-card' => "Full House"
         ];
         $res = $this->checkSingleRuleWith($hands, 3, $deck, $card, $rule);
         $this->assertEquals($exp, $res);

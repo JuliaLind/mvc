@@ -55,14 +55,14 @@ trait CheckWithCardTrait
     private function handRuleWith(array $hands, int $index, array $deck, string $card)
     {
         $data = [
-            'points' => 0,
-            'rule' => ""
+            'weight' => 0,
+            'rule-with-card' => ""
         ];
         $rules = $this->rules;
 
         foreach ($rules as $rule) {
             $data = $this->checkSingleRuleWith($hands, $index, $deck, $card, $rule);
-            $name = $data['rule'];
+            $name = $data['rule-with-card'];
             if ($name != "") {
                 break;
             }

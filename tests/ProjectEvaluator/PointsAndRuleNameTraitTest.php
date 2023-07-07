@@ -20,8 +20,8 @@ class PointsAndRuleNameTraitTest extends TestCase
         $rule = new FullHouse();
 
         $exp = [
-            'points' => -200,
-            'rule' => ""
+            'weight' => -200,
+            'rule-with-card' => ""
         ];
         $res = $this->pointsAndName($hand, $deck, $card, $rule);
         $this->assertEquals($exp, $res);
@@ -35,8 +35,8 @@ class PointsAndRuleNameTraitTest extends TestCase
         $rule = new FullHouse();
 
         $exp = [
-            'points' => 29,
-            'rule' => "Full House"
+            'weight' => 29,
+            'rule-with-card' => "Full House"
         ];
         $res = $this->pointsAndName($hand, $deck, $card, $rule);
         $this->assertEquals($exp, $res);
@@ -50,8 +50,8 @@ class PointsAndRuleNameTraitTest extends TestCase
         $rule = new FullHouse();
 
         $exp = [
-            'points' => 28,
-            'rule' => "Full House"
+            'weight' => 28,
+            'rule-with-card' => "Full House"
         ];
         $res = $this->pointsAndName($hand, $deck, $card, $rule);
         $this->assertEquals($exp, $res);
@@ -65,8 +65,8 @@ class PointsAndRuleNameTraitTest extends TestCase
         $rule = new FullHouse();
 
         $exp = [
-            'points' => 0,
-            'rule' => ""
+            'weight' => 0,
+            'rule-with-card' => ""
         ];
         $res = $this->pointsAndName($hand, $deck, $card, $rule);
         $this->assertEquals($exp, $res);
@@ -80,8 +80,8 @@ class PointsAndRuleNameTraitTest extends TestCase
         $rule = new TwoPairs();
 
         $exp = [
-            'points' => 7,
-            'rule' => "Two Pairs"
+            'weight' => 7,
+            'rule-with-card' => "Two Pairs"
         ];
         $res = $this->pointsAndName($hand, $deck, $card, $rule);
         $this->assertEquals($exp, $res);

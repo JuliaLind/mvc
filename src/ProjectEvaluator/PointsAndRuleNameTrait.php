@@ -24,8 +24,8 @@ trait PointsAndRuleNameTrait
     {
         if (count($hand) === 5) {
             return [
-                'points' => -200,
-                'rule' => ""
+                'weight' => -200,
+                'rule-with-card' => ""
             ];
         }
         if ($rule->possibleWithCard($hand, $deck, $card)) {
@@ -34,13 +34,13 @@ trait PointsAndRuleNameTrait
              */
             $points = $rule->getPoints() + $rule->getAdditionalValue();
             return [
-                'points' => $points,
-                'rule' => $rule->getName()
+                'weight' => $points,
+                'rule-with-card' => $rule->getName()
             ];
         }
         return [
-            'points' => 0,
-            'rule' => ""
+            'weight' => 0,
+            'rule-with-card' => ""
         ];
     }
 }

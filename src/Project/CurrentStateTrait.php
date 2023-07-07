@@ -12,7 +12,7 @@ trait CurrentStateTrait
     private string $card;
     private string $message = "";
     /**
-     * @var array<string,array<int,int|string>|int|string> $suggestion
+     * @var array<string,array<int,array<string,float|int|string>|int>|int|string> $suggestion
      */
     private array $suggestion = ["message" => ""];
     /**

@@ -10,7 +10,7 @@ trait SuggestionTrait
     use BestPossibleRulesTrait;
     use CheckEmptyGridTrait;
     use EmptyCellTrait;
-    use ExtractRuleNamesTrait;
+    // use ExtractRuleNamesTrait;
     use SlotTrait;
 
 
@@ -27,7 +27,7 @@ trait SuggestionTrait
 
     /**
      * @param array<string> $deck
-     * @return array<string,array<int|string>|int|string>array<string,array<int,int>|int|string>
+     * @return array<string,array<int,array<string,float|int|string>|int>|int|string>
      */
     public function suggestion(Grid $grid, string $card, array $deck): array
     {
@@ -37,31 +37,30 @@ trait SuggestionTrait
         }
 
         if ($deck === []) {
-            return [
+            $data = [
                 'col-rule' => "",
                 'row-rule' => "",
                 'slot' => $this->oneEmpty($grid),
-                'row-rules-with-card' => ["", "", "", "", ""],
-                'row-rules-without-card' => ["", "", "", "", ""],
-                'col-rules-with-card' => ["", "" ,"", "", ""],
-                'col-rules-without-card' => ["", "" ,"", "", ""]
+                'row-rules' => [],
+                'col-rules' => []
             ];
+
+            for ($i = 0; $i <= 4; $i++) {
+                $dummyData = [
+                    'rule-with-card' => "",
+                    'weight' => 0,
+                    'rule-without-card' => ""
+                ];
+                $data['row-rules'][] = $dummyData;
+                $data['col-rules'][] = $dummyData;
+            }
+            return $data;
         }
 
-        // $cols = $grid->getCols();
         $cols = $this->getCols($rows);
-
         $rowData = $this->rulesHands($rows, $deck, $card);
         $colData = $this->rulesHands($cols, $deck, $card);
 
-        // /**
-        //  * @var int|float $maxRowPoints
-        //  */
-        // $maxRowPoints = $rowData['max'];
-        // /**
-        //  * @var int|float $maxColPoints
-        //  */
-        // $maxColPoints = $colData['max'];
         /**
          * @var int $bestRow;
          */
@@ -71,29 +70,30 @@ trait SuggestionTrait
          */
         $bestCol = $colData['bestHand'];
         /**
-         * @var array<int,array<string,int|string>> $rulesRows
+         * @var array<int,array<string,float|int|string>> $rulesRows
          */
         $rulesRows = $rowData['allRules'];
         /**
-         * @var array<int,array<string,int|string>> $rulesCols
+         * @var array<int,array<string,float|int|string>> $rulesCols
          */
         $rulesCols = $colData['allRules'];
 
-
-        $handRules = $this->extractRuleNames($rulesRows, $rulesCols);
-
+        $handRules = [
+            'row-rules' => $rulesRows,
+            'col-rules' => $rulesCols
+        ];
 
         $slot1 = $this->bestSlot($rulesRows, $rulesCols, $bestRow, $rows);
         /**
          * @var int $totPoints1
          */
-        $totPoints1 = $slot1['tot-weight-points-slot'];
+        $totPoints1 = $slot1['tot-weight-slot'];
 
         $slot2 = $this->bestSlot($rulesCols, $rulesRows, $bestCol, $cols, true);
         /**
          * @var int $totPoints2
          */
-        $totPoints2 = $slot2['tot-weight-points-slot'];
+        $totPoints2 = $slot2['tot-weight-slot'];
 
         $data = $slot1;
         if ($totPoints2 > $totPoints1) {
@@ -101,14 +101,5 @@ trait SuggestionTrait
         }
         $data = array_merge($data, $handRules);
         return $data;
-
-        // if ($maxRowPoints >= $maxColPoints) {
-        //     $data = $this->slot($rulesRows, $rulesCols, $bestRow, $rows);
-        //     $data = array_merge($data, $handRules);
-        //     return $data;
-        // }
-        // $data = $this->slot($rulesCols, $rulesRows, $bestCol, $cols, true);
-        // $data = array_merge($data, $handRules);
-        // return $data;
     }
 }

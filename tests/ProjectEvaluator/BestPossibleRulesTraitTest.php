@@ -87,29 +87,29 @@ class BestPossibleRulesTraitTest extends TestCase
             'bestHand' => 4,
             'allRules' => [
                 0 => [
-                    'rule' => "",
-                    'points' => -0.25,
-                    'rule-without' => "Full House"
+                    'rule-with-card' => "",
+                    'weight' => -0.25,
+                    'rule-without-card' => "Full House"
                 ],
                 1 => [
-                    'rule' => "",
-                    'points' => 0.25,
-                    'rule-without' => "Full House"
+                    'rule-with-card' => "",
+                    'weight' => 0.25,
+                    'rule-without-card' => "Full House"
                 ],
                 2 => [
-                    'rule' => "",
-                    'points' => 0.25,
-                    'rule-without' => "Full House"
+                    'rule-with-card' => "",
+                    'weight' => 0.25,
+                    'rule-without-card' => "Full House"
                 ],
                 3 => [
-                    'rule' => "",
-                    'points' => 0.25,
-                    'rule-without' => "Full House"
+                    'rule-with-card' => "",
+                    'weight' => 0.25,
+                    'rule-without-card' => "Full House"
                 ],
                 4 => [
-                    'rule' => "Full House",
-                    'points' => 27,
-                    'rule-without' => "Three Of A Kind"
+                    'rule-with-card' => "Full House",
+                    'weight' => 27,
+                    'rule-without-card' => "Three Of A Kind"
                 ]
             ],
         ];

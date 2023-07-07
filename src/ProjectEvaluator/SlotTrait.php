@@ -10,8 +10,8 @@ trait SlotTrait
      * Used in SuggestionTrait
      *
      * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
-     * @param array<int,array<string,int|string>> $pointsRows
-     * @param array<int,array<string,int|string>> $pointsCols
+     * @param array<int,array<string,float|int|string>> $pointsRows
+     * @param array<int,array<string,float|int|string>> $pointsCols
      * @param array<array<string>> $rows
      * @return array<string,array<int,int>|int|string>
      */
@@ -20,11 +20,11 @@ trait SlotTrait
         /**
          * @var string $rowRule
          */
-        $rowRule = $pointsRows[$bestRow]['rule'];
+        $rowRule = $pointsRows[$bestRow]['rule-with-card'];
         /**
          * @var int $rowPoints
          */
-        $rowPoints = $pointsRows[$bestRow]['points'];
+        $rowPoints = $pointsRows[$bestRow]['weight'];
         $colRule = "";
         $row = [];
         if (array_key_exists($bestRow, $rows)) {
@@ -43,14 +43,14 @@ trait SlotTrait
             /**
              * @var int $pointsCol
              */
-            $pointsCol = $pointsCols[$col]['points'];
+            $pointsCol = $pointsCols[$col]['weight'];
             if ($pointsCol >= $colPoints) {
                 $colPoints = $pointsCol;
                 $slot = $emptySlot;
                 /**
                  * @var string $colRule
                  */
-                $colRule = $pointsCols[$col]['rule'];
+                $colRule = $pointsCols[$col]['rule-with-card'];
             }
         }
         if ($inverted === true) {
@@ -58,14 +58,14 @@ trait SlotTrait
                 'col-rule' => $rowRule,
                 'row-rule' => $colRule,
                 'slot' => [$slot[1], $slot[0]],
-                'tot-weight-points-slot' => $rowPoints + $colPoints
+                'tot-weight-slot' => $rowPoints + $colPoints
             ];
         }
         return [
             'col-rule' => $colRule,
             'row-rule' => $rowRule,
             'slot' => $slot,
-            'tot-weight-points-slot' => $rowPoints + $colPoints
+            'tot-weight-slot' => $rowPoints + $colPoints
         ];
     }
 }

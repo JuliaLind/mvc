@@ -20,6 +20,18 @@ trait CheckEmptyGridTrait
     abstract private function handRuleWith(array $hands, int $index, array $deck, string $card);
 
     /**
+     * Used in:
+     * RulesWithoutCardTrait,
+     * CheckEmptyGridTrait
+     *
+     * Checks one hand for the highest possible rule that can be scored
+     * without the dealt card
+     * @param array<array<string>> $hands
+     * @param array<string> $deck
+     */
+    abstract private function handRuleWithout(array $hands, int $index, array $deck): string;
+
+    /**
      * Used in SuggestionTrait
      *
      * Used for a new/empty array. Always suggests the first empty slot
@@ -27,23 +39,38 @@ trait CheckEmptyGridTrait
      * at best calculated based on the dealt card and the cards the user is
      * yet to pick from the deck
      * @param array<string> $deck
-     * @return array<string,array<int,int|string>|string>
+     * @return array<string,array<int,array<string,float|int|string>|int>|string>
      */
     private function emptyGridSuggestion(array $deck, string $card)
     {
         $data = $this->handRuleWith([0 => []], 0, $deck, $card);
+        $ruleWithout = $this->handRuleWithout([], 0, $deck);
         /**
          * @var string $rule
          */
-        $rule = $data['rule'];
-        return [
+        $rule = $data['rule-with-card'];
+        $data2 = [
             'col-rule' => $rule,
             'row-rule' => $rule,
             'slot' => [0, 0],
-            'row-rules-with-card' => ["$rule", "", "", "", ""],
-            'row-rules-without-card' => ["", "", "", "", ""],
-            'col-rules-with-card' => ["$rule", "" ,"", "", ""],
-            'col-rules-without-card' => ["", "" ,"", "", ""]
+            'row-rules' => [],
+            'col-rules' => []
         ];
+
+        for ($i = 0; $i <= 4; $i++) {
+            $dummyData = [
+                'rule-with-card' => $rule,
+                'weight' => $data['weight'],
+                'rule-without-card' => $ruleWithout
+            ];
+            $data2['row-rules'][] = $dummyData;
+            $data2['col-rules'][] = $dummyData;
+        }
+        return $data2;
+
+        // 'row-rules-with-card' => ["$rule", "", "", "", ""],
+        // 'row-rules-without-card' => ["", "", "", "", ""],
+        // 'col-rules-with-card' => ["$rule", "" ,"", "", ""],
+        // 'col-rules-without-card' => ["", "" ,"", "", ""]
     }
 }

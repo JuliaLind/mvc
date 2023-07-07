@@ -31,7 +31,9 @@ trait CheckWithoutCardTrait
     }
 
     /**
-     * Used in RulesWithoutCardTrait
+     * Used in:
+     * RulesWithoutCardTrait,
+     * CheckEmptyGridTrait
      *
      * Checks one hand for the highest possible rule that can be scored
      * without the dealt card

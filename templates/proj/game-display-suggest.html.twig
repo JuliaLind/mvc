@@ -31,40 +31,40 @@
     {% endfor %}
     {% for row in 0..4 %}
     <div class="result suggest row-res grid-row-{{row}}">
-    {% if suggestion['row-rules-with-card'][row] != "" %}
+    {% if suggestion['row-rules'][row]['rule-with-card'] != "" %}
     <span class="suggest-title with-card">
     With card:
     </span>
     <span class="rule-with-card">
-    {{ suggestion['row-rules-with-card'][row] }}
+    {{ suggestion['row-rules'][row]['rule-with-card'] }}
     </span>
     {% endif %}
-    {% if suggestion['row-rules-without-card'][row] != "" %}
+    {% if suggestion['row-rules'][row]['rule-without-card'] != "" %}
     <span class="suggest-title without-card">
     Without card:
     </span>
     <span class="rule-without-card">
-    {{ suggestion['row-rules-without-card'][row] }}
+    {{ suggestion['row-rules'][row]['rule-without-card'] }}
     </span>
     {% endif %}
     </div>
 {% endfor %}
 {% for col in 0..4 %}
     <div class="result suggest col-res grid-col-{{col}}">
-    {% if suggestion['col-rules-with-card'][col] != "" %}
+    {% if suggestion['col-rules'][col]['rule-with-card'] != "" %}
     <span class="suggest-title with-card">
     With card:
     </span>
     <span class="rule-with-card">
-    {{ suggestion['col-rules-with-card'][col] }}
+    {{ suggestion['col-rules'][col]['rule-with-card'] }}
     </span>
     {% endif %}
-    {% if suggestion['col-rules-without-card'][col] != "" %}
+    {% if suggestion['col-rules'][col]['rule-without-card'] != "" %}
     <span class="suggest-title without-card">
     Without card:
     </span>
     <span class="rule-without-card">
-    {{ suggestion['col-rules-without-card'][col] }}
+    {{ suggestion['col-rules'][col]['rule-without-card'] }}
     </span>
     {% endif %}
     </div>
