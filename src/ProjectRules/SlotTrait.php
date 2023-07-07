@@ -26,7 +26,8 @@ trait SlotTrait
         }
         $emptySlots = $this->single($row, $bestRow);
         $slot = $emptySlots[0];
-        $colPoints = -1000;
+        // $colPoints = -1000;
+        $colPoints = -1;
 
         foreach($emptySlots as $emptySlot) {
             $col = $emptySlot[1];

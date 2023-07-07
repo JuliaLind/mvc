@@ -3,6 +3,7 @@
 namespace App\ProjectRules;
 
 use App\ProjectGrid\Grid;
+use App\Project\NoCardsException;
 
 trait SuggestionTrait
 {
@@ -23,6 +24,19 @@ trait SuggestionTrait
         if ($rows === []) {
             return $this->emptyGridSuggestion($deck, $card);
         }
+
+        if ($deck === []) {
+            return [
+                'col-rule' => "",
+                'row-rule' => "",
+                'slot' => $this->oneEmpty($grid),
+                'row-rules-with-card' => ["", "", "", "", ""],
+                'row-rules-without-card' => ["", "", "", "", ""],
+                'col-rules-with-card' => ["", "" ,"", "", ""],
+                'col-rules-without-card' => ["", "" ,"", "", ""]
+            ];
+        }
+
         $cols = $grid->getCols();
 
         $rowData = $this->rulesHands($rows, $deck, $card);

@@ -693,6 +693,7 @@
     <service id="App\ProjectGrid\SlotNotEmptyException" class="App\ProjectGrid\SlotNotEmptyException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\Flush" class="App\ProjectRules\Flush" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\FullHouse" class="App\ProjectRules\FullHouse" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectRules\NoEmptySlotsException" class="App\ProjectRules\NoEmptySlotsException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\RoyalFlush" class="App\ProjectRules\RoyalFlush" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\RuleEvaluator" class="App\ProjectRules\RuleEvaluator" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\SameOfAKind" class="App\ProjectRules\SameOfAKind" autowire="true" autoconfigure="true"/>
@@ -1853,6 +1854,7 @@
         <argument key="App\ProjectGrid\SlotNotEmptyException" type="service_closure" id="App\ProjectGrid\SlotNotEmptyException" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\Flush" type="service_closure" id="App\ProjectRules\Flush" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\FullHouse" type="service_closure" id="App\ProjectRules\FullHouse" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectRules\NoEmptySlotsException" type="service_closure" id="App\ProjectRules\NoEmptySlotsException" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\RoyalFlush" type="service_closure" id="App\ProjectRules\RoyalFlush" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\RuleEvaluator" type="service_closure" id="App\ProjectRules\RuleEvaluator" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\Straight" type="service_closure" id="App\ProjectRules\Straight" on-invalid="ignore_uninitialized"/>

@@ -8,6 +8,11 @@ trait CheckWithoutCardTrait
     use RuleNameTrait2;
 
     /**
+     * @var array<RuleInterface> $rules
+     */
+    private array $rules;
+
+    /**
      * @param array<string> $deck
      * @param array<array<string>> $hands
      */

@@ -28,17 +28,17 @@ class CheckWithCardTraitTest extends TestCase
 
     public function testCheckSingleRuleWithOk(): void
     {
-        $deck = ["2H","3S","3D","9S", "9D","10S","11S","11C","11D","12S","13S","14H","14S"];
-        $card = "10H";
+        $deck = ["2H","3S","3D","9S", "9D","10H","11S","11C","11D","12S","13S","14H","14S"];
+        $card = "10S";
         $hand = ["6C","6D","6H","7C","7D",];
         $hands = [
             2 => $hand
         ];
-        $rule = new FullHouse();
+        $rule = new RoyalFlush();
 
         $exp = [
-            'points' => 25.5,
-            'rule' => "Full House"
+            'points' => 100.5,
+            'rule' => "Royal Flush"
         ];
         $res = $this->checkSingleRuleWith($hands, 3, $deck, $card, $rule);
         $this->assertEquals($exp, $res);

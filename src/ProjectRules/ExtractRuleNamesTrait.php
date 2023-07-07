@@ -2,11 +2,24 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Used in SuggestionTrait
+ */
 trait ExtractRuleNamesTrait
 {
     /**
-     * @param array<int,array<string,int|string>> $rowData
-     * @param array<int,array<string,int|string>> $colData
+     * Takes array with data for all 10 hands
+     * (1 array for 5 vertical hands and 1 array for
+     * 5 horizontal hands with info about best possible rule
+     * to achieve with card and weighted points, and best
+     * possible rule to achieve without card. Returns four
+     * arrays where each array contains only rule names:
+     * array for 5 vertical hands with card,
+     * array for 5 vertical hands without card,
+     * array for 5 horizontal hands with card,
+     * array for 5 horixontal hands without card
+     * @param array<int,array<string,float|int|string>> $rowData
+     * @param array<int,array<string,float|int|string>> $colData
      * @return array<string,array<int,string>>
      */
     private function extractRuleNames(array $rowData, array $colData): array

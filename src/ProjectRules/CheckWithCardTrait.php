@@ -2,6 +2,12 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Used in BestPossibleRulesTrait
+ *
+ * Checks a hand for the best possible rule
+ * to achieve iwht the dealt card.
+ */
 trait CheckWithCardTrait
 {
     use PointsAndRuleNameTrait;

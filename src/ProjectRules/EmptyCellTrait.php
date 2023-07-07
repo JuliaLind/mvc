@@ -4,6 +4,8 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
+use App\ProjectGrid\Grid;
+
 trait EmptyCellTrait
 {
     /**
@@ -23,5 +25,26 @@ trait EmptyCellTrait
             }
         }
         return $empty;
+    }
+
+    /**
+     * Used in SuggestionTrait
+     * @return array<int>
+     */
+    private function oneEmpty(Grid $grid): array
+    {
+
+        if ($grid->getCardCount() === 25) {
+            throw new NoEmptySlotsException();
+        }
+        $hands = $grid->getRows();
+        $slot = [];
+        for ($row = 0; $row < 5; $row++) {
+            if (array_key_exists($row, $hands) && count($hands[$row]) < 5) {
+                $slot = $this->single($hands[$row], $row)[0];
+                break;
+            }
+        }
+        return $slot;
     }
 }
