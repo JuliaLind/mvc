@@ -3,7 +3,7 @@
 namespace App\Project;
 
 use App\ProjectGrid\Grid;
-use App\ProjectRules\RuleEvaluator;
+use App\ProjectEvaluator\RuleEvaluator;
 
 class ApiGame3
 {

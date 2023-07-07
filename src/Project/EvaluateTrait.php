@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 use Doctrine\ORM\EntityManagerInterface;
 
 use App\ProjectGrid\Grid;
-use App\ProjectRules\RuleEvaluator;
+use App\ProjectEvaluator\RuleEvaluator;
 
 trait EvaluateTrait
 {

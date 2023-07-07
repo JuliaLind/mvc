@@ -688,14 +688,14 @@
     <service id="App\Project\Register" class="App\Project\Register" autowire="true" autoconfigure="true"/>
     <service id="App\Project\RegisterFactory" class="App\Project\RegisterFactory" autowire="true" autoconfigure="true"/>
     <service id="App\Project\UserNotRegisteredException" class="App\Project\UserNotRegisteredException" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectEvaluator\NoEmptySlotsException" class="App\ProjectEvaluator\NoEmptySlotsException" autowire="true" autoconfigure="true"/>
+    <service id="App\ProjectEvaluator\RuleEvaluator" class="App\ProjectEvaluator\RuleEvaluator" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\Grid" class="App\ProjectGrid\Grid" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\SlotEmptyException" class="App\ProjectGrid\SlotEmptyException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectGrid\SlotNotEmptyException" class="App\ProjectGrid\SlotNotEmptyException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\Flush" class="App\ProjectRules\Flush" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\FullHouse" class="App\ProjectRules\FullHouse" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectRules\NoEmptySlotsException" class="App\ProjectRules\NoEmptySlotsException" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\RoyalFlush" class="App\ProjectRules\RoyalFlush" autowire="true" autoconfigure="true"/>
-    <service id="App\ProjectRules\RuleEvaluator" class="App\ProjectRules\RuleEvaluator" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\SameOfAKind" class="App\ProjectRules\SameOfAKind" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\Straight" class="App\ProjectRules\Straight" autowire="true" autoconfigure="true"/>
     <service id="App\ProjectRules\StraightFlush" class="App\ProjectRules\StraightFlush" autowire="true" autoconfigure="true"/>
@@ -1849,14 +1849,14 @@
         <argument key="App\Project\NotEnoughCoinsException" type="service_closure" id="App\Project\NotEnoughCoinsException" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\RegisterFactory" type="service_closure" id="App\Project\RegisterFactory" on-invalid="ignore_uninitialized"/>
         <argument key="App\Project\UserNotRegisteredException" type="service_closure" id="App\Project\UserNotRegisteredException" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectEvaluator\NoEmptySlotsException" type="service_closure" id="App\ProjectEvaluator\NoEmptySlotsException" on-invalid="ignore_uninitialized"/>
+        <argument key="App\ProjectEvaluator\RuleEvaluator" type="service_closure" id="App\ProjectEvaluator\RuleEvaluator" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\Grid" type="service_closure" id="App\ProjectGrid\Grid" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\SlotEmptyException" type="service_closure" id="App\ProjectGrid\SlotEmptyException" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectGrid\SlotNotEmptyException" type="service_closure" id="App\ProjectGrid\SlotNotEmptyException" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\Flush" type="service_closure" id="App\ProjectRules\Flush" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\FullHouse" type="service_closure" id="App\ProjectRules\FullHouse" on-invalid="ignore_uninitialized"/>
-        <argument key="App\ProjectRules\NoEmptySlotsException" type="service_closure" id="App\ProjectRules\NoEmptySlotsException" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\RoyalFlush" type="service_closure" id="App\ProjectRules\RoyalFlush" on-invalid="ignore_uninitialized"/>
-        <argument key="App\ProjectRules\RuleEvaluator" type="service_closure" id="App\ProjectRules\RuleEvaluator" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\Straight" type="service_closure" id="App\ProjectRules\Straight" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\StraightFlush" type="service_closure" id="App\ProjectRules\StraightFlush" on-invalid="ignore_uninitialized"/>
         <argument key="App\ProjectRules\TwoPairs" type="service_closure" id="App\ProjectRules\TwoPairs" on-invalid="ignore_uninitialized"/>

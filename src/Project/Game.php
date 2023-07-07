@@ -3,7 +3,7 @@
 namespace App\Project;
 
 use App\ProjectGrid\Grid;
-use App\ProjectRules\RuleEvaluator;
+use App\ProjectEvaluator\RuleEvaluator;
 
 require __DIR__ . "/../../vendor/autoload.php";
 

@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-07-07 14:34:03        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-07-07 15:08:22        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -93,7 +93,7 @@
                             <path d="M0 0h24v24H0z" fill="none">
                             <path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z">
                         </svg>
-                        Violations (6)
+                        Violations (7)
                     </a>
                 </li>
                                     <li>
@@ -434,7 +434,7 @@
         "relations": [
             "\\App\\ProjectGrid\\Grid",
             "\\App\\Project\\Deck",
-            "\\App\\ProjectRules\\RuleEvaluator"
+            "\\App\\ProjectEvaluator\\RuleEvaluator"
         ]
     },
     {
@@ -512,7 +512,7 @@
         "size": 3000,
         "relations": [
             "\\App\\Project\\Deck",
-            "\\App\\ProjectRules\\RuleEvaluator"
+            "\\App\\ProjectEvaluator\\RuleEvaluator"
         ]
     },
     {
@@ -639,7 +639,7 @@
         "name": "\\App\\Project\\ApiGame3",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectRules\\RuleEvaluator",
+            "\\App\\ProjectEvaluator\\RuleEvaluator",
             "\\App\\ProjectGrid\\Grid",
             "\\App\\Project\\Deck"
         ]
@@ -1049,6 +1049,171 @@
         ]
     },
     {
+        "name": "\\App\\ProjectEvaluator\\ExtractRuleNamesTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\CheckFullHandTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\RuleNameTrait2",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\RuleInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\FinalResultsTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectGrid\\Grid"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\CheckWithoutCardTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\SuggestionTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectGrid\\Grid"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\EmptyCellTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectGrid\\Grid",
+            "\\App\\ProjectEvaluator\\NoEmptySlotsException"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\NoEmptySlotsException",
+        "size": 3000,
+        "relations": [
+            "\\Exception"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\CheckWithCardTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\RuleNameTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\PointsAndRuleNameTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\SlotTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\CheckEmptyGridTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\EmptyCellsTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\RuleEvaluator",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectRules\\RoyalFlush",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\StraightFlush",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\SameOfAKind",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\FullHouse",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\Flush",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\Straight",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\TwoPairs",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\PointsAndRuleNameTrait2",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\RowsToColsTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\BestPossibleRulesTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\ProjectRules\\StraightScoredTrait",
         "size": 3000,
         "relations": []
@@ -1079,22 +1244,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\SameOfAKind",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\RuleInterface",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\ProjectRules\\TwoPairsTrait3",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\ExtractRuleNamesTrait",
         "size": 3000,
         "relations": []
     },
@@ -1119,21 +1269,9 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\CheckFullHandTrait",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\ProjectRules\\StraightTrait3",
         "size": 3000,
         "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\RuleNameTrait2",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface"
-        ]
     },
     {
         "name": "\\App\\ProjectRules\\FullHouseTrait3",
@@ -1151,16 +1289,6 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\StraightFlush",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\RoyalFlush",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\ProjectRules\\RoyalFlushTrait",
         "size": 3000,
         "relations": []
@@ -1169,13 +1297,6 @@
         "name": "\\App\\ProjectRules\\TwoPairsTrait",
         "size": 3000,
         "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\FinalResultsTrait",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectGrid\\Grid"
-        ]
     },
     {
         "name": "\\App\\ProjectRules\\FirstCheckTrait",
@@ -1203,20 +1324,6 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\CheckWithoutCardTrait",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\SuggestionTrait",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectGrid\\Grid"
-        ]
-    },
-    {
         "name": "\\App\\ProjectRules\\FullHouseScoredTrait",
         "size": 3000,
         "relations": []
@@ -1232,28 +1339,6 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\EmptyCellTrait",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectGrid\\Grid",
-            "\\App\\ProjectRules\\NoEmptySlotsException"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\NoEmptySlotsException",
-        "size": 3000,
-        "relations": [
-            "\\Exception"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\CheckWithCardTrait",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface"
-        ]
-    },
-    {
         "name": "\\App\\ProjectRules\\SearchSpecificCardTrait",
         "size": 3000,
         "relations": []
@@ -1262,13 +1347,6 @@
         "name": "\\App\\ProjectRules\\FlushTrait",
         "size": 3000,
         "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\RuleNameTrait",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface"
-        ]
     },
     {
         "name": "\\App\\ProjectRules\\TwoPairsTrait13",
@@ -1291,19 +1369,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\PointsAndRuleNameTrait",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface"
-        ]
-    },
-    {
         "name": "\\App\\ProjectRules\\SubCountTrait",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\SlotTrait",
         "size": 3000,
         "relations": []
     },
@@ -1314,11 +1380,6 @@
     },
     {
         "name": "\\App\\ProjectRules\\FlushTrait3",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\CheckEmptyGridTrait",
         "size": 3000,
         "relations": []
     },
@@ -1343,16 +1404,6 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\TwoPairs",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\FullHouse",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\ProjectRules\\SameOfAKindTrait4",
         "size": 3000,
         "relations": []
@@ -1368,17 +1419,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\Flush",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\ProjectRules\\TwoPairsTrait8",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\EmptyCellsTrait",
         "size": 3000,
         "relations": []
     },
@@ -1386,25 +1427,6 @@
         "name": "\\App\\ProjectRules\\StraightFlushScoredTrait",
         "size": 3000,
         "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\RuleEvaluator",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\Straight",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\PointsAndRuleNameTrait2",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface"
-        ]
     },
     {
         "name": "\\App\\ProjectRules\\FlushScoredTrait",
@@ -1427,17 +1449,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\ProjectRules\\RowsToColsTrait",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\ProjectRules\\TwoPairsTrait7",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\ProjectRules\\BestPossibleRulesTrait",
         "size": 3000,
         "relations": []
     },

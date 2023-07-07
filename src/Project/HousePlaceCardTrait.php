@@ -5,7 +5,7 @@ namespace App\Project;
 require __DIR__ . "/../../vendor/autoload.php";
 
 use App\ProjectGrid\Grid;
-use App\ProjectRules\RuleEvaluator;
+use App\ProjectEvaluator\RuleEvaluator;
 
 trait HousePlaceCardTrait
 {
