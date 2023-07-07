@@ -22,7 +22,6 @@ trait EmptyCellTrait
      */
     private function oneEmpty(Grid $grid): array
     {
-
         if ($grid->getCardCount() === 25) {
             throw new NoEmptySlotsException();
         }
