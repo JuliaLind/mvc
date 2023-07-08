@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait SuggestMessageTrait
 {
     /**
-     * @param array<string,array<int,array<string,float|int|string>|int>|int|string> $suggestion
+     * @param array<string,array<int,array<string,float|int|string>|int>|float|string> $suggestion
      */
     private function createMessage(array $suggestion): string
     {

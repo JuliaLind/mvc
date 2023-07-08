@@ -28,11 +28,11 @@ trait OneRoundTrait
         $this->player->addCard($row, $col, $this->card);
         $this->lastRound['player'] = [$row, $col];
         $this->housePlaceCard();
+        $this->card = $this->deck->deal();
         if ($this->house->getCardCount() === 25) {
             $this->finished = true;
             return true;
         }
-        $this->card = $this->deck->deal();
         $this->playerSuggest();
         return false;
     }

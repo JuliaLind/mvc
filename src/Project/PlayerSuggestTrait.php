@@ -27,6 +27,12 @@ trait PlayerSuggestTrait
     abstract private function createMessage(array $suggestion): string;
 
 
+    /**
+     * Analyses player's grid and saves a suggestion
+     * on slot to place card and information
+     * on which rule is possible at best with card
+     * resp. without card
+     */
     private function playerSuggest(): void
     {
         $suggestion = $this->evaluator->suggestion($this->player, $this->card, $this->deck->possibleCards());

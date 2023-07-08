@@ -32,6 +32,5 @@ trait MoveACardTrait
         $this->player->addCard($row, $col, $card);
         $this->fromSlot = [];
         $this->playerSuggest();
-
     }
 }

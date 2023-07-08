@@ -13,7 +13,7 @@ trait EvaluateTrait
 {
     private Grid $player;
     private Grid $house;
-    private Deck $deck;
+    // private Deck $deck;
     private int $pot=0;
     private string $message = "";
     private RuleEvaluator $evaluator;

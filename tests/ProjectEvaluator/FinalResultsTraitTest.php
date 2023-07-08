@@ -119,45 +119,45 @@ class FinalResultsTraitTest extends TestCase
         $total = 75 + 2 + 50 + 15 + 2 + 2;
         $exp = [
             "rows" => [
-                "0" => [
+                0 => [
                   "name" => "Straight Flush",
                   "points" => 75
                 ],
-                "1" => [
+                1 => [
                   "name" => "One Pair",
                   "points" => 2
                 ],
-                "2" => [
+                2 => [
                   "name" => "None",
                   "points" => 0
                 ],
-                "3" => [
+                3 => [
                   "name" => "Four Of A Kind",
                   "points" => 50
                 ],
-                "4" => [
+                4 => [
                   "name" => "Straight",
                   "points" => 15
                 ]
               ],
             "cols" => [
-                "0" => [
+                0 => [
                   "name" => "None",
                   "points" => 0
                 ],
-                "1" => [
+                1 => [
                   "name" => "None",
                   "points" => 0
                 ],
-                "2" => [
+                2 => [
                   "name" => "One Pair",
                   "points" => 2
                 ],
-                "3" => [
+                3 => [
                   "name" => "None",
                   "points" => 0
                 ],
-                "4" => [
+                4 => [
                   "name" => "One Pair",
                   "points" => 2
                 ]
