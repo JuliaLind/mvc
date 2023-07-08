@@ -4,7 +4,16 @@ namespace App\ProjectEvaluator;
 
 trait SlotTrait
 {
-    // use EmptyCellsTrait;
+    /**
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     * From EmptyCellsTrait
+     *
+     * Returns an array with coordinates [row,col]
+     * for all empty slots in a hand
+     * @param array<string> $hand
+     * @return array<array<int,int>>
+    */
+    abstract private function singleHand(array $hand, int $index, bool $one = false): array;
 
     /**
      * Used in SuggestionTrait
