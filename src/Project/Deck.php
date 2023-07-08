@@ -12,11 +12,18 @@ class Deck
      */
     private array $cards = [];
 
+
+    /**
+     * Constructor
+     */
     public function __construct(CardFactory $cardFactory = new CardFactory())
     {
         $this->cards = $cardFactory->fullSet();
     }
 
+    /**
+     * Deals the top-card from the deck (last card in the card array)
+     */
     public function deal(): string
     {
         /**
@@ -29,12 +36,16 @@ class Deck
         return $card;
     }
 
+    /**
+     * Places a card on the top of the deck (end of the card array)
+     */
     public function addCard(string $card): void
     {
         array_push($this->cards, $card);
     }
 
     /**
+     * Returns an array with all cards
      * @return array<string>
      */
     public function getCards(): array
@@ -43,9 +54,12 @@ class Deck
     }
 
     /**
+     * Returns an array of the cards that will be dealt to house/player
+     * i.e. array consisting of every other card except for the first two
+     * that will not be dealt to either.
      * @return array<string>
      */
-    public function possibleCards(): array
+    public function possibleCards(int $mod = 1): array
     {
         $cards = [];
         $deck = $this->cards;
@@ -53,7 +67,7 @@ class Deck
 
         // the first two cards in deck will not be picked by bank or by player
         for ($index = 2; $index < $count; $index++) {
-            if ($index % 2 === 1) {
+            if ($index % 2 === $mod) {
                 array_push($cards, $deck[$index]);
             }
         }

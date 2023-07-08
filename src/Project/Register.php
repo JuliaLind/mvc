@@ -20,6 +20,9 @@ class Register
     private EntityManagerInterface $manager;
     private User $user;
 
+    /**
+     * Constructor
+     */
     public function __construct(
         EntityManagerInterface $manager,
         int $userId
@@ -33,7 +36,7 @@ class Register
     }
 
     /**
-     * Registers a transaction,
+     * Registers a transaction to the database,
      * the amount is registered in database as is,
      * i.e. positive is registered as positive and negative and negative.
      * Use directly only for positive numbers!
@@ -72,7 +75,7 @@ class Register
     }
 
     /**
-     * Registers a negative transaction.
+     * Registers a negative transaction tot he database.
      * Note! amount number should be a positive number
      * and represent the amount to be debited.
      * Checks users balance before registering transaction
@@ -90,7 +93,7 @@ class Register
     }
 
     /**
-     * Registers a score for the user
+     * Registers a score for the user to the database
      */
     public function score(
         int $points

@@ -9192,3 +9192,4 @@ c6b67c,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/init,168877493
 08561e,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api,1688774937,,200
 bb2b31,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api/game-state,1688774941,,200
 163973,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api/game-state,1688831991,,200
+104a8b,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1688847927,,200

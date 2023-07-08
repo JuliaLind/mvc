@@ -9,24 +9,48 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\ProjectGrid\Grid;
 use App\ProjectEvaluator\RuleEvaluator;
 
+/**
+ * Evaluates the hands of player and house after
+ * both grids have been filled and determins
+ * winner. If player won transfers 2x pot to
+ * player/user and registers players score to database.
+ */
 trait EvaluateTrait
 {
     private Grid $player;
     private Grid $house;
-    // private Deck $deck;
     private int $pot=0;
     private string $message = "";
     private RuleEvaluator $evaluator;
 
     /**
+     * The results for the player and the house.
+     * Contains the rule scored and the points
+     * for each of the 10 hands and the totals
      * @var array<string,array<string,array<array<string,int|string>>|int>|string> $results
      */
     private array $results = [];
+
     /**
+     * Contains suggestion data for the player,
+     * from the latest round. Suggested slot,
+     * best possible rules that can be scored in
+     * the slot with the dalt card horizontally
+     * and vertically and for each of the 10
+     * hands best rule that can be scored with
+     * dealt card and best rule that can be
+     * scored without the dealt card
      * @var array<string,array<int,array<string,float|int|string>|int>|int|string> $suggestion
      */
     private array $suggestion = ["message" => ""];
 
+    /**
+     * Called after the last slot in the houses
+     * grid has been filled. Determins results
+     * and winner. If player wins registers
+     * a transaction of pot x 2 and score to
+     * the database
+     */
     public function evaluate(EntityManagerInterface $manager, int $userId, RegisterFactory $factory = new RegisterFactory()): void
     {
         $this->suggestion = ['message' => ""];

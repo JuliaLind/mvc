@@ -4,9 +4,16 @@ namespace App\Project;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
+/**
+ * Generates message based on suggestion-data for user
+ */
 trait SuggestMessageTrait
 {
     /**
+     * Generates a message based on the
+     * suggestion data (suggested slot and rules
+     * that can be scored if placing the dealt
+     * card into the suggsted slot)
      * @param array<string,array<int,array<string,float|int|string>|int>|float|string> $suggestion
      */
     private function createMessage(array $suggestion): string

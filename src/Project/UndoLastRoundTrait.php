@@ -8,17 +8,35 @@ use App\ProjectGrid\Grid;
 
 trait UndoLastRoundTrait
 {
+    /**
+     * The latest card that has been dealt to the player
+     */
     private string $card;
     private Deck $deck;
     private Grid $house;
     /**
+     * Contains the coordinates of the slots
+     * where the house and the player placed the
+     * cards in the last round
      * @var array<string,array<int>>> $lastRound
      */
     private array $lastRound = [];
     private Grid $player;
 
+    /**
+     * Provides a suggestion to the player on which slot to
+     * place the card in. Also provides data for each hand on
+     * the best possible rule that can be achieved with the dealt card
+     * and best possible rule without the dealt card
+     */
     abstract private function playerSuggest(): void;
 
+    /**
+     * Undoes the last round. The latest card that is dealt to the player
+     * is placed back into the deck. The latest placed card in the houses grid
+     * is also removed and placed back into the deck. And the latest card placed by the player is lifted from the player's grid.
+     * The suggestion data for the player is re-generated based on the updated grid
+     */
     public function undoLastRound(): void
     {
         $houseSlot = $this->lastRound['house'];
