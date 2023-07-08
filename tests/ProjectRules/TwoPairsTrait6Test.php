@@ -27,7 +27,7 @@ class TwoPairsTrait6Test extends TestCase
         $this->assertTrue($res);
     }
 
-    public function testCheck3Ok3(): void
+    public function testCheck3NotOk4(): void
     {
         $rank = 3;
         $ranksHand = [
@@ -42,7 +42,7 @@ class TwoPairsTrait6Test extends TestCase
         ];
 
         $res = $this->check3($rank, $ranksHand, $ranksDeck);
-        $this->assertTrue($res);
+        $this->assertFalse($res);
     }
 
     public function testCheck3NotOk2(): void

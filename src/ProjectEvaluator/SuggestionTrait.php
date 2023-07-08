@@ -3,14 +3,14 @@
 namespace App\ProjectEvaluator;
 
 use App\ProjectGrid\Grid;
-use App\Project\NoCardsException;
+
+// use App\Project\NoCardsException;
 
 trait SuggestionTrait
 {
     use BestPossibleRulesTrait;
     use CheckEmptyGridTrait;
     use EmptyCellTrait;
-    // use ExtractRuleNamesTrait;
     use SlotTrait;
 
 
@@ -42,7 +42,7 @@ trait SuggestionTrait
                 'row-rule' => "",
                 'slot' => $this->oneEmpty($grid),
                 'row-rules' => [],
-                'col-rules' => []
+                'col-rules' => [],
             ];
 
             for ($i = 0; $i <= 4; $i++) {

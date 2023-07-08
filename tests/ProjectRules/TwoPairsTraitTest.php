@@ -54,15 +54,15 @@ class TwoPairsTraitTest extends TestCase
         $this->assertEquals(2, $this->additionalValue);
     }
 
-    public function testPossibleWithCardOk3(): void
+    public function testPossibleWithCardNotOk5(): void
     {
         $card = "8C";
         $hand = ["3C", "14S", "9S"];
         $deck = ["4C", "5C", "14H", "8S"];
 
         $res = $this->possibleWithCard($hand, $deck, $card);
-        $this->assertTrue($res);
-        $this->assertEquals(1, $this->additionalValue);
+        $this->assertFalse($res);
+        $this->assertEquals(0, $this->additionalValue);
     }
 
     public function testPossibleWithCardNotOk3(): void
@@ -107,4 +107,18 @@ class TwoPairsTraitTest extends TestCase
         $this->assertTrue($res);
         $this->assertEquals(2, $this->additionalValue);
     }
+
+    public function testPossibleWithCardNotOk4(): void
+    {
+        $card = "10S";
+        $hand = ["6D", "13D", "3H"];
+        $deck = [
+            "2S", "12H", "2C", "4C",
+            "5S", "10D", "14D", "6C"
+        ];
+
+        $res = $this->possibleWithCard($hand, $deck, $card);
+        $this->assertFalse($res);
+    }
+
 }

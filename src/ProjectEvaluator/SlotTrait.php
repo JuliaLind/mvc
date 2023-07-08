@@ -4,7 +4,7 @@ namespace App\ProjectEvaluator;
 
 trait SlotTrait
 {
-    use EmptyCellsTrait;
+    // use EmptyCellsTrait;
 
     /**
      * Used in SuggestionTrait

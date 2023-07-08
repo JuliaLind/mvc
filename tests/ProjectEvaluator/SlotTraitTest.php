@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 class SlotTraitTest extends TestCase
 {
     use SlotTrait;
+    use EmptyCellsTrait;
 
 
     public function testBestSlot(): void

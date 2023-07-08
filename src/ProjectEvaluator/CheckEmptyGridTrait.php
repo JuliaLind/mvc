@@ -67,10 +67,5 @@ trait CheckEmptyGridTrait
             $data2['col-rules'][] = $dummyData;
         }
         return $data2;
-
-        // 'row-rules-with-card' => ["$rule", "", "", "", ""],
-        // 'row-rules-without-card' => ["", "", "", "", ""],
-        // 'col-rules-with-card' => ["$rule", "" ,"", "", ""],
-        // 'col-rules-without-card' => ["", "" ,"", "", ""]
     }
 }

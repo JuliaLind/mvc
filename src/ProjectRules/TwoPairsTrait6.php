@@ -34,11 +34,11 @@ trait TwoPairsTrait6
      */
     private function matchRank(int $rank, array $ranksHand, array $ranksDeck): bool
     {
-        if (array_key_exists($rank, $ranksHand)) {
+        if (array_sum($ranksHand) <= 3 && array_key_exists($rank, $ranksHand)) {
             $this->additionalValue = 2;
             return true;
         }
-        if (array_key_exists($rank, $ranksDeck)) {
+        if (array_sum($ranksHand) <= 2 && array_key_exists($rank, $ranksDeck)) {
             $this->additionalValue = 1;
             return true;
         }
@@ -60,17 +60,6 @@ trait TwoPairsTrait6
      */
     private function check3(int $rank, array $ranksHand, array $ranksDeck): bool
     {
-        if (array_sum($ranksHand) <= 3 && $this->matchOneInDeck($ranksHand, $ranksDeck)) {
-            return $this->matchRank($rank, $ranksHand, $ranksDeck);
-            // if (array_key_exists($rank, $ranksHand)) {
-            //     $this->additionalValue = 2;
-            //     return true;
-            // }
-            // if (array_key_exists($rank, $ranksDeck)) {
-            //     $this->additionalValue = 1;
-            //     return true;
-            // }
-        }
-        return false;
+        return $this->matchOneInDeck($ranksHand, $ranksDeck) && $this->matchRank($rank, $ranksHand, $ranksDeck);
     }
 }

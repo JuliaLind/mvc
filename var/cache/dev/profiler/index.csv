@@ -9184,3 +9184,10 @@ f4bfcd,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1688768766,,200
 86b485,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/move-card/0/4,1688768768,,302
 1d8511,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/play,1688768768,,200
 2a1b28,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1688768768,,200
+a6325c,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1688774932,,200
+8090bd,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/select-amount,1688774934,,200
+c6b67c,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/init,1688774936,,302
+0adf88,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/play,1688774936,,200
+3aaa2e,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1688774936,,200
+08561e,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api,1688774937,,200
+bb2b31,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api/game-state,1688774941,,200

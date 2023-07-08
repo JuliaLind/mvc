@@ -62,8 +62,6 @@ trait TwoPairsTrait5
      */
     private function check2(int $rank, array $ranksHand, array $ranksDeck): bool
     {
-        // return $this->checkForTwoPairs1($rank, $ranksHand, $ranksDeck) || $this->checkForTwoPairs2($rank, $ranksHand, $ranksDeck) || (array_sum($ranksHand) === 1 && $this->checkForTwoPairs3($rank, $ranksDeck));
-
         return $this->checkForTwoPairs1($rank, $ranksHand, $ranksDeck) || (array_sum($ranksHand) === 1 && $this->checkForTwoPairs3($rank, $ranksDeck));
     }
 }
