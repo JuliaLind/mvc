@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Project\ApiGame3;
+use App\Project\Deck;
 
 /**
  * Controller class related to the Project. Contains route where
@@ -25,8 +26,9 @@ class ProjectApiController8 extends AbstractController
     #[Route('/proj/api/results', name: "api-results", methods: ['POST'])]
     public function apiResults(
         ApiGame3 $game = new ApiGame3(),
+        Deck $deck = new Deck()
     ): Response {
-        $data = $game->results();
+        $data = $game->results($deck);
         return $this->json($data);
     }
 }

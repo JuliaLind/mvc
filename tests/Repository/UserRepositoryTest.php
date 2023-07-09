@@ -66,12 +66,12 @@ class UserRepositoryTest extends KernelTestCase
         /**
          * @var User $user
          */
-        $user = $userRepository->findOneBy(['email' => 'doe@bth.se']);
-        $this->assertSame('John Doe', $user->getAcronym());
+        $user = $userRepository->findOneBy(['email' => 'user2@test.se']);
+        $this->assertSame('John', $user->getAcronym());
 
         $userRepository->remove($user, true);
 
-        $res = $userRepository->findOneBy(['email' => 'doe@bth.se']);
+        $res = $userRepository->findOneBy(['email' => 'user2@test.se']);
         $this->assertNull($res);
     }
 

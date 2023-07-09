@@ -6,8 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\DataFixtures\BookFixture;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\DBAL\Connection;
-
-// use App\Helpers\SqlFileLoader;
+use App\Entity\Book;
+use App\Repository\BookRepository;
+use App\Repository\BookNotFoundException;
 
 class LibraryControllerTest extends WebTestCase
 {
@@ -32,6 +33,24 @@ class LibraryControllerTest extends WebTestCase
     public function testCreateNewOk(): void
     {
         $client = static::createClient();
+
+        /**
+         * @var ObjectManager $doctrine
+         */
+        $doctrine = $client->getContainer()
+        ->get('doctrine');
+
+        /**
+         * @var BookRepository $repo
+         */
+        $repo = $doctrine->getRepository(Book::class);
+
+        $book = new Book();
+        $book->setTitle('New Book');
+        $book->setIsbn('2345678901234');
+        $book->setImg('https://newimglink.com');
+        $book->setAuthor('The Author');
+
         $client->request(
             'POST',
             '/library/create_new',
@@ -44,6 +63,10 @@ class LibraryControllerTest extends WebTestCase
         );
         $this->assertRouteSame('book_create');
         $this->assertResponseRedirects('/library/read_one/2345678901234');
+
+        $newBook = $repo->findOneByIsbn('2345678901234');
+        $this->assertEquals('New Book', $newBook->getTitle());
+
     }
 
     public function testCreateNewNotOk(): void
@@ -92,9 +115,28 @@ class LibraryControllerTest extends WebTestCase
     public function testRemoveOne(): void
     {
         $client = static::createClient();
+
+        /**
+         * @var ObjectManager $doctrine
+         */
+        $doctrine = $client->getContainer()
+        ->get('doctrine');
+
+        /**
+         * @var BookRepository $repo
+         */
+        $repo = $doctrine->getRepository(Book::class);
+
+        $book = $repo->findOneByIsbn('0123456789010');
+        $this->assertEquals('Book 0', $book->getTitle());
+
         $client->request('POST', '/library/delete/0123456789010');
+
         $this->assertRouteSame('book_delete_by_isbn');
         $this->assertResponseRedirects('/library/read_many');
+
+        $this->expectException(BookNotFoundException::class);
+        $book = $repo->findOneByIsbn('0123456789010');
     }
 
     public function testReset(): void

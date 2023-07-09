@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-07-09 11:09:38        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-07-09 21:38:23        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -277,11 +277,14 @@
         "name": "App\\Controller",
         "size": 3000,
         "relations": [
+            "Symfony\\Component\\HttpFoundation\\Session",
+            "Symfony\\Bundle\\FrameworkBundle",
+            "Symfony\\Component\\HttpFoundation\\Session\\Storage",
+            "Symfony\\Component\\BrowserKit",
             "Symfony\\Bundle\\FrameworkBundle\\Controller",
             "Symfony\\Component\\HttpFoundation",
             "Doctrine\\ORM",
             "App\\Project",
-            "Symfony\\Component\\HttpFoundation\\Session",
             "App\\Repository",
             "App\\Cards",
             "App\\Entity",
@@ -291,6 +294,26 @@
             "App\\Game",
             "global"
         ]
+    },
+    {
+        "name": "Symfony\\Component\\HttpFoundation\\Session",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Symfony\\Bundle\\FrameworkBundle",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Symfony\\Component\\HttpFoundation\\Session\\Storage",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Symfony\\Component\\BrowserKit",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "Symfony\\Bundle\\FrameworkBundle\\Controller",
@@ -317,11 +340,6 @@
             "global",
             "App\\Entity"
         ]
-    },
-    {
-        "name": "Symfony\\Component\\HttpFoundation\\Session",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "App\\Repository",

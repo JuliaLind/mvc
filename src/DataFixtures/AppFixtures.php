@@ -28,9 +28,9 @@ class AppFixtures extends Fixture
         /**
          * Add users
          */
-        $julia = $this->addUser($manager, "julia@bth.se", "Julia", "julia"); // id 1
-        $doe = $this->addUser($manager, "doe@bth.se", "John Doe", "doe"); // id 2
-        $jane = $this->addUser($manager, "jane@bth.se", "Jane Doe", "jane"); // id 3
+        $julia = $this->addUser($manager, "user0@test.se", "Julia", "julia"); // id 1
+        $doe = $this->addUser($manager, "user2@test.se", "John", "doe"); // id 2
+        $jane = $this->addUser($manager, "user3@test.se", "Jane", "jane"); // id 3
 
         /**
          * Add scores

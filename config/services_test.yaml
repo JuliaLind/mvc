@@ -11,5 +11,7 @@ services:
     public: true
   App\Game\EndRound:
     public: true
-
-      
+  App\Project\ApiGame2:
+    public: true
+  App\Project\Deck:
+    public: true

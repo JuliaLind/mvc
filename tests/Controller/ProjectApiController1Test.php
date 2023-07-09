@@ -25,6 +25,13 @@ class ProjectApiController1Test extends WebTestCase
         $this->assertResponseIsSuccessful();
         $this->assertRouteSame('api-bot-plays');
 
+        $response = strval($client->getResponse()->getContent());
+        $this->assertJson($response);
+        $this->assertStringContainsString('"placed cards":1', $response);
+        $client->request('POST', '/proj/api/bot-plays');
+        $client->request('POST', '/proj/api/bot-plays');
+        $response = strval($client->getResponse()->getContent());
+        $this->assertStringContainsString('"placed cards":3', $response);
         $game = $session->get('api-game');
         $this->assertInstanceOf('App\Project\ApiGame1', $game);
     }
