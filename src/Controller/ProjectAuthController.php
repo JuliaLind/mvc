@@ -132,6 +132,11 @@ class ProjectAuthController extends AbstractController
         SessionInterface $session
     ): Response {
         $session->clear();
+
+        // $session->remove('user');
+        // $session->remove('game');
+        // $session->remove('show-suggestion');
+        // $session->remove('deck-peek');
         return $this->redirectToRoute('proj');
     }
 }
