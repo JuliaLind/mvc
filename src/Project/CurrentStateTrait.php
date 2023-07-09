@@ -89,6 +89,7 @@ trait CurrentStateTrait
      */
     public function currentStateApi(): array
     {
+        $deck = $this->deck->getCards();
         return [
             'bet' => $this->pot,
             'card' => $this->card,
@@ -98,9 +99,10 @@ trait CurrentStateTrait
             'player' => $this->player,
             'placedCardsPlayer' => $this->player->getCardCount(),
             'placedCardsHouse' =>$this->house->getCardCount(),
-            'deckCardCount' => count($this->deck->getCards()),
+            'deckCardCount' => count($deck),
             'playerPossibleCards' => $this->deck->possibleCards(),
             'housePossibleCards' => $this->deck->possibleCards(0),
+            'remainingCardsDeck' => $deck,
             'message' => $this->message,
             'fromSlot' => $this->fromSlot,
             'lastRound' => $this->lastRound,

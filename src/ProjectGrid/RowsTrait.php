@@ -23,4 +23,13 @@ trait RowsTrait
     {
         return $this->grid;
     }
+
+    /**
+     * Sets grid, used in testing only
+     * @param array<array<string>> $grid
+     */
+    public function setGrid($grid): void
+    {
+        $this->grid = $grid;
+    }
 }

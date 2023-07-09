@@ -8,19 +8,21 @@ use App\ProjectEvaluator\RuleEvaluator;
 class ApiGame3
 {
     /**
+     * Bot fills a grid completely based on calculated suggestions and then
+     * all 10 hands are evaluated and results are returned
      * @return array<mixed>
      */
     public function results(
-        RuleEvaluator $evaluator = new RuleEvaluator(),
-        Grid $grid = new Grid(),
         Deck $deck = new Deck(),
+        Grid $grid = new Grid(),
+        RuleEvaluator $evaluator = new RuleEvaluator(),
     ): array {
         while ($grid->getCardCount() < 25) {
             $card = $deck->deal();
             /**
              * @var array<string,array<int,int>|int|string> $suggestion
              */
-            $suggestion = $evaluator->suggestion($grid, $card, $deck->getCards());
+            $suggestion = $evaluator->suggestion($grid, $card, array_slice($deck->getCards(), 27));
             /**
              * @var array<int>
              */
@@ -38,8 +40,8 @@ class ApiGame3
         $results = $evaluator->results($grid);
         return [
             "results" => $results,
-            "grid" => $grid->getRows(),
-            "remaining cards" => $deck->getCards()
+            "grid" => $grid,
+            "remaining cards" => $deck
         ];
     }
 }

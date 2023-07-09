@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-07-08 21:15:23        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-07-09 10:46:39        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -431,11 +431,7 @@
     {
         "name": "\\App\\Project\\ApiGame1",
         "size": 3000,
-        "relations": [
-            "\\App\\ProjectGrid\\Grid",
-            "\\App\\Project\\Deck",
-            "\\App\\ProjectEvaluator\\RuleEvaluator"
-        ]
+        "relations": []
     },
     {
         "name": "\\App\\Controller\\LibraryController4",
@@ -639,9 +635,9 @@
         "name": "\\App\\Project\\ApiGame3",
         "size": 3000,
         "relations": [
-            "\\App\\ProjectEvaluator\\RuleEvaluator",
+            "\\App\\Project\\Deck",
             "\\App\\ProjectGrid\\Grid",
-            "\\App\\Project\\Deck"
+            "\\App\\ProjectEvaluator\\RuleEvaluator"
         ]
     },
     {
@@ -1474,6 +1470,13 @@
         "relations": []
     },
     {
+        "name": "\\App\\Project\\ApiGame1OneRoundTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectEvaluator\\RuleEvaluator"
+        ]
+    },
+    {
         "name": "\\App\\Project\\EvaluateTrait",
         "size": 3000,
         "relations": [
@@ -1535,6 +1538,14 @@
         "name": "\\App\\Project\\UndoLastRoundTrait",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\App\\Project\\ApiGame1ResetTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectGrid\\Grid",
+            "\\App\\Project\\Deck"
+        ]
     },
     {
         "name": "\\App\\DataFixtures\\BookFixture",

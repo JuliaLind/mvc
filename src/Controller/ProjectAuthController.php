@@ -21,6 +21,10 @@ use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
  */
 class ProjectAuthController extends AbstractController
 {
+    /**
+     * Registers a new user and registers a new transaction of
+     * 1000 coins to the user as a registration bonus
+     */
     #[Route("/proj/register", name: "register", methods: ['POST'])]
     public function projRegister(
         EntityManagerInterface $entityManager,
@@ -81,6 +85,9 @@ class ProjectAuthController extends AbstractController
         return $this->redirectToRoute('proj');
     }
 
+    /**
+     * Logs in the user
+     */
     #[Route("/proj/login", name: "login", methods: ['POST'])]
     public function projLogin(
         Request $request,
@@ -117,12 +124,13 @@ class ProjectAuthController extends AbstractController
         return $this->redirectToRoute('proj');
     }
 
+    /**
+     * Logs out the user
+     */
     #[Route("/proj/logout", name: "logout", methods: ['GET'])]
     public function projLogout(
         SessionInterface $session
     ): Response {
-
-        // ändra denna till unset sen!
         $session->clear();
         return $this->redirectToRoute('proj');
     }

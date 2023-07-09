@@ -90,7 +90,8 @@ class CurrentStateTraitTest extends TestCase
         $this->fromSlot = $fromSlot;
         $this->lastRound = $lastRound;
         $deck = $this->createMock(Deck::class);
-        $deck->method('getCards')->willReturn(['card7', 'card8', 'card9', 'card10', 'card11', 'card12']);
+        $deckCards = ['card7', 'card8', 'card9', 'card10', 'card11', 'card12'];
+        $deck->method('getCards')->willReturn($deckCards);
         $possibleCardsPlayer = ['card9','card11'];
         $possibleCardsHouse = ['card10', 'card12'];
         $deck->method('possibleCards')->will($this->onConsecutiveCalls($possibleCardsPlayer, $possibleCardsHouse));
@@ -110,6 +111,7 @@ class CurrentStateTraitTest extends TestCase
             'deckCardCount' => 6,
             'playerPossibleCards' => $possibleCardsPlayer,
             'housePossibleCards' => $possibleCardsHouse,
+            'remainingCardsDeck' => $deckCards,
             'message' => "",
             'fromSlot' => $fromSlot,
             'lastRound' => $lastRound,
