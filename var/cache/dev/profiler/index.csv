@@ -27,3 +27,10 @@ a201ef,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1688934051,,200
 3278c2,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1688934072,,200
 57fce1,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api,1688934077,,200
 f82496,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api/user/jane@bth.se,1688934080,,200
+9408c4,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api/user/jane@bth.se,1688943453,,200
+222baf,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1688943991,,200
+54a37a,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/logout,1688943993,,302
+b4bba6,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1688943993,,200
+f4fd04,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/register-form,1688943994,,200
+ba9663,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/register,1688944012,,302
+5305d9,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/register-form,1688944012,,200

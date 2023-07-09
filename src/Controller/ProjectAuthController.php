@@ -52,6 +52,16 @@ class ProjectAuthController extends AbstractController
             $this->addFlash('warning', "Passwords did not match");
             return $this->redirectToRoute('register-form');
         }
+
+        $repo = $entityManager->getRepository(User::class);
+        $check1 = $repo->findOneBy(['email' => $email]);
+        $check2 = $repo->findOneBy(['acronym' => $acronym]);
+        if ($check1 != null || $check2 != null) {
+            $this->addFlash('warning', "A user with this email or Gamer name already exists");
+            return $this->redirectToRoute('register-form');
+        }
+
+
         /**
          * @var string $hash
          */
@@ -60,15 +70,8 @@ class ProjectAuthController extends AbstractController
         $user->setEmail($email);
         $user->setAcronym($acronym);
         $user->setHash($hash);
-
-        try {
-            $entityManager->persist($user);
-            $entityManager->flush();
-        } catch (UniqueConstraintViolationException) {
-            $this->addFlash('warning', "A user with this email or Gamer name already exists");
-            return $this->redirectToRoute('register-form');
-        }
-
+        $entityManager->persist($user);
+        $entityManager->flush();
         /**
          * @var User $user
          */
@@ -83,6 +86,29 @@ class ProjectAuthController extends AbstractController
 
         $session->set("user", $userId);
         return $this->redirectToRoute('proj');
+
+        // Works in "real" environment but for some reason not in testing, for some reason UniqueConstraintViolationException is never thrown in testing
+        // try {
+        //     $entityManager->persist($user);
+        //     $entityManager->flush();
+        //     /**
+        //      * @var User $user
+        //      */
+        //     $user = $entityManager->getRepository(User::class)->findOneBy(['email' => $email]);
+        //     /**
+        //      * @var int userId
+        //      */
+        //     $userId = $user->getId();
+
+        //     $register = $factory->create($entityManager, $userId);
+        //     $register->transaction(1000, 'Free registration bonus');
+
+        //     $session->set("user", $userId);
+        //     return $this->redirectToRoute('proj');
+        // } catch (UniqueConstraintViolationException) {
+        //     $this->addFlash('warning', "A user with this email or Gamer name already exists");
+        //     return $this->redirectToRoute('register-form');
+        // }
     }
 
     /**

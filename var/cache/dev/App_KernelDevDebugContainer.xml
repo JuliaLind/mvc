@@ -2840,14 +2840,6 @@
         <argument>-100</argument>
       </call>
       <call method="addListener">
-        <argument>Symfony\Component\Messenger\Event\WorkerRunningEvent</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="messenger.listener.dispatch_pcntl_signal_listener"/>
-          <argument>onWorkerRunning</argument>
-        </argument>
-        <argument>100</argument>
-      </call>
-      <call method="addListener">
         <argument>Symfony\Component\Messenger\Event\WorkerStartedEvent</argument>
         <argument type="collection">
           <argument type="service_closure" id="messenger.listener.stop_worker_on_restart_signal_listener"/>
@@ -2862,14 +2854,6 @@
           <argument>onWorkerRunning</argument>
         </argument>
         <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>Symfony\Component\Messenger\Event\WorkerStartedEvent</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="messenger.listener.stop_worker_on_sigterm_signal_listener"/>
-          <argument>onWorkerStarted</argument>
-        </argument>
-        <argument>100</argument>
       </call>
       <call method="addListener">
         <argument>Symfony\Component\Messenger\Event\WorkerMessageFailedEvent</argument>
@@ -6996,9 +6980,10 @@
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.UDDP5dP" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.XXU_NF2" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="deck" type="service_closure" id="App\Project\Deck"/>
         <argument key="game" type="service_closure" id="App\Project\ApiGame3"/>
       </argument>
     </service>
@@ -7029,7 +7014,7 @@
         <argument key="repo" type="service_closure" id="App\Repository\TransactionRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.wqfxi2V" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.A_NOxFW" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CardController2::draw" type="service_closure" id=".service_locator.RnGvXe2"/>
@@ -7064,7 +7049,7 @@
         <argument key="App\Controller\ProjectApiController4::apiPlaceCard" type="service_closure" id=".service_locator.LDZ.2HW"/>
         <argument key="App\Controller\ProjectApiController6::apiUsers" type="service_closure" id=".service_locator.Mg9ucUm"/>
         <argument key="App\Controller\ProjectApiController7::apiLeaderboard" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectApiController8::apiResults" type="service_closure" id=".service_locator.UDDP5dP"/>
+        <argument key="App\Controller\ProjectApiController8::apiResults" type="service_closure" id=".service_locator.XXU_NF2"/>
         <argument key="App\Controller\ProjectAuthController::projLogin" type="service_closure" id=".service_locator.J..d_da"/>
         <argument key="App\Controller\ProjectAuthController::projRegister" type="service_closure" id=".service_locator.Mg9ucUm"/>
         <argument key="App\Controller\ProjectController10::projShop" type="service_closure" id=".service_locator.Mg9ucUm"/>
@@ -7117,7 +7102,7 @@
         <argument key="App\Controller\ProjectApiController4:apiPlaceCard" type="service_closure" id=".service_locator.LDZ.2HW"/>
         <argument key="App\Controller\ProjectApiController6:apiUsers" type="service_closure" id=".service_locator.Mg9ucUm"/>
         <argument key="App\Controller\ProjectApiController7:apiLeaderboard" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectApiController8:apiResults" type="service_closure" id=".service_locator.UDDP5dP"/>
+        <argument key="App\Controller\ProjectApiController8:apiResults" type="service_closure" id=".service_locator.XXU_NF2"/>
         <argument key="App\Controller\ProjectAuthController:projLogin" type="service_closure" id=".service_locator.J..d_da"/>
         <argument key="App\Controller\ProjectAuthController:projRegister" type="service_closure" id=".service_locator.Mg9ucUm"/>
         <argument key="App\Controller\ProjectController10:projShop" type="service_closure" id=".service_locator.Mg9ucUm"/>
@@ -8202,12 +8187,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.wqfxi2V"/>
+      <argument type="service" id=".service_locator.A_NOxFW"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.wqfxi2V"/>
+      <argument type="service" id=".service_locator.A_NOxFW"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9152,7 +9137,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.wqfxi2V"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.A_NOxFW"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9174,8 +9159,9 @@
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.XDGmiR3" alias=".1_ServiceLocator~PcGQYYq"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
+    <service id=".service_locator.ewaBO.S" alias=".service_locator.XXU_NF2"/>
     <service id=".service_locator.AWsFaZA" alias=".service_locator._VPKpni"/>
-    <service id=".service_locator._Yl05Mb" alias=".service_locator.wqfxi2V"/>
+    <service id=".service_locator.6Z8YQ4x" alias=".service_locator.A_NOxFW"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>
@@ -9239,7 +9225,7 @@
     <service id=".service_locator.zurGdD0" alias=".service_locator.fscTci6"/>
     <service id=".service_locator.WnRiHH2" alias=".service_locator.LDZ.2HW"/>
     <service id=".service_locator.bInR.ll" alias=".service_locator.aKM6MDa"/>
-    <service id=".service_locator.kgLd3mz" alias=".service_locator.UDDP5dP"/>
+    <service id=".service_locator.OMcys9g" alias=".service_locator.XXU_NF2"/>
     <service id=".service_locator.sxVTQ8c" alias=".service_locator.J..d_da"/>
     <service id=".service_locator._4_GdpS" alias=".service_locator.i.nXIC_"/>
     <service id=".service_locator.8ax3mVW" alias=".service_locator.j7c.8f."/>
