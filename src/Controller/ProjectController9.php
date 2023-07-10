@@ -7,7 +7,8 @@ require __DIR__ . "/../../vendor/autoload.php";
 use App\Project\Game;
 use App\ProjectGrid\Grid;
 use App\Project\NotEnoughCoinsException;
-use App\Project\RegisterFactory;
+use App\Project\Register;
+
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,7 +27,6 @@ class ProjectController9 extends AbstractController
         Request $request,
         SessionInterface $session,
         EntityManagerInterface $entityManager,
-        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
@@ -36,14 +36,13 @@ class ProjectController9 extends AbstractController
          * @var int $bet
          */
         $bet = $request->get("bet");
-
-        $register = $factory->create($entityManager, $userId);
+        $register = new Register($entityManager, $userId);
 
         try {
             $register->debit($bet, 'Bet');
         } catch (NotEnoughCoinsException) {
             $this->addFlash('warning', "You do not have enough coins to place the wanted bet. Purchase more coins in the shop");
-            return $this->redirectToRoute('proj-shop');
+            return $this->redirectToRoute('shop');
         }
 
         $game = new Game([

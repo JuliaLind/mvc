@@ -58,7 +58,7 @@ class AppFixtures extends Fixture
         /**
          * Balance:
          * doe: 1000 - 40 + 80 -10 + 20 = 1050
-         * julia: 1000 - 420 + 840 - 20 + 40 = 2440
+         * julia: 1000 - 420 + 840 - 20 + 40 = 1440
          * jane: 1000
          */
 

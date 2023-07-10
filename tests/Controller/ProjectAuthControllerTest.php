@@ -251,4 +251,35 @@ class ProjectAuthControllerTest extends WebTestCase
         $userId = $session->get('user');
         $this->assertNull($userId);
     }
+
+    public function testLogiout(): void
+    {
+
+        $client = static::createClient();
+        $session = $this->createSession($client);
+        $container = $client->getContainer();
+        $container->set(Session::class, $session);
+
+        $client->request(
+            'POST',
+            '/proj/login',
+            [
+            'email' => 'user0@test.se',
+            'password' => 'julia'
+        ]
+        );
+
+
+        $this->assertResponseRedirects('/proj');
+        $this->assertRouteSame('login');
+
+        $userId = $session->get('user');
+        $this->assertEquals(1, $userId);
+
+        $client->request('GET', '/proj/logout');
+        $this->assertRouteSame('logout');
+        $this->assertResponseRedirects('/proj');
+        $client->request('GET', '/proj');
+        $this->assertSelectorTextContains('h2', 'Login to play');
+    }
 }

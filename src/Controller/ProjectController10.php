@@ -5,7 +5,7 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 use App\Entity\User;
-use App\Project\RegisterFactory;
+use App\Project\Register;
 use App\Repository\TransactionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -27,7 +27,6 @@ class ProjectController10 extends AbstractController
     public function projShop(
         SessionInterface $session,
         EntityManagerInterface $entityManager,
-        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
@@ -36,7 +35,7 @@ class ProjectController10 extends AbstractController
         if($userId == null) {
             return $this->redirectToRoute('proj');
         }
-        $register = $factory->create($entityManager, $userId);
+        $register = new Register($entityManager, $userId);
         $data = [
             'url' => "",
             'balance' => $register->getBalance()
@@ -52,17 +51,19 @@ class ProjectController10 extends AbstractController
         SessionInterface $session,
         TransactionRepository $repo,
         EntityManagerInterface $entityManager,
-        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
          */
-        $userId = $session->get("user");
+        $userId = $session->get("user") ?? null;
+        if($userId == null) {
+            return $this->redirectToRoute('proj');
+        }
         /**
          * @var User $user
          */
         $user = $entityManager->getRepository(User::class)->find($userId);
-        $register = $factory->create($entityManager, $userId);
+        $register = new Register($entityManager, $userId);
         $data = [
             'url' => "",
             'transactions' => $repo->findBy(
