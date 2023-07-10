@@ -5,15 +5,35 @@
 {% block body %}
 
 
-{# Lägg till:
-vänster halva: hus
-höger halva: spelare
-mitten: suggestion-btn, move-card-btn, sneak a peak-btn
-picked card, deck#}
-
 <div class="outer-grid-container">
+<h2 class="grid-col-0 grid-row-0">House, prel score: {{results['house']['total']}}</h2>
+<div class="game-grid results house-grid">
+{% for i in 0..4 %}
+    {% for j in 0..4 %}
+        <div class="slot grid-row-{{i}} grid-col-{{j}}"><img src="{{ asset(house[i][j]['img']) }}" alt="{{ house[i][j]['alt'] }}"></div>
+    {% endfor %}
+{% endfor %}
+{% for row in 0..4 %}
+    <div class="result row-res grid-row-{{row}}">
+    <span class="rule-name">{{ results['house']['rows'][row]['name'] }}:
+    </span>
+    <span class="rule-points">
+    {{ results['house']['rows'][row]['points'] }}
+    </span>
+    </div>
+{% endfor %}
+{% for col in 0..4 %}
+    <div class="result col-res grid-col-{{col}}">
+    <span class="rule-name">{{results['house']['cols'][col]['name']}}:
+    </span>
+    <span class="rule-points"> 
+    {{results['house']['cols'][col]['points']}}
+    </span>
+    </div>
+{% endfor %}
 
-{{ include('proj/incl/house-grid.html.twig') }}
+</div>
+
 
 <div class="center-grid">
 {{ include('flash.html.twig') }}
@@ -24,14 +44,12 @@ picked card, deck#}
 {{ include('proj/incl/move-card-btn.html.twig') }}
 {{ include('proj/incl/suggest-btn.html.twig') }}
 {{ include('proj/incl/peek-in-deck-btn.html.twig') }}
-
-{# {{ include('proj/incl/new-game-btn.html.twig') }} #}
 </div>
 </div>
 
-<h2 class="grid-col-2 grid-row-0">You</h2>
-<form id="grid-form" method="post" action="">
-<div class="game-grid player-grid">
+<h2 class="grid-col-2 grid-row-0">You, prel score: {{results['player']['total']}}</h2>
+<form class="game-grid results player-grid" id="grid-form" method="post" action="">
+
     {% for k in 0..4 %}
         {% for l in 0..4 %}
             {% if player[k][l]['alt'] != "" %}
@@ -41,8 +59,29 @@ picked card, deck#}
             {% endif %}
         {% endfor %}
     {% endfor %}
-</div>
+
+{% for row in 0..4 %}
+    <div class="result row-res grid-row-{{row}}">
+    <span class="rule-name">
+    {{ results['player']['rows'][row]['name'] }}:
+    </span>
+    <span class="rule-points">
+    {{ results['player']['rows'][row]['points'] }}
+    </span>
+    </div>
+{% endfor %}
+{% for col in 0..4 %}
+    <div class="result col-res grid-col-{{col}}">
+    <span class="rule-name">
+    {{results['player']['cols'][col]['name']}}:
+    </span>
+    <span class="rule-points">
+    {{results['player']['cols'][col]['points']}}
+    </span>
+    </div>
+{% endfor %}
 </form>
+
 
 
 </div>

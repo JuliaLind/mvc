@@ -9,7 +9,6 @@ use App\ProjectEvaluator\RuleEvaluator;
 class HousePlaceCardTraitTest extends TestCase
 {
     use HousePlaceCardTrait;
-    use SuggestMessageTrait;
 
     public function testHousePlaceCard(): void
     {

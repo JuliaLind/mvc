@@ -14,6 +14,8 @@
     border-radius: 5px;
 }
 
+
+
 .api .slot {
     background-color: #333;
     cursor: pointer;
@@ -61,7 +63,8 @@
 
 .outer-grid-container h2 {
     color: var(--form-neon);
-    text-align: center;
+    /* text-align: center; */
+    text-align: left;
 }
 
 
@@ -105,6 +108,11 @@
 .rule-without-card {
     justify-content: flex-start;
     font-size: 70%;
+}
+
+.row-res {
+    white-space: nowrap;
+    width: 100%;
 }
 
 .rule-name {
@@ -183,9 +191,9 @@
     margin-bottom: 3rem;
 }
 
-.outer-grid-container.suggestion {
+/* .outer-grid-container.suggestion {
     grid-template-columns: min-content auto auto;
-}
+} */
 
 .outer-grid-container .game-grid {
     background-color: #333;
@@ -196,14 +204,12 @@
 .center-grid {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     justify-content: space-around;
     flex-direction: column;
     flex-basis: 1;
     width: 100%;
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
-    /* padding: 5px; */
     padding: 1rem;
     gap: 1rem;
     justify-items: center;

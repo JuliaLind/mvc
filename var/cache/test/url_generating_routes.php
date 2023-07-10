@@ -71,6 +71,7 @@ return [
     'select-amount' => [[], ['_controller' => 'App\\Controller\\ProjectController6::selectAmount'], [], [['text', '/proj/select-amount']], [], [], []],
     'undo' => [[], ['_controller' => 'App\\Controller\\ProjectController7::undo'], [], [['text', '/proj/undo']], [], [], []],
     'purchase-suggestion' => [[], ['_controller' => 'App\\Controller\\ProjectController7::showSuggestion'], [], [['text', '/proj/purchase-suggestion']], [], [], []],
+    'show-suggestion' => [[], ['_controller' => 'App\\Controller\\ProjectController7::projShowSuggest'], [], [['text', '/proj/show-suggestion']], [], [], []],
     'proj-scores-single' => [[], ['_controller' => 'App\\Controller\\ProjectController8::projScoresSingle'], [], [['text', '/proj/scores-single']], [], [], []],
     'proj-leaderboard' => [[], ['_controller' => 'App\\Controller\\ProjectController8::projLeaderboard'], [], [['text', '/proj/leaderboard']], [], [], []],
     'proj-init' => [[], ['_controller' => 'App\\Controller\\ProjectController9::projInit'], [], [['text', '/proj/init']], [], [], []],

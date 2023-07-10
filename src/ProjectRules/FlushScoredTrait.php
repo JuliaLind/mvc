@@ -27,6 +27,6 @@ trait FlushScoredTrait
     {
         $suitCount = $this->countBySuit($hand);
 
-        return count($suitCount) === 1;
+        return count($hand) === 5 && count($suitCount) === 1;
     }
 }

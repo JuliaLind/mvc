@@ -6,7 +6,7 @@
 
 
 <div class="outer-grid-container">
-<h2 class="grid-col-0 grid-row-0">House</h2>
+<h2 class="grid-col-0 grid-row-0">House, final score: {{results['house']['total']}}</h2>
 <div class="game-grid results house-grid">
 {% for i in 0..4 %}
     {% for j in 0..4 %}
@@ -41,7 +41,7 @@
 </div>
 </div>
 
-<h2 class="grid-col-2 grid-row-0">You</h2>
+<h2 class="grid-col-2 grid-row-0">You, final score: {{results['player']['total']}}</h2>
 <div class="game-grid results player-grid">
 {% for k in 0..4 %}
     {% for l in 0..4 %}

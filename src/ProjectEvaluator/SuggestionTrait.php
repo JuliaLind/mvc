@@ -4,8 +4,6 @@ namespace App\ProjectEvaluator;
 
 use App\ProjectGrid\Grid;
 
-// use App\Project\NoCardsException;
-
 trait SuggestionTrait
 {
     use BestPossibleRulesTrait;
@@ -26,6 +24,7 @@ trait SuggestionTrait
     abstract private function getCols($rows): array;
 
     /**
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      * @param array<string> $deck
      * @return array<string,array<int,array<string,float|int|string>|int>|int|string>
      */

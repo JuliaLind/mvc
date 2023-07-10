@@ -30,23 +30,24 @@ trait OneRoundTrait
      */
     private array $lastRound = [];
     private Grid $player;
+    /**
+     * The results for the player and the house.
+     * Contains the rule scored and the points
+     * for each of the 10 hands and the totals
+     * @var array<string,array<string,array<array<string,int|string>>|int>|string> $results
+     */
+    private array $results = [];
 
     /**
      * Picks a card from the deck and places
      * into the houses grid
      */
     abstract private function housePlaceCard(): void;
-    /**
-     * Provides a suggestion to the player on which slot to
-     * place the card in. Also provides data for each hand on
-     * the best possible rule that can be achieved with the dealt card
-     * and best possible rule without the dealt card, to be used
-     * in the suggestion-cheat
-     */
-    abstract private function playerSuggest(): void;
+
 
     public function oneRound(int $row, int $col): bool
     {
+        $this->suggestion = [];
         $this->player->addCard($row, $col, $this->card);
         $this->lastRound['player'] = [$row, $col];
         $this->housePlaceCard();
@@ -55,7 +56,12 @@ trait OneRoundTrait
             $this->finished = true;
             return true;
         }
-        $this->playerSuggest();
+
+        $evaluator = $this->evaluator;
+        $this->results = [
+            'player' => $evaluator->results($this->player),
+            'house' => $evaluator->results($this->house)
+        ];
         return false;
     }
 

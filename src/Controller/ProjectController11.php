@@ -56,25 +56,6 @@ class ProjectController11 extends AbstractController
         }
 
         /**
-         * When the suggestion cheat is purchased, redicrects to route where
-         * the suggested slot has a blinking frame and all columns and rows have information about
-         * which (highest) rule can be achieved if the user places the dealt card in that row/colum,
-         * and which rule can be achieved if the card is not placed there. Calculations are based both
-         * on cards in hand and cards that the user is yet to pick from the deck (every other minus the last two)
-         */
-        if ($session->get("show-suggestion")) {
-            /**
-             * @var array<string,mixed> $suggestion
-             */
-            $suggestion = $data['suggestion'];
-            /**
-             * @var string $message
-             */
-            $message = $suggestion['message'];
-            $this->addFlash('notice', $message);
-            return $this->render('proj/game-display-suggest.html.twig', $data);
-        }
-        /**
          * @var int $userId
          */
         $userId = $session->get("user");

@@ -14,6 +14,7 @@ trait CheckWithoutCardTrait
      */
     private array $rules;
 
+
     /**
      * @param array<string> $deck
      * @param array<array<string>> $hands
@@ -31,6 +32,7 @@ trait CheckWithoutCardTrait
     }
 
     /**
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      * Used in:
      * RulesWithoutCardTrait,
      * CheckEmptyGridTrait

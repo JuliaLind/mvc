@@ -42,7 +42,7 @@ trait EvaluateTrait
      * scored without the dealt card
      * @var array<string,array<int,array<string,float|int|string>|int>|int|string> $suggestion
      */
-    private array $suggestion = ["message" => ""];
+    private array $suggestion = [];
 
     /**
      * Called after the last slot in the houses
@@ -53,7 +53,8 @@ trait EvaluateTrait
      */
     public function evaluate(EntityManagerInterface $manager, int $userId, RegisterFactory $factory = new RegisterFactory()): void
     {
-        $this->suggestion = ['message' => ""];
+        // $this->suggestion = ['message' => ""];
+        $this->suggestion = [];
         $evaluator = $this->evaluator;
         $playerData = $evaluator->results($this->player);
         /**

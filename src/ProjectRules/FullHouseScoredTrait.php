@@ -29,6 +29,6 @@ trait FullHouseScoredTrait
         */
         $ranks = $this->countByRank($hand);
 
-        return count($ranks) === 2 && max($ranks) === 3;
+        return count($hand) === 5 && count($ranks) === 2 && max($ranks) === 3;
     }
 }

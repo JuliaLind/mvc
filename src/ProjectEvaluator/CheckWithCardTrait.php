@@ -5,6 +5,7 @@ namespace App\ProjectEvaluator;
 use App\ProjectRules\RuleInterface;
 
 /**
+ * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  * Used in BestPossibleRulesTrait
  *
  * Checks a hand for the best possible rule
@@ -19,6 +20,7 @@ trait CheckWithCardTrait
      * @var array<RuleInterface> $rules
      */
     private array $rules;
+
 
     /**
      * Returns the name and weighted* points if the rule is
@@ -59,7 +61,6 @@ trait CheckWithCardTrait
             'rule-with-card' => ""
         ];
         $rules = $this->rules;
-
         foreach ($rules as $rule) {
             $data = $this->checkSingleRuleWith($hands, $index, $deck, $card, $rule);
             $name = $data['rule-with-card'];

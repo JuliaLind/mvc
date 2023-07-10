@@ -65,6 +65,7 @@ return [
         '/proj/select-amount' => [[['_route' => 'select-amount', '_controller' => 'App\\Controller\\ProjectController6::selectAmount'], null, null, null, false, false, null]],
         '/proj/undo' => [[['_route' => 'undo', '_controller' => 'App\\Controller\\ProjectController7::undo'], null, ['POST' => 0], null, false, false, null]],
         '/proj/purchase-suggestion' => [[['_route' => 'purchase-suggestion', '_controller' => 'App\\Controller\\ProjectController7::showSuggestion'], null, ['POST' => 0], null, false, false, null]],
+        '/proj/show-suggestion' => [[['_route' => 'show-suggestion', '_controller' => 'App\\Controller\\ProjectController7::projShowSuggest'], null, null, null, false, false, null]],
         '/proj/scores-single' => [[['_route' => 'proj-scores-single', '_controller' => 'App\\Controller\\ProjectController8::projScoresSingle'], null, null, null, false, false, null]],
         '/proj/leaderboard' => [[['_route' => 'proj-leaderboard', '_controller' => 'App\\Controller\\ProjectController8::projLeaderboard'], null, null, null, false, false, null]],
         '/proj/init' => [[['_route' => 'proj-init', '_controller' => 'App\\Controller\\ProjectController9::projInit'], null, null, null, false, false, null]],

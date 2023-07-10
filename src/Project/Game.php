@@ -41,10 +41,7 @@ class Game
      * Adds player's bet to the pot
      */
     use PotTrait;
-    /**
-     * Generates a message for the player based on the suggestion data
-     */
-    use SuggestMessageTrait;
+
     /**
      * Undoes the last round (reverses the last cardplacement by player and by house)
      */
@@ -70,12 +67,9 @@ class Game
         $this->evaluator = $evaluator;
         $this->deck = $deck;
         $this->card = $this->deck->deal();
-        /**
-         * Generate suggestion for player right away
-         * because the suggestion-button in the twig template
-         * blinks when there is a slot-suggestion that leads
-         * to a rule, which is always the case when the rule is empty
-         */
-        $this->playerSuggest();
+        $this->results = [
+            'player' => $evaluator->results($this->player),
+            'house' => $evaluator->results($this->house)
+        ];
     }
 }

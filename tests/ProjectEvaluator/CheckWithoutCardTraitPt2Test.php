@@ -29,6 +29,7 @@ class CheckWithoutCardTraitPt2Test extends TestCase
             new TwoPairs(),
             new SameOfAKind(2)
         ];
+
     }
 
     public function testHandRuleWithoutNotOk(): void

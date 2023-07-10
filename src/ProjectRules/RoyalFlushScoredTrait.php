@@ -39,6 +39,6 @@ trait RoyalFlushScoredTrait
         $maxRank = max(array_keys($ranks));
         $minRank = min(array_keys($ranks));
 
-        return count($suits) === 1 && $maxRank === 14 && $minRank === 10 && count($ranks) === 5;
+        return count($ranks) === 5 && count($suits) === 1 && $maxRank === 14 && $minRank === 10;
     }
 }

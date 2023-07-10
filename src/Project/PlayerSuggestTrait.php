@@ -33,16 +33,7 @@ trait PlayerSuggestTrait
      * the dealt card)
      * @var array<string,array<int,array<string,float|int|string>|int>|int|string> $suggestion
      */
-    private array $suggestion = ["message" => ""];
-
-    /**
-     * Generates a message based on the
-     * suggestion data (suggested slot and rules
-     * that can be scored if placing the dealt
-     * card into the suggsted slot)
-     * @param array<string,array<int,array<string,float|int|string>|int>|int|string> $suggestion
-     */
-    abstract private function createMessage(array $suggestion): string;
+    private array $suggestion = [];
 
 
     /**
@@ -52,10 +43,9 @@ trait PlayerSuggestTrait
      * and best possible rule without the dealt card, to be used
      * in the suggestion-cheat
      */
-    private function playerSuggest(): void
+    public function playerSuggest(): void
     {
         $suggestion = $this->evaluator->suggestion($this->player, $this->card, $this->deck->possibleCards());
         $this->suggestion = $suggestion;
-        $this->suggestion['message'] = $this->createMessage($suggestion);
     }
 }

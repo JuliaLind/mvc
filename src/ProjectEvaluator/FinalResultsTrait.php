@@ -32,10 +32,15 @@ trait FinalResultsTrait
     {
         $data = [];
         $total = 0;
-        /**
-         * @var int $index
-         */
-        foreach($hands as $index => $hand) {
+
+        for ($index = 0; $index <= 4; $index++) {
+            $hand = [];
+            if (array_key_exists($index, $hands)) {
+                /**
+                 * @var array<string> $hand
+                 */
+                $hand = $hands[$index];
+            }
             /**
              * @var array<string,string|int> $data
              */
@@ -44,14 +49,15 @@ trait FinalResultsTrait
              * @var string $name
              */
             $name = $handResult['name'];
-            $data[$index]['name'] = $name;
             /**
              * @var int $points
              */
             $points = $handResult['points'];
+            $data[$index]['name'] = $name;
             $total += $points;
             $data[$index]['points'] = $points;
         }
+
         return [
             'data' => $data,
             'total' => $total
@@ -71,7 +77,6 @@ trait FinalResultsTrait
         $rows = $grid->getRows();
         $hands = [
             'rows' => $rows,
-            // 'cols' => $grid->getCols()
             'cols' => $this->getCols($rows)
         ];
         /**

@@ -1,6 +1,6 @@
 {
-  "build/app.css": "build/app.18fed0ac.css",
-  "build/app.js": "build/app.03692de2.js",
-  "build/runtime.js": "build/runtime.61b1725c.js",
-  "build/751.7f9c0d93.js": "build/751.7f9c0d93.js"
+  "build/app.css": "build/app.css",
+  "build/app.js": "build/app.js",
+  "build/runtime.js": "build/runtime.js",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-03e5c3.js": "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-03e5c3.js"
 }

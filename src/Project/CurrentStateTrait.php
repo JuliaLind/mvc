@@ -22,6 +22,7 @@ trait CurrentStateTrait
      * on who won and if the player earned any coins
      */
     private string $message = "";
+
     /**
      * Contains the suggestion for player on a slot
      * to place the dealt card and also the data for
@@ -30,7 +31,7 @@ trait CurrentStateTrait
      * the dealt card)
      * @var array<string,array<int,array<string,float|int|string>|int>|int|string> $suggestion
      */
-    private array $suggestion = ["message" => ""];
+    private array $suggestion = [];
     /**
      * The results for the player and the house.
      * Contains the rule scored and the points

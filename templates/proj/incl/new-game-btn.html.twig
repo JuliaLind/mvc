@@ -1,5 +1,6 @@
 
 
-<a class="btn {% if finished == true %}active-btn{% else %}stnd-btn{% endif %}" href="{{ path('select-amount') }}">New Game</a>
+{# <a class="btn {% if finished == true %}active-btn{% else %}stnd-btn{% endif %}" href="{{ path('select-amount') }}">New Game</a> #}
 
-{# <a class="btn active-btn" href="{{ path('proj-play') }}">New Game</a> #}
+<a class="btn {% if finished == true %}blink-btn{% else %}stnd-btn{% endif %}" href="{{ path('select-amount') }}">New Game</a>
+

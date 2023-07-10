@@ -9,7 +9,7 @@ use App\ProjectEvaluator\RuleEvaluator;
 class EvaluateTraitTest extends KernelTestCase
 {
     use EvaluateTrait;
-    use SuggestMessageTrait;
+
 
     /**
      * @var \Doctrine\ORM\EntityManager

@@ -34,6 +34,9 @@ trait CheckFullHandTrait
         $result['name'] = 'None';
         $result['points'] = 0;
 
+        if ($hand === []) {
+            return $result;
+        }
         foreach($rules as $rule) {
             if ($rule->scored($hand)) {
                 $result['name'] = $rule->getName();
