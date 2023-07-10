@@ -46,21 +46,21 @@ class BestPossibleRulesTraitTest extends TestCase
     {
         $ruleWithCard = "One Pair";
         $ruleWithoutCard = "Three Of A Kind";
-        $weightPoints = 8;
+        $weightPoints = 12;
         $handNotEmpty = true;
         $res = $this->adjustPriority($ruleWithCard, $ruleWithoutCard, $weightPoints, $handNotEmpty);
-        $exp = -2.5;
+        $exp = -0.1;
         $this->assertEquals($exp, $res);
     }
 
     public function testAdjustPriorityNotOk2(): void
     {
         $ruleWithCard = "One Pair";
-        $ruleWithoutCard = "Four Of A Kind";
-        $weightPoints = 8;
+        $ruleWithoutCard = "Three Of A Kind";
+        $weightPoints = 12;
         $handNotEmpty = false;
         $res = $this->adjustPriority($ruleWithCard, $ruleWithoutCard, $weightPoints, $handNotEmpty);
-        $exp = -42;
+        $exp = 0.4;
         $this->assertEquals($exp, $res);
     }
 
@@ -83,27 +83,27 @@ class BestPossibleRulesTraitTest extends TestCase
         $deck = ["2C","3S","3H","4H","4C","4S","5S","6H","6C","7C","7D","8S","8D","11D","11C","12D","12C","13D"];
 
         $exp = [
-            'max' => 27.0,
+            'max' => 27,
             'bestHand' => 4,
             'allRules' => [
                 0 => [
                     'rule-with-card' => "",
-                    'weight' => -25.5,
+                    'weight' => -0.25,
                     'rule-without-card' => "Full House"
                 ],
                 1 => [
                     'rule-with-card' => "",
-                    'weight' => -24.5,
+                    'weight' => 0.25,
                     'rule-without-card' => "Full House"
                 ],
                 2 => [
                     'rule-with-card' => "",
-                    'weight' => -24.5,
+                    'weight' => 0.25,
                     'rule-without-card' => "Full House"
                 ],
                 3 => [
                     'rule-with-card' => "",
-                    'weight' => -24.5,
+                    'weight' => 0.25,
                     'rule-without-card' => "Full House"
                 ],
                 4 => [

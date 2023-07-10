@@ -26,27 +26,27 @@ class ApiGame3Test extends TestCase
         $results = [
             "rows" => [
                 0 => ["name" => "One Pair","points" => 2],
-                1 => ["name" => "Full House","points" => 25],
+                1 => ["name" => "Two Pairs","points" => 5],
                 2 => ["name" => "Four Of A Kind","points" => 50],
                 3 => ["name" => "Full House","points" => 25],
-                4 => ["name" => "Two Pairs","points" => 5]
+                4 => ["name" => "One Pair","points" => 2]
             ],
             "cols" => [
                 0 => ["name" => "None","points" => 0],
-                1 => ["name" => "None","points" => 0],
+                1 => ["name" => "One Pair","points" => 2],
                 2 => ["name" => "None","points" => 0],
-                3 => ["name" => "Two Pairs","points" => 5],
+                3 => ["name" => "Full House","points" => 25],
                 4 => ["name" => "None","points" => 0],
             ],
-            "total" => 112
+            "total" => 111
         ];
 
         $rows = [
             ["2C", "14H", "14C", "7H", "6S"],
-            ["4C", "10D", "4H", "10S", "10H"],
+            ["4C", "10D", "4H", "7C", "10H"],
             ["12C", "12H", "12S", "5C", "12D"],
             ["5H", "3H", "3S", "5D", "3D"],
-            ["13C", "7C", "11D", "7D", "13D"]
+            ["13C", "10S", "11D", "7D", "13D"]
         ];
 
         $grid = new Grid();

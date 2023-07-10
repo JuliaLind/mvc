@@ -50,17 +50,17 @@ class SuggestionTraitPt2Test extends TestCase
             'slot' => [3, 1],
             'row-rules' => [
                 ['rule-with-card' => "",'weight' => 0,'rule-without-card' => "Two Pairs"],
-                ['rule-with-card' => "",'weight' => -49.5,'rule-without-card' => "Four Of A Kind"],
-                ['rule-with-card' => "",'weight' => -25.5,'rule-without-card' => "Full House"],
+                ['rule-with-card' => "",'weight' => 0,'rule-without-card' => "Four Of A Kind"],
+                ['rule-with-card' => "",'weight' => -0.25,'rule-without-card' => "Full House"],
                 ['rule-with-card' => "Straight",'weight' => 17,'rule-without-card' => "Straight"],
                 ['rule-with-card' => "",'weight' => -200,'rule-without-card' => ""],
             ],
             'col-rules' => [
-                ['rule-with-card' => "One Pair",'weight' => -72.5,'rule-without-card' => "Straight Flush"],
+                ['rule-with-card' => "One Pair",'weight' => -0.75,'rule-without-card' => "Straight Flush"],
                 ['rule-with-card' => "Flush",'weight' => 21,'rule-without-card' => "Four Of A Kind"],
-                ['rule-with-card' => "",'weight' => -15.5,'rule-without-card' => "Straight"],
+                ['rule-with-card' => "",'weight' => -0.15,'rule-without-card' => "Straight"],
                 ['rule-with-card' => "Two Pairs",'weight' => 8,'rule-without-card' => "Two Pairs"],
-                ['rule-with-card' => "Two Pairs",'weight' => -3.5,'rule-without-card' => "Three Of A Kind"],
+                ['rule-with-card' => "Two Pairs",'weight' => -0.1,'rule-without-card' => "Three Of A Kind"],
             ],
             'tot-weight-slot' => 38.0
         ];

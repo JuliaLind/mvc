@@ -89,10 +89,10 @@ class SuggestionTraitTest extends TestCase
             'col-rule' => "Two Pairs",
             'slot' => [2, 1],
             'row-rules' => [
-                ['rule-with-card' => "",'weight' => -25.5,'rule-without-card' => "Full House"],
+                ['rule-with-card' => "",'weight' => -0.25,'rule-without-card' => "Full House"],
                 ['rule-with-card' => "",'weight' => -200,'rule-without-card' => ""],
                 ['rule-with-card' => "One Pair",'weight' => 2.5,'rule-without-card' => "One Pair"],
-                ['rule-with-card' => "",'weight' => -10.5,'rule-without-card' => "Three Of A Kind"],
+                ['rule-with-card' => "",'weight' => -0.1,'rule-without-card' => "Three Of A Kind"],
                 ['rule-with-card' => "One Pair",'weight' => 2,'rule-without-card' => "One Pair"],
             ],
             'col-rules' => [
@@ -100,7 +100,7 @@ class SuggestionTraitTest extends TestCase
                 ['rule-with-card' => "Two Pairs",'weight' => 6,'rule-without-card' => "Two Pairs"],
                 ['rule-with-card' => "One Pair",'weight' => 2,'rule-without-card' => "One Pair"],
                 ['rule-with-card' => "One Pair",'weight' => 2,'rule-without-card' => "One Pair"],
-                ['rule-with-card' => "",'weight' => -20.5, 'rule-without-card' => "Flush"],
+                ['rule-with-card' => "",'weight' => -0.2,'rule-without-card' => "Flush"],
             ],
             'tot-weight-slot' => 2.5 + 6
         ];
@@ -227,7 +227,7 @@ class SuggestionTraitTest extends TestCase
                 ],
                 [
                     'rule-with-card' => "",
-                    'weight' => -10.5,
+                    'weight' => -0.1,
                     'rule-without-card' => "Three Of A Kind"
                 ],
                 [
@@ -259,11 +259,11 @@ class SuggestionTraitTest extends TestCase
                 ],
                 [
                     'rule-with-card' => "One Pair",
-                    'weight' => -17.5,
+                    'weight' => -0.2,
                     'rule-without-card' => "Flush"
                 ],
             ],
-            'tot-weight-slot' => 29.0
+            'tot-weight-slot' => 29 + 0
         ];
 
         $res = $this->suggestion($grid, $card, $deck);
@@ -301,17 +301,17 @@ class SuggestionTraitTest extends TestCase
                 ['rule-with-card' => "",'weight' => 0,'rule-without-card' => "Two Pairs"],
                 ['rule-with-card' => "",'weight' => 0,'rule-without-card' => "One Pair"],
                 ['rule-with-card' => "One Pair",'weight' => 3,'rule-without-card' => "One Pair"],
-                ['rule-with-card' => "One Pair",'weight' => -17.5,'rule-without-card' => "Flush"],
+                ['rule-with-card' => "One Pair",'weight' => -0.2,'rule-without-card' => "Flush"],
             ],
             'col-rules' => [
                 ['rule-with-card' => "Full House",'weight' => 29,'rule-without-card' => "Two Pairs"],
                 ['rule-with-card' => "",'weight' => -200,'rule-without-card' => ""],
                 ['rule-with-card' => "",'weight' => 0.5,'rule-without-card' => "One Pair"],
-                ['rule-with-card' => "",'weight' => -10.5,'rule-without-card' => "Three Of A Kind"],
+                ['rule-with-card' => "",'weight' => -0.1,'rule-without-card' => "Three Of A Kind"],
                 ['rule-with-card' => "",'weight' => 0,'rule-without-card' => "One Pair"],
             ],
 
-            'tot-weight-slot' => 29.0
+            'tot-weight-slot' => 29 + 0
         ];
 
         $res = $this->suggestion($grid, $card, $deck);
