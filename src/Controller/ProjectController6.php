@@ -33,12 +33,12 @@ class ProjectController6 extends AbstractController
         /**
          * @var int $userId
          */
-        $userId = $session->get("user") ?? null;
+        $userId = $session->get("user");
         $register = new Register($entityManager, $userId);
 
         $register->transaction($coins, 'Purchase');
         $balance = $register->getBalance();
-        $this->addFlash('notice', "You have successfully purchsed {$coins} coins. Your new balance is {$balance} coins");
+        $this->addFlash('notice', "You have successfully purchased {$coins} coins. Your new balance is {$balance} coins");
         return $this->redirectToRoute('shop');
     }
 
@@ -55,13 +55,16 @@ class ProjectController6 extends AbstractController
         /**
          * @var int $userId
          */
-        $userId = $session->get("user");
+        $userId = $session->get("user") ?? null;
+        if($userId == null) {
+            return $this->redirectToRoute('proj');
+        }
         $register = new Register($entityManager, $userId);
         $balance = $register->getBalance();
 
         if ($balance < 10) {
             $this->addFlash('warning', "You do not have enough coins, the minimum amount to bet is 10 coins. Purchase more coins in the shop");
-            return $this->redirectToRoute('proj-shop');
+            return $this->redirectToRoute('shop');
         }
         $data = [
             'url' => "proj",

@@ -37,7 +37,8 @@ trait BestPossibleRulesTrait
             'Three Of A Kind' => 10
         ];
         if($weightPoints >= 0 && in_array($ruleWithCard, $notPrioritized, true) && !in_array($ruleWithoutCard, $notPrioritized, true)) {
-            $weightPoints = 0.5 - 0.01 * $points[$ruleWithoutCard];
+            $weightPoints = $weightPoints - $points[$ruleWithoutCard];
+            // $weightPoints = 0.5 - 0.01 * $points[$ruleWithoutCard];
             if ($handNotEmpty) {
                 /**
                  * Even lower priority if the hand where better

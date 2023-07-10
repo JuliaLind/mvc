@@ -11,7 +11,7 @@
 {{ include('flash.html.twig') }}
 <form class="select-amount" action="{{ path('proj-init') }}" method="POST">
     <div class="box">
-    <input type="range" name="bet" class="range" value="30" min="10" max="{{ balance }}" step="10" onmousemove="rangeSlider(this.value)" onchange="rangeSlider(this.value)">
+    <input type="range" name="bet" class="range" value="10" min="10" max="{{ balance }}" step="10" onmousemove="rangeSlider(this.value)" onchange="rangeSlider(this.value)">
     <span id="rangeValue">10</span>
     </div>
     <button class="btn active-btn" type="submit">Place bet</button>
