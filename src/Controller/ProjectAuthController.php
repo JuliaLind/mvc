@@ -48,19 +48,27 @@ class ProjectAuthController extends AbstractController
          * @var string $password2
          */
         $password2 = $request->get('password2');
+        /**
+         * Check if the two password match before saving to database
+         */
         if ($password != $password2) {
             $this->addFlash('warning', "Passwords did not match");
             return $this->redirectToRoute('register-form');
         }
 
         $repo = $entityManager->getRepository(User::class);
+
+        /**
+         * Check that a user with same email or acronym is not
+         * registered already. Cannot use try catch UniqueConstraintViolationException
+         * here because he exception is for some reason not thrown in test-environment
+         */
         $check1 = $repo->findOneBy(['email' => $email]);
         $check2 = $repo->findOneBy(['acronym' => $acronym]);
         if ($check1 != null || $check2 != null) {
             $this->addFlash('warning', "A user with this email or Gamer name already exists");
             return $this->redirectToRoute('register-form');
         }
-
 
         /**
          * @var string $hash
@@ -87,7 +95,6 @@ class ProjectAuthController extends AbstractController
         $session->set("user", $userId);
         return $this->redirectToRoute('proj');
 
-        // Works in "real" environment but for some reason not in testing, for some reason UniqueConstraintViolationException is never thrown in testing
         // try {
         //     $entityManager->persist($user);
         //     $entityManager->flush();
@@ -134,7 +141,7 @@ class ProjectAuthController extends AbstractController
         $user = $userRepo->findOneBy(['email' => $email]);
         if ($user == null) {
             $this->addFlash('warning', "There is no user with this email");
-            return $this->redirectToRoute('register-form');
+            return $this->redirectToRoute('proj');
         }
         /**
          * @var string $hash
@@ -142,7 +149,7 @@ class ProjectAuthController extends AbstractController
         $hash = $user->getHash();
         if (password_verify($password, $hash) === false) {
             $this->addFlash('warning', "The password you entered does not match the email");
-            return $this->redirectToRoute('register-form');
+            return $this->redirectToRoute('proj');
         }
 
         $session->set("user", $user->getId());

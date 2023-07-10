@@ -162,4 +162,93 @@ class ProjectAuthControllerTest extends WebTestCase
         $user = $repo->find(4);
         $this->assertNull($user);
     }
+
+    public function testLoginOk(): void
+    {
+
+        $client = static::createClient();
+        $session = $this->createSession($client);
+        $container = $client->getContainer();
+        $container->set(Session::class, $session);
+
+        $client->request(
+            'POST',
+            '/proj/login',
+            [
+            'email' => 'user0@test.se',
+            'password' => 'julia'
+        ]
+        );
+
+
+        $this->assertResponseRedirects('/proj');
+        $this->assertRouteSame('login');
+
+        $userId = $session->get('user');
+        $this->assertEquals(1, $userId);
+    }
+
+    public function testLoginNotOk(): void
+    {
+
+        $client = static::createClient();
+        $session = $this->createSession($client);
+        $container = $client->getContainer();
+        $container->set(Session::class, $session);
+
+        $client->request(
+            'POST',
+            '/proj/login',
+            [
+            'email' => 'user0@test.se',
+            'password' => 'wrongpassword'
+        ]
+        );
+
+        $expectedFlashbag = ['warning' => ["The password you entered does not match the email"]];
+
+        /**
+         * @var FlashBagInterface $bag
+         */
+        $bag = $session->getBag('flashes');
+
+        $this->assertEquals($expectedFlashbag, $bag->peekAll());
+        $this->assertResponseRedirects('/proj');
+        $this->assertRouteSame('login');
+
+        $userId = $session->get('user');
+        $this->assertNull($userId);
+    }
+
+    public function testLoginNotOk2(): void
+    {
+
+        $client = static::createClient();
+        $session = $this->createSession($client);
+        $container = $client->getContainer();
+        $container->set(Session::class, $session);
+
+        $client->request(
+            'POST',
+            '/proj/login',
+            [
+            'email' => 'user77@test.se',
+            'password' => 'wrongpassword'
+        ]
+        );
+
+        $expectedFlashbag = ['warning' => ["There is no user with this email"]];
+
+        /**
+         * @var FlashBagInterface $bag
+         */
+        $bag = $session->getBag('flashes');
+
+        $this->assertEquals($expectedFlashbag, $bag->peekAll());
+        $this->assertResponseRedirects('/proj');
+        $this->assertRouteSame('login');
+
+        $userId = $session->get('user');
+        $this->assertNull($userId);
+    }
 }
