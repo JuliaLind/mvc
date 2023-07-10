@@ -12,22 +12,52 @@ class ProjectApiController5Test extends WebTestCase
 {
     use SessionTrait;
 
-    public function testApiGameState(): void
+    public function testApiGameStateNotOk(): void
     {
 
         $client = static::createClient();
         $session = $this->createSession($client);
-
-        $client->request('POST', '/proj/api/game-state');
-
         $container = $client->getContainer();
         $container->set(Session::class, $session);
+        $client->request('POST', '/proj/api/game-state');
         $this->assertResponseIsSuccessful();
         $this->assertRouteSame('api-game-state');
 
         $response = strval($client->getResponse()->getContent());
         $this->assertJson($response);
         $this->assertStringContainsString('no game initiated', $response);
+    }
 
+    public function testApiGameStateOk(): void
+    {
+        $client = static::createClient();
+        $session = $this->createSession($client);
+        $container = $client->getContainer();
+        $container->set(Session::class, $session);
+        $client->request(
+            'POST',
+            '/proj/login',
+            [
+                'email' => 'user0@test.se',
+                'password' => 'julia'
+            ]
+        );
+
+        $client->request(
+            'POST',
+            '/proj/init',
+            [
+                'bet' => 350,
+            ]
+        );
+        $client->request('POST', '/proj/api/game-state');
+        $this->assertResponseIsSuccessful();
+        $this->assertRouteSame('api-game-state');
+
+        $response = strval($client->getResponse()->getContent());
+        $this->assertJson($response);
+        $this->assertStringContainsString('"bet":350', $response);
+        $this->assertStringContainsString('"player":{"cardCount":0,"rows":[]},"placedCardsPlayer":0,"placedCardsHouse":0,"deckCardCount":51', $response);
+        $this->assertStringContainsString('"message":"","fromSlot":[],"lastRound":[],"finished":false', $response);
     }
 }

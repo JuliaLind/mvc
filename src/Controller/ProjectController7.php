@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
 use App\Project\NotEnoughCoinsException;
-use App\Project\RegisterFactory;
+use App\Project\Register;
 use Symfony\Component\HttpFoundation\Request;
 use App\Project\Game;
 use App\ProjectGrid\Grid;
@@ -29,14 +29,12 @@ class ProjectController7 extends AbstractController
     public function undo(
         SessionInterface $session,
         EntityManagerInterface $entityManager,
-        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
          */
         $userId = $session->get("user");
-
-        $register = $factory->create($entityManager, $userId);
+        $register = new Register($entityManager, $userId);
         try {
             $register->debit(10, 'undo last move cheat');
         } catch (NotEnoughCoinsException) {
@@ -62,13 +60,12 @@ class ProjectController7 extends AbstractController
     public function showSuggestion(
         SessionInterface $session,
         EntityManagerInterface $entityManager,
-        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
          */
         $userId = $session->get("user");
-        $register = $factory->create($entityManager, $userId);
+        $register = new Register($entityManager, $userId);
         try {
             $register->debit(30, 'show-suggestion cheat');
             $session->set("show-suggestion", true);

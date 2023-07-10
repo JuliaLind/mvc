@@ -2606,7 +2606,7 @@
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" type="service_closure" id="webpack_encore.entrypoint_lookup_collection" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader.filesystem" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
-        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.5Uv80_T" on-invalid="ignore_uninitialized"/>
+        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.3nSh0In" on-invalid="ignore_uninitialized"/>
         <argument key="doctrine.id_generator_locator" type="service_closure" id=".service_locator.KLVvNIq" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
         <argument key="Psr\Log\LoggerInterface $requestLogger" type="service_closure" id="monolog.logger.request" on-invalid="ignore_uninitialized"/>
@@ -7221,11 +7221,10 @@
         <argument key="monkey" type="service_closure" id="App\Controller\LuckyMonkey"/>
       </argument>
     </service>
-    <service id=".service_locator.Mg9ucUm" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.aKM6MDa" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
-        <argument key="factory" type="service_closure" id="App\Project\RegisterFactory"/>
       </argument>
     </service>
     <service id=".service_locator.fscTci6" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7238,12 +7237,6 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="game" type="service_closure" id="App\Project\ApiGame2"/>
-      </argument>
-    </service>
-    <service id=".service_locator.aKM6MDa" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
     <service id=".service_locator.XXU_NF2" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7279,7 +7272,7 @@
         <argument key="repo" type="service_closure" id="App\Repository\TransactionRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.5Uv80_T" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.3nSh0In" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CardController2::draw" type="service_closure" id=".service_locator.RnGvXe2"/>
@@ -7309,25 +7302,25 @@
         <argument key="App\Controller\MainController::metrics" type="service_closure" id=".service_locator.0ooV1gr"/>
         <argument key="App\Controller\MainController::number" type="service_closure" id=".service_locator.tR_I02f"/>
         <argument key="App\Controller\MainController::report" type="service_closure" id=".service_locator.0ooV1gr"/>
-        <argument key="App\Controller\ProjectApiController2::apiUser" type="service_closure" id=".service_locator.Mg9ucUm"/>
+        <argument key="App\Controller\ProjectApiController2::apiUser" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectApiController3::apiTransactions" type="service_closure" id=".service_locator.fscTci6"/>
         <argument key="App\Controller\ProjectApiController4::apiPlaceCard" type="service_closure" id=".service_locator.LDZ.2HW"/>
-        <argument key="App\Controller\ProjectApiController6::apiUsers" type="service_closure" id=".service_locator.Mg9ucUm"/>
+        <argument key="App\Controller\ProjectApiController6::apiUsers" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectApiController7::apiLeaderboard" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectApiController8::apiResults" type="service_closure" id=".service_locator.XXU_NF2"/>
         <argument key="App\Controller\ProjectAuthController::projLogin" type="service_closure" id=".service_locator.J..d_da"/>
-        <argument key="App\Controller\ProjectAuthController::projRegister" type="service_closure" id=".service_locator.Mg9ucUm"/>
+        <argument key="App\Controller\ProjectAuthController::projRegister" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController10::projShop" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController10::projTrans" type="service_closure" id=".service_locator.OsH1muE"/>
-        <argument key="App\Controller\ProjectController11::projPlay" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController1::projLanding" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController2::purchasePeekCheat" type="service_closure" id=".service_locator.Mg9ucUm"/>
+        <argument key="App\Controller\ProjectController11::projPlay" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController1::projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController2::purchasePeekCheat" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController3::projRound" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController4::setFromSlot" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController6::projPurchase" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController6::selectAmount" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController7::showSuggestion" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController7::undo" type="service_closure" id=".service_locator.Mg9ucUm"/>
+        <argument key="App\Controller\ProjectController4::setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController6::projPurchase" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController6::selectAmount" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController7::showSuggestion" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController7::undo" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController8::projLeaderboard" type="service_closure" id=".service_locator.j7c.8f."/>
         <argument key="App\Controller\ProjectController8::projScoresSingle" type="service_closure" id=".service_locator.i.nXIC_"/>
         <argument key="App\Controller\ProjectController9::projInit" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -7362,25 +7355,25 @@
         <argument key="App\Controller\MainController:metrics" type="service_closure" id=".service_locator.0ooV1gr"/>
         <argument key="App\Controller\MainController:number" type="service_closure" id=".service_locator.tR_I02f"/>
         <argument key="App\Controller\MainController:report" type="service_closure" id=".service_locator.0ooV1gr"/>
-        <argument key="App\Controller\ProjectApiController2:apiUser" type="service_closure" id=".service_locator.Mg9ucUm"/>
+        <argument key="App\Controller\ProjectApiController2:apiUser" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectApiController3:apiTransactions" type="service_closure" id=".service_locator.fscTci6"/>
         <argument key="App\Controller\ProjectApiController4:apiPlaceCard" type="service_closure" id=".service_locator.LDZ.2HW"/>
-        <argument key="App\Controller\ProjectApiController6:apiUsers" type="service_closure" id=".service_locator.Mg9ucUm"/>
+        <argument key="App\Controller\ProjectApiController6:apiUsers" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectApiController7:apiLeaderboard" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectApiController8:apiResults" type="service_closure" id=".service_locator.XXU_NF2"/>
         <argument key="App\Controller\ProjectAuthController:projLogin" type="service_closure" id=".service_locator.J..d_da"/>
-        <argument key="App\Controller\ProjectAuthController:projRegister" type="service_closure" id=".service_locator.Mg9ucUm"/>
+        <argument key="App\Controller\ProjectAuthController:projRegister" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController10:projShop" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController10:projTrans" type="service_closure" id=".service_locator.OsH1muE"/>
-        <argument key="App\Controller\ProjectController11:projPlay" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController1:projLanding" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController2:purchasePeekCheat" type="service_closure" id=".service_locator.Mg9ucUm"/>
+        <argument key="App\Controller\ProjectController11:projPlay" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController1:projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController2:purchasePeekCheat" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController3:projRound" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController4:setFromSlot" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController6:projPurchase" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController6:selectAmount" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController7:showSuggestion" type="service_closure" id=".service_locator.Mg9ucUm"/>
-        <argument key="App\Controller\ProjectController7:undo" type="service_closure" id=".service_locator.Mg9ucUm"/>
+        <argument key="App\Controller\ProjectController4:setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController6:projPurchase" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController6:selectAmount" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController7:showSuggestion" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController7:undo" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectController8:projLeaderboard" type="service_closure" id=".service_locator.j7c.8f."/>
         <argument key="App\Controller\ProjectController8:projScoresSingle" type="service_closure" id=".service_locator.i.nXIC_"/>
         <argument key="App\Controller\ProjectController9:projInit" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -8239,12 +8232,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.5Uv80_T"/>
+      <argument type="service" id=".service_locator.3nSh0In"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.5Uv80_T"/>
+      <argument type="service" id=".service_locator.3nSh0In"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8961,7 +8954,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.5Uv80_T"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.3nSh0In"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -8984,7 +8977,7 @@
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.ewaBO.S" alias=".service_locator.XXU_NF2"/>
     <service id=".service_locator.hjZjVN0" alias=".service_locator.OsH1muE"/>
-    <service id=".service_locator.8IMsCBb" alias=".service_locator.5Uv80_T"/>
+    <service id=".service_locator.O3Pxth7" alias=".service_locator.3nSh0In"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.fTeS4zl" alias=".service_locator.iwVv_YN"/>
@@ -9024,10 +9017,9 @@
     <service id=".service_locator.awBLFWE" alias=".service_locator.NQbvE_q"/>
     <service id=".service_locator.Dk_KXp_" alias=".service_locator.0ooV1gr"/>
     <service id=".service_locator.Z.9ilDZ" alias=".service_locator.tR_I02f"/>
-    <service id=".service_locator.52HcGeL" alias=".service_locator.Mg9ucUm"/>
+    <service id=".service_locator.bInR.ll" alias=".service_locator.aKM6MDa"/>
     <service id=".service_locator.zurGdD0" alias=".service_locator.fscTci6"/>
     <service id=".service_locator.WnRiHH2" alias=".service_locator.LDZ.2HW"/>
-    <service id=".service_locator.bInR.ll" alias=".service_locator.aKM6MDa"/>
     <service id=".service_locator.OMcys9g" alias=".service_locator.XXU_NF2"/>
     <service id=".service_locator.sxVTQ8c" alias=".service_locator.J..d_da"/>
     <service id=".service_locator._4_GdpS" alias=".service_locator.i.nXIC_"/>

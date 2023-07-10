@@ -31,7 +31,10 @@ class ProjectController8 extends AbstractController
         /**
          * @var int $userId
          */
-        $userId = $session->get("user");
+        $userId = $session->get("user") ?? null;
+        if($userId == null) {
+            return $this->redirectToRoute('proj');
+        }
         /**
          * @var User $user
          */

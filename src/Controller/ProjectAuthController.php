@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\UserRepository;
 use App\Entity\User;
-use App\Project\RegisterFactory;
+use App\Project\Register;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 
 /**
@@ -30,7 +30,6 @@ class ProjectAuthController extends AbstractController
         EntityManagerInterface $entityManager,
         Request $request,
         SessionInterface $session,
-        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var string $email
@@ -61,7 +60,8 @@ class ProjectAuthController extends AbstractController
         /**
          * Check that a user with same email or acronym is not
          * registered already. Cannot use try catch UniqueConstraintViolationException
-         * here because he exception is for some reason not thrown in test-environment
+         * here because the exception is for some reason not thrown in test-environment
+         * resulting in untestable code
          */
         $check1 = $repo->findOneBy(['email' => $email]);
         $check2 = $repo->findOneBy(['acronym' => $acronym]);
@@ -88,8 +88,8 @@ class ProjectAuthController extends AbstractController
          * @var int userId
          */
         $userId = $user->getId();
+        $register = new Register($entityManager, $userId);
 
-        $register = $factory->create($entityManager, $userId);
         $register->transaction(1000, 'Free registration bonus');
 
         $session->set("user", $userId);

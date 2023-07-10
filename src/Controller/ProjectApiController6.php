@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
-use App\Project\RegisterFactory;
+use App\Project\Register;
 
 /**
  * Controller related to the Project. Contains API route that displays
@@ -25,7 +25,6 @@ class ProjectApiController6 extends AbstractController
     #[Route('/proj/api/users', name: "api-users", methods: ['GET'])]
     public function apiUsers(
         EntityManagerInterface $entityManager,
-        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         $users = $entityManager->getRepository(User::class)->findAll();
         $data = [];
@@ -34,7 +33,7 @@ class ProjectApiController6 extends AbstractController
              * @var int $userId
              */
             $userId = $user->getId();
-            $register = $factory->create($entityManager, $userId);
+            $register = new Register($entityManager, $userId);
             $balance = $register->getBalance();
             $info = [
                 'id' => $userId,

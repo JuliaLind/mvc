@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-07-10 00:09:28        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-07-10 11:27:45        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -351,7 +351,7 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\RegisterFactory"
+            "\\App\\Project\\Register"
         ]
     },
     {
@@ -370,12 +370,9 @@
         "relations": []
     },
     {
-        "name": "\\App\\Project\\RegisterFactory",
+        "name": "\\App\\Project\\Register",
         "size": 3000,
-        "relations": [
-            "\\App\\Project\\Register",
-            "\\Doctrine\\ORM\\EntityManagerInterface"
-        ]
+        "relations": []
     },
     {
         "name": "\\App\\Controller\\LuckyMonkey",
@@ -523,7 +520,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Request",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\RegisterFactory",
+            "\\App\\Project\\Register",
             "\\App\\ProjectGrid\\Grid",
             "\\App\\Project\\Game"
         ]
@@ -559,7 +556,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\RegisterFactory"
+            "\\App\\Project\\Register"
         ]
     },
     {
@@ -570,7 +567,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\RegisterFactory"
+            "\\App\\Project\\Register"
         ]
     },
     {
@@ -618,7 +615,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\RegisterFactory"
+            "\\App\\Project\\Register"
         ]
     },
     {
@@ -629,7 +626,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Doctrine\\ORM\\EntityManagerInterface",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Project\\RegisterFactory"
+            "\\App\\Project\\Register"
         ]
     },
     {
@@ -649,7 +646,7 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\RegisterFactory"
+            "\\App\\Project\\Register"
         ]
     },
     {
@@ -735,7 +732,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\RegisterFactory",
+            "\\App\\Project\\Register",
             "\\App\\Repository\\TransactionRepository"
         ]
     },
@@ -876,7 +873,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\RegisterFactory"
+            "\\App\\Project\\Register"
         ]
     },
     {
@@ -916,8 +913,8 @@
             "\\Doctrine\\ORM\\EntityManagerInterface",
             "\\Symfony\\Component\\HttpFoundation\\Request",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Project\\RegisterFactory",
             "\\App\\Entity\\User",
+            "\\App\\Project\\Register",
             "\\App\\Repository\\UserRepository"
         ]
     },
@@ -936,7 +933,7 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\RegisterFactory"
+            "\\App\\Project\\Register"
         ]
     },
     {
@@ -1527,6 +1524,14 @@
         ]
     },
     {
+        "name": "\\App\\Project\\RegisterFactory",
+        "size": 3000,
+        "relations": [
+            "\\App\\Project\\Register",
+            "\\Doctrine\\ORM\\EntityManagerInterface"
+        ]
+    },
+    {
         "name": "\\App\\Project\\NotEnoughCoinsException",
         "size": 3000,
         "relations": []
@@ -1543,11 +1548,6 @@
     },
     {
         "name": "\\App\\Project\\PlayerSuggestTrait",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Project\\Register",
         "size": 3000,
         "relations": []
     },

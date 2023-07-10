@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
 use App\Project\NotEnoughCoinsException;
-use App\Project\RegisterFactory;
+use App\Project\Register;
 use Symfony\Component\HttpFoundation\Request;
 use App\Project\Game;
 use App\ProjectGrid\Grid;
@@ -31,14 +31,13 @@ class ProjectController4 extends AbstractController
         int $col,
         SessionInterface $session,
         EntityManagerInterface $entityManager,
-        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
          */
         $userId = $session->get("user");
+        $register = new Register($entityManager, $userId);
 
-        $register = $factory->create($entityManager, $userId);
         try {
             $register->debit(50, 'move-a-card cheat');
         } catch (NotEnoughCoinsException) {

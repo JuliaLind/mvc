@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
-use App\Project\RegisterFactory;
+use App\Project\Register;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 
 /**
@@ -29,13 +29,13 @@ class ProjectController6 extends AbstractController
         int $coins,
         EntityManagerInterface $entityManager,
         SessionInterface $session,
-        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
          */
         $userId = $session->get("user") ?? null;
-        $register = $factory->create($entityManager, $userId);
+        $register = new Register($entityManager, $userId);
+
         $register->transaction($coins, 'Purchase');
         $balance = $register->getBalance();
         $this->addFlash('notice', "You have successfully purchsed {$coins} coins. Your new balance is {$balance} coins");
@@ -51,14 +51,12 @@ class ProjectController6 extends AbstractController
     public function selectAmount(
         SessionInterface $session,
         EntityManagerInterface $entityManager,
-        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
          */
         $userId = $session->get("user");
-
-        $register = $factory->create($entityManager, $userId);
+        $register = new Register($entityManager, $userId);
         $balance = $register->getBalance();
 
         if ($balance < 10) {

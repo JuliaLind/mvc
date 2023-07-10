@@ -12,7 +12,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
 
 use App\Project\Game;
-use App\Project\RegisterFactory;
+use App\Project\Register;
 
 /**
  * Controller related to the Project. Contains the route
@@ -24,7 +24,6 @@ class ProjectController1 extends AbstractController
     public function projLanding(
         SessionInterface $session,
         EntityManagerInterface $entityManager,
-        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var int $userId
@@ -46,7 +45,7 @@ class ProjectController1 extends AbstractController
         $game = $session->get("game") ?? null;
 
 
-        $register = $factory->create($entityManager, $userId);
+        $register = new Register($entityManager, $userId);
 
         $data = [
             ...$data,

@@ -13,7 +13,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
 use App\Entity\Transaction;
 use App\Entity\Score;
-use App\Project\RegisterFactory;
+use App\Project\Register;
 use Datetime;
 
 /**
@@ -28,8 +28,7 @@ class ProjectApiController2 extends AbstractController
     #[Route('/proj/api/user/{email}', name: "api-user", methods: ['GET'])]
     public function apiUser(
         EntityManagerInterface $entityManager,
-        string $email,
-        RegisterFactory $factory = new RegisterFactory()
+        string $email
     ): Response {
         /**
          * @var User $user
@@ -39,7 +38,8 @@ class ProjectApiController2 extends AbstractController
          * @var int $userId
          */
         $userId = $user->getId();
-        $register = $factory->create($entityManager, $userId);
+
+        $register = new Register($entityManager, $userId);
         $balance = $register->getBalance();
         $data = [
             'id' => $userId,

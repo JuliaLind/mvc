@@ -60,3 +60,4 @@ ffdb5d,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api/game-state,
 0cb06d,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1688981131,,200
 6b4d84,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api,1688981134,,200
 3da2eb,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api/game-state,1688981138,,200
+8c8e7e,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj,1688987310,,200

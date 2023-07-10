@@ -6,7 +6,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 use App\Project\Game;
 use App\ProjectGrid\Grid;
-use App\Project\RegisterFactory;
+use App\Project\Register;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,7 +27,6 @@ class ProjectController11 extends AbstractController
     public function projPlay(
         SessionInterface $session,
         EntityManagerInterface $entityManager,
-        RegisterFactory $factory = new RegisterFactory()
     ): Response {
         /**
          * @var Game $game
@@ -79,7 +78,7 @@ class ProjectController11 extends AbstractController
          * @var int $userId
          */
         $userId = $session->get("user");
-        $register = $factory->create($entityManager, $userId);
+        $register = new Register($entityManager, $userId);
         $data['balance'] = $register->getBalance();
         return $this->render('proj/game.html.twig', $data);
     }
