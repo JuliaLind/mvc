@@ -39,10 +39,21 @@ trait OneRoundTrait
     private array $results = [];
 
     /**
+     * Contains the suggestion for player on a slot
+     * to place the dealt card and also the data for
+     * all 10 hands (best possible rule with the
+     * dealt card and best possible rule wihtout
+     * the dealt card)
+     * @var array<string,array<int,array<string,float|int|string>|int>|int|string> $suggestion
+     */
+    private array $suggestion = [];
+
+    /**
      * Picks a card from the deck and places
      * into the houses grid
      */
     abstract private function housePlaceCard(): void;
+
 
 
     public function oneRound(int $row, int $col): bool

@@ -16,7 +16,7 @@ class ProjectController7Test extends WebTestCase
 {
     use SessionTrait;
 
-    public function testProjPurchase(): void
+    public function testUndoCheatNotOk(): void
     {
 
         $client = static::createClient();
@@ -33,35 +33,6 @@ class ProjectController7Test extends WebTestCase
             ]
         );
 
-        $client->request('POST', '/proj/purchase/300');
-        $this->assertRouteSame('purchase');
-        $this->assertResponseRedirects('/proj/shop');
-
-        $expectedFlashbag = ['notice' => ["You have successfully purchased 300 coins. Your new balance is 1740 coins"]];
-
-        /**
-         * @var FlashBagInterface $bag
-         */
-        $bag = $session->getBag('flashes');
-
-        $this->assertEquals($expectedFlashbag, $bag->peekAll());
-    }
-
-    public function testSelectAmountNotOk(): void
-    {
-        $client = static::createClient();
-        $session = $this->createSession($client);
-        $container = $client->getContainer();
-        $container->set(Session::class, $session);
-
-        $client->request(
-            'POST',
-            '/proj/login',
-            [
-                'email' => 'user0@test.se',
-                'password' => 'julia'
-            ]
-        );
         $client->request(
             'POST',
             '/proj/init',
@@ -69,11 +40,12 @@ class ProjectController7Test extends WebTestCase
                 'bet' => 1431,
             ]
         );
+        $client->request('POST', '/proj/one-round/2/1');
+        $client->request('POST', '/proj/undo');
+        $this->assertRouteSame('undo');
+        $this->assertResponseRedirects('/proj/play');
 
-        $client->request('GET', '/proj/select-amount');
-        $this->assertRouteSame('select-amount');
-        $this->assertResponseRedirects('/proj/shop');
-        $expectedFlashbag = ['warning' => ["You do not have enough coins, the minimum amount to bet is 10 coins. Purchase more coins in the shop"]];
+        $expectedFlashbag = ['warning' => ["You do not have enough coins to use this cheat. Purchase more coins in the shop"]];
 
         /**
          * @var FlashBagInterface $bag
@@ -83,19 +55,9 @@ class ProjectController7Test extends WebTestCase
         $this->assertEquals($expectedFlashbag, $bag->peekAll());
     }
 
-    public function testSelectAmountNotOk2(): void
+    public function testUndoCheatOk(): void
     {
-        $client = static::createClient();
-        $session = $this->createSession($client);
-        $container = $client->getContainer();
-        $container->set(Session::class, $session);
-        $client->request('GET', '/proj/select-amount');
 
-        $this->assertResponseRedirects('/proj');
-    }
-
-    public function testSelectAmountOk(): void
-    {
         $client = static::createClient();
         $session = $this->createSession($client);
         $container = $client->getContainer();
@@ -110,13 +72,31 @@ class ProjectController7Test extends WebTestCase
             ]
         );
 
-        $client->request('GET', '/proj/select-amount');
-        $this->assertRouteSame('select-amount');
-        $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('h1', 'Select amount to bet');
-        $response = strval($client->getResponse()->getContent());
-        $this->assertStringContainsString('max="1440"', $response);
-        $this->assertStringContainsString('min="10"', $response);
-        $this->assertStringContainsString('value="10"', $response);
+        $client->request(
+            'POST',
+            '/proj/init',
+            [
+                'bet' => 100,
+            ]
+        );
+        $client->request('POST', '/proj/one-round/2/1');
+
+        $client->request('POST', '/proj/undo');
+        $this->assertRouteSame('undo');
+        $this->assertResponseRedirects('/proj/play');
+
+        // /**
+        //  * @var Game $game
+        //  */
+        // $game = $session->get('game');
+        // $state = $game->currentState();
+
+        // /**
+        //  * @var array<array<int>> $lastRound
+        //  */
+        // $lastRound = $state['lastRound'];
+        // $res = $lastRound['player'];
+        // $this->assertEquals([], $res);
     }
+
 }

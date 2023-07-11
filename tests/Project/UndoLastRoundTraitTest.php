@@ -9,16 +9,7 @@ class UndoLastRoundTraitTest extends TestCase
 {
     use UndoLastRoundTrait;
 
-    private bool $playerSuggestCalled = false;
 
-    /**
-     * Mocked method to remove dependecy
-     * @SuppressWarnings(PHPMD.UnusedPrivateMethod)
-     */
-    private function playerSuggest(): void
-    {
-        $this->playerSuggestCalled = true;
-    }
 
 
     public function testUndoLastRound(): void
@@ -44,7 +35,7 @@ class UndoLastRoundTraitTest extends TestCase
 
         $this->deck = new Deck($factory);
         $this->undoLastRound();
-        $this->assertTrue($this->playerSuggestCalled);
+
         $this->assertEquals([], $this->lastRound);
         $this->assertEquals("12D", $this->deck->deal());
         $this->assertEquals("5S", $this->deck->deal());

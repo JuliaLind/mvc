@@ -23,13 +23,6 @@ trait UndoLastRoundTrait
     private array $lastRound = [];
     private Grid $player;
 
-    /**
-     * Provides a suggestion to the player on which slot to
-     * place the card in. Also provides data for each hand on
-     * the best possible rule that can be achieved with the dealt card
-     * and best possible rule without the dealt card
-     */
-    abstract private function playerSuggest(): void;
 
     /**
      * Undoes the last round. The latest card that is dealt to the player
@@ -47,6 +40,6 @@ trait UndoLastRoundTrait
         $this->deck->addCard($houseCard);
         $this->card = $playerCard;
         $this->lastRound = [];
-        $this->playerSuggest();
+
     }
 }
