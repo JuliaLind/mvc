@@ -55,6 +55,7 @@ return [
         '/proj/purchase-peek-cheat' => [[['_route' => 'purchase-peek', '_controller' => 'App\\Controller\\ProjectPeekController::purchasePeekCheat'], null, ['POST' => 0], null, false, false, null]],
         '/proj/deck-peek' => [[['_route' => 'deck-peek', '_controller' => 'App\\Controller\\ProjectPeekController::deckPeek'], null, ['GET' => 0], null, false, false, null]],
         '/proj/play' => [[['_route' => 'proj-play', '_controller' => 'App\\Controller\\ProjectPlayController::projPlay'], null, null, null, false, false, null]],
+        '/proj/reset' => [[['_route' => 'reset_project', '_controller' => 'App\\Controller\\ProjectResetController::resetProj'], null, ['POST' => 0], null, false, false, null]],
         '/proj/scores-single' => [[['_route' => 'proj-scores-single', '_controller' => 'App\\Controller\\ProjectScoresController::projScoresSingle'], null, null, null, false, false, null]],
         '/proj/leaderboard' => [[['_route' => 'proj-leaderboard', '_controller' => 'App\\Controller\\ProjectScoresController::projLeaderboard'], null, null, null, false, false, null]],
         '/proj/shop' => [[['_route' => 'shop', '_controller' => 'App\\Controller\\ProjectShopController::projShop'], null, null, null, false, false, null]],

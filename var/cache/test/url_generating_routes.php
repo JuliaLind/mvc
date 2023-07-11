@@ -67,6 +67,7 @@ return [
     'purchase-peek' => [[], ['_controller' => 'App\\Controller\\ProjectPeekController::purchasePeekCheat'], [], [['text', '/proj/purchase-peek-cheat']], [], [], []],
     'deck-peek' => [[], ['_controller' => 'App\\Controller\\ProjectPeekController::deckPeek'], [], [['text', '/proj/deck-peek']], [], [], []],
     'proj-play' => [[], ['_controller' => 'App\\Controller\\ProjectPlayController::projPlay'], [], [['text', '/proj/play']], [], [], []],
+    'reset_project' => [[], ['_controller' => 'App\\Controller\\ProjectResetController::resetProj'], [], [['text', '/proj/reset']], [], [], []],
     'proj-scores-single' => [[], ['_controller' => 'App\\Controller\\ProjectScoresController::projScoresSingle'], [], [['text', '/proj/scores-single']], [], [], []],
     'proj-leaderboard' => [[], ['_controller' => 'App\\Controller\\ProjectScoresController::projLeaderboard'], [], [['text', '/proj/leaderboard']], [], [], []],
     'shop' => [[], ['_controller' => 'App\\Controller\\ProjectShopController::projShop'], [], [['text', '/proj/shop']], [], [], []],

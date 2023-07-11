@@ -3,16 +3,168 @@ BEGIN TRANSACTION;
 CREATE TABLE doctrine_migration_versions (version VARCHAR(191) NOT NULL, executed_at DATETIME DEFAULT NULL, execution_time INTEGER DEFAULT NULL, PRIMARY KEY(version));
 INSERT INTO doctrine_migration_versions VALUES('DoctrineMigrations\Version20230502223002','2023-05-02 22:33:19',2);
 INSERT INTO doctrine_migration_versions VALUES('DoctrineMigrations\Version20230505221238','2023-05-05 22:32:17',3);
+INSERT INTO doctrine_migration_versions VALUES('DoctrineMigrations\Version20230617182822','2023-06-17 18:29:29',4);
 CREATE TABLE messenger_messages (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, body CLOB NOT NULL, headers CLOB NOT NULL, queue_name VARCHAR(190) NOT NULL, created_at DATETIME NOT NULL, available_at DATETIME NOT NULL, delivered_at DATETIME DEFAULT NULL);
-CREATE TABLE product (
+CREATE TABLE score (
     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    name VARCHAR(255) NOT NULL,
-    value INTEGER NOT NULL
-    );
-INSERT INTO product VALUES(1,'Keyboard_num_2',900);
-INSERT INTO product VALUES(2,'Keyboard_num_5',1000);
-INSERT INTO product VALUES(3,'Keyboard_num_1',707);
-INSERT INTO product VALUES(4,'Keyboard_num_1',547);
+    user_id INTEGER NOT NULL,
+    registered DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    points INTEGER NOT NULL,
+    CONSTRAINT FK_3299375158E0A285 FOREIGN KEY (user_id) REFERENCES user (id) NOT DEFERRABLE INITIALLY IMMEDIATE
+);
+INSERT INTO score VALUES(1,2,'2023-07-10',68);
+INSERT INTO score VALUES(2,2,'2023-07-10',111);
+INSERT INTO score VALUES(3,2,'2023-07-10',86);
+INSERT INTO score VALUES(4,2,'2023-07-10',106);
+INSERT INTO score VALUES(5,1,'2023-07-11',104);
+INSERT INTO score VALUES(6,1,'2023-07-11',106);
+INSERT INTO score VALUES(7,1,'2023-07-11',172);
+CREATE TABLE IF NOT EXISTS "transaction" (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    user_id INTEGER NOT NULL,
+    registered DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    descr VARCHAR(100) NOT NULL, amount INTEGER NOT NULL, CONSTRAINT FK_723705D158E0A285 FOREIGN KEY (user_id) REFERENCES user (id) NOT DEFERRABLE INITIALLY IMMEDIATE
+);
+INSERT INTO "transaction" VALUES(1,1,'2023-06-18','Free registration bonus',1000);
+INSERT INTO "transaction" VALUES(2,2,'2023-07-09','Free registration bonus',1000);
+INSERT INTO "transaction" VALUES(3,2,'2023-07-10','Bet',-30);
+INSERT INTO "transaction" VALUES(4,2,'2023-07-10','Bet',-970);
+INSERT INTO "transaction" VALUES(5,2,'2023-07-10','Purchase',100);
+INSERT INTO "transaction" VALUES(6,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(7,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(8,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(9,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(10,2,'2023-07-10','Return (bet x 2)',20);
+INSERT INTO "transaction" VALUES(11,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(12,2,'2023-07-10','Return (bet x 2)',20);
+INSERT INTO "transaction" VALUES(13,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(14,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(15,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(16,2,'2023-07-10','Return (bet x 2)',20);
+INSERT INTO "transaction" VALUES(17,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(18,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(19,2,'2023-07-10','Purchase',550);
+INSERT INTO "transaction" VALUES(20,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(21,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(22,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(23,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(24,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(25,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(26,2,'2023-07-10','undo last move cheat',-10);
+INSERT INTO "transaction" VALUES(27,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(28,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(29,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(30,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(31,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(32,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(33,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(34,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(35,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(36,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(37,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(38,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(39,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(40,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(41,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(42,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(43,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(44,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(45,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(46,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(47,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(48,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(49,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(50,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(51,2,'2023-07-10','Purchase',550);
+INSERT INTO "transaction" VALUES(52,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(53,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(54,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(55,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(56,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(57,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(58,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(59,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(60,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(61,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(62,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(63,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(64,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(65,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(66,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(67,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(68,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(69,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(70,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(71,2,'2023-07-10','Purchase',10100);
+INSERT INTO "transaction" VALUES(72,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(73,2,'2023-07-10','Return (bet x 2)',20);
+INSERT INTO "transaction" VALUES(74,2,'2023-07-10','Bet',-10);
+INSERT INTO "transaction" VALUES(75,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(76,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(77,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(78,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(79,2,'2023-07-10','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(80,2,'2023-07-11','Bet',-10);
+INSERT INTO "transaction" VALUES(81,2,'2023-07-11','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(82,1,'2023-07-11','Bet',-10);
+INSERT INTO "transaction" VALUES(83,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(84,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(85,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(86,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(87,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(88,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(89,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(90,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(91,1,'2023-07-11','Return (bet x 2)',20);
+INSERT INTO "transaction" VALUES(92,1,'2023-07-11','Bet',-10);
+INSERT INTO "transaction" VALUES(93,1,'2023-07-11','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(94,1,'2023-07-11','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(95,1,'2023-07-11','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(96,1,'2023-07-11','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(97,1,'2023-07-11','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(98,1,'2023-07-11','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(99,1,'2023-07-11','undo last move cheat',-10);
+INSERT INTO "transaction" VALUES(100,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(101,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(102,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(103,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(104,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(105,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(106,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(107,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(108,1,'2023-07-11','Purchase',550);
+INSERT INTO "transaction" VALUES(109,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(110,1,'2023-07-11','Return (bet x 2)',20);
+INSERT INTO "transaction" VALUES(111,1,'2023-07-11','Bet',-10);
+INSERT INTO "transaction" VALUES(112,1,'2023-07-11','Bet',-10);
+INSERT INTO "transaction" VALUES(113,1,'2023-07-11','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(114,1,'2023-07-11','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(115,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(116,1,'2023-07-11','peek in deck cheat',-120);
+INSERT INTO "transaction" VALUES(117,1,'2023-07-11','peek in deck cheat',-120);
+INSERT INTO "transaction" VALUES(118,1,'2023-07-11','peek in deck cheat',-120);
+INSERT INTO "transaction" VALUES(119,1,'2023-07-11','Purchase',10100);
+INSERT INTO "transaction" VALUES(120,1,'2023-07-11','Bet',-10);
+INSERT INTO "transaction" VALUES(121,1,'2023-07-11','peek in deck cheat',-120);
+INSERT INTO "transaction" VALUES(122,1,'2023-07-11','peek in deck cheat',-120);
+INSERT INTO "transaction" VALUES(123,1,'2023-07-11','undo last move cheat',-10);
+INSERT INTO "transaction" VALUES(124,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(125,1,'2023-07-11','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(126,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(127,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(128,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(129,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(130,1,'2023-07-11','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(131,1,'2023-07-11','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(132,1,'2023-07-11','Return (bet x 2)',20);
+CREATE TABLE user (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    acronym VARCHAR(50) NOT NULL UNIQUE,
+    hash VARCHAR(100) NOT NULL
+);
+INSERT INTO user VALUES(1,'doe@bth.se','John Doe','$2y$10$bh4KbO6upQywlhconQZf1.0UMbpV1qnhVy3WRa7wd2/2KlsjPq.AW');
+INSERT INTO user VALUES(2,'jane@bth.se','Jane Doe','$2y$10$4gdzy9YYN7O.g325RtWimuuowzW.3umg6.lAGHn8zkNoVFVU0QJ1O');
 CREATE TABLE book (
     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     title VARCHAR(255) NOT NULL,
@@ -27,8 +179,10 @@ INSERT INTO book VALUES(4,'Databasteknik','9789144069197','Thomas Padron-Mccarth
 INSERT INTO book VALUES(5,'Webbutveckling med PHP och MySQL','9789144105567','Montathar Faraon','https://image.bokus.com/images/9789144105567_200x_webbutveckling-med-php-och-mysql_haftad');
 INSERT INTO book VALUES(6,'The Principles of Beautiful Web Design, 4e','9781925836363','Jason Beaird, Alex Walker','https://image.bokus.com/images/9781925836363_200x_the-principles-of-beautiful-web-design-4e_haftad');
 DELETE FROM sqlite_sequence;
-INSERT INTO sqlite_sequence VALUES('product',4);
+INSERT INTO sqlite_sequence VALUES('transaction',132);
+INSERT INTO sqlite_sequence VALUES('user',2);
 INSERT INTO sqlite_sequence VALUES('book',6);
+INSERT INTO sqlite_sequence VALUES('score',7);
 CREATE INDEX IDX_75EA56E0FB7336F0 ON messenger_messages (queue_name);
 CREATE INDEX IDX_75EA56E0E3BD61CE ON messenger_messages (available_at);
 CREATE INDEX IDX_75EA56E016BA31DB ON messenger_messages (delivered_at);
