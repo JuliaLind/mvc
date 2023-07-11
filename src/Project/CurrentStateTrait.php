@@ -48,7 +48,7 @@ trait CurrentStateTrait
      * Contains the coordinates of the slots
      * where the house and the player placed the
      * cards in the last round
-     * @var array<string,array<int>>> $lastRound
+     * @var array<string,array<int>> $lastRound
      */
     private array $lastRound = [];
     /**

@@ -5,6 +5,7 @@ namespace App\Project;
 require __DIR__ . "/../../vendor/autoload.php";
 
 use App\ProjectGrid\Grid;
+use App\ProjectEvaluator\RuleEvaluator;
 
 /**
  * Handles the cheat of moving a placed card from one slot to another
@@ -23,15 +24,27 @@ trait MoveACardTrait
      * @var array<string,array<int>>> $lastRound
      */
     private array $lastRound = [];
+    private Deck $deck;
+    private RuleEvaluator $evaluator;
+    private Grid $house;
     private Grid $player;
+    /**
+     * The results for the player and the house.
+     * Contains the rule scored and the points
+     * for each of the 10 hands and the totals
+     * @var array<string,array<string,array<array<string,int|string>>|int>|string> $results
+     */
+    private array $results = [];
 
     /**
-     * Provides a suggestion to the player on which slot to
-     * place the card in. Also provides data for each hand on
-     * the best possible rule that can be achieved with the dealt card
-     * and best possible rule without the dealt card
+     * Contains the suggestion for player on a slot
+     * to place the dealt card and also the data for
+     * all 10 hands (best possible rule with the
+     * dealt card and best possible rule wihtout
+     * the dealt card)
+     * @var array<string,array<int,array<string,float|int|string>|int>|int|string> $suggestion
      */
-    abstract private function playerSuggest(): void;
+    private array $suggestion = [];
 
     /**
      * Sets the slot from which to pick up the placed card
@@ -50,9 +63,14 @@ trait MoveACardTrait
      */
     public function moveCard(int $row, int $col): void
     {
+        $this->suggestion = [];
         $card = $this->player->removeCard($this->fromSlot[0], $this->fromSlot[1]);
         $this->player->addCard($row, $col, $card);
         $this->fromSlot = [];
-        $this->playerSuggest();
+        $evaluator = $this->evaluator;
+        $this->results = [
+            'player' => $evaluator->results($this->player),
+            'house' => $evaluator->results($this->house)
+        ];
     }
 }

@@ -4,22 +4,11 @@ namespace App\Project;
 
 use PHPUnit\Framework\TestCase;
 use App\ProjectGrid\Grid;
+use App\ProjectEvaluator\RuleEvaluator;
 
 class MoveACardTraitTest extends TestCase
 {
     use MoveACardTrait;
-
-    private bool $playerSuggestCalled = false;
-
-    /**
-     * Mocked method to remove dependecy
-     * @SuppressWarnings(PHPMD.UnusedPrivateMethod)
-     */
-    private function playerSuggest(): void
-    {
-        $this->playerSuggestCalled = true;
-    }
-
 
 
     public function testSetFromSlot(): void
@@ -38,6 +27,9 @@ class MoveACardTraitTest extends TestCase
 
     public function testMoveCard(): void
     {
+        $evaluator = $this->createMock(RuleEvaluator::class);
+        $evaluator->expects($this->exactly(2))->method('results');
+        $this->evaluator = $evaluator;
         $fromRow = 2;
         $fromCol = 4;
         $toRow = 1;
@@ -46,11 +38,12 @@ class MoveACardTraitTest extends TestCase
         $this->fromSlot = [$fromRow, $fromCol];
 
         $player = $this->createMock(Grid::class);
+        $this->house = $this->createMock(Grid::class);
         $player->expects($this->once())->method('removeCard')->with($this->equalTo($fromRow), $this->equalTo($fromCol))->willReturn($card);
         $player->expects($this->once())->method('addCard')->with($this->equalTo($toRow), $this->equalTo($toCol), $this->equalTo($card));
         $this->player = $player;
         $this->moveCard($toRow, $toCol);
-        $this->assertTrue($this->playerSuggestCalled);
+
         $this->assertEquals([], $this->fromSlot);
     }
 }

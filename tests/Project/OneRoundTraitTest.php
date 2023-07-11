@@ -42,6 +42,7 @@ class OneRoundTraitTest extends TestCase
             //.... rest not needed in this test
         ];
         $evaluator = $this->createMock(RuleEvaluator::class);
+        $evaluator->expects($this->exactly(2))->method('results');
         $evaluator->expects($this->once())->method('suggestion')->with($this->equalTo($house), $this->equalTo("10D"), $this->equalTo($housePossible))->willReturn($houseSuggestion);
 
         $this->card = $card;

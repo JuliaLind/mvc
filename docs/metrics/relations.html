@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-07-11 00:41:50        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-07-11 13:34:07        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -345,11 +345,12 @@
         "relations": []
     },
     {
-        "name": "\\App\\Controller\\ProjectApiController6",
+        "name": "\\App\\Controller\\ProjectUndoController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\Doctrine\\ORM\\EntityManagerInterface",
             "\\App\\Project\\Register"
         ]
@@ -365,6 +366,11 @@
         "relations": []
     },
     {
+        "name": "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\Doctrine\\ORM\\EntityManagerInterface",
         "size": 3000,
         "relations": []
@@ -375,43 +381,19 @@
         "relations": []
     },
     {
-        "name": "\\App\\Controller\\LuckyMonkey",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Controller\\ProjectController8",
+        "name": "\\App\\Controller\\ProjectApiController6",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Repository\\ScoreRepository",
-            "\\App\\Repository\\UserRepository"
+            "\\Doctrine\\ORM\\EntityManagerInterface",
+            "\\App\\Project\\Register"
         ]
     },
     {
-        "name": "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+        "name": "\\App\\Controller\\LuckyMonkey",
         "size": 3000,
         "relations": []
-    },
-    {
-        "name": "\\App\\Repository\\ScoreRepository",
-        "size": 3000,
-        "relations": [
-            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
-            "\\Doctrine\\Persistence\\ManagerRegistry",
-            "\\App\\Entity\\Score"
-        ]
-    },
-    {
-        "name": "\\App\\Repository\\UserRepository",
-        "size": 3000,
-        "relations": [
-            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
-            "\\Doctrine\\Persistence\\ManagerRegistry",
-            "\\App\\Entity\\User"
-        ]
     },
     {
         "name": "\\App\\Controller\\JsonCardController5",
@@ -512,33 +494,6 @@
         "relations": []
     },
     {
-        "name": "\\App\\Controller\\ProjectController9",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\Register",
-            "\\App\\ProjectGrid\\Grid",
-            "\\App\\Project\\Game"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectGrid\\Grid",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Project\\Game",
-        "size": 3000,
-        "relations": [
-            "\\App\\Project\\Deck",
-            "\\App\\ProjectEvaluator\\RuleEvaluator"
-        ]
-    },
-    {
         "name": "\\App\\Controller\\MdParser",
         "size": 3000,
         "relations": []
@@ -547,28 +502,6 @@
         "name": "\\Anax\\TextFilter\\TextFilter",
         "size": 3000,
         "relations": []
-    },
-    {
-        "name": "\\App\\Controller\\ProjectController7",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\Register"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\ProjectController4",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\Register"
-        ]
     },
     {
         "name": "\\App\\Controller\\MainController",
@@ -597,6 +530,28 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\ProjectSuggestionController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Doctrine\\ORM\\EntityManagerInterface",
+            "\\App\\Project\\Register"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjectPlayController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Doctrine\\ORM\\EntityManagerInterface",
+            "\\App\\Project\\Register"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\CardController2",
         "size": 3000,
         "relations": [
@@ -605,28 +560,6 @@
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\Cards\\Player",
             "\\App\\Cards\\DeckOfCards"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\ProjectController11",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\Register"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\ProjectController6",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Project\\Register"
         ]
     },
     {
@@ -674,6 +607,14 @@
         "relations": []
     },
     {
+        "name": "\\App\\Controller\\ProjectController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\Game21Controller6",
         "size": 3000,
         "relations": [
@@ -716,6 +657,35 @@
         "relations": []
     },
     {
+        "name": "\\App\\Controller\\ProjectScoresController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Repository\\ScoreRepository",
+            "\\App\\Repository\\UserRepository"
+        ]
+    },
+    {
+        "name": "\\App\\Repository\\ScoreRepository",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\Score"
+        ]
+    },
+    {
+        "name": "\\App\\Repository\\UserRepository",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\User"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\Game21Controller7",
         "size": 3000,
         "relations": [
@@ -725,14 +695,11 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\ProjectController10",
+        "name": "\\App\\Controller\\ProjectApiController3",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\Register",
             "\\App\\Repository\\TransactionRepository"
         ]
     },
@@ -743,15 +710,6 @@
             "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
             "\\Doctrine\\Persistence\\ManagerRegistry",
             "\\App\\Entity\\Transaction"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\ProjectApiController3",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Repository\\TransactionRepository"
         ]
     },
     {
@@ -770,14 +728,6 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\ProjectController5",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response"
         ]
     },
     {
@@ -837,6 +787,29 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\ProjectShopController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Doctrine\\ORM\\EntityManagerInterface",
+            "\\App\\Project\\Register",
+            "\\App\\Repository\\TransactionRepository"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjectCoinsController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Doctrine\\ORM\\EntityManagerInterface",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Project\\Register"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\JsonCardController2",
         "size": 3000,
         "relations": [
@@ -844,6 +817,33 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\Cards\\DeckOfCards"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjectInitController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Doctrine\\ORM\\EntityManagerInterface",
+            "\\App\\Project\\Register",
+            "\\App\\ProjectGrid\\Grid",
+            "\\App\\Project\\Game"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectGrid\\Grid",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\Game",
+        "size": 3000,
+        "relations": [
+            "\\App\\Project\\Deck",
+            "\\App\\ProjectEvaluator\\RuleEvaluator"
         ]
     },
     {
@@ -856,17 +856,7 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\ProjectController3",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\Doctrine\\ORM\\EntityManagerInterface"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\ProjectController1",
+        "name": "\\App\\Controller\\ProjectPeekController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
@@ -926,17 +916,6 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\ProjectController2",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\Doctrine\\ORM\\EntityManagerInterface",
-            "\\App\\Project\\Register"
-        ]
-    },
-    {
         "name": "\\App\\Controller\\ProjectApiController4",
         "size": 3000,
         "relations": [
@@ -971,6 +950,17 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\ProjectLandingController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Doctrine\\ORM\\EntityManagerInterface",
+            "\\App\\Project\\Register"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\CardController",
         "size": 3000,
         "relations": [
@@ -981,12 +971,33 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\ProjectMoveCardController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Doctrine\\ORM\\EntityManagerInterface",
+            "\\App\\Project\\Register"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\LibraryController5",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\App\\Repository\\BookRepository"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjectOneRoundController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Doctrine\\ORM\\EntityManagerInterface"
         ]
     },
     {

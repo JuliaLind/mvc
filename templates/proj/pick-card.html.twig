@@ -4,22 +4,13 @@
 
 {% block body %}
 
-{# {{ include('proj/incl/bg-cards.html.twig') }} #}
-
-
-{# Lägg till:
-vänster halva: hus
-höger halva: spelare
-mitten: suggestion-btn, move-card-btn, sneak a peak-btn
-picked card, deck#}
-
-
 <div class="outer-grid-container">
 
 {{ include('proj/incl/house-grid.html.twig') }}
 
 <div class="center-grid">
-{{ include('flash.html.twig') }}
+{# {{ include('flash.html.twig') }} #}
+<span class="instruction">Click on the card you want to move</span>
 {{ include('proj/incl/return-to-game-arr.html.twig') }}
 
 </div>
@@ -37,22 +28,6 @@ picked card, deck#}
     {% endfor %}
 </div>
 </form>
-
-{# 
-// use when player clicks on suggestion
-<div class="game-grid player-grid">
-    {% for k in 0..4 %}
-        {% for l in 0..4 %}
-            {% if player[k][l] != "" %}
-                <div class="slot grid-row-{{k}} grid-col-{{l}}"><img src="{{ asset(player[k][l]['img']) }}" alt="{{ house[k][l]['alt'] }}"></div>
-            {% elseif message != "" and slot[0] == k and slot[1] == l %}
-                <button class="slot empty-slot player-slot suggested grid-row{{k}} grid-col-{{l}}" type="submit" onClick="this.form.action='{{ path('proj-round', {row: k, col: l}) }}';">SUGGESTED</button>
-            {% else %}
-                <button class="slot empty-slot player-slot grid-row{{k}} grid-col-{{l}}" type="submit" onClick="this.form.action='{{ path('proj-round', {row: k, col: l}) }}';"></button>
-            {% endif %}
-        {% endfor %}
-    {% endfor %}
-</div> #}
 
 </div>
 

@@ -577,81 +577,88 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectAuthController"/>
       </call>
     </service>
-    <service id="App\Controller\ProjectController1" class="App\Controller\ProjectController1" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ProjectCoinsController" class="App\Controller\ProjectCoinsController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController1"/>
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectCoinsController"/>
       </call>
     </service>
-    <service id="App\Controller\ProjectController2" class="App\Controller\ProjectController2" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ProjectController" class="App\Controller\ProjectController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController2"/>
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController"/>
       </call>
     </service>
-    <service id="App\Controller\ProjectController3" class="App\Controller\ProjectController3" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ProjectInitController" class="App\Controller\ProjectInitController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController3"/>
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectInitController"/>
       </call>
     </service>
-    <service id="App\Controller\ProjectController4" class="App\Controller\ProjectController4" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ProjectLandingController" class="App\Controller\ProjectLandingController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController4"/>
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectLandingController"/>
       </call>
     </service>
-    <service id="App\Controller\ProjectController5" class="App\Controller\ProjectController5" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ProjectMoveCardController" class="App\Controller\ProjectMoveCardController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController5"/>
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectMoveCardController"/>
       </call>
     </service>
-    <service id="App\Controller\ProjectController6" class="App\Controller\ProjectController6" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ProjectOneRoundController" class="App\Controller\ProjectOneRoundController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController6"/>
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectOneRoundController"/>
       </call>
     </service>
-    <service id="App\Controller\ProjectController7" class="App\Controller\ProjectController7" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ProjectPeekController" class="App\Controller\ProjectPeekController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController7"/>
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectPeekController"/>
       </call>
     </service>
-    <service id="App\Controller\ProjectController8" class="App\Controller\ProjectController8" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController8"/>
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectPlayController"/>
       </call>
     </service>
-    <service id="App\Controller\ProjectController9" class="App\Controller\ProjectController9" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ProjectScoresController" class="App\Controller\ProjectScoresController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController9"/>
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectScoresController"/>
       </call>
     </service>
-    <service id="App\Controller\ProjectController10" class="App\Controller\ProjectController10" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ProjectShopController" class="App\Controller\ProjectShopController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController10"/>
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectShopController"/>
       </call>
     </service>
-    <service id="App\Controller\ProjectController11" class="App\Controller\ProjectController11" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ProjectSuggestionController" class="App\Controller\ProjectSuggestionController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectController11"/>
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectSuggestionController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ProjectUndoController" class="App\Controller\ProjectUndoController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectUndoController"/>
       </call>
     </service>
     <service id="App\Controller\Quote" class="App\Controller\Quote" autowire="true" autoconfigure="true"/>
@@ -2606,7 +2613,7 @@
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" type="service_closure" id="webpack_encore.entrypoint_lookup_collection" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader.filesystem" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
-        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.3nSh0In" on-invalid="ignore_uninitialized"/>
+        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.X14i1ad" on-invalid="ignore_uninitialized"/>
         <argument key="doctrine.id_generator_locator" type="service_closure" id=".service_locator.KLVvNIq" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
         <argument key="Psr\Log\LoggerInterface $requestLogger" type="service_closure" id="monolog.logger.request" on-invalid="ignore_uninitialized"/>
@@ -7084,39 +7091,42 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectAuthController" class="App\Controller\ProjectAuthController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectAuthController" class="App\Controller\ProjectAuthController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectAuthController" class="App\Controller\ProjectAuthController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController1" class="App\Controller\ProjectController1" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController1" class="App\Controller\ProjectController1" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ProjectController1" class="App\Controller\ProjectController1" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController2" class="App\Controller\ProjectController2" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController2" class="App\Controller\ProjectController2" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ProjectController2" class="App\Controller\ProjectController2" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController3" class="App\Controller\ProjectController3" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController3" class="App\Controller\ProjectController3" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ProjectController3" class="App\Controller\ProjectController3" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController4" class="App\Controller\ProjectController4" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController4" class="App\Controller\ProjectController4" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ProjectController4" class="App\Controller\ProjectController4" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController5" class="App\Controller\ProjectController5" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController5" class="App\Controller\ProjectController5" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ProjectController5" class="App\Controller\ProjectController5" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController6" class="App\Controller\ProjectController6" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController6" class="App\Controller\ProjectController6" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ProjectController6" class="App\Controller\ProjectController6" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController7" class="App\Controller\ProjectController7" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController7" class="App\Controller\ProjectController7" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ProjectController7" class="App\Controller\ProjectController7" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController8" class="App\Controller\ProjectController8" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController8" class="App\Controller\ProjectController8" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ProjectController8" class="App\Controller\ProjectController8" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController9" class="App\Controller\ProjectController9" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController9" class="App\Controller\ProjectController9" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ProjectController9" class="App\Controller\ProjectController9" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController10" class="App\Controller\ProjectController10" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController10" class="App\Controller\ProjectController10" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ProjectController10" class="App\Controller\ProjectController10" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController11" class="App\Controller\ProjectController11" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController11" class="App\Controller\ProjectController11" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ProjectController11" class="App\Controller\ProjectController11" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectCoinsController" class="App\Controller\ProjectCoinsController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectCoinsController" class="App\Controller\ProjectCoinsController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectCoinsController" class="App\Controller\ProjectCoinsController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController" class="App\Controller\ProjectController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController" class="App\Controller\ProjectController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectController" class="App\Controller\ProjectController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectInitController" class="App\Controller\ProjectInitController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectInitController" class="App\Controller\ProjectInitController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectInitController" class="App\Controller\ProjectInitController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectLandingController" class="App\Controller\ProjectLandingController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectLandingController" class="App\Controller\ProjectLandingController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectLandingController" class="App\Controller\ProjectLandingController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectMoveCardController" class="App\Controller\ProjectMoveCardController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectMoveCardController" class="App\Controller\ProjectMoveCardController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectMoveCardController" class="App\Controller\ProjectMoveCardController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectOneRoundController" class="App\Controller\ProjectOneRoundController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectOneRoundController" class="App\Controller\ProjectOneRoundController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectOneRoundController" class="App\Controller\ProjectOneRoundController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectPeekController" class="App\Controller\ProjectPeekController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectPeekController" class="App\Controller\ProjectPeekController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectPeekController" class="App\Controller\ProjectPeekController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectScoresController" class="App\Controller\ProjectScoresController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectScoresController" class="App\Controller\ProjectScoresController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectScoresController" class="App\Controller\ProjectScoresController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectShopController" class="App\Controller\ProjectShopController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectShopController" class="App\Controller\ProjectShopController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectShopController" class="App\Controller\ProjectShopController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectSuggestionController" class="App\Controller\ProjectSuggestionController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectSuggestionController" class="App\Controller\ProjectSuggestionController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectSuggestionController" class="App\Controller\ProjectSuggestionController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectUndoController" class="App\Controller\ProjectUndoController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectUndoController" class="App\Controller\ProjectUndoController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectUndoController" class="App\Controller\ProjectUndoController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\BookFixture" class="App\DataFixtures\BookFixture" autowire="true" abstract="true"/>
@@ -7272,7 +7282,7 @@
         <argument key="repo" type="service_closure" id="App\Repository\TransactionRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.3nSh0In" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.X14i1ad" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CardController2::draw" type="service_closure" id=".service_locator.RnGvXe2"/>
@@ -7310,20 +7320,20 @@
         <argument key="App\Controller\ProjectApiController8::apiResults" type="service_closure" id=".service_locator.XXU_NF2"/>
         <argument key="App\Controller\ProjectAuthController::projLogin" type="service_closure" id=".service_locator.J..d_da"/>
         <argument key="App\Controller\ProjectAuthController::projRegister" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController10::projShop" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController10::projTrans" type="service_closure" id=".service_locator.OsH1muE"/>
-        <argument key="App\Controller\ProjectController11::projPlay" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController1::projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController2::purchasePeekCheat" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController3::projRound" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController4::setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController6::projPurchase" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController6::selectAmount" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController7::showSuggestion" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController7::undo" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController8::projLeaderboard" type="service_closure" id=".service_locator.j7c.8f."/>
-        <argument key="App\Controller\ProjectController8::projScoresSingle" type="service_closure" id=".service_locator.i.nXIC_"/>
-        <argument key="App\Controller\ProjectController9::projInit" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectCoinsController::projPurchase" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectCoinsController::selectAmount" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectInitController::projInit" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectLandingController::projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectMoveCardController::setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectOneRoundController::projRound" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectPeekController::purchasePeekCheat" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectPlayController::projPlay" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectScoresController::projLeaderboard" type="service_closure" id=".service_locator.j7c.8f."/>
+        <argument key="App\Controller\ProjectScoresController::projScoresSingle" type="service_closure" id=".service_locator.i.nXIC_"/>
+        <argument key="App\Controller\ProjectShopController::projShop" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectShopController::projTrans" type="service_closure" id=".service_locator.OsH1muE"/>
+        <argument key="App\Controller\ProjectSuggestionController::projPurchaseSuggest" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectUndoController::undo" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -7363,20 +7373,20 @@
         <argument key="App\Controller\ProjectApiController8:apiResults" type="service_closure" id=".service_locator.XXU_NF2"/>
         <argument key="App\Controller\ProjectAuthController:projLogin" type="service_closure" id=".service_locator.J..d_da"/>
         <argument key="App\Controller\ProjectAuthController:projRegister" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController10:projShop" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController10:projTrans" type="service_closure" id=".service_locator.OsH1muE"/>
-        <argument key="App\Controller\ProjectController11:projPlay" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController1:projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController2:purchasePeekCheat" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController3:projRound" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController4:setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController6:projPurchase" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController6:selectAmount" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController7:showSuggestion" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController7:undo" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectController8:projLeaderboard" type="service_closure" id=".service_locator.j7c.8f."/>
-        <argument key="App\Controller\ProjectController8:projScoresSingle" type="service_closure" id=".service_locator.i.nXIC_"/>
-        <argument key="App\Controller\ProjectController9:projInit" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectCoinsController:projPurchase" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectCoinsController:selectAmount" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectInitController:projInit" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectLandingController:projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectMoveCardController:setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectOneRoundController:projRound" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectPeekController:purchasePeekCheat" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectPlayController:projPlay" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectScoresController:projLeaderboard" type="service_closure" id=".service_locator.j7c.8f."/>
+        <argument key="App\Controller\ProjectScoresController:projScoresSingle" type="service_closure" id=".service_locator.i.nXIC_"/>
+        <argument key="App\Controller\ProjectShopController:projShop" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectShopController:projTrans" type="service_closure" id=".service_locator.OsH1muE"/>
+        <argument key="App\Controller\ProjectSuggestionController:projPurchaseSuggest" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectUndoController:undo" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
       </argument>
@@ -7983,69 +7993,75 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
-    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController1" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ProjectController1"/>
-      <argument>App\Controller\ProjectController1</argument>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectCoinsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectCoinsController"/>
+      <argument>App\Controller\ProjectCoinsController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
-    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController2" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ProjectController2"/>
-      <argument>App\Controller\ProjectController2</argument>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectController"/>
+      <argument>App\Controller\ProjectController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
-    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController3" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ProjectController3"/>
-      <argument>App\Controller\ProjectController3</argument>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectInitController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectInitController"/>
+      <argument>App\Controller\ProjectInitController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
-    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController4" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ProjectController4"/>
-      <argument>App\Controller\ProjectController4</argument>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectLandingController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectLandingController"/>
+      <argument>App\Controller\ProjectLandingController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
-    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController5" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ProjectController5"/>
-      <argument>App\Controller\ProjectController5</argument>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectMoveCardController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectMoveCardController"/>
+      <argument>App\Controller\ProjectMoveCardController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
-    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController6" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ProjectController6"/>
-      <argument>App\Controller\ProjectController6</argument>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectOneRoundController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectOneRoundController"/>
+      <argument>App\Controller\ProjectOneRoundController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
-    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController7" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ProjectController7"/>
-      <argument>App\Controller\ProjectController7</argument>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectPeekController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectPeekController"/>
+      <argument>App\Controller\ProjectPeekController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
-    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController8" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ProjectController8"/>
-      <argument>App\Controller\ProjectController8</argument>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectPlayController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectPlayController"/>
+      <argument>App\Controller\ProjectPlayController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
-    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController9" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ProjectController9"/>
-      <argument>App\Controller\ProjectController9</argument>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectScoresController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectScoresController"/>
+      <argument>App\Controller\ProjectScoresController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
-    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController10" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ProjectController10"/>
-      <argument>App\Controller\ProjectController10</argument>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectShopController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectShopController"/>
+      <argument>App\Controller\ProjectShopController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
-    <service id=".service_locator.jIxfAsi.App\Controller\ProjectController11" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ProjectController11"/>
-      <argument>App\Controller\ProjectController11</argument>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectSuggestionController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectSuggestionController"/>
+      <argument>App\Controller\ProjectSuggestionController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectUndoController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectUndoController"/>
+      <argument>App\Controller\ProjectUndoController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
@@ -8232,12 +8248,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.3nSh0In"/>
+      <argument type="service" id=".service_locator.X14i1ad"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.3nSh0In"/>
+      <argument type="service" id=".service_locator.X14i1ad"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8954,7 +8970,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.3nSh0In"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.X14i1ad"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -8977,7 +8993,7 @@
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.ewaBO.S" alias=".service_locator.XXU_NF2"/>
     <service id=".service_locator.hjZjVN0" alias=".service_locator.OsH1muE"/>
-    <service id=".service_locator.O3Pxth7" alias=".service_locator.3nSh0In"/>
+    <service id=".service_locator.NcWmQWF" alias=".service_locator.X14i1ad"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.fTeS4zl" alias=".service_locator.iwVv_YN"/>

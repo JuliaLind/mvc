@@ -45,24 +45,23 @@ return [
         '/proj/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\ProjectAuthController::projRegister'], null, ['POST' => 0], null, false, false, null]],
         '/proj/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\ProjectAuthController::projLogin'], null, ['POST' => 0], null, false, false, null]],
         '/proj/logout' => [[['_route' => 'logout', '_controller' => 'App\\Controller\\ProjectAuthController::projLogout'], null, ['GET' => 0], null, false, false, null]],
-        '/proj' => [[['_route' => 'proj', '_controller' => 'App\\Controller\\ProjectController1::projLanding'], null, null, null, false, false, null]],
-        '/proj/shop' => [[['_route' => 'shop', '_controller' => 'App\\Controller\\ProjectController10::projShop'], null, null, null, false, false, null]],
-        '/proj/transactions' => [[['_route' => 'proj-trans', '_controller' => 'App\\Controller\\ProjectController10::projTrans'], null, null, null, false, false, null]],
-        '/proj/play' => [[['_route' => 'proj-play', '_controller' => 'App\\Controller\\ProjectController11::projPlay'], null, null, null, false, false, null]],
-        '/proj/purchase-peek-cheat' => [[['_route' => 'purchase-peek', '_controller' => 'App\\Controller\\ProjectController2::purchasePeekCheat'], null, ['POST' => 0], null, false, false, null]],
-        '/proj/deck-peek' => [[['_route' => 'deck-peek', '_controller' => 'App\\Controller\\ProjectController2::deckPeek'], null, ['GET' => 0], null, false, false, null]],
-        '/proj/unset-suggestion' => [[['_route' => 'proj-unset-suggest', '_controller' => 'App\\Controller\\ProjectController3::projUnsetSuggest'], null, ['POST' => 0], null, false, false, null]],
-        '/proj/api' => [[['_route' => 'proj-api', '_controller' => 'App\\Controller\\ProjectController5::projApiLanding'], null, null, null, false, false, null]],
-        '/proj/about' => [[['_route' => 'proj-about', '_controller' => 'App\\Controller\\ProjectController5::projAbout'], null, null, null, false, false, null]],
-        '/proj/rules' => [[['_route' => 'proj-rules', '_controller' => 'App\\Controller\\ProjectController5::projRules'], null, null, null, false, false, null]],
-        '/proj/register-form' => [[['_route' => 'register-form', '_controller' => 'App\\Controller\\ProjectController5::projRegisterForm'], null, null, null, false, false, null]],
-        '/proj/select-amount' => [[['_route' => 'select-amount', '_controller' => 'App\\Controller\\ProjectController6::selectAmount'], null, null, null, false, false, null]],
-        '/proj/undo' => [[['_route' => 'undo', '_controller' => 'App\\Controller\\ProjectController7::undo'], null, ['POST' => 0], null, false, false, null]],
-        '/proj/purchase-suggestion' => [[['_route' => 'purchase-suggestion', '_controller' => 'App\\Controller\\ProjectController7::showSuggestion'], null, ['POST' => 0], null, false, false, null]],
-        '/proj/show-suggestion' => [[['_route' => 'show-suggestion', '_controller' => 'App\\Controller\\ProjectController7::projShowSuggest'], null, null, null, false, false, null]],
-        '/proj/scores-single' => [[['_route' => 'proj-scores-single', '_controller' => 'App\\Controller\\ProjectController8::projScoresSingle'], null, null, null, false, false, null]],
-        '/proj/leaderboard' => [[['_route' => 'proj-leaderboard', '_controller' => 'App\\Controller\\ProjectController8::projLeaderboard'], null, null, null, false, false, null]],
-        '/proj/init' => [[['_route' => 'proj-init', '_controller' => 'App\\Controller\\ProjectController9::projInit'], null, null, null, false, false, null]],
+        '/proj/select-amount' => [[['_route' => 'select-amount', '_controller' => 'App\\Controller\\ProjectCoinsController::selectAmount'], null, null, null, false, false, null]],
+        '/proj/api' => [[['_route' => 'proj-api', '_controller' => 'App\\Controller\\ProjectController::projApiLanding'], null, null, null, false, false, null]],
+        '/proj/about' => [[['_route' => 'proj-about', '_controller' => 'App\\Controller\\ProjectController::projAbout'], null, null, null, false, false, null]],
+        '/proj/rules' => [[['_route' => 'proj-rules', '_controller' => 'App\\Controller\\ProjectController::projRules'], null, null, null, false, false, null]],
+        '/proj/register-form' => [[['_route' => 'register-form', '_controller' => 'App\\Controller\\ProjectController::projRegisterForm'], null, null, null, false, false, null]],
+        '/proj/init' => [[['_route' => 'proj-init', '_controller' => 'App\\Controller\\ProjectInitController::projInit'], null, null, null, false, false, null]],
+        '/proj' => [[['_route' => 'proj', '_controller' => 'App\\Controller\\ProjectLandingController::projLanding'], null, null, null, false, false, null]],
+        '/proj/purchase-peek-cheat' => [[['_route' => 'purchase-peek', '_controller' => 'App\\Controller\\ProjectPeekController::purchasePeekCheat'], null, ['POST' => 0], null, false, false, null]],
+        '/proj/deck-peek' => [[['_route' => 'deck-peek', '_controller' => 'App\\Controller\\ProjectPeekController::deckPeek'], null, ['GET' => 0], null, false, false, null]],
+        '/proj/play' => [[['_route' => 'proj-play', '_controller' => 'App\\Controller\\ProjectPlayController::projPlay'], null, null, null, false, false, null]],
+        '/proj/scores-single' => [[['_route' => 'proj-scores-single', '_controller' => 'App\\Controller\\ProjectScoresController::projScoresSingle'], null, null, null, false, false, null]],
+        '/proj/leaderboard' => [[['_route' => 'proj-leaderboard', '_controller' => 'App\\Controller\\ProjectScoresController::projLeaderboard'], null, null, null, false, false, null]],
+        '/proj/shop' => [[['_route' => 'shop', '_controller' => 'App\\Controller\\ProjectShopController::projShop'], null, null, null, false, false, null]],
+        '/proj/transactions' => [[['_route' => 'proj-trans', '_controller' => 'App\\Controller\\ProjectShopController::projTrans'], null, null, null, false, false, null]],
+        '/proj/purchase-suggestion' => [[['_route' => 'purchase-suggestion', '_controller' => 'App\\Controller\\ProjectSuggestionController::projPurchaseSuggest'], null, ['POST' => 0], null, false, false, null]],
+        '/proj/show-suggestion' => [[['_route' => 'show-suggestion', '_controller' => 'App\\Controller\\ProjectSuggestionController::projShowSuggest'], null, null, null, false, false, null]],
+        '/proj/undo' => [[['_route' => 'undo', '_controller' => 'App\\Controller\\ProjectUndoController::undo'], null, ['POST' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -91,13 +90,13 @@ return [
                         .'|user/([^/]++)(*:311)'
                         .'|place\\-card/(\\d+)/(\\d+)(*:342)'
                     .')'
-                    .'|one\\-round/(\\d+)/(\\d+)(*:373)'
-                    .'|set\\-fromslot/(\\d+)/(\\d+)(*:406)'
-                    .'|move\\-card/(\\d+)/(\\d+)(*:436)'
                     .'|p(?'
-                        .'|ick\\-card/(\\d+)(*:463)'
-                        .'|urchase/(\\d+)(*:484)'
+                        .'|urchase/(\\d+)(*:368)'
+                        .'|ick\\-card/(\\d+)(*:391)'
                     .')'
+                    .'|set\\-fromslot/(\\d+)/(\\d+)(*:425)'
+                    .'|move\\-card/(\\d+)/(\\d+)(*:455)'
+                    .'|one\\-round/(\\d+)/(\\d+)(*:485)'
                 .')'
             .')/?$}sDu',
     ],
@@ -114,12 +113,12 @@ return [
         273 => [[['_route' => 'book_delete_by_isbn', '_controller' => 'App\\Controller\\LibraryController5::deleteBookByIsbn'], ['isbn'], ['POST' => 0], null, false, true, null]],
         311 => [[['_route' => 'api-user', '_controller' => 'App\\Controller\\ProjectApiController2::apiUser'], ['email'], ['GET' => 0], null, false, true, null]],
         342 => [[['_route' => 'api-place-card', '_controller' => 'App\\Controller\\ProjectApiController4::apiPlaceCard'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
-        373 => [[['_route' => 'proj-round', '_controller' => 'App\\Controller\\ProjectController3::projRound'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
-        406 => [[['_route' => 'set-fromslot', '_controller' => 'App\\Controller\\ProjectController4::setFromSlot'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
-        436 => [[['_route' => 'move-card', '_controller' => 'App\\Controller\\ProjectController4::moveCard'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
-        463 => [[['_route' => 'pick-card', '_controller' => 'App\\Controller\\ProjectController4::pickCard'], ['balance'], null, null, false, true, null]],
-        484 => [
-            [['_route' => 'purchase', '_controller' => 'App\\Controller\\ProjectController6::projPurchase'], ['coins'], ['POST' => 0], null, false, true, null],
+        368 => [[['_route' => 'purchase', '_controller' => 'App\\Controller\\ProjectCoinsController::projPurchase'], ['coins'], ['POST' => 0], null, false, true, null]],
+        391 => [[['_route' => 'pick-card', '_controller' => 'App\\Controller\\ProjectMoveCardController::pickCard'], ['balance'], null, null, false, true, null]],
+        425 => [[['_route' => 'set-fromslot', '_controller' => 'App\\Controller\\ProjectMoveCardController::setFromSlot'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
+        455 => [[['_route' => 'move-card', '_controller' => 'App\\Controller\\ProjectMoveCardController::moveCard'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
+        485 => [
+            [['_route' => 'proj-round', '_controller' => 'App\\Controller\\ProjectOneRoundController::projRound'], ['row', 'col'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
