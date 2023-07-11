@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Test cases for class Game.
  */
-class Game21EasyTest extends TestCase
+class Game21HardTest extends TestCase
 {
     /**
      * Construct object and check that properties have
@@ -16,8 +16,8 @@ class Game21EasyTest extends TestCase
      */
     public function testCreateObject(): void
     {
-        $game = new Game21Easy();
-        $this->assertInstanceOf("\App\Game\Game21Easy", $game);
+        $game = new Game21Hard();
+        $this->assertInstanceOf("\App\Game\Game21Hard", $game);
 
         $res = $game->getGameStatus();
         $exp = [
@@ -28,7 +28,7 @@ class Game21EasyTest extends TestCase
             'currentRound'=> 0,
             'moneyPot' => 0,
             'roundOver' => false,
-            'level' => 'easy',
+            'level' => 'hard',
         ];
         $this->assertEquals($exp, $res);
 
