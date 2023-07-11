@@ -5,18 +5,17 @@
 {% block body %}
 
 <div class="outer-grid-container">
-
+<h2 class="grid-col-0 grid-row-0">House, prel score: {{results['house']['total']}}</h2>
 {{ include('proj/incl/house-grid.html.twig') }}
 
 <div class="center-grid">
-{# {{ include('flash.html.twig') }} #}
+
 <span class="instruction">Click on the card you want to move</span>
 {{ include('proj/incl/return-to-game-arr.html.twig') }}
 
 </div>
-<h2 class="grid-col-2 grid-row-0">You</h2>
-<form id="grid-form" method="post" action="">
-<div class="game-grid player-grid">
+<h2 class="grid-col-2 grid-row-0">You, prel score: {{results['player']['total']}}</h2>
+<form class="game-grid results player-grid" id="grid-form" method="post" action="">
     {% for k in 0..4 %}
         {% for l in 0..4 %}
             {% if player[k][l]['alt'] != "" %}
@@ -26,7 +25,7 @@
             {% endif %}
         {% endfor %}
     {% endfor %}
-</div>
+    {{ include('proj/incl/player-points.html.twig') }}
 </form>
 
 </div>

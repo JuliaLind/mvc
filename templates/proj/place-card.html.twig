@@ -6,17 +6,14 @@
 
 
 <div class="outer-grid-container">
-
+<h2 class="grid-col-0 grid-row-0">House, prel score: {{results['house']['total']}}</h2>
 {{ include('proj/incl/house-grid.html.twig') }}
 
 <div class="center-grid">
-{# {{ include('flash.html.twig') }} #}
 <span class="instruction">Click on an empty slot to which you want to move the selected card</span>
-{# {{ include('proj/incl/new-game-btn.html.twig') }} #}
 </div>
-<h2 class="grid-col-2 grid-row-0">You</h2>
-<form id="grid-form" method="post" action="">
-<div class="game-grid player-grid">
+<h2 class="grid-col-2 grid-row-0">You, prel score: {{results['player']['total']}}</h2>
+<form class="game-grid results player-grid" id="grid-form" method="post" action="">
     {% for k in 0..4 %}
         {% for l in 0..4 %}
             {% if fromSlot[0] == k and fromSlot[1] == l %}
@@ -28,25 +25,8 @@
             {% endif %}
         {% endfor %}
     {% endfor %}
-</div>
+    {{ include('proj/incl/player-points.html.twig') }}
 </form>
-
-{# 
-// use when player clicks on suggestion
-<div class="game-grid player-grid">
-    {% for k in 0..4 %}
-        {% for l in 0..4 %}
-            {% if player[k][l] != "" %}
-                <div class="slot grid-row-{{k}} grid-col-{{l}}"><img src="{{ asset(player[k][l]['img']) }}" alt="{{ house[k][l]['alt'] }}"></div>
-            {% elseif message != "" and slot[0] == k and slot[1] == l %}
-                <button class="slot empty-slot player-slot suggested grid-row{{k}} grid-col-{{l}}" type="submit" onClick="this.form.action='{{ path('proj-round', {row: k, col: l}) }}';">SUGGESTED</button>
-            {% else %}
-                <button class="slot empty-slot player-slot grid-row{{k}} grid-col-{{l}}" type="submit" onClick="this.form.action='{{ path('proj-round', {row: k, col: l}) }}';"></button>
-            {% endif %}
-        {% endfor %}
-    {% endfor %}
-</div> #}
-
 </div>
 
 

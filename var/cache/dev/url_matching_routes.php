@@ -31,12 +31,12 @@ return [
         '/api/quote' => [[['_route' => 'quote', '_controller' => 'App\\Controller\\JsonController2::jsonQuote'], null, null, null, false, false, null]],
         '/api/game' => [[['_route' => 'jsonGame', '_controller' => 'App\\Controller\\JsonGame21Controller::jsonGame'], null, ['GET' => 0], null, false, false, null]],
         '/api/library/books' => [[['_route' => 'books_json', '_controller' => 'App\\Controller\\JsonLibraryController::showAllBooks'], null, null, null, false, false, null]],
-        '/library/create_new' => [[['_route' => 'book_create', '_controller' => 'App\\Controller\\LibraryController::createBook'], null, ['POST' => 0], null, false, false, null]],
-        '/library/reset' => [[['_route' => 'reset_library', '_controller' => 'App\\Controller\\LibraryController3::resetBook'], null, ['POST' => 0], null, false, false, null]],
-        '/library/update_one' => [[['_route' => 'book_update', '_controller' => 'App\\Controller\\LibraryController4::updateBook'], null, ['POST' => 0], null, false, false, null]],
-        '/library/read_many' => [[['_route' => 'read_many', '_controller' => 'App\\Controller\\LibraryController5::showAllBooks'], null, null, null, false, false, null]],
-        '/library' => [[['_route' => 'library', '_controller' => 'App\\Controller\\LibraryController6::index'], null, null, null, false, false, null]],
-        '/library/create' => [[['_route' => 'create_form', '_controller' => 'App\\Controller\\LibraryController7::createBookForm'], null, null, null, false, false, null]],
+        '/library/read_many' => [[['_route' => 'read_many', '_controller' => 'App\\Controller\\LibraryController::showAllBooks'], null, null, null, false, false, null]],
+        '/library/create_new' => [[['_route' => 'book_create', '_controller' => 'App\\Controller\\LibraryCreateNewController::createBook'], null, ['POST' => 0], null, false, false, null]],
+        '/library/create' => [[['_route' => 'create_form', '_controller' => 'App\\Controller\\LibraryCreateNewController2::createBookForm'], null, null, null, false, false, null]],
+        '/library' => [[['_route' => 'library', '_controller' => 'App\\Controller\\LibraryLandingController::index'], null, null, null, false, false, null]],
+        '/library/reset' => [[['_route' => 'reset_library', '_controller' => 'App\\Controller\\LibraryResetController::resetBook'], null, ['POST' => 0], null, false, false, null]],
+        '/library/update_one' => [[['_route' => 'book_update', '_controller' => 'App\\Controller\\LibraryUpdateController2::updateBook'], null, ['POST' => 0], null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\MainController::home'], null, null, null, false, false, null]],
         '/about' => [[['_route' => 'about', '_controller' => 'App\\Controller\\MainController::about'], null, null, null, false, false, null]],
         '/report' => [[['_route' => 'report', '_controller' => 'App\\Controller\\MainController::report'], null, null, null, false, false, null]],
@@ -54,6 +54,7 @@ return [
         '/proj/select-amount' => [[['_route' => 'select-amount', '_controller' => 'App\\Controller\\ProjectCoinsController::selectAmount'], null, null, null, false, false, null]],
         '/proj/api' => [[['_route' => 'proj-api', '_controller' => 'App\\Controller\\ProjectController::projApiLanding'], null, null, null, false, false, null]],
         '/proj/about' => [[['_route' => 'proj-about', '_controller' => 'App\\Controller\\ProjectController::projAbout'], null, null, null, false, false, null]],
+        '/proj/about/database' => [[['_route' => 'proj-db', '_controller' => 'App\\Controller\\ProjectController::projDb'], null, null, null, false, false, null]],
         '/proj/rules' => [[['_route' => 'proj-rules', '_controller' => 'App\\Controller\\ProjectController::projRules'], null, null, null, false, false, null]],
         '/proj/register-form' => [[['_route' => 'register-form', '_controller' => 'App\\Controller\\ProjectController::projRegisterForm'], null, null, null, false, false, null]],
         '/proj/init' => [[['_route' => 'proj-init', '_controller' => 'App\\Controller\\ProjectInitController::projInit'], null, null, null, false, false, null]],
@@ -61,11 +62,12 @@ return [
         '/proj/purchase-peek-cheat' => [[['_route' => 'purchase-peek', '_controller' => 'App\\Controller\\ProjectPeekController::purchasePeekCheat'], null, ['POST' => 0], null, false, false, null]],
         '/proj/deck-peek' => [[['_route' => 'deck-peek', '_controller' => 'App\\Controller\\ProjectPeekController::deckPeek'], null, ['GET' => 0], null, false, false, null]],
         '/proj/play' => [[['_route' => 'proj-play', '_controller' => 'App\\Controller\\ProjectPlayController::projPlay'], null, null, null, false, false, null]],
+        '/proj/reset' => [[['_route' => 'reset_project', '_controller' => 'App\\Controller\\ProjectResetController::resetProj'], null, ['POST' => 0], null, false, false, null]],
         '/proj/scores-single' => [[['_route' => 'proj-scores-single', '_controller' => 'App\\Controller\\ProjectScoresController::projScoresSingle'], null, null, null, false, false, null]],
         '/proj/leaderboard' => [[['_route' => 'proj-leaderboard', '_controller' => 'App\\Controller\\ProjectScoresController::projLeaderboard'], null, null, null, false, false, null]],
         '/proj/shop' => [[['_route' => 'shop', '_controller' => 'App\\Controller\\ProjectShopController::projShop'], null, null, null, false, false, null]],
         '/proj/transactions' => [[['_route' => 'proj-trans', '_controller' => 'App\\Controller\\ProjectShopController::projTrans'], null, null, null, false, false, null]],
-        '/proj/purchase-suggestion' => [[['_route' => 'purchase-suggestion', '_controller' => 'App\\Controller\\ProjectSuggestionController::showSuggestion'], null, ['POST' => 0], null, false, false, null]],
+        '/proj/purchase-suggestion' => [[['_route' => 'purchase-suggestion', '_controller' => 'App\\Controller\\ProjectSuggestionController::projPurchaseSuggest'], null, ['POST' => 0], null, false, false, null]],
         '/proj/show-suggestion' => [[['_route' => 'show-suggestion', '_controller' => 'App\\Controller\\ProjectSuggestionController::projShowSuggest'], null, null, null, false, false, null]],
         '/proj/undo' => [[['_route' => 'undo', '_controller' => 'App\\Controller\\ProjectUndoController::undo'], null, ['POST' => 0], null, false, false, null]],
     ],
@@ -102,9 +104,9 @@ return [
                     .'|library/book/([^/]++)(*:354)'
                 .')'
                 .'|/library/(?'
-                    .'|update/([^/]++)(*:390)'
-                    .'|read_one/([^/]++)(*:415)'
-                    .'|delete/([^/]++)(*:438)'
+                    .'|read_one/([^/]++)(*:392)'
+                    .'|delete/([^/]++)(*:415)'
+                    .'|update/([^/]++)(*:438)'
                 .')'
                 .'|/proj/(?'
                     .'|api/(?'
@@ -136,9 +138,9 @@ return [
         307 => [[['_route' => 'jsonDeal', '_controller' => 'App\\Controller\\JsonCardController::jsonDeal'], ['players', 'cards'], ['POST' => 0], null, false, true, null]],
         324 => [[['_route' => 'jsonDrawMany', '_controller' => 'App\\Controller\\JsonCardController3::jsonDrawMany'], ['number'], ['POST' => 0], null, false, true, null]],
         354 => [[['_route' => 'single_book_json', '_controller' => 'App\\Controller\\JsonLibraryController::showABookByIsbn'], ['isbn'], null, null, false, true, null]],
-        390 => [[['_route' => 'update_form', '_controller' => 'App\\Controller\\LibraryController2::updateBookForm'], ['isbn'], null, null, false, true, null]],
-        415 => [[['_route' => 'read_one', '_controller' => 'App\\Controller\\LibraryController5::showBookByIsbn'], ['isbn'], null, null, false, true, null]],
-        438 => [[['_route' => 'book_delete_by_isbn', '_controller' => 'App\\Controller\\LibraryController5::deleteBookByIsbn'], ['isbn'], ['POST' => 0], null, false, true, null]],
+        392 => [[['_route' => 'read_one', '_controller' => 'App\\Controller\\LibraryController::showBookByIsbn'], ['isbn'], null, null, false, true, null]],
+        415 => [[['_route' => 'book_delete_by_isbn', '_controller' => 'App\\Controller\\LibraryController::deleteBookByIsbn'], ['isbn'], ['POST' => 0], null, false, true, null]],
+        438 => [[['_route' => 'update_form', '_controller' => 'App\\Controller\\LibraryUpdateController::updateBookForm'], ['isbn'], null, null, false, true, null]],
         476 => [[['_route' => 'api-user', '_controller' => 'App\\Controller\\ProjectApiController2::apiUser'], ['email'], ['GET' => 0], null, false, true, null]],
         507 => [[['_route' => 'api-place-card', '_controller' => 'App\\Controller\\ProjectApiController4::apiPlaceCard'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
         533 => [[['_route' => 'purchase', '_controller' => 'App\\Controller\\ProjectCoinsController::projPurchase'], ['coins'], ['POST' => 0], null, false, true, null]],

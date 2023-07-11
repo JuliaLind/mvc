@@ -38,7 +38,16 @@ class ProjectController extends AbstractController
         $data = [
             'url' => "about"
         ];
-        return $this->render('proj/api.html.twig', $data);
+        return $this->render('proj/about.html.twig', $data);
+    }
+
+    #[Route("/proj/about/database", name: "proj-db")]
+    public function projDb(): Response
+    {
+        $data = [
+            'url' => "about"
+        ];
+        return $this->render('proj/database.html.twig', $data);
     }
 
     #[Route("/proj/rules", name: "proj-rules")]

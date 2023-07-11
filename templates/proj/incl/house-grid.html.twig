@@ -1,12 +1,26 @@
-<h2 class="grid-col-0 grid-row-0">House</h2>
-<div class="game-grid house-grid">
-    {% for i in 0..4 %}
-        {% for j in 0..4 %}
-            {% if house[i][j] != "" %}
-                <div class="slot grid-row-{{i}} grid-col-{{j}}"><img src="{{ asset(house[i][j]['img']) }}" alt="{{ house[i][j]['alt'] }}"></div>
-            {% else %}
-                <div class="slot grid-row{{i}} grid-col-{{j}}" type="submit"></div>
-            {% endif %}
-        {% endfor %}
+<div class="game-grid results house-grid">
+{% for i in 0..4 %}
+    {% for j in 0..4 %}
+        <div class="slot grid-row-{{i}} grid-col-{{j}}"><img src="{{ asset(house[i][j]['img']) }}" alt="{{ house[i][j]['alt'] }}"></div>
     {% endfor %}
+{% endfor %}
+{% for row in 0..4 %}
+    <div class="result row-res grid-row-{{row}}">
+    <span class="rule-name">{{ results['house']['rows'][row]['name'] }}:
+    </span>
+    <span class="rule-points">
+    {{ results['house']['rows'][row]['points'] }}
+    </span>
+    </div>
+{% endfor %}
+{% for col in 0..4 %}
+    <div class="result col-res grid-col-{{col}}">
+    <span class="rule-name">{{results['house']['cols'][col]['name']}}:
+    </span>
+    <span class="rule-points"> 
+    {{results['house']['cols'][col]['points']}}
+    </span>
+    </div>
+{% endfor %}
+
 </div>

@@ -8,14 +8,7 @@
 <div class="outer-grid-container suggestion">
 
 <h2 class="grid-col-0 grid-row-0">House, prel score: {{results['house']['total']}}</h2>
-<div class="game-grid results house-grid">
-{% for i in 0..4 %}
-    {% for j in 0..4 %}
-        <div class="slot grid-row-{{i}} grid-col-{{j}}"><img src="{{ asset(house[i][j]['img']) }}" alt="{{ house[i][j]['alt'] }}"></div>
-    {% endfor %}
-{% endfor %}
-
-</div>
+{{ include('proj/incl/house-grid.html.twig') }}
 
 <div class="center-grid">
 <div class="slot the-card grid-row-0 grid-col-0"><img src="{{ asset(card['img']) }}" alt="{{ card['alt'] }}"></div>

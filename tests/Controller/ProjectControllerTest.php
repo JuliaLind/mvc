@@ -29,6 +29,14 @@ class ProjectControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
+    public function testProjDb(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', "/proj/about/database");
+        $this->assertRouteSame('proj-db');
+        $this->assertResponseIsSuccessful();
+    }
+
     public function testProjRules(): void
     {
         $client = static::createClient();

@@ -56,6 +56,7 @@ return [
     'select-amount' => [[], ['_controller' => 'App\\Controller\\ProjectCoinsController::selectAmount'], [], [['text', '/proj/select-amount']], [], [], []],
     'proj-api' => [[], ['_controller' => 'App\\Controller\\ProjectController::projApiLanding'], [], [['text', '/proj/api']], [], [], []],
     'proj-about' => [[], ['_controller' => 'App\\Controller\\ProjectController::projAbout'], [], [['text', '/proj/about']], [], [], []],
+    'proj-db' => [[], ['_controller' => 'App\\Controller\\ProjectController::projDb'], [], [['text', '/proj/about/database']], [], [], []],
     'proj-rules' => [[], ['_controller' => 'App\\Controller\\ProjectController::projRules'], [], [['text', '/proj/rules']], [], [], []],
     'register-form' => [[], ['_controller' => 'App\\Controller\\ProjectController::projRegisterForm'], [], [['text', '/proj/register-form']], [], [], []],
     'proj-init' => [[], ['_controller' => 'App\\Controller\\ProjectInitController::projInit'], [], [['text', '/proj/init']], [], [], []],
