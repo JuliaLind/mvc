@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Book;
 use App\Repository\BookRepository;
-
 use App\Repository\IsbnAlreadyInUseException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,23 +11,20 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Controller tht contains route where book data is updated
+ * Controller that contains route for saving a new
+ * book to the Library
  */
-class LibraryController4 extends AbstractController
+class LibraryCreateNewController extends AbstractController
 {
     /**
-     * Saves updated information to database
+     * Saves new book to database
      */
-    #[Route('/library/update_one', name: 'book_update', methods: ['POST'])]
-    public function updateBook(
+    #[Route('/library/create_new', name: 'book_create', methods: ['POST'])]
+    public function createBook(
         BookRepository $bookRepository,
         Request $request,
     ): Response {
-        $bookId = $request->get('book_id');
-        /**
-         * @var Book $book
-         */
-        $book = $bookRepository->find($bookId);
+        $book=new Book();
         /**
          * @var string $title
          */
@@ -52,10 +48,11 @@ class LibraryController4 extends AbstractController
         $book->setImg($imgLink);
         try {
             $bookRepository->save($book, true);
-            return $this->redirectToRoute('read_one', array('isbn'=>$isbn));
+            $this->addFlash("notice", "Boken '{$title}' är registrerad. Klicka på kryset till höger för att gå till översikten");
+            return $this->redirectToRoute("read_one", array('isbn'=>$isbn));
         } catch (IsbnAlreadyInUseException) {
-            $this->addFlash("warning", "En annan bok med isbn '{$isbn}' finns redan i systemet");
-            return $this->redirectToRoute("update_form", array('isbn'=>$request->get('original_isbn')));
+            $this->addFlash("warning", "En bok med isbn '{$isbn}' finns redan i systemet. ISBN nummer måste vara unik");
+            return $this->redirectToRoute("create_form");
         }
     }
 }

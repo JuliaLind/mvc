@@ -5,19 +5,17 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Entity\Book;
 use App\Repository\BookRepository;
-use App\Repository\BookNotFoundException;
+// use App\Repository\BookNotFoundException;
 use Doctrine\Persistence\ObjectManager;
 
-class LibraryController2Test extends WebTestCase
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
+
+class LibraryUpdateController2Test extends WebTestCase
 {
-    public function testUpdateForm(): void
-    {
-        $client = static::createClient();
-        $client->request('GET', '/library/update/0123456789010');
-        $this->assertResponseIsSuccessful();
-        $this->assertRouteSame('update_form');
-        $this->assertSelectorTextContains('h1', "Uppdatera bokdetaljer för 'Book 0'");
-    }
+    use SessionTrait;
 
     public function testUpdateOk(): void
     {
@@ -101,11 +99,12 @@ class LibraryController2Test extends WebTestCase
     public function testUpdateNotOk(): void
     {
         $client = static::createClient();
+        $session = $this->createSession($client);
+        $container = $client->getContainer();
         /**
          * @var ObjectManager $doctrine
          */
-        $doctrine = $client->getContainer()
-        ->get('doctrine');
+        $doctrine = $container->get('doctrine');
 
         /**
          * @var BookRepository $repo
@@ -135,5 +134,13 @@ class LibraryController2Test extends WebTestCase
          */
         $book = $repo->findOneByIsbn('0123456789010');
         $this->assertEquals(1, $book->getId());
+        $expectedFlashbag = ['warning' => ["En annan bok med isbn '0123456789012' finns redan i systemet"]];
+
+        /**
+         * @var FlashBagInterface $bag
+         */
+        $bag = $session->getBag('flashes');
+
+        $this->assertEquals($expectedFlashbag, $bag->peekAll());
     }
 }

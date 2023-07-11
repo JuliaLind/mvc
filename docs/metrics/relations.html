@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-07-11 13:47:46        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-07-11 14:14:48        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -391,7 +391,59 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\LibraryCreateNewController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\App\\Repository\\BookRepository",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\App\\Entity\\Book"
+        ]
+    },
+    {
+        "name": "\\App\\Repository\\BookRepository",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\Book",
+            "\\App\\Repository\\IsbnAlreadyInUseException",
+            "\\App\\Repository\\BookNotFoundException"
+        ]
+    },
+    {
+        "name": "\\Symfony\\Component\\HttpFoundation\\Request",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Entity\\Book",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Controller\\LuckyMonkey",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Controller\\LibraryResetController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Doctrine\\DBAL\\Connection",
+            "\\App\\Controller\\SqlFileLoader"
+        ]
+    },
+    {
+        "name": "\\Doctrine\\DBAL\\Connection",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Controller\\SqlFileLoader",
         "size": 3000,
         "relations": []
     },
@@ -453,22 +505,6 @@
         ]
     },
     {
-        "name": "\\App\\Repository\\BookRepository",
-        "size": 3000,
-        "relations": [
-            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
-            "\\Doctrine\\Persistence\\ManagerRegistry",
-            "\\App\\Entity\\Book",
-            "\\App\\Repository\\IsbnAlreadyInUseException",
-            "\\App\\Repository\\BookNotFoundException"
-        ]
-    },
-    {
-        "name": "\\Symfony\\Component\\HttpFoundation\\Request",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\Controller\\JsonLibraryController",
         "size": 3000,
         "relations": [
@@ -476,22 +512,6 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\App\\Repository\\BookRepository"
         ]
-    },
-    {
-        "name": "\\App\\Controller\\LibraryController",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Repository\\BookRepository",
-            "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\App\\Entity\\Book"
-        ]
-    },
-    {
-        "name": "\\App\\Entity\\Book",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\App\\Controller\\MdParser",
@@ -561,16 +581,6 @@
             "\\App\\Cards\\Player",
             "\\App\\Cards\\DeckOfCards"
         ]
-    },
-    {
-        "name": "\\App\\Controller\\SqlFileLoader",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Doctrine\\DBAL\\Connection",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\App\\Controller\\ProjectApiController2",
@@ -692,6 +702,16 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjectResetController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Doctrine\\DBAL\\Connection",
+            "\\App\\Controller\\SqlFileLoader"
         ]
     },
     {
@@ -998,16 +1018,6 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\Doctrine\\ORM\\EntityManagerInterface"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\LibraryController3",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Doctrine\\DBAL\\Connection",
-            "\\App\\Controller\\SqlFileLoader"
         ]
     },
     {

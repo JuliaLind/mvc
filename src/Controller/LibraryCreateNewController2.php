@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * Controller contains route that leads to form
  * for adding a new book
  */
-class LibraryController7 extends AbstractController
+class LibraryCreateNewController2 extends AbstractController
 {
     /**
      * Form for registering new book

@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Controller contains route for the library landing page
  */
-class LibraryController6 extends AbstractController
+class LibraryLandingController extends AbstractController
 {
     /**
      * Landing page

@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  * Controller that contains the route for resetting
  * the Book table in the database
  */
-class LibraryController3 extends AbstractController
+class LibraryResetController extends AbstractController
 {
     /**
      * Resets the Book table in the database
@@ -23,7 +23,7 @@ class LibraryController3 extends AbstractController
     ): Response {
         $loader->load("sql/reset-book.sql", $connection);
 
-        $this->addFlash("notice", "Databasen är återställd");
+        $this->addFlash("notice", "Biblioteksdatabasen är återställd");
         return $this->redirectToRoute('read_many');
     }
 }

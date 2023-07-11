@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * Controller that contains route that leads
  * to the route with form for updating a book
  */
-class LibraryController2 extends AbstractController
+class LibraryUpdateController extends AbstractController
 {
     /**
      * Form for editing details of a book
