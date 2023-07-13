@@ -6,6 +6,9 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 use App\Cards\DeckOfCards;
 
+/**
+ * Trait for handling bank's turn to pick cards int he 21 game, for the hard version of the game
+ */
 trait DealBankHardTrait
 {
     protected Player21 $bank;

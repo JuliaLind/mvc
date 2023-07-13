@@ -5,8 +5,7 @@ namespace App\Game;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Trait to be used in betting games
- * between a player and a bank
+ * Trait for handling the betting in the 21 game
  */
 trait BettingGameTrait
 {

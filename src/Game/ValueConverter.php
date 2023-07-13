@@ -3,7 +3,7 @@
 namespace App\Game;
 
 /**
- * Class representing a Player in the 21 game
+ * Class for contering the value of Ace from 14 to 1 when a hand reaches over 21 points
  */
 class ValueConverter
 {

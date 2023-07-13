@@ -5,7 +5,7 @@ namespace App\Game;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Class representing a money pot
+ * Class representing a money pot in the 21 game
  */
 class MoneyPot
 {

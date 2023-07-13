@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerNyHsSS2\App_KernelDevDebugContainer([
     'container.build_hash' => 'NyHsSS2',
-    'container.build_id' => '2310e2a7',
-    'container.build_time' => 1689226063,
+    'container.build_id' => 'b58e0aba',
+    'container.build_time' => 1689231020,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerNyHsSS2');

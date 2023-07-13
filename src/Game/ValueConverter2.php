@@ -3,7 +3,8 @@
 namespace App\Game;
 
 /**
- * Class representing a Player in the 21 game
+ * Class for checking if adding a card to the hand would return
+ * in getting fat. If yes then returns 1, otherwise returns 0
  */
 class ValueConverter2
 {

@@ -56,11 +56,10 @@ trait MoveACardTrait
     public function setFromSlot(int $row, int $col): void
     {
         $this->fromSlot = [$row, $col];
-        // $this->lastRound = [];
-        $this->lastRound = [
-            'house' => [],
-            'player' => []
-        ];
+        // $this->lastRound = [
+        //     'house' => [],
+        //     'player' => []
+        // ];
     }
 
     /**
@@ -72,6 +71,10 @@ trait MoveACardTrait
     public function moveCard(int $row, int $col): void
     {
         $this->suggestion = [];
+        $this->lastRound = [
+            'house' => [],
+            'player' => []
+        ];
         $card = $this->player->removeCard($this->fromSlot[0], $this->fromSlot[1]);
         $this->player->addCard($row, $col, $card);
         $this->fromSlot = [];

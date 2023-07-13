@@ -24,6 +24,11 @@ trait OneRoundTrait
     private Grid $house;
 
     /**
+     * The slot from which to move the card
+     * @var array<int> $fromSlot
+     */
+    private array $fromSlot = [];
+    /**
      * Contains the coordinates of the slots
      * where the house and the player placed the
      * cards in all the previous moves
@@ -63,6 +68,7 @@ trait OneRoundTrait
     public function oneRound(int $row, int $col): bool
     {
         $this->suggestion = [];
+        $this->fromSlot = [];
         $this->player->addCard($row, $col, $this->card);
 
         array_push($this->lastRound['player'], [$row, $col]);

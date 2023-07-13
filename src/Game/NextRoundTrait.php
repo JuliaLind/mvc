@@ -4,7 +4,9 @@ namespace App\Game;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Handles transition to next round in the 21 game
+ */
 trait NextRoundTrait
 {
     protected Player21 $player;

@@ -6,6 +6,9 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 use App\Cards\DeckOfCards;
 
+/**
+ * Trait for exctrating data related to current state of the 21 game
+ */
 trait Game21DataTrait
 {
     protected Player21 $winner;

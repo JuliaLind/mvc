@@ -5,7 +5,7 @@ namespace App\Game;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Helper class to handle game in the Game21Controller
+ * Helper class that returns current state of 21 game for the api route
  */
 class GameApi
 {

@@ -170,7 +170,7 @@ graphic representation (i.e. svg image)</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-Game21Hard.html"><abbr title="\App\Game\Game21Hard">Game21Hard</abbr></a></dt>
         <dd>Class representing the hard version of the 21 card game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-MoneyPot.html"><abbr title="\App\Game\MoneyPot">MoneyPot</abbr></a></dt>
-        <dd>Class representing a money pot</dd>
+        <dd>Class representing a money pot in the 21 game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-Player21.html"><abbr title="\App\Game\Player21">Player21</abbr></a></dt>
         <dd>Class representing a Player in the 21 game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Kernel.html"><abbr title="\App\Kernel">Kernel</abbr></a></dt>
@@ -270,19 +270,22 @@ account</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-Game21.html"><abbr title="\App\Game\Game21">Game21</abbr></a></dt>
         <dd>Base class for the 21 card game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-GameApi.html"><abbr title="\App\Game\GameApi">GameApi</abbr></a></dt>
-        <dd>Helper class to handle game in the Game21Controller</dd>
+        <dd>Helper class that returns current state of 21 game for the api route</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-ValueConverter.html"><abbr title="\App\Game\ValueConverter">ValueConverter</abbr></a></dt>
-        <dd>Class representing a Player in the 21 game</dd>
+        <dd>Class for contering the value of Ace from 14 to 1 when a hand reaches over 21 points</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Game-ValueConverter2.html"><abbr title="\App\Game\ValueConverter2">ValueConverter2</abbr></a></dt>
-        <dd>Class representing a Player in the 21 game</dd>
+        <dd>Class for checking if adding a card to the hand would return
+in getting fat. If yes then returns 1, otherwise returns 0</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-ApiGame1.html"><abbr title="\App\Project\ApiGame1">ApiGame1</abbr></a></dt>
-        <dd></dd>
+        <dd>Class that represents part of the logic of the Poker Squares game.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-ApiGame2.html"><abbr title="\App\Project\ApiGame2">ApiGame2</abbr></a></dt>
-        <dd></dd>
+        <dd>Represents part of the logic of the Poker Squares game. Places a card into an empty grid accoring to passed arguemnts and returns data containing the grid, the remaining card and a message describing the card palcement for API route</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-ApiGame3.html"><abbr title="\App\Project\ApiGame3">ApiGame3</abbr></a></dt>
-        <dd></dd>
+        <dd>Displays part of the logic of the Poker Squares game, evaluates results for a
+full grid and returns the data for API route</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-CardFactory.html"><abbr title="\App\Project\CardFactory">CardFactory</abbr></a></dt>
-        <dd>Class representing CardFactory</dd>
+        <dd>Class representing CardFactory. Is passed as arguemnt into a Deck class
+for generating a full set of cards</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-Deck.html"><abbr title="\App\Project\Deck">Deck</abbr></a></dt>
         <dd>Class representing a deck of cards</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-Game.html"><abbr title="\App\Project\Game">Game</abbr></a></dt>
@@ -371,9 +374,6 @@ a card</dd>
         <dd>Controller related to the Project. Contains route for one game round
 (one round = player places card + bot places card. If the grids
 are fully filled also evaluate results and end game)</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectPeekController.html"><abbr title="\App\Controller\ProjectPeekController">ProjectPeekController</abbr></a></dt>
-        <dd>Controller related to the Project. Containts routes for
-the deck-peek cheat</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Controller-ProjectPlayController.html"><abbr title="\App\Controller\ProjectPlayController">ProjectPlayController</abbr></a></dt>
         <dd>Controller related to the Project. Contains the main route
 for the PokerSquare game.</dd>
@@ -406,10 +406,9 @@ and highest possible rule(s) to score for hands that have less than 5 cards</dd>
         <dd>Exception class for Library</dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-BettingGameTrait.html"><abbr title="\App\Game\BettingGameTrait">BettingGameTrait</abbr></a></dt>
-        <dd>Trait to be used in betting games
-between a player and a bank</dd>
+        <dd>Trait for handling the betting in the 21 game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-PlayerTrait.html"><abbr title="\App\Game\PlayerTrait">PlayerTrait</abbr></a></dt>
-        <dd>Trate for bas methods for a player</dd>
+        <dd>Trate for base methods for a 21 player</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Cards-CardDataTrait.html"><abbr title="\App\Cards\CardDataTrait">CardDataTrait</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-DataFixtures-AddScoreTrait.html"><abbr title="\App\DataFixtures\AddScoreTrait">AddScoreTrait</abbr></a></dt>
@@ -419,37 +418,36 @@ between a player and a bank</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-DataFixtures-AddUserTrait.html"><abbr title="\App\DataFixtures\AddUserTrait">AddUserTrait</abbr></a></dt>
         <dd>Trait used by AppFixtures class</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-BanksTurnTrait.html"><abbr title="\App\Game\BanksTurnTrait">BanksTurnTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for handling bank&#039;s turn in the 21 game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-DealBankEasyTrait.html"><abbr title="\App\Game\DealBankEasyTrait">DealBankEasyTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for handling bank&#039;s turn to pick cards int he 21 game, for the easy version of the game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-DealBankHardTrait.html"><abbr title="\App\Game\DealBankHardTrait">DealBankHardTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for handling bank&#039;s turn to pick cards int he 21 game, for the hard version of the game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-EndRoundTrait.html"><abbr title="\App\Game\EndRoundTrait">EndRoundTrait</abbr></a></dt>
         <dd>Ends a round of Game21</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-EvaluateBankTrait.html"><abbr title="\App\Game\EvaluateBankTrait">EvaluateBankTrait</abbr></a></dt>
-        <dd>Evaluates if bank won or lost the round</dd>
+        <dd>Evaluates if bank won or lost the round in the 21 game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-EvaluateBankTrait2.html"><abbr title="\App\Game\EvaluateBankTrait2">EvaluateBankTrait2</abbr></a></dt>
-        <dd>Trait to be used in betting games
-between a player and a bank</dd>
+        <dd>part two of the evaluation process after the bank has picked cards in the 21 game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-EvaluatePlayerTrait.html"><abbr title="\App\Game\EvaluatePlayerTrait">EvaluatePlayerTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for handlign evaluation of/after player&#039;s move in the 21 game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-Game21DataTrait.html"><abbr title="\App\Game\Game21DataTrait">Game21DataTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for exctrating data related to current state of the 21 game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-Game21FlashTrait.html"><abbr title="\App\Game\Game21FlashTrait">Game21FlashTrait</abbr></a></dt>
         <dd>Generates flash message to be displayed at the end of a round
 or at the end of a game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-Game21Trait.html"><abbr title="\App\Game\Game21Trait">Game21Trait</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-NextRoundTrait.html"><abbr title="\App\Game\NextRoundTrait">NextRoundTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Handles transition to next round in the 21 game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-Player21Trait.html"><abbr title="\App\Game\Player21Trait">Player21Trait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait contains the method for adjusting the value of ace from 14 to 1</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-Player21Trait2.html"><abbr title="\App\Game\Player21Trait2">Player21Trait2</abbr></a></dt>
-        <dd>Trate for bas methods for a player</dd>
+        <dd>Trate for estimating the risk of getting fat in the 21 game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-Player21Trait3.html"><abbr title="\App\Game\Player21Trait3">Player21Trait3</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for calculating the value of a hand in the 21 game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Game-PlayersTurnTrait.html"><abbr title="\App\Game\PlayersTurnTrait">PlayersTurnTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for handling player&#039;s turn in 21 game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-CurrentStateTrait.html"><abbr title="\App\Project\CurrentStateTrait">CurrentStateTrait</abbr></a></dt>
         <dd>Returns information on the current state of the game</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-EvaluateTrait.html"><abbr title="\App\Project\EvaluateTrait">EvaluateTrait</abbr></a></dt>
@@ -479,7 +477,7 @@ the dealt card)</dd>
         <dd>Contains the pot and method for
 adding money to the pot</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-UndoLastRoundTrait.html"><abbr title="\App\Project\UndoLastRoundTrait">UndoLastRoundTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for handling reversal of the last moves done by house and player.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectGrid-AddCardTrait.html"><abbr title="\App\ProjectGrid\AddCardTrait">AddCardTrait</abbr></a></dt>
         <dd>Trait for adding a card to the grid</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectGrid-CardCountTrait.html"><abbr title="\App\ProjectGrid\CardCountTrait">CardCountTrait</abbr></a></dt>

@@ -7,6 +7,9 @@ require __DIR__ . "/../../vendor/autoload.php";
 use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
+/**
+ * Trait for calculating the value of a hand in the 21 game
+ */
 trait Player21Trait3
 {
     protected CardHand $hand;

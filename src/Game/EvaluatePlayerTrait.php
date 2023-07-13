@@ -6,7 +6,9 @@ use App\Cards\DeckOfCards;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait for handlign evaluation of/after player's move in the 21 game
+ */
 trait EvaluatePlayerTrait
 {
     protected int $goal=21;

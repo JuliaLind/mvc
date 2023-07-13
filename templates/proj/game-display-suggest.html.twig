@@ -34,46 +34,6 @@
     {% endfor %}
 
     {{ include('proj/incl/stats.html.twig') }}
-    {# {% for row in 0..4 %}
-    <div class="result suggest row-res grid-row-{{row}}">
-    {% if suggestion['row-rules'][row]['rule-with-card'] != "" %}
-    <span class="suggest-title with-card">
-    With card:
-    </span>
-    <span class="rule-with-card">
-    {{ suggestion['row-rules'][row]['rule-with-card'] }}
-    </span>
-    {% endif %}
-    {% if suggestion['row-rules'][row]['rule-without-card'] != "" %}
-    <span class="suggest-title without-card">
-    Without card:
-    </span>
-    <span class="rule-without-card">
-    {{ suggestion['row-rules'][row]['rule-without-card'] }}
-    </span>
-    {% endif %}
-    </div>
-{% endfor %}
-{% for col in 0..4 %}
-    <div class="result suggest col-res grid-col-{{col}}">
-    {% if suggestion['col-rules'][col]['rule-with-card'] != "" %}
-    <span class="suggest-title with-card">
-    With card:
-    </span>
-    <span class="rule-with-card">
-    {{ suggestion['col-rules'][col]['rule-with-card'] }}
-    </span>
-    {% endif %}
-    {% if suggestion['col-rules'][col]['rule-without-card'] != "" %}
-    <span class="suggest-title without-card">
-    Without card:
-    </span>
-    <span class="rule-without-card">
-    {{ suggestion['col-rules'][col]['rule-without-card'] }}
-    </span>
-    {% endif %}
-    </div>
-{% endfor %} #}
 
 </form>
 

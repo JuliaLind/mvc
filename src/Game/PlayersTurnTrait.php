@@ -6,7 +6,9 @@ use App\Cards\DeckOfCards;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait for handling player's turn in 21 game
+ */
 trait PlayersTurnTrait
 {
     protected DeckOfCards $deck;

@@ -6,6 +6,9 @@ use PHPUnit\Framework\TestCase;
 use App\ProjectGrid\Grid;
 use App\ProjectEvaluator\RuleEvaluator;
 
+/**
+ * Trait for handling moving a card from one slot to another
+ */
 class MoveACardTraitTest extends TestCase
 {
     use MoveACardTrait;
@@ -22,8 +25,8 @@ class MoveACardTraitTest extends TestCase
         $this->setFromSlot($row, $col);
 
         $this->assertEquals([$row, $col], $this->fromSlot);
-        $this->assertEquals([], $this->lastRound['player']);
-        $this->assertEquals([], $this->lastRound['house']);
+        $this->assertEquals([[2, 3], [4, 1]], $this->lastRound['player']);
+        $this->assertEquals([[1, 0], [0, 2]], $this->lastRound['house']);
     }
 
     public function testMoveCard(): void
@@ -44,7 +47,8 @@ class MoveACardTraitTest extends TestCase
         $player->expects($this->once())->method('addCard')->with($this->equalTo($toRow), $this->equalTo($toCol), $this->equalTo($card));
         $this->player = $player;
         $this->moveCard($toRow, $toCol);
-
+        $this->assertEquals([], $this->lastRound['player']);
+        $this->assertEquals([], $this->lastRound['house']);
         $this->assertEquals([], $this->fromSlot);
     }
 }

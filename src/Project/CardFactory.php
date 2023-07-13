@@ -5,7 +5,8 @@ namespace App\Project;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Class representing CardFactory
+ * Class representing CardFactory. Is passed as arguemnt into a Deck class
+ * for generating a full set of cards
  */
 class CardFactory
 {

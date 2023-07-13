@@ -5,6 +5,10 @@ namespace App\Project;
 use App\ProjectGrid\Grid;
 use App\ProjectEvaluator\RuleEvaluator;
 
+/**
+ * Displays part of the logic of the Poker Squares game, evaluates results for a
+ * full grid and returns the data for API route
+ */
 class ApiGame3
 {
     /**

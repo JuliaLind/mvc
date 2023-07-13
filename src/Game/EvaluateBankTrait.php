@@ -5,7 +5,7 @@ namespace App\Game;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Evaluates if bank won or lost the round
+ * Evaluates if bank won or lost the round in the 21 game
  */
 trait EvaluateBankTrait
 {

@@ -7,6 +7,9 @@ require __DIR__ . "/../../vendor/autoload.php";
 use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
+/**
+ * Trait contains the method for adjusting the value of ace from 14 to 1
+ */
 trait Player21Trait
 {
     /**

@@ -258,7 +258,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\BettingGameTrait",
             "name": "BettingGameTrait",
-            "summary": "Trait\u0020to\u0020be\u0020used\u0020in\u0020betting\u0020games\nbetween\u0020a\u0020player\u0020and\u0020a\u0020bank",
+            "summary": "Trait\u0020for\u0020handling\u0020the\u0020betting\u0020in\u0020the\u002021\u0020game",
             "url": "classes/App-Game-BettingGameTrait.html"
         },                {
             "fqsen": "\\App\\Game\\BettingGameTrait\u003A\u003AgetInvestLimit\u0028\u0029",
@@ -358,7 +358,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\MoneyPot",
             "name": "MoneyPot",
-            "summary": "Class\u0020representing\u0020a\u0020money\u0020pot",
+            "summary": "Class\u0020representing\u0020a\u0020money\u0020pot\u0020in\u0020the\u002021\u0020game",
             "url": "classes/App-Game-MoneyPot.html"
         },                {
             "fqsen": "\\App\\Game\\MoneyPot\u003A\u003AaddMoney\u0028\u0029",
@@ -583,7 +583,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\PlayerTrait",
             "name": "PlayerTrait",
-            "summary": "Trate\u0020for\u0020bas\u0020methods\u0020for\u0020a\u0020player",
+            "summary": "Trate\u0020for\u0020base\u0020methods\u0020for\u0020a\u002021\u0020player",
             "url": "classes/App-Game-PlayerTrait.html"
         },                {
             "fqsen": "\\App\\Game\\PlayerTrait\u003A\u003AgetName\u0028\u0029",
@@ -1208,7 +1208,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\BanksTurnTrait",
             "name": "BanksTurnTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020handling\u0020bank\u0027s\u0020turn\u0020in\u0020the\u002021\u0020game",
             "url": "classes/App-Game-BanksTurnTrait.html"
         },                {
             "fqsen": "\\App\\Game\\BanksTurnTrait\u003A\u003AdealBank\u0028\u0029",
@@ -1238,7 +1238,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\DealBankEasyTrait",
             "name": "DealBankEasyTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020handling\u0020bank\u0027s\u0020turn\u0020to\u0020pick\u0020cards\u0020int\u0020he\u002021\u0020game,\u0020for\u0020the\u0020easy\u0020version\u0020of\u0020the\u0020game",
             "url": "classes/App-Game-DealBankEasyTrait.html"
         },                {
             "fqsen": "\\App\\Game\\DealBankEasyTrait\u003A\u003AdealBank\u0028\u0029",
@@ -1263,7 +1263,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\DealBankHardTrait",
             "name": "DealBankHardTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020handling\u0020bank\u0027s\u0020turn\u0020to\u0020pick\u0020cards\u0020int\u0020he\u002021\u0020game,\u0020for\u0020the\u0020hard\u0020version\u0020of\u0020the\u0020game",
             "url": "classes/App-Game-DealBankHardTrait.html"
         },                {
             "fqsen": "\\App\\Game\\DealBankHardTrait\u003A\u003AdealBank\u0028\u0029",
@@ -1353,7 +1353,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait",
             "name": "EvaluateBankTrait",
-            "summary": "Evaluates\u0020if\u0020bank\u0020won\u0020or\u0020lost\u0020the\u0020round",
+            "summary": "Evaluates\u0020if\u0020bank\u0020won\u0020or\u0020lost\u0020the\u0020round\u0020in\u0020the\u002021\u0020game",
             "url": "classes/App-Game-EvaluateBankTrait.html"
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait\u003A\u003AbankWinsOnEqual\u0028\u0029",
@@ -1403,7 +1403,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait2",
             "name": "EvaluateBankTrait2",
-            "summary": "Trait\u0020to\u0020be\u0020used\u0020in\u0020betting\u0020games\nbetween\u0020a\u0020player\u0020and\u0020a\u0020bank",
+            "summary": "part\u0020two\u0020of\u0020the\u0020evaluation\u0020process\u0020after\u0020the\u0020bank\u0020has\u0020picked\u0020cards\u0020in\u0020the\u002021\u0020game",
             "url": "classes/App-Game-EvaluateBankTrait2.html"
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait2\u003A\u003AbankWinsOnEqual\u0028\u0029",
@@ -1428,7 +1428,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\EvaluatePlayerTrait",
             "name": "EvaluatePlayerTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020handlign\u0020evaluation\u0020of\/after\u0020player\u0027s\u0020move\u0020in\u0020the\u002021\u0020game",
             "url": "classes/App-Game-EvaluatePlayerTrait.html"
         },                {
             "fqsen": "\\App\\Game\\EvaluatePlayerTrait\u003A\u003Aevaluate\u0028\u0029",
@@ -1478,7 +1478,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Game21DataTrait",
             "name": "Game21DataTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020exctrating\u0020data\u0020related\u0020to\u0020current\u0020state\u0020of\u0020the\u002021\u0020game",
             "url": "classes/App-Game-Game21DataTrait.html"
         },                {
             "fqsen": "\\App\\Game\\Game21DataTrait\u003A\u003AgetPlayerData\u0028\u0029",
@@ -1608,7 +1608,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\GameApi",
             "name": "GameApi",
-            "summary": "Helper\u0020class\u0020to\u0020handle\u0020game\u0020in\u0020the\u0020Game21Controller",
+            "summary": "Helper\u0020class\u0020that\u0020returns\u0020current\u0020state\u0020of\u002021\u0020game\u0020for\u0020the\u0020api\u0020route",
             "url": "classes/App-Game-GameApi.html"
         },                {
             "fqsen": "\\App\\Game\\GameApi\u003A\u003Adata\u0028\u0029",
@@ -1618,7 +1618,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\NextRoundTrait",
             "name": "NextRoundTrait",
-            "summary": "",
+            "summary": "Handles\u0020transition\u0020to\u0020next\u0020round\u0020in\u0020the\u002021\u0020game",
             "url": "classes/App-Game-NextRoundTrait.html"
         },                {
             "fqsen": "\\App\\Game\\NextRoundTrait\u003A\u003AgetInvestLimit\u0028\u0029",
@@ -1663,7 +1663,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Player21Trait",
             "name": "Player21Trait",
-            "summary": "",
+            "summary": "Trait\u0020contains\u0020the\u0020method\u0020for\u0020adjusting\u0020the\u0020value\u0020of\u0020ace\u0020from\u002014\u0020to\u00201",
             "url": "classes/App-Game-Player21Trait.html"
         },                {
             "fqsen": "\\App\\Game\\Player21Trait\u003A\u003AadjAceValueToOne\u0028\u0029",
@@ -1673,7 +1673,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Player21Trait2",
             "name": "Player21Trait2",
-            "summary": "Trate\u0020for\u0020bas\u0020methods\u0020for\u0020a\u0020player",
+            "summary": "Trate\u0020for\u0020estimating\u0020the\u0020risk\u0020of\u0020getting\u0020fat\u0020in\u0020the\u002021\u0020game",
             "url": "classes/App-Game-Player21Trait2.html"
         },                {
             "fqsen": "\\App\\Game\\Player21Trait2\u003A\u003AadjAceValueToOne\u0028\u0029",
@@ -1698,7 +1698,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Player21Trait3",
             "name": "Player21Trait3",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020calculating\u0020the\u0020value\u0020of\u0020a\u0020hand\u0020in\u0020the\u002021\u0020game",
             "url": "classes/App-Game-Player21Trait3.html"
         },                {
             "fqsen": "\\App\\Game\\Player21Trait3\u003A\u003AhandValue\u0028\u0029",
@@ -1713,7 +1713,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\PlayersTurnTrait",
             "name": "PlayersTurnTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020handling\u0020player\u0027s\u0020turn\u0020in\u002021\u0020game",
             "url": "classes/App-Game-PlayersTurnTrait.html"
         },                {
             "fqsen": "\\App\\Game\\PlayersTurnTrait\u003A\u003AendRound\u0028\u0029",
@@ -1748,7 +1748,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\ValueConverter",
             "name": "ValueConverter",
-            "summary": "Class\u0020representing\u0020a\u0020Player\u0020in\u0020the\u002021\u0020game",
+            "summary": "Class\u0020for\u0020contering\u0020the\u0020value\u0020of\u0020Ace\u0020from\u002014\u0020to\u00201\u0020when\u0020a\u0020hand\u0020reaches\u0020over\u002021\u0020points",
             "url": "classes/App-Game-ValueConverter.html"
         },                {
             "fqsen": "\\App\\Game\\ValueConverter\u003A\u003AadjAceValue\u0028\u0029",
@@ -1763,7 +1763,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\ValueConverter2",
             "name": "ValueConverter2",
-            "summary": "Class\u0020representing\u0020a\u0020Player\u0020in\u0020the\u002021\u0020game",
+            "summary": "Class\u0020for\u0020checking\u0020if\u0020adding\u0020a\u0020card\u0020to\u0020the\u0020hand\u0020would\u0020return\nin\u0020getting\u0020fat.\u0020If\u0020yes\u0020then\u0020returns\u00201,\u0020otherwise\u0020returns\u00200",
             "url": "classes/App-Game-ValueConverter2.html"
         },                {
             "fqsen": "\\App\\Game\\ValueConverter2\u003A\u003AcheckIfBad\u0028\u0029",
@@ -1778,7 +1778,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ApiGame1",
             "name": "ApiGame1",
-            "summary": "",
+            "summary": "Class\u0020that\u0020represents\u0020part\u0020of\u0020the\u0020logic\u0020of\u0020the\u0020Poker\u0020Squares\u0020game.",
             "url": "classes/App-Project-ApiGame1.html"
         },                {
             "fqsen": "\\App\\Project\\ApiGame1\u003A\u003A__construct\u0028\u0029",
@@ -1788,7 +1788,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ApiGame2",
             "name": "ApiGame2",
-            "summary": "",
+            "summary": "Represents\u0020part\u0020of\u0020the\u0020logic\u0020of\u0020the\u0020Poker\u0020Squares\u0020game.\u0020Places\u0020a\u0020card\u0020into\u0020an\u0020empty\u0020grid\u0020accoring\u0020to\u0020passed\u0020arguemnts\u0020and\u0020returns\u0020data\u0020containing\u0020the\u0020grid,\u0020the\u0020remaining\u0020card\u0020and\u0020a\u0020message\u0020describing\u0020the\u0020card\u0020palcement\u0020for\u0020API\u0020route",
             "url": "classes/App-Project-ApiGame2.html"
         },                {
             "fqsen": "\\App\\Project\\ApiGame2\u003A\u003AoneRound\u0028\u0029",
@@ -1798,7 +1798,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ApiGame3",
             "name": "ApiGame3",
-            "summary": "",
+            "summary": "Displays\u0020part\u0020of\u0020the\u0020logic\u0020of\u0020the\u0020Poker\u0020Squares\u0020game,\u0020evaluates\u0020results\u0020for\u0020a\nfull\u0020grid\u0020and\u0020returns\u0020the\u0020data\u0020for\u0020API\u0020route",
             "url": "classes/App-Project-ApiGame3.html"
         },                {
             "fqsen": "\\App\\Project\\ApiGame3\u003A\u003Aresults\u0028\u0029",
@@ -1808,7 +1808,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\CardFactory",
             "name": "CardFactory",
-            "summary": "Class\u0020representing\u0020CardFactory",
+            "summary": "Class\u0020representing\u0020CardFactory.\u0020Is\u0020passed\u0020as\u0020arguemnt\u0020into\u0020a\u0020Deck\u0020class\nfor\u0020generating\u0020a\u0020full\u0020set\u0020of\u0020cards",
             "url": "classes/App-Project-CardFactory.html"
         },                {
             "fqsen": "\\App\\Project\\CardFactory\u003A\u003AfullSet\u0028\u0029",
@@ -2258,7 +2258,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\UndoLastRoundTrait",
             "name": "UndoLastRoundTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020handling\u0020reversal\u0020of\u0020the\u0020last\u0020moves\u0020done\u0020by\u0020house\u0020and\u0020player.",
             "url": "classes/App-Project-UndoLastRoundTrait.html"
         },                {
             "fqsen": "\\App\\Project\\UndoLastRoundTrait\u003A\u003AundoLastRound\u0028\u0029",
@@ -2855,21 +2855,6 @@ Search.appendIndex(
             "name": "projRound",
             "summary": "",
             "url": "classes/App-Controller-ProjectOneRoundController.html#method_projRound"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectPeekController",
-            "name": "ProjectPeekController",
-            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Containts\u0020routes\u0020for\nthe\u0020deck\u002Dpeek\u0020cheat",
-            "url": "classes/App-Controller-ProjectPeekController.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectPeekController\u003A\u003ApurchasePeekCheat\u0028\u0029",
-            "name": "purchasePeekCheat",
-            "summary": "Route\u0020for\u0020purchasing\u0020a\u0020peek\u0020at\u0020all\u0020the\u0020remaining\u0020cards\u0020the\nplayer\u0020is\u0020yet\u0020to\u0020be\u0020dealt\u0020from\u0020the\u0020deck",
-            "url": "classes/App-Controller-ProjectPeekController.html#method_purchasePeekCheat"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectPeekController\u003A\u003AdeckPeek\u0028\u0029",
-            "name": "deckPeek",
-            "summary": "Route\u0020for\u0020displaying\u0020the\u0020cards\u0020that\u0020the\u0020user\u0020is\u0020yet\u0020to\u0020be\u0020dealt\nfrom\u0020the\u0020deck",
-            "url": "classes/App-Controller-ProjectPeekController.html#method_deckPeek"
         },                {
             "fqsen": "\\App\\Controller\\ProjectPlayController",
             "name": "ProjectPlayController",

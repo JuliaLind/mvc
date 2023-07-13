@@ -8,7 +8,7 @@ use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
 /**
- * Trate for bas methods for a player
+ * Trate for estimating the risk of getting fat in the 21 game
  */
 trait Player21Trait2
 {

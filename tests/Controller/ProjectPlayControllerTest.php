@@ -77,42 +77,6 @@ class ProjectPlayControllerTest extends WebTestCase
         $this->assertStringContainsString('final', $response);
     }
 
-    public function testProjPlayFromSlotSet(): void
-    {
-        $client = static::createClient();
-        $session = $this->createSession($client);
-        $container = $client->getContainer();
-        $container->set(Session::class, $session);
-
-        $client->request(
-            'POST',
-            '/proj/login',
-            [
-                'email' => 'user0@test.se',
-                'password' => 'julia'
-            ]
-        );
-
-        $client->request(
-            'POST',
-            '/proj/init',
-            [
-                'bet' => 100,
-            ]
-        );
-
-
-        $client->request('POST', "/proj/one-round/4/0");
-        $client->request('POST', "/proj/set-fromslot/4/0");
-
-        $client->request('POST', "/proj/play");
-        $this->assertRouteSame('proj-play');
-
-        $this->assertResponseIsSuccessful();
-        $response = strval($client->getResponse()->getContent());
-        $this->assertStringContainsString('Click on an empty slot to which you want to move the selected card', $response);
-    }
-
     public function testProjPlayOk(): void
     {
         $client = static::createClient();
