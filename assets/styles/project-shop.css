@@ -7,7 +7,8 @@
     align-items: flex-end;
     gap: 1rem;
     width: 100%;
-    max-width: 1000px;
+    /* max-width: 1000px; */
+    max-width: 1400px;
 }
 
 .shop .btn {
@@ -27,12 +28,6 @@
     font-weight: bold;
     font-size: 1.2rem;
 }
-
-
-/* .shop img {
-    width: 200px;
-    height: auto;
-} */
 
 .coins1 {
     width: 50px;

@@ -21,8 +21,6 @@
 .flex-wrapper-col,
 .points td {
     color: var(--form-neon);
-    /* width: 1000px;
-    max-width: 100%; */
 }
 
 .points th {
@@ -85,13 +83,15 @@
     border-collapse: collapse;
 }
 
+.trans td:last-of-type {
+    text-align: right;
+}
+
 @media (max-width: 800px) {
     .half-width-col {
         margin-bottom: 1rem;
     }
 
-    /* .half-width-col.points,
-    .half-width-col.descr { */
     .half-width-col {
         row-gap: unset;
     }

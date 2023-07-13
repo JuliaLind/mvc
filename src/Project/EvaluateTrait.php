@@ -20,7 +20,15 @@ trait EvaluateTrait
     private Grid $player;
     private Grid $house;
     private int $pot=0;
-    private string $message = "";
+
+
+    /**
+     * Consists of three parts. Empty strings until the
+     * game is finished
+     * @var array<string> $message
+     */
+    private array $message = ["", "", ""];
+
     private RuleEvaluator $evaluator;
 
     /**
@@ -78,7 +86,10 @@ trait EvaluateTrait
             $register->transaction($amount, 'Return (bet x 2)');
             $register->score($playerTotal);
         }
-        $this->message = "Game finished, You got {$playerTotal} points and House got {$houseTotal} points. {$winner} won{$lastPart}";
+        // $this->message = "Game finished, You got {$playerTotal} points and House got {$houseTotal} points. {$winner} won{$lastPart}";
+
+        $this->message = ["Game finished!", "You got {$playerTotal} points and House got {$houseTotal} points.", "{$winner} won{$lastPart}!"];
+
         $this->results = [
             'player' => $playerData,
             'house' => $houseData

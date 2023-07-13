@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="sv">
+    {{ include('partials/head.html.twig') }}
+    <body class="project project-alt finish-bg" {% if results['house']['total'] - results['player']['total'] < 0 %}style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url({{ asset('img/project/fireworks.gif') }})"{% endif %}>
+
+    {{ include('partials/topnav-project.html.twig') }}
+
+        {% block body %}
+        {% endblock %}
+
+        {{ include('partials/footer.html.twig') }}
+    </body>
+</html>

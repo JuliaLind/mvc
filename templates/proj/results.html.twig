@@ -1,4 +1,4 @@
-{% extends 'base-project2.html.twig' %}
+{% extends 'base-project3.html.twig' %}
 
 {% block title %}Casino{% endblock %}
 
@@ -14,9 +14,13 @@
 {{ include('proj/incl/house-grid.html.twig') }}
 <div class="center-grid results">
 <div class="result-message">
-
-<span class="instruction">{{ message }}</span>
+<span class="message pt-1">{{ message[0] }}</span>
+{# <span class="message pt-2">{{ message[1] }}</span> #}
+<span class="message pt-3">{{ message[2] }}</span>
+<div class="btn-container">
 {{ include('proj/incl/new-game-btn.html.twig') }}
+<a class="return-arr" href="{{ path('proj') }}">Return <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
 </div>
 </div>
 
@@ -37,7 +41,5 @@
 
 
 </div>
-
-
 
 {% endblock %}

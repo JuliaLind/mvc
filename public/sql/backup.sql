@@ -26,6 +26,7 @@ CREATE TABLE user (
 );
 INSERT INTO user VALUES(1,'doe@bth.se','John Doe','$2y$10$bh4KbO6upQywlhconQZf1.0UMbpV1qnhVy3WRa7wd2/2KlsjPq.AW');
 INSERT INTO user VALUES(2,'jane@bth.se','Jane Doe','$2y$10$4gdzy9YYN7O.g325RtWimuuowzW.3umg6.lAGHn8zkNoVFVU0QJ1O');
+INSERT INTO user VALUES(3,'julia@bth.se','Julia','$2y$10$CFPX00V9Xlx2MoaISX6fVuzY.IjAUtxEgUXibpWCyyJMcNdnPtNfy');
 CREATE TABLE score (
     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     user_id INTEGER NOT NULL,
@@ -40,6 +41,7 @@ INSERT INTO score VALUES(4,2,'2023-07-10',106);
 INSERT INTO score VALUES(5,1,'2023-07-11',104);
 INSERT INTO score VALUES(6,1,'2023-07-11',106);
 INSERT INTO score VALUES(7,1,'2023-07-11',172);
+INSERT INTO score VALUES(8,3,'2023-07-13',142);
 CREATE TABLE IF NOT EXISTS "transaction" (
     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     user_id INTEGER NOT NULL,
@@ -111,11 +113,54 @@ INSERT INTO "transaction" VALUES(129,1,'2023-07-11','move-a-card cheat',-50);
 INSERT INTO "transaction" VALUES(130,1,'2023-07-11','move-a-card cheat',-50);
 INSERT INTO "transaction" VALUES(131,1,'2023-07-11','show-suggestion cheat',-30);
 INSERT INTO "transaction" VALUES(132,1,'2023-07-11','Return (bet x 2)',20);
+INSERT INTO "transaction" VALUES(133,3,'2023-07-13','Free registration bonus',1000);
+INSERT INTO "transaction" VALUES(134,3,'2023-07-13','Bet',-110);
+INSERT INTO "transaction" VALUES(135,3,'2023-07-13','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(136,3,'2023-07-13','undo last move cheat',-10);
+INSERT INTO "transaction" VALUES(137,3,'2023-07-13','undo last move cheat',-10);
+INSERT INTO "transaction" VALUES(138,3,'2023-07-13','undo last move cheat',-10);
+INSERT INTO "transaction" VALUES(139,3,'2023-07-13','Bet',-10);
+INSERT INTO "transaction" VALUES(140,3,'2023-07-13','Bet',-10);
+INSERT INTO "transaction" VALUES(141,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(142,3,'2023-07-13','Bet',-10);
+INSERT INTO "transaction" VALUES(143,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(144,3,'2023-07-13','Bet',-10);
+INSERT INTO "transaction" VALUES(145,3,'2023-07-13','undo last move cheat',-10);
+INSERT INTO "transaction" VALUES(146,3,'2023-07-13','undo last move cheat',-10);
+INSERT INTO "transaction" VALUES(147,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(148,3,'2023-07-13','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(149,3,'2023-07-13','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(150,3,'2023-07-13','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(151,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(152,3,'2023-07-13','undo last move cheat',-10);
+INSERT INTO "transaction" VALUES(153,3,'2023-07-13','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(154,3,'2023-07-13','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(155,3,'2023-07-13','undo last move cheat',-10);
+INSERT INTO "transaction" VALUES(156,3,'2023-07-13','undo last move cheat',-10);
+INSERT INTO "transaction" VALUES(157,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(158,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(159,3,'2023-07-13','Bet',-10);
+INSERT INTO "transaction" VALUES(160,3,'2023-07-13','Purchase',10100);
+INSERT INTO "transaction" VALUES(161,3,'2023-07-13','Bet',-1590);
+INSERT INTO "transaction" VALUES(162,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(163,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(164,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(165,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(166,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(167,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(168,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(169,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(170,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(171,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(172,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(173,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(174,3,'2023-07-13','move-a-card cheat',-50);
+INSERT INTO "transaction" VALUES(175,3,'2023-07-13','Return (bet x 2)',3180);
 DELETE FROM sqlite_sequence;
 INSERT INTO sqlite_sequence VALUES('book',6);
-INSERT INTO sqlite_sequence VALUES('user',2);
-INSERT INTO sqlite_sequence VALUES('score',7);
-INSERT INTO sqlite_sequence VALUES('transaction',132);
+INSERT INTO sqlite_sequence VALUES('user',3);
+INSERT INTO sqlite_sequence VALUES('score',8);
+INSERT INTO sqlite_sequence VALUES('transaction',175);
 CREATE INDEX IDX_75EA56E0FB7336F0 ON messenger_messages (queue_name);
 CREATE INDEX IDX_75EA56E0E3BD61CE ON messenger_messages (available_at);
 CREATE INDEX IDX_75EA56E016BA31DB ON messenger_messages (delivered_at);

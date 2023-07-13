@@ -34,6 +34,46 @@
     right: 0;
 }
 
+.page-title {
+    font-size: 1.4rem;
+    color: var(--nav-neon);
+    font-family: 'Text Me One', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 0 0 0 transparent,
+    0 0 10px var(--nav-neon),
+    0 0 20px var(--clear-pink),
+
+    0 0 40px var(--nav-neon),
+    0 0 100px var(--nav-neon),
+    0 0 200px var(--nav-neon),
+    0 0 300px var(--nav-neon),
+    0 0 500px var(--nav-neon),
+    0 0 1000px var(--nav-neon);
+    animation: animate 3s infinite alternate;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 14px 16px;
+}
+
+@keyframes animate {
+    40% {
+        opacity: 1;
+    }
+    42% {
+        opacity: 0.8;
+    }
+    43% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 0.3;
+    }
+    46% {
+        opacity: 1;
+    }
+}
+
 
 @media screen and (max-width: 1150px) {
     .topnav.responsive {

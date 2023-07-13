@@ -49,7 +49,7 @@ class CurrentStateTraitTest extends TestCase
                 'img' => "img/project/cards/5H.svg",
                 'alt' => "5H"
             ],
-            'message' => "",
+            'message' => ["", "", ""],
             'suggestion' => $suggestion,
             'results' => [],
             'house' => $houseCards,
@@ -112,7 +112,7 @@ class CurrentStateTraitTest extends TestCase
             'playerPossibleCards' => $possibleCardsPlayer,
             'housePossibleCards' => $possibleCardsHouse,
             'remainingCardsDeck' => $deckCards,
-            'message' => "",
+            'message' => ["", "", ""],
             'fromSlot' => $fromSlot,
             'lastRound' => $lastRound,
             'finished' => false,

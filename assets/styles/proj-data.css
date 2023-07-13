@@ -15,34 +15,22 @@
     color: var(--form-neon);
 }
 
-/* .data .score {
-    align-self: center;
-}
-
-.data .name {
-    float: left;
-}
-
-.data .balance {
-    float: right;
-} */
 
 .balance-fixed {
     color: var(--neon-green);
     position: fixed;
     font-size: 1.4rem;
-    top: 2.8vh;
-    left: 2.8rem;
+    top: 3.4rem;
+    /* left: 2.8rem; */
+    left: 1rem;
     font-family: 'Text Me One', sans-serif;
     font-weight: bold;
+
+    text-transform: uppercase;
 }
 
-/* .project .btn {
-    font-family: 'Text Me One', sans-serif;
-    text-transform: uppercase;
-} */
 
-.balance {
+.balance-alt {
     font-family: 'Text Me One', sans-serif;
     text-transform: uppercase;
 }

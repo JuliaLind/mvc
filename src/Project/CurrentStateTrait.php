@@ -16,12 +16,13 @@ trait CurrentStateTrait
      */
     private int $pot=0;
     private string $card;
+
     /**
-     * Empty string until the end of the game.
-     * When the game is finished the message contains information
-     * on who won and if the player earned any coins
+     * Consists of three parts. Empty strings until the
+     * game is finished
+     * @var array<string> $message
      */
-    private string $message = "";
+    private array $message = ["", "" ,""];
 
     /**
      * Contains the suggestion for player on a slot
