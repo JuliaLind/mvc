@@ -95,9 +95,9 @@ return [
                         .'|urchase/(\\d+)(*:368)'
                         .'|ick\\-card/(\\d+)(*:391)'
                     .')'
-                    .'|set\\-fromslot/(\\d+)/(\\d+)(*:425)'
-                    .'|move\\-card/(\\d+)/(\\d+)(*:455)'
-                    .'|one\\-round/(\\d+)/(\\d+)(*:485)'
+                    .'|move\\-card/(\\d+)/(\\d+)(*:422)'
+                    .'|one\\-round/(\\d+)/(\\d+)(*:452)'
+                    .'|set\\-fromslot/(\\d+)/(\\d+)(*:485)'
                 .')'
             .')/?$}sDu',
     ],
@@ -115,11 +115,11 @@ return [
         311 => [[['_route' => 'api-user', '_controller' => 'App\\Controller\\ProjectApiController2::apiUser'], ['email'], ['GET' => 0], null, false, true, null]],
         342 => [[['_route' => 'api-place-card', '_controller' => 'App\\Controller\\ProjectApiController4::apiPlaceCard'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
         368 => [[['_route' => 'purchase', '_controller' => 'App\\Controller\\ProjectCoinsController::projPurchase'], ['coins'], ['POST' => 0], null, false, true, null]],
-        391 => [[['_route' => 'pick-card', '_controller' => 'App\\Controller\\ProjectMoveCardController::pickCard'], ['balance'], null, null, false, true, null]],
-        425 => [[['_route' => 'set-fromslot', '_controller' => 'App\\Controller\\ProjectMoveCardController::setFromSlot'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
-        455 => [[['_route' => 'move-card', '_controller' => 'App\\Controller\\ProjectMoveCardController::moveCard'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
+        391 => [[['_route' => 'pick-card', '_controller' => 'App\\Controller\\ProjectPickCardController::pickCard'], ['balance'], null, null, false, true, null]],
+        422 => [[['_route' => 'move-card', '_controller' => 'App\\Controller\\ProjectMoveCardController::moveCard'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
+        452 => [[['_route' => 'proj-round', '_controller' => 'App\\Controller\\ProjectOneRoundController::projRound'], ['row', 'col'], ['POST' => 0], null, false, true, null]],
         485 => [
-            [['_route' => 'proj-round', '_controller' => 'App\\Controller\\ProjectOneRoundController::projRound'], ['row', 'col'], ['POST' => 0], null, false, true, null],
+            [['_route' => 'set-fromslot', '_controller' => 'App\\Controller\\ProjectPickCardController::setFromSlot'], ['row', 'col'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

@@ -619,6 +619,13 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectOneRoundController"/>
       </call>
     </service>
+    <service id="App\Controller\ProjectPickCardController" class="App\Controller\ProjectPickCardController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectPickCardController"/>
+      </call>
+    </service>
     <service id="App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -7109,6 +7116,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectOneRoundController" class="App\Controller\ProjectOneRoundController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectOneRoundController" class="App\Controller\ProjectOneRoundController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectOneRoundController" class="App\Controller\ProjectOneRoundController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectPickCardController" class="App\Controller\ProjectPickCardController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectPickCardController" class="App\Controller\ProjectPickCardController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectPickCardController" class="App\Controller\ProjectPickCardController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -8030,6 +8040,12 @@
     <service id=".service_locator.jIxfAsi.App\Controller\ProjectOneRoundController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ProjectOneRoundController"/>
       <argument>App\Controller\ProjectOneRoundController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectPickCardController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectPickCardController"/>
+      <argument>App\Controller\ProjectPickCardController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>

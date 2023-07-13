@@ -18,31 +18,10 @@ use App\ProjectGrid\Grid;
 
 /**
  * Controller related to the Project. Contains routes for moving
- * a card
+ * a card to a new slot
  */
 class ProjectMoveCardController extends AbstractController
 {
-    /**
-     * Route for saving the slot row and id from which the user wants to remove the card
-     */
-    #[Route('/proj/set-fromslot/{row<\d+>}/{col<\d+>}', name: "set-fromslot", methods: ['POST'])]
-    public function setFromSlot(
-        int $row,
-        int $col,
-        SessionInterface $session,
-    ): Response {
-        /**
-         * @var Game $game
-         */
-        $game = $session->get("game");
-        $game->setFromSlot($row, $col);
-        // $session->set("move-card", true);
-        $session->set("game", $game);
-        // return $this->redirectToRoute('proj-play');
-        return $this->redirectToRoute('place-card');
-    }
-
-
     /**
      * Route for moving the card to the new slot chosen by user
      */
@@ -100,35 +79,5 @@ class ProjectMoveCardController extends AbstractController
         ];
 
         return $this->render('proj/place-card.html.twig', $data);
-    }
-
-    /**
-     * Route that renders the template where placed cards are clickable.
-     * If the user does not have enough coins to purchase the cheat the user
-     * is redirected back to the main game
-     */
-    #[Route('/proj/pick-card/{balance<\d+>}', name: "pick-card")]
-    public function pickCard(
-        SessionInterface $session,
-        int $balance
-    ): Response {
-        /**
-         * @var Game $game
-         */
-        $game = $session->get("game") ?? null;
-        if ($game == null) {
-            return $this->redirectToRoute('proj');
-        }
-        if ($balance < 50) {
-            $this->addFlash('warning', "You do not have enough coins to use this cheat. Purchase more coins in the shop");
-            return $this->redirectToRoute('proj-play');
-        }
-        $state = $game->currentState();
-        $data = [
-            ...$state,
-            'url' => ""
-        ];
-
-        return $this->render('proj/pick-card.html.twig', $data);
     }
 }
