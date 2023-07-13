@@ -80,11 +80,11 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-library.html" class="">Library</a>
+                <a href="namespaces/app-project.html" class="">Project</a>
                 
             </li>
                     <li>
-                <a href="namespaces/app-project.html" class="">Project</a>
+                <a href="namespaces/app-projectevaluator.html" class="">ProjectEvaluator</a>
                 
             </li>
                     <li>
@@ -137,12 +137,17 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">Handles one round
+1. Player places card
+2. House places card
+3. If grids are full, evaluate and return results
+4. if not, generates new suggestion-data for player
+based on the updated grid and deck data</p>
+
 
 
 
@@ -174,7 +179,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Project-OneRoundTrait.html#property_evaluator">$evaluator</a>
     <span>
-                        &nbsp;: <a href="classes/App-ProjectRules-RuleEvaluator.html"><abbr title="\App\ProjectRules\RuleEvaluator">RuleEvaluator</abbr></a>            </span>
+                        &nbsp;: <a href="classes/App-ProjectEvaluator-RuleEvaluator.html"><abbr title="\App\ProjectEvaluator\RuleEvaluator">RuleEvaluator</abbr></a>            </span>
 </dt>
 <dd></dd>
 
@@ -197,7 +202,9 @@
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
+<dd>Contains the coordinates of the slots
+where the house and the player placed the
+cards in the last round</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Project-OneRoundTrait.html#property_player">$player</a>
@@ -205,6 +212,24 @@
                         &nbsp;: <a href="classes/App-ProjectGrid-Grid.html"><abbr title="\App\ProjectGrid\Grid">Grid</abbr></a>            </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/App-Project-OneRoundTrait.html#property_results">$results</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>The results for the player and the house.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/App-Project-OneRoundTrait.html#property_suggestion">$suggestion</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>Contains the suggestion for player on a slot
+to place the dealt card and also the data for
+all 10 hands (best possible rule with the
+dealt card and best possible rule wihtout
+the dealt card)</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Project-OneRoundTrait.html#method_oneRound">oneRound()</a>
@@ -218,14 +243,8 @@
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/App-Project-OneRoundTrait.html#method_playerSuggest">playerSuggest()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd></dd>
+<dd>Picks a card from the deck and places
+into the houses grid</dd>
 
         </dl>
 
@@ -253,7 +272,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -287,7 +306,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -321,14 +340,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/App-ProjectRules-RuleEvaluator.html"><abbr title="\App\ProjectRules\RuleEvaluator">RuleEvaluator</abbr></a></span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-ProjectEvaluator-RuleEvaluator.html"><abbr title="\App\ProjectEvaluator\RuleEvaluator">RuleEvaluator</abbr></a></span>
     <span class="phpdocumentor-signature__name">$evaluator</span>
     </code>
 
@@ -355,7 +374,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -389,7 +408,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -423,11 +442,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Contains the coordinates of the slots
+where the house and the player placed the
+cards in the last round</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
@@ -457,7 +479,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -472,6 +494,79 @@
 
         <section class="phpdocumentor-description"></section>
 
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_results">
+        $results
+        <a href="classes/App-Project-OneRoundTrait.html#property_results" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">39</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The results for the player and the house.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$results</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+        <section class="phpdocumentor-description"><p>Contains the rule scored and the points
+for each of the 10 hands and the totals</p>
+</section>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_suggestion">
+        $suggestion
+        <a href="classes/App-Project-OneRoundTrait.html#property_suggestion" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">49</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Contains the suggestion for player on a slot
+to place the dealt card and also the data for
+all 10 hands (best possible rule with the
+dealt card and best possible rule wihtout
+the dealt card)</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$suggestion</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
     
 
 </article>
@@ -495,7 +590,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -547,50 +642,18 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Picks a card from the deck and places
+into the houses grid</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
     <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">housePlaceCard</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
     
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                        -abstract                                "
->
-    <h4 class="phpdocumentor-element__name" id="method_playerSuggest">
-        playerSuggest()
-        <a href="classes/App-Project-OneRoundTrait.html#method_playerSuggest" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">24</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">playerSuggest</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
     
     
 

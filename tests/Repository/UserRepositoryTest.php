@@ -5,7 +5,9 @@ namespace App\Repository;
 use App\Entity\User;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Exception;
+use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
+
+// use Exception;
 
 class UserRepositoryTest extends KernelTestCase
 {
@@ -54,6 +56,30 @@ class UserRepositoryTest extends KernelTestCase
 
         $this->assertEquals(4, $user->getId());
     }
+
+    // public function testSaveNotOk(): void
+    // {
+    //     /**
+    //      * @var UserRepository $userRepository
+    //      */
+    //     $userRepository = $this->entityManager
+    //     ->getRepository(User::class);
+
+    //     /**
+    //      * @var User $user
+    //      */
+    //     $user= new User();
+
+    //     $email = 'user0@test.se';
+    //     $acronym = 'Julia';
+    //     $password = 'julia';
+    //     $hash = password_hash($password, PASSWORD_DEFAULT);
+    //     $user->setEmail($email);
+    //     $user->setAcronym($acronym);
+    //     $user->setHash($hash);
+    //     $this->expectException(UniqueConstraintViolationException::class);
+    //     $userRepository->save($user, true);
+    // }
 
     public function testRemove(): void
     {

@@ -22,13 +22,17 @@ trait OneRoundTrait
     private RuleEvaluator $evaluator;
     private bool $finished=false;
     private Grid $house;
+
     /**
      * Contains the coordinates of the slots
      * where the house and the player placed the
-     * cards in the last round
-     * @var array<string,array<int>>> $lastRound
+     * cards in all the previous moves
+     * @var array<string,array<array<int>>> $lastRound
      */
-    private array $lastRound = [];
+    private array $lastRound = [
+        'house' => [],
+        'player' => []
+    ];
     private Grid $player;
     /**
      * The results for the player and the house.
@@ -60,7 +64,9 @@ trait OneRoundTrait
     {
         $this->suggestion = [];
         $this->player->addCard($row, $col, $this->card);
-        $this->lastRound['player'] = [$row, $col];
+
+        array_push($this->lastRound['player'], [$row, $col]);
+
         $this->housePlaceCard();
         $this->card = $this->deck->deal();
         if ($this->house->getCardCount() === 25) {

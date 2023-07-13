@@ -80,11 +80,11 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-library.html" class="">Library</a>
+                <a href="namespaces/app-project.html" class="">Project</a>
                 
             </li>
                     <li>
-                <a href="namespaces/app-project.html" class="">Project</a>
+                <a href="namespaces/app-projectevaluator.html" class="">ProjectEvaluator</a>
                 
             </li>
                     <li>
@@ -172,7 +172,8 @@
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Bot fills a grid completely based on calculated suggestions and then
+all 10 hands are evaluated and results are returned</dd>
 
         </dl>
 
@@ -200,22 +201,24 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/ApiGame3.php"><a href="files/src-project-apigame3.html"><abbr title="src/Project/ApiGame3.php">ApiGame3.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Bot fills a grid completely based on calculated suggestions and then
+all 10 hands are evaluated and results are returned</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">results</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-ProjectRules-RuleEvaluator.html"><abbr title="\App\ProjectRules\RuleEvaluator">RuleEvaluator</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$evaluator</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new RuleEvaluator()</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-ProjectGrid-Grid.html"><abbr title="\App\ProjectGrid\Grid">Grid</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$grid</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new Grid()</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Project-Deck.html"><abbr title="\App\Project\Deck">Deck</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new Deck()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">results</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Project-Deck.html"><abbr title="\App\Project\Deck">Deck</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new Deck()</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-ProjectGrid-Grid.html"><abbr title="\App\ProjectGrid\Grid">Grid</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$grid</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new Grid()</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-ProjectEvaluator-RuleEvaluator.html"><abbr title="\App\ProjectEvaluator\RuleEvaluator">RuleEvaluator</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$evaluator</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new RuleEvaluator()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$evaluator</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-ProjectRules-RuleEvaluator.html"><abbr title="\App\ProjectRules\RuleEvaluator">RuleEvaluator</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">new RuleEvaluator()</span>            </dt>
+                <span class="phpdocumentor-signature__argument__name">$deck</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Project-Deck.html"><abbr title="\App\Project\Deck">Deck</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">new Deck()</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
@@ -229,9 +232,9 @@
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$deck</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Project-Deck.html"><abbr title="\App\Project\Deck">Deck</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">new Deck()</span>            </dt>
+                <span class="phpdocumentor-signature__argument__name">$evaluator</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-ProjectEvaluator-RuleEvaluator.html"><abbr title="\App\ProjectEvaluator\RuleEvaluator">RuleEvaluator</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">new RuleEvaluator()</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 

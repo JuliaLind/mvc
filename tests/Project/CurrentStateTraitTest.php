@@ -31,8 +31,8 @@ class CurrentStateTraitTest extends TestCase
         $player->method('getCardCount')->willreturn(14);
         $fromSlot = [1, 4];
         $lastRound = [
-            'player' => [2, 3],
-            'house' => [3, 0]
+            'house' => [[3, 0]],
+            'player' => [[2, 3]],
         ];
         $this->fromSlot = $fromSlot;
         $this->lastRound = $lastRound;
@@ -84,8 +84,8 @@ class CurrentStateTraitTest extends TestCase
         $house->method('getCardCount')->willreturn(12);
         $fromSlot = [1, 4];
         $lastRound = [
-            'player' => [2, 3],
-            'house' => [3, 0]
+            'house' => [[3, 0]],
+            'player' => [[2, 3]],
         ];
         $this->fromSlot = $fromSlot;
         $this->lastRound = $lastRound;

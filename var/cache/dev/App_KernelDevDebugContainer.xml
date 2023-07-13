@@ -7026,7 +7026,7 @@
         <argument key="repo" type="service_closure" id="App\Repository\TransactionRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.P01anW0" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.ExS.dtA" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CardController2::draw" type="service_closure" id=".service_locator.RnGvXe2"/>
@@ -7066,6 +7066,8 @@
         <argument key="App\Controller\ProjectAuthController::projRegister" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectCoinsController::projPurchase" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectCoinsController::selectAmount" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController::projAbout" type="service_closure" id=".service_locator.IeuV79I"/>
+        <argument key="App\Controller\ProjectController::projDb" type="service_closure" id=".service_locator.IeuV79I"/>
         <argument key="App\Controller\ProjectInitController::projInit" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectLandingController::projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectMoveCardController::setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -7120,6 +7122,8 @@
         <argument key="App\Controller\ProjectAuthController:projRegister" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectCoinsController:projPurchase" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectCoinsController:selectAmount" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectController:projAbout" type="service_closure" id=".service_locator.IeuV79I"/>
+        <argument key="App\Controller\ProjectController:projDb" type="service_closure" id=".service_locator.IeuV79I"/>
         <argument key="App\Controller\ProjectInitController:projInit" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectLandingController:projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectMoveCardController:setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -8213,12 +8217,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.P01anW0"/>
+      <argument type="service" id=".service_locator.ExS.dtA"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.P01anW0"/>
+      <argument type="service" id=".service_locator.ExS.dtA"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9163,7 +9167,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.P01anW0"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.ExS.dtA"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9187,7 +9191,7 @@
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.ewaBO.S" alias=".service_locator.XXU_NF2"/>
     <service id=".service_locator.hjZjVN0" alias=".service_locator.OsH1muE"/>
-    <service id=".service_locator.ijf6BmF" alias=".service_locator.P01anW0"/>
+    <service id=".service_locator.B8WwB5v" alias=".service_locator.ExS.dtA"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>

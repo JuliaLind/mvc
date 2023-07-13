@@ -4,6 +4,7 @@ namespace App\Project;
 
 use PHPUnit\Framework\TestCase;
 use App\ProjectGrid\Grid;
+use App\ProjectEvaluator\RuleEvaluator;
 
 class UndoLastRoundTraitTest extends TestCase
 {
@@ -14,9 +15,12 @@ class UndoLastRoundTraitTest extends TestCase
 
     public function testUndoLastRound(): void
     {
+        $evaluator = $this->createMock(RuleEvaluator::class);
+        $evaluator->expects($this->exactly(2))->method('results');
+        $this->evaluator = $evaluator;
         $this->lastRound = [
-            'player' => [2, 3],
-            'house' => [1, 0]
+            'house' => [[0, 2], [1, 0]],
+            'player' => [[4, 1], [2, 3]],
         ];
         $this->card = "5S";
 
@@ -36,7 +40,12 @@ class UndoLastRoundTraitTest extends TestCase
         $this->deck = new Deck($factory);
         $this->undoLastRound();
 
-        $this->assertEquals([], $this->lastRound);
+
+        $exp = [
+            'house' => [[0, 2]],
+            'player' => [[4, 1]],
+        ];
+        $this->assertEquals($exp, $this->lastRound);
         $this->assertEquals("12D", $this->deck->deal());
         $this->assertEquals("5S", $this->deck->deal());
         $this->card = "8H";

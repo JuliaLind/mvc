@@ -80,11 +80,11 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-library.html" class="">Library</a>
+                <a href="namespaces/app-project.html" class="">Project</a>
                 
             </li>
                     <li>
-                <a href="namespaces/app-project.html" class="">Project</a>
+                <a href="namespaces/app-projectevaluator.html" class="">ProjectEvaluator</a>
                 
             </li>
                     <li>
@@ -162,7 +162,7 @@
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
+<dd>The latest card that has been dealt to the player</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Project-UndoLastRoundTrait.html#property_deck">$deck</a>
@@ -183,7 +183,9 @@
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
+<dd>Contains the coordinates of the slots
+where the house and the player placed the
+cards in the last round</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Project-UndoLastRoundTrait.html#property_player">$player</a>
@@ -197,14 +199,9 @@
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/App-Project-UndoLastRoundTrait.html#method_playerSuggest">playerSuggest()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd></dd>
+<dd>Undoes the last round. The latest card that is dealt to the player
+is placed back into the deck. The latest placed card in the houses grid
+is also removed and placed back into the deck. And the latest card placed by the player is lifted from the player&#039;s grid.</dd>
 
         </dl>
 
@@ -232,19 +229,19 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">The latest card that has been dealt to the player</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$card</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <section class="phpdocumentor-description"></section>
 
     
@@ -266,7 +263,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
@@ -300,7 +297,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
@@ -334,11 +331,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Contains the coordinates of the slots
+where the house and the player placed the
+cards in the last round</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
@@ -368,7 +368,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -406,49 +406,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Undoes the last round. The latest card that is dealt to the player
+is placed back into the deck. The latest placed card in the houses grid
+is also removed and placed back into the deck. And the latest card placed by the player is lifted from the player&#039;s grid.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">undoLastRound</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                        -abstract                                "
->
-    <h4 class="phpdocumentor-element__name" id="method_playerSuggest">
-        playerSuggest()
-        <a href="classes/App-Project-UndoLastRoundTrait.html#method_playerSuggest" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">20</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">playerSuggest</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>The suggestion data for the player is re-generated based on the updated grid</p>
+</section>
 
     
     

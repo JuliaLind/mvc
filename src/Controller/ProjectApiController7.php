@@ -28,24 +28,6 @@ class ProjectApiController7 extends AbstractController
         EntityManagerInterface $entityManager,
     ): Response {
         $scores = $entityManager->getRepository(Score::class)->findBy([], ['points' => 'DESC'], 10);
-        $data = [];
-
-        foreach($scores as $score) {
-            /**
-             * @var User $user
-             */
-            $user = $score->getUser();
-            /**
-             * @var DateTime $registered
-             */
-            $registered = $score->getRegistered();
-            $registered = $registered->format('Y-m-d');
-            $data[] = [
-                'user' => $user->getAcronym(),
-                'registered' => $registered,
-                'points' => $score->getPoints(),
-            ];
-        }
-        return $this->json($data);
+        return $this->json($scores);
     }
 }

@@ -80,11 +80,11 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-library.html" class="">Library</a>
+                <a href="namespaces/app-project.html" class="">Project</a>
                 
             </li>
                     <li>
-                <a href="namespaces/app-project.html" class="">Project</a>
+                <a href="namespaces/app-projectevaluator.html" class="">ProjectEvaluator</a>
                 
             </li>
                     <li>
@@ -137,12 +137,17 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/FirstCheckTrait.php"><a href="files/src-projectrules-firstchecktrait.html"><abbr title="src/ProjectRules/FirstCheckTrait.php">FirstCheckTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">5</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">Used by the following classes:
+Flush
+FullHouse
+RoyalFlush
+StraightFlush
+Straight</p>
+
 
 
 
@@ -158,18 +163,20 @@
 
 <dl class="phpdocumentor-table-of-contents">
                         <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-ProjectRules-FirstCheckTrait.html#method_check">check()</a>
+    <a href="classes/App-ProjectRules-FirstCheckTrait.html#method_possibleWithCard">possibleWithCard()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd></dd>
+<dd>Returns true if the rule is possible to score if the dealt card is placed in
+the hand</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-ProjectRules-FirstCheckTrait.html#method_check2">check2()</a>
+    <a href="classes/App-ProjectRules-FirstCheckTrait.html#method_possibleWithoutCard">possibleWithoutCard()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd></dd>
+<dd>Return true if the rule is possible to score without the dealt card,
+given the cards in the hand and in the deck.</dd>
 
         </dl>
 
@@ -188,21 +195,23 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_check">
-        check()
-        <a href="classes/App-ProjectRules-FirstCheckTrait.html#method_check" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_possibleWithCard">
+        possibleWithCard()
+        <a href="classes/App-ProjectRules-FirstCheckTrait.html#method_possibleWithCard" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/FirstCheckTrait.php"><a href="files/src-projectrules-firstchecktrait.html"><abbr title="src/ProjectRules/FirstCheckTrait.php">FirstCheckTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns true if the rule is possible to score if the dealt card is placed in
+the hand</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">check</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$card</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">possibleWithCard</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$card</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -245,21 +254,23 @@
             -public
                         -abstract                                "
 >
-    <h4 class="phpdocumentor-element__name" id="method_check2">
-        check2()
-        <a href="classes/App-ProjectRules-FirstCheckTrait.html#method_check2" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_possibleWithoutCard">
+        possibleWithoutCard()
+        <a href="classes/App-ProjectRules-FirstCheckTrait.html#method_possibleWithoutCard" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/FirstCheckTrait.php"><a href="files/src-projectrules-firstchecktrait.html"><abbr title="src/ProjectRules/FirstCheckTrait.php">FirstCheckTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Return true if the rule is possible to score without the dealt card,
+given the cards in the hand and in the deck.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">check2</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">possibleWithoutCard</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>

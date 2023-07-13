@@ -80,11 +80,11 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-library.html" class="">Library</a>
+                <a href="namespaces/app-project.html" class="">Project</a>
                 
             </li>
                     <li>
-                <a href="namespaces/app-project.html" class="">Project</a>
+                <a href="namespaces/app-projectevaluator.html" class="">ProjectEvaluator</a>
                 
             </li>
                     <li>
@@ -147,18 +147,19 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="classes/App-ProjectRules-CountByRankTrait.html"><abbr title="\App\ProjectRules\CountByRankTrait">CountByRankTrait</abbr></a>                    </span>
+                            <a href="classes/App-ProjectRules-AdditionalValueTrait.html"><abbr title="\App\ProjectRules\AdditionalValueTrait">AdditionalValueTrait</abbr></a>,                             <a href="classes/App-ProjectRules-CountByRankTrait.html"><abbr title="\App\ProjectRules\CountByRankTrait">CountByRankTrait</abbr></a>,                             <a href="classes/App-ProjectRules-SameOfAKindTrait.html"><abbr title="\App\ProjectRules\SameOfAKindTrait">SameOfAKindTrait</abbr></a>,                             <a href="classes/App-ProjectRules-SameOfAKindTrait2.html"><abbr title="\App\ProjectRules\SameOfAKindTrait2">SameOfAKindTrait2</abbr></a>,                             <a href="classes/App-ProjectRules-SameOfAKindTrait3.html"><abbr title="\App\ProjectRules\SameOfAKindTrait3">SameOfAKindTrait3</abbr></a>,                             <a href="classes/App-ProjectRules-SameOfAKindTrait4.html"><abbr title="\App\ProjectRules\SameOfAKindTrait4">SameOfAKindTrait4</abbr></a>,                             <a href="classes/App-ProjectRules-RuleDataTrait.html"><abbr title="\App\ProjectRules\RuleDataTrait">RuleDataTrait</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/SameOfAKind.php"><a href="files/src-projectrules-sameofakind.html"><abbr title="src/ProjectRules/SameOfAKind.php">SameOfAKind.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">5</span>
+    <span class="phpdocumentor-element-found-in__line">9</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">Class for the rules Four Of A Kind, Three Of A Kind
+and One Pair.</p>
+
 
 
 
@@ -186,7 +187,31 @@
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/App-ProjectRules-SameOfAKindTrait.html#property_additionalValue">$additionalValue</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+<dd>1 point for every card that already is in hand
+and contributes to the rule</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-ProjectRules-SameOfAKind.html#property_minCountRank">$minCountRank</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+<dd>Minimum number of cards of the same rank required to score
+the rule. 4 for FourOfAKind, 3 for ThreeOfAKind
+and 2 for OnePair</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/App-ProjectRules-RuleDataTrait.html#property_name">$name</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/App-ProjectRules-RuleDataTrait.html#property_points">$points</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
@@ -200,18 +225,84 @@
 <dd>Constructor</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-ProjectRules-SameOfAKind.html#method_check">check()</a>
+    <a href="classes/App-ProjectRules-AdditionalValueTrait.html#method_getAdditionalValue">getAdditionalValue()</a>
+    <span>
+                                &nbsp;: int    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-ProjectRules-RuleDataTrait.html#method_getName">getName()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Returns the name if the rule</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-ProjectRules-RuleDataTrait.html#method_getPoints">getPoints()</a>
+    <span>
+                                &nbsp;: int    </span>
+</dt>
+<dd>Returns rule&#039;s worth in points</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-ProjectRules-SameOfAKindTrait3.html#method_possibleDeckOnly">possibleDeckOnly()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 <dd></dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-ProjectRules-SameOfAKindTrait.html#method_possibleWithCard">possibleWithCard()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-ProjectRules-SameOfAKindTrait2.html#method_possibleWithoutCard">possibleWithoutCard()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-ProjectRules-SameOfAKind.html#method_scored">scored()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Determines if the rule has been scored by comparing the maximum
+number of ranks in the hand to the minimum number of ranks needed to score
+the rule</dd>
+
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/App-ProjectRules-CountByRankTrait.html#method_countByRank">countByRank()</a>
+    <a href="classes/App-ProjectRules-SameOfAKindTrait3.html#method_countByRank">countByRank()</a>
     <span>
                                 &nbsp;: array&lt;string|int, array&lt;int|string, int&gt;&gt;    </span>
 </dt>
-<dd></dd>
+<dd>From CountByRankTrait
+Returns an associative array
+where keys are the ranks present amongst
+the cards and the values are the count of
+each rank</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-ProjectRules-SameOfAKindTrait4.html#method_enoughSpaceInHand">enoughSpaceInHand()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Used in:
+SameOfAKindTrait,
+SameOfAKindTrait2</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-ProjectRules-SameOfAKindTrait4.html#method_requiredCount">requiredCount()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Used in:
+SameOfAKindTrait,
+SameOfAKindTrait2</dd>
 
         </dl>
 
@@ -232,6 +323,41 @@
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_additionalValue">
+        $additionalValue
+        <a href="classes/App-ProjectRules-SameOfAKindTrait.html#property_additionalValue" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/SameOfAKindTrait.php"><a href="files/src-projectrules-sameofakindtrait.html"><abbr title="src/ProjectRules/SameOfAKindTrait.php">SameOfAKindTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">14</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">1 point for every card that already is in hand
+and contributes to the rule</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$additionalValue</span>
+     = <span class="phpdocumentor-signature__default-value">0</span></code>
+
+    
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_minCountRank">
         $minCountRank
         <a href="classes/App-ProjectRules-SameOfAKind.html#property_minCountRank" class="headerlink"><i class="fas fa-link"></i></a>
@@ -241,7 +367,77 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/SameOfAKind.php"><a href="files/src-projectrules-sameofakind.html"><abbr title="src/ProjectRules/SameOfAKind.php">SameOfAKind.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Minimum number of cards of the same rank required to score
+the rule. 4 for FourOfAKind, 3 for ThreeOfAKind
+and 2 for OnePair</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$minCountRank</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_name">
+        $name
+        <a href="classes/App-ProjectRules-RuleDataTrait.html#property_name" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/RuleDataTrait.php"><a href="files/src-projectrules-ruledatatrait.html"><abbr title="src/ProjectRules/RuleDataTrait.php">RuleDataTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">13</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$name</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_points">
+        $points
+        <a href="classes/App-ProjectRules-RuleDataTrait.html#property_points" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/RuleDataTrait.php"><a href="files/src-projectrules-ruledatatrait.html"><abbr title="src/ProjectRules/RuleDataTrait.php">RuleDataTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
@@ -249,7 +445,7 @@
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">int</span>
-    <span class="phpdocumentor-signature__name">$minCountRank</span>
+    <span class="phpdocumentor-signature__name">$points</span>
     </code>
 
         <section class="phpdocumentor-description"></section>
@@ -279,7 +475,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/SameOfAKind.php"><a href="files/src-projectrules-sameofakind.html"><abbr title="src/ProjectRules/SameOfAKind.php">SameOfAKind.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
@@ -316,21 +512,277 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_check">
-        check()
-        <a href="classes/App-ProjectRules-SameOfAKind.html#method_check" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getAdditionalValue">
+        getAdditionalValue()
+        <a href="classes/App-ProjectRules-AdditionalValueTrait.html#method_getAdditionalValue" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/SameOfAKind.php"><a href="files/src-projectrules-sameofakind.html"><abbr title="src/ProjectRules/SameOfAKind.php">SameOfAKind.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/AdditionalValueTrait.php"><a href="files/src-projectrules-additionalvaluetrait.html"><abbr title="src/ProjectRules/AdditionalValueTrait.php">AdditionalValueTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">check</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">getAdditionalValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getName">
+        getName()
+        <a href="classes/App-ProjectRules-RuleDataTrait.html#method_getName" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/RuleDataTrait.php"><a href="files/src-projectrules-ruledatatrait.html"><abbr title="src/ProjectRules/RuleDataTrait.php">RuleDataTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">19</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns the name if the rule</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getName</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getPoints">
+        getPoints()
+        <a href="classes/App-ProjectRules-RuleDataTrait.html#method_getPoints" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/RuleDataTrait.php"><a href="files/src-projectrules-ruledatatrait.html"><abbr title="src/ProjectRules/RuleDataTrait.php">RuleDataTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">27</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns rule&#039;s worth in points</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getPoints</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_possibleDeckOnly">
+        possibleDeckOnly()
+        <a href="classes/App-ProjectRules-SameOfAKindTrait3.html#method_possibleDeckOnly" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/SameOfAKindTrait3.php"><a href="files/src-projectrules-sameofakindtrait3.html"><abbr title="src/ProjectRules/SameOfAKindTrait3.php">SameOfAKindTrait3.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">30</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">possibleDeckOnly</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$deck</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_possibleWithCard">
+        possibleWithCard()
+        <a href="classes/App-ProjectRules-SameOfAKindTrait.html#method_possibleWithCard" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/SameOfAKindTrait.php"><a href="files/src-projectrules-sameofakindtrait.html"><abbr title="src/ProjectRules/SameOfAKindTrait.php">SameOfAKindTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">59</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">possibleWithCard</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$card</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$hand</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$deck</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$card</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>true if rule is still possible given passed value
+otherwise false</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_possibleWithoutCard">
+        possibleWithoutCard()
+        <a href="classes/App-ProjectRules-SameOfAKindTrait2.html#method_possibleWithoutCard" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/SameOfAKindTrait2.php"><a href="files/src-projectrules-sameofakindtrait2.html"><abbr title="src/ProjectRules/SameOfAKindTrait2.php">SameOfAKindTrait2.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">53</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">possibleWithoutCard</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$hand</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$deck</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>true if rule is still possible given passed value
+otherwise false</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_scored">
+        scored()
+        <a href="classes/App-ProjectRules-SameOfAKind.html#method_scored" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/SameOfAKind.php"><a href="files/src-projectrules-sameofakind.html"><abbr title="src/ProjectRules/SameOfAKind.php">SameOfAKind.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">55</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Determines if the rule has been scored by comparing the maximum
+number of ranks in the hand to the minimum number of ranks needed to score
+the rule</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">scored</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -349,32 +801,35 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>true if rule is fullfilled otherwise false</p>
-</section>
-
+        
     
 </article>
                     <article
         class="phpdocumentor-element
             -method
             -private
-                                                        "
+                        -abstract                                "
 >
     <h4 class="phpdocumentor-element__name" id="method_countByRank">
         countByRank()
-        <a href="classes/App-ProjectRules-CountByRankTrait.html#method_countByRank" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-ProjectRules-SameOfAKindTrait3.html#method_countByRank" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/CountByRankTrait.php"><a href="files/src-projectrules-countbyranktrait.html"><abbr title="src/ProjectRules/CountByRankTrait.php">CountByRankTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/SameOfAKindTrait3.php"><a href="files/src-projectrules-sameofakindtrait3.html"><abbr title="src/ProjectRules/SameOfAKindTrait3.php">SameOfAKindTrait3.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">From CountByRankTrait
+Returns an associative array
+where keys are the ranks present amongst
+the cards and the values are the count of
+each rank</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">countByRank</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cards</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;int|string, int&gt;&gt;</span></code>
+    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">countByRank</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cards</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;int|string, int&gt;&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -392,6 +847,114 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;int|string, int&gt;&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_enoughSpaceInHand">
+        enoughSpaceInHand()
+        <a href="classes/App-ProjectRules-SameOfAKindTrait4.html#method_enoughSpaceInHand" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/SameOfAKindTrait4.php"><a href="files/src-projectrules-sameofakindtrait4.html"><abbr title="src/ProjectRules/SameOfAKindTrait4.php">SameOfAKindTrait4.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">25</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Used in:
+SameOfAKindTrait,
+SameOfAKindTrait2</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">enoughSpaceInHand</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$countHand</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$countRank</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"><p>Returns true if there is enough empty slots left in hand to fit
+the difference between the count of a rank in the hand and the¨
+minimum count of same rank required to score the rule</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$countHand</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$countRank</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_requiredCount">
+        requiredCount()
+        <a href="classes/App-ProjectRules-SameOfAKindTrait4.html#method_requiredCount" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/SameOfAKindTrait4.php"><a href="files/src-projectrules-sameofakindtrait4.html"><abbr title="src/ProjectRules/SameOfAKindTrait4.php">SameOfAKindTrait4.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">39</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Used in:
+SameOfAKindTrait,
+SameOfAKindTrait2</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">requiredCount</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rankCount</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"><p>Returns true if the count of rank is the same
+or exceeds the minimum count of same rank required
+to score the rule</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$rankCount</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
         
     

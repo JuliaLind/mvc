@@ -80,11 +80,11 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-library.html" class="">Library</a>
+                <a href="namespaces/app-project.html" class="">Project</a>
                 
             </li>
                     <li>
-                <a href="namespaces/app-project.html" class="">Project</a>
+                <a href="namespaces/app-projectevaluator.html" class="">ProjectEvaluator</a>
                 
             </li>
                     <li>
@@ -147,18 +147,19 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="classes/App-ProjectRules-CountSuitAndRankTrait.html"><abbr title="\App\ProjectRules\CountSuitAndRankTrait">CountSuitAndRankTrait</abbr></a>                    </span>
+                            <a href="classes/App-ProjectRules-CountByRankTrait.html"><abbr title="\App\ProjectRules\CountByRankTrait">CountByRankTrait</abbr></a>,                             <a href="classes/App-ProjectRules-CountBySuitTrait.html"><abbr title="\App\ProjectRules\CountBySuitTrait">CountBySuitTrait</abbr></a>,                             <a href="classes/App-ProjectRules-CountSuitAndRankTrait.html"><abbr title="\App\ProjectRules\CountSuitAndRankTrait">CountSuitAndRankTrait</abbr></a>,                             <a href="classes/App-ProjectRules-FirstCheckTrait.html"><abbr title="\App\ProjectRules\FirstCheckTrait">FirstCheckTrait</abbr></a>,                             <a href="classes/App-ProjectRules-GroupBySuitTrait.html"><abbr title="\App\ProjectRules\GroupBySuitTrait">GroupBySuitTrait</abbr></a>,                             <a href="classes/App-ProjectRules-RuleDataTrait.html"><abbr title="\App\ProjectRules\RuleDataTrait">RuleDataTrait</abbr></a>,                             <a href="classes/App-ProjectRules-StraightFlushScoredTrait.html"><abbr title="\App\ProjectRules\StraightFlushScoredTrait">StraightFlushScoredTrait</abbr></a>,                             <a href="classes/App-ProjectRules-StraightFlushTrait.html"><abbr title="\App\ProjectRules\StraightFlushTrait">StraightFlushTrait</abbr></a>,                             <a href="classes/App-ProjectRules-StraightFlushTrait3.html"><abbr title="\App\ProjectRules\StraightFlushTrait3">StraightFlushTrait3</abbr></a>,                             <a href="classes/App-ProjectRules-StraightTrait3.html"><abbr title="\App\ProjectRules\StraightTrait3">StraightTrait3</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/StraightFlush.php"><a href="files/src-projectrules-straightflush.html"><abbr title="src/ProjectRules/StraightFlush.php">StraightFlush.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">5</span>
+    <span class="phpdocumentor-element-found-in__line">9</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">Determins if StarightFlush rule is scored
+or possible to score</p>
+
 
 
 
@@ -185,19 +186,130 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                        <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-ProjectRules-StraightFlush.html#method_check">check()</a>
+                    <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/App-ProjectRules-RuleDataTrait.html#property_name">$name</a>
     <span>
-                                &nbsp;: bool    </span>
+                        &nbsp;: string            </span>
 </dt>
 <dd></dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/App-ProjectRules-RuleDataTrait.html#property_points">$points</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+<dd></dd>
+
+                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-ProjectRules-StraightFlush.html#method___construct">__construct()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Counstructor</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-ProjectRules-RuleDataTrait.html#method_getName">getName()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Returns the name if the rule</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-ProjectRules-RuleDataTrait.html#method_getPoints">getPoints()</a>
+    <span>
+                                &nbsp;: int    </span>
+</dt>
+<dd>Returns rule&#039;s worth in points</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-ProjectRules-StraightFlushTrait3.html#method_possibleDeckOnly">possibleDeckOnly()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Used when hand is empty. Returns true if the
+rule is possible to score with the cards that
+will be dealt from deck</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-ProjectRules-FirstCheckTrait.html#method_possibleWithCard">possibleWithCard()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Returns true if the rule is possible to score if the dealt card is placed in
+the hand</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-ProjectRules-StraightFlushTrait.html#method_possibleWithoutCard">possibleWithoutCard()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Returns true if rule is possible to
+score wuthout the dealt card.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-ProjectRules-StraightFlushScoredTrait.html#method_scored">scored()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Used for a full hand and returns
+true is the rule is scored</dd>
+
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/App-ProjectRules-CountSuitAndRankTrait.html#method_countSuitAndRank">countSuitAndRank()</a>
+    <a href="classes/App-ProjectRules-StraightTrait3.html#method_checkAllPossible">checkAllPossible()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Used in the following traits:
+StraightTrait,
+StraightFlushTrait</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-ProjectRules-CountByRankTrait.html#method_countByRank">countByRank()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, array&lt;int|string, int&gt;&gt;    </span>
+</dt>
+<dd>Used in the following classes and traits:
+FullHouseScoredTrait,
+FullHouseTrait2,
+FullHouseTrait3,
+SameOfAKind,
+SameOfAKindTrait,
+SameOfAKindTrait2,
+SameOfAKindTrait3,
+StraightScoredTrait,
+StraightTrait,
+TwoPairsScoredTrait,
+TwoPairsTrait,
+TwoPairsTrait2,
+TwoPairsTrait3,</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-ProjectRules-CountBySuitTrait.html#method_countBySuit">countBySuit()</a>
+    <span>
+                                &nbsp;: array&lt;string, int&gt;    </span>
+</dt>
+<dd>Used in the following traits:
+FlushScoredTrait,
+FlushTrait2;
+FlushTrait3,</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-ProjectRules-StraightFlushScoredTrait.html#method_countSuitAndRank">countSuitAndRank()</a>
     <span>
                                 &nbsp;: array&lt;string, array&lt;string|int, array&lt;int|string, int&gt;&gt;&gt;    </span>
 </dt>
-<dd></dd>
+<dd>From CountSuitAndRankTrait.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-ProjectRules-StraightFlushTrait3.html#method_groupBySuit">groupBySuit()</a>
+    <span>
+                                &nbsp;: array&lt;string, array&lt;int, int&gt;&gt;    </span>
+</dt>
+<dd>From GroupBySuitTrait
+Returns an associative array with keys
+correspoding to suits present in the cards
+array and values - arrays containing the ranks
+of each suit present in the card-array</dd>
 
         </dl>
 
@@ -206,6 +318,80 @@
         
 
         
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/App-ProjectRules-StraightFlush.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_name">
+        $name
+        <a href="classes/App-ProjectRules-RuleDataTrait.html#property_name" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/RuleDataTrait.php"><a href="files/src-projectrules-ruledatatrait.html"><abbr title="src/ProjectRules/RuleDataTrait.php">RuleDataTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">13</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$name</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_points">
+        $points
+        <a href="classes/App-ProjectRules-RuleDataTrait.html#property_points" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/RuleDataTrait.php"><a href="files/src-projectrules-ruledatatrait.html"><abbr title="src/ProjectRules/RuleDataTrait.php">RuleDataTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">14</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$points</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
@@ -218,21 +404,277 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_check">
-        check()
-        <a href="classes/App-ProjectRules-StraightFlush.html#method_check" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="classes/App-ProjectRules-StraightFlush.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/StraightFlush.php"><a href="files/src-projectrules-straightflush.html"><abbr title="src/ProjectRules/StraightFlush.php">StraightFlush.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Counstructor</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">check</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getName">
+        getName()
+        <a href="classes/App-ProjectRules-RuleDataTrait.html#method_getName" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/RuleDataTrait.php"><a href="files/src-projectrules-ruledatatrait.html"><abbr title="src/ProjectRules/RuleDataTrait.php">RuleDataTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">19</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns the name if the rule</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getName</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getPoints">
+        getPoints()
+        <a href="classes/App-ProjectRules-RuleDataTrait.html#method_getPoints" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/RuleDataTrait.php"><a href="files/src-projectrules-ruledatatrait.html"><abbr title="src/ProjectRules/RuleDataTrait.php">RuleDataTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">27</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns rule&#039;s worth in points</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getPoints</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_possibleDeckOnly">
+        possibleDeckOnly()
+        <a href="classes/App-ProjectRules-StraightFlushTrait3.html#method_possibleDeckOnly" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/StraightFlushTrait3.php"><a href="files/src-projectrules-straightflushtrait3.html"><abbr title="src/ProjectRules/StraightFlushTrait3.php">StraightFlushTrait3.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">39</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Used when hand is empty. Returns true if the
+rule is possible to score with the cards that
+will be dealt from deck</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">possibleDeckOnly</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$deck</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_possibleWithCard">
+        possibleWithCard()
+        <a href="classes/App-ProjectRules-FirstCheckTrait.html#method_possibleWithCard" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/FirstCheckTrait.php"><a href="files/src-projectrules-firstchecktrait.html"><abbr title="src/ProjectRules/FirstCheckTrait.php">FirstCheckTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">31</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns true if the rule is possible to score if the dealt card is placed in
+the hand</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">possibleWithCard</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$card</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$hand</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$deck</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$card</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_possibleWithoutCard">
+        possibleWithoutCard()
+        <a href="classes/App-ProjectRules-StraightFlushTrait.html#method_possibleWithoutCard" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/StraightFlushTrait.php"><a href="files/src-projectrules-straightflushtrait.html"><abbr title="src/ProjectRules/StraightFlushTrait.php">StraightFlushTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">42</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns true if rule is possible to
+score wuthout the dealt card.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">possibleWithoutCard</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$hand</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$deck</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_scored">
+        scored()
+        <a href="classes/App-ProjectRules-StraightFlushScoredTrait.html#method_scored" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/StraightFlushScoredTrait.php"><a href="files/src-projectrules-straightflushscoredtrait.html"><abbr title="src/ProjectRules/StraightFlushScoredTrait.php">StraightFlushScoredTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">28</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Used for a full hand and returns
+true is the rule is scored</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">scored</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -251,9 +693,7 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>true if rule is fullfilled otherwise false</p>
-</section>
-
+        
     
 </article>
                     <article
@@ -262,21 +702,254 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_countSuitAndRank">
-        countSuitAndRank()
-        <a href="classes/App-ProjectRules-CountSuitAndRankTrait.html#method_countSuitAndRank" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_checkAllPossible">
+        checkAllPossible()
+        <a href="classes/App-ProjectRules-StraightTrait3.html#method_checkAllPossible" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/CountSuitAndRankTrait.php"><a href="files/src-projectrules-countsuitandranktrait.html"><abbr title="src/ProjectRules/CountSuitAndRankTrait.php">CountSuitAndRankTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/StraightTrait3.php"><a href="files/src-projectrules-straighttrait3.html"><abbr title="src/ProjectRules/StraightTrait3.php">StraightTrait3.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Used in the following traits:
+StraightTrait,
+StraightFlushTrait</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">countSuitAndRank</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cards</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, array&lt;string|int, array&lt;int|string, int&gt;&gt;&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">checkAllPossible</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, int&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ranks</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$minMinRank</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$maxMinRank</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"><p>Given an array of ranks and the lowest min-rank
+and the highest min-rank that a straight
+can have, determins if it is possible to
+achieve a straight</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$ranks</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, int&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$minMinRank</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$maxMinRank</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_countByRank">
+        countByRank()
+        <a href="classes/App-ProjectRules-CountByRankTrait.html#method_countByRank" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/CountByRankTrait.php"><a href="files/src-projectrules-countbyranktrait.html"><abbr title="src/ProjectRules/CountByRankTrait.php">CountByRankTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">32</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Used in the following classes and traits:
+FullHouseScoredTrait,
+FullHouseTrait2,
+FullHouseTrait3,
+SameOfAKind,
+SameOfAKindTrait,
+SameOfAKindTrait2,
+SameOfAKindTrait3,
+StraightScoredTrait,
+StraightTrait,
+TwoPairsScoredTrait,
+TwoPairsTrait,
+TwoPairsTrait2,
+TwoPairsTrait3,</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">countByRank</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cards</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;int|string, int&gt;&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>Returns an associative array
+where keys are the ranks present amongst
+the cards and the values are the count of
+each rank</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$cards</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;int|string, int&gt;&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_countBySuit">
+        countBySuit()
+        <a href="classes/App-ProjectRules-CountBySuitTrait.html#method_countBySuit" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/CountBySuitTrait.php"><a href="files/src-projectrules-countbysuittrait.html"><abbr title="src/ProjectRules/CountBySuitTrait.php">CountBySuitTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Used in the following traits:
+FlushScoredTrait,
+FlushTrait2;
+FlushTrait3,</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">countBySuit</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cards</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, int&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>Returns an associative array
+where keys are the suits present amongst
+the cards and the values are the count of
+each suit</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$cards</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string, int&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                        -abstract                                "
+>
+    <h4 class="phpdocumentor-element__name" id="method_countSuitAndRank">
+        countSuitAndRank()
+        <a href="classes/App-ProjectRules-StraightFlushScoredTrait.html#method_countSuitAndRank" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/StraightFlushScoredTrait.php"><a href="files/src-projectrules-straightflushscoredtrait.html"><abbr title="src/ProjectRules/StraightFlushScoredTrait.php">StraightFlushScoredTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">21</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">From CountSuitAndRankTrait.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">countSuitAndRank</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cards</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, array&lt;string|int, array&lt;int|string, int&gt;&gt;&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>Returns an associative array containing two
+associative arrays. The keys of the first array
+are the ranks present in the cards and the
+values are the count of each ranks. The second
+array contains correspoing data for the suits
+present in the cards.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$cards</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string, array&lt;string|int, array&lt;int|string, int&gt;&gt;&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                        -abstract                                "
+>
+    <h4 class="phpdocumentor-element__name" id="method_groupBySuit">
+        groupBySuit()
+        <a href="classes/App-ProjectRules-StraightFlushTrait3.html#method_groupBySuit" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/StraightFlushTrait3.php"><a href="files/src-projectrules-straightflushtrait3.html"><abbr title="src/ProjectRules/StraightFlushTrait3.php">StraightFlushTrait3.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">30</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">From GroupBySuitTrait
+Returns an associative array with keys
+correspoding to suits present in the cards
+array and values - arrays containing the ranks
+of each suit present in the card-array</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">groupBySuit</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cards</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, array&lt;int, int&gt;&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -293,7 +966,7 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string, array&lt;string|int, array&lt;int|string, int&gt;&gt;&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string, array&lt;int, int&gt;&gt;</span>
             &mdash;
         
     

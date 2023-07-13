@@ -41,8 +41,56 @@ input {
 
 
 
+main.proj {
+    background-color: #000;
+    /* color: #606368; */
+    color: var(--purple-softer);
+    width: 64em;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-right: 3px solid #606368;
+    border-left: 3px solid #606368;
+}
+
+main.proj h1 {
+    font-family: 'Text Me One', sans-serif;
+    color: var(--form-neon2);
+    text-shadow:
+    0 0 7px var(--form-neon2),
+    0 0 10px var(--form-neon2),
+    0 0 82px var(--form-neon2),
+    0 0 151px var(--form-neon2);
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+}
+
+main.proj h2 {
+    color: var(--form-neon2);
+    font-family: 'Text Me One', sans-serif;
+    font-size: 1.4rem;
+}
+
+.proj-link {
+    color: var(--form-neon2);
+}
+
+.proj-link:hover {
+    color: var(--form-neon);
+}
+
+
+
 @media (max-width: 800px) {
     .project {
         justify-content: center;
+    }
+
+    main.proj {
+        border: 0;
     }
 }

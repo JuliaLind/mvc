@@ -11,9 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 use App\Repository\TransactionRepository;
-use App\Entity\User;
-use App\Entity\Transaction;
-use Datetime;
 
 /**
  * Controller related to the Project. Contains API route where
@@ -29,25 +26,7 @@ class ProjectApiController3 extends AbstractController
         TransactionRepository $repo,
     ): Response {
         $transactions = $repo->findBy([], ['id' => 'DESC']);
-        $data = [];
-        foreach($transactions as $transaction) {
-            /**
-             * @var DateTime $registered
-             */
-            $registered = $transaction->getRegistered();
-            $registered = $registered->format('Y-m-d');
-            /**
-             * @var User $user
-             */
-            $user = $transaction->getUser();
-            $data[] = [
-                'id' => $transaction->getId(),
-                'user' => $user->getAcronym(),
-                'registered' => $registered,
-                'descr' => $transaction->getDescr(),
-                'amount' => $transaction->getAmount(),
-            ];
-        }
-        return $this->json($data);
+
+        return $this->json($transactions);
     }
 }

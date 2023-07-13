@@ -55,7 +55,7 @@ class ProjectOneROundControllerTest extends WebTestCase
          */
         $lastRound = $state['lastRound'];
         $res = $lastRound['player'];
-        $this->assertEquals([2, 1], $res);
+        $this->assertEquals([2, 1], $res[0]);
     }
 
     public function testProjRoundFinished(): void

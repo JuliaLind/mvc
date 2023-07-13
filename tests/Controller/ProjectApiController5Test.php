@@ -58,6 +58,6 @@ class ProjectApiController5Test extends WebTestCase
         $this->assertJson($response);
         $this->assertStringContainsString('"bet":350', $response);
         $this->assertStringContainsString('"player":{"cardCount":0,"rows":[]},"placedCardsPlayer":0,"placedCardsHouse":0,"deckCardCount":51', $response);
-        $this->assertStringContainsString('"message":"","fromSlot":[],"lastRound":[],"finished":false', $response);
+        $this->assertStringContainsString('"fromSlot":[],"lastRound":{"house":[],"player":[]', $response);
     }
 }

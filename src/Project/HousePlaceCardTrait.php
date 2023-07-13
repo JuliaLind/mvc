@@ -20,10 +20,13 @@ trait HousePlaceCardTrait
     /**
      * Contains the coordinates of the slots
      * where the house and the player placed the
-     * cards in the last round
-     * @var array<string,array<int>>> $lastRound
+     * cards in all previous moves
+     * @var array<string,array<array<int>>> $lastRound
      */
-    private array $lastRound = [];
+    private array $lastRound = [
+        'house' => [],
+        'player' => []
+    ];
 
     /**
      * Picks a card from the deck and places
@@ -37,7 +40,7 @@ trait HousePlaceCardTrait
          * @var array<int> $slot
          */
         $slot = $suggestion['slot'];
-        $this->lastRound['house'] = $slot;
+        array_push($this->lastRound['house'], $slot);
         $this->house->addCard($slot[0], $slot[1], $card);
     }
 }

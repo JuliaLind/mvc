@@ -82,6 +82,8 @@
     text-align: center;
 }
 
+
+
 .outer-grid-container img {
     object-fit: contain;
     max-width: 100%;
@@ -356,6 +358,16 @@
         height: 14vh;
         /* width: 18vw; */
         /* background-color: #000; */
+    }
+}
+
+@media (min-width: 1600px) {
+    .slot {
+        width: auto;
+        height: 150px;
+    }
+    .api-grid {
+        align-items: center;
     }
 }
 

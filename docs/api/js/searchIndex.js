@@ -418,13 +418,23 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\LibraryController",
             "name": "LibraryController",
-            "summary": "Controller\u0020that\u0020contains\u0020route\u0020for\u0020saving\u0020a\u0020new\nbook\u0020to\u0020the\u0020Library",
+            "summary": "Controller\u0020that\u0020contains\u0020routes\u0020related\u0020to\u0020the\u0020library",
             "url": "classes/App-Controller-LibraryController.html"
         },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AcreateBook\u0028\u0029",
-            "name": "createBook",
-            "summary": "Saves\u0020new\u0020book\u0020to\u0020database",
-            "url": "classes/App-Controller-LibraryController.html#method_createBook"
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AshowBookByIsbn\u0028\u0029",
+            "name": "showBookByIsbn",
+            "summary": "Shows\u0020details\u0020for\u0020a\u0020single\u0020book",
+            "url": "classes/App-Controller-LibraryController.html#method_showBookByIsbn"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AdeleteBookByIsbn\u0028\u0029",
+            "name": "deleteBookByIsbn",
+            "summary": "Deletes\u0020a\u0020book",
+            "url": "classes/App-Controller-LibraryController.html#method_deleteBookByIsbn"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AshowAllBooks\u0028\u0029",
+            "name": "showAllBooks",
+            "summary": "Displays\u0020all\u0020books",
+            "url": "classes/App-Controller-LibraryController.html#method_showAllBooks"
         },                {
             "fqsen": "\\App\\Entity\\Book",
             "name": "Book",
@@ -438,42 +448,42 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Book\u003A\u003AgetTitle\u0028\u0029",
             "name": "getTitle",
-            "summary": "",
+            "summary": "Returns\u0020title\u0020of\u0020the\u0020book",
             "url": "classes/App-Entity-Book.html#method_getTitle"
         },                {
             "fqsen": "\\App\\Entity\\Book\u003A\u003AsetTitle\u0028\u0029",
             "name": "setTitle",
-            "summary": "",
+            "summary": "Sets\u0020title\u0020of\u0020the\u0020book",
             "url": "classes/App-Entity-Book.html#method_setTitle"
         },                {
             "fqsen": "\\App\\Entity\\Book\u003A\u003AgetIsbn\u0028\u0029",
             "name": "getIsbn",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020ISBN\u0020number\u0020of\u0020the\u0020book",
             "url": "classes/App-Entity-Book.html#method_getIsbn"
         },                {
             "fqsen": "\\App\\Entity\\Book\u003A\u003AsetIsbn\u0028\u0029",
             "name": "setIsbn",
-            "summary": "",
+            "summary": "Sets\u0020ISBN\u0020of\u0020the\u0020book,\u0020should\u0020be\u002010\u0020digits\u0020\u0028as\u0020string\u0029",
             "url": "classes/App-Entity-Book.html#method_setIsbn"
         },                {
             "fqsen": "\\App\\Entity\\Book\u003A\u003AgetAuthor\u0028\u0029",
             "name": "getAuthor",
-            "summary": "",
+            "summary": "Returns\u0020name\u0020of\u0020the\u0020authour\u0020of\u0020the\u0020book",
             "url": "classes/App-Entity-Book.html#method_getAuthor"
         },                {
             "fqsen": "\\App\\Entity\\Book\u003A\u003AsetAuthor\u0028\u0029",
             "name": "setAuthor",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020author\u0020of\u0020the\u0020book",
             "url": "classes/App-Entity-Book.html#method_setAuthor"
         },                {
             "fqsen": "\\App\\Entity\\Book\u003A\u003AgetImg\u0028\u0029",
             "name": "getImg",
-            "summary": "",
+            "summary": "Returns\u0020link\u0020to\u0020the\u0020image\u0020of\u0020the\u0020book.\u0020Should\u0020be\u0020the\u0020full\u0020path\u0020inkl\u0020https\u003A\/\/\u0020or\u0020http\u003A\/\/",
             "url": "classes/App-Entity-Book.html#method_getImg"
         },                {
             "fqsen": "\\App\\Entity\\Book\u003A\u003AsetImg\u0028\u0029",
             "name": "setImg",
-            "summary": "",
+            "summary": "Sets\u0020link\u0020to\u0020an\u0020image\u0020of\u0020the\u0020book.\u0020Should\u0020be\u0020the\u0020full\u0020path\u0020inkl\u0020https\u003A\/\/\u0020or\u0020http\u003A\/\/",
             "url": "classes/App-Entity-Book.html#method_setImg"
         },                {
             "fqsen": "\\App\\Entity\\Book\u003A\u003A\u0024id",
@@ -620,21 +630,6 @@ Search.appendIndex(
             "name": "hand",
             "summary": "",
             "url": "classes/App-Game-PlayerTrait.html#property_hand"
-        },                {
-            "fqsen": "\\App\\Library\\BookNotFoundException",
-            "name": "BookNotFoundException",
-            "summary": "Exception\u0020class\u0020trhown\u0020when\u0020isbn\u0020number\u0020is\u0020alerady\u0020in\u0020use",
-            "url": "classes/App-Library-BookNotFoundException.html"
-        },                {
-            "fqsen": "\\App\\Library\\IsbnAlreadyInUseException",
-            "name": "IsbnAlreadyInUseException",
-            "summary": "Exception\u0020class\u0020trhown\u0020when\u0020isbn\u0020number\u0020is\u0020alerady\u0020in\u0020use",
-            "url": "classes/App-Library-IsbnAlreadyInUseException.html"
-        },                {
-            "fqsen": "\\App\\Library\\LibraryException",
-            "name": "LibraryException",
-            "summary": "Exception\u0020class\u0020for\u0020Library",
-            "url": "classes/App-Library-LibraryException.html"
         },                {
             "fqsen": "\\App\\Cards\\CardDataTrait",
             "name": "CardDataTrait",
@@ -801,76 +796,6 @@ Search.appendIndex(
             "summary": "Displays\u0020a\u0020randomly\u0020selected\u0020quote\u0020and\u0020date\u002Btime\u0020when\u0020the\u0020selection\ntook\u0020place",
             "url": "classes/App-Controller-JsonController2.html#method_jsonQuote"
         },                {
-            "fqsen": "\\App\\Controller\\LibraryController2",
-            "name": "LibraryController2",
-            "summary": "Controller\u0020that\u0020contains\u0020route\u0020that\u0020leads\nto\u0020the\u0020route\u0020with\u0020form\u0020for\u0020updating\u0020a\u0020book",
-            "url": "classes/App-Controller-LibraryController2.html"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController2\u003A\u003AupdateBookForm\u0028\u0029",
-            "name": "updateBookForm",
-            "summary": "Form\u0020for\u0020editing\u0020details\u0020of\u0020a\u0020book",
-            "url": "classes/App-Controller-LibraryController2.html#method_updateBookForm"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController3",
-            "name": "LibraryController3",
-            "summary": "Controller\u0020that\u0020contains\u0020the\u0020route\u0020for\u0020resetting\nthe\u0020Book\u0020table\u0020in\u0020the\u0020database",
-            "url": "classes/App-Controller-LibraryController3.html"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController3\u003A\u003AresetBook\u0028\u0029",
-            "name": "resetBook",
-            "summary": "Resets\u0020the\u0020Book\u0020table\u0020in\u0020the\u0020database",
-            "url": "classes/App-Controller-LibraryController3.html#method_resetBook"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController4",
-            "name": "LibraryController4",
-            "summary": "Controller\u0020tht\u0020contains\u0020route\u0020where\u0020book\u0020data\u0020is\u0020updated",
-            "url": "classes/App-Controller-LibraryController4.html"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController4\u003A\u003AupdateBook\u0028\u0029",
-            "name": "updateBook",
-            "summary": "Saves\u0020updated\u0020information\u0020to\u0020database",
-            "url": "classes/App-Controller-LibraryController4.html#method_updateBook"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController5",
-            "name": "LibraryController5",
-            "summary": "Controller\u0020that\u0020contains\u0020routes\u0020related\u0020to\u0020the\u0020library",
-            "url": "classes/App-Controller-LibraryController5.html"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController5\u003A\u003AshowBookByIsbn\u0028\u0029",
-            "name": "showBookByIsbn",
-            "summary": "Shows\u0020details\u0020for\u0020a\u0020single\u0020book",
-            "url": "classes/App-Controller-LibraryController5.html#method_showBookByIsbn"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController5\u003A\u003AdeleteBookByIsbn\u0028\u0029",
-            "name": "deleteBookByIsbn",
-            "summary": "Deletes\u0020a\u0020book",
-            "url": "classes/App-Controller-LibraryController5.html#method_deleteBookByIsbn"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController5\u003A\u003AshowAllBooks\u0028\u0029",
-            "name": "showAllBooks",
-            "summary": "Displays\u0020all\u0020books",
-            "url": "classes/App-Controller-LibraryController5.html#method_showAllBooks"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController6",
-            "name": "LibraryController6",
-            "summary": "Controller\u0020contains\u0020route\u0020for\u0020the\u0020library\u0020landing\u0020page",
-            "url": "classes/App-Controller-LibraryController6.html"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController6\u003A\u003Aindex\u0028\u0029",
-            "name": "index",
-            "summary": "Landing\u0020page",
-            "url": "classes/App-Controller-LibraryController6.html#method_index"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController7",
-            "name": "LibraryController7",
-            "summary": "Controller\u0020contains\u0020route\u0020that\u0020leads\u0020to\u0020form\nfor\u0020adding\u0020a\u0020new\u0020book",
-            "url": "classes/App-Controller-LibraryController7.html"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController7\u003A\u003AcreateBookForm\u0028\u0029",
-            "name": "createBookForm",
-            "summary": "Form\u0020for\u0020registering\u0020new\u0020book",
-            "url": "classes/App-Controller-LibraryController7.html#method_createBookForm"
-        },                {
             "fqsen": "\\App\\Controller\\LuckyMonkey",
             "name": "LuckyMonkey",
             "summary": "Helper\u0020class\u0020to\u0020get\u0020data\u0020for\u0020the\u0020lucky\u0020route",
@@ -1003,178 +928,18 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\ProjectAuthController\u003A\u003AprojRegister\u0028\u0029",
             "name": "projRegister",
-            "summary": "",
+            "summary": "Registers\u0020a\u0020new\u0020user\u0020and\u0020registers\u0020a\u0020new\u0020transaction\u0020of\n1000\u0020coins\u0020to\u0020the\u0020user\u0020as\u0020a\u0020registration\u0020bonus",
             "url": "classes/App-Controller-ProjectAuthController.html#method_projRegister"
         },                {
             "fqsen": "\\App\\Controller\\ProjectAuthController\u003A\u003AprojLogin\u0028\u0029",
             "name": "projLogin",
-            "summary": "",
+            "summary": "Logs\u0020in\u0020the\u0020user",
             "url": "classes/App-Controller-ProjectAuthController.html#method_projLogin"
         },                {
             "fqsen": "\\App\\Controller\\ProjectAuthController\u003A\u003AprojLogout\u0028\u0029",
             "name": "projLogout",
-            "summary": "",
+            "summary": "Logs\u0020out\u0020the\u0020user",
             "url": "classes/App-Controller-ProjectAuthController.html#method_projLogout"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController1",
-            "name": "ProjectController1",
-            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020the\u0020route\nfor\u0020the\u0020project\u0020landing\u0020page",
-            "url": "classes/App-Controller-ProjectController1.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController1\u003A\u003AprojLanding\u0028\u0029",
-            "name": "projLanding",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController1.html#method_projLanding"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController10",
-            "name": "ProjectController10",
-            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020routes\nfor\u0020the\u0020shop\u002Dpage\u0020and\u0020for\u0020the\u0020page\u0020that\u0020displays\u0020all\ntransactions\u0020for\u0020a\u0020signle\u0020user",
-            "url": "classes/App-Controller-ProjectController10.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController10\u003A\u003AprojShop\u0028\u0029",
-            "name": "projShop",
-            "summary": "Leaders\u0020to\u0020the\u0020shop\u002Dpage\u0020where\u0020user\u0020can\u0020purchase\u0020coins",
-            "url": "classes/App-Controller-ProjectController10.html#method_projShop"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController10\u003A\u003AprojTrans\u0028\u0029",
-            "name": "projTrans",
-            "summary": "Route\u0020that\u0020leades\u0020to\u0020page\u0020where\u0020all\u0020user\u0027s\u0020transactions\u0020are\u0020displayed",
-            "url": "classes/App-Controller-ProjectController10.html#method_projTrans"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController11",
-            "name": "ProjectController11",
-            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020the\u0020main\u0020route\nfor\u0020the\u0020PokerSquare\u0020game.",
-            "url": "classes/App-Controller-ProjectController11.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController11\u003A\u003AprojPlay\u0028\u0029",
-            "name": "projPlay",
-            "summary": "The\u0020main\u0020route\u0020for\u0020the\u0020PokerSquare\u0020game.\u0020The\u0020route\u0020renders\u0020different\ntemplates\u0020depending\u0020on\u0020the\u0020game\u0027s\u0020state",
-            "url": "classes/App-Controller-ProjectController11.html#method_projPlay"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController3",
-            "name": "ProjectController3",
-            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020routes\u0020for\u0020one\u0020game\u0020round\n\u0028one\u0020round\u0020\u003D\u0020player\u0020places\u0020card\u0020\u002B\u0020bot\u0020places\u0020card.\u0020If\u0020the\u0020grids\nare\u0020fully\u0020filled\u0020also\u0020evaluate\u0020results\u0020and\u0020end\u0020game\u0029\u0020and\u0020route\u0020where\nthe\u0020\u0022suggestion\u0022\u0020attribute\u0020is\u0020unset\u0020which\u0020is\u0020used\u0020when\u0020the\u0020user\u0020uses\u0020the\u0020return\u002Darrow\nfrom\u0020the\u0020suggestion\u002Dview",
-            "url": "classes/App-Controller-ProjectController3.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController3\u003A\u003AprojRound\u0028\u0029",
-            "name": "projRound",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController3.html#method_projRound"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController3\u003A\u003AprojUnsetSuggest\u0028\u0029",
-            "name": "projUnsetSuggest",
-            "summary": "Route\u0020for\u0020\u0027unsetting\u0027\u0020display\u0020of\u0020suggestion.",
-            "url": "classes/App-Controller-ProjectController3.html#method_projUnsetSuggest"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController4",
-            "name": "ProjectController4",
-            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020routes\u0020for\u0020moving\na\u0020card",
-            "url": "classes/App-Controller-ProjectController4.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController4\u003A\u003AsetFromSlot\u0028\u0029",
-            "name": "setFromSlot",
-            "summary": "Route\u0020for\u0020saving\u0020the\u0020slot\u0020row\u0020and\u0020id\u0020from\u0020which\u0020the\u0020user\u0020wants\u0020to\u0020remove\u0020the\u0020card",
-            "url": "classes/App-Controller-ProjectController4.html#method_setFromSlot"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController4\u003A\u003AmoveCard\u0028\u0029",
-            "name": "moveCard",
-            "summary": "Route\u0020for\u0020moving\u0020the\u0020card\u0020to\u0020the\u0020new\u0020slot\u0020chosen\u0020by\u0020user",
-            "url": "classes/App-Controller-ProjectController4.html#method_moveCard"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController4\u003A\u003ApickCard\u0028\u0029",
-            "name": "pickCard",
-            "summary": "Route\u0020that\u0020renders\u0020the\u0020template\u0020where\u0020placed\u0020cards\u0020are\u0020clickable.",
-            "url": "classes/App-Controller-ProjectController4.html#method_pickCard"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController5",
-            "name": "ProjectController5",
-            "summary": "Controller\u0020related\u0020to\u0020the\u0020project.\u0020Contains\nroutes\u0020fot\u0020the\u0020API\u002Dlanding\u0020page,\u0020about\u002Dpage,\npage\u0020that\u0020displays\u0020rules\u0020for\u0020the\u0020poker\u0020square\u0020game\nand\u0020page\u0020with\u0020the\u0020register\u002Dform\u0020for\u0020registering\u0020a\nnew\u0020User",
-            "url": "classes/App-Controller-ProjectController5.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController5\u003A\u003AprojApiLanding\u0028\u0029",
-            "name": "projApiLanding",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController5.html#method_projApiLanding"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController5\u003A\u003AprojAbout\u0028\u0029",
-            "name": "projAbout",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController5.html#method_projAbout"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController5\u003A\u003AprojRules\u0028\u0029",
-            "name": "projRules",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController5.html#method_projRules"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController5\u003A\u003AprojRegisterForm\u0028\u0029",
-            "name": "projRegisterForm",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController5.html#method_projRegisterForm"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController6",
-            "name": "ProjectController6",
-            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020route\nfor\u0020allocating\u0020purchased\u0020coins\u0020to\u0020used\u0020and\u0020route\nthat\u0020leads\u0020to\u0020the\u0020page\u0020where\u0020user\u0020selects\u0020amount\u0020to\u0020bet",
-            "url": "classes/App-Controller-ProjectController6.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController6\u003A\u003AprojPurchase\u0028\u0029",
-            "name": "projPurchase",
-            "summary": "Allocates\u0020the\u0020purchased\u0020amount\u0020of\u0020coins\u0020to\u0020user\u0020by\u0020adding\na\u0020new\u0020transaction\u0020to\u0020the\u0020database",
-            "url": "classes/App-Controller-ProjectController6.html#method_projPurchase"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController6\u003A\u003AselectAmount\u0028\u0029",
-            "name": "selectAmount",
-            "summary": "Leads\u0020to\u0020the\u0020page\u0020where\u0020user\u0020can\u0020select\u0020amount\u0020to\u0020bet.",
-            "url": "classes/App-Controller-ProjectController6.html#method_selectAmount"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController7",
-            "name": "ProjectController7",
-            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Containts\u0020routes\u0020for\npurchasing\u0020some\u0020of\u0020the\u0020user\u002Dcheats",
-            "url": "classes/App-Controller-ProjectController7.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController7\u003A\u003Aundo\u0028\u0029",
-            "name": "undo",
-            "summary": "Route\u0020for\u0020purchasing\u0020the\u0020cheat\u0020for\u0020undoing\u0020the\u0020last\u0020move",
-            "url": "classes/App-Controller-ProjectController7.html#method_undo"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController7\u003A\u003AshowSuggestion\u0028\u0029",
-            "name": "showSuggestion",
-            "summary": "Route\u0020for\u0020purchasing\u0020a\u0020calculated\u0020suggestion\u0020on\u0020slot\u0020and\u0020also\u0020seing\u0020which\nrules\u0020are\u0020possible\u0020to\u0020achive\u0020if\u0020placing\u0020card\u0020in\u0020particular\u0020slot\u0020and\u0020also\u0020which\nrules\u0020are\u0020possible\u0020if\u0020the\u0020card\u0020is\u0020not\u0020placed\u0020in\u0020particular\u0020slot\u0020\u0028for\u0020all\u0020hands\u0029",
-            "url": "classes/App-Controller-ProjectController7.html#method_showSuggestion"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController7\u003A\u003ApurchasePeekCheat\u0028\u0029",
-            "name": "purchasePeekCheat",
-            "summary": "Route\u0020for\u0020purchasing\u0020a\u0020peek\u0020at\u0020all\u0020the\u0020remaining\u0020cards\u0020the\nplayer\u0020is\u0020yet\u0020to\u0020be\u0020dealt\u0020from\u0020the\u0020deck",
-            "url": "classes/App-Controller-ProjectController7.html#method_purchasePeekCheat"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController7\u003A\u003AdeckPeek\u0028\u0029",
-            "name": "deckPeek",
-            "summary": "Route\u0020for\u0020displaying\u0020the\u0020cards\u0020that\u0020the\u0020user\u0020is\u0020yet\u0020to\u0020be\u0020dealt\nfrom\u0020the\u0020deck",
-            "url": "classes/App-Controller-ProjectController7.html#method_deckPeek"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController8",
-            "name": "ProjectController8",
-            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020routes\u0020for\u0020displaying\ntop\u002010\u0020scores\u0020for\u0020a\u0020single\u0020user\u0020and\u0020the\u0020leaderscore\u0020with\u0020the\ntop\u002010\u0020scores\u0020amongst\u0020all\u0020users",
-            "url": "classes/App-Controller-ProjectController8.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController8\u003A\u003AprojScoresSingle\u0028\u0029",
-            "name": "projScoresSingle",
-            "summary": "Displays\u0020the\u0020top\u002010\u0020scores\u0020of\u0020a\u0020single\u0020user",
-            "url": "classes/App-Controller-ProjectController8.html#method_projScoresSingle"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController8\u003A\u003AprojLeaderboard\u0028\u0029",
-            "name": "projLeaderboard",
-            "summary": "Displays\u0020the\u0020top\u002010\u0020scores\u0020amongst\u0020all\u0020users",
-            "url": "classes/App-Controller-ProjectController8.html#method_projLeaderboard"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController9",
-            "name": "ProjectController9",
-            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020route\u0020for\u0020initating\u0020a\u0020new\u0020PokerSquare\u0020game\nand\u0020saving\u0020the\u0020bet",
-            "url": "classes/App-Controller-ProjectController9.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController9\u003A\u003AprojInit\u0028\u0029",
-            "name": "projInit",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController9.html#method_projInit"
         },                {
             "fqsen": "\\App\\Controller\\Quote",
             "name": "Quote",
@@ -1228,7 +993,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\DataFixtures\\AppFixtures",
             "name": "AppFixtures",
-            "summary": "",
+            "summary": "Class\u0020for\u0020loading\u0020fixtures\u0020for\u0020the\u0020database\u002Dtables\nUser,\u0020Score\u0020and\u0020Transaction",
             "url": "classes/App-DataFixtures-AppFixtures.html"
         },                {
             "fqsen": "\\App\\DataFixtures\\AppFixtures\u003A\u003Aload\u0028\u0029",
@@ -1308,7 +1073,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Transaction",
             "name": "Transaction",
-            "summary": "",
+            "summary": "Movement\u0020of\u0020coints\u0020to\u0020or\u0020from\u0020participants\naccount",
             "url": "classes/App-Entity-Transaction.html"
         },                {
             "fqsen": "\\App\\Entity\\Transaction\u003A\u003AgetId\u0028\u0029",
@@ -1318,42 +1083,42 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Transaction\u003A\u003AgetRegistered\u0028\u0029",
             "name": "getRegistered",
-            "summary": "",
+            "summary": "Gets\u0020the\u0020transaction\u0020date",
             "url": "classes/App-Entity-Transaction.html#method_getRegistered"
         },                {
             "fqsen": "\\App\\Entity\\Transaction\u003A\u003AsetRegistered\u0028\u0029",
             "name": "setRegistered",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020transaction\u0020date",
             "url": "classes/App-Entity-Transaction.html#method_setRegistered"
         },                {
             "fqsen": "\\App\\Entity\\Transaction\u003A\u003AgetDescr\u0028\u0029",
             "name": "getDescr",
-            "summary": "",
+            "summary": "Gets\u0020the\u0020description\u0020of\u0020the\u0020transaction",
             "url": "classes/App-Entity-Transaction.html#method_getDescr"
         },                {
             "fqsen": "\\App\\Entity\\Transaction\u003A\u003AsetDescr\u0028\u0029",
             "name": "setDescr",
-            "summary": "",
+            "summary": "Sets\u0020a\u0020description\u0020to\u0020the\u0020transaction",
             "url": "classes/App-Entity-Transaction.html#method_setDescr"
         },                {
             "fqsen": "\\App\\Entity\\Transaction\u003A\u003AgetAmount\u0028\u0029",
             "name": "getAmount",
-            "summary": "",
+            "summary": "Gets\u0020the\u0020amount\u0020of\u0020the\u0020transaction",
             "url": "classes/App-Entity-Transaction.html#method_getAmount"
         },                {
             "fqsen": "\\App\\Entity\\Transaction\u003A\u003AsetAmount\u0028\u0029",
             "name": "setAmount",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020amount\u0020fo\u0020the\u0020transaction",
             "url": "classes/App-Entity-Transaction.html#method_setAmount"
         },                {
             "fqsen": "\\App\\Entity\\Transaction\u003A\u003AgetUser\u0028\u0029",
             "name": "getUser",
-            "summary": "",
+            "summary": "Gets\u0020the\u0020user\u0020to\u0020which\u0020the\u0020transaction\u0020belongs",
             "url": "classes/App-Entity-Transaction.html#method_getUser"
         },                {
             "fqsen": "\\App\\Entity\\Transaction\u003A\u003AsetUser\u0028\u0029",
             "name": "setUser",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020user\u0020to\u0020which\u0020the\u0020transaction\u0020belongs",
             "url": "classes/App-Entity-Transaction.html#method_setUser"
         },                {
             "fqsen": "\\App\\Entity\\Transaction\u003A\u003A\u0024id",
@@ -1523,27 +1288,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\EndRoundTrait",
             "name": "EndRoundTrait",
-            "summary": "",
+            "summary": "Ends\u0020a\u0020round\u0020of\u0020Game21",
             "url": "classes/App-Game-EndRoundTrait.html"
         },                {
             "fqsen": "\\App\\Game\\EndRoundTrait\u003A\u003AgetInvestLimit\u0028\u0029",
             "name": "getInvestLimit",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020lower\u0020of\u0020money\u0020of\u0020what\nthe\u0020bank\u0020or\u0020the\u0020player\u0020has",
             "url": "classes/App-Game-EndRoundTrait.html#method_getInvestLimit"
         },                {
             "fqsen": "\\App\\Game\\EndRoundTrait\u003A\u003AdetermineWinner\u0028\u0029",
             "name": "determineWinner",
-            "summary": "",
+            "summary": "Determins\u0020the\u0020winner\u0020of\u0020the\u0020round",
             "url": "classes/App-Game-EndRoundTrait.html#method_determineWinner"
         },                {
             "fqsen": "\\App\\Game\\EndRoundTrait\u003A\u003AfinishGame\u0028\u0029",
             "name": "finishGame",
-            "summary": "",
+            "summary": "If\u0020either\u0020player\u0020or\u0020bank\u0020has\u0020run\u0020out\u0020of\u0020money\u0020finishes\u0020the\u0020game",
             "url": "classes/App-Game-EndRoundTrait.html#method_finishGame"
         },                {
             "fqsen": "\\App\\Game\\EndRoundTrait\u003A\u003AendRound\u0028\u0029",
             "name": "endRound",
-            "summary": "Moves\u0020money\u0020from\u0020the\u0020money\u0020pot\u0020to\u0020the\u0020winner.",
+            "summary": "Finished\u0020the\u0020round.",
             "url": "classes/App-Game-EndRoundTrait.html#method_endRound"
         },                {
             "fqsen": "\\App\\Game\\EndRoundTrait\u003A\u003AgameOver\u0028\u0029",
@@ -1588,22 +1353,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait",
             "name": "EvaluateBankTrait",
-            "summary": "",
+            "summary": "Evaluates\u0020if\u0020bank\u0020won\u0020or\u0020lost\u0020the\u0020round",
             "url": "classes/App-Game-EvaluateBankTrait.html"
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait\u003A\u003AbankWinsOnEqual\u0028\u0029",
             "name": "bankWinsOnEqual",
-            "summary": "",
+            "summary": "Returns\u0020true\u0020if\u0020bank\u0020scored\u002021\u0020or\u0020bank\u0020and\u0020player\nscored\u0020same\u0020amount\u0020of\u0020points",
             "url": "classes/App-Game-EvaluateBankTrait.html#method_bankWinsOnEqual"
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait\u003A\u003AhasBankMoreThan21\u0028\u0029",
             "name": "hasBankMoreThan21",
-            "summary": "",
+            "summary": "Returns\u0020true\u0020if\u0020bank\u0020got\u0020above\u002021",
             "url": "classes/App-Game-EvaluateBankTrait.html#method_hasBankMoreThan21"
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait\u003A\u003AhasBankBestScore\u0028\u0029",
             "name": "hasBankBestScore",
-            "summary": "",
+            "summary": "Returns\u0020true\u0020if\u0020both\u0020bank\u0020and\u0020player\u0020are\u0020below\u002021\nand\u0020bank\u0020is\u0020closer\u0020to\u002021\u0020than\u0020player",
             "url": "classes/App-Game-EvaluateBankTrait.html#method_hasBankBestScore"
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait\u003A\u003AevaluateBank\u0028\u0029",
@@ -1643,17 +1408,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait2\u003A\u003AbankWinsOnEqual\u0028\u0029",
             "name": "bankWinsOnEqual",
-            "summary": "",
+            "summary": "Returns\u0020true\u0020if\u0020bank\u0020scored\u002021\u0020or\u0020bank\u0020and\u0020player\nscored\u0020same\u0020amount\u0020of\u0020points",
             "url": "classes/App-Game-EvaluateBankTrait2.html#method_bankWinsOnEqual"
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait2\u003A\u003AhasBankMoreThan21\u0028\u0029",
             "name": "hasBankMoreThan21",
-            "summary": "",
+            "summary": "Returns\u0020true\u0020if\u0020bank\u0020got\u0020above\u002021",
             "url": "classes/App-Game-EvaluateBankTrait2.html#method_hasBankMoreThan21"
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait2\u003A\u003AhasBankBestScore\u0028\u0029",
             "name": "hasBankBestScore",
-            "summary": "",
+            "summary": "Returns\u0020true\u0020if\u0020both\u0020bank\u0020and\u0020player\u0020are\u0020below\u002021\nand\u0020bank\u0020is\u0020closer\u0020to\u002021\u0020than\u0020player",
             "url": "classes/App-Game-EvaluateBankTrait2.html#method_hasBankBestScore"
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait2\u003A\u003A\u0024goal",
@@ -1708,48 +1473,8 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Game21\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor",
             "url": "classes/App-Game-Game21.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Game\\Game21\u003A\u003A\u0024winner",
-            "name": "winner",
-            "summary": "",
-            "url": "classes/App-Game-Game21.html#property_winner"
-        },                {
-            "fqsen": "\\App\\Game\\Game21\u003A\u003A\u0024player",
-            "name": "player",
-            "summary": "",
-            "url": "classes/App-Game-Game21.html#property_player"
-        },                {
-            "fqsen": "\\App\\Game\\Game21\u003A\u003A\u0024bank",
-            "name": "bank",
-            "summary": "",
-            "url": "classes/App-Game-Game21.html#property_bank"
-        },                {
-            "fqsen": "\\App\\Game\\Game21\u003A\u003A\u0024roundOver",
-            "name": "roundOver",
-            "summary": "",
-            "url": "classes/App-Game-Game21.html#property_roundOver"
-        },                {
-            "fqsen": "\\App\\Game\\Game21\u003A\u003A\u0024bankPlaying",
-            "name": "bankPlaying",
-            "summary": "",
-            "url": "classes/App-Game-Game21.html#property_bankPlaying"
-        },                {
-            "fqsen": "\\App\\Game\\Game21\u003A\u003A\u0024currentRound",
-            "name": "currentRound",
-            "summary": "",
-            "url": "classes/App-Game-Game21.html#property_currentRound"
-        },                {
-            "fqsen": "\\App\\Game\\Game21\u003A\u003A\u0024deck",
-            "name": "deck",
-            "summary": "",
-            "url": "classes/App-Game-Game21.html#property_deck"
-        },                {
-            "fqsen": "\\App\\Game\\Game21\u003A\u003A\u0024finished",
-            "name": "finished",
-            "summary": "",
-            "url": "classes/App-Game-Game21.html#property_finished"
         },                {
             "fqsen": "\\App\\Game\\Game21DataTrait",
             "name": "Game21DataTrait",
@@ -1818,12 +1543,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Game21FlashTrait",
             "name": "Game21FlashTrait",
-            "summary": "",
+            "summary": "Generates\u0020flash\u0020message\u0020to\u0020be\u0020displayed\u0020at\u0020the\u0020end\u0020of\u0020a\u0020round\nor\u0020at\u0020the\u0020end\u0020of\u0020a\u0020game",
             "url": "classes/App-Game-Game21FlashTrait.html"
         },                {
             "fqsen": "\\App\\Game\\Game21FlashTrait\u003A\u003AmessageType\u0028\u0029",
             "name": "messageType",
-            "summary": "",
+            "summary": "Determines\u0020the\u0020class\u0020of\u0020the\u0020message,\u0020warning\u0020or\u0020notice.",
             "url": "classes/App-Game-Game21FlashTrait.html#method_messageType"
         },                {
             "fqsen": "\\App\\Game\\Game21FlashTrait\u003A\u003AgenerateFlash\u0028\u0029",
@@ -2058,28 +1783,8 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ApiGame1\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor",
             "url": "classes/App-Project-ApiGame1.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Project\\ApiGame1\u003A\u003Areset\u0028\u0029",
-            "name": "reset",
-            "summary": "",
-            "url": "classes/App-Project-ApiGame1.html#method_reset"
-        },                {
-            "fqsen": "\\App\\Project\\ApiGame1\u003A\u003AoneRound\u0028\u0029",
-            "name": "oneRound",
-            "summary": "",
-            "url": "classes/App-Project-ApiGame1.html#method_oneRound"
-        },                {
-            "fqsen": "\\App\\Project\\ApiGame1\u003A\u003A\u0024grid",
-            "name": "grid",
-            "summary": "",
-            "url": "classes/App-Project-ApiGame1.html#property_grid"
-        },                {
-            "fqsen": "\\App\\Project\\ApiGame1\u003A\u003A\u0024deck",
-            "name": "deck",
-            "summary": "",
-            "url": "classes/App-Project-ApiGame1.html#property_deck"
         },                {
             "fqsen": "\\App\\Project\\ApiGame2",
             "name": "ApiGame2",
@@ -2088,7 +1793,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ApiGame2\u003A\u003AoneRound\u0028\u0029",
             "name": "oneRound",
-            "summary": "",
+            "summary": "Pick\u0020to\u0020card\u0020from\u0020a\u0020new\u0020shuffled\u0020deck\u0020and\u0020places\ninto\u0020a\u0020new\u0020empty\u0020grid\u0020into\u0020the\u0020slot\u0020chosen\u0020by\u0020user",
             "url": "classes/App-Project-ApiGame2.html#method_oneRound"
         },                {
             "fqsen": "\\App\\Project\\ApiGame3",
@@ -2098,7 +1803,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ApiGame3\u003A\u003Aresults\u0028\u0029",
             "name": "results",
-            "summary": "",
+            "summary": "Bot\u0020fills\u0020a\u0020grid\u0020completely\u0020based\u0020on\u0020calculated\u0020suggestions\u0020and\u0020then\nall\u002010\u0020hands\u0020are\u0020evaluated\u0020and\u0020results\u0020are\u0020returned",
             "url": "classes/App-Project-ApiGame3.html#method_results"
         },                {
             "fqsen": "\\App\\Project\\CardFactory",
@@ -2113,17 +1818,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait",
             "name": "CurrentStateTrait",
-            "summary": "",
+            "summary": "Returns\u0020information\u0020on\u0020the\u0020current\u0020state\u0020of\u0020the\u0020game",
             "url": "classes/App-Project-CurrentStateTrait.html"
         },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003AcurrentState\u0028\u0029",
             "name": "currentState",
-            "summary": "",
+            "summary": "Returns\u0020data\u0020to\u0020be\u0020used\u0020in\u0020the\u0020twig\u0020templates\nand\u0020the\u0020\u0022ordinary\u0022\u0020routes",
             "url": "classes/App-Project-CurrentStateTrait.html#method_currentState"
+        },                {
+            "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003AcurrentStateApi\u0028\u0029",
+            "name": "currentStateApi",
+            "summary": "Returns\u0020data\u0020to\u0020be\u0020displayed\u0020in\u0020the\u0020API\u0020routes",
+            "url": "classes/App-Project-CurrentStateTrait.html#method_currentStateApi"
         },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003A\u0024pot",
             "name": "pot",
-            "summary": "",
+            "summary": "Contains\u0020the\u0020money\u0020the\u0020player\u0020has\u0020bet\u0020in\u0020the\u0020current\u0020game",
             "url": "classes/App-Project-CurrentStateTrait.html#property_pot"
         },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003A\u0024card",
@@ -2133,17 +1843,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003A\u0024message",
             "name": "message",
-            "summary": "",
+            "summary": "Empty\u0020string\u0020until\u0020the\u0020end\u0020of\u0020the\u0020game.",
             "url": "classes/App-Project-CurrentStateTrait.html#property_message"
         },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003A\u0024suggestion",
             "name": "suggestion",
-            "summary": "",
+            "summary": "Contains\u0020the\u0020suggestion\u0020for\u0020player\u0020on\u0020a\u0020slot\nto\u0020place\u0020the\u0020dealt\u0020card\u0020and\u0020also\u0020the\u0020data\u0020for\nall\u002010\u0020hands\u0020\u0028best\u0020possible\u0020rule\u0020with\u0020the\ndealt\u0020card\u0020and\u0020best\u0020possible\u0020rule\u0020wihtout\nthe\u0020dealt\u0020card\u0029",
             "url": "classes/App-Project-CurrentStateTrait.html#property_suggestion"
         },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003A\u0024results",
             "name": "results",
-            "summary": "",
+            "summary": "The\u0020results\u0020for\u0020the\u0020player\u0020and\u0020the\u0020house.",
             "url": "classes/App-Project-CurrentStateTrait.html#property_results"
         },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003A\u0024house",
@@ -2168,12 +1878,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003A\u0024lastRound",
             "name": "lastRound",
-            "summary": "",
+            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020the\u0020last\u0020round",
             "url": "classes/App-Project-CurrentStateTrait.html#property_lastRound"
         },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003A\u0024fromSlot",
             "name": "fromSlot",
-            "summary": "",
+            "summary": "The\u0020slot\u0020from\u0020which\u0020to\u0020move\u0020the\u0020card",
             "url": "classes/App-Project-CurrentStateTrait.html#property_fromSlot"
         },                {
             "fqsen": "\\App\\Project\\Deck",
@@ -2183,27 +1893,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\Deck\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor",
             "url": "classes/App-Project-Deck.html#method___construct"
         },                {
             "fqsen": "\\App\\Project\\Deck\u003A\u003Adeal\u0028\u0029",
             "name": "deal",
-            "summary": "",
+            "summary": "Deals\u0020the\u0020top\u002Dcard\u0020from\u0020the\u0020deck\u0020\u0028last\u0020card\u0020in\u0020the\u0020card\u0020array\u0029",
             "url": "classes/App-Project-Deck.html#method_deal"
         },                {
             "fqsen": "\\App\\Project\\Deck\u003A\u003AaddCard\u0028\u0029",
             "name": "addCard",
-            "summary": "",
+            "summary": "Places\u0020a\u0020card\u0020on\u0020the\u0020top\u0020of\u0020the\u0020deck\u0020\u0028end\u0020of\u0020the\u0020card\u0020array\u0029",
             "url": "classes/App-Project-Deck.html#method_addCard"
         },                {
             "fqsen": "\\App\\Project\\Deck\u003A\u003AgetCards\u0028\u0029",
             "name": "getCards",
-            "summary": "",
+            "summary": "Returns\u0020an\u0020array\u0020with\u0020all\u0020cards",
             "url": "classes/App-Project-Deck.html#method_getCards"
         },                {
             "fqsen": "\\App\\Project\\Deck\u003A\u003ApossibleCards\u0028\u0029",
             "name": "possibleCards",
-            "summary": "",
+            "summary": "Returns\u0020an\u0020array\u0020of\u0020the\u0020cards\u0020that\u0020will\u0020be\u0020dealt\u0020to\u0020house\/player\ni.e.\u0020array\u0020consisting\u0020of\u0020every\u0020other\u0020card\u0020except\u0020for\u0020the\u0020first\u0020two\nthat\u0020will\u0020not\u0020be\u0020dealt\u0020to\u0020either.",
             "url": "classes/App-Project-Deck.html#method_possibleCards"
         },                {
             "fqsen": "\\App\\Project\\Deck\u003A\u003A\u0024cards",
@@ -2213,12 +1923,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\EvaluateTrait",
             "name": "EvaluateTrait",
-            "summary": "",
+            "summary": "Evaluates\u0020the\u0020hands\u0020of\u0020player\u0020and\u0020house\u0020after\nboth\u0020grids\u0020have\u0020been\u0020filled\u0020and\u0020determins\nwinner.\u0020If\u0020player\u0020won\u0020transfers\u00202x\u0020pot\u0020to\nplayer\/user\u0020and\u0020registers\u0020players\u0020score\u0020to\u0020database.",
             "url": "classes/App-Project-EvaluateTrait.html"
         },                {
             "fqsen": "\\App\\Project\\EvaluateTrait\u003A\u003Aevaluate\u0028\u0029",
             "name": "evaluate",
-            "summary": "",
+            "summary": "Called\u0020after\u0020the\u0020last\u0020slot\u0020in\u0020the\u0020houses\ngrid\u0020has\u0020been\u0020filled.\u0020Determins\u0020results\nand\u0020winner.\u0020If\u0020player\u0020wins\u0020registers\na\u0020transaction\u0020of\u0020pot\u0020x\u00202\u0020and\u0020score\u0020to\nthe\u0020database",
             "url": "classes/App-Project-EvaluateTrait.html#method_evaluate"
         },                {
             "fqsen": "\\App\\Project\\EvaluateTrait\u003A\u003A\u0024player",
@@ -2230,11 +1940,6 @@ Search.appendIndex(
             "name": "house",
             "summary": "",
             "url": "classes/App-Project-EvaluateTrait.html#property_house"
-        },                {
-            "fqsen": "\\App\\Project\\EvaluateTrait\u003A\u003A\u0024deck",
-            "name": "deck",
-            "summary": "",
-            "url": "classes/App-Project-EvaluateTrait.html#property_deck"
         },                {
             "fqsen": "\\App\\Project\\EvaluateTrait\u003A\u003A\u0024pot",
             "name": "pot",
@@ -2253,22 +1958,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\EvaluateTrait\u003A\u003A\u0024results",
             "name": "results",
-            "summary": "",
+            "summary": "The\u0020results\u0020for\u0020the\u0020player\u0020and\u0020the\u0020house.",
             "url": "classes/App-Project-EvaluateTrait.html#property_results"
         },                {
             "fqsen": "\\App\\Project\\EvaluateTrait\u003A\u003A\u0024suggestion",
             "name": "suggestion",
-            "summary": "",
+            "summary": "Contains\u0020suggestion\u0020data\u0020for\u0020the\u0020player,\nfrom\u0020the\u0020latest\u0020round.\u0020Suggested\u0020slot,\nbest\u0020possible\u0020rules\u0020that\u0020can\u0020be\u0020scored\u0020in\nthe\u0020slot\u0020with\u0020the\u0020dalt\u0020card\u0020horizontally\nand\u0020vertically\u0020and\u0020for\u0020each\u0020of\u0020the\u002010\nhands\u0020best\u0020rule\u0020that\u0020can\u0020be\u0020scored\u0020with\ndealt\u0020card\u0020and\u0020best\u0020rule\u0020that\u0020can\u0020be\nscored\u0020without\u0020the\u0020dealt\u0020card",
             "url": "classes/App-Project-EvaluateTrait.html#property_suggestion"
         },                {
             "fqsen": "\\App\\Project\\Game",
             "name": "Game",
-            "summary": "",
+            "summary": "Game\u0020of\u0020Poker\u0020Squares",
             "url": "classes/App-Project-Game.html"
         },                {
             "fqsen": "\\App\\Project\\Game\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Counstructor",
             "url": "classes/App-Project-Game.html#method___construct"
         },                {
             "fqsen": "\\App\\Project\\Game\u003A\u003A\u0024card",
@@ -2298,12 +2003,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\HousePlaceCardTrait",
             "name": "HousePlaceCardTrait",
-            "summary": "",
+            "summary": "Trait\u0020that\u0020handles\u0020the\u0020action\u0020of\u0020house\u0020placing\na\u0020card",
             "url": "classes/App-Project-HousePlaceCardTrait.html"
         },                {
             "fqsen": "\\App\\Project\\HousePlaceCardTrait\u003A\u003AhousePlaceCard\u0028\u0029",
             "name": "housePlaceCard",
-            "summary": "",
+            "summary": "Picks\u0020a\u0020card\u0020from\u0020the\u0020deck\u0020and\u0020places\ninto\u0020the\u0020houses\u0020grid",
             "url": "classes/App-Project-HousePlaceCardTrait.html#method_housePlaceCard"
         },                {
             "fqsen": "\\App\\Project\\HousePlaceCardTrait\u003A\u003A\u0024deck",
@@ -2323,43 +2028,63 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\HousePlaceCardTrait\u003A\u003A\u0024lastRound",
             "name": "lastRound",
-            "summary": "",
+            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020the\u0020last\u0020round",
             "url": "classes/App-Project-HousePlaceCardTrait.html#property_lastRound"
         },                {
             "fqsen": "\\App\\Project\\MoveACardTrait",
             "name": "MoveACardTrait",
-            "summary": "",
+            "summary": "Handles\u0020the\u0020cheat\u0020of\u0020moving\u0020a\u0020placed\u0020card\u0020from\u0020one\u0020slot\u0020to\u0020another",
             "url": "classes/App-Project-MoveACardTrait.html"
-        },                {
-            "fqsen": "\\App\\Project\\MoveACardTrait\u003A\u003AplayerSuggest\u0028\u0029",
-            "name": "playerSuggest",
-            "summary": "",
-            "url": "classes/App-Project-MoveACardTrait.html#method_playerSuggest"
         },                {
             "fqsen": "\\App\\Project\\MoveACardTrait\u003A\u003AsetFromSlot\u0028\u0029",
             "name": "setFromSlot",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020slot\u0020from\u0020which\u0020to\u0020pick\u0020up\u0020the\u0020placed\u0020card",
             "url": "classes/App-Project-MoveACardTrait.html#method_setFromSlot"
         },                {
             "fqsen": "\\App\\Project\\MoveACardTrait\u003A\u003AmoveCard\u0028\u0029",
             "name": "moveCard",
-            "summary": "",
+            "summary": "Picks\u0020up\u0020card\u0020from\u0020the\u0020previously\u0020set\u0020from\u002Dslot\nand\u0020places\u0020it\u0020in\u0020the\u0020new\u0020slot\nGenerates\u0020new\u0020suggestion\u0020data\u0020for\u0020the\u0020player\nbased\u0020on\u0020the\u0020updated\u0020grid",
             "url": "classes/App-Project-MoveACardTrait.html#method_moveCard"
         },                {
             "fqsen": "\\App\\Project\\MoveACardTrait\u003A\u003A\u0024fromSlot",
             "name": "fromSlot",
-            "summary": "",
+            "summary": "The\u0020slot\u0020from\u0020which\u0020to\u0020move\u0020the\u0020card",
             "url": "classes/App-Project-MoveACardTrait.html#property_fromSlot"
         },                {
             "fqsen": "\\App\\Project\\MoveACardTrait\u003A\u003A\u0024lastRound",
             "name": "lastRound",
-            "summary": "",
+            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020the\u0020last\u0020round",
             "url": "classes/App-Project-MoveACardTrait.html#property_lastRound"
+        },                {
+            "fqsen": "\\App\\Project\\MoveACardTrait\u003A\u003A\u0024deck",
+            "name": "deck",
+            "summary": "",
+            "url": "classes/App-Project-MoveACardTrait.html#property_deck"
+        },                {
+            "fqsen": "\\App\\Project\\MoveACardTrait\u003A\u003A\u0024evaluator",
+            "name": "evaluator",
+            "summary": "",
+            "url": "classes/App-Project-MoveACardTrait.html#property_evaluator"
+        },                {
+            "fqsen": "\\App\\Project\\MoveACardTrait\u003A\u003A\u0024house",
+            "name": "house",
+            "summary": "",
+            "url": "classes/App-Project-MoveACardTrait.html#property_house"
         },                {
             "fqsen": "\\App\\Project\\MoveACardTrait\u003A\u003A\u0024player",
             "name": "player",
             "summary": "",
             "url": "classes/App-Project-MoveACardTrait.html#property_player"
+        },                {
+            "fqsen": "\\App\\Project\\MoveACardTrait\u003A\u003A\u0024results",
+            "name": "results",
+            "summary": "The\u0020results\u0020for\u0020the\u0020player\u0020and\u0020the\u0020house.",
+            "url": "classes/App-Project-MoveACardTrait.html#property_results"
+        },                {
+            "fqsen": "\\App\\Project\\MoveACardTrait\u003A\u003A\u0024suggestion",
+            "name": "suggestion",
+            "summary": "Contains\u0020the\u0020suggestion\u0020for\u0020player\u0020on\u0020a\u0020slot\nto\u0020place\u0020the\u0020dealt\u0020card\u0020and\u0020also\u0020the\u0020data\u0020for\nall\u002010\u0020hands\u0020\u0028best\u0020possible\u0020rule\u0020with\u0020the\ndealt\u0020card\u0020and\u0020best\u0020possible\u0020rule\u0020wihtout\nthe\u0020dealt\u0020card\u0029",
+            "url": "classes/App-Project-MoveACardTrait.html#property_suggestion"
         },                {
             "fqsen": "\\App\\Project\\NoCardsException",
             "name": "NoCardsException",
@@ -2373,18 +2098,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\OneRoundTrait",
             "name": "OneRoundTrait",
-            "summary": "",
+            "summary": "Handles\u0020one\u0020round\n1.\u0020Player\u0020places\u0020card\n2.\u0020House\u0020places\u0020card\n3.\u0020If\u0020grids\u0020are\u0020full,\u0020evaluate\u0020and\u0020return\u0020results\n4.\u0020if\u0020not,\u0020generates\u0020new\u0020suggestion\u002Ddata\u0020for\u0020player\nbased\u0020on\u0020the\u0020updated\u0020grid\u0020and\u0020deck\u0020data",
             "url": "classes/App-Project-OneRoundTrait.html"
         },                {
             "fqsen": "\\App\\Project\\OneRoundTrait\u003A\u003AhousePlaceCard\u0028\u0029",
             "name": "housePlaceCard",
-            "summary": "",
+            "summary": "Picks\u0020a\u0020card\u0020from\u0020the\u0020deck\u0020and\u0020places\ninto\u0020the\u0020houses\u0020grid",
             "url": "classes/App-Project-OneRoundTrait.html#method_housePlaceCard"
-        },                {
-            "fqsen": "\\App\\Project\\OneRoundTrait\u003A\u003AplayerSuggest\u0028\u0029",
-            "name": "playerSuggest",
-            "summary": "",
-            "url": "classes/App-Project-OneRoundTrait.html#method_playerSuggest"
         },                {
             "fqsen": "\\App\\Project\\OneRoundTrait\u003A\u003AoneRound\u0028\u0029",
             "name": "oneRound",
@@ -2418,7 +2138,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\OneRoundTrait\u003A\u003A\u0024lastRound",
             "name": "lastRound",
-            "summary": "",
+            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020the\u0020last\u0020round",
             "url": "classes/App-Project-OneRoundTrait.html#property_lastRound"
         },                {
             "fqsen": "\\App\\Project\\OneRoundTrait\u003A\u003A\u0024player",
@@ -2426,19 +2146,24 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Project-OneRoundTrait.html#property_player"
         },                {
+            "fqsen": "\\App\\Project\\OneRoundTrait\u003A\u003A\u0024results",
+            "name": "results",
+            "summary": "The\u0020results\u0020for\u0020the\u0020player\u0020and\u0020the\u0020house.",
+            "url": "classes/App-Project-OneRoundTrait.html#property_results"
+        },                {
+            "fqsen": "\\App\\Project\\OneRoundTrait\u003A\u003A\u0024suggestion",
+            "name": "suggestion",
+            "summary": "Contains\u0020the\u0020suggestion\u0020for\u0020player\u0020on\u0020a\u0020slot\nto\u0020place\u0020the\u0020dealt\u0020card\u0020and\u0020also\u0020the\u0020data\u0020for\nall\u002010\u0020hands\u0020\u0028best\u0020possible\u0020rule\u0020with\u0020the\ndealt\u0020card\u0020and\u0020best\u0020possible\u0020rule\u0020wihtout\nthe\u0020dealt\u0020card\u0029",
+            "url": "classes/App-Project-OneRoundTrait.html#property_suggestion"
+        },                {
             "fqsen": "\\App\\Project\\PlayerSuggestTrait",
             "name": "PlayerSuggestTrait",
-            "summary": "",
+            "summary": "Generates\u0020suggestion\u0020for\u0020player\u0020on\u0020a\u0020slot\nto\u0020place\u0020the\u0020dealt\u0020card\u0020and\u0020also\u0020the\u0020data\u0020for\nall\u002010\u0020hands\u0020\u0028best\u0020possible\u0020rule\u0020with\u0020the\ndealt\u0020card\u0020and\u0020best\u0020possible\u0020rule\u0020wihtout\nthe\u0020dealt\u0020card\u0029",
             "url": "classes/App-Project-PlayerSuggestTrait.html"
-        },                {
-            "fqsen": "\\App\\Project\\PlayerSuggestTrait\u003A\u003AcreateMessage\u0028\u0029",
-            "name": "createMessage",
-            "summary": "",
-            "url": "classes/App-Project-PlayerSuggestTrait.html#method_createMessage"
         },                {
             "fqsen": "\\App\\Project\\PlayerSuggestTrait\u003A\u003AplayerSuggest\u0028\u0029",
             "name": "playerSuggest",
-            "summary": "",
+            "summary": "Provides\u0020a\u0020suggestion\u0020to\u0020the\u0020player\u0020on\u0020which\u0020slot\u0020to\nplace\u0020the\u0020card\u0020in.\u0020Also\u0020provides\u0020data\u0020for\u0020each\u0020hand\u0020on\nthe\u0020best\u0020possible\u0020rule\u0020that\u0020can\u0020be\u0020achieved\u0020with\u0020the\u0020dealt\u0020card\nand\u0020best\u0020possible\u0020rule\u0020without\u0020the\u0020dealt\u0020card,\u0020to\u0020be\u0020used\nin\u0020the\u0020suggestion\u002Dcheat",
             "url": "classes/App-Project-PlayerSuggestTrait.html#method_playerSuggest"
         },                {
             "fqsen": "\\App\\Project\\PlayerSuggestTrait\u003A\u003A\u0024player",
@@ -2448,7 +2173,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\PlayerSuggestTrait\u003A\u003A\u0024card",
             "name": "card",
-            "summary": "",
+            "summary": "The\u0020latest\u0020card\u0020that\u0020has\u0020been\u0020dealt\u0020to\nthe\u0020player",
             "url": "classes/App-Project-PlayerSuggestTrait.html#property_card"
         },                {
             "fqsen": "\\App\\Project\\PlayerSuggestTrait\u003A\u003A\u0024deck",
@@ -2463,52 +2188,52 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\PlayerSuggestTrait\u003A\u003A\u0024suggestion",
             "name": "suggestion",
-            "summary": "",
+            "summary": "Contains\u0020the\u0020suggestion\u0020for\u0020player\u0020on\u0020a\u0020slot\nto\u0020place\u0020the\u0020dealt\u0020card\u0020and\u0020also\u0020the\u0020data\u0020for\nall\u002010\u0020hands\u0020\u0028best\u0020possible\u0020rule\u0020with\u0020the\ndealt\u0020card\u0020and\u0020best\u0020possible\u0020rule\u0020wihtout\nthe\u0020dealt\u0020card\u0029",
             "url": "classes/App-Project-PlayerSuggestTrait.html#property_suggestion"
         },                {
             "fqsen": "\\App\\Project\\PotTrait",
             "name": "PotTrait",
-            "summary": "",
+            "summary": "Contains\u0020the\u0020pot\u0020and\u0020method\u0020for\nadding\u0020money\u0020to\u0020the\u0020pot",
             "url": "classes/App-Project-PotTrait.html"
         },                {
             "fqsen": "\\App\\Project\\PotTrait\u003A\u003AsetPot\u0028\u0029",
             "name": "setPot",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020pot\u0020to\u0020the\u0020amount\u0020that\u0020has\u0020been\npassed\u0020as\u0020argument.",
             "url": "classes/App-Project-PotTrait.html#method_setPot"
         },                {
             "fqsen": "\\App\\Project\\PotTrait\u003A\u003A\u0024pot",
             "name": "pot",
-            "summary": "",
+            "summary": "Contains\u0020the\u0020money\u0020the\u0020player\u0020has\u0020bet\u0020in\u0020the\u0020current\u0020game",
             "url": "classes/App-Project-PotTrait.html#property_pot"
         },                {
             "fqsen": "\\App\\Project\\Register",
             "name": "Register",
-            "summary": "",
+            "summary": "Registers\u0020user\u0020score\u0020and\u0020transactions.",
             "url": "classes/App-Project-Register.html"
         },                {
             "fqsen": "\\App\\Project\\Register\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor",
             "url": "classes/App-Project-Register.html#method___construct"
         },                {
             "fqsen": "\\App\\Project\\Register\u003A\u003Atransaction\u0028\u0029",
             "name": "transaction",
-            "summary": "",
+            "summary": "Registers\u0020a\u0020transaction\u0020to\u0020the\u0020database,\nthe\u0020amount\u0020is\u0020registered\u0020in\u0020database\u0020as\u0020is,\ni.e.\u0020positive\u0020is\u0020registered\u0020as\u0020positive\u0020and\u0020negative\u0020and\u0020negative.",
             "url": "classes/App-Project-Register.html#method_transaction"
         },                {
             "fqsen": "\\App\\Project\\Register\u003A\u003AgetBalance\u0028\u0029",
             "name": "getBalance",
-            "summary": "",
+            "summary": "Get\u0020user\u0027s\u0020balance\u0020\u0028sum\u0020of\u0020all\u0020user\u0027s\u0020transactions\u0029",
             "url": "classes/App-Project-Register.html#method_getBalance"
         },                {
             "fqsen": "\\App\\Project\\Register\u003A\u003Adebit\u0028\u0029",
             "name": "debit",
-            "summary": "",
+            "summary": "Registers\u0020a\u0020negative\u0020transaction\u0020tot\u0020he\u0020database.",
             "url": "classes/App-Project-Register.html#method_debit"
         },                {
             "fqsen": "\\App\\Project\\Register\u003A\u003Ascore\u0028\u0029",
             "name": "score",
-            "summary": "",
+            "summary": "Registers\u0020a\u0020score\u0020for\u0020the\u0020user\u0020to\u0020the\u0020database",
             "url": "classes/App-Project-Register.html#method_score"
         },                {
             "fqsen": "\\App\\Project\\Register\u003A\u003A\u0024manager",
@@ -2523,42 +2248,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\RegisterFactory",
             "name": "RegisterFactory",
-            "summary": "",
+            "summary": "Creates\u0020an\u0020instance\u0020of\u0020the\u0020Register\u0020class\u0020for\u0020a\u0020specific\u0020user",
             "url": "classes/App-Project-RegisterFactory.html"
         },                {
             "fqsen": "\\App\\Project\\RegisterFactory\u003A\u003Acreate\u0028\u0029",
             "name": "create",
-            "summary": "",
+            "summary": "returns\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020Register\u0020object\u0020for\u0020a\u0020specific\u0020user",
             "url": "classes/App-Project-RegisterFactory.html#method_create"
-        },                {
-            "fqsen": "\\App\\Project\\SuggestMessageTrait",
-            "name": "SuggestMessageTrait",
-            "summary": "",
-            "url": "classes/App-Project-SuggestMessageTrait.html"
-        },                {
-            "fqsen": "\\App\\Project\\SuggestMessageTrait\u003A\u003AcreateMessage\u0028\u0029",
-            "name": "createMessage",
-            "summary": "",
-            "url": "classes/App-Project-SuggestMessageTrait.html#method_createMessage"
         },                {
             "fqsen": "\\App\\Project\\UndoLastRoundTrait",
             "name": "UndoLastRoundTrait",
             "summary": "",
             "url": "classes/App-Project-UndoLastRoundTrait.html"
         },                {
-            "fqsen": "\\App\\Project\\UndoLastRoundTrait\u003A\u003AplayerSuggest\u0028\u0029",
-            "name": "playerSuggest",
-            "summary": "",
-            "url": "classes/App-Project-UndoLastRoundTrait.html#method_playerSuggest"
-        },                {
             "fqsen": "\\App\\Project\\UndoLastRoundTrait\u003A\u003AundoLastRound\u0028\u0029",
             "name": "undoLastRound",
-            "summary": "",
+            "summary": "Undoes\u0020the\u0020last\u0020round.\u0020The\u0020latest\u0020card\u0020that\u0020is\u0020dealt\u0020to\u0020the\u0020player\nis\u0020placed\u0020back\u0020into\u0020the\u0020deck.\u0020The\u0020latest\u0020placed\u0020card\u0020in\u0020the\u0020houses\u0020grid\nis\u0020also\u0020removed\u0020and\u0020placed\u0020back\u0020into\u0020the\u0020deck.\u0020And\u0020the\u0020latest\u0020card\u0020placed\u0020by\u0020the\u0020player\u0020is\u0020lifted\u0020from\u0020the\u0020player\u0027s\u0020grid.",
             "url": "classes/App-Project-UndoLastRoundTrait.html#method_undoLastRound"
         },                {
             "fqsen": "\\App\\Project\\UndoLastRoundTrait\u003A\u003A\u0024card",
             "name": "card",
-            "summary": "",
+            "summary": "The\u0020latest\u0020card\u0020that\u0020has\u0020been\u0020dealt\u0020to\u0020the\u0020player",
             "url": "classes/App-Project-UndoLastRoundTrait.html#property_card"
         },                {
             "fqsen": "\\App\\Project\\UndoLastRoundTrait\u003A\u003A\u0024deck",
@@ -2573,7 +2283,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\UndoLastRoundTrait\u003A\u003A\u0024lastRound",
             "name": "lastRound",
-            "summary": "",
+            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020the\u0020last\u0020round",
             "url": "classes/App-Project-UndoLastRoundTrait.html#property_lastRound"
         },                {
             "fqsen": "\\App\\Project\\UndoLastRoundTrait\u003A\u003A\u0024player",
@@ -2661,26 +2371,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-ProjectGrid-RemoveCardTrait.html#property_cardCount"
         },                {
-            "fqsen": "\\App\\ProjectGrid\\RowsColsTrait",
-            "name": "RowsColsTrait",
-            "summary": "Trait\u0020for\u0020getting\u0020arrays\u0020with\u0020vertical\u0020hands\nrespectively\u0020horisontal\u0020hands\u0020in\u0020the\u0020grid",
-            "url": "classes/App-ProjectGrid-RowsColsTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectGrid\\RowsColsTrait\u003A\u003AgetCols\u0028\u0029",
-            "name": "getCols",
-            "summary": "Returns\u0020a\u0020two\u002Ddimensional\u0020array\nwich\u0020correspons\u0020to\u0020an\u0020\u0022inverted\u0020version\u0022\u0020of\u0020the\u0020grid,\n\u0028i.e.\u0020an\u0020array\u0020with\u0020vertical\u0020hands\u0029",
-            "url": "classes/App-ProjectGrid-RowsColsTrait.html#method_getCols"
-        },                {
-            "fqsen": "\\App\\ProjectGrid\\RowsColsTrait\u003A\u003AgetRows\u0028\u0029",
-            "name": "getRows",
-            "summary": "Returns\u0020the\u0020actual\u0020grid\u0020\u0028.i.e\u0020an\narray\u0020with\u0020the\u0020horizontal\u0020hands\u0029",
-            "url": "classes/App-ProjectGrid-RowsColsTrait.html#method_getRows"
-        },                {
-            "fqsen": "\\App\\ProjectGrid\\RowsColsTrait\u003A\u003A\u0024grid",
-            "name": "grid",
-            "summary": "",
-            "url": "classes/App-ProjectGrid-RowsColsTrait.html#property_grid"
-        },                {
             "fqsen": "\\App\\ProjectGrid\\SlotEmptyException",
             "name": "SlotEmptyException",
             "summary": "Raised\u0020when\u0020a\u0020card\u0020is\u0020added\u0020to\u0020a\u0020slot\u0020that\u0020already\u0020is\u0020filled",
@@ -2706,91 +2396,6 @@ Search.appendIndex(
             "summary": "Raised\u0020when\u0020trying\u0020to\u0020remove\u0020a\u0020card\u0020from\u0020an\u0020already\u0020empty\u0020slot",
             "url": "classes/App-ProjectGrid-SlotNotEmptyException.html"
         },                {
-            "fqsen": "\\App\\ProjectRules\\CheckEmptyGridTrait",
-            "name": "CheckEmptyGridTrait",
-            "summary": "Trait\u0020for\u0020getting\u0020a\u0020slot\u002Dsuggestion\u0020for\u0020a\u0020new\/empty\u0020grid.",
-            "url": "classes/App-ProjectRules-CheckEmptyGridTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckEmptyGridTrait\u003A\u003AhandRuleWith\u0028\u0029",
-            "name": "handRuleWith",
-            "summary": "Calculates\u0020and\u0020returns\u0020name\u0020and\u0020number\u0020of\u0020points\u0020\u0028adjusted\/weighted\u0029\nfor\u0020the\u0020best\u0020rule\u0020possible\u0020to\u0020achieve\u0020with\u0020the\u0020dealt\u0020card,\u0020cards\nin\u0020the\u0020hand\u0020\u0028row\u0020or\u0020column\u0029\u0020and\u0020the\u0020cards\u0020the\u0020user\u0020is\u0020yet\u0020to\u0020pick\u0020from\nthe\u0020deck",
-            "url": "classes/App-ProjectRules-CheckEmptyGridTrait.html#method_handRuleWith"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckEmptyGridTrait\u003A\u003AemptyGridSuggestion\u0028\u0029",
-            "name": "emptyGridSuggestion",
-            "summary": "Used\u0020for\u0020a\u0020new\/empty\u0020array.\u0020Always\u0020suggests\u0020the\u0020first\u0020empty\u0020slot\n\u0028top\u002Dleft\/\u0020row\u00200\u002Dcol\u00200,\u0020and\u0020displays\u0020which\u0020rule\u0020will\u0020be\u0020psosible\u0020to\u0020achieve\nat\u0020best\u0020calculated\u0020based\u0020on\u0020the\u0020dealt\u0020card\u0020and\u0020the\u0020cards\u0020the\u0020user\u0020is\nyet\u0020to\u0020pick\u0020from\u0020the\u0020deck",
-            "url": "classes/App-ProjectRules-CheckEmptyGridTrait.html#method_emptyGridSuggestion"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckFullHandTrait",
-            "name": "CheckFullHandTrait",
-            "summary": "Trait\u0020for\u0020checking\u0020which\u0020rule\u0020is\u0020scored\u0020\u0028if\u0020any\u0029\nfor\u0020a\u0020full\u0020hand.",
-            "url": "classes/App-ProjectRules-CheckFullHandTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckFullHandTrait\u003A\u003AcheckHandForWin\u0028\u0029",
-            "name": "checkHandForWin",
-            "summary": "Checks\u0020which\u0020rule\u0020is\u0020scored\u0020at\u0020best\u0020\u0028if\u0020any\u0029\nfor\u0020a\u0020full\u0020hand.\u0020Called\u0020when\u0020the\u0020grid\u0020is\u0020completely\u0020filled.",
-            "url": "classes/App-ProjectRules-CheckFullHandTrait.html#method_checkHandForWin"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckFullHandTrait\u003A\u003A\u0024rules",
-            "name": "rules",
-            "summary": "",
-            "url": "classes/App-ProjectRules-CheckFullHandTrait.html#property_rules"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckWithCardTrait",
-            "name": "CheckWithCardTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-CheckWithCardTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckWithCardTrait\u003A\u003ApointsAndName\u0028\u0029",
-            "name": "pointsAndName",
-            "summary": "",
-            "url": "classes/App-ProjectRules-CheckWithCardTrait.html#method_pointsAndName"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckWithCardTrait\u003A\u003ApointsAndNameEmptyHand\u0028\u0029",
-            "name": "pointsAndNameEmptyHand",
-            "summary": "",
-            "url": "classes/App-ProjectRules-CheckWithCardTrait.html#method_pointsAndNameEmptyHand"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckWithCardTrait\u003A\u003AcheckSingleRuleWith\u0028\u0029",
-            "name": "checkSingleRuleWith",
-            "summary": "",
-            "url": "classes/App-ProjectRules-CheckWithCardTrait.html#method_checkSingleRuleWith"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckWithCardTrait\u003A\u003AhandRuleWith\u0028\u0029",
-            "name": "handRuleWith",
-            "summary": "Calculates\u0020and\u0020returns\u0020name\u0020and\u0020number\u0020of\u0020points\u0020\u0028adjusted\/weighted\u0029\nfor\u0020the\u0020best\u0020rule\u0020possible\u0020to\u0020achieve\u0020with\u0020the\u0020dealt\u0020card,\u0020cards\nin\u0020the\u0020hand\u0020\u0028row\u0020or\u0020column\u0029\u0020and\u0020the\u0020cards\u0020the\u0020user\u0020is\u0020yet\u0020to\u0020pick\u0020from\nthe\u0020deck",
-            "url": "classes/App-ProjectRules-CheckWithCardTrait.html#method_handRuleWith"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckWithCardTrait\u003A\u003A\u0024rules",
-            "name": "rules",
-            "summary": "",
-            "url": "classes/App-ProjectRules-CheckWithCardTrait.html#property_rules"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckWithoutCardTrait",
-            "name": "CheckWithoutCardTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-CheckWithoutCardTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckWithoutCardTrait\u003A\u003AruleName\u0028\u0029",
-            "name": "ruleName",
-            "summary": "",
-            "url": "classes/App-ProjectRules-CheckWithoutCardTrait.html#method_ruleName"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckWithoutCardTrait\u003A\u003AruleNameEmptyHand\u0028\u0029",
-            "name": "ruleNameEmptyHand",
-            "summary": "",
-            "url": "classes/App-ProjectRules-CheckWithoutCardTrait.html#method_ruleNameEmptyHand"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckWithoutCardTrait\u003A\u003AcheckSingleRuleWithout\u0028\u0029",
-            "name": "checkSingleRuleWithout",
-            "summary": "",
-            "url": "classes/App-ProjectRules-CheckWithoutCardTrait.html#method_checkSingleRuleWithout"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\CheckWithoutCardTrait\u003A\u003AhandRuleWithout\u0028\u0029",
-            "name": "handRuleWithout",
-            "summary": "",
-            "url": "classes/App-ProjectRules-CheckWithoutCardTrait.html#method_handRuleWithout"
-        },                {
             "fqsen": "\\App\\ProjectRules\\CountByRankTrait",
             "name": "CountByRankTrait",
             "summary": "",
@@ -2798,7 +2403,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\CountByRankTrait\u003A\u003AcountByRank\u0028\u0029",
             "name": "countByRank",
-            "summary": "",
+            "summary": "Used\u0020in\u0020the\u0020following\u0020classes\u0020and\u0020traits\u003A\nFullHouseScoredTrait,\nFullHouseTrait2,\nFullHouseTrait3,\nSameOfAKind,\nSameOfAKindTrait,\nSameOfAKindTrait2,\nSameOfAKindTrait3,\nStraightScoredTrait,\nStraightTrait,\nTwoPairsScoredTrait,\nTwoPairsTrait,\nTwoPairsTrait2,\nTwoPairsTrait3,",
             "url": "classes/App-ProjectRules-CountByRankTrait.html#method_countByRank"
         },                {
             "fqsen": "\\App\\ProjectRules\\CountBySuitTrait",
@@ -2808,7 +2413,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\CountBySuitTrait\u003A\u003AcountBySuit\u0028\u0029",
             "name": "countBySuit",
-            "summary": "",
+            "summary": "Used\u0020in\u0020the\u0020following\u0020traits\u003A\nFlushScoredTrait,\nFlushTrait2\u003B\nFlushTrait3,",
             "url": "classes/App-ProjectRules-CountBySuitTrait.html#method_countBySuit"
         },                {
             "fqsen": "\\App\\ProjectRules\\CountSuitAndRankTrait",
@@ -2818,268 +2423,43 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\CountSuitAndRankTrait\u003A\u003AcountSuitAndRank\u0028\u0029",
             "name": "countSuitAndRank",
-            "summary": "",
+            "summary": "Used\u0020in\u0020the\u0020following\u0020traits\u003A\nRoyalFlushScoredTrait,\nRoyalFLushTrait,\nStraightFlushScoredTrait,",
             "url": "classes/App-ProjectRules-CountSuitAndRankTrait.html#method_countSuitAndRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\EmptyCellTrait",
-            "name": "EmptyCellTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-EmptyCellTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\EmptyCellTrait\u003A\u003Asingle\u0028\u0029",
-            "name": "single",
-            "summary": "",
-            "url": "classes/App-ProjectRules-EmptyCellTrait.html#method_single"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\ExtractRuleNamesTrait",
-            "name": "ExtractRuleNamesTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-ExtractRuleNamesTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\ExtractRuleNamesTrait\u003A\u003AextractRuleNames\u0028\u0029",
-            "name": "extractRuleNames",
-            "summary": "",
-            "url": "classes/App-ProjectRules-ExtractRuleNamesTrait.html#method_extractRuleNames"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FinalResultsTrait",
-            "name": "FinalResultsTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FinalResultsTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FinalResultsTrait\u003A\u003AcheckHandForWin\u0028\u0029",
-            "name": "checkHandForWin",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FinalResultsTrait.html#method_checkHandForWin"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FinalResultsTrait\u003A\u003Aresults\u0028\u0029",
-            "name": "results",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FinalResultsTrait.html#method_results"
         },                {
             "fqsen": "\\App\\ProjectRules\\FirstCheckTrait",
             "name": "FirstCheckTrait",
-            "summary": "",
+            "summary": "Used\u0020by\u0020the\u0020following\u0020classes\u003A\nFlush\nFullHouse\nRoyalFlush\nStraightFlush\nStraight",
             "url": "classes/App-ProjectRules-FirstCheckTrait.html"
         },                {
-            "fqsen": "\\App\\ProjectRules\\FirstCheckTrait\u003A\u003Acheck2\u0028\u0029",
-            "name": "check2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FirstCheckTrait.html#method_check2"
+            "fqsen": "\\App\\ProjectRules\\FirstCheckTrait\u003A\u003ApossibleWithoutCard\u0028\u0029",
+            "name": "possibleWithoutCard",
+            "summary": "Return\u0020true\u0020if\u0020the\u0020rule\u0020is\u0020possible\u0020to\u0020score\u0020without\u0020the\u0020dealt\u0020card,\ngiven\u0020the\u0020cards\u0020in\u0020the\u0020hand\u0020and\u0020in\u0020the\u0020deck.",
+            "url": "classes/App-ProjectRules-FirstCheckTrait.html#method_possibleWithoutCard"
         },                {
-            "fqsen": "\\App\\ProjectRules\\FirstCheckTrait\u003A\u003Acheck\u0028\u0029",
-            "name": "check",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FirstCheckTrait.html#method_check"
+            "fqsen": "\\App\\ProjectRules\\FirstCheckTrait\u003A\u003ApossibleWithCard\u0028\u0029",
+            "name": "possibleWithCard",
+            "summary": "Returns\u0020true\u0020if\u0020the\u0020rule\u0020is\u0020possible\u0020to\u0020score\u0020if\u0020the\u0020dealt\u0020card\u0020is\u0020placed\u0020in\nthe\u0020hand",
+            "url": "classes/App-ProjectRules-FirstCheckTrait.html#method_possibleWithCard"
         },                {
             "fqsen": "\\App\\ProjectRules\\Flush",
             "name": "Flush",
-            "summary": "",
+            "summary": "Determins\u0020if\u0020the\u0020Flush\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score",
             "url": "classes/App-ProjectRules-Flush.html"
         },                {
-            "fqsen": "\\App\\ProjectRules\\Flush\u003A\u003Acheck\u0028\u0029",
-            "name": "check",
-            "summary": "",
-            "url": "classes/App-ProjectRules-Flush.html#method_check"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FlushStat",
-            "name": "FlushStat",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FlushStat.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FlushStatTrait2",
-            "name": "FlushStatTrait2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FlushStatTrait2.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FlushStatTrait2\u003A\u003AcheckInDeck\u0028\u0029",
-            "name": "checkInDeck",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FlushStatTrait2.html#method_checkInDeck"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FlushStatTrait2\u003A\u003Acheck2\u0028\u0029",
-            "name": "check2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FlushStatTrait2.html#method_check2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FlushStatTrait3",
-            "name": "FlushStatTrait3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FlushStatTrait3.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FlushStatTrait3\u003A\u003AcountBySuit\u0028\u0029",
-            "name": "countBySuit",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FlushStatTrait3.html#method_countBySuit"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FlushStatTrait3\u003A\u003Acheck3\u0028\u0029",
-            "name": "check3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FlushStatTrait3.html#method_check3"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FlushStatTrait4",
-            "name": "FlushStatTrait4",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FlushStatTrait4.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FlushStatTrait4\u003A\u003AcountBySuit\u0028\u0029",
-            "name": "countBySuit",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FlushStatTrait4.html#method_countBySuit"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FlushStatTrait4\u003A\u003AcheckInDeck\u0028\u0029",
-            "name": "checkInDeck",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FlushStatTrait4.html#method_checkInDeck"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FlushStatTrait4\u003A\u003A\u0024suit",
-            "name": "suit",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FlushStatTrait4.html#property_suit"
+            "fqsen": "\\App\\ProjectRules\\Flush\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor",
+            "url": "classes/App-ProjectRules-Flush.html#method___construct"
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouse",
             "name": "FullHouse",
-            "summary": "",
+            "summary": "Determins\u0020if\u0020the\u0020Full\u0020House\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score",
             "url": "classes/App-ProjectRules-FullHouse.html"
         },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStat",
-            "name": "FullHouseStat",
+            "fqsen": "\\App\\ProjectRules\\FullHouse\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
             "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStat.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait2",
-            "name": "FullHouseStatTrait2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait2.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait2\u003A\u003Acheck3\u0028\u0029",
-            "name": "check3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait2.html#method_check3"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait2\u003A\u003AsubCheck\u0028\u0029",
-            "name": "subCheck",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait2.html#method_subCheck"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait2\u003A\u003AsubCheck2\u0028\u0029",
-            "name": "subCheck2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait2.html#method_subCheck2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait2\u003A\u003AsubCheck3\u0028\u0029",
-            "name": "subCheck3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait2.html#method_subCheck3"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait2\u003A\u003AcountByRank\u0028\u0029",
-            "name": "countByRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait2.html#method_countByRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait2\u003A\u003Acheck2\u0028\u0029",
-            "name": "check2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait2.html#method_check2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait3",
-            "name": "FullHouseStatTrait3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait3.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait3\u003A\u003AcheckThree\u0028\u0029",
-            "name": "checkThree",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait3.html#method_checkThree"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait3\u003A\u003AcheckBoth\u0028\u0029",
-            "name": "checkBoth",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait3.html#method_checkBoth"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait3\u003A\u003AcountByRank\u0028\u0029",
-            "name": "countByRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait3.html#method_countByRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait3\u003A\u003Acheck3\u0028\u0029",
-            "name": "check3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait3.html#method_check3"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait4",
-            "name": "FullHouseStatTrait4",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait4.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait4\u003A\u003AcheckThree\u0028\u0029",
-            "name": "checkThree",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait4.html#method_checkThree"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait4\u003A\u003AcheckBoth\u0028\u0029",
-            "name": "checkBoth",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait4.html#method_checkBoth"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait4\u003A\u003AsubCheck\u0028\u0029",
-            "name": "subCheck",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait4.html#method_subCheck"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait5",
-            "name": "FullHouseStatTrait5",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait5.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait5\u003A\u003AcheckBoth\u0028\u0029",
-            "name": "checkBoth",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait5.html#method_checkBoth"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait6",
-            "name": "FullHouseStatTrait6",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait6.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait6\u003A\u003AcheckThree\u0028\u0029",
-            "name": "checkThree",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait6.html#method_checkThree"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait7",
-            "name": "FullHouseStatTrait7",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait7.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait7\u003A\u003AsubCheck2\u0028\u0029",
-            "name": "subCheck2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait7.html#method_subCheck2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait8",
-            "name": "FullHouseStatTrait8",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait8.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseStatTrait8\u003A\u003AsubCheck3\u0028\u0029",
-            "name": "subCheck3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseStatTrait8.html#method_subCheck3"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseTrait",
-            "name": "FullHouseTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseTrait\u003A\u003AcountByRank\u0028\u0029",
-            "name": "countByRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseTrait.html#method_countByRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\FullHouseTrait\u003A\u003Acheck\u0028\u0029",
-            "name": "check",
-            "summary": "",
-            "url": "classes/App-ProjectRules-FullHouseTrait.html#method_check"
+            "url": "classes/App-ProjectRules-FullHouse.html#method___construct"
         },                {
             "fqsen": "\\App\\ProjectRules\\GroupBySuitTrait",
             "name": "GroupBySuitTrait",
@@ -3088,7 +2468,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\GroupBySuitTrait\u003A\u003AgroupBySuit\u0028\u0029",
             "name": "groupBySuit",
-            "summary": "",
+            "summary": "Used\u0020in\u0020the\u0020following\u0020traits\u003A\nRoyalFlushTrait2,\nStraightFlushTrait,\nStraightFlushTrait3",
             "url": "classes/App-ProjectRules-GroupBySuitTrait.html#method_groupBySuit"
         },                {
             "fqsen": "\\App\\ProjectRules\\MinRankLimitsTrait",
@@ -3098,217 +2478,62 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\MinRankLimitsTrait\u003A\u003AminRankLimits\u0028\u0029",
             "name": "minRankLimits",
-            "summary": "",
+            "summary": "Used\u0020in\u0020traits\u003A\nStraightTrait,",
             "url": "classes/App-ProjectRules-MinRankLimitsTrait.html#method_minRankLimits"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\MinRankLimitsTrait\u003A\u003A\u0024maxRank",
-            "name": "maxRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-MinRankLimitsTrait.html#property_maxRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\MinRankLimitsTrait\u003A\u003A\u0024minRank",
-            "name": "minRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-MinRankLimitsTrait.html#property_minRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\PointsAndRuleNameTrait",
-            "name": "PointsAndRuleNameTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-PointsAndRuleNameTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\PointsAndRuleNameTrait\u003A\u003ApointsAndName\u0028\u0029",
-            "name": "pointsAndName",
-            "summary": "",
-            "url": "classes/App-ProjectRules-PointsAndRuleNameTrait.html#method_pointsAndName"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\PointsAndRuleNameTrait2",
-            "name": "PointsAndRuleNameTrait2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-PointsAndRuleNameTrait2.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\PointsAndRuleNameTrait2\u003A\u003ApointsAndNameEmptyHand\u0028\u0029",
-            "name": "pointsAndNameEmptyHand",
-            "summary": "",
-            "url": "classes/App-ProjectRules-PointsAndRuleNameTrait2.html#method_pointsAndNameEmptyHand"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RankLimitsTrait",
-            "name": "RankLimitsTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RankLimitsTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RankLimitsTrait\u003A\u003AcountByRank\u0028\u0029",
-            "name": "countByRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RankLimitsTrait.html#method_countByRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RankLimitsTrait\u003A\u003AsetRankLimits\u0028\u0029",
-            "name": "setRankLimits",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RankLimitsTrait.html#method_setRankLimits"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RankLimitsTrait\u003A\u003A\u0024maxRank",
-            "name": "maxRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RankLimitsTrait.html#property_maxRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RankLimitsTrait\u003A\u003A\u0024minRank",
-            "name": "minRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RankLimitsTrait.html#property_minRank"
         },                {
             "fqsen": "\\App\\ProjectRules\\RoyalFlush",
             "name": "RoyalFlush",
-            "summary": "Royal\u0020Flush\u0020Rule\nAce,\u0020King,\u0020Queen,\u0020Jack,\u0020Ten\u0020of\u0020same\u0020suit",
+            "summary": "Determins\u0020if\u0020the\u0020Royal\u0020Flush\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score",
             "url": "classes/App-ProjectRules-RoyalFlush.html"
         },                {
-            "fqsen": "\\App\\ProjectRules\\RoyalFlush\u003A\u003Acheck\u0028\u0029",
-            "name": "check",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RoyalFlush.html#method_check"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RoyalFlushStat",
-            "name": "RoyalFlushStat",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RoyalFlushStat.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RoyalFlushStatTrait",
-            "name": "RoyalFlushStatTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RoyalFlushStatTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RoyalFlushStatTrait\u003A\u003AcountSuitAndRank\u0028\u0029",
-            "name": "countSuitAndRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RoyalFlushStatTrait.html#method_countSuitAndRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RoyalFlushStatTrait\u003A\u003AcheckForCards\u0028\u0029",
-            "name": "checkForCards",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RoyalFlushStatTrait.html#method_checkForCards"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RoyalFlushStatTrait\u003A\u003Acheck2\u0028\u0029",
-            "name": "check2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RoyalFlushStatTrait.html#method_check2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RoyalFlushStatTrait2",
-            "name": "RoyalFlushStatTrait2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RoyalFlushStatTrait2.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RoyalFlushStatTrait2\u003A\u003AgroupBySuit\u0028\u0029",
-            "name": "groupBySuit",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RoyalFlushStatTrait2.html#method_groupBySuit"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RoyalFlushStatTrait2\u003A\u003AcheckForRanks\u0028\u0029",
-            "name": "checkForRanks",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RoyalFlushStatTrait2.html#method_checkForRanks"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RoyalFlushStatTrait2\u003A\u003Acheck3\u0028\u0029",
-            "name": "check3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RoyalFlushStatTrait2.html#method_check3"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RuleEvaluator",
-            "name": "RuleEvaluator",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RuleEvaluator.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RuleEvaluator\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\ProjectRules\\RoyalFlush\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-ProjectRules-RuleEvaluator.html#method___construct"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RuleEvaluator\u003A\u003A\u0024rules",
-            "name": "rules",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RuleEvaluator.html#property_rules"
+            "url": "classes/App-ProjectRules-RoyalFlush.html#method___construct"
         },                {
             "fqsen": "\\App\\ProjectRules\\RuleInterface",
             "name": "RuleInterface",
             "summary": "Interface\u0020to\u0020be\u0020implemented\u0020by\u0020the\u0020classes\u0020Game21Easy\u0020and\u0020Game21Hard",
             "url": "classes/App-ProjectRules-RuleInterface.html"
         },                {
-            "fqsen": "\\App\\ProjectRules\\RuleInterface\u003A\u003Acheck\u0028\u0029",
-            "name": "check",
+            "fqsen": "\\App\\ProjectRules\\RuleInterface\u003A\u003AgetName\u0028\u0029",
+            "name": "getName",
             "summary": "",
-            "url": "classes/App-ProjectRules-RuleInterface.html#method_check"
+            "url": "classes/App-ProjectRules-RuleInterface.html#method_getName"
         },                {
-            "fqsen": "\\App\\ProjectRules\\RuleNameTrait",
-            "name": "RuleNameTrait",
+            "fqsen": "\\App\\ProjectRules\\RuleInterface\u003A\u003AgetPoints\u0028\u0029",
+            "name": "getPoints",
             "summary": "",
-            "url": "classes/App-ProjectRules-RuleNameTrait.html"
+            "url": "classes/App-ProjectRules-RuleInterface.html#method_getPoints"
         },                {
-            "fqsen": "\\App\\ProjectRules\\RuleNameTrait\u003A\u003AruleName\u0028\u0029",
-            "name": "ruleName",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RuleNameTrait.html#method_ruleName"
+            "fqsen": "\\App\\ProjectRules\\RuleInterface\u003A\u003Ascored\u0028\u0029",
+            "name": "scored",
+            "summary": "Returns\u0020true\u0020if\u0020the\u0020rule\u0020is\u0020scored,\notherwise\u0020false.\u0020Starting\u0020position\u0020is\u0020that\u0020none\nof\u0020the\u0020higher\u0020rules\u0020has\u0020been\u0020scored",
+            "url": "classes/App-ProjectRules-RuleInterface.html#method_scored"
         },                {
-            "fqsen": "\\App\\ProjectRules\\RuleNameTrait2",
-            "name": "RuleNameTrait2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RuleNameTrait2.html"
+            "fqsen": "\\App\\ProjectRules\\RuleInterface\u003A\u003ApossibleWithCard\u0028\u0029",
+            "name": "possibleWithCard",
+            "summary": "Returns\u0020true\u0020if\u0020the\u0020rule\u0020is\u0020possible\u0020to\u0020score\u0020if\u0020placing\u0020the\ncard\u0020in\u0020the\u0020hand,\u0020otherwise\u0020returns\u0020false.\u0020Starting\u0020position\u0020is\u0020that\u0020none\nof\u0020the\u0020higher\u0020rules\u0020can\u0020be\u0020scored",
+            "url": "classes/App-ProjectRules-RuleInterface.html#method_possibleWithCard"
         },                {
-            "fqsen": "\\App\\ProjectRules\\RuleNameTrait2\u003A\u003AruleNameEmptyHand\u0028\u0029",
-            "name": "ruleNameEmptyHand",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RuleNameTrait2.html#method_ruleNameEmptyHand"
+            "fqsen": "\\App\\ProjectRules\\RuleInterface\u003A\u003ApossibleWithoutCard\u0028\u0029",
+            "name": "possibleWithoutCard",
+            "summary": "Returns\u0020true\u0020if\u0020the\u0020rule\u0020is\u0020possible\u0020to\u0020score\u0020without\u0020the\u0020card\nbased\u0020on\u0020only\u0020cards\u0020in\u0020hand\u0020and\u0020the\u0020possible\u0020cards\u0020from\u0020deck,\nStarting\u0020position\u0020is\u0020that\u0020none\u0020of\u0020the\u0020higher\u0020rules\u0020can\u0020be\u0020scored\nNote\u0021\u0020The\u0020hand\u0020cannot\u0020be\u0020empty,\u0020for\u0020an\u0020empty\u0020hand\u0020the\u0020possibleDeckOnly\u0028\u0029\nmethod\u0020should\u0020be\u0020used",
+            "url": "classes/App-ProjectRules-RuleInterface.html#method_possibleWithoutCard"
         },                {
-            "fqsen": "\\App\\ProjectRules\\RuleStatInterface",
-            "name": "RuleStatInterface",
-            "summary": "Interface\u0020to\u0020be\u0020implemented\u0020by\u0020the\u0020classes\u0020Game21Easy\u0020and\u0020Game21Hard",
-            "url": "classes/App-ProjectRules-RuleStatInterface.html"
+            "fqsen": "\\App\\ProjectRules\\RuleInterface\u003A\u003ApossibleDeckOnly\u0028\u0029",
+            "name": "possibleDeckOnly",
+            "summary": "Returns\u0020true\u0020if\u0020the\u0020rule\u0020is\u0020possible\u0020to\u0020score\u0020for\u0020an\u0020empty\u0020hand\u0020\u0028calculation\nbased\u0020only\u0020on\u0020the\u0020possible\u0020cards\u0020from\u0020deck\u0029.\u0020Starting\u0020position\u0020is\u0020that\u0020none\nof\u0020the\u0020higher\u0020rules\u0020can\u0020be\u0020scored",
+            "url": "classes/App-ProjectRules-RuleInterface.html#method_possibleDeckOnly"
         },                {
-            "fqsen": "\\App\\ProjectRules\\RuleStatInterface\u003A\u003Acheck\u0028\u0029",
-            "name": "check",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RuleStatInterface.html#method_check"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RuleStatInterface\u003A\u003Acheck2\u0028\u0029",
-            "name": "check2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RuleStatInterface.html#method_check2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RuleStatInterface\u003A\u003Acheck3\u0028\u0029",
-            "name": "check3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RuleStatInterface.html#method_check3"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RulesWithCardTrait",
-            "name": "RulesWithCardTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RulesWithCardTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RulesWithCardTrait\u003A\u003AhandRuleWith\u0028\u0029",
-            "name": "handRuleWith",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RulesWithCardTrait.html#method_handRuleWith"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RulesWithCardTrait\u003A\u003ArulesWithCard\u0028\u0029",
-            "name": "rulesWithCard",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RulesWithCardTrait.html#method_rulesWithCard"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RulesWithoutCardTrait",
-            "name": "RulesWithoutCardTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RulesWithoutCardTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RulesWithoutCardTrait\u003A\u003AhandRuleWithout\u0028\u0029",
-            "name": "handRuleWithout",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RulesWithoutCardTrait.html#method_handRuleWithout"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\RulesWithoutCardTrait\u003A\u003ArulesWithoutCard\u0028\u0029",
-            "name": "rulesWithoutCard",
-            "summary": "",
-            "url": "classes/App-ProjectRules-RulesWithoutCardTrait.html#method_rulesWithoutCard"
+            "fqsen": "\\App\\ProjectRules\\RuleInterface\u003A\u003AgetAdditionalValue\u0028\u0029",
+            "name": "getAdditionalValue",
+            "summary": "Returns\u0020additional\u0020value\u0020\u00281\u0020for\u0020each\ncard\u0020already\u0020in\u0020hand\u0020that\u0020contributes\u0020to\u0020fulfilling\nthe\u0020rule,\u0020used\u0020for\u0020determining\u0020the\u0020suggested\u0020slot\u0029",
+            "url": "classes/App-ProjectRules-RuleInterface.html#method_getAdditionalValue"
         },                {
             "fqsen": "\\App\\ProjectRules\\SameOfAKind",
             "name": "SameOfAKind",
-            "summary": "",
+            "summary": "Class\u0020for\u0020the\u0020rules\u0020Four\u0020Of\u0020A\u0020Kind,\u0020Three\u0020Of\u0020A\u0020Kind\nand\u0020One\u0020Pair.",
             "url": "classes/App-ProjectRules-SameOfAKind.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\SameOfAKind\u003A\u003A__construct\u0028\u0029",
@@ -3316,150 +2541,15 @@ Search.appendIndex(
             "summary": "Constructor",
             "url": "classes/App-ProjectRules-SameOfAKind.html#method___construct"
         },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKind\u003A\u003Acheck\u0028\u0029",
-            "name": "check",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKind.html#method_check"
+            "fqsen": "\\App\\ProjectRules\\SameOfAKind\u003A\u003Ascored\u0028\u0029",
+            "name": "scored",
+            "summary": "Determines\u0020if\u0020the\u0020rule\u0020has\u0020been\u0020scored\u0020by\u0020comparing\u0020the\u0020maximum\nnumber\u0020of\u0020ranks\u0020in\u0020the\u0020hand\u0020to\u0020the\u0020minimum\u0020number\u0020of\u0020ranks\u0020needed\u0020to\u0020score\nthe\u0020rule",
+            "url": "classes/App-ProjectRules-SameOfAKind.html#method_scored"
         },                {
             "fqsen": "\\App\\ProjectRules\\SameOfAKind\u003A\u003A\u0024minCountRank",
             "name": "minCountRank",
-            "summary": "",
+            "summary": "Minimum\u0020number\u0020of\u0020cards\u0020of\u0020the\u0020same\u0020rank\u0020required\u0020to\u0020score\nthe\u0020rule.\u00204\u0020for\u0020FourOfAKind,\u00203\u0020for\u0020ThreeOfAKind\nand\u00202\u0020for\u0020OnePair",
             "url": "classes/App-ProjectRules-SameOfAKind.html#property_minCountRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStat",
-            "name": "SameOfAKindStat",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStat.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStat\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStat.html#method___construct"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStat\u003A\u003Acheck3\u0028\u0029",
-            "name": "check3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStat.html#method_check3"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait",
-            "name": "SameOfAKindStatTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait\u003A\u003AcountByRank\u0028\u0029",
-            "name": "countByRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait.html#method_countByRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait\u003A\u003AsubCheck\u0028\u0029",
-            "name": "subCheck",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait.html#method_subCheck"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait\u003A\u003AsubCheck2\u0028\u0029",
-            "name": "subCheck2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait.html#method_subCheck2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait\u003A\u003Acheck\u0028\u0029",
-            "name": "check",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait.html#method_check"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait\u003A\u003A\u0024minCountRank",
-            "name": "minCountRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait.html#property_minCountRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait2",
-            "name": "SameOfAKindStatTrait2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait2.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait2\u003A\u003AcountByRank\u0028\u0029",
-            "name": "countByRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait2.html#method_countByRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait2\u003A\u003AsubCheck\u0028\u0029",
-            "name": "subCheck",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait2.html#method_subCheck"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait2\u003A\u003AsubCheck2\u0028\u0029",
-            "name": "subCheck2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait2.html#method_subCheck2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait2\u003A\u003Acheck2\u0028\u0029",
-            "name": "check2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait2.html#method_check2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait2\u003A\u003A\u0024minCountRank",
-            "name": "minCountRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait2.html#property_minCountRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait3",
-            "name": "SameOfAKindStatTrait3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait3.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait3\u003A\u003AsubCheck\u0028\u0029",
-            "name": "subCheck",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait3.html#method_subCheck"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait3\u003A\u003AsubCheck2\u0028\u0029",
-            "name": "subCheck2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait3.html#method_subCheck2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameOfAKindStatTrait3\u003A\u003A\u0024minCountRank",
-            "name": "minCountRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameOfAKindStatTrait3.html#property_minCountRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameRankTrait",
-            "name": "SameRankTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameRankTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameRankTrait\u003A\u003AcountByRank\u0028\u0029",
-            "name": "countByRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameRankTrait.html#method_countByRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameRankTrait\u003A\u003Acheck\u0028\u0029",
-            "name": "check",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameRankTrait.html#method_check"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameRankTrait\u003A\u003A\u0024minCountRank",
-            "name": "minCountRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameRankTrait.html#property_minCountRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameSuitTrait",
-            "name": "SameSuitTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameSuitTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameSuitTrait\u003A\u003AcountBySuit\u0028\u0029",
-            "name": "countBySuit",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameSuitTrait.html#method_countBySuit"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameSuitTrait\u003A\u003AsetSuit\u0028\u0029",
-            "name": "setSuit",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameSuitTrait.html#method_setSuit"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SameSuitTrait\u003A\u003A\u0024suit",
-            "name": "suit",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SameSuitTrait.html#property_suit"
         },                {
             "fqsen": "\\App\\ProjectRules\\SearchSpecificCardTrait",
             "name": "SearchSpecificCardTrait",
@@ -3471,145 +2561,25 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-ProjectRules-SearchSpecificCardTrait.html#method_searchSpecificCard"
         },                {
-            "fqsen": "\\App\\ProjectRules\\SlotTrait",
-            "name": "SlotTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SlotTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SlotTrait\u003A\u003Asingle\u0028\u0029",
-            "name": "single",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SlotTrait.html#method_single"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SlotTrait\u003A\u003Aslot\u0028\u0029",
-            "name": "slot",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SlotTrait.html#method_slot"
-        },                {
             "fqsen": "\\App\\ProjectRules\\Straight",
             "name": "Straight",
-            "summary": "",
+            "summary": "Determins\u0020if\u0020the\u0020Straight\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score",
             "url": "classes/App-ProjectRules-Straight.html"
         },                {
-            "fqsen": "\\App\\ProjectRules\\Straight\u003A\u003Acheck\u0028\u0029",
-            "name": "check",
-            "summary": "",
-            "url": "classes/App-ProjectRules-Straight.html#method_check"
+            "fqsen": "\\App\\ProjectRules\\Straight\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor",
+            "url": "classes/App-ProjectRules-Straight.html#method___construct"
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightFlush",
             "name": "StraightFlush",
-            "summary": "",
+            "summary": "Determins\u0020if\u0020StarightFlush\u0020rule\u0020is\u0020scored\nor\u0020possible\u0020to\u0020score",
             "url": "classes/App-ProjectRules-StraightFlush.html"
         },                {
-            "fqsen": "\\App\\ProjectRules\\StraightFlush\u003A\u003Acheck\u0028\u0029",
-            "name": "check",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightFlush.html#method_check"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightFlushStat",
-            "name": "StraightFlushStat",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightFlushStat.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightFlushStat\u003A\u003Acheck2\u0028\u0029",
-            "name": "check2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightFlushStat.html#method_check2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightFlushStat\u003A\u003Acheck3\u0028\u0029",
-            "name": "check3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightFlushStat.html#method_check3"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightFlushStatTrait",
-            "name": "StraightFlushStatTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightFlushStatTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightFlushStatTrait\u003A\u003AsearchSpecificCard\u0028\u0029",
-            "name": "searchSpecificCard",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightFlushStatTrait.html#method_searchSpecificCard"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightFlushStatTrait\u003A\u003AcheckForCards\u0028\u0029",
-            "name": "checkForCards",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightFlushStatTrait.html#method_checkForCards"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightFlushStatTrait\u003A\u003A\u0024maxRank",
-            "name": "maxRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightFlushStatTrait.html#property_maxRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightFlushStatTrait\u003A\u003A\u0024minRank",
-            "name": "minRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightFlushStatTrait.html#property_minRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightFlushStatTrait\u003A\u003A\u0024suit",
-            "name": "suit",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightFlushStatTrait.html#property_suit"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightStat",
-            "name": "StraightStat",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightStat.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightStatTrait",
-            "name": "StraightStatTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightStatTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightStatTrait\u003A\u003AcheckAllPossible\u0028\u0029",
-            "name": "checkAllPossible",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightStatTrait.html#method_checkAllPossible"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightStatTrait\u003A\u003AcountByRank\u0028\u0029",
-            "name": "countByRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightStatTrait.html#method_countByRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightStatTrait\u003A\u003AsetRankLimits\u0028\u0029",
-            "name": "setRankLimits",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightStatTrait.html#method_setRankLimits"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightStatTrait\u003A\u003AminRankLimits\u0028\u0029",
-            "name": "minRankLimits",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightStatTrait.html#method_minRankLimits"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightStatTrait\u003A\u003Acheck2\u0028\u0029",
-            "name": "check2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightStatTrait.html#method_check2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightStatTrait\u003A\u003Acheck3\u0028\u0029",
-            "name": "check3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightStatTrait.html#method_check3"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightStatTrait2",
-            "name": "StraightStatTrait2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightStatTrait2.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightStatTrait2\u003A\u003AcheckForRanks\u0028\u0029",
-            "name": "checkForRanks",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightStatTrait2.html#method_checkForRanks"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightStatTrait3",
-            "name": "StraightStatTrait3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightStatTrait3.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\StraightStatTrait3\u003A\u003AcheckAllPossible\u0028\u0029",
-            "name": "checkAllPossible",
-            "summary": "",
-            "url": "classes/App-ProjectRules-StraightStatTrait3.html#method_checkAllPossible"
+            "fqsen": "\\App\\ProjectRules\\StraightFlush\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Counstructor",
+            "url": "classes/App-ProjectRules-StraightFlush.html#method___construct"
         },                {
             "fqsen": "\\App\\ProjectRules\\SubCountTrait",
             "name": "SubCountTrait",
@@ -3621,155 +2591,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-ProjectRules-SubCountTrait.html#method_subCount"
         },                {
-            "fqsen": "\\App\\ProjectRules\\SuggestionTrait",
-            "name": "SuggestionTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SuggestionTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SuggestionTrait\u003A\u003AemptyGridSuggestion\u0028\u0029",
-            "name": "emptyGridSuggestion",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SuggestionTrait.html#method_emptyGridSuggestion"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SuggestionTrait\u003A\u003AextractRuleNames\u0028\u0029",
-            "name": "extractRuleNames",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SuggestionTrait.html#method_extractRuleNames"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SuggestionTrait\u003A\u003Aslot\u0028\u0029",
-            "name": "slot",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SuggestionTrait.html#method_slot"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SuggestionTrait\u003A\u003ArulesWithoutCard\u0028\u0029",
-            "name": "rulesWithoutCard",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SuggestionTrait.html#method_rulesWithoutCard"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SuggestionTrait\u003A\u003ArulesWithCard\u0028\u0029",
-            "name": "rulesWithCard",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SuggestionTrait.html#method_rulesWithCard"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\SuggestionTrait\u003A\u003Asuggestion\u0028\u0029",
-            "name": "suggestion",
-            "summary": "",
-            "url": "classes/App-ProjectRules-SuggestionTrait.html#method_suggestion"
-        },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairs",
             "name": "TwoPairs",
-            "summary": "",
+            "summary": "Determins\u0020if\u0020the\u0020Two\u0020Pairs\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score",
             "url": "classes/App-ProjectRules-TwoPairs.html"
         },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStat",
-            "name": "TwoPairsStat",
+            "fqsen": "\\App\\ProjectRules\\TwoPairs\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
             "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStat.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStat\u003A\u003Acheck\u0028\u0029",
-            "name": "check",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStat.html#method_check"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait",
-            "name": "TwoPairsStatTrait",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait\u003A\u003AcountByRank\u0028\u0029",
-            "name": "countByRank",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait.html#method_countByRank"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait\u003A\u003AsubCheck4\u0028\u0029",
-            "name": "subCheck4",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait.html#method_subCheck4"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait\u003A\u003AsubCheck5\u0028\u0029",
-            "name": "subCheck5",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait.html#method_subCheck5"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait\u003A\u003AsubCheck6\u0028\u0029",
-            "name": "subCheck6",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait.html#method_subCheck6"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait\u003A\u003Acheck2\u0028\u0029",
-            "name": "check2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait.html#method_check2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait2",
-            "name": "TwoPairsStatTrait2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait2.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait2\u003A\u003AsubCheck\u0028\u0029",
-            "name": "subCheck",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait2.html#method_subCheck"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait3",
-            "name": "TwoPairsStatTrait3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait3.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait3\u003A\u003AsubCheck4\u0028\u0029",
-            "name": "subCheck4",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait3.html#method_subCheck4"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait4",
-            "name": "TwoPairsStatTrait4",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait4.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait4\u003A\u003AsubCheck5\u0028\u0029",
-            "name": "subCheck5",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait4.html#method_subCheck5"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait5",
-            "name": "TwoPairsStatTrait5",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait5.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait5\u003A\u003AsubCheck6\u0028\u0029",
-            "name": "subCheck6",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait5.html#method_subCheck6"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait6",
-            "name": "TwoPairsStatTrait6",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait6.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait6\u003A\u003AcheckForTwoPairs1\u0028\u0029",
-            "name": "checkForTwoPairs1",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait6.html#method_checkForTwoPairs1"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait6\u003A\u003AcheckForTwoPairs2\u0028\u0029",
-            "name": "checkForTwoPairs2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait6.html#method_checkForTwoPairs2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait6\u003A\u003AsubCheck2\u0028\u0029",
-            "name": "subCheck2",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait6.html#method_subCheck2"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait7",
-            "name": "TwoPairsStatTrait7",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait7.html"
-        },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsStatTrait7\u003A\u003AsubCheck3\u0028\u0029",
-            "name": "subCheck3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsStatTrait7.html#method_subCheck3"
+            "url": "classes/App-ProjectRules-TwoPairs.html#method___construct"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait",
             "name": "TwoPairsTrait",
@@ -3778,28 +2608,28 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait\u003A\u003AcountByRank\u0028\u0029",
             "name": "countByRank",
-            "summary": "",
+            "summary": "From\u0020CountByRankTrait.",
             "url": "classes/App-ProjectRules-TwoPairsTrait.html#method_countByRank"
         },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait\u003A\u003Acheck3\u0028\u0029",
-            "name": "check3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsTrait.html#method_check3"
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait\u003A\u003ApossibleWithCard\u0028\u0029",
+            "name": "possibleWithCard",
+            "summary": "Checks\u0020if\u0020the\u0020Two\u0020Pairs\u0020rule\u0020if\u0020possible\u0020to\nscore\u0020if\u0020card\u0020is\u0020placed\u0020in\u0020the\u0020hand.",
+            "url": "classes/App-ProjectRules-TwoPairsTrait.html#method_possibleWithCard"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait2",
             "name": "TwoPairsTrait2",
             "summary": "",
             "url": "classes/App-ProjectRules-TwoPairsTrait2.html"
         },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait2\u003A\u003Acheck3\u0028\u0029",
-            "name": "check3",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsTrait2.html#method_check3"
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait2\u003A\u003AcountByRank\u0028\u0029",
+            "name": "countByRank",
+            "summary": "From\u0020CountByRankTrait",
+            "url": "classes/App-ProjectRules-TwoPairsTrait2.html#method_countByRank"
         },                {
-            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait2\u003A\u003Acheck\u0028\u0029",
-            "name": "check",
-            "summary": "",
-            "url": "classes/App-ProjectRules-TwoPairsTrait2.html#method_check"
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait2\u003A\u003ApossibleWithoutCard\u0028\u0029",
+            "name": "possibleWithoutCard",
+            "summary": "Checks\u0020if\u0020the\u0020Two\u0020Pairs\u0020rule\u0020is\u0020possible\u0020if\u0020the\ndealt\u0020card\u0020is\u0020not\u0020placed\u0020in\u0020hand.\u0020\u0028Based\u0020on\u0020the\u0020cards\nalready\u0020in\u0020hand\u0020and\u0020the\u0020cards\u0020in\u0020the\u0020deck\u0029.\u0020Note\u0021\u0020The\nhand\u0020cannot\u0020be\u0020empty,\u0020for\u0020empty\u0020hand\u0020use\u0020the\u0020PossibleDeckOnly\u0020method",
+            "url": "classes/App-ProjectRules-TwoPairsTrait2.html#method_possibleWithoutCard"
         },                {
             "fqsen": "\\App\\Repository\\ScoreRepository",
             "name": "ScoreRepository",
@@ -3861,6 +2691,1216 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Repository-UserRepository.html#method_remove"
         },                {
+            "fqsen": "\\App\\Controller\\LibraryCreateNewController",
+            "name": "LibraryCreateNewController",
+            "summary": "Controller\u0020that\u0020contains\u0020route\u0020for\u0020saving\u0020a\u0020new\nbook\u0020to\u0020the\u0020Library",
+            "url": "classes/App-Controller-LibraryCreateNewController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryCreateNewController\u003A\u003AcreateBook\u0028\u0029",
+            "name": "createBook",
+            "summary": "Saves\u0020new\u0020book\u0020to\u0020database",
+            "url": "classes/App-Controller-LibraryCreateNewController.html#method_createBook"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryCreateNewController2",
+            "name": "LibraryCreateNewController2",
+            "summary": "Controller\u0020contains\u0020route\u0020that\u0020leads\u0020to\u0020form\nfor\u0020adding\u0020a\u0020new\u0020book",
+            "url": "classes/App-Controller-LibraryCreateNewController2.html"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryCreateNewController2\u003A\u003AcreateBookForm\u0028\u0029",
+            "name": "createBookForm",
+            "summary": "Form\u0020for\u0020registering\u0020new\u0020book",
+            "url": "classes/App-Controller-LibraryCreateNewController2.html#method_createBookForm"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryLandingController",
+            "name": "LibraryLandingController",
+            "summary": "Controller\u0020contains\u0020route\u0020for\u0020the\u0020library\u0020landing\u0020page",
+            "url": "classes/App-Controller-LibraryLandingController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryLandingController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "Landing\u0020page",
+            "url": "classes/App-Controller-LibraryLandingController.html#method_index"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryResetController",
+            "name": "LibraryResetController",
+            "summary": "Controller\u0020that\u0020contains\u0020the\u0020route\u0020for\u0020resetting\nthe\u0020Book\u0020table\u0020in\u0020the\u0020database",
+            "url": "classes/App-Controller-LibraryResetController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryResetController\u003A\u003AresetBook\u0028\u0029",
+            "name": "resetBook",
+            "summary": "Resets\u0020the\u0020Book\u0020table\u0020in\u0020the\u0020database",
+            "url": "classes/App-Controller-LibraryResetController.html#method_resetBook"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryUpdateController",
+            "name": "LibraryUpdateController",
+            "summary": "Controller\u0020that\u0020contains\u0020route\u0020that\u0020leads\nto\u0020the\u0020route\u0020with\u0020form\u0020for\u0020updating\u0020a\u0020book",
+            "url": "classes/App-Controller-LibraryUpdateController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryUpdateController\u003A\u003AupdateBookForm\u0028\u0029",
+            "name": "updateBookForm",
+            "summary": "Form\u0020for\u0020editing\u0020details\u0020of\u0020a\u0020book",
+            "url": "classes/App-Controller-LibraryUpdateController.html#method_updateBookForm"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryUpdateController2",
+            "name": "LibraryUpdateController2",
+            "summary": "Controller\u0020tht\u0020contains\u0020route\u0020where\u0020book\u0020data\u0020is\u0020updated",
+            "url": "classes/App-Controller-LibraryUpdateController2.html"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryUpdateController2\u003A\u003AupdateBook\u0028\u0029",
+            "name": "updateBook",
+            "summary": "Saves\u0020updated\u0020information\u0020to\u0020database",
+            "url": "classes/App-Controller-LibraryUpdateController2.html#method_updateBook"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectCoinsController",
+            "name": "ProjectCoinsController",
+            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020route\nfor\u0020allocating\u0020purchased\u0020coins\u0020to\u0020used\u0020and\u0020route\nthat\u0020leads\u0020to\u0020the\u0020page\u0020where\u0020user\u0020selects\u0020amount\u0020to\u0020bet",
+            "url": "classes/App-Controller-ProjectCoinsController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectCoinsController\u003A\u003AprojPurchase\u0028\u0029",
+            "name": "projPurchase",
+            "summary": "Allocates\u0020the\u0020purchased\u0020amount\u0020of\u0020coins\u0020to\u0020user\u0020by\u0020adding\na\u0020new\u0020transaction\u0020to\u0020the\u0020database",
+            "url": "classes/App-Controller-ProjectCoinsController.html#method_projPurchase"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectCoinsController\u003A\u003AselectAmount\u0028\u0029",
+            "name": "selectAmount",
+            "summary": "Leads\u0020to\u0020the\u0020page\u0020where\u0020user\u0020can\u0020select\u0020amount\u0020to\u0020bet.",
+            "url": "classes/App-Controller-ProjectCoinsController.html#method_selectAmount"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController",
+            "name": "ProjectController",
+            "summary": "Controller\u0020related\u0020to\u0020the\u0020project.\u0020Contains\nroutes\u0020fot\u0020the\u0020API\u002Dlanding\u0020page,\u0020about\u002Dpage,\npage\u0020that\u0020displays\u0020rules\u0020for\u0020the\u0020poker\u0020square\u0020game\nand\u0020page\u0020with\u0020the\u0020register\u002Dform\u0020for\u0020registering\u0020a\nnew\u0020User",
+            "url": "classes/App-Controller-ProjectController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AprojApiLanding\u0028\u0029",
+            "name": "projApiLanding",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_projApiLanding"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AprojAbout\u0028\u0029",
+            "name": "projAbout",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_projAbout"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AprojDb\u0028\u0029",
+            "name": "projDb",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_projDb"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AprojRules\u0028\u0029",
+            "name": "projRules",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_projRules"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AprojRegisterForm\u0028\u0029",
+            "name": "projRegisterForm",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_projRegisterForm"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectInitController",
+            "name": "ProjectInitController",
+            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020route\u0020for\u0020initating\u0020a\u0020new\u0020PokerSquare\u0020game\nand\u0020saving\u0020the\u0020bet",
+            "url": "classes/App-Controller-ProjectInitController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectInitController\u003A\u003AprojInit\u0028\u0029",
+            "name": "projInit",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectInitController.html#method_projInit"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectLandingController",
+            "name": "ProjectLandingController",
+            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020the\u0020route\nfor\u0020the\u0020project\u0020landing\u0020page",
+            "url": "classes/App-Controller-ProjectLandingController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectLandingController\u003A\u003AprojLanding\u0028\u0029",
+            "name": "projLanding",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectLandingController.html#method_projLanding"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectMoveCardController",
+            "name": "ProjectMoveCardController",
+            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020routes\u0020for\u0020moving\na\u0020card",
+            "url": "classes/App-Controller-ProjectMoveCardController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectMoveCardController\u003A\u003AsetFromSlot\u0028\u0029",
+            "name": "setFromSlot",
+            "summary": "Route\u0020for\u0020saving\u0020the\u0020slot\u0020row\u0020and\u0020id\u0020from\u0020which\u0020the\u0020user\u0020wants\u0020to\u0020remove\u0020the\u0020card",
+            "url": "classes/App-Controller-ProjectMoveCardController.html#method_setFromSlot"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectMoveCardController\u003A\u003AmoveCard\u0028\u0029",
+            "name": "moveCard",
+            "summary": "Route\u0020for\u0020moving\u0020the\u0020card\u0020to\u0020the\u0020new\u0020slot\u0020chosen\u0020by\u0020user",
+            "url": "classes/App-Controller-ProjectMoveCardController.html#method_moveCard"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectMoveCardController\u003A\u003ApickCard\u0028\u0029",
+            "name": "pickCard",
+            "summary": "Route\u0020that\u0020renders\u0020the\u0020template\u0020where\u0020placed\u0020cards\u0020are\u0020clickable.",
+            "url": "classes/App-Controller-ProjectMoveCardController.html#method_pickCard"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectOneRoundController",
+            "name": "ProjectOneRoundController",
+            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020route\u0020for\u0020one\u0020game\u0020round\n\u0028one\u0020round\u0020\u003D\u0020player\u0020places\u0020card\u0020\u002B\u0020bot\u0020places\u0020card.\u0020If\u0020the\u0020grids\nare\u0020fully\u0020filled\u0020also\u0020evaluate\u0020results\u0020and\u0020end\u0020game\u0029",
+            "url": "classes/App-Controller-ProjectOneRoundController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectOneRoundController\u003A\u003AprojRound\u0028\u0029",
+            "name": "projRound",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectOneRoundController.html#method_projRound"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectPeekController",
+            "name": "ProjectPeekController",
+            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Containts\u0020routes\u0020for\nthe\u0020deck\u002Dpeek\u0020cheat",
+            "url": "classes/App-Controller-ProjectPeekController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectPeekController\u003A\u003ApurchasePeekCheat\u0028\u0029",
+            "name": "purchasePeekCheat",
+            "summary": "Route\u0020for\u0020purchasing\u0020a\u0020peek\u0020at\u0020all\u0020the\u0020remaining\u0020cards\u0020the\nplayer\u0020is\u0020yet\u0020to\u0020be\u0020dealt\u0020from\u0020the\u0020deck",
+            "url": "classes/App-Controller-ProjectPeekController.html#method_purchasePeekCheat"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectPeekController\u003A\u003AdeckPeek\u0028\u0029",
+            "name": "deckPeek",
+            "summary": "Route\u0020for\u0020displaying\u0020the\u0020cards\u0020that\u0020the\u0020user\u0020is\u0020yet\u0020to\u0020be\u0020dealt\nfrom\u0020the\u0020deck",
+            "url": "classes/App-Controller-ProjectPeekController.html#method_deckPeek"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectPlayController",
+            "name": "ProjectPlayController",
+            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020the\u0020main\u0020route\nfor\u0020the\u0020PokerSquare\u0020game.",
+            "url": "classes/App-Controller-ProjectPlayController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectPlayController\u003A\u003AprojPlay\u0028\u0029",
+            "name": "projPlay",
+            "summary": "The\u0020main\u0020route\u0020for\u0020the\u0020PokerSquare\u0020game.\u0020The\u0020route\u0020renders\u0020different\ntemplates\u0020depending\u0020on\u0020the\u0020game\u0027s\u0020state",
+            "url": "classes/App-Controller-ProjectPlayController.html#method_projPlay"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectResetController",
+            "name": "ProjectResetController",
+            "summary": "Controller\u0020that\u0020contains\u0020the\u0020route\u0020for\u0020resetting\nthe\u0020Book\u0020table\u0020in\u0020the\u0020database",
+            "url": "classes/App-Controller-ProjectResetController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectResetController\u003A\u003AresetProj\u0028\u0029",
+            "name": "resetProj",
+            "summary": "Resets\u0020the\u0020Book\u0020table\u0020in\u0020the\u0020database",
+            "url": "classes/App-Controller-ProjectResetController.html#method_resetProj"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectScoresController",
+            "name": "ProjectScoresController",
+            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020routes\u0020for\u0020displaying\ntop\u002010\u0020scores\u0020for\u0020a\u0020single\u0020user\u0020and\u0020the\u0020leaderscore\u0020with\u0020the\ntop\u002010\u0020scores\u0020amongst\u0020all\u0020users",
+            "url": "classes/App-Controller-ProjectScoresController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectScoresController\u003A\u003AprojScoresSingle\u0028\u0029",
+            "name": "projScoresSingle",
+            "summary": "Displays\u0020the\u0020top\u002010\u0020scores\u0020of\u0020a\u0020single\u0020user",
+            "url": "classes/App-Controller-ProjectScoresController.html#method_projScoresSingle"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectScoresController\u003A\u003AprojLeaderboard\u0028\u0029",
+            "name": "projLeaderboard",
+            "summary": "Displays\u0020the\u0020top\u002010\u0020scores\u0020amongst\u0020all\u0020users",
+            "url": "classes/App-Controller-ProjectScoresController.html#method_projLeaderboard"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectShopController",
+            "name": "ProjectShopController",
+            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020routes\nfor\u0020the\u0020shop\u002Dpage\u0020and\u0020for\u0020the\u0020page\u0020that\u0020displays\u0020all\ntransactions\u0020for\u0020a\u0020signle\u0020user",
+            "url": "classes/App-Controller-ProjectShopController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectShopController\u003A\u003AprojShop\u0028\u0029",
+            "name": "projShop",
+            "summary": "Leaders\u0020to\u0020the\u0020shop\u002Dpage\u0020where\u0020user\u0020can\u0020purchase\u0020coins",
+            "url": "classes/App-Controller-ProjectShopController.html#method_projShop"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectShopController\u003A\u003AprojTrans\u0028\u0029",
+            "name": "projTrans",
+            "summary": "Route\u0020that\u0020leades\u0020to\u0020page\u0020where\u0020all\u0020user\u0027s\u0020transactions\u0020are\u0020displayed",
+            "url": "classes/App-Controller-ProjectShopController.html#method_projTrans"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectSuggestionController",
+            "name": "ProjectSuggestionController",
+            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020routes\u0020for\u0020the\u0020suggestion\u0020cheat\u0020\u002D\u0020purchase,\u0020show\u0020and\u0020unset",
+            "url": "classes/App-Controller-ProjectSuggestionController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectSuggestionController\u003A\u003AprojPurchaseSuggest\u0028\u0029",
+            "name": "projPurchaseSuggest",
+            "summary": "Route\u0020for\u0020purchasing\u0020a\u0020calculated\u0020suggestion\u0020on\u0020slot\u0020and\u0020also\u0020seing\u0020which\nrules\u0020are\u0020possible\u0020to\u0020achive\u0020if\u0020placing\u0020card\u0020in\u0020particular\u0020slot\u0020and\u0020also\u0020which\nrules\u0020are\u0020possible\u0020if\u0020the\u0020card\u0020is\u0020not\u0020placed\u0020in\u0020particular\u0020slot\u0020\u0028for\u0020all\u0020hands\u0029",
+            "url": "classes/App-Controller-ProjectSuggestionController.html#method_projPurchaseSuggest"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectSuggestionController\u003A\u003AprojShowSuggest\u0028\u0029",
+            "name": "projShowSuggest",
+            "summary": "Leaders\u0020to\u0020the\u0020page\u0020where\u0020the\u0020user\u0020can\u0020see\u0020best\u0020possible\u0020rules\u0020with\u0020card,\u0020without\u0020card\nand\u0020suggestion\u0020where\u0020to\u0020place\u0020the\u0020card",
+            "url": "classes/App-Controller-ProjectSuggestionController.html#method_projShowSuggest"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectUndoController",
+            "name": "ProjectUndoController",
+            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020route\u0020for\npurchasing\/activating\u0020the\u0020undo\u0020cheat",
+            "url": "classes/App-Controller-ProjectUndoController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectUndoController\u003A\u003Aundo\u0028\u0029",
+            "name": "undo",
+            "summary": "Route\u0020for\u0020purchasing\u0020the\u0020cheat\u0020for\u0020undoing\u0020the\u0020last\u0020move",
+            "url": "classes/App-Controller-ProjectUndoController.html#method_undo"
+        },                {
+            "fqsen": "\\App\\Controller\\SessionTrait",
+            "name": "SessionTrait",
+            "summary": "Helper\u0020trait\u0020to\u0020mock\u0020session\u0020in\u0020testing\nCreated\u0020and\u0020generously\u0020shared\u0020by\u0020https\u003A\/\/github.com\/DigitalTimK",
+            "url": "classes/App-Controller-SessionTrait.html"
+        },                {
+            "fqsen": "\\App\\Controller\\SessionTrait\u003A\u003AcreateSession\u0028\u0029",
+            "name": "createSession",
+            "summary": "",
+            "url": "classes/App-Controller-SessionTrait.html#method_createSession"
+        },                {
+            "fqsen": "\\App\\Project\\ApiGame1OneRoundTrait",
+            "name": "ApiGame1OneRoundTrait",
+            "summary": "Evaluates\u0020the\u0020hands\u0020of\u0020player\u0020and\u0020house\u0020after\nboth\u0020grids\u0020have\u0020been\u0020filled\u0020and\u0020determins\nwinner.\u0020If\u0020player\u0020won\u0020transfers\u00202x\u0020pot\u0020to\nplayer\/user\u0020and\u0020registers\u0020players\u0020score\u0020to\u0020database.",
+            "url": "classes/App-Project-ApiGame1OneRoundTrait.html"
+        },                {
+            "fqsen": "\\App\\Project\\ApiGame1OneRoundTrait\u003A\u003AoneRound\u0028\u0029",
+            "name": "oneRound",
+            "summary": "Picks\u0020top\u0020card\u0020from\u0020the\u0020deck\u0020and\u0020places\u0020into\u0020grid\nbased\u0020on\u0020calculated\u0020suggestion.",
+            "url": "classes/App-Project-ApiGame1OneRoundTrait.html#method_oneRound"
+        },                {
+            "fqsen": "\\App\\Project\\ApiGame1OneRoundTrait\u003A\u003A\u0024grid",
+            "name": "grid",
+            "summary": "",
+            "url": "classes/App-Project-ApiGame1OneRoundTrait.html#property_grid"
+        },                {
+            "fqsen": "\\App\\Project\\ApiGame1OneRoundTrait\u003A\u003A\u0024deck",
+            "name": "deck",
+            "summary": "",
+            "url": "classes/App-Project-ApiGame1OneRoundTrait.html#property_deck"
+        },                {
+            "fqsen": "\\App\\Project\\ApiGame1ResetTrait",
+            "name": "ApiGame1ResetTrait",
+            "summary": "Evaluates\u0020the\u0020hands\u0020of\u0020player\u0020and\u0020house\u0020after\nboth\u0020grids\u0020have\u0020been\u0020filled\u0020and\u0020determins\nwinner.\u0020If\u0020player\u0020won\u0020transfers\u00202x\u0020pot\u0020to\nplayer\/user\u0020and\u0020registers\u0020players\u0020score\u0020to\u0020database.",
+            "url": "classes/App-Project-ApiGame1ResetTrait.html"
+        },                {
+            "fqsen": "\\App\\Project\\ApiGame1ResetTrait\u003A\u003Areset\u0028\u0029",
+            "name": "reset",
+            "summary": "Resets\u0020the\u0020game\u0020with\u0020new\u0020full\u0020deck\u0020and\u0020new\u0020empty\u0020grid",
+            "url": "classes/App-Project-ApiGame1ResetTrait.html#method_reset"
+        },                {
+            "fqsen": "\\App\\Project\\ApiGame1ResetTrait\u003A\u003A\u0024grid",
+            "name": "grid",
+            "summary": "",
+            "url": "classes/App-Project-ApiGame1ResetTrait.html#property_grid"
+        },                {
+            "fqsen": "\\App\\Project\\ApiGame1ResetTrait\u003A\u003A\u0024deck",
+            "name": "deck",
+            "summary": "",
+            "url": "classes/App-Project-ApiGame1ResetTrait.html#property_deck"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\BestPossibleRulesTrait",
+            "name": "BestPossibleRulesTrait",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-BestPossibleRulesTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\BestPossibleRulesTrait\u003A\u003AadjustPriority\u0028\u0029",
+            "name": "adjustPriority",
+            "summary": "If\u0020the\u0020best\u0020rule\u0020to\u0020achieve\u0020with\u0020card\u0020is\u0020One\u0020Pair,\nTwo\u0020Pairs\u0020or\u0020none,\u0020and\u0020one\u0020of\u0020the\u0020better\u0020rules\ncan\u0020be\u0020scored\u0020in\u0020the\u0020hand\u0020without\u0020card,\u0020the\nweighted\u0020points\u0020are\u0020adjusted\u0020to\u0020prioritize\u0020down\u0020the\u0020hand\u0020in\u0020relation\u0020to\nthe\u0020points\u0020a\u0020rule\u0020can\u0020give\u0020\u0028in\u0020this\u0020case\u0020not\u0020taking\u0020into\u0020account\u0020how\u0020many\u0020of\u0020the\ncards\u0020already\u0020in\u0020hand\u0020contribute\u0020to\u0020the\u0020better\u0020rule\u0029",
+            "url": "classes/App-ProjectEvaluator-BestPossibleRulesTrait.html#method_adjustPriority"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\BestPossibleRulesTrait\u003A\u003ArulesHands\u0028\u0029",
+            "name": "rulesHands",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-BestPossibleRulesTrait.html#method_rulesHands"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckEmptyGridTrait",
+            "name": "CheckEmptyGridTrait",
+            "summary": "Trait\u0020for\u0020getting\u0020a\u0020slot\u002Dsuggestion\u0020for\u0020a\u0020new\/empty\u0020grid.",
+            "url": "classes/App-ProjectEvaluator-CheckEmptyGridTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckEmptyGridTrait\u003A\u003AhandRuleWith\u0028\u0029",
+            "name": "handRuleWith",
+            "summary": "Calculates\u0020and\u0020returns\u0020name\u0020and\u0020number\u0020of\u0020points\u0020\u0028adjusted\/weighted\u0029\nfor\u0020the\u0020best\u0020rule\u0020possible\u0020to\u0020achieve\u0020with\u0020the\u0020dealt\u0020card,\u0020cards\nin\u0020the\u0020hand\u0020\u0028row\u0020or\u0020column\u0029\u0020and\u0020the\u0020cards\u0020the\u0020user\u0020is\u0020yet\u0020to\u0020pickfrom\nthe\u0020deck",
+            "url": "classes/App-ProjectEvaluator-CheckEmptyGridTrait.html#method_handRuleWith"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckEmptyGridTrait\u003A\u003AhandRuleWithout\u0028\u0029",
+            "name": "handRuleWithout",
+            "summary": "Used\u0020in\u003A\nRulesWithoutCardTrait,\nCheckEmptyGridTrait",
+            "url": "classes/App-ProjectEvaluator-CheckEmptyGridTrait.html#method_handRuleWithout"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckEmptyGridTrait\u003A\u003AemptyGridSuggestion\u0028\u0029",
+            "name": "emptyGridSuggestion",
+            "summary": "Used\u0020in\u0020SuggestionTrait",
+            "url": "classes/App-ProjectEvaluator-CheckEmptyGridTrait.html#method_emptyGridSuggestion"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckFullHandTrait",
+            "name": "CheckFullHandTrait",
+            "summary": "Trait\u0020for\u0020checking\u0020which\u0020rule\u0020is\u0020scored\u0020\u0028if\u0020any\u0029\nfor\u0020a\u0020full\u0020hand.",
+            "url": "classes/App-ProjectEvaluator-CheckFullHandTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckFullHandTrait\u003A\u003AcheckHandForWin\u0028\u0029",
+            "name": "checkHandForWin",
+            "summary": "Used\u0020in\u0020FinalResultsTrait",
+            "url": "classes/App-ProjectEvaluator-CheckFullHandTrait.html#method_checkHandForWin"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckFullHandTrait\u003A\u003A\u0024rules",
+            "name": "rules",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-CheckFullHandTrait.html#property_rules"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckWithCardTrait",
+            "name": "CheckWithCardTrait",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-CheckWithCardTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckWithCardTrait\u003A\u003AcheckSingleRuleWith\u0028\u0029",
+            "name": "checkSingleRuleWith",
+            "summary": "Returns\u0020the\u0020name\u0020and\u0020weighted\u002A\u0020points\u0020if\u0020the\u0020rule\u0020is\npossible\u0020rule\u0020to\u0020achieve\u0020for\u0020the\u0020hand\u0020on\u0020index\u002Dposition\n\u0024index\u0020with\u0020the\u0020dealt\u0020card\u0020and\u0020the\u0020cards\nthat\u0020ill\u0020be\u0020dealt\u0020from\u0020deck",
+            "url": "classes/App-ProjectEvaluator-CheckWithCardTrait.html#method_checkSingleRuleWith"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckWithCardTrait\u003A\u003AhandRuleWith\u0028\u0029",
+            "name": "handRuleWith",
+            "summary": "Calculates\u0020and\u0020returns\u0020name\u0020and\u0020number\u0020of\u0020points\u0020\u0028adjusted\/weighted\u0029\nfor\u0020the\u0020best\u0020rule\u0020possible\u0020to\u0020achieve\u0020with\u0020the\u0020dealt\u0020card,\nthe\u0020cards\u0020the\u0020user\u0020is\u0020yet\u0020to\u0020pick\u0020from\u0020the\u0020deck\nand\u0020the\u0020cards\u0020in\u0020hand\u0020on\u0020index\u0020position\u0020\u0024index",
+            "url": "classes/App-ProjectEvaluator-CheckWithCardTrait.html#method_handRuleWith"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckWithCardTrait\u003A\u003A\u0024rules",
+            "name": "rules",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-CheckWithCardTrait.html#property_rules"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckWithoutCardTrait",
+            "name": "CheckWithoutCardTrait",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-CheckWithoutCardTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckWithoutCardTrait\u003A\u003AcheckSingleRuleWithout\u0028\u0029",
+            "name": "checkSingleRuleWithout",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-CheckWithoutCardTrait.html#method_checkSingleRuleWithout"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckWithoutCardTrait\u003A\u003AhandRuleWithout\u0028\u0029",
+            "name": "handRuleWithout",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-CheckWithoutCardTrait.html#method_handRuleWithout"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\CheckWithoutCardTrait\u003A\u003A\u0024rules",
+            "name": "rules",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-CheckWithoutCardTrait.html#property_rules"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\EmptyCellsTrait",
+            "name": "EmptyCellsTrait",
+            "summary": "Extracts\u0020and\u0020returns\u0020empty\u0020cells\u0020from\u0020a\u0020hand\n\u0028either\u0020all\u0020empty\u0020cells\u0020or\u0020the\u0020first\u0020one\u0029",
+            "url": "classes/App-ProjectEvaluator-EmptyCellsTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\EmptyCellsTrait\u003A\u003AsingleHand\u0028\u0029",
+            "name": "singleHand",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-EmptyCellsTrait.html#method_singleHand"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\EmptyCellTrait",
+            "name": "EmptyCellTrait",
+            "summary": "Fins\u0020and\u0020returns\u0020the\u0020first\u0020empty\u0020cell\u0020in\u0020a\u0020grid",
+            "url": "classes/App-ProjectEvaluator-EmptyCellTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\EmptyCellTrait\u003A\u003AoneEmpty\u0028\u0029",
+            "name": "oneEmpty",
+            "summary": "Used\u0020in\u0020SuggestionTrait",
+            "url": "classes/App-ProjectEvaluator-EmptyCellTrait.html#method_oneEmpty"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\FinalResultsTrait",
+            "name": "FinalResultsTrait",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-FinalResultsTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\FinalResultsTrait\u003A\u003AgetCols\u0028\u0029",
+            "name": "getCols",
+            "summary": "From\u0020RowsToColsTrait",
+            "url": "classes/App-ProjectEvaluator-FinalResultsTrait.html#method_getCols"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\FinalResultsTrait\u003A\u003AresultsOneDirection\u0028\u0029",
+            "name": "resultsOneDirection",
+            "summary": "Returns\u0020results\u0020for\u0020all\u0020five\u0020hands\u0020in\u0020one\u0020direction\u0020\u0028horizontal\nor\u0020vetical\u0029",
+            "url": "classes/App-ProjectEvaluator-FinalResultsTrait.html#method_resultsOneDirection"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\FinalResultsTrait\u003A\u003Aresults\u0028\u0029",
+            "name": "results",
+            "summary": "Calculates\u0020and\u0020returns\u0020for\u0020each\u0020hand\u0020\u0028horizontally\u0020and\u0020vertically\u0029\nthe\u0020highest\u0020score\u0020rule\u0020and\u0020points\u0020for\u0020that\u0020rule,\u0020and\u0020the\u0020total\u0020points\nfor\u0020all\u0020the\u0020ten\u0020hands",
+            "url": "classes/App-ProjectEvaluator-FinalResultsTrait.html#method_results"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\NoEmptySlotsException",
+            "name": "NoEmptySlotsException",
+            "summary": "Raised\u0020when\u0020trying\u0020to\u0020remove\u0020a\u0020card\u0020from\u0020an\u0020already\u0020empty\u0020slot",
+            "url": "classes/App-ProjectEvaluator-NoEmptySlotsException.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\PointsAndRuleNameTrait",
+            "name": "PointsAndRuleNameTrait",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-PointsAndRuleNameTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\PointsAndRuleNameTrait\u003A\u003ApointsAndName\u0028\u0029",
+            "name": "pointsAndName",
+            "summary": "If\u0020a\u0020rule\u0020is\u0020possible\u0020to\u0020score\u0020returns\u0020the\u0020name\nof\u0020the\u0020rule\u0020and\u0020the\u0020adjusted\u0020number\u0020of\u0020points\u0020\u0028\nfor\u0020rules\u0020Three\u0020Of\u0020A\u0020Kind\u0020and\u0020up\u002010\u0025\u0020of\u0020the\nordinary\u0020rule\u0020points\u0020is\u0020added\u0020for\u0020each\u0020card\u0020that\nis\u0020already\u0020placed\u0020in\u0020the\u0020checked\u0020hand\u0020to\nprioritize\u0020a\u0020hand\u0020that\u0020is\u0020closer\u0020to\u0020score,\u0020id\nthere\u0020are\u0020two\u0020hands\u0020where\u0020same\u0020rule\u0020is\u0020possible\nto\u0020score",
+            "url": "classes/App-ProjectEvaluator-PointsAndRuleNameTrait.html#method_pointsAndName"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\PointsAndRuleNameTrait2",
+            "name": "PointsAndRuleNameTrait2",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-PointsAndRuleNameTrait2.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\PointsAndRuleNameTrait2\u003A\u003ApointsAndNameEmptyHand\u0028\u0029",
+            "name": "pointsAndNameEmptyHand",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-PointsAndRuleNameTrait2.html#method_pointsAndNameEmptyHand"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\RowsToColsTrait",
+            "name": "RowsToColsTrait",
+            "summary": "Trait\u0020for\u0020getting\u0020arrays\u0020with\u0020vertical\u0020hands\nrespectively\u0020horisontal\u0020hands\u0020in\u0020the\u0020grid",
+            "url": "classes/App-ProjectEvaluator-RowsToColsTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\RowsToColsTrait\u003A\u003AgetCols\u0028\u0029",
+            "name": "getCols",
+            "summary": "Used\u0020in\u003A\nFinalResultsTrait,\nRowsToColsTrait",
+            "url": "classes/App-ProjectEvaluator-RowsToColsTrait.html#method_getCols"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\RowsToColsTrait\u003A\u003A\u0024grid",
+            "name": "grid",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-RowsToColsTrait.html#property_grid"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\RuleEvaluator",
+            "name": "RuleEvaluator",
+            "summary": "Evaluates\u0020the\u0020highest\u0020rules\u0020scored\u0020\u0028when\u0020the\u0020grid\u0020is\u0020full\u0029\nand\u0020highest\u0020possible\u0020rule\u0028s\u0029\u0020to\u0020score\u0020for\u0020hands\u0020that\u0020have\u0020less\u0020than\u00205\u0020cards",
+            "url": "classes/App-ProjectEvaluator-RuleEvaluator.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\RuleEvaluator\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-RuleEvaluator.html#method___construct"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\RuleEvaluator\u003A\u003AgetRules\u0028\u0029",
+            "name": "getRules",
+            "summary": "For\u0020testing\u0020purposes",
+            "url": "classes/App-ProjectEvaluator-RuleEvaluator.html#method_getRules"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\RuleEvaluator\u003A\u003A\u0024rules",
+            "name": "rules",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-RuleEvaluator.html#property_rules"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\RuleNameTrait",
+            "name": "RuleNameTrait",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-RuleNameTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\RuleNameTrait\u003A\u003AruleName\u0028\u0029",
+            "name": "ruleName",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-RuleNameTrait.html#method_ruleName"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\RuleNameTrait2",
+            "name": "RuleNameTrait2",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-RuleNameTrait2.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\RuleNameTrait2\u003A\u003AruleNameEmptyHand\u0028\u0029",
+            "name": "ruleNameEmptyHand",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-RuleNameTrait2.html#method_ruleNameEmptyHand"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\SlotTrait",
+            "name": "SlotTrait",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-SlotTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\SlotTrait\u003A\u003AsingleHand\u0028\u0029",
+            "name": "singleHand",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-SlotTrait.html#method_singleHand"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\SlotTrait\u003A\u003AbestSlot\u0028\u0029",
+            "name": "bestSlot",
+            "summary": "Used\u0020in\u0020SuggestionTrait",
+            "url": "classes/App-ProjectEvaluator-SlotTrait.html#method_bestSlot"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\SuggestionTrait",
+            "name": "SuggestionTrait",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-SuggestionTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\SuggestionTrait\u003A\u003AgetCols\u0028\u0029",
+            "name": "getCols",
+            "summary": "From\u0020RowsToColsTrait",
+            "url": "classes/App-ProjectEvaluator-SuggestionTrait.html#method_getCols"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\SuggestionTrait\u003A\u003Asuggestion\u0028\u0029",
+            "name": "suggestion",
+            "summary": "",
+            "url": "classes/App-ProjectEvaluator-SuggestionTrait.html#method_suggestion"
+        },                {
+            "fqsen": "\\App\\ProjectGrid\\RowsTrait",
+            "name": "RowsTrait",
+            "summary": "Trait\u0020for\u0020getting\u0020arrays\u0020with\u0020horisontal\u0020hands\u0020in\u0020the\u0020grid",
+            "url": "classes/App-ProjectGrid-RowsTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectGrid\\RowsTrait\u003A\u003AgetRows\u0028\u0029",
+            "name": "getRows",
+            "summary": "Returns\u0020the\u0020actual\u0020grid\u0020\u0028.i.e\u0020an\narray\u0020with\u0020the\u0020horizontal\u0020hands\u0029",
+            "url": "classes/App-ProjectGrid-RowsTrait.html#method_getRows"
+        },                {
+            "fqsen": "\\App\\ProjectGrid\\RowsTrait\u003A\u003AsetGrid\u0028\u0029",
+            "name": "setGrid",
+            "summary": "Sets\u0020grid,\u0020used\u0020in\u0020testing\u0020only",
+            "url": "classes/App-ProjectGrid-RowsTrait.html#method_setGrid"
+        },                {
+            "fqsen": "\\App\\ProjectGrid\\RowsTrait\u003A\u003A\u0024grid",
+            "name": "grid",
+            "summary": "",
+            "url": "classes/App-ProjectGrid-RowsTrait.html#property_grid"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\AdditionalValueTrait",
+            "name": "AdditionalValueTrait",
+            "summary": "Used\u0020by\u0020classes\u0020that\u0020implement\u0020the\u0020RuleStat\u0020interface.",
+            "url": "classes/App-ProjectRules-AdditionalValueTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\AdditionalValueTrait\u003A\u003AgetAdditionalValue\u0028\u0029",
+            "name": "getAdditionalValue",
+            "summary": "",
+            "url": "classes/App-ProjectRules-AdditionalValueTrait.html#method_getAdditionalValue"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\AdditionalValueTrait\u003A\u003A\u0024additionalValue",
+            "name": "additionalValue",
+            "summary": "1\u0020point\u0020for\u0020every\u0020card\u0020that\u0020already\u0020is\u0020in\u0020hand\nand\u0020contributes\u0020to\u0020the\u0020rule.\u0020This\u0020attribute\u0020is\u0020changed\u0020in\u0020the\u0020check\u0028\u0029\u0020method\u0020of\u0020each\u0020class",
+            "url": "classes/App-ProjectRules-AdditionalValueTrait.html#property_additionalValue"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FlushScoredTrait",
+            "name": "FlushScoredTrait",
+            "summary": "",
+            "url": "classes/App-ProjectRules-FlushScoredTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FlushScoredTrait\u003A\u003AcountBySuit\u0028\u0029",
+            "name": "countBySuit",
+            "summary": "From\u0020CountBySuitTrait.",
+            "url": "classes/App-ProjectRules-FlushScoredTrait.html#method_countBySuit"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FlushScoredTrait\u003A\u003Ascored\u0028\u0029",
+            "name": "scored",
+            "summary": "Returns\u0020true\u0020if\u0020the\u0020Flush\u0020rule\u0020has\u0020been\u0020scored",
+            "url": "classes/App-ProjectRules-FlushScoredTrait.html#method_scored"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FlushTrait",
+            "name": "FlushTrait",
+            "summary": "",
+            "url": "classes/App-ProjectRules-FlushTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FlushTrait\u003A\u003ApossibleWithoutCard\u0028\u0029",
+            "name": "possibleWithoutCard",
+            "summary": "From\u0020StraightFlushTrait\nReturns\u0020true\u0020if\u0020the\u0020rule\u0020is\u0020possible\nto\u0020score\u0020without\u0020the\u0020dealt\u0020card",
+            "url": "classes/App-ProjectRules-FlushTrait.html#method_possibleWithoutCard"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FlushTrait2",
+            "name": "FlushTrait2",
+            "summary": "",
+            "url": "classes/App-ProjectRules-FlushTrait2.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FlushTrait2\u003A\u003AcountBySuit\u0028\u0029",
+            "name": "countBySuit",
+            "summary": "",
+            "url": "classes/App-ProjectRules-FlushTrait2.html#method_countBySuit"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FlushTrait2\u003A\u003ApossibleDeckOnly\u0028\u0029",
+            "name": "possibleDeckOnly",
+            "summary": "",
+            "url": "classes/App-ProjectRules-FlushTrait2.html#method_possibleDeckOnly"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FlushTrait3",
+            "name": "FlushTrait3",
+            "summary": "",
+            "url": "classes/App-ProjectRules-FlushTrait3.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FlushTrait3\u003A\u003AcountBySuit\u0028\u0029",
+            "name": "countBySuit",
+            "summary": "From\u0020CountBySuitTrait.",
+            "url": "classes/App-ProjectRules-FlushTrait3.html#method_countBySuit"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FlushTrait3\u003A\u003AcheckInDeck\u0028\u0029",
+            "name": "checkInDeck",
+            "summary": "Used\u0020in\u0020the\u0020following\u0020traits\u003A\nFlushTrait",
+            "url": "classes/App-ProjectRules-FlushTrait3.html#method_checkInDeck"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseScoredTrait",
+            "name": "FullHouseScoredTrait",
+            "summary": "",
+            "url": "classes/App-ProjectRules-FullHouseScoredTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseScoredTrait\u003A\u003AcountByRank\u0028\u0029",
+            "name": "countByRank",
+            "summary": "From\u0020CountByRankTrait\nReturns\u0020an\u0020associative\u0020array\nwhere\u0020keys\u0020are\u0020the\u0020ranks\u0020present\u0020amongst\nthe\u0020cards\u0020and\u0020the\u0020values\u0020are\u0020the\u0020count\u0020of\neach\u0020rank",
+            "url": "classes/App-ProjectRules-FullHouseScoredTrait.html#method_countByRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseScoredTrait\u003A\u003Ascored\u0028\u0029",
+            "name": "scored",
+            "summary": "Returns\u0020true\u0020if\u0020the\u0020Full\u0020House\u0020rule\u0020is\u0020scored",
+            "url": "classes/App-ProjectRules-FullHouseScoredTrait.html#method_scored"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseTrait2",
+            "name": "FullHouseTrait2",
+            "summary": "",
+            "url": "classes/App-ProjectRules-FullHouseTrait2.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseTrait2\u003A\u003AcountByRank\u0028\u0029",
+            "name": "countByRank",
+            "summary": "From\u0020CountByRankTrait",
+            "url": "classes/App-ProjectRules-FullHouseTrait2.html#method_countByRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseTrait2\u003A\u003ApossibleWithoutCard\u0028\u0029",
+            "name": "possibleWithoutCard",
+            "summary": "Returns\u0020true\u0020if\u0020a\u0020rule\u0020is\u0020possible\u0020to\u0020score\ngiven\u0020the\u0020cards\u0020in\u0020the\u0020deck\u0020and\u0020the\u0020cards\nthat\u0020will\u0020be\u0020dealt\u0020from\u0020deck",
+            "url": "classes/App-ProjectRules-FullHouseTrait2.html#method_possibleWithoutCard"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseTrait3",
+            "name": "FullHouseTrait3",
+            "summary": "",
+            "url": "classes/App-ProjectRules-FullHouseTrait3.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseTrait3\u003A\u003AcountByRank\u0028\u0029",
+            "name": "countByRank",
+            "summary": "Returns\u0020an\u0020associative\u0020array\nwhere\u0020keys\u0020are\u0020the\u0020ranks\u0020present\u0020amongst\nthe\u0020cards\u0020and\u0020the\u0020values\u0020are\u0020the\u0020count\u0020of\neach\u0020rank",
+            "url": "classes/App-ProjectRules-FullHouseTrait3.html#method_countByRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseTrait3\u003A\u003ApossibleDeckOnly\u0028\u0029",
+            "name": "possibleDeckOnly",
+            "summary": "Used\u0020in\u0020FullHouseTrait2",
+            "url": "classes/App-ProjectRules-FullHouseTrait3.html#method_possibleDeckOnly"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseTrait4",
+            "name": "FullHouseTrait4",
+            "summary": "",
+            "url": "classes/App-ProjectRules-FullHouseTrait4.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseTrait4\u003A\u003Acheck3\u0028\u0029",
+            "name": "check3",
+            "summary": "Used\u0020in\u0020FullHouseTrait2",
+            "url": "classes/App-ProjectRules-FullHouseTrait4.html#method_check3"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseTrait5",
+            "name": "FullHouseTrait5",
+            "summary": "",
+            "url": "classes/App-ProjectRules-FullHouseTrait5.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseTrait5\u003A\u003Acheck1SubCheck\u0028\u0029",
+            "name": "check1SubCheck",
+            "summary": "Called\u0020if\u0020the\u0020hand\u0020contains\u0020at\u0020least\u0020two\u0020cards\u0020of\u0020same\u0020rank\u0020and\u0020no\u0020other\u0020rank.\u0020Returns\u0020true\u0020if\u0020any\u0020of\u0020the\u0020following\u0020conditions\u0020is\u0020fulfilled\u003A\n1.\u0020Hand\u0020contains\u0020two\u0020cards\u0020and\u0020the\u0020deck\u0020contains\u0020at\u0020least\u0020three\u0020cards\u0020of\u0020same\u0020rank\n2.\u0020Hand\u0020contains\u0020two\u0020cards\u0020and\u0020there\u0020is\u0020at\u0020least\u0020one\u0020card\u0020of\u0020same\u0020rank\u0020in\u0020the\u0020Deck.\u0020The\u0020deck\u0020also\u0020contains\u0020at\u0020least\u0020one\u0020pair.",
+            "url": "classes/App-ProjectRules-FullHouseTrait5.html#method_check1SubCheck"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseTrait5\u003A\u003Acheck1\u0028\u0029",
+            "name": "check1",
+            "summary": "Used\u0020In\u0020FullHouseTrait2\ncalled\u0020if\u0020the\u0020hand\u0020contains\u0020more\u0020than\u00201\u0020card.",
+            "url": "classes/App-ProjectRules-FullHouseTrait5.html#method_check1"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseTrait6",
+            "name": "FullHouseTrait6",
+            "summary": "",
+            "url": "classes/App-ProjectRules-FullHouseTrait6.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\FullHouseTrait6\u003A\u003Acheck2\u0028\u0029",
+            "name": "check2",
+            "summary": "Used\u0020in\u0020FullHouseTrait2",
+            "url": "classes/App-ProjectRules-FullHouseTrait6.html#method_check2"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RoyalFlushScoredTrait",
+            "name": "RoyalFlushScoredTrait",
+            "summary": "",
+            "url": "classes/App-ProjectRules-RoyalFlushScoredTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RoyalFlushScoredTrait\u003A\u003AcountSuitAndRank\u0028\u0029",
+            "name": "countSuitAndRank",
+            "summary": "From\u0020CountSuitAndRankTrait.",
+            "url": "classes/App-ProjectRules-RoyalFlushScoredTrait.html#method_countSuitAndRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RoyalFlushScoredTrait\u003A\u003Ascored\u0028\u0029",
+            "name": "scored",
+            "summary": "Used\u0020for\u0020a\u0020full\u0020hand\u0020and\u0020returns\ntrue\u0020is\u0020the\u0020rule\u0020is\u0020scored",
+            "url": "classes/App-ProjectRules-RoyalFlushScoredTrait.html#method_scored"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait",
+            "name": "RoyalFlushTrait",
+            "summary": "",
+            "url": "classes/App-ProjectRules-RoyalFlushTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait\u003A\u003AcountSuitAndRank\u0028\u0029",
+            "name": "countSuitAndRank",
+            "summary": "From\u0020CountSuitAndRankTrait",
+            "url": "classes/App-ProjectRules-RoyalFlushTrait.html#method_countSuitAndRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait\u003A\u003ApossibleWithoutCard\u0028\u0029",
+            "name": "possibleWithoutCard",
+            "summary": "Returns\u0020true\u0020if\u0020the\u0020RoyalFlush\u0020rule\u0020is\u0020possible\u0020to\u0020score\u0020without\u0020the\u0020dealt\u0020card",
+            "url": "classes/App-ProjectRules-RoyalFlushTrait.html#method_possibleWithoutCard"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait2",
+            "name": "RoyalFlushTrait2",
+            "summary": "",
+            "url": "classes/App-ProjectRules-RoyalFlushTrait2.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait2\u003A\u003ApossibleDeckOnly\u0028\u0029",
+            "name": "possibleDeckOnly",
+            "summary": "Returns\u0020true\u0020if\u0020is\u0020is\u0020possible\u0020to\u0020score\u0020a\u0020RoyalFlush\nwith\u0020only\u0020the\u0020cards\u0020that\u0020will\u0020be\u0020dealt\u0020to\u0020the\u0020player\u0020from\u0020the\u0020deck",
+            "url": "classes/App-ProjectRules-RoyalFlushTrait2.html#method_possibleDeckOnly"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait3",
+            "name": "RoyalFlushTrait3",
+            "summary": "",
+            "url": "classes/App-ProjectRules-RoyalFlushTrait3.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait3\u003A\u003AcheckForCards\u0028\u0029",
+            "name": "checkForCards",
+            "summary": "Userd\u0020in\u0020the\u0020following\u0020traits\u003A\nRoyalFlushTrait,",
+            "url": "classes/App-ProjectRules-RoyalFlushTrait3.html#method_checkForCards"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait3\u003A\u003A\u0024maxRank",
+            "name": "maxRank",
+            "summary": "",
+            "url": "classes/App-ProjectRules-RoyalFlushTrait3.html#property_maxRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait3\u003A\u003A\u0024minRank",
+            "name": "minRank",
+            "summary": "",
+            "url": "classes/App-ProjectRules-RoyalFlushTrait3.html#property_minRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait3\u003A\u003A\u0024suit",
+            "name": "suit",
+            "summary": "",
+            "url": "classes/App-ProjectRules-RoyalFlushTrait3.html#property_suit"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RuleDataTrait",
+            "name": "RuleDataTrait",
+            "summary": "Contains\u0020methods\u0020for\u0020getting\u0020the\u0020name\nof\u0020the\u0020rule\u0020and\u0020the\u0020points\u0020the\u0020rule\u0020gives\u0020if\u0020scored",
+            "url": "classes/App-ProjectRules-RuleDataTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RuleDataTrait\u003A\u003AgetName\u0028\u0029",
+            "name": "getName",
+            "summary": "Returns\u0020the\u0020name\u0020if\u0020the\u0020rule",
+            "url": "classes/App-ProjectRules-RuleDataTrait.html#method_getName"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RuleDataTrait\u003A\u003AgetPoints\u0028\u0029",
+            "name": "getPoints",
+            "summary": "Returns\u0020rule\u0027s\u0020worth\u0020in\u0020points",
+            "url": "classes/App-ProjectRules-RuleDataTrait.html#method_getPoints"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RuleDataTrait\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/App-ProjectRules-RuleDataTrait.html#property_name"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\RuleDataTrait\u003A\u003A\u0024points",
+            "name": "points",
+            "summary": "",
+            "url": "classes/App-ProjectRules-RuleDataTrait.html#property_points"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait",
+            "name": "SameOfAKindTrait",
+            "summary": "",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait\u003A\u003AcountByRank\u0028\u0029",
+            "name": "countByRank",
+            "summary": "From\u0020CountByRankTrait",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait.html#method_countByRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait\u003A\u003AenoughSpaceInHand\u0028\u0029",
+            "name": "enoughSpaceInHand",
+            "summary": "From\u0020SameOfAKindTrait4",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait.html#method_enoughSpaceInHand"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait\u003A\u003ArequiredCount\u0028\u0029",
+            "name": "requiredCount",
+            "summary": "From\u0020SameOfAKindTrait4",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait.html#method_requiredCount"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait\u003A\u003ApossibleWithCard\u0028\u0029",
+            "name": "possibleWithCard",
+            "summary": "",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait.html#method_possibleWithCard"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait\u003A\u003A\u0024additionalValue",
+            "name": "additionalValue",
+            "summary": "1\u0020point\u0020for\u0020every\u0020card\u0020that\u0020already\u0020is\u0020in\u0020hand\nand\u0020contributes\u0020to\u0020the\u0020rule",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait.html#property_additionalValue"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait\u003A\u003A\u0024minCountRank",
+            "name": "minCountRank",
+            "summary": "",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait.html#property_minCountRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait2",
+            "name": "SameOfAKindTrait2",
+            "summary": "",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait2.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait2\u003A\u003AcountByRank\u0028\u0029",
+            "name": "countByRank",
+            "summary": "From\u0020CountByRankTrait",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait2.html#method_countByRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait2\u003A\u003AenoughSpaceInHand\u0028\u0029",
+            "name": "enoughSpaceInHand",
+            "summary": "From\u0020SameOfAKindTrait4",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait2.html#method_enoughSpaceInHand"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait2\u003A\u003ArequiredCount\u0028\u0029",
+            "name": "requiredCount",
+            "summary": "From\u0020SameOfAKindTrait4",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait2.html#method_requiredCount"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait2\u003A\u003ApossibleWithoutCard\u0028\u0029",
+            "name": "possibleWithoutCard",
+            "summary": "",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait2.html#method_possibleWithoutCard"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait2\u003A\u003A\u0024minCountRank",
+            "name": "minCountRank",
+            "summary": "",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait2.html#property_minCountRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait3",
+            "name": "SameOfAKindTrait3",
+            "summary": "",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait3.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait3\u003A\u003AcountByRank\u0028\u0029",
+            "name": "countByRank",
+            "summary": "From\u0020CountByRankTrait\nReturns\u0020an\u0020associative\u0020array\nwhere\u0020keys\u0020are\u0020the\u0020ranks\u0020present\u0020amongst\nthe\u0020cards\u0020and\u0020the\u0020values\u0020are\u0020the\u0020count\u0020of\neach\u0020rank",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait3.html#method_countByRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait3\u003A\u003ApossibleDeckOnly\u0028\u0029",
+            "name": "possibleDeckOnly",
+            "summary": "",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait3.html#method_possibleDeckOnly"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait3\u003A\u003A\u0024minCountRank",
+            "name": "minCountRank",
+            "summary": "",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait3.html#property_minCountRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait4",
+            "name": "SameOfAKindTrait4",
+            "summary": "",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait4.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait4\u003A\u003AenoughSpaceInHand\u0028\u0029",
+            "name": "enoughSpaceInHand",
+            "summary": "Used\u0020in\u003A\nSameOfAKindTrait,\nSameOfAKindTrait2",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait4.html#method_enoughSpaceInHand"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait4\u003A\u003ArequiredCount\u0028\u0029",
+            "name": "requiredCount",
+            "summary": "Used\u0020in\u003A\nSameOfAKindTrait,\nSameOfAKindTrait2",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait4.html#method_requiredCount"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait4\u003A\u003A\u0024minCountRank",
+            "name": "minCountRank",
+            "summary": "",
+            "url": "classes/App-ProjectRules-SameOfAKindTrait4.html#property_minCountRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightFlushScoredTrait",
+            "name": "StraightFlushScoredTrait",
+            "summary": "",
+            "url": "classes/App-ProjectRules-StraightFlushScoredTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightFlushScoredTrait\u003A\u003AcountSuitAndRank\u0028\u0029",
+            "name": "countSuitAndRank",
+            "summary": "From\u0020CountSuitAndRankTrait.",
+            "url": "classes/App-ProjectRules-StraightFlushScoredTrait.html#method_countSuitAndRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightFlushScoredTrait\u003A\u003Ascored\u0028\u0029",
+            "name": "scored",
+            "summary": "Used\u0020for\u0020a\u0020full\u0020hand\u0020and\u0020returns\ntrue\u0020is\u0020the\u0020rule\u0020is\u0020scored",
+            "url": "classes/App-ProjectRules-StraightFlushScoredTrait.html#method_scored"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightFlushTrait",
+            "name": "StraightFlushTrait",
+            "summary": "",
+            "url": "classes/App-ProjectRules-StraightFlushTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightFlushTrait\u003A\u003AcheckAllPossible\u0028\u0029",
+            "name": "checkAllPossible",
+            "summary": "From\u0020StraightTrait3.",
+            "url": "classes/App-ProjectRules-StraightFlushTrait.html#method_checkAllPossible"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightFlushTrait\u003A\u003AgroupBySuit\u0028\u0029",
+            "name": "groupBySuit",
+            "summary": "From\u0020GroupBySuitTrait\nReturns\u0020an\u0020associative\u0020array\u0020with\u0020keys\ncorrespoding\u0020to\u0020suits\u0020present\u0020in\u0020the\u0020cards\narray\u0020and\u0020values\u0020\u002D\u0020arrays\u0020containing\u0020the\u0020ranks\nof\u0020each\u0020suit\u0020present\u0020in\u0020the\u0020card\u002Darray",
+            "url": "classes/App-ProjectRules-StraightFlushTrait.html#method_groupBySuit"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightFlushTrait\u003A\u003ApossibleWithoutCard\u0028\u0029",
+            "name": "possibleWithoutCard",
+            "summary": "Returns\u0020true\u0020if\u0020rule\u0020is\u0020possible\u0020to\nscore\u0020wuthout\u0020the\u0020dealt\u0020card.",
+            "url": "classes/App-ProjectRules-StraightFlushTrait.html#method_possibleWithoutCard"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightFlushTrait3",
+            "name": "StraightFlushTrait3",
+            "summary": "",
+            "url": "classes/App-ProjectRules-StraightFlushTrait3.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightFlushTrait3\u003A\u003AcheckAllPossible\u0028\u0029",
+            "name": "checkAllPossible",
+            "summary": "From\u0020StraightTrait3.",
+            "url": "classes/App-ProjectRules-StraightFlushTrait3.html#method_checkAllPossible"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightFlushTrait3\u003A\u003AgroupBySuit\u0028\u0029",
+            "name": "groupBySuit",
+            "summary": "From\u0020GroupBySuitTrait\nReturns\u0020an\u0020associative\u0020array\u0020with\u0020keys\ncorrespoding\u0020to\u0020suits\u0020present\u0020in\u0020the\u0020cards\narray\u0020and\u0020values\u0020\u002D\u0020arrays\u0020containing\u0020the\u0020ranks\nof\u0020each\u0020suit\u0020present\u0020in\u0020the\u0020card\u002Darray",
+            "url": "classes/App-ProjectRules-StraightFlushTrait3.html#method_groupBySuit"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightFlushTrait3\u003A\u003ApossibleDeckOnly\u0028\u0029",
+            "name": "possibleDeckOnly",
+            "summary": "Used\u0020when\u0020hand\u0020is\u0020empty.\u0020Returns\u0020true\u0020if\u0020the\nrule\u0020is\u0020possible\u0020to\u0020score\u0020with\u0020the\u0020cards\u0020that\nwill\u0020be\u0020dealt\u0020from\u0020deck",
+            "url": "classes/App-ProjectRules-StraightFlushTrait3.html#method_possibleDeckOnly"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightScoredTrait",
+            "name": "StraightScoredTrait",
+            "summary": "",
+            "url": "classes/App-ProjectRules-StraightScoredTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightScoredTrait\u003A\u003AcountByRank\u0028\u0029",
+            "name": "countByRank",
+            "summary": "From\u0020CountByRankTrait\nReturns\u0020an\u0020associative\u0020array\nwhere\u0020keys\u0020are\u0020the\u0020ranks\u0020present\u0020amongst\nthe\u0020cards\u0020and\u0020the\u0020values\u0020are\u0020the\u0020count\u0020of\neach\u0020rank",
+            "url": "classes/App-ProjectRules-StraightScoredTrait.html#method_countByRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightScoredTrait\u003A\u003Ascored\u0028\u0029",
+            "name": "scored",
+            "summary": "Used\u0020for\u0020a\u0020full\u0020hand\u0020and\u0020returns\ntrue\u0020is\u0020the\u0020rule\u0020is\u0020scored",
+            "url": "classes/App-ProjectRules-StraightScoredTrait.html#method_scored"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightTrait",
+            "name": "StraightTrait",
+            "summary": "",
+            "url": "classes/App-ProjectRules-StraightTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightTrait\u003A\u003AcountByRank\u0028\u0029",
+            "name": "countByRank",
+            "summary": "From\u0020CountByRankTrait.",
+            "url": "classes/App-ProjectRules-StraightTrait.html#method_countByRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightTrait\u003A\u003ApossibleWithoutCard\u0028\u0029",
+            "name": "possibleWithoutCard",
+            "summary": "",
+            "url": "classes/App-ProjectRules-StraightTrait.html#method_possibleWithoutCard"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightTrait\u003A\u003ApossibleDeckOnly\u0028\u0029",
+            "name": "possibleDeckOnly",
+            "summary": "",
+            "url": "classes/App-ProjectRules-StraightTrait.html#method_possibleDeckOnly"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightTrait2",
+            "name": "StraightTrait2",
+            "summary": "",
+            "url": "classes/App-ProjectRules-StraightTrait2.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightTrait2\u003A\u003AcheckForRanks\u0028\u0029",
+            "name": "checkForRanks",
+            "summary": "Used\u0020in\u003A\nStraightTrait3,\nRoyalFlushTrait2",
+            "url": "classes/App-ProjectRules-StraightTrait2.html#method_checkForRanks"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightTrait3",
+            "name": "StraightTrait3",
+            "summary": "",
+            "url": "classes/App-ProjectRules-StraightTrait3.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\StraightTrait3\u003A\u003AcheckAllPossible\u0028\u0029",
+            "name": "checkAllPossible",
+            "summary": "Used\u0020in\u0020the\u0020following\u0020traits\u003A\nStraightTrait,\nStraightFlushTrait",
+            "url": "classes/App-ProjectRules-StraightTrait3.html#method_checkAllPossible"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsScoredTrait",
+            "name": "TwoPairsScoredTrait",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsScoredTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsScoredTrait\u003A\u003AcountByRank\u0028\u0029",
+            "name": "countByRank",
+            "summary": "From\u0020CountByRankTrait\nReturns\u0020an\u0020associative\u0020array\nwhere\u0020keys\u0020are\u0020the\u0020ranks\u0020present\u0020amongst\nthe\u0020cards\u0020and\u0020the\u0020values\u0020are\u0020the\u0020count\u0020of\neach\u0020rank",
+            "url": "classes/App-ProjectRules-TwoPairsScoredTrait.html#method_countByRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsScoredTrait\u003A\u003Ascored\u0028\u0029",
+            "name": "scored",
+            "summary": "Returns\u0020true\u0020if\u0020the\u0020TwoPairs\u0020rules\u0020is\u0020scored,\notherwise\u0020false.",
+            "url": "classes/App-ProjectRules-TwoPairsScoredTrait.html#method_scored"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait10",
+            "name": "TwoPairsTrait10",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsTrait10.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait10\u003A\u003AoneCardTwoPairs\u0028\u0029",
+            "name": "oneCardTwoPairs",
+            "summary": "Used\u0020in\u0020TwoPairsTrait11",
+            "url": "classes/App-ProjectRules-TwoPairsTrait10.html#method_oneCardTwoPairs"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait11",
+            "name": "TwoPairsTrait11",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsTrait11.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait11\u003A\u003Acheck4\u0028\u0029",
+            "name": "check4",
+            "summary": "Used\u0020in\u0020TwoPairsTrait2\nReturns\u0020true\u0020if\u0020the\u0020hand\u0020contains\u0020only\u0020one\u0020card\u0020and\neither\u0020of\u0020the\u0020following\u0020two\u0020conditions\u0020is\u0020fulfilled\u003A\n1.\u0020The\u0020deck\u0020contains\u0020two\u0020pairs\n2.\u0020The\u0020deck\u0020contains\u0020one\u0020pair\u0020and\u0020one\u0020card\u0020of\nthe\u0020same\u0020rank\u0020as\u0020the\u0020card\u0020in\u0020hand",
+            "url": "classes/App-ProjectRules-TwoPairsTrait11.html#method_check4"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait12",
+            "name": "TwoPairsTrait12",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsTrait12.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait12\u003A\u003AmatchOneInDeck\u0028\u0029",
+            "name": "matchOneInDeck",
+            "summary": "From\u0020TwoPairsTrait8",
+            "url": "classes/App-ProjectRules-TwoPairsTrait12.html#method_matchOneInDeck"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait12\u003A\u003Acheck5\u0028\u0029",
+            "name": "check5",
+            "summary": "Used\u0020in\u0020TwoPairsTrait2",
+            "url": "classes/App-ProjectRules-TwoPairsTrait12.html#method_check5"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait13",
+            "name": "TwoPairsTrait13",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsTrait13.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait13\u003A\u003AmatchOneInDeck\u0028\u0029",
+            "name": "matchOneInDeck",
+            "summary": "From\u0020TwoPairsTrait8",
+            "url": "classes/App-ProjectRules-TwoPairsTrait13.html#method_matchOneInDeck"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait13\u003A\u003Acheck6\u0028\u0029",
+            "name": "check6",
+            "summary": "Used\u0020in\u0020TwoPairsTrait2.",
+            "url": "classes/App-ProjectRules-TwoPairsTrait13.html#method_check6"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait14",
+            "name": "TwoPairsTrait14",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsTrait14.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait14\u003A\u003AthreeCardsTwoPairs\u0028\u0029",
+            "name": "threeCardsTwoPairs",
+            "summary": "Used\u0020in\u0020TwoPairsTrait7",
+            "url": "classes/App-ProjectRules-TwoPairsTrait14.html#method_threeCardsTwoPairs"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait3",
+            "name": "TwoPairsTrait3",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsTrait3.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait3\u003A\u003AcountByRank\u0028\u0029",
+            "name": "countByRank",
+            "summary": "From\u0020CountByRankTrait\nReturns\u0020an\u0020associative\u0020array\nwhere\u0020keys\u0020are\u0020the\u0020ranks\u0020present\u0020amongst\nthe\u0020cards\u0020and\u0020the\u0020values\u0020are\u0020the\u0020count\u0020of\neach\u0020rank",
+            "url": "classes/App-ProjectRules-TwoPairsTrait3.html#method_countByRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait3\u003A\u003ApossibleDeckOnly\u0028\u0029",
+            "name": "possibleDeckOnly",
+            "summary": "Called\u0020on\u0020by\u0020the\u0020RuleEvaluator\u0020class,\nbut\u0020also\u0020used\u0020in\u0020TwoPairsTrait11\nChecks\u0020if\u0020the\u0020array\u0020with\u0020cards\ncontains\u0020at\u0020least\u0020two\u0020pairs",
+            "url": "classes/App-ProjectRules-TwoPairsTrait3.html#method_possibleDeckOnly"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait4",
+            "name": "TwoPairsTrait4",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsTrait4.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait4\u003A\u003Acheck1\u0028\u0029",
+            "name": "check1",
+            "summary": "Used\u0020in\u0020TwoPairsTrait",
+            "url": "classes/App-ProjectRules-TwoPairsTrait4.html#method_check1"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait5",
+            "name": "TwoPairsTrait5",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsTrait5.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait5\u003A\u003AcheckForTwoPairs1\u0028\u0029",
+            "name": "checkForTwoPairs1",
+            "summary": "Called\u0020in\u0020the\u0020hand\u0020contains\u00200\u002D2\u0020cards\nand\u0020there\u0020is\u0020not\u0020already\u0020a\u0020parid\u0020in\u0020the\u0020hand.",
+            "url": "classes/App-ProjectRules-TwoPairsTrait5.html#method_checkForTwoPairs1"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait5\u003A\u003AcheckForTwoPairs3\u0028\u0029",
+            "name": "checkForTwoPairs3",
+            "summary": "Called\u0020when\u0020there\u0020is\u0020only\u00201\u0020card\u0020in\u0020hand\nReturns\u0020true\u0020if\u0020the\u0020rank\u0020of\u0020the\u0020dealt\u0020card\u0020exists\u0020in\u0020the\u0020deck\u0020and\u0020if\nthe\u0020deck\u0020contains\u0020at\u0020lest\u0020two\u0020cards\u0020of\u0020same\u0020rank.\u0020Note\u0020that\nthe\u0020deck\u0020will\u0020not\u0020contain\u0020more\u0020than\u00201\u0020card\u0020of\u0020the\u0020rank\u0020because\u0020otherwise\none\u0020of\u0020the\u0020higher\u0020rules\u0020would\u0020have\u0020already\u0020returned\u0020true.",
+            "url": "classes/App-ProjectRules-TwoPairsTrait5.html#method_checkForTwoPairs3"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait5\u003A\u003Acheck2\u0028\u0029",
+            "name": "check2",
+            "summary": "Used\u0020in\u0020TwoPairsTrait\nCalled\u0020on\u0020if\u0020the\u0020hand\u0020does\u0020not\u0020already\ncontains\u0020a\u0020pair\u0020and\u0020returns\u0020true\u0020if\u0020the\u0020hand\ncontains\u0020only\u00201\u0020card\u0020and\u0020one\u0020of\u0020the\u0020following\u0020is\nfulfilled\u003A\n1.\u0020either\u0020the\u0020card\u0020in\u0020hand\u0020is\u0020of\u0020same\u0020rank\u0020as\nthe\u0020dealt\u0020card\u0020and\u0020the\u0020deck\u0020contains\u0020at\u0020least\none\u0020pair\n2.\u0020the\u0020deck\u0020contains\u0020at\u0020least\u0020one\u0020card\u0020of\u0020the\nsame\u0020rank\u0020as\u0020the\u0020card\u0020in\u0020the\u0020hand\u0020and\u0020at\u0020least\none\u0020card\u0020of\u0020the\u0020same\u0020rank\u0020as\u0020the\u0020dealt\u0020card",
+            "url": "classes/App-ProjectRules-TwoPairsTrait5.html#method_check2"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait5\u003A\u003A\u0024additionalValue",
+            "name": "additionalValue",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsTrait5.html#property_additionalValue"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait6",
+            "name": "TwoPairsTrait6",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsTrait6.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait6\u003A\u003AmatchOneInDeck\u0028\u0029",
+            "name": "matchOneInDeck",
+            "summary": "From\u0020TwoPairsTrait8",
+            "url": "classes/App-ProjectRules-TwoPairsTrait6.html#method_matchOneInDeck"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait6\u003A\u003AmatchRank\u0028\u0029",
+            "name": "matchRank",
+            "summary": "Called\u0020if\u0020the\u0020hand\u0020does\u0020not\u0020already\u0020contain\na\u0020pair\u0020and\u0020the\u0020rank\u0020of\u0020at\u0020least\u0020one\u0020of\u0020the\u0020cards\nin\u0020hand\u0020matches\u0020rank\u0020of\u0020a\u0020card\nin\u0020deck.\u0020Returns\u0020true\u0020if\u0020the\u0020rank\u0020in\u0020hand\u0020has\u0020a\u0020match\neither\u0020in\u0020the\u0020hand\u0020or\u0020in\u0020the\u0020deck.\u0020If\u0020there\u0020is\na\u0020match\u0020in\u0020the\u0020hand\u0020it\u0020means\u0020that\u0020the\u0020hand\ncontains\u0020two\u0020cards\u0020that\u0020contribute\u0020to\u0020two\u0020pairs\u0020rule,\nthus\u0020additionalValue\u0020attr\u0020is\u0020set\u0020to\u00202.\u0020If\u0020rank\nof\u0020dealt\u0020card\u0020instead\u0020matches\u0020in\u0020deck,\u0020it\u0020means\nonly\u0020one\u0020card\u0020in\u0020hand\u0020contributes\u0020to\u0020the\u0020two\u0020pair\nrule,\u0020thus\u0020setting\u0020additionalValue\u0020to\u00201",
+            "url": "classes/App-ProjectRules-TwoPairsTrait6.html#method_matchRank"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait6\u003A\u003Acheck3\u0028\u0029",
+            "name": "check3",
+            "summary": "Used\u0020in\u0020TwoPairsTrait\nCalled\u0020if\u0020the\u0020hand\u0020does\u0020not\u0020already\u0020contain\na\u0020pair\u0020and\u0020checks\u0020if\u0020the\u0020hand\u0020contains\u0020a\u0020card\nof\u0020the\u0020same\u0020ranks\u0020as\u0020the\u0020dealt\u0020card\u0020and\u0020if\u0020the\u0020deck\ncontains\u0020at\u0020least\u0020one\u0020card\u0020of\u0020the\u0020same\u0020rank\u0020as\u0020any\u0020of\u0020the\ncards\u0020in\u0020deck\u0020\u0028note\u0020that\u0020the\u0020deck\u0020will\u0020not\u0020contain\nthe\u0020same\u0020rank\u0020as\u0020the\u0020dealt\u0020card,\u0020because\u0020otherwise\nthe\u0020Three\u0020Of\u0020A\u0020Kind\u0020Rule\u0020would\u0020have\u0020already\nreturned\u0020true\u0029",
+            "url": "classes/App-ProjectRules-TwoPairsTrait6.html#method_check3"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait6\u003A\u003A\u0024additionalValue",
+            "name": "additionalValue",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsTrait6.html#property_additionalValue"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait7",
+            "name": "TwoPairsTrait7",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsTrait7.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait7\u003A\u003AfourCardsTwoPairs\u0028\u0029",
+            "name": "fourCardsTwoPairs",
+            "summary": "Called\u0020if\u0020the\u0020hand\u0020already\u0020contains\u0020one\u0020pair\nReturns\u0020true\u0020if\u0020the\u0020hand\u0020contains\u0020four\u0020cards\u0020whereof\u0020two\u0020pairs",
+            "url": "classes/App-ProjectRules-TwoPairsTrait7.html#method_fourCardsTwoPairs"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait7\u003A\u003AfindSecondPair\u0028\u0029",
+            "name": "findSecondPair",
+            "summary": "Used\u0020in\u0020TwoPairsTrait12",
+            "url": "classes/App-ProjectRules-TwoPairsTrait7.html#method_findSecondPair"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait8",
+            "name": "TwoPairsTrait8",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsTrait8.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait8\u003A\u003AmatchOneInDeck\u0028\u0029",
+            "name": "matchOneInDeck",
+            "summary": "Used\u0020in\u0020the\u0020following\u0020traits\u003A\nTwoPairsTrait6,\nTwoPairTrait12,\nTwoPairsTrait13",
+            "url": "classes/App-ProjectRules-TwoPairsTrait8.html#method_matchOneInDeck"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait9",
+            "name": "TwoPairsTrait9",
+            "summary": "",
+            "url": "classes/App-ProjectRules-TwoPairsTrait9.html"
+        },                {
+            "fqsen": "\\App\\ProjectRules\\TwoPairsTrait9\u003A\u003AthreeCardsTwoPairsAlt\u0028\u0029",
+            "name": "threeCardsTwoPairsAlt",
+            "summary": "Used\u0020in\u0020TwoPairsTrait13\nCalled\u0020if\u0020the\u0020hand\u0020does\u0020not\u0020already\u0020contain\na\u0020pair\u0020and\u0020the\u0020hand\u0020contains\u0020two\u0020or\u0020three\u0020cards.",
+            "url": "classes/App-ProjectRules-TwoPairsTrait9.html#method_threeCardsTwoPairsAlt"
+        },                {
+            "fqsen": "\\App\\Repository\\BookNotFoundException",
+            "name": "BookNotFoundException",
+            "summary": "Exception\u0020class\u0020trhown\u0020when\u0020isbn\u0020number\u0020is\u0020alerady\u0020in\u0020use",
+            "url": "classes/App-Repository-BookNotFoundException.html"
+        },                {
+            "fqsen": "\\App\\Repository\\IsbnAlreadyInUseException",
+            "name": "IsbnAlreadyInUseException",
+            "summary": "Exception\u0020class\u0020trhown\u0020when\u0020isbn\u0020number\u0020is\u0020alerady\u0020in\u0020use",
+            "url": "classes/App-Repository-IsbnAlreadyInUseException.html"
+        },                {
+            "fqsen": "\\App\\Repository\\LibraryException",
+            "name": "LibraryException",
+            "summary": "Exception\u0020class\u0020for\u0020Library",
+            "url": "classes/App-Repository-LibraryException.html"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -3896,15 +3936,15 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app.html"
         },                {
-            "fqsen": "\\App\\Library",
-            "name": "Library",
-            "summary": "",
-            "url": "namespaces/app-library.html"
-        },                {
             "fqsen": "\\App\\Project",
             "name": "Project",
             "summary": "",
             "url": "namespaces/app-project.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator",
+            "name": "ProjectEvaluator",
+            "summary": "",
+            "url": "namespaces/app-projectevaluator.html"
         },                {
             "fqsen": "\\App\\ProjectGrid",
             "name": "ProjectGrid",

@@ -53,8 +53,9 @@ class OneRoundTraitTest extends TestCase
 
         $res = $this->oneRound($row, $col);
         $this->assertFalse($res);
-        $this->assertEquals([1, 3], $this->lastRound['player']);
-        $this->assertEquals([2, 1], $this->lastRound['house']);
+
+        $this->assertEquals([1, 3], $this->lastRound['player'][0]);
+        $this->assertEquals([2, 1], $this->lastRound['house'][0]);
         $this->assertEquals("8H", $this->card);
         $this->assertFalse($this->finished);
     }
@@ -98,8 +99,8 @@ class OneRoundTraitTest extends TestCase
 
         $res = $this->oneRound($row, $col);
         $this->assertTrue($res);
-        $this->assertEquals([1, 3], $this->lastRound['player']);
-        $this->assertEquals([2, 1], $this->lastRound['house']);
+        $this->assertEquals([1, 3], $this->lastRound['player'][0]);
+        $this->assertEquals([2, 1], $this->lastRound['house'][0]);
         $this->assertEquals("8H", $this->card);
         $this->assertTrue($this->finished);
     }

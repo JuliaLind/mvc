@@ -186,7 +186,7 @@ class ProjectMoveCardControllerTest extends WebTestCase
          * @var array<string,array<int>> $lastRound
          */
         $lastRound = $state['lastRound'];
-        $this->assertEquals([], $lastRound);
+        $this->assertEquals([], $lastRound['player']);
         $this->assertEquals([3, 1], $state['fromSlot']);
         /**
          * @var array<array<array<string,string>>>
@@ -235,7 +235,7 @@ class ProjectMoveCardControllerTest extends WebTestCase
          * @var array<string,array<int>> $lastRound
          */
         $lastRound = $state['lastRound'];
-        $this->assertEquals([], $lastRound);
+        $this->assertEquals([], $lastRound['player']);
         $this->assertEquals([], $state['fromSlot']);
         /**
          * @var array<array<array<string,string>>>

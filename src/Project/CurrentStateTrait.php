@@ -43,19 +43,22 @@ trait CurrentStateTrait
     private Grid $player;
     private Deck $deck;
     private bool $finished = false;
-
-    /**
-     * Contains the coordinates of the slots
-     * where the house and the player placed the
-     * cards in the last round
-     * @var array<string,array<int>> $lastRound
-     */
-    private array $lastRound = [];
     /**
      * The slot from which to move the card
      * @var array<int> $fromSlot
      */
     private array $fromSlot = [];
+
+    /**
+     * Contains the coordinates of the slots
+     * where the house and the player placed the
+     * cards in all the previous moves
+     * @var array<string,array<array<int>>> $lastRound
+     */
+    private array $lastRound = [
+        'house' => [],
+        'player' => []
+    ];
 
     /**
      * Returns data to be used in the twig templates

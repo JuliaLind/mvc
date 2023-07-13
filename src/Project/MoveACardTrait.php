@@ -17,13 +17,17 @@ trait MoveACardTrait
      * @var array<int> $fromSlot
      */
     private array $fromSlot = [];
+
     /**
      * Contains the coordinates of the slots
      * where the house and the player placed the
-     * cards in the last round
-     * @var array<string,array<int>>> $lastRound
+     * cards in all the previous moves
+     * @var array<string,array<array<int>>> $lastRound
      */
-    private array $lastRound = [];
+    private array $lastRound = [
+        'house' => [],
+        'player' => []
+    ];
     private Deck $deck;
     private RuleEvaluator $evaluator;
     private Grid $house;
@@ -52,7 +56,11 @@ trait MoveACardTrait
     public function setFromSlot(int $row, int $col): void
     {
         $this->fromSlot = [$row, $col];
-        $this->lastRound = [];
+        // $this->lastRound = [];
+        $this->lastRound = [
+            'house' => [],
+            'player' => []
+        ];
     }
 
     /**

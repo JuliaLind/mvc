@@ -14,15 +14,16 @@ class MoveACardTraitTest extends TestCase
     public function testSetFromSlot(): void
     {
         $this->lastRound = [
-            'player' => [2, 3],
-            'house' => [1, 0]
+            'player' => [[2, 3], [4, 1]],
+            'house' => [[1, 0], [0, 2]]
         ];
         $row = 2;
         $col = 4;
         $this->setFromSlot($row, $col);
 
         $this->assertEquals([$row, $col], $this->fromSlot);
-        $this->assertEquals([], $this->lastRound);
+        $this->assertEquals([], $this->lastRound['player']);
+        $this->assertEquals([], $this->lastRound['house']);
     }
 
     public function testMoveCard(): void

@@ -80,11 +80,11 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-library.html" class="">Library</a>
+                <a href="namespaces/app-project.html" class="">Project</a>
                 
             </li>
                     <li>
-                <a href="namespaces/app-project.html" class="">Project</a>
+                <a href="namespaces/app-projectevaluator.html" class="">ProjectEvaluator</a>
                 
             </li>
                     <li>
@@ -144,18 +144,18 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="classes/App-Project-CurrentStateTrait.html"><abbr title="\App\Project\CurrentStateTrait">CurrentStateTrait</abbr></a>,                             <a href="classes/App-Project-EvaluateTrait.html"><abbr title="\App\Project\EvaluateTrait">EvaluateTrait</abbr></a>,                             <a href="classes/App-Project-HousePlaceCardTrait.html"><abbr title="\App\Project\HousePlaceCardTrait">HousePlaceCardTrait</abbr></a>,                             <a href="classes/App-Project-MoveACardTrait.html"><abbr title="\App\Project\MoveACardTrait">MoveACardTrait</abbr></a>,                             <a href="classes/App-Project-OneRoundTrait.html"><abbr title="\App\Project\OneRoundTrait">OneRoundTrait</abbr></a>,                             <a href="classes/App-Project-PlayerSuggestTrait.html"><abbr title="\App\Project\PlayerSuggestTrait">PlayerSuggestTrait</abbr></a>,                             <a href="classes/App-Project-PotTrait.html"><abbr title="\App\Project\PotTrait">PotTrait</abbr></a>,                             <a href="classes/App-Project-SuggestMessageTrait.html"><abbr title="\App\Project\SuggestMessageTrait">SuggestMessageTrait</abbr></a>,                             <a href="classes/App-Project-UndoLastRoundTrait.html"><abbr title="\App\Project\UndoLastRoundTrait">UndoLastRoundTrait</abbr></a>                    </span>
+                            <a href="classes/App-Project-CurrentStateTrait.html"><abbr title="\App\Project\CurrentStateTrait">CurrentStateTrait</abbr></a>,                             <a href="classes/App-Project-EvaluateTrait.html"><abbr title="\App\Project\EvaluateTrait">EvaluateTrait</abbr></a>,                             <a href="classes/App-Project-HousePlaceCardTrait.html"><abbr title="\App\Project\HousePlaceCardTrait">HousePlaceCardTrait</abbr></a>,                             <a href="classes/App-Project-MoveACardTrait.html"><abbr title="\App\Project\MoveACardTrait">MoveACardTrait</abbr></a>,                             <a href="classes/App-Project-OneRoundTrait.html"><abbr title="\App\Project\OneRoundTrait">OneRoundTrait</abbr></a>,                             <a href="classes/App-Project-PlayerSuggestTrait.html"><abbr title="\App\Project\PlayerSuggestTrait">PlayerSuggestTrait</abbr></a>,                             <a href="classes/App-Project-PotTrait.html"><abbr title="\App\Project\PotTrait">PotTrait</abbr></a>,                             <a href="classes/App-Project-UndoLastRoundTrait.html"><abbr title="\App\Project\UndoLastRoundTrait">UndoLastRoundTrait</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/Game.php"><a href="files/src-project-game.html"><abbr title="src/Project/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">Game of Poker Squares</p>
+
 
 
 
@@ -187,7 +187,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Project-Game.html#property_evaluator">$evaluator</a>
     <span>
-                        &nbsp;: <a href="classes/App-ProjectRules-RuleEvaluator.html"><abbr title="\App\ProjectRules\RuleEvaluator">RuleEvaluator</abbr></a>            </span>
+                        &nbsp;: <a href="classes/App-ProjectEvaluator-RuleEvaluator.html"><abbr title="\App\ProjectEvaluator\RuleEvaluator">RuleEvaluator</abbr></a>            </span>
 </dt>
 <dd></dd>
 
@@ -203,7 +203,7 @@
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
+<dd>The slot from which to move the card</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Project-Game.html#property_house">$house</a>
@@ -217,7 +217,9 @@
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
+<dd>Contains the coordinates of the slots
+where the house and the player placed the
+cards in the last round</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Project-EvaluateTrait.html#property_message">$message</a>
@@ -238,49 +240,68 @@
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
+<dd>Contains the money the player has bet in the current game</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/App-Project-EvaluateTrait.html#property_results">$results</a>
+    <a href="classes/App-Project-OneRoundTrait.html#property_results">$results</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
+<dd>The results for the player and the house.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Project-PlayerSuggestTrait.html#property_suggestion">$suggestion</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
+<dd>Contains the suggestion for player on a slot
+to place the dealt card and also the data for
+all 10 hands (best possible rule with the
+dealt card and best possible rule wihtout
+the dealt card)</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Project-Game.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Counstructor</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Project-CurrentStateTrait.html#method_currentState">currentState()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Returns data to be used in the twig templates
+and the &quot;ordinary&quot; routes</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Project-CurrentStateTrait.html#method_currentStateApi">currentStateApi()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Returns data to be displayed in the API routes</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Project-EvaluateTrait.html#method_evaluate">evaluate()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Called after the last slot in the houses
+grid has been filled. Determins results
+and winner. If player wins registers
+a transaction of pot x 2 and score to
+the database</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Project-MoveACardTrait.html#method_moveCard">moveCard()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Picks up card from the previously set from-slot
+and places it in the new slot
+Generates new suggestion data for the player
+based on the updated grid</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Project-OneRoundTrait.html#method_oneRound">oneRound()</a>
@@ -290,46 +311,47 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Project-PlayerSuggestTrait.html#method_playerSuggest">playerSuggest()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Provides a suggestion to the player on which slot to
+place the card in. Also provides data for each hand on
+the best possible rule that can be achieved with the dealt card
+and best possible rule without the dealt card, to be used
+in the suggestion-cheat</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Project-MoveACardTrait.html#method_setFromSlot">setFromSlot()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Sets the slot from which to pick up the placed card</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Project-PotTrait.html#method_setPot">setPot()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Sets the pot to the amount that has been
+passed as argument.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Project-UndoLastRoundTrait.html#method_undoLastRound">undoLastRound()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/App-Project-SuggestMessageTrait.html#method_createMessage">createMessage()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd></dd>
+<dd>Undoes the last round. The latest card that is dealt to the player
+is placed back into the deck. The latest placed card in the houses grid
+is also removed and placed back into the deck. And the latest card placed by the player is lifted from the player&#039;s grid.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/App-Project-OneRoundTrait.html#method_housePlaceCard">housePlaceCard()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/App-Project-UndoLastRoundTrait.html#method_playerSuggest">playerSuggest()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd></dd>
+<dd>Picks a card from the deck and places
+into the houses grid</dd>
 
         </dl>
 
@@ -359,7 +381,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/Game.php"><a href="files/src-project-game.html"><abbr title="src/Project/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -393,7 +415,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/Game.php"><a href="files/src-project-game.html"><abbr title="src/Project/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
@@ -427,14 +449,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/Game.php"><a href="files/src-project-game.html"><abbr title="src/Project/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/App-ProjectRules-RuleEvaluator.html"><abbr title="\App\ProjectRules\RuleEvaluator">RuleEvaluator</abbr></a></span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-ProjectEvaluator-RuleEvaluator.html"><abbr title="\App\ProjectEvaluator\RuleEvaluator">RuleEvaluator</abbr></a></span>
     <span class="phpdocumentor-signature__name">$evaluator</span>
     </code>
 
@@ -461,7 +483,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -495,11 +517,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/MoveACardTrait.php"><a href="files/src-project-moveacardtrait.html"><abbr title="src/Project/MoveACardTrait.php">MoveACardTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">The slot from which to move the card</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
@@ -527,7 +550,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/Game.php"><a href="files/src-project-game.html"><abbr title="src/Project/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
@@ -561,11 +584,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Contains the coordinates of the slots
+where the house and the player placed the
+cards in the last round</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
@@ -595,7 +621,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/EvaluateTrait.php"><a href="files/src-project-evaluatetrait.html"><abbr title="src/Project/EvaluateTrait.php">EvaluateTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -629,7 +655,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/Game.php"><a href="files/src-project-game.html"><abbr title="src/Project/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -663,19 +689,19 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/PotTrait.php"><a href="files/src-project-pottrait.html"><abbr title="src/Project/PotTrait.php">PotTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Contains the money the player has bet in the current game</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$pot</span>
      = <span class="phpdocumentor-signature__default-value">0</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <section class="phpdocumentor-description"></section>
 
     
@@ -690,25 +716,29 @@
 >
     <h4 class="phpdocumentor-element__name" id="property_results">
         $results
-        <a href="classes/App-Project-EvaluateTrait.html#property_results" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Project-OneRoundTrait.html#property_results" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/EvaluateTrait.php"><a href="files/src-project-evaluatetrait.html"><abbr title="src/Project/EvaluateTrait.php">EvaluateTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">The results for the player and the house.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$results</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Contains the rule scored and the points
+for each of the 10 hands and the totals</p>
+</section>
+
     
     
 
@@ -729,16 +759,21 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/PlayerSuggestTrait.php"><a href="files/src-project-playersuggesttrait.html"><abbr title="src/Project/PlayerSuggestTrait.php">PlayerSuggestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Contains the suggestion for player on a slot
+to place the dealt card and also the data for
+all 10 hands (best possible rule with the
+dealt card and best possible rule wihtout
+the dealt card)</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$suggestion</span>
-     = <span class="phpdocumentor-signature__default-value">[&quot;message&quot; =&gt; &quot;&quot;]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
     
@@ -765,14 +800,15 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/Game.php"><a href="files/src-project-game.html"><abbr title="src/Project/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Counstructor</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/App-ProjectGrid-Grid.html"><abbr title="\App\ProjectGrid\Grid">Grid</abbr></a>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$grids</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Project-Deck.html"><abbr title="\App\Project\Deck">Deck</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new Deck()</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-ProjectRules-RuleEvaluator.html"><abbr title="\App\ProjectRules\RuleEvaluator">RuleEvaluator</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$evaluator</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new RuleEvaluator()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/App-ProjectGrid-Grid.html"><abbr title="\App\ProjectGrid\Grid">Grid</abbr></a>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$grids</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Project-Deck.html"><abbr title="\App\Project\Deck">Deck</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new Deck()</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-ProjectEvaluator-RuleEvaluator.html"><abbr title="\App\ProjectEvaluator\RuleEvaluator">RuleEvaluator</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$evaluator</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new RuleEvaluator()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -794,7 +830,7 @@
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$evaluator</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-ProjectRules-RuleEvaluator.html"><abbr title="\App\ProjectRules\RuleEvaluator">RuleEvaluator</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-ProjectEvaluator-RuleEvaluator.html"><abbr title="\App\ProjectEvaluator\RuleEvaluator">RuleEvaluator</abbr></a></span>
                  = <span class="phpdocumentor-signature__argument__default-value">new RuleEvaluator()</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -823,14 +859,49 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/CurrentStateTrait.php"><a href="files/src-project-currentstatetrait.html"><abbr title="src/Project/CurrentStateTrait.php">CurrentStateTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns data to be used in the twig templates
+and the &quot;ordinary&quot; routes</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">currentState</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_currentStateApi">
+        currentStateApi()
+        <a href="classes/App-Project-CurrentStateTrait.html#method_currentStateApi" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/CurrentStateTrait.php"><a href="files/src-project-currentstatetrait.html"><abbr title="src/Project/CurrentStateTrait.php">CurrentStateTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">91</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns data to be displayed in the API routes</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">currentStateApi</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     
     
@@ -855,17 +926,21 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/EvaluateTrait.php"><a href="files/src-project-evaluatetrait.html"><abbr title="src/Project/EvaluateTrait.php">EvaluateTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Called after the last slot in the houses
+grid has been filled. Determins results
+and winner. If player wins registers
+a transaction of pot x 2 and score to
+the database</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">evaluate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$manager</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Project-RegisterFactory.html"><abbr title="\App\Project\RegisterFactory">RegisterFactory</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$factory</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new RegisterFactory()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -915,17 +990,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/MoveACardTrait.php"><a href="files/src-project-moveacardtrait.html"><abbr title="src/Project/MoveACardTrait.php">MoveACardTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Picks up card from the previously set from-slot
+and places it in the new slot
+Generates new suggestion data for the player
+based on the updated grid</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">moveCard</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$col</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -967,7 +1045,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -1012,6 +1090,43 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_playerSuggest">
+        playerSuggest()
+        <a href="classes/App-Project-PlayerSuggestTrait.html#method_playerSuggest" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/PlayerSuggestTrait.php"><a href="files/src-project-playersuggesttrait.html"><abbr title="src/Project/PlayerSuggestTrait.php">PlayerSuggestTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">46</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Provides a suggestion to the player on which slot to
+place the card in. Also provides data for each hand on
+the best possible rule that can be achieved with the dealt card
+and best possible rule without the dealt card, to be used
+in the suggestion-cheat</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">playerSuggest</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_setFromSlot">
         setFromSlot()
         <a href="classes/App-Project-MoveACardTrait.html#method_setFromSlot" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1019,17 +1134,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/MoveACardTrait.php"><a href="files/src-project-moveacardtrait.html"><abbr title="src/Project/MoveACardTrait.php">MoveACardTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Sets the slot from which to pick up the placed card</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setFromSlot</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$col</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1071,17 +1186,18 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/PotTrait.php"><a href="files/src-project-pottrait.html"><abbr title="src/Project/PotTrait.php">PotTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Sets the pot to the amount that has been
+passed as argument.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setPot</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$amount</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1115,64 +1231,26 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Undoes the last round. The latest card that is dealt to the player
+is placed back into the deck. The latest placed card in the houses grid
+is also removed and placed back into the deck. And the latest card placed by the player is lifted from the player&#039;s grid.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">undoLastRound</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>The suggestion data for the player is re-generated based on the updated grid</p>
+</section>
 
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_createMessage">
-        createMessage()
-        <a href="classes/App-Project-SuggestMessageTrait.html#method_createMessage" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/SuggestMessageTrait.php"><a href="files/src-project-suggestmessagetrait.html"><abbr title="src/Project/SuggestMessageTrait.php">SuggestMessageTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">12</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">createMessage</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string, array<int,int|string>|int|string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$suggestion</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$suggestion</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string, array<int,int|string>|int|string&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
         
     
@@ -1190,50 +1268,18 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Picks a card from the deck and places
+into the houses grid</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
     <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">housePlaceCard</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
     
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                        -abstract                                "
->
-    <h4 class="phpdocumentor-element__name" id="method_playerSuggest">
-        playerSuggest()
-        <a href="classes/App-Project-UndoLastRoundTrait.html#method_playerSuggest" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">20</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">playerSuggest</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
     
     
 

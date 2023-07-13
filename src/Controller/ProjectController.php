@@ -33,19 +33,23 @@ class ProjectController extends AbstractController
     }
 
     #[Route("/proj/about", name: "proj-about")]
-    public function projAbout(): Response
-    {
+    public function projAbout(
+        MdParser $parser = new MdParser()
+    ): Response {
         $data = [
-            'url' => "about"
+            'url' => "about",
+            'text' => $parser->getParsedText("markdown/proj.md")
         ];
         return $this->render('proj/about.html.twig', $data);
     }
 
     #[Route("/proj/about/database", name: "proj-db")]
-    public function projDb(): Response
-    {
+    public function projDb(
+        MdParser $parser = new MdParser()
+    ): Response {
         $data = [
-            'url' => "about"
+            'url' => "",
+            'text' => $parser->getParsedText("markdown/db.md")
         ];
         return $this->render('proj/database.html.twig', $data);
     }
@@ -54,7 +58,7 @@ class ProjectController extends AbstractController
     public function projRules(): Response
     {
         $data = [
-            'url' => "rules"
+            'url' => "rules",
         ];
         return $this->render('proj/rules.html.twig', $data);
     }

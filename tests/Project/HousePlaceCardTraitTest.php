@@ -91,6 +91,6 @@ class HousePlaceCardTraitTest extends TestCase
         $this->house = $house;
         $this->deck = $deck;
         $this->housePlaceCard();
-        $this->assertEquals([$row, $col], $this->lastRound['house']);
+        $this->assertEquals([$row, $col], $this->lastRound['house'][0]);
     }
 }

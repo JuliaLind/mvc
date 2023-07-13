@@ -42,10 +42,7 @@ class ProjectApiController2 extends AbstractController
         $register = new Register($entityManager, $userId);
         $balance = $register->getBalance();
         $data = [
-            'id' => $userId,
-            'acronym' => $user->getAcronym(),
-            'email' => $user->getEmail(),
-            'hash' => $user->getHash(),
+            'user' => $user,
             'balance' => $balance,
             'transactions' => $entityManager->getRepository(Transaction::class)->findBy(
                 ['user' => $user],

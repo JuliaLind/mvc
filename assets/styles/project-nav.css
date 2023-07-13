@@ -7,18 +7,8 @@
     color: #333;
     font-family: 'Text Me One', sans-serif;
     transition: 0.5s;
-    /* background-color: rgb(0, 0, 0, 0.5); */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    /* box-shadow:
-    0 0 7px rgb(0, 0, 0, 0.5),
-    0 0 10px rgb(0, 0, 0, 0.5),
-    0 0 21px rgb(0, 0, 0, 0.5),
-    0 0 42px rgb(0, 0, 0, 0.5),
-    0 0 82px rgb(0, 0, 0, 0.5),
-    0 0 92px rgb(0, 0, 0, 0.5),
-    0 0 102px rgb(0, 0, 0, 0.5),
-    0 0 151px rgb(0, 0, 0, 0.5); */
 }
 
 .project .topnav a:hover,
@@ -27,11 +17,7 @@
     text-shadow:
     0 0 7px var(--nav-neon),
     0 0 10px var(--nav-neon),
-    /* 0 0 21px var(--nav-neon),
-    0 0 42px var(--nav-neon), */
     0 0 82px var(--nav-neon),
-    /* 0 0 92px var(--nav-neon),
-    0 0 102px var(--nav-neon), */
     0 0 151px var(--nav-neon);
 }
 
@@ -50,13 +36,6 @@
 
 
 @media screen and (max-width: 1150px) {
-    /* .project .desktop-only {
-        display: block !important;
-    } */
-    /* .project .topnav a:not(:last-child) {
-        display: block;
-    } */
-
     .topnav.responsive {
         background-color: #000;
     }

@@ -35,14 +35,10 @@ class ProjectApiController6 extends AbstractController
             $userId = $user->getId();
             $register = new Register($entityManager, $userId);
             $balance = $register->getBalance();
-            $info = [
-                'id' => $userId,
-                'acronym' => $user->getAcronym(),
-                'email' => $user->getEmail(),
-                'hash' => $user->getHash(),
+            $data[] = [
+                'user' => $user,
                 'balance' => $balance
             ];
-            $data[] = $info;
         }
         return $this->json($data);
     }

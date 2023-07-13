@@ -80,11 +80,11 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-library.html" class="">Library</a>
+                <a href="namespaces/app-project.html" class="">Project</a>
                 
             </li>
                     <li>
-                <a href="namespaces/app-project.html" class="">Project</a>
+                <a href="namespaces/app-projectevaluator.html" class="">ProjectEvaluator</a>
                 
             </li>
                     <li>
@@ -158,18 +158,21 @@
 
 <dl class="phpdocumentor-table-of-contents">
                         <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-ProjectRules-TwoPairsTrait2.html#method_check">check()</a>
+    <a href="classes/App-ProjectRules-TwoPairsTrait2.html#method_possibleWithoutCard">possibleWithoutCard()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd></dd>
+<dd>Checks if the Two Pairs rule is possible if the
+dealt card is not placed in hand. (Based on the cards
+already in hand and the cards in the deck). Note! The
+hand cannot be empty, for empty hand use the PossibleDeckOnly method</dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-ProjectRules-TwoPairsTrait2.html#method_check3">check3()</a>
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-ProjectRules-TwoPairsTrait2.html#method_countByRank">countByRank()</a>
     <span>
-                                &nbsp;: bool    </span>
+                                &nbsp;: array&lt;string|int, array&lt;int|string, int&gt;&gt;    </span>
 </dt>
-<dd></dd>
+<dd>From CountByRankTrait</dd>
 
         </dl>
 
@@ -188,27 +191,38 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_check">
-        check()
-        <a href="classes/App-ProjectRules-TwoPairsTrait2.html#method_check" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_possibleWithoutCard">
+        possibleWithoutCard()
+        <a href="classes/App-ProjectRules-TwoPairsTrait2.html#method_possibleWithoutCard" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/TwoPairsTrait2.php"><a href="files/src-projectrules-twopairstrait2.html"><abbr title="src/ProjectRules/TwoPairsTrait2.php">TwoPairsTrait2.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Checks if the Two Pairs rule is possible if the
+dealt card is not placed in hand. (Based on the cards
+already in hand and the cards in the deck). Note! The
+hand cannot be empty, for empty hand use the PossibleDeckOnly method</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">check</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">possibleWithoutCard</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$hand</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$deck</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -227,26 +241,32 @@
                     <article
         class="phpdocumentor-element
             -method
-            -public
+            -private
                         -abstract                                "
 >
-    <h4 class="phpdocumentor-element__name" id="method_check3">
-        check3()
-        <a href="classes/App-ProjectRules-TwoPairsTrait2.html#method_check3" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_countByRank">
+        countByRank()
+        <a href="classes/App-ProjectRules-TwoPairsTrait2.html#method_countByRank" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectRules/TwoPairsTrait2.php"><a href="files/src-projectrules-twopairstrait2.html"><abbr title="src/ProjectRules/TwoPairsTrait2.php">TwoPairsTrait2.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">check3</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cards</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+        <p class="phpdocumentor-summary">From CountByRankTrait</p>
 
-    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">countByRank</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cards</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;int|string, int&gt;&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>Returns an associative array
+where keys are the ranks present amongst
+the cards and the values are the count of
+each rank</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -261,7 +281,7 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;int|string, int&gt;&gt;</span>
             &mdash;
         
     

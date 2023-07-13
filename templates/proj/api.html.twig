@@ -86,7 +86,6 @@
     {% for i in 0..4 %}
         {% for j in 0..4 %}
                 <button class="slot player-slot grid-row{{i}} grid-col-{{j}}" type="submit" onClick="this.form.action='{{ path('api-place-card', {row: i, col: j}) }}';">r:{{i}}, c:{{j}}</button>
-                {# <input class="slot player-slot grid-row{{i}} grid-col-{{j}}" value="r:{{i}}, c:{{j}}" type="submit" onClick="this.form.action='{{ path('api-place-card', {row: i, col: j}) }}';"> #}
         {% endfor %}
     {% endfor %}
 </div>

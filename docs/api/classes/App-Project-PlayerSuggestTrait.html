@@ -80,11 +80,11 @@
                 
             </li>
                     <li>
-                <a href="namespaces/app-library.html" class="">Library</a>
+                <a href="namespaces/app-project.html" class="">Project</a>
                 
             </li>
                     <li>
-                <a href="namespaces/app-project.html" class="">Project</a>
+                <a href="namespaces/app-projectevaluator.html" class="">ProjectEvaluator</a>
                 
             </li>
                     <li>
@@ -137,12 +137,16 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/PlayerSuggestTrait.php"><a href="files/src-project-playersuggesttrait.html"><abbr title="src/Project/PlayerSuggestTrait.php">PlayerSuggestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">Generates suggestion for player on a slot
+to place the dealt card and also the data for
+all 10 hands (best possible rule with the
+dealt card and best possible rule wihtout
+the dealt card)</p>
+
 
 
 
@@ -162,7 +166,8 @@
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
+<dd>The latest card that has been dealt to
+the player</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Project-PlayerSuggestTrait.html#property_deck">$deck</a>
@@ -174,7 +179,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Project-PlayerSuggestTrait.html#property_evaluator">$evaluator</a>
     <span>
-                        &nbsp;: <a href="classes/App-ProjectRules-RuleEvaluator.html"><abbr title="\App\ProjectRules\RuleEvaluator">RuleEvaluator</abbr></a>            </span>
+                        &nbsp;: <a href="classes/App-ProjectEvaluator-RuleEvaluator.html"><abbr title="\App\ProjectEvaluator\RuleEvaluator">RuleEvaluator</abbr></a>            </span>
 </dt>
 <dd></dd>
 
@@ -190,21 +195,22 @@
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
+<dd>Contains the suggestion for player on a slot
+to place the dealt card and also the data for
+all 10 hands (best possible rule with the
+dealt card and best possible rule wihtout
+the dealt card)</dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/App-Project-PlayerSuggestTrait.html#method_createMessage">createMessage()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+                <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Project-PlayerSuggestTrait.html#method_playerSuggest">playerSuggest()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Provides a suggestion to the player on which slot to
+place the card in. Also provides data for each hand on
+the best possible rule that can be achieved with the dealt card
+and best possible rule without the dealt card, to be used
+in the suggestion-cheat</dd>
 
         </dl>
 
@@ -232,19 +238,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/PlayerSuggestTrait.php"><a href="files/src-project-playersuggesttrait.html"><abbr title="src/Project/PlayerSuggestTrait.php">PlayerSuggestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">The latest card that has been dealt to
+the player</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$card</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <section class="phpdocumentor-description"></section>
 
     
@@ -266,7 +273,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/PlayerSuggestTrait.php"><a href="files/src-project-playersuggesttrait.html"><abbr title="src/Project/PlayerSuggestTrait.php">PlayerSuggestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
@@ -300,14 +307,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/PlayerSuggestTrait.php"><a href="files/src-project-playersuggesttrait.html"><abbr title="src/Project/PlayerSuggestTrait.php">PlayerSuggestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/App-ProjectRules-RuleEvaluator.html"><abbr title="\App\ProjectRules\RuleEvaluator">RuleEvaluator</abbr></a></span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-ProjectEvaluator-RuleEvaluator.html"><abbr title="\App\ProjectEvaluator\RuleEvaluator">RuleEvaluator</abbr></a></span>
     <span class="phpdocumentor-signature__name">$evaluator</span>
     </code>
 
@@ -334,7 +341,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/PlayerSuggestTrait.php"><a href="files/src-project-playersuggesttrait.html"><abbr title="src/Project/PlayerSuggestTrait.php">PlayerSuggestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
@@ -368,16 +375,21 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/PlayerSuggestTrait.php"><a href="files/src-project-playersuggesttrait.html"><abbr title="src/Project/PlayerSuggestTrait.php">PlayerSuggestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Contains the suggestion for player on a slot
+to place the dealt card and also the data for
+all 10 hands (best possible rule with the
+dealt card and best possible rule wihtout
+the dealt card)</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$suggestion</span>
-     = <span class="phpdocumentor-signature__default-value">[&quot;message&quot; =&gt; &quot;&quot;]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
     
@@ -394,49 +406,7 @@
                     <article
         class="phpdocumentor-element
             -method
-            -private
-                        -abstract                                "
->
-    <h4 class="phpdocumentor-element__name" id="method_createMessage">
-        createMessage()
-        <a href="classes/App-Project-PlayerSuggestTrait.html#method_createMessage" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/PlayerSuggestTrait.php"><a href="files/src-project-playersuggesttrait.html"><abbr title="src/Project/PlayerSuggestTrait.php">PlayerSuggestTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">25</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">createMessage</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string, array<int,int|string>|int|string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$suggestion</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$suggestion</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string, array<int,int|string>|int|string&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
+            -public
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_playerSuggest">
@@ -446,17 +416,21 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/PlayerSuggestTrait.php"><a href="files/src-project-playersuggesttrait.html"><abbr title="src/Project/PlayerSuggestTrait.php">PlayerSuggestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Provides a suggestion to the player on which slot to
+place the card in. Also provides data for each hand on
+the best possible rule that can be achieved with the dealt card
+and best possible rule without the dealt card, to be used
+in the suggestion-cheat</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">playerSuggest</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
