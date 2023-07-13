@@ -193,10 +193,6 @@
     margin-bottom: 3rem;
 }
 
-/* .outer-grid-container.suggestion {
-    grid-template-columns: min-content auto auto;
-} */
-
 .outer-grid-container .descr,
 .outer-grid-container h2 {
     font-size: 1.25rem;
@@ -289,8 +285,6 @@
 
 @keyframes blinking3 {
     50% {
-      /* outline-color: var(--form-neon);
-      color: var(--form-neon); */
       opacity: 0.3;
     }
 }
@@ -304,10 +298,8 @@
 }
 
 .slot.the-card {
-    /* outline: 1px solid #333; */
     outline: 1px solid var(--form-neon);
     box-shadow:
-    /* 0 0 7px var(--form-neon), */
     0 0 3px var(--form-neon),
     0 0 7px var(--form-neon),
     0 0 20px var(--form-neon);
@@ -371,8 +363,6 @@
 
     .game-grid .slot {
         height: 14vh;
-        /* width: 18vw; */
-        /* background-color: #000; */
     }
 }
 

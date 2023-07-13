@@ -252,7 +252,7 @@ class ProjectAuthControllerTest extends WebTestCase
         $this->assertNull($userId);
     }
 
-    public function testLogiout(): void
+    public function testLogout(): void
     {
 
         $client = static::createClient();

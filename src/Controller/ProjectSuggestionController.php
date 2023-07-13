@@ -57,6 +57,7 @@ class ProjectSuggestionController extends AbstractController
     #[Route("/proj/show-suggestion", name: "show-suggestion")]
     public function projShowSuggest(
         SessionInterface $session,
+        EntityManagerInterface $entityManager,
     ): Response {
         if(!$session->get("show-suggestion")) {
             return $this->redirectToRoute('proj-play');
@@ -67,9 +68,15 @@ class ProjectSuggestionController extends AbstractController
          */
         $game = $session->get("game");
         $state = $game->currentState();
+        /**
+         * @var int $userId
+         */
+        $userId = $session->get("user");
+        $register = new Register($entityManager, $userId);
         $data = [
             ...$state,
             'url' => "",
+            'balance' => $register->getBalance(),
         ];
         return $this->render('proj/game-display-suggest.html.twig', $data);
     }

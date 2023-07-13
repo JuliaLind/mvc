@@ -74,7 +74,7 @@ class ProjectPlayControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
         $response = strval($client->getResponse()->getContent());
         $this->assertStringContainsString('won', $response);
-        $this->assertStringContainsString('final', $response);
+        $this->assertStringContainsString('Final score', $response);
     }
 
     public function testProjPlayOk(): void
@@ -106,6 +106,6 @@ class ProjectPlayControllerTest extends WebTestCase
 
         $this->assertResponseIsSuccessful();
         $response = strval($client->getResponse()->getContent());
-        $this->assertStringContainsString('Your balance: 1340 coins', $response);
+        $this->assertStringContainsString('Balance: 1340 coins', $response);
     }
 }

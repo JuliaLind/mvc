@@ -28,11 +28,13 @@
     color: var(--neon-red);
     background-color: rgb(0,0,0,0);
     border: unset;
+    text-align: center;
 }
 
 .project .flash-notice {
     color: var(--neon-green);
     background-color: rgb(0,0,0,0);
     border: unset;
+    text-align: center;
 }
 

@@ -109,7 +109,7 @@ class ProjectCoinsControllerTest extends WebTestCase
         $client->request('GET', '/proj/select-amount');
         $this->assertRouteSame('select-amount');
         $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('h1', 'Select amount to bet');
+        $this->assertSelectorTextContains('h1', 'Place your bet');
         $response = strval($client->getResponse()->getContent());
         $this->assertStringContainsString('max="1440"', $response);
         $this->assertStringContainsString('min="10"', $response);

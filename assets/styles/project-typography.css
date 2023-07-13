@@ -1,0 +1,114 @@
+
+.project footer p {
+    font-size: 0.8em;
+}
+
+
+.project h1::before {
+    all: unset;
+}
+
+.project h1,
+.project h2,
+.project h3,
+.project h4,
+.project a,
+.project p,
+button,
+input {
+    font-size: unset;
+}
+
+main.proj h1 {
+    font-family: 'Text Me One', sans-serif;
+    color: var(--form-neon2);
+    text-shadow:
+    0 0 7px var(--form-neon2),
+    0 0 10px var(--form-neon2),
+    0 0 82px var(--form-neon2),
+    0 0 151px var(--form-neon2);
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+}
+
+main.proj h2 {
+    color: var(--form-neon2);
+    font-family: 'Text Me One', sans-serif;
+    font-size: 1.4rem;
+}
+
+.project .title {
+    font-family: 'Bungee Outline', cursive;
+    text-align: center;
+    color: var(--form-neon);
+    font-size: 3.4em;
+
+    margin-bottom: 1rem;
+    text-shadow:
+    0 0 7px var(--form-neon),
+    0 0 10px var(--form-neon),
+    0 0 21px var(--form-neon),
+    0 0 42px var(--form-neon),
+    0 0 82px var(--form-neon),
+    0 0 92px var(--form-neon),
+    0 0 102px var(--form-neon),
+    0 0 151px var(--form-neon);
+}
+
+.rules-text {
+    width: 600px;
+    max-width: 100%;
+    justify-self: flex-start;
+    font-size: 1.2rem;
+}
+
+.register-link.rules-text p a {
+    color: var(--form-neon);
+}
+
+
+@media (max-width: 800px) {
+    .project .title {
+        font-size: 1.6rem;
+    }
+
+    .rules-text,
+    .project li {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 801px) {
+    .project h1.title {
+        margin: 3.5rem auto;
+    }
+
+    h1.profile {
+        margin: 3.5rem auto;
+    }
+}
+
+@media (min-width: 801px) {
+    .project h1.title {
+        margin: 3.5rem auto;
+    }
+
+    h1.profile {
+        margin: 3.5rem auto;
+    }
+
+    .project .return-arr .material-symbols-outlined {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1600px) {
+    .project h1.title {
+        font-size: 3.5vw;
+        margin-top: 8vh;
+    }
+}

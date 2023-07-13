@@ -645,6 +645,13 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectOneRoundController"/>
       </call>
     </service>
+    <service id="App\Controller\ProjectPickCardController" class="App\Controller\ProjectPickCardController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectPickCardController"/>
+      </call>
+    </service>
     <service id="App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -6539,6 +6546,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectOneRoundController" class="App\Controller\ProjectOneRoundController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectOneRoundController" class="App\Controller\ProjectOneRoundController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectOneRoundController" class="App\Controller\ProjectOneRoundController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectPickCardController" class="App\Controller\ProjectPickCardController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectPickCardController" class="App\Controller\ProjectPickCardController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectPickCardController" class="App\Controller\ProjectPickCardController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7016,7 +7026,7 @@
         <argument key="repo" type="service_closure" id="App\Repository\TransactionRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.OfUamAc" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gJ13tj4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CardController2::draw" type="service_closure" id=".service_locator.RnGvXe2"/>
@@ -7060,7 +7070,8 @@
         <argument key="App\Controller\ProjectController::projDb" type="service_closure" id=".service_locator.IeuV79I"/>
         <argument key="App\Controller\ProjectInitController::projInit" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectLandingController::projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectMoveCardController::setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectMoveCardController::moveCard" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectMoveCardController::placeCard" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectOneRoundController::projRound" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectPlayController::projPlay" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectResetController::resetProj" type="service_closure" id=".service_locator.NQbvE_q"/>
@@ -7069,6 +7080,7 @@
         <argument key="App\Controller\ProjectShopController::projShop" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectShopController::projTrans" type="service_closure" id=".service_locator.OsH1muE"/>
         <argument key="App\Controller\ProjectSuggestionController::projPurchaseSuggest" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectSuggestionController::projShowSuggest" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectUndoController::undo" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -7115,7 +7127,8 @@
         <argument key="App\Controller\ProjectController:projDb" type="service_closure" id=".service_locator.IeuV79I"/>
         <argument key="App\Controller\ProjectInitController:projInit" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectLandingController:projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectMoveCardController:setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectMoveCardController:moveCard" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectMoveCardController:placeCard" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectOneRoundController:projRound" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectPlayController:projPlay" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectResetController:resetProj" type="service_closure" id=".service_locator.NQbvE_q"/>
@@ -7124,6 +7137,7 @@
         <argument key="App\Controller\ProjectShopController:projShop" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectShopController:projTrans" type="service_closure" id=".service_locator.OsH1muE"/>
         <argument key="App\Controller\ProjectSuggestionController:projPurchaseSuggest" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ProjectSuggestionController:projShowSuggest" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectUndoController:undo" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -7897,6 +7911,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\ProjectPickCardController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectPickCardController"/>
+      <argument>App\Controller\ProjectPickCardController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
     <service id=".service_locator.jIxfAsi.App\Controller\ProjectPlayController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ProjectPlayController"/>
       <argument>App\Controller\ProjectPlayController</argument>
@@ -8199,12 +8219,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.OfUamAc"/>
+      <argument type="service" id=".service_locator.gJ13tj4"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.OfUamAc"/>
+      <argument type="service" id=".service_locator.gJ13tj4"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9149,7 +9169,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.OfUamAc"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.gJ13tj4"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9173,7 +9193,7 @@
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.ewaBO.S" alias=".service_locator.XXU_NF2"/>
     <service id=".service_locator.hjZjVN0" alias=".service_locator.OsH1muE"/>
-    <service id=".service_locator.VIXJ3o7" alias=".service_locator.OfUamAc"/>
+    <service id=".service_locator.1Q_N_01" alias=".service_locator.gJ13tj4"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>

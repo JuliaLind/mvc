@@ -1,12 +1,14 @@
 
-
-{% if placedCards >= 1 %}
+{% if placedCards >= 1 and url != "move-card" %}
 <form method="post" action="{{ path('pick-card', {balance: balance}) }}">
 <button type="submit" class="btn active-btn">
 Move a card | 50 coins
-{# <span class="material-symbols-outlined">
-paid
-</span> #}
+</button>
+</form>
+{% else %}
+<form method="get" action="{{ path('proj-play') }}">
+<button disabled="disabled" type="submit" class="btn active-btn">
+Move a card | 50 coins
 </button>
 </form>
 {% endif %}

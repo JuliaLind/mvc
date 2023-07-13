@@ -9,7 +9,9 @@
 
 {{ include('proj/incl/return-arr.html.twig') }}
 
-<h1 class="title">Current balance: {{ balance }}</h1>
+{# <h1 class="title">Current balance: {{ balance }}</h1> #}
+
+<h1 class="title">Shop</h1>
 {{ include('flash.html.twig') }}
 <div class="shop">
 <form class="coins" action="{{ path('purchase', {coins: 100}) }}" method="POST">
@@ -34,5 +36,7 @@
 </form>
 
 </div>
+
+<div class="balance-fixed">Current balance: {{ balance }} coins</div>
 
 {% endblock %}

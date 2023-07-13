@@ -1,7 +1,6 @@
-När du registrerar dig får du 1000 coins i bonus. Dessa pengar kan användas till att satsa (du måste satsa minst 10 coins i varje spelomgång) eller till att köpa olika "cheats".
+När du registrerar dig får du 1000 coins i bonus. Dessa pengar kan användas till att satsa (du måste satsa minst 10 coins i varje spelomgång) eller till att köpa olika "cheats".  
 
 Följande cheats finns:
-
 
 ## Show suggestion:
 
@@ -14,8 +13,11 @@ Användaren kan lyfta vilket som helst av de redan placerade korten och flytta t
 
 Ångrar sista placeringen, kan upprepas hela vägen bakåt till tom grid förutsatt att man inte använt "move a card"-cheat. Omdu flyttar på ett kort med "move a card" cheaten går det endast att backa de drag som görs efter flytten.
 
-
-
 Om du vinner över huset så får du 2 x coins som du satsat i omgången, och ina poäng registreras i databasen. Det finns en leaderboard i menyn som är tillgänlig även för icke-inloggade och där man kan se top-10 högsta poäng för spelare som vunnit över huset. Om huset vinner registreras inget i databasen. Som inloggad användare khar du också tillgång till att se dina egna top 10 scores genom att klicka på en knapp tillgänglig via profilsidan. 
 
 Om du får slut på coins kan du "köpa" mer i butiken (Shop). Samtliga transaktioner - köp av coins (plus), köp av cheats (minus), satsning (minus) och vinst (plus) - registreras i en tabell i databasen. Du kan se samtliga historiska transaktioner genom att klicka på en knapp som är tillgänglig via profilsidan. Du kan inte hamna på minus eftersom saldot kontrolleras innan varje dragning, om du inte har tillräckligt med coins för exmepelvis en spelomgång kommer du att bli redirectad till Shopen. 
+
+Om du inte vill registrera dig på nytt så finns det två befintliga användare som du kan använda:  
+
+1. Användarnamn: doe@bth.se Lösnord: doe
+2. Användarnamn: jane@bth.se Lösenord: jane

@@ -1,0 +1,89 @@
+.data {
+    width: 90%;
+    display: block;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Text Me One', sans-serif;
+    color: var(--form-neon2);
+    text-transform: uppercase;
+}
+
+.name {
+    font-weight: bold;
+    color: var(--form-neon);
+}
+
+/* .data .score {
+    align-self: center;
+}
+
+.data .name {
+    float: left;
+}
+
+.data .balance {
+    float: right;
+} */
+
+.balance-fixed {
+    color: var(--neon-green);
+    position: fixed;
+    font-size: 1.4rem;
+    top: 2.8vh;
+    left: 2.8rem;
+    font-family: 'Text Me One', sans-serif;
+    font-weight: bold;
+}
+
+/* .project .btn {
+    font-family: 'Text Me One', sans-serif;
+    text-transform: uppercase;
+} */
+
+.balance {
+    font-family: 'Text Me One', sans-serif;
+    text-transform: uppercase;
+}
+
+@media (min-width: 1100px) {
+    .coins {
+        height: 300px;
+    }
+
+    .coins p {
+        margin-top: 1.8rem;
+        margin-bottom: 1.8rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 2000px) {
+    .data {
+        font-size: 1.4rem;
+        width: 90%;
+    }
+
+    .balance-fixed {
+        bottom: 10rem;
+        left: 10rem;
+        top: unset;
+        font-size: 1.8rem;
+    }
+
+    .coins {
+        height: 400px;
+    }
+
+    /* .coins {
+        font-size: 1.4rem;
+        height: 400px;
+    }
+
+    .coins p {
+        margin-top: 1.8rem;
+        margin-bottom: 1.8rem;
+    } */
+
+}

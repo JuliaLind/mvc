@@ -10,17 +10,28 @@
 <h1 class="title">Your top 10 scores</h1>
 <table class="points trans">
     <tr>
+        <th>Pos</th>
         <th>Date</th>
         <th>Points</th>
     </tr>
-{% for score in scores %}
+{% for i, score in scores %}
     <tr>
+    <td>{{ i + 1}}</td>
         <td>
             {{ score.registered|date("Y-m-d") }}
             </td>
         <td>{{ score.points }}</td>
     </tr>
 {% endfor %}
+{% if scores|length < 10 %}
+    {% for row in (scores|length + 1)..10 %}
+        <tr>
+        <td>{{ row }}</td>
+            <td></td>
+            <td></td>
+        </tr>
+    {% endfor %}
+{% endif %}
 </table>
 
 {% endblock %}

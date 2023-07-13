@@ -25,6 +25,16 @@
         <td>{{ score.points }}</td>
     </tr>
 {% endfor %}
+{% if scores|length < 10 %}
+    {% for row in (scores|length + 1)..10 %}
+        <tr>
+        <td>{{ row }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    {% endfor %}
+{% endif %}
 </table>
 
 {% endblock %}

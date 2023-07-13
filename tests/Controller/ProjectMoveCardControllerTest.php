@@ -63,7 +63,7 @@ class ProjectMoveCardControllerTest extends WebTestCase
         $client->request('POST', '/proj/one-round/2/1');
         $client->request('POST', "/proj/place-card");
         $this->assertRouteSame('place-card');
-        $this->assertResponseRedirects('/proj');
+        $this->assertResponseRedirects('/proj/play');
     }
 
     public function testPlaceCardNotOk3(): void
@@ -96,7 +96,7 @@ class ProjectMoveCardControllerTest extends WebTestCase
         $client->request('POST', '/proj/one-round/2/2');
         $client->request('POST', "/proj/place-card");
         $this->assertRouteSame('place-card');
-        $this->assertResponseRedirects('/proj');
+        $this->assertResponseRedirects('/proj/play');
     }
 
     public function testPlaceCardOk(): void
@@ -163,7 +163,7 @@ class ProjectMoveCardControllerTest extends WebTestCase
         $client->request('POST', "/proj/set-fromslot/3/1");
         $client->request('POST', "/proj/move-card/0/2");
         $this->assertRouteSame('move-card');
-        $this->assertResponseRedirects('/proj/place-card');
+        $this->assertResponseRedirects('/proj/play');
         /**
          * @var Game $game
          */

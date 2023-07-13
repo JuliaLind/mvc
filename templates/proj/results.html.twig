@@ -1,4 +1,4 @@
-{% extends 'base-project.html.twig' %}
+{% extends 'base-project2.html.twig' %}
 
 {% block title %}Casino{% endblock %}
 
@@ -6,7 +6,10 @@
 
 
 <div class="outer-grid-container">
-<h2 class="grid-col-0 grid-row-0">House, final score: {{results['house']['total']}}</h2>
+<div class="data house-data grid-col-0 grid-row-0">
+<span class="name">House</span>
+<span class="score">Final score: {{results['house']['total']}}</span>
+</div>
 
 {{ include('proj/incl/house-grid.html.twig') }}
 <div class="center-grid results">
@@ -17,7 +20,11 @@
 </div>
 </div>
 
-<h2 class="grid-col-2 grid-row-0">You, final score: {{results['player']['total']}}</h2>
+<div class="data player-data grid-col-2 grid-row-0">
+<span class="name">You</span>
+<span class="balance">Balance: {{balance}} coins</span>
+<span class="score">Final score: {{results['player']['total']}}</span>
+</div>
 <div class="game-grid results player-grid">
 {% for k in 0..4 %}
     {% for l in 0..4 %}

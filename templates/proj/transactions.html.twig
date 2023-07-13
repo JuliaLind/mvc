@@ -7,7 +7,7 @@
 {{ include('proj/incl/bg-coins.html.twig') }}
 {{ include('proj/incl/return-arr.html.twig') }}
 
-<h1 class="title">Current balance: {{ balance }}</h1>
+<h1 class="title">Statement</h1>
 <table class="points trans">
     <tr>
         <th>Date</th>
@@ -23,6 +23,15 @@
         <td>{{ transaction.amount }}</td>
     </tr>
 {% endfor %}
+{% if transactions|length < 10 %}
+    {% for i in (transactions|length)..10 %}
+        <tr>
+        <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    {% endfor %}
+{% endif %}
 </table>
-
+<div class="balance-fixed">Current balance: {{ balance }} coins</div>
 {% endblock %}

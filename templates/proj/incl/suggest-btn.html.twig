@@ -4,5 +4,11 @@
 Suggestion | 30 coins
 </button>
 </form>
+{% else %}
+<form method="get" action="{{ path('proj-play') }}">
+<button disabled="disabled" type="submit" class="btn active-btn">
+Suggestion | 30 coins
+</button>
+</form>
 {% endif %}
 

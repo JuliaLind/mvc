@@ -1,6 +1,5 @@
 .project {
     display: flex;
-    /* justify-content: center; */
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
@@ -8,14 +7,10 @@
     width: 100vw;
     min-height: 100vh;
     font-size: 100%;
-    /* font-family: 'Text Me One', sans-serif; */
     font-family: 'Poppins', sans-serif;
     padding-top: 4.5rem;
 }
 
-.project footer p {
-    font-size: 0.8em;
-}
 
 .project footer {
     justify-content: flex-end;
@@ -24,26 +19,10 @@
     color: var(--form-neon)
 }
 
-.project h1::before {
-    all: unset;
-}
-
-.project h1,
-.project h2,
-.project h3,
-.project h4,
-.project a,
-.project p,
-button,
-input {
-    font-size: unset;
-}
-
 
 
 main.proj {
     background-color: #000;
-    /* color: #606368; */
     color: var(--purple-softer);
     width: 64em;
     max-width: 100%;
@@ -53,26 +32,12 @@ main.proj {
     border-left: 3px solid #606368;
 }
 
-main.proj h1 {
-    font-family: 'Text Me One', sans-serif;
-    color: var(--form-neon2);
-    text-shadow:
-    0 0 7px var(--form-neon2),
-    0 0 10px var(--form-neon2),
-    0 0 82px var(--form-neon2),
-    0 0 151px var(--form-neon2);
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 2.4rem;
-    text-transform: uppercase;
-    text-align: center;
-    display: block;
-}
 
-main.proj h2 {
-    color: var(--form-neon2);
-    font-family: 'Text Me One', sans-serif;
-    font-size: 1.4rem;
+
+
+main.proj form {
+    margin: 1.4rem auto;
+    text-align: center;
 }
 
 .proj-link {

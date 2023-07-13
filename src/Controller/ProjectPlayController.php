@@ -40,18 +40,16 @@ class ProjectPlayController extends AbstractController
             ...$state,
             'url' => "",
         ];
-
-        if ($state['finished'] === true) {
-            // $this->addFlash('notice', $data['message']);
-            return $this->render('proj/results.html.twig', $data);
-        }
-
         /**
          * @var int $userId
          */
         $userId = $session->get("user");
         $register = new Register($entityManager, $userId);
         $data['balance'] = $register->getBalance();
+        if ($state['finished'] === true) {
+            // $this->addFlash('notice', $data['message']);
+            return $this->render('proj/results.html.twig', $data);
+        }
         return $this->render('proj/game.html.twig', $data);
     }
 }

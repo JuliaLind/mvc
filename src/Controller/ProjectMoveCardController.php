@@ -50,7 +50,7 @@ class ProjectMoveCardController extends AbstractController
         $game->moveCard($row, $col);
         $session->set("game", $game);
         // return $this->redirectToRoute('proj-play');
-        return $this->redirectToRoute('place-card');
+        return $this->redirectToRoute('proj-play');
     }
 
     /**
@@ -60,7 +60,8 @@ class ProjectMoveCardController extends AbstractController
      */
     #[Route('/proj/place-card', name: "place-card")]
     public function placeCard(
-        SessionInterface $session
+        SessionInterface $session,
+        EntityManagerInterface $entityManager,
     ): Response {
         /**
          * @var Game $game
@@ -71,11 +72,17 @@ class ProjectMoveCardController extends AbstractController
         }
         $state = $game->currentState();
         if ($state['fromSlot'] === []) {
-            return $this->redirectToRoute('proj');
+            return $this->redirectToRoute('proj-play');
         }
+        /**
+         * @var int $userId
+         */
+        $userId = $session->get("user");
+        $register = new Register($entityManager, $userId);
         $data = [
             ...$state,
-            'url' => ""
+            'url' => "move-card",
+            'balance' => $register->getBalance(),
         ];
 
         return $this->render('proj/place-card.html.twig', $data);

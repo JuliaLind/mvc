@@ -1,9 +1,15 @@
 
 
-{% if lastRound['player'] != [] %}
+{% if lastRound['player'] != [] and url != "move-card" %}
 
 <form method="post" action="{{ path('undo') }}">
 <button type="submit" class="btn active-btn">
+Undo last move | 10 coins
+</button>
+</form>
+{% else %}
+<form method="get" action="{{ path('proj-play') }}">
+<button disabled="disabled" type="submit" class="btn active-btn">
 Undo last move | 10 coins
 </button>
 </form>

@@ -36,9 +36,7 @@ class ProjectPickCardController extends AbstractController
          */
         $game = $session->get("game");
         $game->setFromSlot($row, $col);
-        // $session->set("move-card", true);
         $session->set("game", $game);
-        // return $this->redirectToRoute('proj-play');
         return $this->redirectToRoute('place-card');
     }
 
@@ -66,7 +64,8 @@ class ProjectPickCardController extends AbstractController
         $state = $game->currentState();
         $data = [
             ...$state,
-            'url' => ""
+            'balance' => $balance,
+            'url' => "move-card",
         ];
 
         return $this->render('proj/pick-card.html.twig', $data);

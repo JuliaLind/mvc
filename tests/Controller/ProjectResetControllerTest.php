@@ -40,8 +40,8 @@ class ProjectResetControllerTest extends WebTestCase
 
         $client->request('POST', '/proj/reset');
         $this->assertRouteSame('reset_project');
-        $this->assertResponseRedirects('/proj/about');
-        $expectedFlashbag = ['notice' => ["Databastabellena relaterade till projektet är återställda"]];
+        $this->assertResponseRedirects('/proj/about/database');
+        $expectedFlashbag = ['notice' => ["Databastabellerna relaterade till projektet är återställda"]];
 
         /**
          * @var FlashBagInterface $bag

@@ -12,12 +12,13 @@
 <div class="flex-container-row profile">
 <div class="half-width-col">
 {{ include('proj/incl/rules-link.html.twig') }}
-
+<div class="profile-btns">
 {% if finished == false %}
     {{ include('proj/incl/continue-btn.html.twig') }}
 {% endif %}
 
 {{ include('proj/incl/new-game-btn.html.twig') }}
+</div>
 </div>
 
 <div class="btns-grid">

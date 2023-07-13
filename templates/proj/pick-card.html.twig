@@ -1,20 +1,22 @@
-{% extends 'base-project.html.twig' %}
+{% extends 'base-project2.html.twig' %}
 
 {% block title %}Casino{% endblock %}
 
 {% block body %}
 
 <div class="outer-grid-container">
-<h2 class="grid-col-0 grid-row-0">House, prel score: {{results['house']['total']}}</h2>
+{{ include('proj/incl/house-data.html.twig') }}
 {{ include('proj/incl/house-grid.html.twig') }}
 
 <div class="center-grid">
 
 <span class="instruction">Click on the card you want to move</span>
-{{ include('proj/incl/return-to-game-arr.html.twig') }}
+<div class="btn-container">
+{{ include('proj/incl/btns.html.twig') }}
+</div>
 
 </div>
-<h2 class="grid-col-2 grid-row-0">You, prel score: {{results['player']['total']}}</h2>
+{{ include('proj/incl/player-data.html.twig') }}
 <form class="game-grid results player-grid" id="grid-form" method="post" action="">
     {% for k in 0..4 %}
         {% for l in 0..4 %}
