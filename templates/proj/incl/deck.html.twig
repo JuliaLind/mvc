@@ -1,0 +1,10 @@
+<div class="deck-display">
+<span class="descr">These are {{ deckCardCount }} cards left in the deck, of which you will be dealt the following {{ playerPossibleCards|length }} cards:</span>
+<div class="deck-container">
+
+{% for card in playerPossibleCards %}
+<div class="slot"><img src="{{ asset('img/project/cards/' ~ card ~ '.svg') }}" alt="{{ card }}"></div>
+{% endfor %}
+
+</div>
+</div>

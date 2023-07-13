@@ -65,8 +65,6 @@ return [
     'move-card' => [['row', 'col'], ['_controller' => 'App\\Controller\\ProjectMoveCardController::moveCard'], ['row' => '\\d+', 'col' => '\\d+'], [['variable', '/', '\\d+', 'col', true], ['variable', '/', '\\d+', 'row', true], ['text', '/proj/move-card']], [], [], []],
     'pick-card' => [['balance'], ['_controller' => 'App\\Controller\\ProjectMoveCardController::pickCard'], ['balance' => '\\d+'], [['variable', '/', '\\d+', 'balance', true], ['text', '/proj/pick-card']], [], [], []],
     'proj-round' => [['row', 'col'], ['_controller' => 'App\\Controller\\ProjectOneRoundController::projRound'], ['row' => '\\d+', 'col' => '\\d+'], [['variable', '/', '\\d+', 'col', true], ['variable', '/', '\\d+', 'row', true], ['text', '/proj/one-round']], [], [], []],
-    'purchase-peek' => [[], ['_controller' => 'App\\Controller\\ProjectPeekController::purchasePeekCheat'], [], [['text', '/proj/purchase-peek-cheat']], [], [], []],
-    'deck-peek' => [[], ['_controller' => 'App\\Controller\\ProjectPeekController::deckPeek'], [], [['text', '/proj/deck-peek']], [], [], []],
     'proj-play' => [[], ['_controller' => 'App\\Controller\\ProjectPlayController::projPlay'], [], [['text', '/proj/play']], [], [], []],
     'reset_project' => [[], ['_controller' => 'App\\Controller\\ProjectResetController::resetProj'], [], [['text', '/proj/reset']], [], [], []],
     'proj-scores-single' => [[], ['_controller' => 'App\\Controller\\ProjectScoresController::projScoresSingle'], [], [['text', '/proj/scores-single']], [], [], []],

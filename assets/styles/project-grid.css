@@ -197,6 +197,11 @@
     grid-template-columns: min-content auto auto;
 } */
 
+.outer-grid-container .descr,
+.outer-grid-container h2 {
+    font-size: 1.25rem;
+}
+
 .outer-grid-container .game-grid {
     background-color: #333;
     width: auto;

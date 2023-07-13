@@ -619,13 +619,6 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectOneRoundController"/>
       </call>
     </service>
-    <service id="App\Controller\ProjectPeekController" class="App\Controller\ProjectPeekController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ProjectPeekController"/>
-      </call>
-    </service>
     <service id="App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -2620,7 +2613,7 @@
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" type="service_closure" id="webpack_encore.entrypoint_lookup_collection" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader.filesystem" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
-        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.ExS.dtA" on-invalid="ignore_uninitialized"/>
+        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.OfUamAc" on-invalid="ignore_uninitialized"/>
         <argument key="doctrine.id_generator_locator" type="service_closure" id=".service_locator.KLVvNIq" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
         <argument key="Psr\Log\LoggerInterface $requestLogger" type="service_closure" id="monolog.logger.request" on-invalid="ignore_uninitialized"/>
@@ -7116,9 +7109,6 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectOneRoundController" class="App\Controller\ProjectOneRoundController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectOneRoundController" class="App\Controller\ProjectOneRoundController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectOneRoundController" class="App\Controller\ProjectOneRoundController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectPeekController" class="App\Controller\ProjectPeekController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectPeekController" class="App\Controller\ProjectPeekController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ProjectPeekController" class="App\Controller\ProjectPeekController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectPlayController" class="App\Controller\ProjectPlayController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7292,7 +7282,7 @@
         <argument key="repo" type="service_closure" id="App\Repository\TransactionRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.ExS.dtA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.OfUamAc" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CardController2::draw" type="service_closure" id=".service_locator.RnGvXe2"/>
@@ -7338,7 +7328,6 @@
         <argument key="App\Controller\ProjectLandingController::projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectMoveCardController::setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectOneRoundController::projRound" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectPeekController::purchasePeekCheat" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectPlayController::projPlay" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectResetController::resetProj" type="service_closure" id=".service_locator.NQbvE_q"/>
         <argument key="App\Controller\ProjectScoresController::projLeaderboard" type="service_closure" id=".service_locator.j7c.8f."/>
@@ -7394,7 +7383,6 @@
         <argument key="App\Controller\ProjectLandingController:projLanding" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectMoveCardController:setFromSlot" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectOneRoundController:projRound" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ProjectPeekController:purchasePeekCheat" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectPlayController:projPlay" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ProjectResetController:resetProj" type="service_closure" id=".service_locator.NQbvE_q"/>
         <argument key="App\Controller\ProjectScoresController:projLeaderboard" type="service_closure" id=".service_locator.j7c.8f."/>
@@ -8045,12 +8033,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
-    <service id=".service_locator.jIxfAsi.App\Controller\ProjectPeekController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ProjectPeekController"/>
-      <argument>App\Controller\ProjectPeekController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.jIxfAsi" method="withContext"/>
-    </service>
     <service id=".service_locator.jIxfAsi.App\Controller\ProjectPlayController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ProjectPlayController"/>
       <argument>App\Controller\ProjectPlayController</argument>
@@ -8270,12 +8252,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.ExS.dtA"/>
+      <argument type="service" id=".service_locator.OfUamAc"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.ExS.dtA"/>
+      <argument type="service" id=".service_locator.OfUamAc"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8992,7 +8974,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.ExS.dtA"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.OfUamAc"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9015,7 +8997,7 @@
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.ewaBO.S" alias=".service_locator.XXU_NF2"/>
     <service id=".service_locator.hjZjVN0" alias=".service_locator.OsH1muE"/>
-    <service id=".service_locator.B8WwB5v" alias=".service_locator.ExS.dtA"/>
+    <service id=".service_locator.VIXJ3o7" alias=".service_locator.OfUamAc"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.fTeS4zl" alias=".service_locator.iwVv_YN"/>
