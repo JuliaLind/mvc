@@ -46,16 +46,6 @@ class ProjectPlayController extends AbstractController
             return $this->render('proj/results.html.twig', $data);
         }
 
-        // /**
-        //  * When the move-card cheat is purchased, redirects to route
-        //  * where user clicks on the card they want to move
-        //  */
-        // // if (count($state['fromSlot']) > 0) {
-        // if ($session->get("move-card") === true) {
-        //     $session->set("move-card", false);
-        //     return $this->render('proj/place-card.html.twig', $data);
-        // }
-
         /**
          * @var int $userId
          */

@@ -56,10 +56,6 @@ trait MoveACardTrait
     public function setFromSlot(int $row, int $col): void
     {
         $this->fromSlot = [$row, $col];
-        // $this->lastRound = [
-        //     'house' => [],
-        //     'player' => []
-        // ];
     }
 
     /**

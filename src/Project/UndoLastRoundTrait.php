@@ -62,9 +62,6 @@ trait UndoLastRoundTrait
          */
         $playerSlot = array_pop($this->lastRound['player']);
 
-
-
-
         $houseCard = $this->house->removeCard($houseSlot[0], $houseSlot[1]);
         $playerCard = $this->player->removeCard($playerSlot[0], $playerSlot[1]);
         $this->deck->addCard($this->card);

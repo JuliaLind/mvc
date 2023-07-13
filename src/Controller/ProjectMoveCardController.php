@@ -30,20 +30,7 @@ class ProjectMoveCardController extends AbstractController
         int $row,
         int $col,
         SessionInterface $session,
-        // EntityManagerInterface $entityManager,
     ): Response {
-        // /**
-        //  * @var int $userId
-        //  */
-        // $userId = $session->get("user");
-        // $register = new Register($entityManager, $userId);
-        // try {
-        //     $register->debit(50, 'move-a-card cheat');
-        // } catch (NotEnoughCoinsException) {
-        //     $this->addFlash('warning', "You do not have enough coins to use this cheat. Purchase more coins in the shop");
-        //     return $this->redirectToRoute('proj-play');
-        // }
-
         /**
          * @var Game $game
          */

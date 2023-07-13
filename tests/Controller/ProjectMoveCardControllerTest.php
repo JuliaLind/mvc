@@ -75,7 +75,7 @@ class ProjectMoveCardControllerTest extends WebTestCase
         $this->assertResponseRedirects('/proj');
     }
 
-    public function testProjPlaceCardNotOk(): void
+    public function testPlaceCardNotOk(): void
     {
         $client = static::createClient();
         $session = $this->createSession($client);
@@ -94,6 +94,102 @@ class ProjectMoveCardControllerTest extends WebTestCase
         $client->request('POST', "/proj/place-card");
         $this->assertRouteSame('place-card');
         $this->assertResponseRedirects('/proj');
+    }
+
+    public function testPlaceCardNotOk2(): void
+    {
+        $client = static::createClient();
+        $session = $this->createSession($client);
+        $container = $client->getContainer();
+        $container->set(Session::class, $session);
+
+        $client->request(
+            'POST',
+            '/proj/login',
+            [
+                'email' => 'user0@test.se',
+                'password' => 'julia'
+            ]
+        );
+        $client->request(
+            'POST',
+            '/proj/init',
+            [
+                'bet' => 100,
+            ]
+        );
+
+        $client->request('POST', '/proj/one-round/2/1');
+        $client->request('POST', "/proj/place-card");
+        $this->assertRouteSame('place-card');
+        $this->assertResponseRedirects('/proj');
+    }
+
+    public function testPlaceCardNotOk3(): void
+    {
+        $client = static::createClient();
+        $session = $this->createSession($client);
+        $container = $client->getContainer();
+        $container->set(Session::class, $session);
+
+        $client->request(
+            'POST',
+            '/proj/login',
+            [
+                'email' => 'user0@test.se',
+                'password' => 'julia'
+            ]
+        );
+        $client->request(
+            'POST',
+            '/proj/init',
+            [
+                'bet' => 100,
+            ]
+        );
+
+        $client->request('POST', '/proj/one-round/2/1');
+        $client->request('POST', '/proj/one-round/3/1');
+        $client->request('POST', '/proj/one-round/4/2');
+        $client->request('POST', "/proj/set-fromslot/3/1");
+        $client->request('POST', '/proj/one-round/2/2');
+        $client->request('POST', "/proj/place-card");
+        $this->assertRouteSame('place-card');
+        $this->assertResponseRedirects('/proj');
+    }
+
+    public function testPlaceCardOk(): void
+    {
+        $client = static::createClient();
+        $session = $this->createSession($client);
+        $container = $client->getContainer();
+        $container->set(Session::class, $session);
+
+        $client->request(
+            'POST',
+            '/proj/login',
+            [
+                'email' => 'user0@test.se',
+                'password' => 'julia'
+            ]
+        );
+        $client->request(
+            'POST',
+            '/proj/init',
+            [
+                'bet' => 100,
+            ]
+        );
+
+        $client->request('POST', '/proj/one-round/2/1');
+        $client->request('POST', '/proj/one-round/3/1');
+        $client->request('POST', '/proj/one-round/4/2');
+        $client->request('POST', "/proj/set-fromslot/3/1");
+        $client->request('POST', "/proj/place-card");
+        $this->assertRouteSame('place-card');
+        $this->assertResponseIsSuccessful();
+        $content = strval($client->getResponse()->getContent());
+        $this->assertStringContainsString('Click on an empty slot to which you want to move the selected card', $content);
     }
 
     public function testProjPickCardOk(): void

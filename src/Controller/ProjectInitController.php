@@ -53,7 +53,6 @@ class ProjectInitController extends AbstractController
 
         $session->set("game", $game);
         $session->set("show-suggestion", false);
-        // $session->set("move-card", true);
         return $this->redirectToRoute('proj-play');
     }
 }
