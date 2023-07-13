@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelTestDebugContainer::class, false)) {
 
 return new \ContainerSiZVICu\App_KernelTestDebugContainer([
     'container.build_hash' => 'SiZVICu',
-    'container.build_id' => 'cd951849',
-    'container.build_time' => 1689210053,
+    'container.build_id' => '39118dbb',
+    'container.build_time' => 1689219743,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerSiZVICu');
