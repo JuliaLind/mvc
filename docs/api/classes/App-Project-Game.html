@@ -219,7 +219,7 @@
 </dt>
 <dd>Contains the coordinates of the slots
 where the house and the player placed the
-cards in the last round</dd>
+cards in all the previous moves</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Project-EvaluateTrait.html#property_message">$message</a>
@@ -243,7 +243,7 @@ cards in the last round</dd>
 <dd>Contains the money the player has bet in the current game</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/App-Project-OneRoundTrait.html#property_results">$results</a>
+    <a href="classes/App-Project-UndoLastRoundTrait.html#property_results">$results</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
@@ -584,24 +584,22 @@ into the houses grid</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Contains the coordinates of the slots
 where the house and the player placed the
-cards in the last round</p>
+cards in all the previous moves</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$lastRound</span>
-     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[&#039;house&#039; =&gt; [], &#039;player&#039; =&gt; []]</span></code>
 
     
-        <section class="phpdocumentor-description"><p>array&lt;string,array<int>&gt;&gt; $lastRound</p>
-</section>
-
+    
     
 
 </article>
@@ -716,14 +714,14 @@ cards in the last round</p>
 >
     <h4 class="phpdocumentor-element__name" id="property_results">
         $results
-        <a href="classes/App-Project-OneRoundTrait.html#property_results" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Project-UndoLastRoundTrait.html#property_results" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 
     </aside>
 
@@ -859,7 +857,7 @@ the dealt card)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/CurrentStateTrait.php"><a href="files/src-project-currentstatetrait.html"><abbr title="src/Project/CurrentStateTrait.php">CurrentStateTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -893,7 +891,7 @@ and the &quot;ordinary&quot; routes</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/CurrentStateTrait.php"><a href="files/src-project-currentstatetrait.html"><abbr title="src/Project/CurrentStateTrait.php">CurrentStateTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
@@ -990,7 +988,7 @@ the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/MoveACardTrait.php"><a href="files/src-project-moveacardtrait.html"><abbr title="src/Project/MoveACardTrait.php">MoveACardTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 
     </aside>
 
@@ -1045,7 +1043,7 @@ based on the updated grid</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
@@ -1134,7 +1132,7 @@ in the suggestion-cheat</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/MoveACardTrait.php"><a href="files/src-project-moveacardtrait.html"><abbr title="src/Project/MoveACardTrait.php">MoveACardTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
@@ -1231,7 +1229,7 @@ passed as argument.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 
     </aside>
 
@@ -1268,7 +1266,7 @@ is also removed and placed back into the deck. And the latest card placed by the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/OneRoundTrait.php"><a href="files/src-project-oneroundtrait.html"><abbr title="src/Project/OneRoundTrait.php">OneRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 

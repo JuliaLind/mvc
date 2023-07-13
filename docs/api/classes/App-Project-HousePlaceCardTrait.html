@@ -186,7 +186,7 @@ a card</p>
 </dt>
 <dd>Contains the coordinates of the slots
 where the house and the player placed the
-cards in the last round</dd>
+cards in all previous moves</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/App-Project-HousePlaceCardTrait.html#method_housePlaceCard">housePlaceCard()</a>
@@ -330,18 +330,16 @@ into the houses grid</dd>
 
         <p class="phpdocumentor-summary">Contains the coordinates of the slots
 where the house and the player placed the
-cards in the last round</p>
+cards in all previous moves</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$lastRound</span>
-     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[&#039;house&#039; =&gt; [], &#039;player&#039; =&gt; []]</span></code>
 
     
-        <section class="phpdocumentor-description"><p>array&lt;string,array<int>&gt;&gt; $lastRound</p>
-</section>
-
+    
     
 
 </article>
@@ -365,7 +363,7 @@ cards in the last round</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/HousePlaceCardTrait.php"><a href="files/src-project-houseplacecardtrait.html"><abbr title="src/Project/HousePlaceCardTrait.php">HousePlaceCardTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 

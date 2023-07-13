@@ -137,7 +137,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
@@ -172,6 +172,13 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/App-Project-UndoLastRoundTrait.html#property_evaluator">$evaluator</a>
+    <span>
+                        &nbsp;: <a href="classes/App-ProjectEvaluator-RuleEvaluator.html"><abbr title="\App\ProjectEvaluator\RuleEvaluator">RuleEvaluator</abbr></a>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Project-UndoLastRoundTrait.html#property_house">$house</a>
     <span>
                         &nbsp;: <a href="classes/App-ProjectGrid-Grid.html"><abbr title="\App\ProjectGrid\Grid">Grid</abbr></a>            </span>
@@ -185,7 +192,7 @@
 </dt>
 <dd>Contains the coordinates of the slots
 where the house and the player placed the
-cards in the last round</dd>
+cards in all the previous moves</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Project-UndoLastRoundTrait.html#property_player">$player</a>
@@ -193,6 +200,13 @@ cards in the last round</dd>
                         &nbsp;: <a href="classes/App-ProjectGrid-Grid.html"><abbr title="\App\ProjectGrid\Grid">Grid</abbr></a>            </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/App-Project-UndoLastRoundTrait.html#property_results">$results</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>The results for the player and the house.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Project-UndoLastRoundTrait.html#method_undoLastRound">undoLastRound()</a>
@@ -229,7 +243,7 @@ is also removed and placed back into the deck. And the latest card placed by the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
@@ -263,7 +277,7 @@ is also removed and placed back into the deck. And the latest card placed by the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
@@ -272,6 +286,40 @@ is also removed and placed back into the deck. And the latest card placed by the
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type"><a href="classes/App-Project-Deck.html"><abbr title="\App\Project\Deck">Deck</abbr></a></span>
     <span class="phpdocumentor-signature__name">$deck</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_evaluator">
+        $evaluator
+        <a href="classes/App-Project-UndoLastRoundTrait.html#property_evaluator" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">16</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-ProjectEvaluator-RuleEvaluator.html"><abbr title="\App\ProjectEvaluator\RuleEvaluator">RuleEvaluator</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$evaluator</span>
     </code>
 
         <section class="phpdocumentor-description"></section>
@@ -297,7 +345,7 @@ is also removed and placed back into the deck. And the latest card placed by the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
@@ -331,24 +379,22 @@ is also removed and placed back into the deck. And the latest card placed by the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Contains the coordinates of the slots
 where the house and the player placed the
-cards in the last round</p>
+cards in all the previous moves</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$lastRound</span>
-     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[&#039;house&#039; =&gt; [], &#039;player&#039; =&gt; []]</span></code>
 
     
-        <section class="phpdocumentor-description"><p>array&lt;string,array<int>&gt;&gt; $lastRound</p>
-</section>
-
+    
     
 
 </article>
@@ -368,7 +414,7 @@ cards in the last round</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
@@ -383,6 +429,42 @@ cards in the last round</p>
 
         <section class="phpdocumentor-description"></section>
 
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_results">
+        $results
+        <a href="classes/App-Project-UndoLastRoundTrait.html#property_results" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">38</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The results for the player and the house.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$results</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+        <section class="phpdocumentor-description"><p>Contains the rule scored and the points
+for each of the 10 hands and the totals</p>
+</section>
+
+    
     
 
 </article>
@@ -406,7 +488,7 @@ cards in the last round</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Project/UndoLastRoundTrait.php"><a href="files/src-project-undolastroundtrait.html"><abbr title="src/Project/UndoLastRoundTrait.php">UndoLastRoundTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 
     </aside>
 

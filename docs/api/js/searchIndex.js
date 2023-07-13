@@ -1876,15 +1876,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Project-CurrentStateTrait.html#property_finished"
         },                {
-            "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003A\u0024lastRound",
-            "name": "lastRound",
-            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020the\u0020last\u0020round",
-            "url": "classes/App-Project-CurrentStateTrait.html#property_lastRound"
-        },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003A\u0024fromSlot",
             "name": "fromSlot",
             "summary": "The\u0020slot\u0020from\u0020which\u0020to\u0020move\u0020the\u0020card",
             "url": "classes/App-Project-CurrentStateTrait.html#property_fromSlot"
+        },                {
+            "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003A\u0024lastRound",
+            "name": "lastRound",
+            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020all\u0020the\u0020previous\u0020moves",
+            "url": "classes/App-Project-CurrentStateTrait.html#property_lastRound"
         },                {
             "fqsen": "\\App\\Project\\Deck",
             "name": "Deck",
@@ -2028,7 +2028,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\HousePlaceCardTrait\u003A\u003A\u0024lastRound",
             "name": "lastRound",
-            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020the\u0020last\u0020round",
+            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020all\u0020previous\u0020moves",
             "url": "classes/App-Project-HousePlaceCardTrait.html#property_lastRound"
         },                {
             "fqsen": "\\App\\Project\\MoveACardTrait",
@@ -2053,7 +2053,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\MoveACardTrait\u003A\u003A\u0024lastRound",
             "name": "lastRound",
-            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020the\u0020last\u0020round",
+            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020all\u0020the\u0020previous\u0020moves",
             "url": "classes/App-Project-MoveACardTrait.html#property_lastRound"
         },                {
             "fqsen": "\\App\\Project\\MoveACardTrait\u003A\u003A\u0024deck",
@@ -2138,7 +2138,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\OneRoundTrait\u003A\u003A\u0024lastRound",
             "name": "lastRound",
-            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020the\u0020last\u0020round",
+            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020all\u0020the\u0020previous\u0020moves",
             "url": "classes/App-Project-OneRoundTrait.html#property_lastRound"
         },                {
             "fqsen": "\\App\\Project\\OneRoundTrait\u003A\u003A\u0024player",
@@ -2271,6 +2271,11 @@ Search.appendIndex(
             "summary": "The\u0020latest\u0020card\u0020that\u0020has\u0020been\u0020dealt\u0020to\u0020the\u0020player",
             "url": "classes/App-Project-UndoLastRoundTrait.html#property_card"
         },                {
+            "fqsen": "\\App\\Project\\UndoLastRoundTrait\u003A\u003A\u0024evaluator",
+            "name": "evaluator",
+            "summary": "",
+            "url": "classes/App-Project-UndoLastRoundTrait.html#property_evaluator"
+        },                {
             "fqsen": "\\App\\Project\\UndoLastRoundTrait\u003A\u003A\u0024deck",
             "name": "deck",
             "summary": "",
@@ -2283,13 +2288,18 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\UndoLastRoundTrait\u003A\u003A\u0024lastRound",
             "name": "lastRound",
-            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020the\u0020last\u0020round",
+            "summary": "Contains\u0020the\u0020coordinates\u0020of\u0020the\u0020slots\nwhere\u0020the\u0020house\u0020and\u0020the\u0020player\u0020placed\u0020the\ncards\u0020in\u0020all\u0020the\u0020previous\u0020moves",
             "url": "classes/App-Project-UndoLastRoundTrait.html#property_lastRound"
         },                {
             "fqsen": "\\App\\Project\\UndoLastRoundTrait\u003A\u003A\u0024player",
             "name": "player",
             "summary": "",
             "url": "classes/App-Project-UndoLastRoundTrait.html#property_player"
+        },                {
+            "fqsen": "\\App\\Project\\UndoLastRoundTrait\u003A\u003A\u0024results",
+            "name": "results",
+            "summary": "The\u0020results\u0020for\u0020the\u0020player\u0020and\u0020the\u0020house.",
+            "url": "classes/App-Project-UndoLastRoundTrait.html#property_results"
         },                {
             "fqsen": "\\App\\Project\\UserNotRegisteredException",
             "name": "UserNotRegisteredException",

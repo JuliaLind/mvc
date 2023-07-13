@@ -18,7 +18,7 @@ trait PointsAndRuleNameTrait
      *
      * @param array<string> $deck
      * @param array<string> $hand
-     * @return array<string,float|int|string>>
+     * @return array<string,float|int|string>
      */
     private function pointsAndName(array $hand, array $deck, string $card, RuleInterface $rule): array
     {
