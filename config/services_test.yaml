@@ -15,6 +15,5 @@ services:
     public: true
   App\Project\Deck:
     public: true
-  # App\Project\RegisterFactory:
-  #   public: true
+
 

@@ -33,7 +33,7 @@ trait Game21Trait
      */
     public function getRisk(): string
     {
-        $risk = strVal(round($this->currentPlayer()->estimateRisk($this->deck) * 100, 2));
+        $risk = strval(round($this->currentPlayer()->estimateRisk($this->deck) * 100, 2));
         return $risk . ' %';
     }
 }
