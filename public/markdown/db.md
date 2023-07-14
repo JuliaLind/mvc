@@ -1,4 +1,8 @@
 
+# Om databasen
+
+Jag har använt mig av SQLite databas eftersom den var enklast att komma igång med och eftersom jag hade lite erfarenhet av SQLite sedan tidigare,  från Webtec kursen, som var tillräcklig för det lilla jag behövde "fixa till" i databasen på egen hand.
+
 Projekt-databasen innehåller följande tabeller:
 
 ## User
@@ -13,6 +17,9 @@ Varje gång en användare vinner över huset registreras dennes id, datum och po
 
 Varje gång en användare köper/vinner/satsar/spenderar coins registreras transaktionen i denna tabell med användarens id, datum, kort beskrivning och belopp.  
 
+<div class="no-p">
+<img src="../../img/project/db.png" alt="Database ER diagram">  
+</div>
 
 I databasen är Score och Transaction tabellerna kopplade till User tabellen med user_id som foreign key. I applikationen är hela User-objektet ett attribut i varje transaktion/score-objekt. Ursprungligen fanns det även en koppling åt andra hållet, med sk Collection (jag skapade alla relationer med hjälp av Symfony och fick collection-upplägget på köpet), men jag kommenterade bort det i ett senare skede eftersom det gav felmeddelanden om cirkulära referenser i Json controller routsen och det fanns inte några direkta fördelar mot att hämta ut samma information från Transaction/Score Repository med sökning på User.  
 

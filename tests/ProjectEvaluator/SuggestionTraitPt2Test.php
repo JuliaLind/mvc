@@ -67,4 +67,83 @@ class SuggestionTraitPt2Test extends TestCase
         $res = $this->suggestion($grid, $card, $deck);
         $this->assertEquals($exp, $res);
     }
+
+    public function testSuggestion2(): void
+    {
+        $grid = $this->createMock(Grid::class);
+
+        $rows = [
+            [0 => "2C", 1 => "4D", 2 => "2S"                        ],
+            [           1 => "6D", 2 => "13S", 3 => "12D"           ],
+            [           1 => "7D", 2 => "11S",            4 => "10D"],
+            [0 => "3C", 1 => "3D"                                   ],
+            [           1 => "5D"                                   ]
+        ];
+
+        $grid->method('getRows')->willReturn($rows);
+        $card = "4S";
+        $deck = ["3H","5C","6C","6H","7C","7S","9C","10S","10C","11D","11H","12S"];
+        $exp = [
+            'col-rule' => "Flush",
+            'row-rule' => "Straight",
+            'slot' => [4, 2],
+            'row-rules' =>  [
+                0 => [
+                    'rule-with-card' => 'Two Pairs',
+                    'weight' => 8.0,
+                    'rule-without-card' => 'Two Pairs'
+                ],
+                1 => [
+                    'rule-with-card' => '',
+                    'weight' => -0.1,
+                    'rule-without-card' => 'Three Of A Kind',
+                ],
+                2 => [
+                    'rule-with-card' => '',
+                    'weight' => -0.1,
+                     'rule-without-card' => 'Three Of A Kind',
+                ],
+                3 => [
+                    'rule-with-card' => '',
+                    'weight' => -0.25,
+                    'rule-without-card' => 'Full House',
+                ],
+                4 => [
+                    'rule-with-card' => 'Straight',
+                    'weight' => 16.0,
+                    'rule-without-card' => 'Two Pairs'
+                ],
+            ],
+            'col-rules' => [
+                0 => [
+                    'rule-with-card' => 'Straight',
+                    'weight' => 17.0,
+                    'rule-without-card' => 'Flush',
+                ],
+                1 => [
+                    'rule-with-card' => '',
+                    'weight' => -200.0,
+                    'rule-without-card' => ''
+                ],
+                2 => [
+                    'rule-with-card' => 'Flush',
+                    'weight' => 23.0,
+                    'rule-without-card' => 'Flush',
+                ],
+                3 => [
+                    'rule-with-card' => '',
+                    'weight' => 0.0,
+                    'rule-without-card' => 'Two Pairs',
+                ],
+                4 => [
+                    'rule-with-card' => '',
+                    'weight' => -0.25,
+                    'rule-without-card' => 'Full House',
+                ]
+            ],
+            'tot-weight-slot' => 39.0
+        ];
+        $res = $this->suggestion($grid, $card, $deck);
+        $this->assertEquals($exp, $res);
+    }
 }
