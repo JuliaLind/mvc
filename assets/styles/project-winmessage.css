@@ -20,7 +20,13 @@
     font-size: 1.8rem;
     /* color: var(--form-neon); */
     color: var(--form-neon2);
+
+    /* background: rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
 }
+
 
 .finish-bg {
     background-repeat: no-repeat;
@@ -31,4 +37,14 @@
 .finish-bg .score {
     font-weight: bold;
     color: var(--neon-green);
+}
+
+@media (min-width: 2000px) {
+    .message.pt-1 {
+        font-size: 4rem;
+    }
+
+    .message.pt-3 {
+        font-size: 3rem;
+    }
 }

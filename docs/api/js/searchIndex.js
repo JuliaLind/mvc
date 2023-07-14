@@ -1843,7 +1843,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003A\u0024message",
             "name": "message",
-            "summary": "Empty\u0020string\u0020until\u0020the\u0020end\u0020of\u0020the\u0020game.",
+            "summary": "Consists\u0020of\u0020three\u0020parts.\u0020Empty\u0020strings\u0020until\u0020the\ngame\u0020is\u0020finished",
             "url": "classes/App-Project-CurrentStateTrait.html#property_message"
         },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003A\u0024suggestion",
@@ -1948,7 +1948,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\EvaluateTrait\u003A\u003A\u0024message",
             "name": "message",
-            "summary": "",
+            "summary": "Consists\u0020of\u0020three\u0020parts.\u0020Empty\u0020strings\u0020until\u0020the\ngame\u0020is\u0020finished",
             "url": "classes/App-Project-EvaluateTrait.html#property_message"
         },                {
             "fqsen": "\\App\\Project\\EvaluateTrait\u003A\u003A\u0024evaluator",
@@ -2135,6 +2135,11 @@ Search.appendIndex(
             "name": "house",
             "summary": "",
             "url": "classes/App-Project-OneRoundTrait.html#property_house"
+        },                {
+            "fqsen": "\\App\\Project\\OneRoundTrait\u003A\u003A\u0024fromSlot",
+            "name": "fromSlot",
+            "summary": "The\u0020slot\u0020from\u0020which\u0020to\u0020move\u0020the\u0020card",
+            "url": "classes/App-Project-OneRoundTrait.html#property_fromSlot"
         },                {
             "fqsen": "\\App\\Project\\OneRoundTrait\u003A\u003A\u0024lastRound",
             "name": "lastRound",
@@ -2828,23 +2833,18 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\ProjectMoveCardController",
             "name": "ProjectMoveCardController",
-            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020routes\u0020for\u0020moving\na\u0020card",
+            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020routes\u0020for\u0020moving\na\u0020card\u0020to\u0020a\u0020new\u0020slot",
             "url": "classes/App-Controller-ProjectMoveCardController.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectMoveCardController\u003A\u003AsetFromSlot\u0028\u0029",
-            "name": "setFromSlot",
-            "summary": "Route\u0020for\u0020saving\u0020the\u0020slot\u0020row\u0020and\u0020id\u0020from\u0020which\u0020the\u0020user\u0020wants\u0020to\u0020remove\u0020the\u0020card",
-            "url": "classes/App-Controller-ProjectMoveCardController.html#method_setFromSlot"
         },                {
             "fqsen": "\\App\\Controller\\ProjectMoveCardController\u003A\u003AmoveCard\u0028\u0029",
             "name": "moveCard",
             "summary": "Route\u0020for\u0020moving\u0020the\u0020card\u0020to\u0020the\u0020new\u0020slot\u0020chosen\u0020by\u0020user",
             "url": "classes/App-Controller-ProjectMoveCardController.html#method_moveCard"
         },                {
-            "fqsen": "\\App\\Controller\\ProjectMoveCardController\u003A\u003ApickCard\u0028\u0029",
-            "name": "pickCard",
+            "fqsen": "\\App\\Controller\\ProjectMoveCardController\u003A\u003AplaceCard\u0028\u0029",
+            "name": "placeCard",
             "summary": "Route\u0020that\u0020renders\u0020the\u0020template\u0020where\u0020placed\u0020cards\u0020are\u0020clickable.",
-            "url": "classes/App-Controller-ProjectMoveCardController.html#method_pickCard"
+            "url": "classes/App-Controller-ProjectMoveCardController.html#method_placeCard"
         },                {
             "fqsen": "\\App\\Controller\\ProjectOneRoundController",
             "name": "ProjectOneRoundController",
@@ -3895,6 +3895,21 @@ Search.appendIndex(
             "name": "LibraryException",
             "summary": "Exception\u0020class\u0020for\u0020Library",
             "url": "classes/App-Repository-LibraryException.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectPickCardController",
+            "name": "ProjectPickCardController",
+            "summary": "Controller\u0020related\u0020to\u0020the\u0020Project.\u0020Contains\u0020routes\u0020for\u0020selecting\nthe\u0020slot\u0020to\u0020move\u0020a\u0020card\u0020from",
+            "url": "classes/App-Controller-ProjectPickCardController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectPickCardController\u003A\u003AsetFromSlot\u0028\u0029",
+            "name": "setFromSlot",
+            "summary": "Route\u0020for\u0020saving\u0020the\u0020slot\u0020row\u0020and\u0020id\u0020from\u0020which\u0020the\u0020user\u0020wants\u0020to\u0020remove\u0020the\u0020card",
+            "url": "classes/App-Controller-ProjectPickCardController.html#method_setFromSlot"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectPickCardController\u003A\u003ApickCard\u0028\u0029",
+            "name": "pickCard",
+            "summary": "Route\u0020that\u0020renders\u0020the\u0020template\u0020where\u0020placed\u0020cards\u0020are\u0020clickable.",
+            "url": "classes/App-Controller-ProjectPickCardController.html#method_pickCard"
         },                {
             "fqsen": "\\",
             "name": "\\",

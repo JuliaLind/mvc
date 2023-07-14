@@ -114,6 +114,7 @@
     .topnav a:not(:first-child) {
         display: none;
     }
+    
 
     .topnav {
         overflow: hidden;
@@ -162,6 +163,10 @@
         display: block;
         text-align: center;
         /* width: 100%; */
+    }
+
+    .project .topnav a {
+        color: var(--nav-neon) !important;
     }
 
     .topnav a.nav-toggle,

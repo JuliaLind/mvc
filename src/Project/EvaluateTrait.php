@@ -86,9 +86,9 @@ trait EvaluateTrait
             $register->transaction($amount, 'Return (bet x 2)');
             $register->score($playerTotal);
         }
-        // $this->message = "Game finished, You got {$playerTotal} points and House got {$houseTotal} points. {$winner} won{$lastPart}";
 
-        $this->message = ["Game finished!", "You got {$playerTotal} points and House got {$houseTotal} points.", "{$winner} won{$lastPart}!"];
+
+        $this->message = ["Game finished", "You got {$playerTotal} points and House got {$houseTotal} points.", "{$winner} won{$lastPart}!"];
 
         $this->results = [
             'player' => $playerData,

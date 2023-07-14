@@ -64,8 +64,7 @@ class EvaluateTraitTest extends KernelTestCase
             'house' => $houseResults
         ], $this->results);
 
-        $exp = ["Game finished!", "You got 100 points and House got 999 points.", "House won!"];
-        // $exp = "Game finished, You got 100 points and House got 999 points. House won";
+        $exp = ["Game finished", "You got 100 points and House got 999 points.", "House won!"];
         $this->assertEquals(
             $exp,
             $this->message
@@ -115,8 +114,8 @@ class EvaluateTraitTest extends KernelTestCase
             'player' => $playerResults,
             'house' => $houseResults
         ], $this->results);
-        // $exp = "Game finished, You got 374 points and House got 10 points. You won and received 80 coins";
-        $exp = ["Game finished!", "You got 374 points and House got 10 points.", "You won and received 80 coins!"];
+
+        $exp = ["Game finished", "You got 374 points and House got 10 points.", "You won and received 80 coins!"];
         $this->assertEquals(
             $exp,
             $this->message

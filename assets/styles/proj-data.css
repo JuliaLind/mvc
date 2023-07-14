@@ -21,35 +21,9 @@
 } */
 
 
-.balance-fixed {
-    color: var(--neon-green);
-    position: fixed;
-    font-size: 1.4rem;
-    top: 3.4rem;
-    /* left: 2.8rem; */
-    left: 1rem;
-    font-family: 'Text Me One', sans-serif;
-    font-weight: bold;
-
-    text-transform: uppercase;
-}
-
-
 .balance-alt {
     font-family: 'Text Me One', sans-serif;
     text-transform: uppercase;
-}
-
-@media (min-width: 1100px) {
-    .coins {
-        height: 300px;
-    }
-
-    .coins p {
-        margin-top: 1.8rem;
-        margin-bottom: 1.8rem;
-        font-size: 1.4rem;
-    }
 }
 
 @media (min-width: 2000px) {
@@ -57,26 +31,4 @@
         font-size: 1.4rem;
         width: 90%;
     }
-
-    .balance-fixed {
-        bottom: 10rem;
-        left: 10rem;
-        top: unset;
-        font-size: 1.8rem;
-    }
-
-    .coins {
-        height: 400px;
-    }
-
-    /* .coins {
-        font-size: 1.4rem;
-        height: 400px;
-    }
-
-    .coins p {
-        margin-top: 1.8rem;
-        margin-bottom: 1.8rem;
-    } */
-
 }

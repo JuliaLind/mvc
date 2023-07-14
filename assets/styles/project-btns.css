@@ -261,6 +261,10 @@ button.return-arr {
         margin-bottom: 3rem;
         gap: 1rem;
     }
+
+    .project .return-arr {
+        display: none;
+    }
 }
 
 @media (min-width: 801px) {

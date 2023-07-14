@@ -1,5 +1,6 @@
 .points table {
     border-collapse: collapse;
+    margin-bottom: 3rem;
 }
 
 
@@ -85,6 +86,23 @@
 
 .trans td:last-of-type {
     text-align: right;
+}
+
+.trans tr:first-of-type {
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+}
+
+@media (max-width: 1100px) {
+    .trans,
+    .points {
+        margin-bottom: 4.5rem;
+    }
+
+    .trans {
+        position: relative;
+        top: 3rem;
+    }
 }
 
 @media (max-width: 800px) {

@@ -50,7 +50,8 @@
 #rangeValue {
     position: relative;
     text-align: center;
-    width: 60px;
+    /* width: 60px; */
+    width: 70px;
     font-size: 1.25em;
     color: #000;
     background: var(--form-neon);

@@ -48,6 +48,11 @@ main.proj form {
     color: var(--form-neon);
 }
 
+@media (max-width: 1100px) {
+    .project {
+        padding-bottom: 4.5rem;
+    }
+}
 
 
 @media (max-width: 800px) {
