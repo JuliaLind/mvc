@@ -299,14 +299,16 @@
 }
 
 .slot.the-card {
-    outline: 1px solid var(--form-neon);
+    /* outline: 1px solid var(--form-neon);
     box-shadow:
     0 0 3px var(--form-neon),
     0 0 7px var(--form-neon),
-    0 0 20px var(--form-neon);
+    0 0 20px var(--form-neon); */
+    outline: 1px solid #333;
+    /* outline: 1px solid var(--clear-neon); */
 }
 
-@media (max-width: 1050px) and (orientation: portrait) {
+@media ((max-width: 1050px) and (orientation: portrait)) or (max-width: 750px) {
     .api .slot {
         size: 0.3em;
     }
@@ -318,14 +320,24 @@
         width: unset;
     }
 
+    .center-grid {
+        min-height: unset;
+        height: 500px;
+    }
+
     .house-grid,
     .center-grid,
     .player-grid {
         margin-bottom: 1.5rem;
+        max-width: 100%;
     }
 
     .result {
         font-size: 0.5rem;
+    }
+
+    .player-data {
+        order: 3;
     }
 
     .player-grid {
@@ -336,7 +348,7 @@
         order: 10;
     }
 
-    .outer-grid-container h2:first-of-type {
+    .house-data {
         order: 15;
     }
 

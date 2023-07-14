@@ -9,5 +9,18 @@
         {% endblock %}
 
         {{ include('partials/footer.html.twig') }}
+
+        <script>
+            let flashes = document.getElementsByClassName("flash");
+
+            for (let flash of flashes) {
+                flash.classList.add("show");
+                console.log("class added");
+                setTimeout(() => {
+                    flash.classList.remove("show");
+                    }, 3000
+                );
+            }
+        </script>
     </body>
 </html>

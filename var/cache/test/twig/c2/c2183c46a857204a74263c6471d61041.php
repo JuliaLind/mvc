@@ -49,7 +49,7 @@ class __TwigTemplate_4a25a6213c667c1e9dc385ecd1dee96f extends Template
             $context['_seq'] = twig_ensure_traversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
                 // line 4
-                echo "        <div class=\"flash-";
+                echo "        <div class=\"flash flash-";
                 echo twig_escape_filter($this->env, $context["label"], "html", null, true);
                 echo "\">
             ";
@@ -94,10 +94,11 @@ class __TwigTemplate_4a25a6213c667c1e9dc385ecd1dee96f extends Template
         return new Source("{# read and display all flash messages #}
 {% for label, messages in app.flashes %}
     {% for message in messages %}
-        <div class=\"flash-{{ label }}\">
+        <div class=\"flash flash-{{ label }}\">
             {{ message }}
         </div>
     {% endfor %}
-{% endfor %}", "flash.html.twig", "/home/juli22/dbwebb-kurser/mvc/me/report/templates/flash.html.twig");
+{% endfor %}
+", "flash.html.twig", "/home/juli22/dbwebb-kurser/mvc/me/report/templates/flash.html.twig");
     }
 }

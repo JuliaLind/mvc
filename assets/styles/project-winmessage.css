@@ -24,10 +24,7 @@
 
 .finish-bg {
     background-repeat: no-repeat;
-    /* background-position: center; */
     background-position-x: center;
-    /* background-position-y: 20%; */
-    /* background-size: auto; */
     background-size: 40vw;
 }
 

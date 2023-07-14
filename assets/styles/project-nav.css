@@ -34,8 +34,10 @@
     right: 0;
 }
 
-.page-title {
-    font-size: 1.4rem;
+a.page-title {
+    font-size: 1.4rem !important;
+    text-decoration: none;
+    z-index: 999999;
     color: var(--nav-neon);
     font-family: 'Text Me One', sans-serif;
     text-transform: uppercase;
@@ -98,4 +100,8 @@
     }
 }
 
-
+@media (max-width: 1150px) {
+    a.page-title {
+        display: none;
+    }
+}
