@@ -12,6 +12,9 @@ class ProjectShopControllerTest extends WebTestCase
 {
     use SessionTrait;
 
+    /**
+     * Tests that the Shop route is working and showing correct balance
+     */
     public function testShopOk(): void
     {
         $client = static::createClient();
@@ -33,6 +36,10 @@ class ProjectShopControllerTest extends WebTestCase
         $this->assertStringContainsString('1440', $content);
     }
 
+    /**
+     * Tests that only logged in user can access the route and
+     * the others get redirected to landing page
+     */
     public function testShopNotOk(): void
     {
         $client = static::createClient();
@@ -43,6 +50,10 @@ class ProjectShopControllerTest extends WebTestCase
         $this->assertResponseRedirects('/proj');
     }
 
+
+    /**
+     * Tests that the transaction route is working
+     */
     public function testTransactionsOk(): void
     {
         $client = static::createClient();
@@ -69,6 +80,11 @@ class ProjectShopControllerTest extends WebTestCase
         $this->assertStringContainsString('<td>840</td>', $content);
     }
 
+
+    /**
+     * Tests that the transacrtion route is inly available for a logged on user
+     * and others are redirected to landing page
+     */
     public function testTransactionsNotOk(): void
     {
         $client = static::createClient();

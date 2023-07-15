@@ -19,6 +19,10 @@ class ProjectAuthControllerTest extends WebTestCase
 {
     use SessionTrait;
 
+    /**
+     * Tests that registration goes through when everything is in order
+     * with the filled out registration details
+     */
     public function testRegisterOk(): void
     {
 
@@ -71,6 +75,9 @@ class ProjectAuthControllerTest extends WebTestCase
         $this->assertEquals(1000, $transaction->getAmount());
     }
 
+    /**
+     * Tests that registration does not go throw if the passwords do not match
+     */
     public function testRegisterNotOk(): void
     {
 
@@ -118,6 +125,10 @@ class ProjectAuthControllerTest extends WebTestCase
         $this->assertNull($user);
     }
 
+    /**
+     * Tests that registration does not go through when trying to
+     * register with an existing email
+     */
     public function testRegisterNotOk2(): void
     {
         $client = static::createClient();
@@ -163,6 +174,10 @@ class ProjectAuthControllerTest extends WebTestCase
         $this->assertNull($user);
     }
 
+    /**
+     * Tests that users id is save to session when logging in
+     * with correct credentials
+     */
     public function testLoginOk(): void
     {
 
@@ -188,6 +203,10 @@ class ProjectAuthControllerTest extends WebTestCase
         $this->assertEquals(1, $userId);
     }
 
+    /**
+     * Tests that nothing is saved to session and that correct
+     * flashmessage is generated when loggin in with wrong password
+     */
     public function testLoginNotOk(): void
     {
 
@@ -220,6 +239,11 @@ class ProjectAuthControllerTest extends WebTestCase
         $this->assertNull($userId);
     }
 
+
+    /**
+     * Tests that nothing is saved to session and that correct
+     * flashmessage is generated when loggin in with wrong email
+     */
     public function testLoginNotOk2(): void
     {
 
@@ -252,6 +276,10 @@ class ProjectAuthControllerTest extends WebTestCase
         $this->assertNull($userId);
     }
 
+    /**
+     * Tests that logout works, next time /proj route is accessed the template with the login template
+     * is rendered
+     */
     public function testLogout(): void
     {
 

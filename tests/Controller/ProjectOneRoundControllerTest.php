@@ -17,6 +17,9 @@ class ProjectOneROundControllerTest extends WebTestCase
 {
     use SessionTrait;
 
+    /**
+     * Tests that the one round route is working correctly for a game hat is not finished
+     */
     public function testProjRoundNotFinished(): void
     {
         $client = static::createClient();
@@ -58,6 +61,10 @@ class ProjectOneROundControllerTest extends WebTestCase
         $this->assertEquals([2, 1], $res[0]);
     }
 
+    /**
+     * Tests that the one round route is working correctly
+     * if the game is finished
+     */
     public function testProjRoundFinished(): void
     {
         $client = static::createClient();

@@ -16,6 +16,9 @@ class ProjectPickCardControllerTest extends WebTestCase
 {
     use SessionTrait;
 
+    /**
+     * Tests that the user is redirected back to play route with correct flash message if they do not have enough money to purchas the cheat
+     */
     public function testProjPickCardNotOk(): void
     {
         $client = static::createClient();
@@ -54,6 +57,11 @@ class ProjectPickCardControllerTest extends WebTestCase
         $this->assertEquals($expectedFlashbag, $bag->peekAll());
     }
 
+    /**
+     * Tests that user is redirected to landing page if the route for
+     * picking up card for a move is accessed directly before a game has
+     * been initiated
+     */
     public function testProjPickCardNotOk2(): void
     {
         $client = static::createClient();
@@ -76,6 +84,10 @@ class ProjectPickCardControllerTest extends WebTestCase
     }
 
 
+    /**
+     * Tests that the pick-card route works and correct template is generated if the
+     * user has enough money to pay for the cheat
+     */
     public function testProjPickCardOk(): void
     {
         $client = static::createClient();
@@ -108,6 +120,10 @@ class ProjectPickCardControllerTest extends WebTestCase
         $this->assertStringContainsString('Click on the card you want to move', $content);
     }
 
+    /**
+     * Tests that the slot from which the user wants to
+     * move the card is registered correctly in the "set from slot" Post route
+     */
     public function testSetFromSlotOk(): void
     {
         $client = static::createClient();

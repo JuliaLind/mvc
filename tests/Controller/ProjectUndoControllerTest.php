@@ -16,9 +16,12 @@ class ProjectUndoControllerTest extends WebTestCase
 {
     use SessionTrait;
 
+    /**
+     * Tests that route redirects back to play if the
+     * player does not have enough money to purchase the cheat
+     */
     public function testUndoNotOk(): void
     {
-
         $client = static::createClient();
         $session = $this->createSession($client);
         $container = $client->getContainer();
@@ -55,6 +58,9 @@ class ProjectUndoControllerTest extends WebTestCase
         $this->assertEquals($expectedFlashbag, $bag->peekAll());
     }
 
+    /**
+     * Tests that the last move is reversed
+     */
     public function testUndoOk(): void
     {
 

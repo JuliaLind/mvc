@@ -16,9 +16,11 @@ class ProjectLandingControllerTest extends WebTestCase
 {
     use SessionTrait;
 
+    /**
+     * Tests that correct template is rendered when the user has logged id
+     */
     public function testProjLanding(): void
     {
-
         $client = static::createClient();
         $session = $this->createSession($client);
         $container = $client->getContainer();
@@ -43,6 +45,10 @@ class ProjectLandingControllerTest extends WebTestCase
         $this->assertStringNotContainsString('Resume Game', $content);
     }
 
+    /**
+     * Tests that the rendered template contains a button for resuming
+     * game if a game has been initiated
+     */
     public function testProjLanding2(): void
     {
 

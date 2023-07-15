@@ -16,6 +16,10 @@ class ProjectMoveCardControllerTest extends WebTestCase
 {
     use SessionTrait;
 
+    /**
+     * Tests that the user is redirected do the profile page if the route for
+     * placing card (part of the move-a-card cheat) is accessed directly and before a game has been initiated
+     */
     public function testPlaceCardNotOk(): void
     {
         $client = static::createClient();
@@ -37,6 +41,10 @@ class ProjectMoveCardControllerTest extends WebTestCase
         $this->assertResponseRedirects('/proj');
     }
 
+    /**
+     * Test that the user is redirected if the place card page is accessed
+     * directly and before the from-slot has been set (before the pick card route)
+     */
     public function testPlaceCardNotOk2(): void
     {
         $client = static::createClient();
@@ -66,6 +74,10 @@ class ProjectMoveCardControllerTest extends WebTestCase
         $this->assertResponseRedirects('/proj/play');
     }
 
+    /**
+     * Tests that if the one round move is accessed after the from slot has been sen,
+     * the from slot will get unset
+     */
     public function testPlaceCardNotOk3(): void
     {
         $client = static::createClient();
@@ -99,6 +111,10 @@ class ProjectMoveCardControllerTest extends WebTestCase
         $this->assertResponseRedirects('/proj/play');
     }
 
+    /**
+     * Tests that route for placing card is working correctly if everyhing
+     * is in order and that correct template is rendered
+     */
     public function testPlaceCardOk(): void
     {
         $client = static::createClient();
@@ -134,7 +150,10 @@ class ProjectMoveCardControllerTest extends WebTestCase
     }
 
 
-
+    /**
+     * Tests that the move is working as expected
+     * and a card is moved when everything is in order
+     */
     public function testMoveCardOk(): void
     {
         $client = static::createClient();

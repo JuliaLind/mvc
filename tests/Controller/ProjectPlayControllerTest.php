@@ -16,6 +16,10 @@ class ProjectPlayControllerTest extends WebTestCase
 {
     use SessionTrait;
 
+    /**
+     * Tests that user is redirected to profile-page if route is
+     * accessed directly via url before a game is initiated
+     */
     public function testProjPlayNotOk(): void
     {
         $client = static::createClient();
@@ -38,6 +42,9 @@ class ProjectPlayControllerTest extends WebTestCase
         $this->assertResponseRedirects('/proj');
     }
 
+    /**
+     * Tests that correct template is rendered for a finished game
+     */
     public function testProjPlayFinished(): void
     {
         $client = static::createClient();
@@ -77,6 +84,10 @@ class ProjectPlayControllerTest extends WebTestCase
         $this->assertStringContainsString('Final score', $response);
     }
 
+
+    /**
+     * Tests that play route works and correct template is rendered
+     */
     public function testProjPlayOk(): void
     {
         $client = static::createClient();

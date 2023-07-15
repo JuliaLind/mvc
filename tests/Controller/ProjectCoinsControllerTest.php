@@ -12,6 +12,10 @@ class ProjectCoinsControllerTest extends WebTestCase
 {
     use SessionTrait;
 
+    /**
+     * Tests that the purchase route is workind and that the transaction is registered
+     * (by checking that the balance has increased)
+     */
     public function testProjPurchase(): void
     {
 
@@ -43,6 +47,10 @@ class ProjectCoinsControllerTest extends WebTestCase
         $this->assertEquals($expectedFlashbag, $bag->peekAll());
     }
 
+    /**
+     * Tests that the select amount route is not avaiable if the used has below 10 coints,
+     * and that the user is redirected tot eh Shop with correct flashmessage
+     */
     public function testSelectAmountNotOk(): void
     {
         $client = static::createClient();
@@ -79,6 +87,10 @@ class ProjectCoinsControllerTest extends WebTestCase
         $this->assertEquals($expectedFlashbag, $bag->peekAll());
     }
 
+    /**
+     * Tests that the the select-amount route redirects to the landing page if
+     * the route is accessed directly before the user has logged in
+     */
     public function testSelectAmountNotOk2(): void
     {
         $client = static::createClient();
@@ -90,6 +102,10 @@ class ProjectCoinsControllerTest extends WebTestCase
         $this->assertResponseRedirects('/proj');
     }
 
+    /**
+     * Tests that the select amount route is wprking as expected if
+     * everything is in order and that correct template is rendered
+     */
     public function testSelectAmountOk(): void
     {
         $client = static::createClient();

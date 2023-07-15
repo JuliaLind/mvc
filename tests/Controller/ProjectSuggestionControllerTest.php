@@ -16,6 +16,10 @@ class ProjectSuggestionControllerTest extends WebTestCase
 {
     use SessionTrait;
 
+    /**
+     * Tests that user is redirected vak to play if
+     * they do not have enough money to purchase the cheat
+     */
     public function testProjPurchaseSuggestNotOk(): void
     {
         $client = static::createClient();
@@ -54,6 +58,10 @@ class ProjectSuggestionControllerTest extends WebTestCase
         $this->assertEquals($expectedFlashbag, $bag->peekAll());
     }
 
+    /**
+     * Tests that user is redirected to the show-suggestion route if they have enough money
+     * to make the transaction
+     */
     public function testProjPurchaseSuggestOk(): void
     {
         $client = static::createClient();
@@ -84,6 +92,9 @@ class ProjectSuggestionControllerTest extends WebTestCase
         $this->assertTrue($session->get('show-suggestion'));
     }
 
+    /**
+     * Tests that user is redirected back to play if the show-suggestion route is accessed directly without paying for the cheat first
+     */
     public function testProjShowSuggestNotOk(): void
     {
         $client = static::createClient();
@@ -113,6 +124,10 @@ class ProjectSuggestionControllerTest extends WebTestCase
         $this->assertResponseRedirects('/proj/play');
     }
 
+    /**
+     * Tests that the show-suggestion route works as intended
+     * when the suggestion cheat has been paid for
+     */
     public function testProjShowSuggestOk(): void
     {
         $client = static::createClient();

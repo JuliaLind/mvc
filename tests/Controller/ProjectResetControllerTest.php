@@ -19,6 +19,9 @@ class ProjectResetControllerTest extends WebTestCase
 {
     use SessionTrait;
 
+    /**
+     * Tests that the reset route is working
+     */
     public function testReset(): void
     {
         $loader = $this->createMock(SqlFileLoader::class);

@@ -16,6 +16,9 @@ class ProjectScoresControllerTest extends WebTestCase
 {
     use SessionTrait;
 
+    /**
+     * Tests that the score single user route is working
+     */
     public function testProjScoresSingleOk(): void
     {
 
@@ -43,6 +46,11 @@ class ProjectScoresControllerTest extends WebTestCase
         $this->assertStringContainsString('<td>38</td>', $content);
     }
 
+    /**
+     * Tests that the scores single user  route is only
+     * available for logged in user and that not logged in users
+     * are redirected to landing page
+     */
     public function testScoresSingleNotOk(): void
     {
         $client = static::createClient();
@@ -53,6 +61,9 @@ class ProjectScoresControllerTest extends WebTestCase
         $this->assertResponseRedirects('/proj');
     }
 
+    /**
+     * Tests that the leaderboard route is working
+     */
     public function testProjLeaderboard(): void
     {
 

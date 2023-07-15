@@ -16,6 +16,9 @@ class ProjectInitControllerTest extends WebTestCase
 {
     use SessionTrait;
 
+    /**
+     * Tests that the inti route works if everything is in order
+     */
     public function testInitOk(): void
     {
 
@@ -55,6 +58,11 @@ class ProjectInitControllerTest extends WebTestCase
         $this->assertEquals(199, $state['bet']);
     }
 
+    /**
+     * Tests that the init route does not work and that correct flashmessage is generated
+     * if the user does not have enough money
+     * to cover for the bet
+     */
     public function testInitNotOk(): void
     {
 
