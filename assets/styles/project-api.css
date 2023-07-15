@@ -44,6 +44,10 @@
     justify-content: center;
 }
 
+.project .api p {
+    color: var(--purple-softer);
+}
+
 /* 
 .api h2 {
     font-family: 'Text Me One', sans-serif;
