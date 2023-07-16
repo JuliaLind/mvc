@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelTestDebugContainer::class, false)) {
 
 return new \ContainerMIPtlAp\App_KernelTestDebugContainer([
     'container.build_hash' => 'MIPtlAp',
-    'container.build_id' => 'b51617c6',
-    'container.build_time' => 1689506421,
+    'container.build_id' => '1580f3c1',
+    'container.build_time' => 1689507232,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerMIPtlAp');
