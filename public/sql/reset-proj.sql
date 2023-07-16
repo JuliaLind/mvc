@@ -67,7 +67,7 @@ INSERT INTO "transaction" VALUES(25,1,'2023-07-11','undo last move cheat',-10);
 INSERT INTO "transaction" VALUES(26,1,'2023-07-11','move-a-card cheat',-50);
 INSERT INTO "transaction" VALUES(27,1,'2023-07-11','move-a-card cheat',-50);
 INSERT INTO "transaction" VALUES(28,1,'2023-07-11','Return (bet x 2)',20);
-INSERT INTO "transaction" VALUES(29,1,'2023-07-11','show-suggestion cheat',-30);
+INSERT INTO "transaction" VALUES(29,1,'2023-07-11','Bet',-10);
 INSERT INTO "transaction" VALUES(30,1,'2023-07-11','move-a-card cheat',-50);
 INSERT INTO "transaction" VALUES(31,1,'2023-07-11','Purchase',10100);
 INSERT INTO "transaction" VALUES(32,1,'2023-07-11','Bet',-10);
