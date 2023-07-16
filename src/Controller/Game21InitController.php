@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 /**
  * Controller for the 21 card game
  */
-class Game21Controller4 extends AbstractController
+class Game21InitController extends AbstractController
 {
     /**
      * Route for initiating the game. Creates an object of class

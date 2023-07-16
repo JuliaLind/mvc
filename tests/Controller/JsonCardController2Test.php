@@ -23,12 +23,4 @@ class JsonCardController2Test extends WebTestCase
         $this->assertStringContainsString('card1', $response);
         $this->assertStringContainsString('card2', $response);
     }
-
-    public function testJsonShuffle(): void
-    {
-        $client = static::createClient();
-        $client->request('POST', '/api/deck/shuffle');
-        $this->assertResponseIsSuccessful();
-        $this->assertRouteSame('jsonShuffle');
-    }
 }

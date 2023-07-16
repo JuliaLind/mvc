@@ -696,16 +696,6 @@ Search.appendIndex(
             "summary": "Route\u0020that\u0020leads\u0020to\u0020form\u0020where\u0020user\u0020selects\u0020amount\u0020to\u0020bet",
             "url": "classes/App-Controller-Game21Controller3.html#method_selectAmount"
         },                {
-            "fqsen": "\\App\\Controller\\Game21Controller4",
-            "name": "Game21Controller4",
-            "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game",
-            "url": "classes/App-Controller-Game21Controller4.html"
-        },                {
-            "fqsen": "\\App\\Controller\\Game21Controller4\u003A\u003Ainit\u0028\u0029",
-            "name": "init",
-            "summary": "Route\u0020for\u0020initiating\u0020the\u0020game.\u0020Creates\u0020an\u0020object\u0020of\u0020class\nGame21Easy\u0020or\u0020Game21Hard,\u0020samves\u0020to\u0020session\u0020and\u0020redirects\nto\u0020route\u0020for\u0020selecting\u0020amount\u0020to\u0020bet",
-            "url": "classes/App-Controller-Game21Controller4.html#method_init"
-        },                {
             "fqsen": "\\App\\Controller\\Game21Controller5",
             "name": "Game21Controller5",
             "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game",
@@ -1973,7 +1963,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\Game\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Counstructor",
+            "summary": "Constructor",
             "url": "classes/App-Project-Game.html#method___construct"
         },                {
             "fqsen": "\\App\\Project\\Game\u003A\u003A\u0024card",
@@ -3910,6 +3900,16 @@ Search.appendIndex(
             "name": "pickCard",
             "summary": "Route\u0020that\u0020renders\u0020the\u0020template\u0020where\u0020placed\u0020cards\u0020are\u0020clickable.",
             "url": "classes/App-Controller-ProjectPickCardController.html#method_pickCard"
+        },                {
+            "fqsen": "\\App\\Controller\\Game21InitController",
+            "name": "Game21InitController",
+            "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game",
+            "url": "classes/App-Controller-Game21InitController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\Game21InitController\u003A\u003Ainit\u0028\u0029",
+            "name": "init",
+            "summary": "Route\u0020for\u0020initiating\u0020the\u0020game.\u0020Creates\u0020an\u0020object\u0020of\u0020class\nGame21Easy\u0020or\u0020Game21Hard,\u0020samves\u0020to\u0020session\u0020and\u0020redirects\nto\u0020route\u0020for\u0020selecting\u0020amount\u0020to\u0020bet",
+            "url": "classes/App-Controller-Game21InitController.html#method_init"
         },                {
             "fqsen": "\\",
             "name": "\\",

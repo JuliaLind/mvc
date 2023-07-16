@@ -362,13 +362,6 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\Game21Controller3"/>
       </call>
     </service>
-    <service id="App\Controller\Game21Controller4" class="App\Controller\Game21Controller4" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\Game21Controller4"/>
-      </call>
-    </service>
     <service id="App\Controller\Game21Controller5" class="App\Controller\Game21Controller5" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -388,6 +381,13 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\Game21Controller7"/>
+      </call>
+    </service>
+    <service id="App\Controller\Game21InitController" class="App\Controller\Game21InitController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\Game21InitController"/>
       </call>
     </service>
     <service id="App\Controller\JsonCardController" class="App\Controller\JsonCardController" public="true" autowire="true" autoconfigure="true">
@@ -2620,7 +2620,7 @@
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" type="service_closure" id="webpack_encore.entrypoint_lookup_collection" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader.filesystem" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
-        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.gJ13tj4" on-invalid="ignore_uninitialized"/>
+        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.9BpEUFo" on-invalid="ignore_uninitialized"/>
         <argument key="doctrine.id_generator_locator" type="service_closure" id=".service_locator.KLVvNIq" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
         <argument key="Psr\Log\LoggerInterface $requestLogger" type="service_closure" id="monolog.logger.request" on-invalid="ignore_uninitialized"/>
@@ -7008,9 +7008,6 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Game21Controller3" class="App\Controller\Game21Controller3" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Game21Controller3" class="App\Controller\Game21Controller3" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Game21Controller3" class="App\Controller\Game21Controller3" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Game21Controller4" class="App\Controller\Game21Controller4" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Game21Controller4" class="App\Controller\Game21Controller4" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Game21Controller4" class="App\Controller\Game21Controller4" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Game21Controller5" class="App\Controller\Game21Controller5" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Game21Controller5" class="App\Controller\Game21Controller5" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Game21Controller5" class="App\Controller\Game21Controller5" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7020,6 +7017,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Game21Controller7" class="App\Controller\Game21Controller7" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Game21Controller7" class="App\Controller\Game21Controller7" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Game21Controller7" class="App\Controller\Game21Controller7" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Game21InitController" class="App\Controller\Game21InitController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Game21InitController" class="App\Controller\Game21InitController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Game21InitController" class="App\Controller\Game21InitController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\JsonCardController" class="App\Controller\JsonCardController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\JsonCardController" class="App\Controller\JsonCardController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\JsonCardController" class="App\Controller\JsonCardController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7292,16 +7292,16 @@
         <argument key="repo" type="service_closure" id="App\Repository\TransactionRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.gJ13tj4" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.9BpEUFo" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CardController2::draw" type="service_closure" id=".service_locator.RnGvXe2"/>
         <argument key="App\Controller\CardController2::drawMany" type="service_closure" id=".service_locator.RnGvXe2"/>
         <argument key="App\Controller\CardController::deck" type="service_closure" id=".service_locator.wEG24Lz"/>
         <argument key="App\Controller\CardController::shuffle" type="service_closure" id=".service_locator.wEG24Lz"/>
-        <argument key="App\Controller\Game21Controller4::init" type="service_closure" id=".service_locator.gyfNlz5"/>
         <argument key="App\Controller\Game21Controller::gameDoc" type="service_closure" id=".service_locator.IeuV79I"/>
         <argument key="App\Controller\Game21Controller::main" type="service_closure" id=".service_locator.IeuV79I"/>
+        <argument key="App\Controller\Game21InitController::init" type="service_closure" id=".service_locator.gyfNlz5"/>
         <argument key="App\Controller\JsonCardController2::jsonDeck" type="service_closure" id=".service_locator.wEG24Lz"/>
         <argument key="App\Controller\JsonCardController3::jsonDrawMany" type="service_closure" id=".service_locator.RnGvXe2"/>
         <argument key="App\Controller\JsonCardController4::jsonDraw" type="service_closure" id=".service_locator.RnGvXe2"/>
@@ -7356,9 +7356,9 @@
         <argument key="App\Controller\CardController2:drawMany" type="service_closure" id=".service_locator.RnGvXe2"/>
         <argument key="App\Controller\CardController:deck" type="service_closure" id=".service_locator.wEG24Lz"/>
         <argument key="App\Controller\CardController:shuffle" type="service_closure" id=".service_locator.wEG24Lz"/>
-        <argument key="App\Controller\Game21Controller4:init" type="service_closure" id=".service_locator.gyfNlz5"/>
         <argument key="App\Controller\Game21Controller:gameDoc" type="service_closure" id=".service_locator.IeuV79I"/>
         <argument key="App\Controller\Game21Controller:main" type="service_closure" id=".service_locator.IeuV79I"/>
+        <argument key="App\Controller\Game21InitController:init" type="service_closure" id=".service_locator.gyfNlz5"/>
         <argument key="App\Controller\JsonCardController2:jsonDeck" type="service_closure" id=".service_locator.wEG24Lz"/>
         <argument key="App\Controller\JsonCardController3:jsonDrawMany" type="service_closure" id=".service_locator.RnGvXe2"/>
         <argument key="App\Controller\JsonCardController4:jsonDraw" type="service_closure" id=".service_locator.RnGvXe2"/>
@@ -7831,12 +7831,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
-    <service id=".service_locator.jIxfAsi.App\Controller\Game21Controller4" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Game21Controller4"/>
-      <argument>App\Controller\Game21Controller4</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.jIxfAsi" method="withContext"/>
-    </service>
     <service id=".service_locator.jIxfAsi.App\Controller\Game21Controller5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Game21Controller5"/>
       <argument>App\Controller\Game21Controller5</argument>
@@ -7852,6 +7846,12 @@
     <service id=".service_locator.jIxfAsi.App\Controller\Game21Controller7" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Game21Controller7"/>
       <argument>App\Controller\Game21Controller7</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\Game21InitController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Game21InitController"/>
+      <argument>App\Controller\Game21InitController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
@@ -8272,12 +8272,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.gJ13tj4"/>
+      <argument type="service" id=".service_locator.9BpEUFo"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.gJ13tj4"/>
+      <argument type="service" id=".service_locator.9BpEUFo"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8994,7 +8994,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.gJ13tj4"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.9BpEUFo"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9017,7 +9017,7 @@
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.ewaBO.S" alias=".service_locator.XXU_NF2"/>
     <service id=".service_locator.hjZjVN0" alias=".service_locator.OsH1muE"/>
-    <service id=".service_locator.1Q_N_01" alias=".service_locator.gJ13tj4"/>
+    <service id=".service_locator.zw.n4Lu" alias=".service_locator.9BpEUFo"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.fTeS4zl" alias=".service_locator.iwVv_YN"/>

@@ -54,7 +54,7 @@ class Game
     private Grid $player;
 
     /**
-     * Counstructor
+     * Constructor
      * @param array<Grid> $grids
      */
     public function __construct(
@@ -67,6 +67,9 @@ class Game
         $this->evaluator = $evaluator;
         $this->deck = $deck;
         $this->card = $this->deck->deal();
+        /**
+         * Get the preliminary data on scored rules (at start of the game it is "None" and 0 for all ten)
+         */
         $this->results = [
             'player' => $evaluator->results($this->player),
             'house' => $evaluator->results($this->house)

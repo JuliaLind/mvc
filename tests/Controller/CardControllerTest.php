@@ -6,22 +6,27 @@ use App\Cards\DeckOfCards;
 use App\Cards\Player;
 use App\Cards\CardGraphic;
 
-
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class CardControllerTest extends WebTestCase
 {
+    use SessionTrait;
+
     public function testDeck(): void
     {
         $client = static::createClient();
-
+        $session = $this->createSession($client);
         $deck = $this->createMock(DeckOfCards::class);
 
         $deck->expects($this->once())
         ->method('getImgLinks')->willReturn(['alink.png', 'anotherlink.png']);
         $container = $client->getContainer();
         $container->set(DeckOfCards::class, $deck);
+        $container->set(Session::class, $session);
 
         $client->request('GET', '/card/deck');
 
@@ -29,6 +34,7 @@ class CardControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
         $this->assertRouteSame('deck');
         $this->assertSelectorTextContains('h1', 'New deck');
+        $this->assertEquals($deck, $session->get('deck'));
         $response = strval($client->getResponse()->getContent());
         $this->assertStringContainsString('alink.png', $response);
     }
@@ -36,6 +42,7 @@ class CardControllerTest extends WebTestCase
     public function testShuffle(): void
     {
         $client = static::createClient();
+        $session = $this->createSession($client);
         $deck = $this->createMock(DeckOfCards::class);
         $deck->expects($this->once())
         ->method('shuffle');
@@ -43,7 +50,9 @@ class CardControllerTest extends WebTestCase
         ->method('getImgLinks')->willReturn(['alink.png', 'anotherlink.png']);
         $container = $client->getContainer();
         $container->set(DeckOfCards::class, $deck);
+        $container->set(Session::class, $session);
         $client->request('POST', '/card/deck/shuffle');
+        $this->assertEquals($deck, $session->get('deck'));
         $this->assertResponseIsSuccessful();
         $this->assertRouteSame('shuffle');
         $this->assertSelectorTextContains('h1', 'Shuffled deck');

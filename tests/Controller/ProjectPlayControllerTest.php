@@ -2,15 +2,11 @@
 
 namespace App\Controller;
 
+use App\Project\Game;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage;
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
-
-use App\Project\Game;
-
-
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class ProjectPlayControllerTest extends WebTestCase
 {
@@ -23,9 +19,6 @@ class ProjectPlayControllerTest extends WebTestCase
     public function testProjPlayNotOk(): void
     {
         $client = static::createClient();
-        $session = $this->createSession($client);
-        $container = $client->getContainer();
-        $container->set(Session::class, $session);
 
         $client->request(
             'POST',
@@ -82,6 +75,17 @@ class ProjectPlayControllerTest extends WebTestCase
         $response = strval($client->getResponse()->getContent());
         $this->assertStringContainsString('won', $response);
         $this->assertStringContainsString('Final score', $response);
+        /**
+         * @var Game $game
+         */
+        $game = $session->get('game');
+        /**
+         * @var array<string,mixed> $state
+         */
+        $state = $game ->currentState();
+        $this->assertTrue($state['finished']);
+        $this->assertEquals(25, $state['placedCards']);
+        $this->assertEquals([], $state['playerPossibleCards']);
     }
 
 
@@ -91,9 +95,6 @@ class ProjectPlayControllerTest extends WebTestCase
     public function testProjPlayOk(): void
     {
         $client = static::createClient();
-        $session = $this->createSession($client);
-        $container = $client->getContainer();
-        $container->set(Session::class, $session);
 
         $client->request(
             'POST',

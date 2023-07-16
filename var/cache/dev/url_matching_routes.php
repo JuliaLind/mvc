@@ -92,8 +92,8 @@ return [
                     .'|eal/(\\d+)/(\\d+)(*:216)'
                 .')'
                 .'|/game/(?'
-                    .'|init(?:/(\\d+))?(*:249)'
-                    .'|bet/(\\d+)(*:266)'
+                    .'|bet/(\\d+)(*:243)'
+                    .'|init(?:/(\\d+))?(*:266)'
                 .')'
                 .'|/api/(?'
                     .'|deck/d(?'
@@ -132,8 +132,8 @@ return [
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         193 => [[['_route' => 'drawMany', '_controller' => 'App\\Controller\\CardController2::drawMany'], ['number'], ['POST' => 0], null, false, true, null]],
         216 => [[['_route' => 'deal', '_controller' => 'App\\Controller\\CardController2::deal'], ['players', 'cards'], ['POST' => 0], null, false, true, null]],
-        249 => [[['_route' => 'init', 'level' => 0, '_controller' => 'App\\Controller\\Game21Controller4::init'], ['level'], ['POST' => 0], null, false, true, null]],
-        266 => [[['_route' => 'bet', '_controller' => 'App\\Controller\\Game21Controller5::bet'], ['amount'], ['POST' => 0], null, false, true, null]],
+        243 => [[['_route' => 'bet', '_controller' => 'App\\Controller\\Game21Controller5::bet'], ['amount'], ['POST' => 0], null, false, true, null]],
+        266 => [[['_route' => 'init', 'level' => 0, '_controller' => 'App\\Controller\\Game21InitController::init'], ['level'], ['POST' => 0], null, false, true, null]],
         307 => [[['_route' => 'jsonDeal', '_controller' => 'App\\Controller\\JsonCardController::jsonDeal'], ['players', 'cards'], ['POST' => 0], null, false, true, null]],
         324 => [[['_route' => 'jsonDrawMany', '_controller' => 'App\\Controller\\JsonCardController3::jsonDrawMany'], ['number'], ['POST' => 0], null, false, true, null]],
         354 => [[['_route' => 'single_book_json', '_controller' => 'App\\Controller\\JsonLibraryController::showABookByIsbn'], ['isbn'], null, null, false, true, null]],

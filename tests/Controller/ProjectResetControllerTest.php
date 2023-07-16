@@ -3,12 +3,8 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\DataFixtures\BookFixture;
-use Doctrine\Persistence\ObjectManager;
+
 use Doctrine\DBAL\Connection;
-use App\Entity\Book;
-use App\Repository\BookRepository;
-use App\Repository\BookNotFoundException;
 
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Session\Session;

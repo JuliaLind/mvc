@@ -2,15 +2,12 @@
 
 namespace App\Controller;
 
+use App\Project\Game;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage;
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
-
-use App\Project\Game;
-
-
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class ProjectUndoControllerTest extends WebTestCase
 {
@@ -58,10 +55,70 @@ class ProjectUndoControllerTest extends WebTestCase
         $this->assertEquals($expectedFlashbag, $bag->peekAll());
     }
 
+        /**
+     * Tests that the only last move is reversed and that coordinates
+     */
+    public function testUndoOk(): void
+    {
+
+        $client = static::createClient();
+        $session = $this->createSession($client);
+        $container = $client->getContainer();
+        $container->set(Session::class, $session);
+
+        $client->request(
+            'POST',
+            '/proj/login',
+            [
+                'email' => 'user0@test.se',
+                'password' => 'julia'
+            ]
+        );
+
+        $client->request(
+            'POST',
+            '/proj/init',
+            [
+                'bet' => 100,
+            ]
+        );
+        $client->request('POST', '/proj/one-round/2/1');
+        $client->request('POST', '/proj/one-round/2/3');
+        $client->request('POST', '/proj/one-round/0/4');
+        $client->request('POST', '/proj/one-round/1/3');
+
+
+
+        $client->request('POST', '/proj/undo');
+        /**
+         * @var Game $game
+         */
+        $game = $session->get('game');
+        /**
+         * @var array<string,mixed> $state
+         */
+        $state = $game ->currentState();
+        /**
+         * @var array<array<int>> $roundCoords
+         */
+        $roundCoords = $state['lastRound'];
+
+        $res = $roundCoords['player'];
+
+        $exp = [[2, 1], [2, 3], [0, 4]];
+        $this->assertEquals($exp, $res);
+        /**
+         * @var array<array<int,array<string,string>>> $playerGrid
+         */
+        $playerGrid = $state['player'];
+        $this->assertEquals($playerGrid[1][3]['alt'], "");
+        $this->assertNotEquals($playerGrid[0][4]['alt'], "");
+    }
+
     /**
      * Tests that the last move is reversed
      */
-    public function testUndoOk(): void
+    public function testUndoOk2(): void
     {
 
         $client = static::createClient();

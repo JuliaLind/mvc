@@ -2,16 +2,13 @@
 
 namespace App\Project;
 
-use PHPUnit\Framework\TestCase;
-use App\ProjectGrid\Grid;
 use App\ProjectEvaluator\RuleEvaluator;
+use App\ProjectGrid\Grid;
+use PHPUnit\Framework\TestCase;
 
 class UndoLastRoundTraitTest extends TestCase
 {
     use UndoLastRoundTrait;
-
-
-
 
     public function testUndoLastRound(): void
     {

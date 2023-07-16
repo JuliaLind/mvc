@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\BrowserKit\Cookie;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
-// use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -71,7 +71,6 @@ class CardController2Test extends WebTestCase
         $client->request('POST', '/card/deck/draw/7');
         $this->assertResponseIsSuccessful();
         $this->assertRouteSame('drawMany');
-        // $this->assertSelectorTextContains('p', 'Cards left: 45');
         $this->assertSelectorTextContains('h1', 'Draw 7 cards for 1 player');
     }
 

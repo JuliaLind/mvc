@@ -71,8 +71,8 @@ return [
                     .'|eal/(\\d+)/(\\d+)(*:53)'
                 .')'
                 .'|/game/(?'
-                    .'|init(?:/(\\d+))?(*:85)'
-                    .'|bet/(\\d+)(*:101)'
+                    .'|bet/(\\d+)(*:79)'
+                    .'|init(?:/(\\d+))?(*:101)'
                 .')'
                 .'|/api/(?'
                     .'|deck/d(?'
@@ -104,8 +104,8 @@ return [
     [ // $dynamicRoutes
         31 => [[['_route' => 'drawMany', '_controller' => 'App\\Controller\\CardController2::drawMany'], ['number'], ['POST' => 0], null, false, true, null]],
         53 => [[['_route' => 'deal', '_controller' => 'App\\Controller\\CardController2::deal'], ['players', 'cards'], ['POST' => 0], null, false, true, null]],
-        85 => [[['_route' => 'init', 'level' => 0, '_controller' => 'App\\Controller\\Game21Controller4::init'], ['level'], ['POST' => 0], null, false, true, null]],
-        101 => [[['_route' => 'bet', '_controller' => 'App\\Controller\\Game21Controller5::bet'], ['amount'], ['POST' => 0], null, false, true, null]],
+        79 => [[['_route' => 'bet', '_controller' => 'App\\Controller\\Game21Controller5::bet'], ['amount'], ['POST' => 0], null, false, true, null]],
+        101 => [[['_route' => 'init', 'level' => 0, '_controller' => 'App\\Controller\\Game21InitController::init'], ['level'], ['POST' => 0], null, false, true, null]],
         142 => [[['_route' => 'jsonDeal', '_controller' => 'App\\Controller\\JsonCardController::jsonDeal'], ['players', 'cards'], ['POST' => 0], null, false, true, null]],
         159 => [[['_route' => 'jsonDrawMany', '_controller' => 'App\\Controller\\JsonCardController3::jsonDrawMany'], ['number'], ['POST' => 0], null, false, true, null]],
         189 => [[['_route' => 'single_book_json', '_controller' => 'App\\Controller\\JsonLibraryController::showABookByIsbn'], ['isbn'], null, null, false, true, null]],

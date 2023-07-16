@@ -37,7 +37,7 @@ Get-routen visar diverse data från databasen:
 2. de 10 högsta scores balnd samtliga användare
 3. alla användare
 4. alla transaktioner
-5. "current state" av ett pågående Poker Squares spel.  
+5. "current state" av ett pågående Poker Squares spel.  I redovisningsvideon visar jag att man i denna route kan se statistik för spelaren och jag vill tillägga här att den statistiken ser man bara efter att man köpt ett "suggestion" innan man placerar kortet - för att undvika "onödiga" loopar så generareras statistik och suggestion bara när du köper den cheaten, och nollställs därefter så snart du placerar ett kort i griden
 
 Post routsen visar ett antal avgränsade delar av logiken som Poker Squares spelet bygger på:  
  
