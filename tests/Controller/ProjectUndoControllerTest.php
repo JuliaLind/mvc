@@ -53,6 +53,17 @@ class ProjectUndoControllerTest extends WebTestCase
         $bag = $session->getBag('flashes');
 
         $this->assertEquals($expectedFlashbag, $bag->peekAll());
+
+        /**
+         * @var Game $game
+         */
+        $game = $session->get('game');
+        $state = $game->currentState();
+        /**
+         * @var array<array<array<string,string>>>
+         */
+        $playerCards = $state['player'];
+        $this->assertNotEquals("", $playerCards[2][1]['alt']);
     }
 
     /**
@@ -147,5 +158,16 @@ class ProjectUndoControllerTest extends WebTestCase
         $client->request('POST', '/proj/undo');
         $this->assertRouteSame('undo');
         $this->assertResponseRedirects('/proj/play');
+
+        /**
+         * @var Game $game
+         */
+        $game = $session->get('game');
+        $state = $game->currentState();
+        /**
+         * @var array<array<array<string,string>>>
+         */
+        $playerCards = $state['player'];
+        $this->assertEquals("", $playerCards[2][1]['alt']);
     }
 }

@@ -3,15 +3,12 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\DataFixtures\BookFixture;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Book;
 use App\Repository\BookRepository;
-use App\Repository\BookNotFoundException;
 
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
 use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 
 class LibraryCreateNewControllerTest extends WebTestCase

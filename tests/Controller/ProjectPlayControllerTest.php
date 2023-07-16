@@ -95,6 +95,9 @@ class ProjectPlayControllerTest extends WebTestCase
     public function testProjPlayOk(): void
     {
         $client = static::createClient();
+        $session = $this->createSession($client);
+        $container = $client->getContainer();
+        $container->set(Session::class, $session);
 
         $client->request(
             'POST',
@@ -119,5 +122,12 @@ class ProjectPlayControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
         $response = strval($client->getResponse()->getContent());
         $this->assertStringContainsString('Balance: 1340 coins', $response);
+
+        /**
+         * @var Game $game
+         */
+        $game = $session->get('game');
+        $state = $game->currentState();
+        $this->assertEquals(100, $state['bet']);
     }
 }

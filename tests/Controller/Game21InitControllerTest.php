@@ -3,11 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage;
-
 use App\Game\Game21Easy;
 use App\Game\Game21Hard;
 
@@ -30,6 +26,11 @@ class Game21InitControllerTest extends WebTestCase
          */
         $gameEasy = $session->get("game21");
         $this->assertInstanceOf('App\Game\Game21Easy', $gameEasy);
+        /**
+         * @var array<string,mixed> $data
+         */
+        $data = $gameEasy->getGameStatus();
+        $this->assertEquals("easy", $data['level']);
     }
 
     public function testInitHard(): void
@@ -46,5 +47,10 @@ class Game21InitControllerTest extends WebTestCase
          */
         $gameHard = $session->get("game21");
         $this->assertInstanceOf("App\Game\Game21Hard", $gameHard);
+        /**
+         * @var array<string,mixed> $data
+         */
+        $data = $gameHard->getGameStatus();
+        $this->assertEquals("hard", $data['level']);
     }
 }

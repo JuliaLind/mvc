@@ -2,9 +2,8 @@
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage;
+
 use App\Entity\User;
 use App\Entity\Transaction;
 use App\Repository\UserRepository;

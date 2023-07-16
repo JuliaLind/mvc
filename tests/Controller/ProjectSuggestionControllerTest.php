@@ -2,14 +2,9 @@
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
-
 use App\Project\Game;
-
-
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class ProjectSuggestionControllerTest extends WebTestCase
@@ -90,6 +85,13 @@ class ProjectSuggestionControllerTest extends WebTestCase
         $this->assertRouteSame('purchase-suggestion');
         $this->assertResponseRedirects('/proj/show-suggestion');
         $this->assertTrue($session->get('show-suggestion'));
+        /**
+         * @var Game $game
+         */
+        $game = $session->get('game');
+        $state = $game->currentState();
+
+        $this->assertNotEquals([], $state['suggestion']);
     }
 
     /**
@@ -122,6 +124,14 @@ class ProjectSuggestionControllerTest extends WebTestCase
         $client->request('POST', "/proj/show-suggestion");
         $this->assertRouteSame('show-suggestion');
         $this->assertResponseRedirects('/proj/play');
+
+        /**
+         * @var Game $game
+         */
+        $game = $session->get('game');
+        $state = $game->currentState();
+
+        $this->assertEquals([], $state['suggestion']);
     }
 
     /**

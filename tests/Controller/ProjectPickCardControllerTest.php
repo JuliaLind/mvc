@@ -57,34 +57,7 @@ class ProjectPickCardControllerTest extends WebTestCase
         $this->assertEquals($expectedFlashbag, $bag->peekAll());
     }
 
-    /**
-     * Tests that user is redirected to landing page if the route for
-     * picking up card for a move is accessed directly before a game has
-     * been initiated
-     */
-    public function testProjPickCardNotOk2(): void
-    {
-        $client = static::createClient();
-        $session = $this->createSession($client);
-        $container = $client->getContainer();
-        $container->set(Session::class, $session);
-
-        $client->request(
-            'POST',
-            '/proj/login',
-            [
-                'email' => 'user0@test.se',
-                'password' => 'julia'
-            ]
-        );
-
-        $client->request('POST', "/proj/pick-card/100");
-        $this->assertRouteSame('pick-card');
-        $this->assertResponseRedirects('/proj');
-    }
-
-
-    /**
+        /**
      * Tests that the pick-card route works and correct template is generated if the
      * user has enough money to pay for the cheat
      */
@@ -173,5 +146,31 @@ class ProjectPickCardControllerTest extends WebTestCase
         $this->assertNotEquals("", $playerCards[4][2]['alt']);
         $this->assertNotEquals("", $playerCards[3][1]['alt']);
         $this->assertEquals("", $playerCards[0][2]['alt']);
+    }
+
+    /**
+     * Tests that user is redirected to landing page if the route for
+     * picking up card for a move is accessed directly before a game has
+     * been initiated
+     */
+    public function testProjPickCardNotOk2(): void
+    {
+        $client = static::createClient();
+        $session = $this->createSession($client);
+        $container = $client->getContainer();
+        $container->set(Session::class, $session);
+
+        $client->request(
+            'POST',
+            '/proj/login',
+            [
+                'email' => 'user0@test.se',
+                'password' => 'julia'
+            ]
+        );
+
+        $client->request('POST', "/proj/pick-card/100");
+        $this->assertRouteSame('pick-card');
+        $this->assertResponseRedirects('/proj');
     }
 }

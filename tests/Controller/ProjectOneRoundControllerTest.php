@@ -59,6 +59,11 @@ class ProjectOneROundControllerTest extends WebTestCase
         $lastRound = $state['lastRound'];
         $res = $lastRound['player'];
         $this->assertEquals([2, 1], $res[0]);
+        /**
+         * @var array<array<array<string,string>>>
+         */
+        $playerCards = $state['player'];
+        $this->assertNotEquals("", $playerCards[2][1]['alt']);
     }
 
     /**

@@ -5,10 +5,8 @@ namespace App\Controller;
 use App\Cards\DeckOfCards;
 use App\Cards\Player;
 use App\Cards\CardGraphic;
-
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage;
+
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -27,10 +25,7 @@ class CardControllerTest extends WebTestCase
         $container = $client->getContainer();
         $container->set(DeckOfCards::class, $deck);
         $container->set(Session::class, $session);
-
         $client->request('GET', '/card/deck');
-
-
         $this->assertResponseIsSuccessful();
         $this->assertRouteSame('deck');
         $this->assertSelectorTextContains('h1', 'New deck');
