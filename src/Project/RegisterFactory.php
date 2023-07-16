@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 use Doctrine\ORM\EntityManagerInterface;
 
 /**
- * Creates an instance of the Register class for a specific user
+ * Creates an instance of the Register class for a specific user, from kmom10/Project
  */
 class RegisterFactory
 {

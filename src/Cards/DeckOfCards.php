@@ -6,7 +6,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 
 /**
- * Class representing a deck of cards with no jokers
+ * Class representing a deck of cards with no jokers, from kmom02
  */
 class DeckOfCards
 {

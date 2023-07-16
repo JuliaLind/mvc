@@ -5,7 +5,7 @@ namespace App\ProjectGrid;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Trait for retrieving the count of cards placed in the grid
+ * Trait for retrieving the count of cards placed in the grid, from kmom10/Project
  */
 trait CardCountTrait
 {

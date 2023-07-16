@@ -4,7 +4,10 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait for checking if a Straight has been scored in a hand.
+ * From kmom10/Project
+ */
 trait StraightScoredTrait
 {
     /**
@@ -14,7 +17,7 @@ trait StraightScoredTrait
      * the cards and the values are the count of
      * each rank
      * @param array<string> $cards
-     * @return  array<array<int|string,int>>
+     * @return array<array<int|string,int>>
      */
     abstract private function countByRank($cards): array;
 

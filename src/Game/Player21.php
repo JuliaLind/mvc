@@ -6,7 +6,7 @@ use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
 /**
- * Class representing a Player in the 21 game
+ * Class representing a Player in the 21 game, from kmom03-04
  */
 class Player21
 {

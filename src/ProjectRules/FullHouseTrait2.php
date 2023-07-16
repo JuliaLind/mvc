@@ -2,6 +2,11 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Trait for checking if Full House rule is possible to score without the
+ * dealt card in a partially filled hand.
+ * From kmom10/Project
+ */
 trait FullHouseTrait2
 {
     use FullHouseTrait3;
@@ -17,7 +22,7 @@ trait FullHouseTrait2
      * the cards and the values are the count of
      * each rank
      * @param array<string> $cards
-     * @return  array<array<int|string,int>>
+     * @return array<array<int|string,int>>
      */
     abstract private function countByRank($cards): array;
 
@@ -26,7 +31,7 @@ trait FullHouseTrait2
      * given the cards in the deck and the cards
      * that will be dealt from deck
      * @param array<string> $hand
-     * @param array<string> $deck
+     * @param array<string> $deck - the cards from the deck that will be dealt to the player in the remaining game
      */
     public function possibleWithoutCard(array $hand, array $deck): bool
     {

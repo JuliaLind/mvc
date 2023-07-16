@@ -8,7 +8,7 @@ use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
 /**
- * Trait contains the method for adjusting the value of ace from 14 to 1
+ * Trait contains the method for adjusting the value of ace from 14 to 1, from kmom03-04
  */
 trait Player21Trait
 {

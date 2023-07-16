@@ -13,7 +13,7 @@ use App\Entity\Score;
 
 /**
  * Registers user score and transactions.
- * Gets users balance (sum of transactions)
+ * Gets users balance (sum of transactions), from kmom10/Project
  */
 class Register
 {

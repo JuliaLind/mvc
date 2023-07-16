@@ -4,7 +4,11 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait for setting the possible lower ranks for checking the possibility of
+ * scoreing a Straight or Straight Flush.
+ * From kmom10/Project
+ */
 trait MinRankLimitsTrait
 {
     /**

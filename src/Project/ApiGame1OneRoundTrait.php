@@ -8,10 +8,8 @@ use App\ProjectGrid\Grid;
 use App\ProjectEvaluator\RuleEvaluator;
 
 /**
- * Evaluates the hands of player and house after
- * both grids have been filled and determins
- * winner. If player won transfers 2x pot to
- * player/user and registers players score to database.
+ * Used in API route. Contains method that deals a card and places into
+ * a grid based on calculated suggestion, used in the class ApiGame1, from kmom10/Project
  */
 trait ApiGame1OneRoundTrait
 {

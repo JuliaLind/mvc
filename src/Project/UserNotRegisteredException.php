@@ -7,8 +7,8 @@ require __DIR__ . "/../../vendor/autoload.php";
 use Exception;
 
 /**
- * Exception class thown when the suer does not have
- * enough coins to cover for a transaction
+ * Exception class thown when loggin in with an email that is not registered
+ * int eh database, from kmom10/Project
  */
 class UserNotRegisteredException extends Exception
 {

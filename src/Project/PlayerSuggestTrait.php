@@ -12,7 +12,7 @@ use App\ProjectEvaluator\RuleEvaluator;
  * to place the dealt card and also the data for
  * all 10 hands (best possible rule with the
  * dealt card and best possible rule wihtout
- * the dealt card)
+ * the dealt card), from kmom10/Project
  */
 trait PlayerSuggestTrait
 {

@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 use App\ProjectGrid\Grid;
 
 /**
- * Fins and returns the first empty cell in a grid
+ * Finds and returns the first empty cell in a grid, from kmom10/Project
  */
 trait EmptyCellTrait
 {

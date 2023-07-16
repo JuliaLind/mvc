@@ -5,7 +5,7 @@ namespace App\Game;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Handles transition to next round in the 21 game
+ * Handles transition to next round in the 21 game, from kmom03-04
  */
 trait NextRoundTrait
 {

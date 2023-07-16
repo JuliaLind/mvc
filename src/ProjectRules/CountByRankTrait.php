@@ -2,6 +2,11 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Trait contains method for generating an associative array
+ * with the count of each rank in a card array.
+ * From kmom10/Project
+ */
 trait CountByRankTrait
 {
     use SubCountTrait;

@@ -2,6 +2,11 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Trait for checking if a Two Pairs rule is possible
+ * to achieve wihtout the dealt card in a partially filled hand.
+ * From kmom10/Project
+ */
 trait TwoPairsTrait2
 {
     use TwoPairsTrait11;
@@ -27,7 +32,7 @@ trait TwoPairsTrait2
      * already in hand and the cards in the deck). Note! The
      * hand cannot be empty, for empty hand use the PossibleDeckOnly method
      * @param array<string> $hand
-     * @param array<string> $deck
+     * @param array<string> $deck - cards that will be dealt to the user during the remaining game
      */
     public function possibleWithoutCard(array $hand, array $deck): bool
     {

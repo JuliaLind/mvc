@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 use App\ProjectGrid\Grid;
 
 /**
- * Returns information on the current state of the game
+ * Returns information on the current state of the game, from kmom10/Project
  */
 trait CurrentStateTrait
 {

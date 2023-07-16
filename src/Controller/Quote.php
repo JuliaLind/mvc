@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 use Datetime;
 
 /**
- * Helper class to get data for for the API Quote route
+ * Helper class to get data for for the API Quote route from kmom01
  */
 class Quote
 {

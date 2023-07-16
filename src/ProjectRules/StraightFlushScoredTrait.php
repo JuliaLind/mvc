@@ -4,7 +4,10 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait for checking if a Straight Flush rule has been scored.
+ * From kmom10/Project
+ */
 trait StraightFlushScoredTrait
 {
     /**

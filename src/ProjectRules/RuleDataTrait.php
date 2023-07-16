@@ -6,7 +6,8 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 /**
  * Contains methods for getting the name
- * of the rule and the points the rule gives if scored
+ * of the rule and the points the rule gives if scored.
+ * From kmom10/Project
  */
 trait RuleDataTrait
 {

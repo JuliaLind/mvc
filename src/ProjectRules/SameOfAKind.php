@@ -4,7 +4,10 @@ namespace App\ProjectRules;
 
 /**
  * Class for the rules Four Of A Kind, Three Of A Kind
- * and One Pair.
+ * and One Pair. Responsible for checking if the rule has
+ * been scored or is possible to score with/wihtout the
+ * dealt card
+ * From kmom10/Project
  */
 class SameOfAKind implements RuleInterface
 {

@@ -8,7 +8,7 @@ use App\ProjectEvaluator\RuleEvaluator;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Game of Poker Squares
+ * Game of Poker Squares, from kmom10/Project
  */
 class Game
 {

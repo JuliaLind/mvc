@@ -4,7 +4,14 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait for checking if an array of cards contains
+ * a straight flush starting with given min rank
+ * and suit. Initially intended to be used in both Straight Flush and Royal flush and therefore
+ * quite general. In practice only used for Royal Flush because
+ * ended up using a different method for Straight Flush.
+ * From kmom10/Project
+ */
 trait RoyalFlushTrait3
 {
     use SearchSpecificCardTrait;
@@ -14,7 +21,7 @@ trait RoyalFlushTrait3
     private string $suit;
 
     /**
-     * Userd in the following traits:
+     * Used in the following traits:
      * RoyalFlushTrait,
      *
      * Checks if the card array contains all ranks between min-rank

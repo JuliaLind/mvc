@@ -3,7 +3,7 @@
 namespace App\Game;
 
 /**
- * Interface to be implemented by the classes Game21Easy and Game21Hard
+ * Interface to be implemented by the classes Game21Easy and Game21Hard, from kmom03-04
  */
 interface Game21Interface
 {

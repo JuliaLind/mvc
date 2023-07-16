@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 
 /**
  * Controller that contains the route for resetting
- * the Book table in the database
+ * the Book table in the database, from kmom05
  */
 class LibraryResetController extends AbstractController
 {

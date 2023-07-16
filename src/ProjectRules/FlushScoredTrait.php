@@ -4,7 +4,10 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait cor checking in a flush has been scored.
+ * From kmom10/Project
+ */
 trait FlushScoredTrait
 {
     /**

@@ -4,7 +4,7 @@ namespace App\ProjectRules;
 
 /**
  * Determins if the Flush rule is scored or
- * possible to score
+ * possible to score, from kmom10/Project
  */
 class Flush implements RuleInterface
 {

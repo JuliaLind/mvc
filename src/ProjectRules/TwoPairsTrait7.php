@@ -2,6 +2,11 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Part of the logic for checking in a Two Pairs rule
+ * is possible to score.
+ * From kmom10/Project
+ */
 trait TwoPairsTrait7
 {
     use TwoPairsTrait14;
@@ -29,7 +34,8 @@ trait TwoPairsTrait7
      * rank as the card in the hand that is not paired
      * a pair or the deck contains
      * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
+     * @param array<int,int> $ranksDeck - ranks of the cards
+     * that will be dealt to the player during the remaining game
      */
     private function findSecondPair($ranksHand, $ranksDeck): bool
     {

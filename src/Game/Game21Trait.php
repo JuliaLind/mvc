@@ -6,6 +6,10 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 use App\Cards\DeckOfCards;
 
+/**
+ * Trait contains method for getting currently playing player in the 21 game
+ * and estimating the risk for current player, from kmom03-04
+ */
 trait Game21Trait
 {
     protected Player21 $player;

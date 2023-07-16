@@ -6,7 +6,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 /**
  * Contains the pot and method for
- * adding money to the pot
+ * adding money to the pot, from kmom10/Project
  */
 trait PotTrait
 {

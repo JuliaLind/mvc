@@ -4,7 +4,7 @@ namespace App\Game;
 
 /**
  * Class for checking if adding a card to the hand would return
- * in getting fat. If yes then returns 1, otherwise returns 0
+ * in getting fat. If yes then returns 1, otherwise returns 0, from kmom03-04
  */
 class ValueConverter2
 {

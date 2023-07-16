@@ -4,7 +4,12 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait for checking if a Straight Flush
+ * is possible to score in a partially filled hand,
+ * without the dealt card.
+ * From kmom10/Project
+ */
 trait StraightFlushTrait
 {
     // use CountBySuitTrait;
@@ -37,7 +42,7 @@ trait StraightFlushTrait
      * Returns true if rule is possible to
      * score wuthout the dealt card.
      * @param array<string> $hand
-     * @param array<string> $deck
+     * @param array<string> $deck - cards that will be dealt to the user from the deck in the remaining game
      */
     public function possibleWithoutCard(array $hand, array $deck): bool
     {

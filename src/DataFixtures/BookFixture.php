@@ -7,7 +7,7 @@ use Doctrine\Persistence\ObjectManager;
 use App\Entity\Book;
 
 /**
- * Fixture for testing Library
+ * Fixture for testing Library, from kmom05
  */
 class BookFixture extends Fixture
 {

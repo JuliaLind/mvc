@@ -19,7 +19,7 @@ trait SameOfAKindTrait4
      * SameOfAKindTrait2
      *
      * Returns true if there is enough empty slots left in hand to fit
-     * the difference between the count of a rank in the hand and the¨
+     * the difference between the count of a rank in the hand and the
      * minimum count of same rank required to score the rule
      */
     private function enoughSpaceInHand(int $countHand, int $countRank): bool

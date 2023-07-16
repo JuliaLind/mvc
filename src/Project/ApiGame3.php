@@ -7,7 +7,7 @@ use App\ProjectEvaluator\RuleEvaluator;
 
 /**
  * Displays part of the logic of the Poker Squares game, evaluates results for a
- * full grid and returns the data for API route
+ * full grid and returns the data for API , from kmom10/Project
  */
 class ApiGame3
 {

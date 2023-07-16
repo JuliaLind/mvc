@@ -5,7 +5,7 @@ namespace App\Game;
 use App\Cards\DeckOfCards;
 
 /**
- * Base class for the 21 card game
+ * Base class for the 21 card game, from kmom03-04
  */
 class Game21
 {

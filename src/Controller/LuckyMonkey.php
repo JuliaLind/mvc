@@ -5,7 +5,7 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Helper class to get data for the lucky route
+ * Helper class to get data for the lucky route, from kmom01
  */
 class LuckyMonkey
 {

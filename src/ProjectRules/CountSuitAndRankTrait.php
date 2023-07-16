@@ -2,6 +2,12 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Trait contains method for generating an array with two associative arrays,
+ * one with the count of each rank in a card array and the other with the count of each suit
+ * in the card array
+ * From kmom10/Project
+ */
 trait CountSuitAndRankTrait
 {
     use SubCountTrait;

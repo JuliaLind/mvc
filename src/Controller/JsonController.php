@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Controller that contains the route for API landing page
+ * Controller that contains the route for API landing page, kmom02-kmom06
  */
 class JsonController extends AbstractController
 {

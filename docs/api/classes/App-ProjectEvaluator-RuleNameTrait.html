@@ -137,12 +137,16 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/RuleNameTrait.php"><a href="files/src-projectevaluator-rulenametrait.html"><abbr title="src/ProjectEvaluator/RuleNameTrait.php">RuleNameTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">For getting the name of the best possible rule that can be scored in
+a partially filled hand without the dealt card. If the hand is completely filled
+or no rule is possible without the dealt card, will generate an empty string.</p>
+
+    <section class="phpdocumentor-description"><p>From kmom10/Project.</p>
+</section>
 
 
 
@@ -162,7 +166,7 @@
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
+<dd>Returns name of the best possible rule that can be scored in a partially filled hand without the dealt card.</dd>
 
         </dl>
 
@@ -188,16 +192,19 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/RuleNameTrait.php"><a href="files/src-projectevaluator-rulenametrait.html"><abbr title="src/ProjectEvaluator/RuleNameTrait.php">RuleNameTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns name of the best possible rule that can be scored in a partially filled hand without the dealt card.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">ruleName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-ProjectRules-RuleInterface.html"><abbr title="\App\ProjectRules\RuleInterface">RuleInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rule</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>If the hand is completely filled an empty string is returned</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -212,7 +219,11 @@
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><ul>
+<li>ranks of the cards from the deck that will be dealt to the player in the remaining game</li>
+</ul>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$rule</span>

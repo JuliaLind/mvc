@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 use App\Cards\DeckOfCards;
 
 /**
- * Trait for handling bank's turn to pick cards int he 21 game, for the easy version of the game
+ * Trait for handling bank's turn to pick cards int he 21 game, for the easy version of the game, from kmom03-04
  */
 trait DealBankEasyTrait
 {

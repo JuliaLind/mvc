@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Controller tht contains route where book data is updated
+ * Controller that contains route where book data is updated, from kmom05
  */
 class LibraryUpdateController2 extends AbstractController
 {

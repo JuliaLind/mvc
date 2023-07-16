@@ -4,7 +4,11 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait for checking if a Straight can be scored in a partially
+ * filled or an empty hand (separate methods) without the dealt card.
+ * From kmom10/Project
+ */
 trait StraightTrait
 {
     use MinRankLimitsTrait;
@@ -18,14 +22,14 @@ trait StraightTrait
      * the cards and the values are the count of
      * each rank
      * @param array<string> $cards
-     * @return  array<array<int|string,int>>
+     * @return array<array<int|string,int>>
      */
     abstract private function countByRank($cards): array;
 
 
     /**
      * @param array<string> $hand
-     * @param array<string> $deck
+     * @param array<string> $deck - cards that will be dealt to the player during the remaining game
      */
     public function possibleWithoutCard(array $hand, array $deck): bool
     {
@@ -50,7 +54,7 @@ trait StraightTrait
     }
 
     /**
-     * @param array<string> $deck
+     * @param array<string> $deck - cards that will be dealt to the player during the remaining game
      */
     public function possibleDeckOnly(array $deck): bool
     {

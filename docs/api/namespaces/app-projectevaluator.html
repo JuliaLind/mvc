@@ -141,44 +141,53 @@
 <dl class="phpdocumentor-table-of-contents">
     
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectEvaluator-NoEmptySlotsException.html"><abbr title="\App\ProjectEvaluator\NoEmptySlotsException">NoEmptySlotsException</abbr></a></dt>
-        <dd>Raised when trying to remove a card from an already empty slot</dd>
+        <dd>Raised when trying to remove a card from an already empty slot,
+will not be reaised under ordinary use, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectEvaluator-RuleEvaluator.html"><abbr title="\App\ProjectEvaluator\RuleEvaluator">RuleEvaluator</abbr></a></dt>
         <dd>Evaluates the highest rules scored (when the grid is full)
-and highest possible rule(s) to score for hands that have less than 5 cards</dd>
+and highest possible rule(s) to score with/without dealt card for hands that have less than 5 cards,
+from kmom10/Project</dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-BestPossibleRulesTrait.html"><abbr title="\App\ProjectEvaluator\BestPossibleRulesTrait">BestPossibleRulesTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Evaluates an array with hands (one direction) for the best hand.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-CheckEmptyGridTrait.html"><abbr title="\App\ProjectEvaluator\CheckEmptyGridTrait">CheckEmptyGridTrait</abbr></a></dt>
         <dd>Trait for getting a slot-suggestion for a new/empty grid.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-CheckFullHandTrait.html"><abbr title="\App\ProjectEvaluator\CheckFullHandTrait">CheckFullHandTrait</abbr></a></dt>
-        <dd>Trait for checking which rule is scored (if any)
-for a full hand.</dd>
+        <dd>Trait for checking which rule is scored (if any) in a hand, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-CheckWithCardTrait.html"><abbr title="\App\ProjectEvaluator\CheckWithCardTrait">CheckWithCardTrait</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-CheckWithoutCardTrait.html"><abbr title="\App\ProjectEvaluator\CheckWithoutCardTrait">CheckWithoutCardTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Checks a hand for the best possible rule that can be
+achieved without the dealt card, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-EmptyCellsTrait.html"><abbr title="\App\ProjectEvaluator\EmptyCellsTrait">EmptyCellsTrait</abbr></a></dt>
         <dd>Extracts and returns empty cells from a hand
-(either all empty cells or the first one)</dd>
+(either all empty cells or the first one), from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-EmptyCellTrait.html"><abbr title="\App\ProjectEvaluator\EmptyCellTrait">EmptyCellTrait</abbr></a></dt>
-        <dd>Fins and returns the first empty cell in a grid</dd>
+        <dd>Finds and returns the first empty cell in a grid, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-FinalResultsTrait.html"><abbr title="\App\ProjectEvaluator\FinalResultsTrait">FinalResultsTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Generates final results for a player of PokerSquares Game.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-PointsAndRuleNameTrait.html"><abbr title="\App\ProjectEvaluator\PointsAndRuleNameTrait">PointsAndRuleNameTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for getting the nmae of the best possible rule that can be scored in a hand that already contains cards, with the dealt card,
+and the weight of the hand, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-PointsAndRuleNameTrait2.html"><abbr title="\App\ProjectEvaluator\PointsAndRuleNameTrait2">PointsAndRuleNameTrait2</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for getting the nmae of the best possible rule that can be scored in an empty hand, with the dealt card,
+and the weight of the hand, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-RowsToColsTrait.html"><abbr title="\App\ProjectEvaluator\RowsToColsTrait">RowsToColsTrait</abbr></a></dt>
-        <dd>Trait for getting arrays with vertical hands
-respectively horisontal hands in the grid</dd>
+        <dd>Trait for convreint an array of horizontal hands into and array of vertical hands,
+from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-RuleNameTrait.html"><abbr title="\App\ProjectEvaluator\RuleNameTrait">RuleNameTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>For getting the name of the best possible rule that can be scored in
+a partially filled hand without the dealt card. If the hand is completely filled
+or no rule is possible without the dealt card, will generate an empty string.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-RuleNameTrait2.html"><abbr title="\App\ProjectEvaluator\RuleNameTrait2">RuleNameTrait2</abbr></a></dt>
-        <dd></dd>
+        <dd>For getting the name of the best possible rule that can be scored in
+an empty hand without the dealt card. If the hand is completely filled
+or no rule is possible without the dealt card, will generate an empty string.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-SlotTrait.html"><abbr title="\App\ProjectEvaluator\SlotTrait">SlotTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for getting the best slot in a hand, to place the tealt card,
+from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectEvaluator-SuggestionTrait.html"><abbr title="\App\ProjectEvaluator\SuggestionTrait">SuggestionTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for generating a suggestion on best slot to place the dealt card.</dd>
     
     </dl>
 

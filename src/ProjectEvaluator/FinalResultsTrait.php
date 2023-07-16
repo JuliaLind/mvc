@@ -7,6 +7,11 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 use App\ProjectGrid\Grid;
 
+/**
+ * Generates final results for a player of PokerSquares Game.
+ * Contains methods for generating results for 5 hands in one direction, and for all 10 hands
+ * (two directions), from kmom10/project
+ */
 trait FinalResultsTrait
 {
     use CheckFullHandTrait;

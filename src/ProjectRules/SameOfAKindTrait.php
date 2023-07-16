@@ -4,7 +4,12 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait used for One Pair, Three Of A Kind,
+ * Four Of A Kind rules. For checking if the rule
+ * is possible to score with the dealt card.
+ * From Kmom10/Project
+ */
 trait SameOfAKindTrait
 {
     /**
@@ -52,7 +57,7 @@ trait SameOfAKindTrait
 
     /**
      * @param array<string> $hand
-     * @param array<string> $deck
+     * @param array<string> $deck - cards from the deck that will be dealt to the player in the remaining game
      * @return bool true if rule is still possible given passed value
      * otherwise false
      */

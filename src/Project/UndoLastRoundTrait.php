@@ -10,7 +10,7 @@ use App\ProjectEvaluator\RuleEvaluator;
 /**
  * Trait for handling reversal of the last moves done by house and player.
  * For each of house and player contains an array with all moves done from start
- * (of from the last time player used the move-a-card functionality)
+ * (or from the last time player used the move-a-card functionality), from kmom10/Project
  */
 trait UndoLastRoundTrait
 {

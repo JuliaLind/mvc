@@ -3,6 +3,8 @@
 namespace App\ProjectEvaluator;
 
 /**
+ * Evaluates an array with hands (one direction) for the best hand.
+ * Contains method for durther adjusting priority and for selecting the best hand, from kmom10/Project
  * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  */
 trait BestPossibleRulesTrait
@@ -50,8 +52,11 @@ trait BestPossibleRulesTrait
     }
 
     /**
+     * For an array of hands (one direction) generates an array that for each hand contains:
+     * best possible rule that can be scored with the dealt card, best possible rule that can be scored without
+     * the dealt card and the "weight" of the hand to be used when a slot suggestion is calculated
      * @param array<array<string>> $hands
-     * @param array<string> $deck
+     * @param array<string> $deck - the remaining cards to be dealt to the player from the deck
      * @return array<string,array<int,array<string,float|int|string>>|float|int|string>
      */
     private function rulesHands(array $hands, array $deck, string $card): array

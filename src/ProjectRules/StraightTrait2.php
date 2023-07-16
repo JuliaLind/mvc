@@ -4,7 +4,11 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait for checking if an array of numbers contains 5 consequent digits starting with $minRank. Used
+ * for checking if a Straight is possible to score
+ * given an array of ranks
+ */
 trait StraightTrait2
 {
     /**

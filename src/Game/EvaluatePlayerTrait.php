@@ -7,7 +7,7 @@ use App\Cards\DeckOfCards;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Trait for handlign evaluation of/after player's move in the 21 game
+ * Trait for handling evaluation of/after player's move in the 21 game, from kmom03-04
  */
 trait EvaluatePlayerTrait
 {

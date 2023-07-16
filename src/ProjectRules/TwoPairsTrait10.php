@@ -2,6 +2,11 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Part of the logic for checking in a Two Pairs rule
+ * is possible to score.
+ * From kmom10/Project
+ */
 trait TwoPairsTrait10
 {
     /**
@@ -14,7 +19,8 @@ trait TwoPairsTrait10
      * as the card in hand, otherwise a higher rule would have
      * already returned true
      * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
+     * @param array<int,int> $ranksDeck - ranks of the cards that will be dealt to the player from the deck
+     * during the remaining game
      */
     private function oneCardTwoPairs(array $ranksHand, array $ranksDeck): bool
     {

@@ -5,7 +5,7 @@ namespace App\ProjectGrid;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Trait for adding a card to the grid
+ * Trait for adding a card to the grid, from kmom10/Project
  */
 trait AddCardTrait
 {

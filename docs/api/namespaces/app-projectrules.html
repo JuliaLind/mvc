@@ -140,136 +140,190 @@
 
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/App-ProjectRules-RuleInterface.html"><abbr title="\App\ProjectRules\RuleInterface">RuleInterface</abbr></a></dt>
-        <dd>Interface to be implemented by the classes Game21Easy and Game21Hard</dd>
+        <dd>Interface to be implemented by the Poker Sqares rules classes.</dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-Flush.html"><abbr title="\App\ProjectRules\Flush">Flush</abbr></a></dt>
         <dd>Determins if the Flush rule is scored or
-possible to score</dd>
+possible to score, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-FullHouse.html"><abbr title="\App\ProjectRules\FullHouse">FullHouse</abbr></a></dt>
         <dd>Determins if the Full House rule is scored or
-possible to score</dd>
+possible to score.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-RoyalFlush.html"><abbr title="\App\ProjectRules\RoyalFlush">RoyalFlush</abbr></a></dt>
         <dd>Determins if the Royal Flush rule is scored or
-possible to score</dd>
+possible to score.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-SameOfAKind.html"><abbr title="\App\ProjectRules\SameOfAKind">SameOfAKind</abbr></a></dt>
         <dd>Class for the rules Four Of A Kind, Three Of A Kind
-and One Pair.</dd>
+and One Pair. Responsible for checking if the rule has
+been scored or is possible to score with/wihtout the
+dealt card
+From kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-Straight.html"><abbr title="\App\ProjectRules\Straight">Straight</abbr></a></dt>
         <dd>Determins if the Straight rule is scored or
-possible to score</dd>
+possible to score.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-StraightFlush.html"><abbr title="\App\ProjectRules\StraightFlush">StraightFlush</abbr></a></dt>
         <dd>Determins if StarightFlush rule is scored
-or possible to score</dd>
+or possible to score.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-ProjectRules-TwoPairs.html"><abbr title="\App\ProjectRules\TwoPairs">TwoPairs</abbr></a></dt>
         <dd>Determins if the Two Pairs rule is scored or
-possible to score</dd>
+possible to score.</dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-CountByRankTrait.html"><abbr title="\App\ProjectRules\CountByRankTrait">CountByRankTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait contains method for generating an associative array
+with the count of each rank in a card array.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-CountBySuitTrait.html"><abbr title="\App\ProjectRules\CountBySuitTrait">CountBySuitTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait contains method for generating an associative array
+with the count of each rank in a card array.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-CountSuitAndRankTrait.html"><abbr title="\App\ProjectRules\CountSuitAndRankTrait">CountSuitAndRankTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait contains method for generating an array with two associative arrays,
+one with the count of each rank in a card array and the other with the count of each suit
+in the card array
+From kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FirstCheckTrait.html"><abbr title="\App\ProjectRules\FirstCheckTrait">FirstCheckTrait</abbr></a></dt>
         <dd>Used by the following classes:
 Flush
 FullHouse
 RoyalFlush
 StraightFlush
-Straight</dd>
+Straight.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-GroupBySuitTrait.html"><abbr title="\App\ProjectRules\GroupBySuitTrait">GroupBySuitTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait that for an array of cards returns an associative array where keys are suits and values are arrays with all ranks of that
+suit that are present in the card array.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-MinRankLimitsTrait.html"><abbr title="\App\ProjectRules\MinRankLimitsTrait">MinRankLimitsTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for setting the possible lower ranks for checking the possibility of
+scoreing a Straight or Straight Flush.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SearchSpecificCardTrait.html"><abbr title="\App\ProjectRules\SearchSpecificCardTrait">SearchSpecificCardTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for searching for a specific card in
+an array of cards. Used in the logic of Royal Flush rule.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SubCountTrait.html"><abbr title="\App\ProjectRules\SubCountTrait">SubCountTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Used in:
+CountByRankTrait,
+CountBySuitTrait,
+CountSuitAndRankTrait</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait.html"><abbr title="\App\ProjectRules\TwoPairsTrait">TwoPairsTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if Two Pairs rule is possible
+to score in a hand with the dealt card.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait2.html"><abbr title="\App\ProjectRules\TwoPairsTrait2">TwoPairsTrait2</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if a Two Pairs rule is possible
+to achieve wihtout the dealt card in a partially filled hand.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-AdditionalValueTrait.html"><abbr title="\App\ProjectRules\AdditionalValueTrait">AdditionalValueTrait</abbr></a></dt>
         <dd>Used by classes that implement the RuleStat interface.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FlushScoredTrait.html"><abbr title="\App\ProjectRules\FlushScoredTrait">FlushScoredTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait cor checking in a flush has been scored.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FlushTrait.html"><abbr title="\App\ProjectRules\FlushTrait">FlushTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if a flush is possible to score in a partially filled hand,
+without the dealt card.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FlushTrait2.html"><abbr title="\App\ProjectRules\FlushTrait2">FlushTrait2</abbr></a></dt>
-        <dd></dd>
+        <dd>Checks if flush is possible to score in an empty hand, without the dealt card.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FlushTrait3.html"><abbr title="\App\ProjectRules\FlushTrait3">FlushTrait3</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if the deck contains enough cards of the required suit
+to be able to achieve a flush in a hand.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FullHouseScoredTrait.html"><abbr title="\App\ProjectRules\FullHouseScoredTrait">FullHouseScoredTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if a full house rule has been scored in a hand.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FullHouseTrait2.html"><abbr title="\App\ProjectRules\FullHouseTrait2">FullHouseTrait2</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if Full House rule is possible to score without the
+dealt card in a partially filled hand.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FullHouseTrait3.html"><abbr title="\App\ProjectRules\FullHouseTrait3">FullHouseTrait3</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if a FullHouse rule is psosible to score wihtout the
+dealt card, in an empty hand.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FullHouseTrait4.html"><abbr title="\App\ProjectRules\FullHouseTrait4">FullHouseTrait4</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if the ranks in hand, together withthe ranks in
+deck result in three of one rank and two of the other.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FullHouseTrait5.html"><abbr title="\App\ProjectRules\FullHouseTrait5">FullHouseTrait5</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait contains part of the logic for checking if a full house is possible to score in a hand.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-FullHouseTrait6.html"><abbr title="\App\ProjectRules\FullHouseTrait6">FullHouseTrait6</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait contains part of the logic for checking if a full house is possible to score in a hand.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-RoyalFlushScoredTrait.html"><abbr title="\App\ProjectRules\RoyalFlushScoredTrait">RoyalFlushScoredTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if Royal Flush rule has been scored in a hand.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-RoyalFlushTrait.html"><abbr title="\App\ProjectRules\RoyalFlushTrait">RoyalFlushTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if Royal Flush Rule is possible to achieve without the dealt card,
+in a partially filled hand.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-RoyalFlushTrait2.html"><abbr title="\App\ProjectRules\RoyalFlushTrait2">RoyalFlushTrait2</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if a Royal Flush rule is possible to score
+in an empty hand without the dealt card.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-RoyalFlushTrait3.html"><abbr title="\App\ProjectRules\RoyalFlushTrait3">RoyalFlushTrait3</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if an array of cards contains
+a straight flush starting with given min rank
+and suit. Initially intended to be used in both Straight Flush and Royal flush and therefore
+quite general. In practice only used for Royal Flush because
+ended up using a different method for Straight Flush.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-RuleDataTrait.html"><abbr title="\App\ProjectRules\RuleDataTrait">RuleDataTrait</abbr></a></dt>
         <dd>Contains methods for getting the name
-of the rule and the points the rule gives if scored</dd>
+of the rule and the points the rule gives if scored.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SameOfAKindTrait.html"><abbr title="\App\ProjectRules\SameOfAKindTrait">SameOfAKindTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait used for One Pair, Three Of A Kind,
+Four Of A Kind rules. For checking if the rule
+is possible to score with the dealt card.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SameOfAKindTrait2.html"><abbr title="\App\ProjectRules\SameOfAKindTrait2">SameOfAKindTrait2</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait used for One Pair, Three Of A Kind,
+Four Of A Kind rules. For checking if the rule
+is possible to score without the dealt card
+in the partially filled hand.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SameOfAKindTrait3.html"><abbr title="\App\ProjectRules\SameOfAKindTrait3">SameOfAKindTrait3</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait used for One Pair, Three Of A Kind,
+Four Of A Kind rules. For checking if the rule
+is possible to score without the dealt card
+in an empty hand.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-SameOfAKindTrait4.html"><abbr title="\App\ProjectRules\SameOfAKindTrait4">SameOfAKindTrait4</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-StraightFlushScoredTrait.html"><abbr title="\App\ProjectRules\StraightFlushScoredTrait">StraightFlushScoredTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if a Straight Flush rule has been scored.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-StraightFlushTrait.html"><abbr title="\App\ProjectRules\StraightFlushTrait">StraightFlushTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if a Straight Flush
+is possible to score in a partially filled hand,
+without the dealt card.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-StraightFlushTrait3.html"><abbr title="\App\ProjectRules\StraightFlushTrait3">StraightFlushTrait3</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if a Straight Flush rule can
+be scored in an emtpy hand without the dealt card.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-StraightScoredTrait.html"><abbr title="\App\ProjectRules\StraightScoredTrait">StraightScoredTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if a Straight has been scored in a hand.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-StraightTrait.html"><abbr title="\App\ProjectRules\StraightTrait">StraightTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if a Straight can be scored in a partially
+filled or an empty hand (separate methods) without the dealt card.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-StraightTrait2.html"><abbr title="\App\ProjectRules\StraightTrait2">StraightTrait2</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if an array of numbers contains 5 consequent digits starting with $minRank. Used
+for checking if a Straight is possible to score
+given an array of ranks</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-StraightTrait3.html"><abbr title="\App\ProjectRules\StraightTrait3">StraightTrait3</abbr></a></dt>
-        <dd></dd>
+        <dd>Used for determining if a Straight is possible to score. Contains method for checking all possible combinations.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsScoredTrait.html"><abbr title="\App\ProjectRules\TwoPairsScoredTrait">TwoPairsScoredTrait</abbr></a></dt>
-        <dd></dd>
+        <dd>Checks if Two Pairs rule has been scored in a hand.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait10.html"><abbr title="\App\ProjectRules\TwoPairsTrait10">TwoPairsTrait10</abbr></a></dt>
-        <dd></dd>
+        <dd>Part of the logic for checking in a Two Pairs rule
+is possible to score.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait11.html"><abbr title="\App\ProjectRules\TwoPairsTrait11">TwoPairsTrait11</abbr></a></dt>
-        <dd></dd>
+        <dd>Part of the logic for checking in a Two Pairs rule
+is possible to score.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait12.html"><abbr title="\App\ProjectRules\TwoPairsTrait12">TwoPairsTrait12</abbr></a></dt>
-        <dd></dd>
+        <dd>Part of the logic for checking in a Two Pairs rule
+is possible to score.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait13.html"><abbr title="\App\ProjectRules\TwoPairsTrait13">TwoPairsTrait13</abbr></a></dt>
-        <dd></dd>
+        <dd>Part of the logic for checking in a Two Pairs rule
+is possible to score.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait14.html"><abbr title="\App\ProjectRules\TwoPairsTrait14">TwoPairsTrait14</abbr></a></dt>
-        <dd></dd>
+        <dd>Part of the logic for checking in a Two Pairs rule
+is possible to score.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait3.html"><abbr title="\App\ProjectRules\TwoPairsTrait3">TwoPairsTrait3</abbr></a></dt>
-        <dd></dd>
+        <dd>Trait for checking if Two Pairs rule is possibel to achieve
+in an empty hand without the dealt card (i.e. with only
+the cards that the user will be dealt from the deck during the remaining game).</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait4.html"><abbr title="\App\ProjectRules\TwoPairsTrait4">TwoPairsTrait4</abbr></a></dt>
-        <dd></dd>
+        <dd>Part of the logic for checking in a Two Pairs rule
+is possible to score.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait5.html"><abbr title="\App\ProjectRules\TwoPairsTrait5">TwoPairsTrait5</abbr></a></dt>
-        <dd></dd>
+        <dd>Part of the logic for checking in a Two Pairs rule
+is possible to score.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait6.html"><abbr title="\App\ProjectRules\TwoPairsTrait6">TwoPairsTrait6</abbr></a></dt>
-        <dd></dd>
+        <dd>Part of the logic for checking in a Two Pairs rule
+is possible to score.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait7.html"><abbr title="\App\ProjectRules\TwoPairsTrait7">TwoPairsTrait7</abbr></a></dt>
-        <dd></dd>
+        <dd>Part of the logic for checking in a Two Pairs rule
+is possible to score.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait8.html"><abbr title="\App\ProjectRules\TwoPairsTrait8">TwoPairsTrait8</abbr></a></dt>
-        <dd></dd>
+        <dd>Part of the logic for checking in a Two Pairs rule
+is possible to score.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-ProjectRules-TwoPairsTrait9.html"><abbr title="\App\ProjectRules\TwoPairsTrait9">TwoPairsTrait9</abbr></a></dt>
-        <dd></dd>
+        <dd>Part of the logic for checking in a Two Pairs rule
+is possible to score.</dd>
     
     </dl>
 

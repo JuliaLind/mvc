@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @SuppressWarnings(PHPMD.ShortVariable)
  * If player wins agains the house then playerid
  * + number of points + date for the win is registered
- * in the score-table
+ * in the score-table, from kmom10/project
  */
 #[ORM\Entity(repositoryClass: ScoreRepository::class)]
 class Score

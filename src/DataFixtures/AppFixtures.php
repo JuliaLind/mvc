@@ -7,7 +7,7 @@ use Doctrine\Persistence\ObjectManager;
 
 /**
  * Class for loading fixtures for the database-tables
- * User, Score and Transaction
+ * User, Score and Transaction, from kmom10/project
  */
 class AppFixtures extends Fixture
 {

@@ -8,7 +8,7 @@ use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
 /**
- * Trait for calculating the value of a hand in the 21 game
+ * Trait for calculating the value of a hand in the 21 game, from kmom03-04
  */
 trait Player21Trait3
 {

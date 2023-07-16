@@ -7,7 +7,8 @@ require __DIR__ . "/../../vendor/autoload.php";
 /**
  * Trait for getting a graphic representation
  * of a slot in a grid (img link and alt text).
- * Empty slots are represented by empty string
+ * Empty slots are represented by empty string.
+ * From kmom10/Project
  */
 trait SlotGraphicTrait
 {

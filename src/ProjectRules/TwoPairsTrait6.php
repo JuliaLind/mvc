@@ -2,6 +2,11 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Part of the logic for checking in a Two Pairs rule
+ * is possible to score.
+ * From kmom10/Project
+ */
 trait TwoPairsTrait6
 {
     private int $additionalValue = 0;
@@ -12,7 +17,8 @@ trait TwoPairsTrait6
      * Checks if any of the ranks in the hand is
      * present in the deck.
      * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
+     * @param array<int,int> $ranksDeck - ranks of the cards
+     * that will be dealt to the player during the remaining game
      */
     abstract private function matchOneInDeck(array $ranksHand, array $ranksDeck): bool;
 
@@ -30,7 +36,8 @@ trait TwoPairsTrait6
      * rule, thus setting additionalValue to 1
      *
      * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
+     * @param array<int,int> $ranksDeck - ranks of the cards
+     * that will be dealt to the player during the remaining game
      */
     private function matchRank(int $rank, array $ranksHand, array $ranksDeck): bool
     {
@@ -56,7 +63,8 @@ trait TwoPairsTrait6
      * the Three Of A Kind Rule would have already
      * returned true)
      * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
+     * @param array<int,int> $ranksDeck - ranks of the cards
+     * that will be dealt to the player during the remaining game
      */
     private function check3(int $rank, array $ranksHand, array $ranksDeck): bool
     {

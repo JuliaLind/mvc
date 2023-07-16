@@ -4,7 +4,11 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait for checking if a Straight Flush rule can
+ * be scored in an emtpy hand without the dealt card.
+ * From kmom10/Project
+ */
 trait StraightFlushTrait3
 {
     /**
@@ -34,7 +38,7 @@ trait StraightFlushTrait3
      * Used when hand is empty. Returns true if the
      * rule is possible to score with the cards that
      * will be dealt from deck
-     * @param array<string> $deck
+     * @param array<string> $deck - cards that will be dealt to the user in the remaining game
      */
     public function possibleDeckOnly(array $deck): bool
     {

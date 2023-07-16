@@ -2,6 +2,10 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Trait contains part of the logic for checking if a full house is possible to score in a hand.
+ * From kmom10/Project
+ */
 trait FullHouseTrait6
 {
     /**

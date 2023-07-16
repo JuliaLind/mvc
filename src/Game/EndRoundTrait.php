@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 use App\Cards\DeckOfCards;
 
 /**
- * Ends a round of Game21
+ * Ends a round of Game21, from kmom03-04
  */
 trait EndRoundTrait
 {

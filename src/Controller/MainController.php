@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Controller contains routes for some of the
- * "ordinary" pages
+ * "ordinary" pages kmom01-kmom06
  */
 class MainController extends AbstractController
 {

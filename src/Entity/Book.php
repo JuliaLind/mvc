@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @SuppressWarnings(PHPMD.ShortVariable)
- * Represents a book in the Library
+ * Represents a book in the Library, from kmom05
  */
 #[ORM\Entity(repositoryClass: BookRepository::class)]
 class Book

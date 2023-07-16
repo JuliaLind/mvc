@@ -5,7 +5,7 @@ namespace App\Game;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Helper class that returns current state of 21 game for the api route
+ * Helper class that returns current state of 21 game for the api route, from kmom03-04
  */
 class GameApi
 {

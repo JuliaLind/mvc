@@ -5,7 +5,7 @@ namespace App\ProjectGrid;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Trait for removing a card from the grid
+ * Trait for removing a card from the grid, from kmom10/Project
  */
 trait RemoveCardTrait
 {

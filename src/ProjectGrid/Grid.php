@@ -3,7 +3,7 @@
 namespace App\ProjectGrid;
 
 /**
- * Class representing 5x5 grid for placing cards
+ * Class representing 5x5 grid for placing cards, from kmom10/Project
  */
 class Grid
 {

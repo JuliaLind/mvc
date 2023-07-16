@@ -8,7 +8,7 @@ use App\Entity\User;
 use Doctrine\Persistence\ObjectManager;
 
 /**
- * Trait used by AppFixtures class
+ * Trait used by AppFixtures class, from kmom10/project
  */
 trait AddUserTrait
 {

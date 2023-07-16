@@ -4,7 +4,7 @@ namespace App\Cards;
 
 /**
  * Class representing a playing Card with
- * graphic representation (i.e. svg image)
+ * graphic representation (i.e. svg image), from kmom02
  */
 class CardGraphic extends Card
 {

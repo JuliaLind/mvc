@@ -7,7 +7,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 use App\Cards\DeckOfCards;
 
 /**
- * Trait for exctrating data related to current state of the 21 game
+ * Trait for exctrating data related to current state of the 21 game, from kmom03-04
  */
 trait Game21DataTrait
 {

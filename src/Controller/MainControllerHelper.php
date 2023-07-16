@@ -4,10 +4,9 @@ namespace App\Controller;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-// use App\Markdown\MdParser;
 
 /**
- * Helper class to get data for routes in the main controller
+ * Helper class to get data from markdown files for some of the routes in the main controller
  */
 class MainControllerHelper
 {

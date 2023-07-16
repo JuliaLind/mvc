@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Cards\DeckOfCards;
 
 /**
- * Controller for API card routes
+ * Controller contains API route that displays a new, unshuffled deck of cards, in Kmom02
  */
 class JsonCardController2 extends AbstractController
 {

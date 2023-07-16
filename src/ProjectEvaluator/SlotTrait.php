@@ -2,6 +2,10 @@
 
 namespace App\ProjectEvaluator;
 
+/**
+ * Trait for getting the best slot in a hand, to place the tealt card,
+ * from kmom10/Project
+ */
 trait SlotTrait
 {
     /**

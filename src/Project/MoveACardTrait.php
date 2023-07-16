@@ -8,7 +8,8 @@ use App\ProjectGrid\Grid;
 use App\ProjectEvaluator\RuleEvaluator;
 
 /**
- * Handles the cheat of moving a placed card from one slot to another
+ * Handles the cheat of user moving a placed card from
+ * one slot to another, from kmom10/Project
  */
 trait MoveACardTrait
 {

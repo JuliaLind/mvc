@@ -7,7 +7,7 @@ use App\Cards\DeckOfCards;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Trait for handling player's turn in 21 game
+ * Trait for handling player's turn in 21 game, from kmom03-04
  */
 trait PlayersTurnTrait
 {

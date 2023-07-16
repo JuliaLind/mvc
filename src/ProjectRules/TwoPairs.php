@@ -4,7 +4,8 @@ namespace App\ProjectRules;
 
 /**
  * Determins if the Two Pairs rule is scored or
- * possible to score
+ * possible to score.
+ * From kmom10/Project
  */
 class TwoPairs implements RuleInterface
 {

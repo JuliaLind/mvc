@@ -13,7 +13,7 @@ use App\Cards\DeckOfCards;
 use App\Cards\Player;
 
 /**
- * Controller for API card routes
+ * Controller contains API route for dealing one card to one player, in Kmom02
  */
 class JsonCardController4 extends AbstractController
 {

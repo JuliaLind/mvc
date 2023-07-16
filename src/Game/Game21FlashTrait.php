@@ -8,7 +8,7 @@ use App\Cards\DeckOfCards;
 
 /**
  * Generates flash message to be displayed at the end of a round
- * or at the end of a game
+ * or at the end of a game, from kmom03-04
  */
 trait Game21FlashTrait
 {

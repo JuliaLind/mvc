@@ -143,70 +143,70 @@
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-ApiGame1.html"><abbr title="\App\Project\ApiGame1">ApiGame1</abbr></a></dt>
         <dd>Class that represents part of the logic of the Poker Squares game.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-ApiGame2.html"><abbr title="\App\Project\ApiGame2">ApiGame2</abbr></a></dt>
-        <dd>Represents part of the logic of the Poker Squares game. Places a card into an empty grid accoring to passed arguemnts and returns data containing the grid, the remaining card and a message describing the card palcement for API route</dd>
+        <dd>Represents part of the logic of the Poker Squares game. Places a card into an empty grid
+accoring to passed arguemnts and returns data containing the grid, the remaining card
+and a message describing the card palcement for API route, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-ApiGame3.html"><abbr title="\App\Project\ApiGame3">ApiGame3</abbr></a></dt>
         <dd>Displays part of the logic of the Poker Squares game, evaluates results for a
-full grid and returns the data for API route</dd>
+full grid and returns the data for API , from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-CardFactory.html"><abbr title="\App\Project\CardFactory">CardFactory</abbr></a></dt>
         <dd>Class representing CardFactory. Is passed as arguemnt into a Deck class
-for generating a full set of cards</dd>
+for generating a full set of cards, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-Deck.html"><abbr title="\App\Project\Deck">Deck</abbr></a></dt>
-        <dd>Class representing a deck of cards</dd>
+        <dd>Class representing a deck of cards, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-Game.html"><abbr title="\App\Project\Game">Game</abbr></a></dt>
-        <dd>Game of Poker Squares</dd>
+        <dd>Game of Poker Squares, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-NoCardsException.html"><abbr title="\App\Project\NoCardsException">NoCardsException</abbr></a></dt>
-        <dd>Exception class thown when there are no cards</dd>
+        <dd>Exception class thown when there are no cards (will not be thrown under &quot;oridnary&quot; circumstances
+as the deck is never dealt completely in Poker Squares), from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-NotEnoughCoinsException.html"><abbr title="\App\Project\NotEnoughCoinsException">NotEnoughCoinsException</abbr></a></dt>
-        <dd>Exception class thown when the suer does not have
-enough coins to cover for a transaction</dd>
+        <dd>Exception class thown when the User does not have
+enough coins to cover for a transaction, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-Register.html"><abbr title="\App\Project\Register">Register</abbr></a></dt>
         <dd>Registers user score and transactions.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-RegisterFactory.html"><abbr title="\App\Project\RegisterFactory">RegisterFactory</abbr></a></dt>
-        <dd>Creates an instance of the Register class for a specific user</dd>
+        <dd>Creates an instance of the Register class for a specific user, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Project-UserNotRegisteredException.html"><abbr title="\App\Project\UserNotRegisteredException">UserNotRegisteredException</abbr></a></dt>
-        <dd>Exception class thown when the suer does not have
-enough coins to cover for a transaction</dd>
+        <dd>Exception class thown when loggin in with an email that is not registered
+int eh database, from kmom10/Project</dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-CurrentStateTrait.html"><abbr title="\App\Project\CurrentStateTrait">CurrentStateTrait</abbr></a></dt>
-        <dd>Returns information on the current state of the game</dd>
+        <dd>Returns information on the current state of the game, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-EvaluateTrait.html"><abbr title="\App\Project\EvaluateTrait">EvaluateTrait</abbr></a></dt>
         <dd>Evaluates the hands of player and house after
 both grids have been filled and determins
 winner. If player won transfers 2x pot to
-player/user and registers players score to database.</dd>
+player/user and registers players score to database., from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-HousePlaceCardTrait.html"><abbr title="\App\Project\HousePlaceCardTrait">HousePlaceCardTrait</abbr></a></dt>
         <dd>Trait that handles the action of house placing
-a card</dd>
+a card, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-MoveACardTrait.html"><abbr title="\App\Project\MoveACardTrait">MoveACardTrait</abbr></a></dt>
-        <dd>Handles the cheat of moving a placed card from one slot to another</dd>
+        <dd>Handles the cheat of user moving a placed card from
+one slot to another, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-OneRoundTrait.html"><abbr title="\App\Project\OneRoundTrait">OneRoundTrait</abbr></a></dt>
         <dd>Handles one round
 1. Player places card
 2. House places card
 3. If grids are full, evaluate and return results
 4. if not, generates new suggestion-data for player
-based on the updated grid and deck data</dd>
+based on the updated grid and deck data, , from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-PlayerSuggestTrait.html"><abbr title="\App\Project\PlayerSuggestTrait">PlayerSuggestTrait</abbr></a></dt>
         <dd>Generates suggestion for player on a slot
 to place the dealt card and also the data for
 all 10 hands (best possible rule with the
 dealt card and best possible rule wihtout
-the dealt card)</dd>
+the dealt card), from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-PotTrait.html"><abbr title="\App\Project\PotTrait">PotTrait</abbr></a></dt>
         <dd>Contains the pot and method for
-adding money to the pot</dd>
+adding money to the pot, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-UndoLastRoundTrait.html"><abbr title="\App\Project\UndoLastRoundTrait">UndoLastRoundTrait</abbr></a></dt>
         <dd>Trait for handling reversal of the last moves done by house and player.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-ApiGame1OneRoundTrait.html"><abbr title="\App\Project\ApiGame1OneRoundTrait">ApiGame1OneRoundTrait</abbr></a></dt>
-        <dd>Evaluates the hands of player and house after
-both grids have been filled and determins
-winner. If player won transfers 2x pot to
-player/user and registers players score to database.</dd>
+        <dd>Used in API route. Contains method that deals a card and places into
+a grid based on calculated suggestion, used in the class ApiGame1, from kmom10/Project</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/App-Project-ApiGame1ResetTrait.html"><abbr title="\App\Project\ApiGame1ResetTrait">ApiGame1ResetTrait</abbr></a></dt>
-        <dd>Evaluates the hands of player and house after
-both grids have been filled and determins
-winner. If player won transfers 2x pot to
-player/user and registers players score to database.</dd>
+        <dd>Trait used in ApiGame1 class for generating a new grid and a new deck of cards,
+from kmom10/Project</dd>
     
     </dl>
 

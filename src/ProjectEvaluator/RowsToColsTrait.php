@@ -7,8 +7,8 @@ use App\ProjectGrid\Grid;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Trait for getting arrays with vertical hands
- * respectively horisontal hands in the grid
+ * Trait for convreint an array of horizontal hands into and array of vertical hands,
+ * from kmom10/Project
  */
 trait RowsToColsTrait
 {

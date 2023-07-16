@@ -3,7 +3,8 @@
 namespace App\ProjectRules;
 
 /**
- * Interface to be implemented by the classes Game21Easy and Game21Hard
+ * Interface to be implemented by the Poker Sqares rules classes.
+ * From kmom10/Project
  */
 interface RuleInterface
 {
@@ -22,7 +23,7 @@ interface RuleInterface
      * card in the hand, otherwise returns false. Starting position is that none
      * of the higher rules can be scored
      * @param array<string> $hand
-     * @param array<string> $deck
+     * @param array<string> $deck - the cards from the deck that will be dealt to the player in the remaining game
      */
     public function possibleWithCard(array $hand, array $deck, string $card): bool;
 
@@ -41,7 +42,7 @@ interface RuleInterface
      * Returns true if the rule is possible to score for an empty hand (calculation
      * based only on the possible cards from deck). Starting position is that none
      * of the higher rules can be scored
-     * @param array<string> $deck
+     * @param array<string> $deck - the cards from the deck that will be dealt to the player in the remaining game
      * @return bool
      */
     public function possibleDeckOnly(array $deck);

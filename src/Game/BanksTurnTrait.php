@@ -5,7 +5,7 @@ namespace App\Game;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Trait for handling bank's turn in the 21 game
+ * Trait for handling bank's turn in the 21 game, from kmom03-04
  */
 trait BanksTurnTrait
 {

@@ -8,7 +8,7 @@ use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
 /**
- * Trate for estimating the risk of getting fat in the 21 game
+ * Trate for estimating the risk of getting fat in the 21 game, from kmom03-04
  */
 trait Player21Trait2
 {

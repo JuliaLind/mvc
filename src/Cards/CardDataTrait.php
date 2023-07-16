@@ -4,7 +4,9 @@ namespace App\Cards;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait for extracting data related to a playing card, used in CardHand and DeckOfCards classes, from kmom02
+ */
 trait CardDataTrait
 {
     /**

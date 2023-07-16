@@ -6,7 +6,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 /**
  * Extracts and returns empty cells from a hand
- * (either all empty cells or the first one)
+ * (either all empty cells or the first one), from kmom10/Project
  */
 trait EmptyCellsTrait
 {

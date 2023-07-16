@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Movement of coints to or from participants
- * account
+ * account, from kmom10/project
  * @SuppressWarnings(PHPMD.ShortVariable)
  */
 #[ORM\Entity(repositoryClass: TransactionRepository::class)]

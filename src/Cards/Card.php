@@ -3,7 +3,7 @@
 namespace App\Cards;
 
 /**
- * Class representing a playing Card
+ * Class representing a playing Card, from kmom02
  */
 class Card
 {

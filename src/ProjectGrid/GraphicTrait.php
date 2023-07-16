@@ -6,7 +6,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 /**
  * Trait for getting a graphic representation (img links and alt text)
- * of the Grid. Emtpy slots are represented with emtpy strings
+ * of the Grid. Emtpy slots are represented with emtpy strings, from kmom10/Project
  */
 trait GraphicTrait
 {

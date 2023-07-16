@@ -4,7 +4,8 @@ namespace App\ProjectRules;
 
 /**
  * Determins if the Royal Flush rule is scored or
- * possible to score
+ * possible to score.
+ * From kmom10/Project
  */
 class RoyalFlush implements RuleInterface
 {

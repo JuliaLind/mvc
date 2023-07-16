@@ -6,7 +6,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 
 /**
- * Class representing a hand that can hold cards
+ * Class representing a hand that can hold cards, from kmom02
  */
 class CardHand
 {

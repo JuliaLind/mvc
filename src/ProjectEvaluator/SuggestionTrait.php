@@ -4,6 +4,11 @@ namespace App\ProjectEvaluator;
 
 use App\ProjectGrid\Grid;
 
+/**
+ * Trait for generating a suggestion on best slot to place the dealt card.
+ * Also calculates and returns statistics on the best possible rule that can be achieved with/without
+ * the dealt card for all the 10 hands, from kmom10/Project
+ */
 trait SuggestionTrait
 {
     use BestPossibleRulesTrait;
@@ -25,7 +30,7 @@ trait SuggestionTrait
 
     /**
      * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
-     * @param array<string> $deck
+     * @param array<string> $deck - ranks of the cards from the deck that will be dealt to the player in the remaining game
      * @return array<string,array<int,array<string,float|int|string>|int>|int|string>
      */
     public function suggestion(Grid $grid, string $card, array $deck): array

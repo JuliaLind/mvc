@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
  * Controller that contain route for displaying the current state
- * of 21 card game as json
+ * of 21 card game as json, from kmom03-kmom04
  */
 class JsonGame21Controller extends AbstractController
 {

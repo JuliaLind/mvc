@@ -9,7 +9,7 @@ use App\ProjectRules\RuleInterface;
  * Used in BestPossibleRulesTrait
  *
  * Checks a hand for the best possible rule
- * to achieve iwht the dealt card.
+ * to achieve with the dealt card, from kmom10/Project
  */
 trait CheckWithCardTrait
 {
@@ -27,7 +27,7 @@ trait CheckWithCardTrait
      * possible rule to achieve for the hand on index-position
      * $index with the dealt card and the cards
      * that ill be dealt from deck
-     * @param array<string> $deck reminaing cards that will be dalt to user from deck
+     * @param array<string> $deck reminaing cards that will be dealt to user from deck
      * @param array<array<string>> $hands
      * @return array<string,string|float|int>
      */
@@ -50,7 +50,7 @@ trait CheckWithCardTrait
      * the cards the user is yet to pick from the deck
      * and the cards in hand on index position $index
      * @param array<array<string>> $hands five hands, horizontal or vertical
-     * @param array<string> $deck the cards whic user will receive from the deck
+     * @param array<string> $deck - the cards from the deck that will be dealt to the player in the remaining game
      * @return array<string,string|float|int>
      *
      */

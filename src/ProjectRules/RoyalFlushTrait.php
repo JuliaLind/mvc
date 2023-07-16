@@ -4,7 +4,11 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait for checking if Royal Flush Rule is possible to achieve without the dealt card,
+ * in a partially filled hand.
+ * From kmom10/Project
+ */
 trait RoyalFlushTrait
 {
     use RoyalFlushTrait3;
@@ -27,7 +31,7 @@ trait RoyalFlushTrait
     /**
      * Returns true if the RoyalFlush rule is possible to score without the dealt card
      * @param array<string> $hand
-     * @param array<string> $deck
+     * @param array<string> $deck - cards from the deck that will be dealt to the player in the remaining game
      */
     public function possibleWithoutCard(array $hand, array $deck): bool
     {

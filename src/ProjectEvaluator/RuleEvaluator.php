@@ -15,7 +15,8 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 /**
  * Evaluates the highest rules scored (when the grid is full)
- * and highest possible rule(s) to score for hands that have less than 5 cards
+ * and highest possible rule(s) to score with/without dealt card for hands that have less than 5 cards,
+ * from kmom10/Project
  */
 class RuleEvaluator
 {

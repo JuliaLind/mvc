@@ -137,11 +137,14 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/BestPossibleRulesTrait.php"><a href="files/src-projectevaluator-bestpossiblerulestrait.html"><abbr title="src/ProjectEvaluator/BestPossibleRulesTrait.php">BestPossibleRulesTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">8</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
-        
+            <p class="phpdocumentor-summary">Evaluates an array with hands (one direction) for the best hand.</p>
+
+    <section class="phpdocumentor-description"><p>Contains method for durther adjusting priority and for selecting the best hand, from kmom10/Project</p>
+</section>
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -188,7 +191,9 @@ cards already in hand contribute to the better rule)</dd>
     <span>
                                 &nbsp;: array&lt;string, array<int,array<string,float|int|string>>|float|int|string&gt;    </span>
 </dt>
-<dd></dd>
+<dd>For an array of hands (one direction) generates an array that for each hand contains:
+best possible rule that can be scored with the dealt card, best possible rule that can be scored without
+the dealt card and the &quot;weight&quot; of the hand to be used when a slot suggestion is calculated</dd>
 
         </dl>
 
@@ -214,7 +219,7 @@ cards already in hand contribute to the better rule)</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/BestPossibleRulesTrait.php"><a href="files/src-projectevaluator-bestpossiblerulestrait.html"><abbr title="src/ProjectEvaluator/BestPossibleRulesTrait.php">BestPossibleRulesTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -287,11 +292,14 @@ cards already in hand contribute to the better rule)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/BestPossibleRulesTrait.php"><a href="files/src-projectevaluator-bestpossiblerulestrait.html"><abbr title="src/ProjectEvaluator/BestPossibleRulesTrait.php">BestPossibleRulesTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">For an array of hands (one direction) generates an array that for each hand contains:
+best possible rule that can be scored with the dealt card, best possible rule that can be scored without
+the dealt card and the &quot;weight&quot; of the hand to be used when a slot suggestion is calculated</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">rulesHands</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, array&lt;string|int, string&gt;&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hands</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$card</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, array<int,array<string,float|int|string>>|float|int|string&gt;</span></code>
@@ -311,7 +319,11 @@ cards already in hand contribute to the better rule)</p>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><ul>
+<li>the remaining cards to be dealt to the player from the deck</li>
+</ul>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$card</span>

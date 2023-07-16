@@ -5,7 +5,7 @@ namespace App\Game;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * part two of the evaluation process after the bank has picked cards in the 21 game
+ * part two of the evaluation process after the bank has picked cards in the 21 game, from kmom03-04
  */
 trait EvaluateBankTrait2
 {

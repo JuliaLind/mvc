@@ -4,7 +4,13 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait used for One Pair, Three Of A Kind,
+ * Four Of A Kind rules. For checking if the rule
+ * is possible to score without the dealt card
+ * in an empty hand.
+ * From Kmom10/Project
+ */
 trait SameOfAKindTrait3
 {
     /**

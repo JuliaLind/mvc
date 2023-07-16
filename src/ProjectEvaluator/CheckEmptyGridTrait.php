@@ -4,7 +4,7 @@ namespace App\ProjectEvaluator;
 
 /**
  * Trait for getting a slot-suggestion for a new/empty grid.
- * Used by the class RuleEvaluator
+ * Used by the class RuleEvaluator, from kmom10/Project
  */
 trait CheckEmptyGridTrait
 {
@@ -14,7 +14,7 @@ trait CheckEmptyGridTrait
      * in the hand (row or column) and the cards the user is yet to pickfrom
      * the deck
      * @param array<array<string>> $hands
-     * @param array<string> $deck
+     * @param array<string> $deck - the remaining cards to be dealt to the player from the deck
      * @return array<string,string|int>
      */
     abstract private function handRuleWith(array $hands, int $index, array $deck, string $card);
@@ -27,7 +27,7 @@ trait CheckEmptyGridTrait
      * Checks one hand for the highest possible rule that can be scored
      * without the dealt card
      * @param array<array<string>> $hands
-     * @param array<string> $deck
+     * @param array<string> $deck - the remaining cards to be dealt to the player from the deck
      */
     abstract private function handRuleWithout(array $hands, int $index, array $deck): string;
 
@@ -38,7 +38,7 @@ trait CheckEmptyGridTrait
      * (top-left/ row 0-col 0, and displays which rule will be psosible toachieve
      * at best calculated based on the dealt card and the cards the user is
      * yet to pick from the deck
-     * @param array<string> $deck
+     * @param array<string> $deck - the remaining cards to be dealt to the player from the deck
      * @return array<string,array<int,array<string,float|int|string>|int>|string>
      */
     private function emptyGridSuggestion(array $deck, string $card)

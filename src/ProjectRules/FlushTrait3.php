@@ -4,10 +4,14 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
+
+/**
+ * Trait for checking if the deck contains enough cards of the required suit
+ * to be able to achieve a flush in a hand.
+ * From kmom10/Project
+ */
 trait FlushTrait3
 {
-    // private string $suit;
-
     /**
      * From CountBySuitTrait.
      *
@@ -28,7 +32,7 @@ trait FlushTrait3
      * to get given cards in hand and cards in deck,
      * i.e. if there are enough cards of the suit to cover
      * fot the unfilled slots in the hand
-     * @param array<string> $deck
+     * @param array<string> $deck - the cards from the deck that will be dealt to the player in the remaining game
      */
     private function checkInDeck(string $suit, array $deck, int $countHand): bool
     {

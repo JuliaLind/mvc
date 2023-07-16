@@ -4,6 +4,10 @@ namespace App\ProjectEvaluator;
 
 use App\ProjectRules\RuleInterface;
 
+/**
+ * Trait for getting the nmae of the best possible rule that can be scored in a hand that already contains cards, with the dealt card,
+ * and the weight of the hand, from kmom10/Project
+ */
 trait PointsAndRuleNameTrait
 {
     /**
@@ -16,7 +20,7 @@ trait PointsAndRuleNameTrait
      * there are two hands where same rule is possible
      * to score
      *
-     * @param array<string> $deck
+     * @param array<string> $deck -  the cards from the deck that will be dealt to the player in the remaining game
      * @param array<string> $hand
      * @return array<string,float|int|string>
      */

@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
- * Controller for Card routes
+ * Controller for Card routes in Kmom02
  */
 class CardController extends AbstractController
 {

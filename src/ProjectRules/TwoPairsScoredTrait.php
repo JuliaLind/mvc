@@ -4,7 +4,10 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Checks if Two Pairs rule has been scored in a hand.
+ * From kmom10/Project
+ */
 trait TwoPairsScoredTrait
 {
     /**

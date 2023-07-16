@@ -2,6 +2,11 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Part of the logic for checking in a Two Pairs rule
+ * is possible to score.
+ * From kmom10/Project
+ */
 trait TwoPairsTrait5
 {
     private int $additionalValue = 0;
@@ -15,7 +20,7 @@ trait TwoPairsTrait5
      * cards of same rank
      * in the deck is two or more
      * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
+     * @param array<int,int> $ranksDeck - ranks of the cards that will be dealt to the player from the deck during the remaining game
      */
     private function checkForTwoPairs1(int $rank, array $ranksHand, array $ranksDeck): bool
     {
@@ -38,7 +43,7 @@ trait TwoPairsTrait5
      * one of the higher rules would have already returned true.
      * Even if the card already in hand tecnically will not contribute to the rule,
      * the rule is still possible because of the two available slots
-     * @param array<int,int> $ranksDeck
+     * @param array<int,int> $ranksDeck - ranks of the cards that will be dealt to the player from the deck during the remaining game
      */
     private function checkForTwoPairs3(int $rank, array $ranksDeck): bool
     {
@@ -58,7 +63,7 @@ trait TwoPairsTrait5
      * same rank as the card in the hand and at least
      * one card of the same rank as the dealt card
      * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
+     * @param array<int,int> $ranksDeck - ranks of the cards that will be dealt to the player from the deck during the remaining game
      */
     private function check2(int $rank, array $ranksHand, array $ranksDeck): bool
     {

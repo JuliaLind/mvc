@@ -9,7 +9,7 @@ use App\ProjectEvaluator\RuleEvaluator;
 
 /**
  * Trait that handles the action of house placing
- * a card
+ * a card, from kmom10/Project
  */
 trait HousePlaceCardTrait
 {

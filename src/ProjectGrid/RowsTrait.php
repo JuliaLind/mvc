@@ -5,7 +5,7 @@ namespace App\ProjectGrid;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Trait for getting arrays with horisontal hands in the grid
+ * Trait for getting arrays with horisontal hands in the grid, from kmom10/Project
  */
 trait RowsTrait
 {

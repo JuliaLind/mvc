@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Controller that contains the quote-api route
+ * Controller that contains the quote-api route, from kmom01
  */
 class JsonController2 extends AbstractController
 {

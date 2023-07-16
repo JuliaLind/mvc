@@ -2,6 +2,10 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Trait contains part of the logic for checking if a full house is possible to score in a hand.
+ * From kmom10/Project
+ */
 trait FullHouseTrait5
 {
     /**
@@ -9,7 +13,7 @@ trait FullHouseTrait5
      * 1. Hand contains two cards and the deck contains at least three cards of same rank
      * 2. Hand contains two cards and there is at least one card of same rank in the Deck. The deck also contains at least one pair.
      * 3. The hand contains three cards and the deck contains at least two cards of same rank.
-     * @param array<int,int> $ranksDeck
+     * @param array<int,int> $ranksDeck - ranks of the cards from the deck that will be dealt to the player in the remaining game
      */
     private function check1SubCheck(int $countHand, int $rank, array $ranksDeck): bool
     {
@@ -29,7 +33,7 @@ trait FullHouseTrait5
      * 2. maximum number of cards of same rank in the hand is three and the deck contains
      * at least three cards of the same rank
      * @param array<int,int> $ranksHand
-     * @param array<int,int> $ranksDeck
+     * @param array<int,int> $ranksDeck - ranks of the cards from the deck that will be dealt to the player in the remaining game
      */
     private function check1($ranksHand, $ranksDeck): bool
     {

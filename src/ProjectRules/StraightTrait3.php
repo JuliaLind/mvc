@@ -4,7 +4,10 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Used for determining if a Straight is possible to score. Contains method for checking all possible combinations.
+ * From kmom10/Project
+ */
 trait StraightTrait3
 {
     use StraightTrait2;

@@ -7,7 +7,8 @@ namespace App\ProjectRules;
  * Used to weight the value of a hand where a rule is possible
  * to score taking into consideration the number of
  * cards that already are placed in the hand and contribute to the rule,
- * in order to determine suggested slot
+ * in order to determine suggested slot.
+ * From kmom10/Project
  */
 trait AdditionalValueTrait
 {

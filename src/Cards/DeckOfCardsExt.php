@@ -5,7 +5,7 @@ namespace App\Cards;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Class representing a deck of cards with jokers
+ * Class representing a deck of cards with jokers, from kmom02
  */
 class DeckOfCardsExt extends DeckOfCards
 {

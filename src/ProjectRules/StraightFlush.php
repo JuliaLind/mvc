@@ -4,7 +4,8 @@ namespace App\ProjectRules;
 
 /**
  * Determins if StarightFlush rule is scored
- * or possible to score
+ * or possible to score.
+ * From kmom10/Project
  */
 class StraightFlush implements RuleInterface
 {

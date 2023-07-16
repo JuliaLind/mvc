@@ -2,6 +2,12 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Trait for checking if Two Pairs rule is possibel to achieve
+ * in an empty hand without the dealt card (i.e. with only
+ * the cards that the user will be dealt from the deck during the remaining game).
+ * From kmom10/Project
+ */
 trait TwoPairsTrait3
 {
     /**
@@ -11,7 +17,7 @@ trait TwoPairsTrait3
      * the cards and the values are the count of
      * each rank
      * @param array<string> $cards
-     * @return  array<array<int|string,int>>
+     * @return array<array<int|string,int>>
      */
     abstract private function countByRank($cards): array;
 

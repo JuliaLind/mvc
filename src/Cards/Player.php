@@ -5,7 +5,7 @@ namespace App\Cards;
 require __DIR__ . "/../../vendor/autoload.php";
 
 /**
- * Class representing a Player
+ * Class representing a Player, from kmom02
  */
 class Player
 {

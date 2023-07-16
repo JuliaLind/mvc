@@ -3,7 +3,7 @@
 namespace App\Project;
 
 /**
- * Class representing a deck of cards
+ * Class representing a deck of cards, from kmom10/Project
  */
 class Deck
 {

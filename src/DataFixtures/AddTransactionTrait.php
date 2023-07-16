@@ -10,7 +10,7 @@ use App\Entity\Transaction;
 use Datetime;
 
 /**
- * Trait used by AppFixtures class
+ * Trait used by AppFixtures class, from kmom10/project
  */
 trait AddTransactionTrait
 {

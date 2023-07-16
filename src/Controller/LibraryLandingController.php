@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Controller contains route for the library landing page
+ * Controller contains route for the library landing page, from kmom05
  */
 class LibraryLandingController extends AbstractController
 {

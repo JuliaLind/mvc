@@ -2,6 +2,11 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Trait for checking if Two Pairs rule is possible
+ * to score in a hand with the dealt card.
+ * From kmom10/Project
+ */
 trait TwoPairsTrait
 {
     use TwoPairsTrait4;
@@ -16,7 +21,7 @@ trait TwoPairsTrait
      * the cards and the values are the count of
      * each rank
      * @param array<string> $cards
-     * @return  array<array<int|string,int>>
+     * @return array<array<int|string,int>>
      */
     abstract private function countByRank($cards): array;
 
@@ -27,7 +32,7 @@ trait TwoPairsTrait
      * Starting point is that none of the higher
      * rules is possible to score
      * @param array<string> $hand
-     * @param array<string> $deck
+     * @param array<string> $deck - cards that will be dealt to the player in the remaining game
      */
     public function possibleWithCard(array $hand, array $deck, string $card): bool
     {

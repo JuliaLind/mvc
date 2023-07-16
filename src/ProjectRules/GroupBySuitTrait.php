@@ -2,6 +2,11 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Trait that for an array of cards returns an associative array where keys are suits and values are arrays with all ranks of that
+ * suit that are present in the card array.
+ * From kmom10/Project
+ */
 trait GroupBySuitTrait
 {
     /**

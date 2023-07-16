@@ -7,10 +7,12 @@ use App\ProjectEvaluator\RuleEvaluator;
 
 /**
  * Class that represents part of the logic of the Poker Squares game.
- * Represents the action of a bot picking up the top card fro ma deck and
+ * Represents the action of a bot picking up the top card from a deck and
  * placing it into a grid according to the calcualted suggestion. The data is then returned
  * for API route.  When the grid is
- * completely filled it is replaced by a new grid and the process starts all over again with one card palced each time the api orute is entered.
+ * completely filled it is replaced by a new grid and the process starts
+ * all over again with one card palced each time the api orute is entered.
+ * From kmom10/Project
  */
 class ApiGame1
 {

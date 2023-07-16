@@ -2,9 +2,19 @@
 
 namespace App\ProjectRules;
 
+/**
+ * Used in:
+ * CountByRankTrait,
+ * CountBySuitTrait,
+ * CountSuitAndRankTrait
+ *
+ * Returns the count of occurencies of specific value in an array.
+ * From kmom10/Project
+ */
 trait SubCountTrait
 {
     /**
+     * Counts occurencies of specific value in a array
      * @SuppressWarnings(PHPMD.ElseExpression)
      * @param array<mixed> $arr
      * @return array<array<int|string,int>>

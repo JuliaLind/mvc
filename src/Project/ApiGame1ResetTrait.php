@@ -8,10 +8,8 @@ use App\ProjectGrid\Grid;
 use App\ProjectEvaluator\RuleEvaluator;
 
 /**
- * Evaluates the hands of player and house after
- * both grids have been filled and determins
- * winner. If player won transfers 2x pot to
- * player/user and registers players score to database.
+ * Trait used in ApiGame1 class for generating a new grid and a new deck of cards,
+ * from kmom10/Project
  */
 trait ApiGame1ResetTrait
 {

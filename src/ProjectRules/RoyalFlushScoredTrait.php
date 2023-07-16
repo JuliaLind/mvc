@@ -4,7 +4,10 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Trait for checking if Royal Flush rule has been scored in a hand.
+ * From kmom10/Project
+ */
 trait RoyalFlushScoredTrait
 {
     /**

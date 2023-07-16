@@ -3,7 +3,7 @@ Search.appendIndex(
                 {
             "fqsen": "\\App\\Cards\\Card",
             "name": "Card",
-            "summary": "Class\u0020representing\u0020a\u0020playing\u0020Card",
+            "summary": "Class\u0020representing\u0020a\u0020playing\u0020Card,\u0020from\u0020kmom02",
             "url": "classes/App-Cards-Card.html"
         },                {
             "fqsen": "\\App\\Cards\\Card\u003A\u003A__construct\u0028\u0029",
@@ -68,7 +68,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\CardGraphic",
             "name": "CardGraphic",
-            "summary": "Class\u0020representing\u0020a\u0020playing\u0020Card\u0020with\ngraphic\u0020representation\u0020\u0028i.e.\u0020svg\u0020image\u0029",
+            "summary": "Class\u0020representing\u0020a\u0020playing\u0020Card\u0020with\ngraphic\u0020representation\u0020\u0028i.e.\u0020svg\u0020image\u0029,\u0020from\u0020kmom02",
             "url": "classes/App-Cards-CardGraphic.html"
         },                {
             "fqsen": "\\App\\Cards\\CardGraphic\u003A\u003AgetImgLink\u0028\u0029",
@@ -78,7 +78,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\CardHand",
             "name": "CardHand",
-            "summary": "Class\u0020representing\u0020a\u0020hand\u0020that\u0020can\u0020hold\u0020cards",
+            "summary": "Class\u0020representing\u0020a\u0020hand\u0020that\u0020can\u0020hold\u0020cards,\u0020from\u0020kmom02",
             "url": "classes/App-Cards-CardHand.html"
         },                {
             "fqsen": "\\App\\Cards\\CardHand\u003A\u003Aadd\u0028\u0029",
@@ -98,7 +98,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards",
             "name": "DeckOfCards",
-            "summary": "Class\u0020representing\u0020a\u0020deck\u0020of\u0020cards\u0020with\u0020no\u0020jokers",
+            "summary": "Class\u0020representing\u0020a\u0020deck\u0020of\u0020cards\u0020with\u0020no\u0020jokers,\u0020from\u0020kmom02",
             "url": "classes/App-Cards-DeckOfCards.html"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003A__construct\u0028\u0029",
@@ -128,7 +128,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCardsExt",
             "name": "DeckOfCardsExt",
-            "summary": "Class\u0020representing\u0020a\u0020deck\u0020of\u0020cards\u0020with\u0020jokers",
+            "summary": "Class\u0020representing\u0020a\u0020deck\u0020of\u0020cards\u0020with\u0020jokers,\u0020from\u0020kmom02",
             "url": "classes/App-Cards-DeckOfCardsExt.html"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCardsExt\u003A\u003A__construct\u0028\u0029",
@@ -138,7 +138,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\Player",
             "name": "Player",
-            "summary": "Class\u0020representing\u0020a\u0020Player",
+            "summary": "Class\u0020representing\u0020a\u0020Player,\u0020from\u0020kmom02",
             "url": "classes/App-Cards-Player.html"
         },                {
             "fqsen": "\\App\\Cards\\Player\u003A\u003A__construct\u0028\u0029",
@@ -183,7 +183,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\CardController",
             "name": "CardController",
-            "summary": "Controller\u0020for\u0020Card\u0020routes",
+            "summary": "Controller\u0020for\u0020Card\u0020routes\u0020in\u0020Kmom02",
             "url": "classes/App-Controller-CardController.html"
         },                {
             "fqsen": "\\App\\Controller\\CardController\u003A\u003Adeck\u0028\u0029",
@@ -203,7 +203,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller",
             "name": "Game21Controller",
-            "summary": "Controller\u0020class\u0020for\u0020the\u002021\u0020card\u0020game",
+            "summary": "Controller\u0020class\u0020for\u0020the\u002021\u0020card\u0020game,\u0020from\u0020kmom03\u002Dkmom04",
             "url": "classes/App-Controller-Game21Controller.html"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller\u003A\u003Amain\u0028\u0029",
@@ -218,7 +218,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\JsonController",
             "name": "JsonController",
-            "summary": "Controller\u0020that\u0020contains\u0020the\u0020route\u0020for\u0020API\u0020landing\u0020page",
+            "summary": "Controller\u0020that\u0020contains\u0020the\u0020route\u0020for\u0020API\u0020landing\u0020page,\u0020kmom02\u002Dkmom06",
             "url": "classes/App-Controller-JsonController.html"
         },                {
             "fqsen": "\\App\\Controller\\JsonController\u003A\u003Aapis\u0028\u0029",
@@ -228,7 +228,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\MainController",
             "name": "MainController",
-            "summary": "Controller\u0020contains\u0020routes\u0020for\u0020some\u0020of\u0020the\n\u0022ordinary\u0022\u0020pages",
+            "summary": "Controller\u0020contains\u0020routes\u0020for\u0020some\u0020of\u0020the\n\u0022ordinary\u0022\u0020pages\u0020kmom01\u002Dkmom06",
             "url": "classes/App-Controller-MainController.html"
         },                {
             "fqsen": "\\App\\Controller\\MainController\u003A\u003Ahome\u0028\u0029",
@@ -258,7 +258,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\BettingGameTrait",
             "name": "BettingGameTrait",
-            "summary": "Trait\u0020for\u0020handling\u0020the\u0020betting\u0020in\u0020the\u002021\u0020game",
+            "summary": "Trait\u0020for\u0020handling\u0020the\u0020betting\u0020in\u0020the\u002021\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-BettingGameTrait.html"
         },                {
             "fqsen": "\\App\\Game\\BettingGameTrait\u003A\u003AgetInvestLimit\u0028\u0029",
@@ -293,7 +293,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Game21Easy",
             "name": "Game21Easy",
-            "summary": "Class\u0020representing\u0020the\u0020easy\u0020version\u0020of\u0020the\u002021\u0020card\u0020game",
+            "summary": "Class\u0020representing\u0020the\u0020easy\u0020version\u0020of\u0020the\u002021\u0020card\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-Game21Easy.html"
         },                {
             "fqsen": "\\App\\Game\\Game21Easy\u003A\u003A\u0024level",
@@ -303,7 +303,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Game21Hard",
             "name": "Game21Hard",
-            "summary": "Class\u0020representing\u0020the\u0020hard\u0020version\u0020of\u0020the\u002021\u0020card\u0020game",
+            "summary": "Class\u0020representing\u0020the\u0020hard\u0020version\u0020of\u0020the\u002021\u0020card\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-Game21Hard.html"
         },                {
             "fqsen": "\\App\\Game\\Game21Hard\u003A\u003A\u0024level",
@@ -313,7 +313,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Game21Interface",
             "name": "Game21Interface",
-            "summary": "Interface\u0020to\u0020be\u0020implemented\u0020by\u0020the\u0020classes\u0020Game21Easy\u0020and\u0020Game21Hard",
+            "summary": "Interface\u0020to\u0020be\u0020implemented\u0020by\u0020the\u0020classes\u0020Game21Easy\u0020and\u0020Game21Hard,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-Game21Interface.html"
         },                {
             "fqsen": "\\App\\Game\\Game21Interface\u003A\u003AgameOver\u0028\u0029",
@@ -358,7 +358,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\MoneyPot",
             "name": "MoneyPot",
-            "summary": "Class\u0020representing\u0020a\u0020money\u0020pot\u0020in\u0020the\u002021\u0020game",
+            "summary": "Class\u0020representing\u0020a\u0020money\u0020pot\u0020in\u0020the\u002021\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-MoneyPot.html"
         },                {
             "fqsen": "\\App\\Game\\MoneyPot\u003A\u003AaddMoney\u0028\u0029",
@@ -383,7 +383,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Player21",
             "name": "Player21",
-            "summary": "Class\u0020representing\u0020a\u0020Player\u0020in\u0020the\u002021\u0020game",
+            "summary": "Class\u0020representing\u0020a\u0020Player\u0020in\u0020the\u002021\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-Player21.html"
         },                {
             "fqsen": "\\App\\Game\\Player21\u003A\u003A__construct\u0028\u0029",
@@ -418,7 +418,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\LibraryController",
             "name": "LibraryController",
-            "summary": "Controller\u0020that\u0020contains\u0020routes\u0020related\u0020to\u0020the\u0020library",
+            "summary": "Controller\u0020that\u0020contains\u0020routes\u0020related\u0020to\u0020the\u0020library,\u0020from\u0020kmom05",
             "url": "classes/App-Controller-LibraryController.html"
         },                {
             "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AshowBookByIsbn\u0028\u0029",
@@ -548,17 +548,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\GameException",
             "name": "GameException",
-            "summary": "Exception\u0020class\u0020for\u0020Game",
+            "summary": "Exception\u0020class\u0020that\u0020is\u0020inherited\u0020by\u0020NoCardsLeftException,\u0020from\u0020kmom02",
             "url": "classes/App-Cards-GameException.html"
         },                {
             "fqsen": "\\App\\Cards\\NoCardsLeftException",
             "name": "NoCardsLeftException",
-            "summary": "Exception\u0020class\u0020thown\u0020when\u0020there\u0020are\u0020no\u0020cards\nleft\u0020do\u0020draw",
+            "summary": "Exception\u0020class\u0020thown\u0020when\u0020there\u0020are\u0020no\u0020cards\nleft\u0020do\u0020draw,\u0020from\u0020kmom02",
             "url": "classes/App-Cards-NoCardsLeftException.html"
         },                {
             "fqsen": "\\App\\Controller\\JsonGame21Controller",
             "name": "JsonGame21Controller",
-            "summary": "Controller\u0020that\u0020contain\u0020route\u0020for\u0020displaying\u0020the\u0020current\u0020state\nof\u002021\u0020card\u0020game\u0020as\u0020json",
+            "summary": "Controller\u0020that\u0020contain\u0020route\u0020for\u0020displaying\u0020the\u0020current\u0020state\nof\u002021\u0020card\u0020game\u0020as\u0020json,\u0020from\u0020kmom03\u002Dkmom04",
             "url": "classes/App-Controller-JsonGame21Controller.html"
         },                {
             "fqsen": "\\App\\Controller\\JsonGame21Controller\u003A\u003AjsonGame\u0028\u0029",
@@ -568,7 +568,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\JsonLibraryController",
             "name": "JsonLibraryController",
-            "summary": "Controller\u0020for\u0020API\u0020routes\u0020related\u0020to\u0020the\u0020libarary",
+            "summary": "Controller\u0020for\u0020API\u0020routes\u0020related\u0020to\u0020the\u0020libarary,\u0020from\u0020kmom05",
             "url": "classes/App-Controller-JsonLibraryController.html"
         },                {
             "fqsen": "\\App\\Controller\\JsonLibraryController\u003A\u003AshowAllBooks\u0028\u0029",
@@ -583,7 +583,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\PlayerTrait",
             "name": "PlayerTrait",
-            "summary": "Trate\u0020for\u0020base\u0020methods\u0020for\u0020a\u002021\u0020player",
+            "summary": "Trate\u0020for\u0020base\u0020methods\u0020for\u0020a\u002021\u0020player,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-PlayerTrait.html"
         },                {
             "fqsen": "\\App\\Game\\PlayerTrait\u003A\u003AgetName\u0028\u0029",
@@ -633,7 +633,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\CardDataTrait",
             "name": "CardDataTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020extracting\u0020data\u0020related\u0020to\u0020a\u0020playing\u0020card,\u0020used\u0020in\u0020CardHand\u0020and\u0020DeckOfCards\u0020classes,\u0020from\u0020kmom02",
             "url": "classes/App-Cards-CardDataTrait.html"
         },                {
             "fqsen": "\\App\\Cards\\CardDataTrait\u003A\u003AgetAsString\u0028\u0029",
@@ -658,7 +658,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\CardController2",
             "name": "CardController2",
-            "summary": "Controller\u0020for\u0020Card\u0020routes",
+            "summary": "Controller\u0020for\u0020Card\u0020routes\u0020in\u0020Kmom02",
             "url": "classes/App-Controller-CardController2.html"
         },                {
             "fqsen": "\\App\\Controller\\CardController2\u003A\u003Adraw\u0028\u0029",
@@ -678,7 +678,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller2",
             "name": "Game21Controller2",
-            "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game",
+            "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game,\u0020from\u0020kmom03\u002Dkmom04",
             "url": "classes/App-Controller-Game21Controller2.html"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller2\u003A\u003AbankPlaying\u0028\u0029",
@@ -688,7 +688,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller3",
             "name": "Game21Controller3",
-            "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game",
+            "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game,\u0020from\u0020kmom03\u002Dkmom04",
             "url": "classes/App-Controller-Game21Controller3.html"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller3\u003A\u003AselectAmount\u0028\u0029",
@@ -698,7 +698,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller5",
             "name": "Game21Controller5",
-            "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game",
+            "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game,\u0020from\u0020kmom03\u002Dkmom04",
             "url": "classes/App-Controller-Game21Controller5.html"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller5\u003A\u003Abet\u0028\u0029",
@@ -708,7 +708,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller6",
             "name": "Game21Controller6",
-            "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game",
+            "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game,\u0020from\u0020kmom03\u002Dkmom04",
             "url": "classes/App-Controller-Game21Controller6.html"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller6\u003A\u003Aplay\u0028\u0029",
@@ -718,7 +718,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller7",
             "name": "Game21Controller7",
-            "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game",
+            "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game,\u0020from\u0020kmom03\u002Dkmom04",
             "url": "classes/App-Controller-Game21Controller7.html"
         },                {
             "fqsen": "\\App\\Controller\\Game21Controller7\u003A\u003AplayerDraw\u0028\u0029",
@@ -728,7 +728,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\JsonCardController",
             "name": "JsonCardController",
-            "summary": "Controller\u0020for\u0020API\u0020card\u0020routes",
+            "summary": "Controller\u0020contains\u0020API\u0020route\u0020for\u0020dealing\u0020many\u0020cards\u0020to\u0020many\u0020players\u0020in\u0020Kmom02",
             "url": "classes/App-Controller-JsonCardController.html"
         },                {
             "fqsen": "\\App\\Controller\\JsonCardController\u003A\u003AjsonDeal\u0028\u0029",
@@ -738,7 +738,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\JsonCardController2",
             "name": "JsonCardController2",
-            "summary": "Controller\u0020for\u0020API\u0020card\u0020routes",
+            "summary": "Controller\u0020contains\u0020API\u0020route\u0020that\u0020displays\u0020a\u0020new,\u0020unshuffled\u0020deck\u0020of\u0020cards,\u0020in\u0020Kmom02",
             "url": "classes/App-Controller-JsonCardController2.html"
         },                {
             "fqsen": "\\App\\Controller\\JsonCardController2\u003A\u003AjsonDeck\u0028\u0029",
@@ -748,7 +748,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\JsonCardController3",
             "name": "JsonCardController3",
-            "summary": "Controller\u0020for\u0020API\u0020card\u0020routes",
+            "summary": "Controller\u0020contains\u0020API\u0020route\u0020for\u0020dealing\u0020many\u0020cards\u0020to\u0020one\u0020player,\u0020in\u0020Kmom02",
             "url": "classes/App-Controller-JsonCardController3.html"
         },                {
             "fqsen": "\\App\\Controller\\JsonCardController3\u003A\u003AjsonDrawMany\u0028\u0029",
@@ -758,7 +758,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\JsonCardController4",
             "name": "JsonCardController4",
-            "summary": "Controller\u0020for\u0020API\u0020card\u0020routes",
+            "summary": "Controller\u0020contains\u0020API\u0020route\u0020for\u0020dealing\u0020one\u0020card\u0020to\u0020one\u0020player,\u0020in\u0020Kmom02",
             "url": "classes/App-Controller-JsonCardController4.html"
         },                {
             "fqsen": "\\App\\Controller\\JsonCardController4\u003A\u003AjsonDraw\u0028\u0029",
@@ -768,7 +768,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\JsonCardController5",
             "name": "JsonCardController5",
-            "summary": "Controller\u0020for\u0020API\u0020card\u0020routes",
+            "summary": "Controller\u0020contains\u0020API\u0020route\u0020that\u0020displays\u0020a\u0020new,\u0020shuffled\u0020deck\u0020of\u0020cards,\u0020in\u0020Kmom02",
             "url": "classes/App-Controller-JsonCardController5.html"
         },                {
             "fqsen": "\\App\\Controller\\JsonCardController5\u003A\u003AjsonShuffle\u0028\u0029",
@@ -778,7 +778,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\JsonController2",
             "name": "JsonController2",
-            "summary": "Controller\u0020that\u0020contains\u0020the\u0020quote\u002Dapi\u0020route",
+            "summary": "Controller\u0020that\u0020contains\u0020the\u0020quote\u002Dapi\u0020route,\u0020from\u0020kmom01",
             "url": "classes/App-Controller-JsonController2.html"
         },                {
             "fqsen": "\\App\\Controller\\JsonController2\u003A\u003AjsonQuote\u0028\u0029",
@@ -788,7 +788,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\LuckyMonkey",
             "name": "LuckyMonkey",
-            "summary": "Helper\u0020class\u0020to\u0020get\u0020data\u0020for\u0020the\u0020lucky\u0020route",
+            "summary": "Helper\u0020class\u0020to\u0020get\u0020data\u0020for\u0020the\u0020lucky\u0020route,\u0020from\u0020kmom01",
             "url": "classes/App-Controller-LuckyMonkey.html"
         },                {
             "fqsen": "\\App\\Controller\\LuckyMonkey\u003A\u003Adata\u0028\u0029",
@@ -798,7 +798,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\MainControllerHelper",
             "name": "MainControllerHelper",
-            "summary": "Helper\u0020class\u0020to\u0020get\u0020data\u0020for\u0020routes\u0020in\u0020the\u0020main\u0020controller",
+            "summary": "Helper\u0020class\u0020to\u0020get\u0020data\u0020from\u0020markdown\u0020files\u0020for\u0020some\u0020of\u0020the\u0020routes\u0020in\u0020the\u0020main\u0020controller",
             "url": "classes/App-Controller-MainControllerHelper.html"
         },                {
             "fqsen": "\\App\\Controller\\MainControllerHelper\u003A\u003A__construct\u0028\u0029",
@@ -933,7 +933,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\Quote",
             "name": "Quote",
-            "summary": "Helper\u0020class\u0020to\u0020get\u0020data\u0020for\u0020for\u0020the\u0020API\u0020Quote\u0020route",
+            "summary": "Helper\u0020class\u0020to\u0020get\u0020data\u0020for\u0020for\u0020the\u0020API\u0020Quote\u0020route\u0020from\u0020kmom01",
             "url": "classes/App-Controller-Quote.html"
         },                {
             "fqsen": "\\App\\Controller\\Quote\u003A\u003Agenerate\u0028\u0029",
@@ -943,7 +943,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\SqlFileLoader",
             "name": "SqlFileLoader",
-            "summary": "Loads\u0020sql\u0020file\u0020to\u0020database",
+            "summary": "Loads\u0020sql\u0020file\u0020to\u0020database,\u0020used\u0020in\u0020routes\u0020related\u0020to\u0020resetting\u0020tables\u0020in\u0020database\u0020\u0028Library\u0020and\u0020Project\u0029",
             "url": "classes/App-Controller-SqlFileLoader.html"
         },                {
             "fqsen": "\\App\\Controller\\SqlFileLoader\u003A\u003Aload\u0028\u0029",
@@ -953,7 +953,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\DataFixtures\\AddScoreTrait",
             "name": "AddScoreTrait",
-            "summary": "Trait\u0020used\u0020by\u0020AppFixtures\u0020class",
+            "summary": "Trait\u0020used\u0020by\u0020AppFixtures\u0020class,\u0020from\u0020kmom10\/project",
             "url": "classes/App-DataFixtures-AddScoreTrait.html"
         },                {
             "fqsen": "\\App\\DataFixtures\\AddScoreTrait\u003A\u003AaddScore\u0028\u0029",
@@ -963,7 +963,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\DataFixtures\\AddTransactionTrait",
             "name": "AddTransactionTrait",
-            "summary": "Trait\u0020used\u0020by\u0020AppFixtures\u0020class",
+            "summary": "Trait\u0020used\u0020by\u0020AppFixtures\u0020class,\u0020from\u0020kmom10\/project",
             "url": "classes/App-DataFixtures-AddTransactionTrait.html"
         },                {
             "fqsen": "\\App\\DataFixtures\\AddTransactionTrait\u003A\u003AaddTransaction\u0028\u0029",
@@ -973,7 +973,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\DataFixtures\\AddUserTrait",
             "name": "AddUserTrait",
-            "summary": "Trait\u0020used\u0020by\u0020AppFixtures\u0020class",
+            "summary": "Trait\u0020used\u0020by\u0020AppFixtures\u0020class,\u0020from\u0020kmom10\/project",
             "url": "classes/App-DataFixtures-AddUserTrait.html"
         },                {
             "fqsen": "\\App\\DataFixtures\\AddUserTrait\u003A\u003AaddUser\u0028\u0029",
@@ -983,7 +983,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\DataFixtures\\AppFixtures",
             "name": "AppFixtures",
-            "summary": "Class\u0020for\u0020loading\u0020fixtures\u0020for\u0020the\u0020database\u002Dtables\nUser,\u0020Score\u0020and\u0020Transaction",
+            "summary": "Class\u0020for\u0020loading\u0020fixtures\u0020for\u0020the\u0020database\u002Dtables\nUser,\u0020Score\u0020and\u0020Transaction,\u0020from\u0020kmom10\/project",
             "url": "classes/App-DataFixtures-AppFixtures.html"
         },                {
             "fqsen": "\\App\\DataFixtures\\AppFixtures\u003A\u003Aload\u0028\u0029",
@@ -993,7 +993,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\DataFixtures\\BookFixture",
             "name": "BookFixture",
-            "summary": "Fixture\u0020for\u0020testing\u0020Library",
+            "summary": "Fixture\u0020for\u0020testing\u0020Library,\u0020from\u0020kmom05",
             "url": "classes/App-DataFixtures-BookFixture.html"
         },                {
             "fqsen": "\\App\\DataFixtures\\BookFixture\u003A\u003Aload\u0028\u0029",
@@ -1063,7 +1063,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Transaction",
             "name": "Transaction",
-            "summary": "Movement\u0020of\u0020coints\u0020to\u0020or\u0020from\u0020participants\naccount",
+            "summary": "Movement\u0020of\u0020coints\u0020to\u0020or\u0020from\u0020participants\naccount,\u0020from\u0020kmom10\/project",
             "url": "classes/App-Entity-Transaction.html"
         },                {
             "fqsen": "\\App\\Entity\\Transaction\u003A\u003AgetId\u0028\u0029",
@@ -1138,7 +1138,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\User",
             "name": "User",
-            "summary": "",
+            "summary": "Class\u0020respresents\u0020a\u0020registered\u0020user,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Entity-User.html"
         },                {
             "fqsen": "\\App\\Entity\\User\u003A\u003AgetId\u0028\u0029",
@@ -1198,7 +1198,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\BanksTurnTrait",
             "name": "BanksTurnTrait",
-            "summary": "Trait\u0020for\u0020handling\u0020bank\u0027s\u0020turn\u0020in\u0020the\u002021\u0020game",
+            "summary": "Trait\u0020for\u0020handling\u0020bank\u0027s\u0020turn\u0020in\u0020the\u002021\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-BanksTurnTrait.html"
         },                {
             "fqsen": "\\App\\Game\\BanksTurnTrait\u003A\u003AdealBank\u0028\u0029",
@@ -1228,7 +1228,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\DealBankEasyTrait",
             "name": "DealBankEasyTrait",
-            "summary": "Trait\u0020for\u0020handling\u0020bank\u0027s\u0020turn\u0020to\u0020pick\u0020cards\u0020int\u0020he\u002021\u0020game,\u0020for\u0020the\u0020easy\u0020version\u0020of\u0020the\u0020game",
+            "summary": "Trait\u0020for\u0020handling\u0020bank\u0027s\u0020turn\u0020to\u0020pick\u0020cards\u0020int\u0020he\u002021\u0020game,\u0020for\u0020the\u0020easy\u0020version\u0020of\u0020the\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-DealBankEasyTrait.html"
         },                {
             "fqsen": "\\App\\Game\\DealBankEasyTrait\u003A\u003AdealBank\u0028\u0029",
@@ -1253,7 +1253,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\DealBankHardTrait",
             "name": "DealBankHardTrait",
-            "summary": "Trait\u0020for\u0020handling\u0020bank\u0027s\u0020turn\u0020to\u0020pick\u0020cards\u0020int\u0020he\u002021\u0020game,\u0020for\u0020the\u0020hard\u0020version\u0020of\u0020the\u0020game",
+            "summary": "Trait\u0020for\u0020handling\u0020bank\u0027s\u0020turn\u0020to\u0020pick\u0020cards\u0020int\u0020he\u002021\u0020game,\u0020for\u0020the\u0020hard\u0020version\u0020of\u0020the\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-DealBankHardTrait.html"
         },                {
             "fqsen": "\\App\\Game\\DealBankHardTrait\u003A\u003AdealBank\u0028\u0029",
@@ -1278,7 +1278,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\EndRoundTrait",
             "name": "EndRoundTrait",
-            "summary": "Ends\u0020a\u0020round\u0020of\u0020Game21",
+            "summary": "Ends\u0020a\u0020round\u0020of\u0020Game21,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-EndRoundTrait.html"
         },                {
             "fqsen": "\\App\\Game\\EndRoundTrait\u003A\u003AgetInvestLimit\u0028\u0029",
@@ -1343,7 +1343,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait",
             "name": "EvaluateBankTrait",
-            "summary": "Evaluates\u0020if\u0020bank\u0020won\u0020or\u0020lost\u0020the\u0020round\u0020in\u0020the\u002021\u0020game",
+            "summary": "Evaluates\u0020if\u0020bank\u0020won\u0020or\u0020lost\u0020the\u0020round\u0020in\u0020the\u002021\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-EvaluateBankTrait.html"
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait\u003A\u003AbankWinsOnEqual\u0028\u0029",
@@ -1393,7 +1393,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait2",
             "name": "EvaluateBankTrait2",
-            "summary": "part\u0020two\u0020of\u0020the\u0020evaluation\u0020process\u0020after\u0020the\u0020bank\u0020has\u0020picked\u0020cards\u0020in\u0020the\u002021\u0020game",
+            "summary": "part\u0020two\u0020of\u0020the\u0020evaluation\u0020process\u0020after\u0020the\u0020bank\u0020has\u0020picked\u0020cards\u0020in\u0020the\u002021\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-EvaluateBankTrait2.html"
         },                {
             "fqsen": "\\App\\Game\\EvaluateBankTrait2\u003A\u003AbankWinsOnEqual\u0028\u0029",
@@ -1418,7 +1418,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\EvaluatePlayerTrait",
             "name": "EvaluatePlayerTrait",
-            "summary": "Trait\u0020for\u0020handlign\u0020evaluation\u0020of\/after\u0020player\u0027s\u0020move\u0020in\u0020the\u002021\u0020game",
+            "summary": "Trait\u0020for\u0020handling\u0020evaluation\u0020of\/after\u0020player\u0027s\u0020move\u0020in\u0020the\u002021\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-EvaluatePlayerTrait.html"
         },                {
             "fqsen": "\\App\\Game\\EvaluatePlayerTrait\u003A\u003Aevaluate\u0028\u0029",
@@ -1458,7 +1458,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Game21",
             "name": "Game21",
-            "summary": "Base\u0020class\u0020for\u0020the\u002021\u0020card\u0020game",
+            "summary": "Base\u0020class\u0020for\u0020the\u002021\u0020card\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-Game21.html"
         },                {
             "fqsen": "\\App\\Game\\Game21\u003A\u003A__construct\u0028\u0029",
@@ -1468,7 +1468,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Game21DataTrait",
             "name": "Game21DataTrait",
-            "summary": "Trait\u0020for\u0020exctrating\u0020data\u0020related\u0020to\u0020current\u0020state\u0020of\u0020the\u002021\u0020game",
+            "summary": "Trait\u0020for\u0020exctrating\u0020data\u0020related\u0020to\u0020current\u0020state\u0020of\u0020the\u002021\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-Game21DataTrait.html"
         },                {
             "fqsen": "\\App\\Game\\Game21DataTrait\u003A\u003AgetPlayerData\u0028\u0029",
@@ -1533,7 +1533,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Game21FlashTrait",
             "name": "Game21FlashTrait",
-            "summary": "Generates\u0020flash\u0020message\u0020to\u0020be\u0020displayed\u0020at\u0020the\u0020end\u0020of\u0020a\u0020round\nor\u0020at\u0020the\u0020end\u0020of\u0020a\u0020game",
+            "summary": "Generates\u0020flash\u0020message\u0020to\u0020be\u0020displayed\u0020at\u0020the\u0020end\u0020of\u0020a\u0020round\nor\u0020at\u0020the\u0020end\u0020of\u0020a\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-Game21FlashTrait.html"
         },                {
             "fqsen": "\\App\\Game\\Game21FlashTrait\u003A\u003AmessageType\u0028\u0029",
@@ -1563,7 +1563,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Game21Trait",
             "name": "Game21Trait",
-            "summary": "",
+            "summary": "Trait\u0020contains\u0020method\u0020for\u0020getting\u0020currently\u0020playing\u0020player\u0020in\u0020the\u002021\u0020game\nand\u0020estimating\u0020the\u0020risk\u0020for\u0020current\u0020player,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-Game21Trait.html"
         },                {
             "fqsen": "\\App\\Game\\Game21Trait\u003A\u003AcurrentPlayer\u0028\u0029",
@@ -1598,7 +1598,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\GameApi",
             "name": "GameApi",
-            "summary": "Helper\u0020class\u0020that\u0020returns\u0020current\u0020state\u0020of\u002021\u0020game\u0020for\u0020the\u0020api\u0020route",
+            "summary": "Helper\u0020class\u0020that\u0020returns\u0020current\u0020state\u0020of\u002021\u0020game\u0020for\u0020the\u0020api\u0020route,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-GameApi.html"
         },                {
             "fqsen": "\\App\\Game\\GameApi\u003A\u003Adata\u0028\u0029",
@@ -1608,7 +1608,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\NextRoundTrait",
             "name": "NextRoundTrait",
-            "summary": "Handles\u0020transition\u0020to\u0020next\u0020round\u0020in\u0020the\u002021\u0020game",
+            "summary": "Handles\u0020transition\u0020to\u0020next\u0020round\u0020in\u0020the\u002021\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-NextRoundTrait.html"
         },                {
             "fqsen": "\\App\\Game\\NextRoundTrait\u003A\u003AgetInvestLimit\u0028\u0029",
@@ -1653,7 +1653,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Player21Trait",
             "name": "Player21Trait",
-            "summary": "Trait\u0020contains\u0020the\u0020method\u0020for\u0020adjusting\u0020the\u0020value\u0020of\u0020ace\u0020from\u002014\u0020to\u00201",
+            "summary": "Trait\u0020contains\u0020the\u0020method\u0020for\u0020adjusting\u0020the\u0020value\u0020of\u0020ace\u0020from\u002014\u0020to\u00201,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-Player21Trait.html"
         },                {
             "fqsen": "\\App\\Game\\Player21Trait\u003A\u003AadjAceValueToOne\u0028\u0029",
@@ -1663,7 +1663,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Player21Trait2",
             "name": "Player21Trait2",
-            "summary": "Trate\u0020for\u0020estimating\u0020the\u0020risk\u0020of\u0020getting\u0020fat\u0020in\u0020the\u002021\u0020game",
+            "summary": "Trate\u0020for\u0020estimating\u0020the\u0020risk\u0020of\u0020getting\u0020fat\u0020in\u0020the\u002021\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-Player21Trait2.html"
         },                {
             "fqsen": "\\App\\Game\\Player21Trait2\u003A\u003AadjAceValueToOne\u0028\u0029",
@@ -1688,7 +1688,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Player21Trait3",
             "name": "Player21Trait3",
-            "summary": "Trait\u0020for\u0020calculating\u0020the\u0020value\u0020of\u0020a\u0020hand\u0020in\u0020the\u002021\u0020game",
+            "summary": "Trait\u0020for\u0020calculating\u0020the\u0020value\u0020of\u0020a\u0020hand\u0020in\u0020the\u002021\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-Player21Trait3.html"
         },                {
             "fqsen": "\\App\\Game\\Player21Trait3\u003A\u003AhandValue\u0028\u0029",
@@ -1703,7 +1703,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\PlayersTurnTrait",
             "name": "PlayersTurnTrait",
-            "summary": "Trait\u0020for\u0020handling\u0020player\u0027s\u0020turn\u0020in\u002021\u0020game",
+            "summary": "Trait\u0020for\u0020handling\u0020player\u0027s\u0020turn\u0020in\u002021\u0020game,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-PlayersTurnTrait.html"
         },                {
             "fqsen": "\\App\\Game\\PlayersTurnTrait\u003A\u003AendRound\u0028\u0029",
@@ -1738,7 +1738,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\ValueConverter",
             "name": "ValueConverter",
-            "summary": "Class\u0020for\u0020contering\u0020the\u0020value\u0020of\u0020Ace\u0020from\u002014\u0020to\u00201\u0020when\u0020a\u0020hand\u0020reaches\u0020over\u002021\u0020points",
+            "summary": "Class\u0020for\u0020contering\u0020the\u0020value\u0020of\u0020Ace\u0020from\u002014\u0020to\u00201\u0020when\u0020a\u0020hand\u0020reaches\u0020over\u002021\u0020points,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-ValueConverter.html"
         },                {
             "fqsen": "\\App\\Game\\ValueConverter\u003A\u003AadjAceValue\u0028\u0029",
@@ -1753,7 +1753,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\ValueConverter2",
             "name": "ValueConverter2",
-            "summary": "Class\u0020for\u0020checking\u0020if\u0020adding\u0020a\u0020card\u0020to\u0020the\u0020hand\u0020would\u0020return\nin\u0020getting\u0020fat.\u0020If\u0020yes\u0020then\u0020returns\u00201,\u0020otherwise\u0020returns\u00200",
+            "summary": "Class\u0020for\u0020checking\u0020if\u0020adding\u0020a\u0020card\u0020to\u0020the\u0020hand\u0020would\u0020return\nin\u0020getting\u0020fat.\u0020If\u0020yes\u0020then\u0020returns\u00201,\u0020otherwise\u0020returns\u00200,\u0020from\u0020kmom03\u002D04",
             "url": "classes/App-Game-ValueConverter2.html"
         },                {
             "fqsen": "\\App\\Game\\ValueConverter2\u003A\u003AcheckIfBad\u0028\u0029",
@@ -1778,7 +1778,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ApiGame2",
             "name": "ApiGame2",
-            "summary": "Represents\u0020part\u0020of\u0020the\u0020logic\u0020of\u0020the\u0020Poker\u0020Squares\u0020game.\u0020Places\u0020a\u0020card\u0020into\u0020an\u0020empty\u0020grid\u0020accoring\u0020to\u0020passed\u0020arguemnts\u0020and\u0020returns\u0020data\u0020containing\u0020the\u0020grid,\u0020the\u0020remaining\u0020card\u0020and\u0020a\u0020message\u0020describing\u0020the\u0020card\u0020palcement\u0020for\u0020API\u0020route",
+            "summary": "Represents\u0020part\u0020of\u0020the\u0020logic\u0020of\u0020the\u0020Poker\u0020Squares\u0020game.\u0020Places\u0020a\u0020card\u0020into\u0020an\u0020empty\u0020grid\naccoring\u0020to\u0020passed\u0020arguemnts\u0020and\u0020returns\u0020data\u0020containing\u0020the\u0020grid,\u0020the\u0020remaining\u0020card\nand\u0020a\u0020message\u0020describing\u0020the\u0020card\u0020palcement\u0020for\u0020API\u0020route,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-ApiGame2.html"
         },                {
             "fqsen": "\\App\\Project\\ApiGame2\u003A\u003AoneRound\u0028\u0029",
@@ -1788,7 +1788,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ApiGame3",
             "name": "ApiGame3",
-            "summary": "Displays\u0020part\u0020of\u0020the\u0020logic\u0020of\u0020the\u0020Poker\u0020Squares\u0020game,\u0020evaluates\u0020results\u0020for\u0020a\nfull\u0020grid\u0020and\u0020returns\u0020the\u0020data\u0020for\u0020API\u0020route",
+            "summary": "Displays\u0020part\u0020of\u0020the\u0020logic\u0020of\u0020the\u0020Poker\u0020Squares\u0020game,\u0020evaluates\u0020results\u0020for\u0020a\nfull\u0020grid\u0020and\u0020returns\u0020the\u0020data\u0020for\u0020API\u0020,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-ApiGame3.html"
         },                {
             "fqsen": "\\App\\Project\\ApiGame3\u003A\u003Aresults\u0028\u0029",
@@ -1798,7 +1798,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\CardFactory",
             "name": "CardFactory",
-            "summary": "Class\u0020representing\u0020CardFactory.\u0020Is\u0020passed\u0020as\u0020arguemnt\u0020into\u0020a\u0020Deck\u0020class\nfor\u0020generating\u0020a\u0020full\u0020set\u0020of\u0020cards",
+            "summary": "Class\u0020representing\u0020CardFactory.\u0020Is\u0020passed\u0020as\u0020arguemnt\u0020into\u0020a\u0020Deck\u0020class\nfor\u0020generating\u0020a\u0020full\u0020set\u0020of\u0020cards,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-CardFactory.html"
         },                {
             "fqsen": "\\App\\Project\\CardFactory\u003A\u003AfullSet\u0028\u0029",
@@ -1808,7 +1808,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait",
             "name": "CurrentStateTrait",
-            "summary": "Returns\u0020information\u0020on\u0020the\u0020current\u0020state\u0020of\u0020the\u0020game",
+            "summary": "Returns\u0020information\u0020on\u0020the\u0020current\u0020state\u0020of\u0020the\u0020game,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-CurrentStateTrait.html"
         },                {
             "fqsen": "\\App\\Project\\CurrentStateTrait\u003A\u003AcurrentState\u0028\u0029",
@@ -1878,7 +1878,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\Deck",
             "name": "Deck",
-            "summary": "Class\u0020representing\u0020a\u0020deck\u0020of\u0020cards",
+            "summary": "Class\u0020representing\u0020a\u0020deck\u0020of\u0020cards,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-Deck.html"
         },                {
             "fqsen": "\\App\\Project\\Deck\u003A\u003A__construct\u0028\u0029",
@@ -1913,7 +1913,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\EvaluateTrait",
             "name": "EvaluateTrait",
-            "summary": "Evaluates\u0020the\u0020hands\u0020of\u0020player\u0020and\u0020house\u0020after\nboth\u0020grids\u0020have\u0020been\u0020filled\u0020and\u0020determins\nwinner.\u0020If\u0020player\u0020won\u0020transfers\u00202x\u0020pot\u0020to\nplayer\/user\u0020and\u0020registers\u0020players\u0020score\u0020to\u0020database.",
+            "summary": "Evaluates\u0020the\u0020hands\u0020of\u0020player\u0020and\u0020house\u0020after\nboth\u0020grids\u0020have\u0020been\u0020filled\u0020and\u0020determins\nwinner.\u0020If\u0020player\u0020won\u0020transfers\u00202x\u0020pot\u0020to\nplayer\/user\u0020and\u0020registers\u0020players\u0020score\u0020to\u0020database.,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-EvaluateTrait.html"
         },                {
             "fqsen": "\\App\\Project\\EvaluateTrait\u003A\u003Aevaluate\u0028\u0029",
@@ -1958,7 +1958,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\Game",
             "name": "Game",
-            "summary": "Game\u0020of\u0020Poker\u0020Squares",
+            "summary": "Game\u0020of\u0020Poker\u0020Squares,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-Game.html"
         },                {
             "fqsen": "\\App\\Project\\Game\u003A\u003A__construct\u0028\u0029",
@@ -1993,7 +1993,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\HousePlaceCardTrait",
             "name": "HousePlaceCardTrait",
-            "summary": "Trait\u0020that\u0020handles\u0020the\u0020action\u0020of\u0020house\u0020placing\na\u0020card",
+            "summary": "Trait\u0020that\u0020handles\u0020the\u0020action\u0020of\u0020house\u0020placing\na\u0020card,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-HousePlaceCardTrait.html"
         },                {
             "fqsen": "\\App\\Project\\HousePlaceCardTrait\u003A\u003AhousePlaceCard\u0028\u0029",
@@ -2023,7 +2023,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\MoveACardTrait",
             "name": "MoveACardTrait",
-            "summary": "Handles\u0020the\u0020cheat\u0020of\u0020moving\u0020a\u0020placed\u0020card\u0020from\u0020one\u0020slot\u0020to\u0020another",
+            "summary": "Handles\u0020the\u0020cheat\u0020of\u0020user\u0020moving\u0020a\u0020placed\u0020card\u0020from\none\u0020slot\u0020to\u0020another,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-MoveACardTrait.html"
         },                {
             "fqsen": "\\App\\Project\\MoveACardTrait\u003A\u003AsetFromSlot\u0028\u0029",
@@ -2078,17 +2078,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\NoCardsException",
             "name": "NoCardsException",
-            "summary": "Exception\u0020class\u0020thown\u0020when\u0020there\u0020are\u0020no\u0020cards",
+            "summary": "Exception\u0020class\u0020thown\u0020when\u0020there\u0020are\u0020no\u0020cards\u0020\u0028will\u0020not\u0020be\u0020thrown\u0020under\u0020\u0022oridnary\u0022\u0020circumstances\nas\u0020the\u0020deck\u0020is\u0020never\u0020dealt\u0020completely\u0020in\u0020Poker\u0020Squares\u0029,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-NoCardsException.html"
         },                {
             "fqsen": "\\App\\Project\\NotEnoughCoinsException",
             "name": "NotEnoughCoinsException",
-            "summary": "Exception\u0020class\u0020thown\u0020when\u0020the\u0020suer\u0020does\u0020not\u0020have\nenough\u0020coins\u0020to\u0020cover\u0020for\u0020a\u0020transaction",
+            "summary": "Exception\u0020class\u0020thown\u0020when\u0020the\u0020User\u0020does\u0020not\u0020have\nenough\u0020coins\u0020to\u0020cover\u0020for\u0020a\u0020transaction,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-NotEnoughCoinsException.html"
         },                {
             "fqsen": "\\App\\Project\\OneRoundTrait",
             "name": "OneRoundTrait",
-            "summary": "Handles\u0020one\u0020round\n1.\u0020Player\u0020places\u0020card\n2.\u0020House\u0020places\u0020card\n3.\u0020If\u0020grids\u0020are\u0020full,\u0020evaluate\u0020and\u0020return\u0020results\n4.\u0020if\u0020not,\u0020generates\u0020new\u0020suggestion\u002Ddata\u0020for\u0020player\nbased\u0020on\u0020the\u0020updated\u0020grid\u0020and\u0020deck\u0020data",
+            "summary": "Handles\u0020one\u0020round\n1.\u0020Player\u0020places\u0020card\n2.\u0020House\u0020places\u0020card\n3.\u0020If\u0020grids\u0020are\u0020full,\u0020evaluate\u0020and\u0020return\u0020results\n4.\u0020if\u0020not,\u0020generates\u0020new\u0020suggestion\u002Ddata\u0020for\u0020player\nbased\u0020on\u0020the\u0020updated\u0020grid\u0020and\u0020deck\u0020data,\u0020,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-OneRoundTrait.html"
         },                {
             "fqsen": "\\App\\Project\\OneRoundTrait\u003A\u003AhousePlaceCard\u0028\u0029",
@@ -2153,7 +2153,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\PlayerSuggestTrait",
             "name": "PlayerSuggestTrait",
-            "summary": "Generates\u0020suggestion\u0020for\u0020player\u0020on\u0020a\u0020slot\nto\u0020place\u0020the\u0020dealt\u0020card\u0020and\u0020also\u0020the\u0020data\u0020for\nall\u002010\u0020hands\u0020\u0028best\u0020possible\u0020rule\u0020with\u0020the\ndealt\u0020card\u0020and\u0020best\u0020possible\u0020rule\u0020wihtout\nthe\u0020dealt\u0020card\u0029",
+            "summary": "Generates\u0020suggestion\u0020for\u0020player\u0020on\u0020a\u0020slot\nto\u0020place\u0020the\u0020dealt\u0020card\u0020and\u0020also\u0020the\u0020data\u0020for\nall\u002010\u0020hands\u0020\u0028best\u0020possible\u0020rule\u0020with\u0020the\ndealt\u0020card\u0020and\u0020best\u0020possible\u0020rule\u0020wihtout\nthe\u0020dealt\u0020card\u0029,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-PlayerSuggestTrait.html"
         },                {
             "fqsen": "\\App\\Project\\PlayerSuggestTrait\u003A\u003AplayerSuggest\u0028\u0029",
@@ -2188,7 +2188,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\PotTrait",
             "name": "PotTrait",
-            "summary": "Contains\u0020the\u0020pot\u0020and\u0020method\u0020for\nadding\u0020money\u0020to\u0020the\u0020pot",
+            "summary": "Contains\u0020the\u0020pot\u0020and\u0020method\u0020for\nadding\u0020money\u0020to\u0020the\u0020pot,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-PotTrait.html"
         },                {
             "fqsen": "\\App\\Project\\PotTrait\u003A\u003AsetPot\u0028\u0029",
@@ -2243,7 +2243,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\RegisterFactory",
             "name": "RegisterFactory",
-            "summary": "Creates\u0020an\u0020instance\u0020of\u0020the\u0020Register\u0020class\u0020for\u0020a\u0020specific\u0020user",
+            "summary": "Creates\u0020an\u0020instance\u0020of\u0020the\u0020Register\u0020class\u0020for\u0020a\u0020specific\u0020user,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-RegisterFactory.html"
         },                {
             "fqsen": "\\App\\Project\\RegisterFactory\u003A\u003Acreate\u0028\u0029",
@@ -2298,12 +2298,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\UserNotRegisteredException",
             "name": "UserNotRegisteredException",
-            "summary": "Exception\u0020class\u0020thown\u0020when\u0020the\u0020suer\u0020does\u0020not\u0020have\nenough\u0020coins\u0020to\u0020cover\u0020for\u0020a\u0020transaction",
+            "summary": "Exception\u0020class\u0020thown\u0020when\u0020loggin\u0020in\u0020with\u0020an\u0020email\u0020that\u0020is\u0020not\u0020registered\nint\u0020eh\u0020database,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-UserNotRegisteredException.html"
         },                {
             "fqsen": "\\App\\ProjectGrid\\AddCardTrait",
             "name": "AddCardTrait",
-            "summary": "Trait\u0020for\u0020adding\u0020a\u0020card\u0020to\u0020the\u0020grid",
+            "summary": "Trait\u0020for\u0020adding\u0020a\u0020card\u0020to\u0020the\u0020grid,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-ProjectGrid-AddCardTrait.html"
         },                {
             "fqsen": "\\App\\ProjectGrid\\AddCardTrait\u003A\u003AaddCard\u0028\u0029",
@@ -2323,7 +2323,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectGrid\\CardCountTrait",
             "name": "CardCountTrait",
-            "summary": "Trait\u0020for\u0020retrieving\u0020the\u0020count\u0020of\u0020cards\u0020placed\u0020in\u0020the\u0020grid",
+            "summary": "Trait\u0020for\u0020retrieving\u0020the\u0020count\u0020of\u0020cards\u0020placed\u0020in\u0020the\u0020grid,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-ProjectGrid-CardCountTrait.html"
         },                {
             "fqsen": "\\App\\ProjectGrid\\CardCountTrait\u003A\u003AgetCardCount\u0028\u0029",
@@ -2338,7 +2338,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectGrid\\GraphicTrait",
             "name": "GraphicTrait",
-            "summary": "Trait\u0020for\u0020getting\u0020a\u0020graphic\u0020representation\u0020\u0028img\u0020links\u0020and\u0020alt\u0020text\u0029\nof\u0020the\u0020Grid.\u0020Emtpy\u0020slots\u0020are\u0020represented\u0020with\u0020emtpy\u0020strings",
+            "summary": "Trait\u0020for\u0020getting\u0020a\u0020graphic\u0020representation\u0020\u0028img\u0020links\u0020and\u0020alt\u0020text\u0029\nof\u0020the\u0020Grid.\u0020Emtpy\u0020slots\u0020are\u0020represented\u0020with\u0020emtpy\u0020strings,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-ProjectGrid-GraphicTrait.html"
         },                {
             "fqsen": "\\App\\ProjectGrid\\GraphicTrait\u003A\u003AslotGraphic\u0028\u0029",
@@ -2353,12 +2353,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectGrid\\Grid",
             "name": "Grid",
-            "summary": "Class\u0020representing\u00205x5\u0020grid\u0020for\u0020placing\u0020cards",
+            "summary": "Class\u0020representing\u00205x5\u0020grid\u0020for\u0020placing\u0020cards,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-ProjectGrid-Grid.html"
         },                {
             "fqsen": "\\App\\ProjectGrid\\RemoveCardTrait",
             "name": "RemoveCardTrait",
-            "summary": "Trait\u0020for\u0020removing\u0020a\u0020card\u0020from\u0020the\u0020grid",
+            "summary": "Trait\u0020for\u0020removing\u0020a\u0020card\u0020from\u0020the\u0020grid,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-ProjectGrid-RemoveCardTrait.html"
         },                {
             "fqsen": "\\App\\ProjectGrid\\RemoveCardTrait\u003A\u003AremoveCard\u0028\u0029",
@@ -2378,7 +2378,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectGrid\\SlotEmptyException",
             "name": "SlotEmptyException",
-            "summary": "Raised\u0020when\u0020a\u0020card\u0020is\u0020added\u0020to\u0020a\u0020slot\u0020that\u0020already\u0020is\u0020filled",
+            "summary": "Raised\u0020when\u0020a\u0020card\u0020is\u0020added\u0020to\u0020a\u0020slot\u0020that\u0020already\u0020is\u0020filled,\nshould\u0020never\u0020be\u0020raised\u0020under\u0020oridnary\u0020use.\u0020From\u0020kmom10\/Project",
             "url": "classes/App-ProjectGrid-SlotEmptyException.html"
         },                {
             "fqsen": "\\App\\ProjectGrid\\SlotGraphicTrait",
@@ -2398,12 +2398,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectGrid\\SlotNotEmptyException",
             "name": "SlotNotEmptyException",
-            "summary": "Raised\u0020when\u0020trying\u0020to\u0020remove\u0020a\u0020card\u0020from\u0020an\u0020already\u0020empty\u0020slot",
+            "summary": "Raised\u0020when\u0020trying\u0020to\u0020remove\u0020a\u0020card\u0020from\u0020an\u0020already\u0020empty\u0020slot.",
             "url": "classes/App-ProjectGrid-SlotNotEmptyException.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\CountByRankTrait",
             "name": "CountByRankTrait",
-            "summary": "",
+            "summary": "Trait\u0020contains\u0020method\u0020for\u0020generating\u0020an\u0020associative\u0020array\nwith\u0020the\u0020count\u0020of\u0020each\u0020rank\u0020in\u0020a\u0020card\u0020array.",
             "url": "classes/App-ProjectRules-CountByRankTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\CountByRankTrait\u003A\u003AcountByRank\u0028\u0029",
@@ -2413,7 +2413,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\CountBySuitTrait",
             "name": "CountBySuitTrait",
-            "summary": "",
+            "summary": "Trait\u0020contains\u0020method\u0020for\u0020generating\u0020an\u0020associative\u0020array\nwith\u0020the\u0020count\u0020of\u0020each\u0020rank\u0020in\u0020a\u0020card\u0020array.",
             "url": "classes/App-ProjectRules-CountBySuitTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\CountBySuitTrait\u003A\u003AcountBySuit\u0028\u0029",
@@ -2423,7 +2423,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\CountSuitAndRankTrait",
             "name": "CountSuitAndRankTrait",
-            "summary": "",
+            "summary": "Trait\u0020contains\u0020method\u0020for\u0020generating\u0020an\u0020array\u0020with\u0020two\u0020associative\u0020arrays,\none\u0020with\u0020the\u0020count\u0020of\u0020each\u0020rank\u0020in\u0020a\u0020card\u0020array\u0020and\u0020the\u0020other\u0020with\u0020the\u0020count\u0020of\u0020each\u0020suit\nin\u0020the\u0020card\u0020array\nFrom\u0020kmom10\/Project",
             "url": "classes/App-ProjectRules-CountSuitAndRankTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\CountSuitAndRankTrait\u003A\u003AcountSuitAndRank\u0028\u0029",
@@ -2433,7 +2433,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\FirstCheckTrait",
             "name": "FirstCheckTrait",
-            "summary": "Used\u0020by\u0020the\u0020following\u0020classes\u003A\nFlush\nFullHouse\nRoyalFlush\nStraightFlush\nStraight",
+            "summary": "Used\u0020by\u0020the\u0020following\u0020classes\u003A\nFlush\nFullHouse\nRoyalFlush\nStraightFlush\nStraight.",
             "url": "classes/App-ProjectRules-FirstCheckTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\FirstCheckTrait\u003A\u003ApossibleWithoutCard\u0028\u0029",
@@ -2448,7 +2448,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\Flush",
             "name": "Flush",
-            "summary": "Determins\u0020if\u0020the\u0020Flush\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score",
+            "summary": "Determins\u0020if\u0020the\u0020Flush\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-ProjectRules-Flush.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\Flush\u003A\u003A__construct\u0028\u0029",
@@ -2458,17 +2458,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouse",
             "name": "FullHouse",
-            "summary": "Determins\u0020if\u0020the\u0020Full\u0020House\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score",
+            "summary": "Determins\u0020if\u0020the\u0020Full\u0020House\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-FullHouse.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouse\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor",
             "url": "classes/App-ProjectRules-FullHouse.html#method___construct"
         },                {
             "fqsen": "\\App\\ProjectRules\\GroupBySuitTrait",
             "name": "GroupBySuitTrait",
-            "summary": "",
+            "summary": "Trait\u0020that\u0020for\u0020an\u0020array\u0020of\u0020cards\u0020returns\u0020an\u0020associative\u0020array\u0020where\u0020keys\u0020are\u0020suits\u0020and\u0020values\u0020are\u0020arrays\u0020with\u0020all\u0020ranks\u0020of\u0020that\nsuit\u0020that\u0020are\u0020present\u0020in\u0020the\u0020card\u0020array.",
             "url": "classes/App-ProjectRules-GroupBySuitTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\GroupBySuitTrait\u003A\u003AgroupBySuit\u0028\u0029",
@@ -2478,7 +2478,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\MinRankLimitsTrait",
             "name": "MinRankLimitsTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020setting\u0020the\u0020possible\u0020lower\u0020ranks\u0020for\u0020checking\u0020the\u0020possibility\u0020of\nscoreing\u0020a\u0020Straight\u0020or\u0020Straight\u0020Flush.",
             "url": "classes/App-ProjectRules-MinRankLimitsTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\MinRankLimitsTrait\u003A\u003AminRankLimits\u0028\u0029",
@@ -2488,7 +2488,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\RoyalFlush",
             "name": "RoyalFlush",
-            "summary": "Determins\u0020if\u0020the\u0020Royal\u0020Flush\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score",
+            "summary": "Determins\u0020if\u0020the\u0020Royal\u0020Flush\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-RoyalFlush.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\RoyalFlush\u003A\u003A__construct\u0028\u0029",
@@ -2498,7 +2498,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\RuleInterface",
             "name": "RuleInterface",
-            "summary": "Interface\u0020to\u0020be\u0020implemented\u0020by\u0020the\u0020classes\u0020Game21Easy\u0020and\u0020Game21Hard",
+            "summary": "Interface\u0020to\u0020be\u0020implemented\u0020by\u0020the\u0020Poker\u0020Sqares\u0020rules\u0020classes.",
             "url": "classes/App-ProjectRules-RuleInterface.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\RuleInterface\u003A\u003AgetName\u0028\u0029",
@@ -2538,7 +2538,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\SameOfAKind",
             "name": "SameOfAKind",
-            "summary": "Class\u0020for\u0020the\u0020rules\u0020Four\u0020Of\u0020A\u0020Kind,\u0020Three\u0020Of\u0020A\u0020Kind\nand\u0020One\u0020Pair.",
+            "summary": "Class\u0020for\u0020the\u0020rules\u0020Four\u0020Of\u0020A\u0020Kind,\u0020Three\u0020Of\u0020A\u0020Kind\nand\u0020One\u0020Pair.\u0020Responsible\u0020for\u0020checking\u0020if\u0020the\u0020rule\u0020has\nbeen\u0020scored\u0020or\u0020is\u0020possible\u0020to\u0020score\u0020with\/wihtout\u0020the\ndealt\u0020card\nFrom\u0020kmom10\/Project",
             "url": "classes/App-ProjectRules-SameOfAKind.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\SameOfAKind\u003A\u003A__construct\u0028\u0029",
@@ -2558,17 +2558,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\SearchSpecificCardTrait",
             "name": "SearchSpecificCardTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020searching\u0020for\u0020a\u0020specific\u0020card\u0020in\nan\u0020array\u0020of\u0020cards.\u0020Used\u0020in\u0020the\u0020logic\u0020of\u0020Royal\u0020Flush\u0020rule.",
             "url": "classes/App-ProjectRules-SearchSpecificCardTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\SearchSpecificCardTrait\u003A\u003AsearchSpecificCard\u0028\u0029",
             "name": "searchSpecificCard",
-            "summary": "",
+            "summary": "Used\u0020in\u0020RoyalFlushTrait3",
             "url": "classes/App-ProjectRules-SearchSpecificCardTrait.html#method_searchSpecificCard"
         },                {
             "fqsen": "\\App\\ProjectRules\\Straight",
             "name": "Straight",
-            "summary": "Determins\u0020if\u0020the\u0020Straight\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score",
+            "summary": "Determins\u0020if\u0020the\u0020Straight\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-Straight.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\Straight\u003A\u003A__construct\u0028\u0029",
@@ -2578,7 +2578,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightFlush",
             "name": "StraightFlush",
-            "summary": "Determins\u0020if\u0020StarightFlush\u0020rule\u0020is\u0020scored\nor\u0020possible\u0020to\u0020score",
+            "summary": "Determins\u0020if\u0020StarightFlush\u0020rule\u0020is\u0020scored\nor\u0020possible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-StraightFlush.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightFlush\u003A\u003A__construct\u0028\u0029",
@@ -2588,17 +2588,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\SubCountTrait",
             "name": "SubCountTrait",
-            "summary": "",
+            "summary": "Used\u0020in\u003A\nCountByRankTrait,\nCountBySuitTrait,\nCountSuitAndRankTrait",
             "url": "classes/App-ProjectRules-SubCountTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\SubCountTrait\u003A\u003AsubCount\u0028\u0029",
             "name": "subCount",
-            "summary": "",
+            "summary": "Counts\u0020occurencies\u0020of\u0020specific\u0020value\u0020in\u0020a\u0020array",
             "url": "classes/App-ProjectRules-SubCountTrait.html#method_subCount"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairs",
             "name": "TwoPairs",
-            "summary": "Determins\u0020if\u0020the\u0020Two\u0020Pairs\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score",
+            "summary": "Determins\u0020if\u0020the\u0020Two\u0020Pairs\u0020rule\u0020is\u0020scored\u0020or\npossible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-TwoPairs.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairs\u003A\u003A__construct\u0028\u0029",
@@ -2608,7 +2608,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait",
             "name": "TwoPairsTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020Two\u0020Pairs\u0020rule\u0020is\u0020possible\nto\u0020score\u0020in\u0020a\u0020hand\u0020with\u0020the\u0020dealt\u0020card.",
             "url": "classes/App-ProjectRules-TwoPairsTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait\u003A\u003AcountByRank\u0028\u0029",
@@ -2623,7 +2623,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait2",
             "name": "TwoPairsTrait2",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020a\u0020Two\u0020Pairs\u0020rule\u0020is\u0020possible\nto\u0020achieve\u0020wihtout\u0020the\u0020dealt\u0020card\u0020in\u0020a\u0020partially\u0020filled\u0020hand.",
             "url": "classes/App-ProjectRules-TwoPairsTrait2.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait2\u003A\u003AcountByRank\u0028\u0029",
@@ -2698,7 +2698,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\LibraryCreateNewController",
             "name": "LibraryCreateNewController",
-            "summary": "Controller\u0020that\u0020contains\u0020route\u0020for\u0020saving\u0020a\u0020new\nbook\u0020to\u0020the\u0020Library",
+            "summary": "Controller\u0020that\u0020contains\u0020route\u0020for\u0020saving\u0020a\u0020new\nbook\u0020to\u0020the\u0020Library,\u0020from\u0020kmom05",
             "url": "classes/App-Controller-LibraryCreateNewController.html"
         },                {
             "fqsen": "\\App\\Controller\\LibraryCreateNewController\u003A\u003AcreateBook\u0028\u0029",
@@ -2708,7 +2708,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\LibraryCreateNewController2",
             "name": "LibraryCreateNewController2",
-            "summary": "Controller\u0020contains\u0020route\u0020that\u0020leads\u0020to\u0020form\nfor\u0020adding\u0020a\u0020new\u0020book",
+            "summary": "Controller\u0020contains\u0020route\u0020that\u0020leads\u0020to\u0020form\nfor\u0020adding\u0020a\u0020new\u0020book,\u0020from\u0020kmom05",
             "url": "classes/App-Controller-LibraryCreateNewController2.html"
         },                {
             "fqsen": "\\App\\Controller\\LibraryCreateNewController2\u003A\u003AcreateBookForm\u0028\u0029",
@@ -2718,7 +2718,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\LibraryLandingController",
             "name": "LibraryLandingController",
-            "summary": "Controller\u0020contains\u0020route\u0020for\u0020the\u0020library\u0020landing\u0020page",
+            "summary": "Controller\u0020contains\u0020route\u0020for\u0020the\u0020library\u0020landing\u0020page,\u0020from\u0020kmom05",
             "url": "classes/App-Controller-LibraryLandingController.html"
         },                {
             "fqsen": "\\App\\Controller\\LibraryLandingController\u003A\u003Aindex\u0028\u0029",
@@ -2728,7 +2728,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\LibraryResetController",
             "name": "LibraryResetController",
-            "summary": "Controller\u0020that\u0020contains\u0020the\u0020route\u0020for\u0020resetting\nthe\u0020Book\u0020table\u0020in\u0020the\u0020database",
+            "summary": "Controller\u0020that\u0020contains\u0020the\u0020route\u0020for\u0020resetting\nthe\u0020Book\u0020table\u0020in\u0020the\u0020database,\u0020from\u0020kmom05",
             "url": "classes/App-Controller-LibraryResetController.html"
         },                {
             "fqsen": "\\App\\Controller\\LibraryResetController\u003A\u003AresetBook\u0028\u0029",
@@ -2738,7 +2738,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\LibraryUpdateController",
             "name": "LibraryUpdateController",
-            "summary": "Controller\u0020that\u0020contains\u0020route\u0020that\u0020leads\nto\u0020the\u0020route\u0020with\u0020form\u0020for\u0020updating\u0020a\u0020book",
+            "summary": "Controller\u0020that\u0020contains\u0020route\u0020that\u0020leads\nto\u0020the\u0020route\u0020with\u0020form\u0020for\u0020updating\u0020a\u0020book,\u0020from\u0020kmom05",
             "url": "classes/App-Controller-LibraryUpdateController.html"
         },                {
             "fqsen": "\\App\\Controller\\LibraryUpdateController\u003A\u003AupdateBookForm\u0028\u0029",
@@ -2748,7 +2748,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\LibraryUpdateController2",
             "name": "LibraryUpdateController2",
-            "summary": "Controller\u0020tht\u0020contains\u0020route\u0020where\u0020book\u0020data\u0020is\u0020updated",
+            "summary": "Controller\u0020that\u0020contains\u0020route\u0020where\u0020book\u0020data\u0020is\u0020updated,\u0020from\u0020kmom05",
             "url": "classes/App-Controller-LibraryUpdateController2.html"
         },                {
             "fqsen": "\\App\\Controller\\LibraryUpdateController2\u003A\u003AupdateBook\u0028\u0029",
@@ -2933,7 +2933,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ApiGame1OneRoundTrait",
             "name": "ApiGame1OneRoundTrait",
-            "summary": "Evaluates\u0020the\u0020hands\u0020of\u0020player\u0020and\u0020house\u0020after\nboth\u0020grids\u0020have\u0020been\u0020filled\u0020and\u0020determins\nwinner.\u0020If\u0020player\u0020won\u0020transfers\u00202x\u0020pot\u0020to\nplayer\/user\u0020and\u0020registers\u0020players\u0020score\u0020to\u0020database.",
+            "summary": "Used\u0020in\u0020API\u0020route.\u0020Contains\u0020method\u0020that\u0020deals\u0020a\u0020card\u0020and\u0020places\u0020into\na\u0020grid\u0020based\u0020on\u0020calculated\u0020suggestion,\u0020used\u0020in\u0020the\u0020class\u0020ApiGame1,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-ApiGame1OneRoundTrait.html"
         },                {
             "fqsen": "\\App\\Project\\ApiGame1OneRoundTrait\u003A\u003AoneRound\u0028\u0029",
@@ -2953,7 +2953,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ApiGame1ResetTrait",
             "name": "ApiGame1ResetTrait",
-            "summary": "Evaluates\u0020the\u0020hands\u0020of\u0020player\u0020and\u0020house\u0020after\nboth\u0020grids\u0020have\u0020been\u0020filled\u0020and\u0020determins\nwinner.\u0020If\u0020player\u0020won\u0020transfers\u00202x\u0020pot\u0020to\nplayer\/user\u0020and\u0020registers\u0020players\u0020score\u0020to\u0020database.",
+            "summary": "Trait\u0020used\u0020in\u0020ApiGame1\u0020class\u0020for\u0020generating\u0020a\u0020new\u0020grid\u0020and\u0020a\u0020new\u0020deck\u0020of\u0020cards,\nfrom\u0020kmom10\/Project",
             "url": "classes/App-Project-ApiGame1ResetTrait.html"
         },                {
             "fqsen": "\\App\\Project\\ApiGame1ResetTrait\u003A\u003Areset\u0028\u0029",
@@ -2973,7 +2973,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\BestPossibleRulesTrait",
             "name": "BestPossibleRulesTrait",
-            "summary": "",
+            "summary": "Evaluates\u0020an\u0020array\u0020with\u0020hands\u0020\u0028one\u0020direction\u0029\u0020for\u0020the\u0020best\u0020hand.",
             "url": "classes/App-ProjectEvaluator-BestPossibleRulesTrait.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\BestPossibleRulesTrait\u003A\u003AadjustPriority\u0028\u0029",
@@ -2983,7 +2983,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\BestPossibleRulesTrait\u003A\u003ArulesHands\u0028\u0029",
             "name": "rulesHands",
-            "summary": "",
+            "summary": "For\u0020an\u0020array\u0020of\u0020hands\u0020\u0028one\u0020direction\u0029\u0020generates\u0020an\u0020array\u0020that\u0020for\u0020each\u0020hand\u0020contains\u003A\nbest\u0020possible\u0020rule\u0020that\u0020can\u0020be\u0020scored\u0020with\u0020the\u0020dealt\u0020card,\u0020best\u0020possible\u0020rule\u0020that\u0020can\u0020be\u0020scored\u0020without\nthe\u0020dealt\u0020card\u0020and\u0020the\u0020\u0022weight\u0022\u0020of\u0020the\u0020hand\u0020to\u0020be\u0020used\u0020when\u0020a\u0020slot\u0020suggestion\u0020is\u0020calculated",
             "url": "classes/App-ProjectEvaluator-BestPossibleRulesTrait.html#method_rulesHands"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\CheckEmptyGridTrait",
@@ -3008,7 +3008,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\CheckFullHandTrait",
             "name": "CheckFullHandTrait",
-            "summary": "Trait\u0020for\u0020checking\u0020which\u0020rule\u0020is\u0020scored\u0020\u0028if\u0020any\u0029\nfor\u0020a\u0020full\u0020hand.",
+            "summary": "Trait\u0020for\u0020checking\u0020which\u0020rule\u0020is\u0020scored\u0020\u0028if\u0020any\u0029\u0020in\u0020a\u0020hand,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-ProjectEvaluator-CheckFullHandTrait.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\CheckFullHandTrait\u003A\u003AcheckHandForWin\u0028\u0029",
@@ -3043,12 +3043,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\CheckWithoutCardTrait",
             "name": "CheckWithoutCardTrait",
-            "summary": "",
+            "summary": "Checks\u0020a\u0020hand\u0020for\u0020the\u0020best\u0020possible\u0020rule\u0020that\u0020can\u0020be\nachieved\u0020without\u0020the\u0020dealt\u0020card,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-ProjectEvaluator-CheckWithoutCardTrait.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\CheckWithoutCardTrait\u003A\u003AcheckSingleRuleWithout\u0028\u0029",
             "name": "checkSingleRuleWithout",
-            "summary": "",
+            "summary": "Checks\u0020one\u0020hand\u0020for\u0020a\u0020single\u0020rule.\u0020Returns\u0020true\u0020if\u0020the\u0020rule\u0020can\nbe\u0020achieved\u0020in\u0020the\u0020hand\u0020without\u0020the\u0020dealt\u0020card",
             "url": "classes/App-ProjectEvaluator-CheckWithoutCardTrait.html#method_checkSingleRuleWithout"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\CheckWithoutCardTrait\u003A\u003AhandRuleWithout\u0028\u0029",
@@ -3063,7 +3063,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\EmptyCellsTrait",
             "name": "EmptyCellsTrait",
-            "summary": "Extracts\u0020and\u0020returns\u0020empty\u0020cells\u0020from\u0020a\u0020hand\n\u0028either\u0020all\u0020empty\u0020cells\u0020or\u0020the\u0020first\u0020one\u0029",
+            "summary": "Extracts\u0020and\u0020returns\u0020empty\u0020cells\u0020from\u0020a\u0020hand\n\u0028either\u0020all\u0020empty\u0020cells\u0020or\u0020the\u0020first\u0020one\u0029,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-ProjectEvaluator-EmptyCellsTrait.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\EmptyCellsTrait\u003A\u003AsingleHand\u0028\u0029",
@@ -3073,7 +3073,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\EmptyCellTrait",
             "name": "EmptyCellTrait",
-            "summary": "Fins\u0020and\u0020returns\u0020the\u0020first\u0020empty\u0020cell\u0020in\u0020a\u0020grid",
+            "summary": "Finds\u0020and\u0020returns\u0020the\u0020first\u0020empty\u0020cell\u0020in\u0020a\u0020grid,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-ProjectEvaluator-EmptyCellTrait.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\EmptyCellTrait\u003A\u003AoneEmpty\u0028\u0029",
@@ -3083,7 +3083,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\FinalResultsTrait",
             "name": "FinalResultsTrait",
-            "summary": "",
+            "summary": "Generates\u0020final\u0020results\u0020for\u0020a\u0020player\u0020of\u0020PokerSquares\u0020Game.",
             "url": "classes/App-ProjectEvaluator-FinalResultsTrait.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\FinalResultsTrait\u003A\u003AgetCols\u0028\u0029",
@@ -3103,12 +3103,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\NoEmptySlotsException",
             "name": "NoEmptySlotsException",
-            "summary": "Raised\u0020when\u0020trying\u0020to\u0020remove\u0020a\u0020card\u0020from\u0020an\u0020already\u0020empty\u0020slot",
+            "summary": "Raised\u0020when\u0020trying\u0020to\u0020remove\u0020a\u0020card\u0020from\u0020an\u0020already\u0020empty\u0020slot,\nwill\u0020not\u0020be\u0020reaised\u0020under\u0020ordinary\u0020use,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-ProjectEvaluator-NoEmptySlotsException.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\PointsAndRuleNameTrait",
             "name": "PointsAndRuleNameTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020getting\u0020the\u0020nmae\u0020of\u0020the\u0020best\u0020possible\u0020rule\u0020that\u0020can\u0020be\u0020scored\u0020in\u0020a\u0020hand\u0020that\u0020already\u0020contains\u0020cards,\u0020with\u0020the\u0020dealt\u0020card,\nand\u0020the\u0020weight\u0020of\u0020the\u0020hand,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-ProjectEvaluator-PointsAndRuleNameTrait.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\PointsAndRuleNameTrait\u003A\u003ApointsAndName\u0028\u0029",
@@ -3118,7 +3118,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\PointsAndRuleNameTrait2",
             "name": "PointsAndRuleNameTrait2",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020getting\u0020the\u0020nmae\u0020of\u0020the\u0020best\u0020possible\u0020rule\u0020that\u0020can\u0020be\u0020scored\u0020in\u0020an\u0020empty\u0020hand,\u0020with\u0020the\u0020dealt\u0020card,\nand\u0020the\u0020weight\u0020of\u0020the\u0020hand,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-ProjectEvaluator-PointsAndRuleNameTrait2.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\PointsAndRuleNameTrait2\u003A\u003ApointsAndNameEmptyHand\u0028\u0029",
@@ -3128,7 +3128,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\RowsToColsTrait",
             "name": "RowsToColsTrait",
-            "summary": "Trait\u0020for\u0020getting\u0020arrays\u0020with\u0020vertical\u0020hands\nrespectively\u0020horisontal\u0020hands\u0020in\u0020the\u0020grid",
+            "summary": "Trait\u0020for\u0020convreint\u0020an\u0020array\u0020of\u0020horizontal\u0020hands\u0020into\u0020and\u0020array\u0020of\u0020vertical\u0020hands,\nfrom\u0020kmom10\/Project",
             "url": "classes/App-ProjectEvaluator-RowsToColsTrait.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\RowsToColsTrait\u003A\u003AgetCols\u0028\u0029",
@@ -3143,7 +3143,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\RuleEvaluator",
             "name": "RuleEvaluator",
-            "summary": "Evaluates\u0020the\u0020highest\u0020rules\u0020scored\u0020\u0028when\u0020the\u0020grid\u0020is\u0020full\u0029\nand\u0020highest\u0020possible\u0020rule\u0028s\u0029\u0020to\u0020score\u0020for\u0020hands\u0020that\u0020have\u0020less\u0020than\u00205\u0020cards",
+            "summary": "Evaluates\u0020the\u0020highest\u0020rules\u0020scored\u0020\u0028when\u0020the\u0020grid\u0020is\u0020full\u0029\nand\u0020highest\u0020possible\u0020rule\u0028s\u0029\u0020to\u0020score\u0020with\/without\u0020dealt\u0020card\u0020for\u0020hands\u0020that\u0020have\u0020less\u0020than\u00205\u0020cards,\nfrom\u0020kmom10\/Project",
             "url": "classes/App-ProjectEvaluator-RuleEvaluator.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\RuleEvaluator\u003A\u003A__construct\u0028\u0029",
@@ -3163,27 +3163,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\RuleNameTrait",
             "name": "RuleNameTrait",
-            "summary": "",
+            "summary": "For\u0020getting\u0020the\u0020name\u0020of\u0020the\u0020best\u0020possible\u0020rule\u0020that\u0020can\u0020be\u0020scored\u0020in\na\u0020partially\u0020filled\u0020hand\u0020without\u0020the\u0020dealt\u0020card.\u0020If\u0020the\u0020hand\u0020is\u0020completely\u0020filled\nor\u0020no\u0020rule\u0020is\u0020possible\u0020without\u0020the\u0020dealt\u0020card,\u0020will\u0020generate\u0020an\u0020empty\u0020string.",
             "url": "classes/App-ProjectEvaluator-RuleNameTrait.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\RuleNameTrait\u003A\u003AruleName\u0028\u0029",
             "name": "ruleName",
-            "summary": "",
+            "summary": "Returns\u0020name\u0020of\u0020the\u0020best\u0020possible\u0020rule\u0020that\u0020can\u0020be\u0020scored\u0020in\u0020a\u0020partially\u0020filled\u0020hand\u0020without\u0020the\u0020dealt\u0020card.",
             "url": "classes/App-ProjectEvaluator-RuleNameTrait.html#method_ruleName"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\RuleNameTrait2",
             "name": "RuleNameTrait2",
-            "summary": "",
+            "summary": "For\u0020getting\u0020the\u0020name\u0020of\u0020the\u0020best\u0020possible\u0020rule\u0020that\u0020can\u0020be\u0020scored\u0020in\nan\u0020empty\u0020hand\u0020without\u0020the\u0020dealt\u0020card.\u0020If\u0020the\u0020hand\u0020is\u0020completely\u0020filled\nor\u0020no\u0020rule\u0020is\u0020possible\u0020without\u0020the\u0020dealt\u0020card,\u0020will\u0020generate\u0020an\u0020empty\u0020string.",
             "url": "classes/App-ProjectEvaluator-RuleNameTrait2.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\RuleNameTrait2\u003A\u003AruleNameEmptyHand\u0028\u0029",
             "name": "ruleNameEmptyHand",
-            "summary": "",
+            "summary": "Returns\u0020name\u0020of\u0020the\u0020best\u0020possible\u0020rule\u0020that\u0020can\u0020be\u0020scored\u0020in\u0020an\u0020empty\u0020hand\u0020without\u0020the\u0020dealt\u0020card",
             "url": "classes/App-ProjectEvaluator-RuleNameTrait2.html#method_ruleNameEmptyHand"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\SlotTrait",
             "name": "SlotTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020getting\u0020the\u0020best\u0020slot\u0020in\u0020a\u0020hand,\u0020to\u0020place\u0020the\u0020tealt\u0020card,\nfrom\u0020kmom10\/Project",
             "url": "classes/App-ProjectEvaluator-SlotTrait.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\SlotTrait\u003A\u003AsingleHand\u0028\u0029",
@@ -3198,7 +3198,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\SuggestionTrait",
             "name": "SuggestionTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020generating\u0020a\u0020suggestion\u0020on\u0020best\u0020slot\u0020to\u0020place\u0020the\u0020dealt\u0020card.",
             "url": "classes/App-ProjectEvaluator-SuggestionTrait.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\SuggestionTrait\u003A\u003AgetCols\u0028\u0029",
@@ -3213,7 +3213,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectGrid\\RowsTrait",
             "name": "RowsTrait",
-            "summary": "Trait\u0020for\u0020getting\u0020arrays\u0020with\u0020horisontal\u0020hands\u0020in\u0020the\u0020grid",
+            "summary": "Trait\u0020for\u0020getting\u0020arrays\u0020with\u0020horisontal\u0020hands\u0020in\u0020the\u0020grid,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-ProjectGrid-RowsTrait.html"
         },                {
             "fqsen": "\\App\\ProjectGrid\\RowsTrait\u003A\u003AgetRows\u0028\u0029",
@@ -3248,7 +3248,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\FlushScoredTrait",
             "name": "FlushScoredTrait",
-            "summary": "",
+            "summary": "Trait\u0020cor\u0020checking\u0020in\u0020a\u0020flush\u0020has\u0020been\u0020scored.",
             "url": "classes/App-ProjectRules-FlushScoredTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\FlushScoredTrait\u003A\u003AcountBySuit\u0028\u0029",
@@ -3263,7 +3263,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\FlushTrait",
             "name": "FlushTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020a\u0020flush\u0020is\u0020possible\u0020to\u0020score\u0020in\u0020a\u0020partially\u0020filled\u0020hand,\nwithout\u0020the\u0020dealt\u0020card.",
             "url": "classes/App-ProjectRules-FlushTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\FlushTrait\u003A\u003ApossibleWithoutCard\u0028\u0029",
@@ -3273,7 +3273,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\FlushTrait2",
             "name": "FlushTrait2",
-            "summary": "",
+            "summary": "Checks\u0020if\u0020flush\u0020is\u0020possible\u0020to\u0020score\u0020in\u0020an\u0020empty\u0020hand,\u0020without\u0020the\u0020dealt\u0020card.",
             "url": "classes/App-ProjectRules-FlushTrait2.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\FlushTrait2\u003A\u003AcountBySuit\u0028\u0029",
@@ -3288,7 +3288,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\FlushTrait3",
             "name": "FlushTrait3",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020the\u0020deck\u0020contains\u0020enough\u0020cards\u0020of\u0020the\u0020required\u0020suit\nto\u0020be\u0020able\u0020to\u0020achieve\u0020a\u0020flush\u0020in\u0020a\u0020hand.",
             "url": "classes/App-ProjectRules-FlushTrait3.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\FlushTrait3\u003A\u003AcountBySuit\u0028\u0029",
@@ -3303,7 +3303,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouseScoredTrait",
             "name": "FullHouseScoredTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020a\u0020full\u0020house\u0020rule\u0020has\u0020been\u0020scored\u0020in\u0020a\u0020hand.",
             "url": "classes/App-ProjectRules-FullHouseScoredTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouseScoredTrait\u003A\u003AcountByRank\u0028\u0029",
@@ -3318,7 +3318,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouseTrait2",
             "name": "FullHouseTrait2",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020Full\u0020House\u0020rule\u0020is\u0020possible\u0020to\u0020score\u0020without\u0020the\ndealt\u0020card\u0020in\u0020a\u0020partially\u0020filled\u0020hand.",
             "url": "classes/App-ProjectRules-FullHouseTrait2.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouseTrait2\u003A\u003AcountByRank\u0028\u0029",
@@ -3333,7 +3333,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouseTrait3",
             "name": "FullHouseTrait3",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020a\u0020FullHouse\u0020rule\u0020is\u0020psosible\u0020to\u0020score\u0020wihtout\u0020the\ndealt\u0020card,\u0020in\u0020an\u0020empty\u0020hand.",
             "url": "classes/App-ProjectRules-FullHouseTrait3.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouseTrait3\u003A\u003AcountByRank\u0028\u0029",
@@ -3348,7 +3348,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouseTrait4",
             "name": "FullHouseTrait4",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020the\u0020ranks\u0020in\u0020hand,\u0020together\u0020withthe\u0020ranks\u0020in\ndeck\u0020result\u0020in\u0020three\u0020of\u0020one\u0020rank\u0020and\u0020two\u0020of\u0020the\u0020other.",
             "url": "classes/App-ProjectRules-FullHouseTrait4.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouseTrait4\u003A\u003Acheck3\u0028\u0029",
@@ -3358,7 +3358,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouseTrait5",
             "name": "FullHouseTrait5",
-            "summary": "",
+            "summary": "Trait\u0020contains\u0020part\u0020of\u0020the\u0020logic\u0020for\u0020checking\u0020if\u0020a\u0020full\u0020house\u0020is\u0020possible\u0020to\u0020score\u0020in\u0020a\u0020hand.",
             "url": "classes/App-ProjectRules-FullHouseTrait5.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouseTrait5\u003A\u003Acheck1SubCheck\u0028\u0029",
@@ -3373,7 +3373,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouseTrait6",
             "name": "FullHouseTrait6",
-            "summary": "",
+            "summary": "Trait\u0020contains\u0020part\u0020of\u0020the\u0020logic\u0020for\u0020checking\u0020if\u0020a\u0020full\u0020house\u0020is\u0020possible\u0020to\u0020score\u0020in\u0020a\u0020hand.",
             "url": "classes/App-ProjectRules-FullHouseTrait6.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\FullHouseTrait6\u003A\u003Acheck2\u0028\u0029",
@@ -3383,7 +3383,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\RoyalFlushScoredTrait",
             "name": "RoyalFlushScoredTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020Royal\u0020Flush\u0020rule\u0020has\u0020been\u0020scored\u0020in\u0020a\u0020hand.",
             "url": "classes/App-ProjectRules-RoyalFlushScoredTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\RoyalFlushScoredTrait\u003A\u003AcountSuitAndRank\u0028\u0029",
@@ -3398,7 +3398,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait",
             "name": "RoyalFlushTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020Royal\u0020Flush\u0020Rule\u0020is\u0020possible\u0020to\u0020achieve\u0020without\u0020the\u0020dealt\u0020card,\nin\u0020a\u0020partially\u0020filled\u0020hand.",
             "url": "classes/App-ProjectRules-RoyalFlushTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait\u003A\u003AcountSuitAndRank\u0028\u0029",
@@ -3413,7 +3413,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait2",
             "name": "RoyalFlushTrait2",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020a\u0020Royal\u0020Flush\u0020rule\u0020is\u0020possible\u0020to\u0020score\nin\u0020an\u0020empty\u0020hand\u0020without\u0020the\u0020dealt\u0020card.",
             "url": "classes/App-ProjectRules-RoyalFlushTrait2.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait2\u003A\u003ApossibleDeckOnly\u0028\u0029",
@@ -3423,12 +3423,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait3",
             "name": "RoyalFlushTrait3",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020an\u0020array\u0020of\u0020cards\u0020contains\na\u0020straight\u0020flush\u0020starting\u0020with\u0020given\u0020min\u0020rank\nand\u0020suit.\u0020Initially\u0020intended\u0020to\u0020be\u0020used\u0020in\u0020both\u0020Straight\u0020Flush\u0020and\u0020Royal\u0020flush\u0020and\u0020therefore\nquite\u0020general.\u0020In\u0020practice\u0020only\u0020used\u0020for\u0020Royal\u0020Flush\u0020because\nended\u0020up\u0020using\u0020a\u0020different\u0020method\u0020for\u0020Straight\u0020Flush.",
             "url": "classes/App-ProjectRules-RoyalFlushTrait3.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait3\u003A\u003AcheckForCards\u0028\u0029",
             "name": "checkForCards",
-            "summary": "Userd\u0020in\u0020the\u0020following\u0020traits\u003A\nRoyalFlushTrait,",
+            "summary": "Used\u0020in\u0020the\u0020following\u0020traits\u003A\nRoyalFlushTrait,",
             "url": "classes/App-ProjectRules-RoyalFlushTrait3.html#method_checkForCards"
         },                {
             "fqsen": "\\App\\ProjectRules\\RoyalFlushTrait3\u003A\u003A\u0024maxRank",
@@ -3448,7 +3448,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\RuleDataTrait",
             "name": "RuleDataTrait",
-            "summary": "Contains\u0020methods\u0020for\u0020getting\u0020the\u0020name\nof\u0020the\u0020rule\u0020and\u0020the\u0020points\u0020the\u0020rule\u0020gives\u0020if\u0020scored",
+            "summary": "Contains\u0020methods\u0020for\u0020getting\u0020the\u0020name\nof\u0020the\u0020rule\u0020and\u0020the\u0020points\u0020the\u0020rule\u0020gives\u0020if\u0020scored.",
             "url": "classes/App-ProjectRules-RuleDataTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\RuleDataTrait\u003A\u003AgetName\u0028\u0029",
@@ -3473,7 +3473,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait",
             "name": "SameOfAKindTrait",
-            "summary": "",
+            "summary": "Trait\u0020used\u0020for\u0020One\u0020Pair,\u0020Three\u0020Of\u0020A\u0020Kind,\nFour\u0020Of\u0020A\u0020Kind\u0020rules.\u0020For\u0020checking\u0020if\u0020the\u0020rule\nis\u0020possible\u0020to\u0020score\u0020with\u0020the\u0020dealt\u0020card.",
             "url": "classes/App-ProjectRules-SameOfAKindTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait\u003A\u003AcountByRank\u0028\u0029",
@@ -3508,7 +3508,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait2",
             "name": "SameOfAKindTrait2",
-            "summary": "",
+            "summary": "Trait\u0020used\u0020for\u0020One\u0020Pair,\u0020Three\u0020Of\u0020A\u0020Kind,\nFour\u0020Of\u0020A\u0020Kind\u0020rules.\u0020For\u0020checking\u0020if\u0020the\u0020rule\nis\u0020possible\u0020to\u0020score\u0020without\u0020the\u0020dealt\u0020card\nin\u0020the\u0020partially\u0020filled\u0020hand.",
             "url": "classes/App-ProjectRules-SameOfAKindTrait2.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait2\u003A\u003AcountByRank\u0028\u0029",
@@ -3538,7 +3538,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait3",
             "name": "SameOfAKindTrait3",
-            "summary": "",
+            "summary": "Trait\u0020used\u0020for\u0020One\u0020Pair,\u0020Three\u0020Of\u0020A\u0020Kind,\nFour\u0020Of\u0020A\u0020Kind\u0020rules.\u0020For\u0020checking\u0020if\u0020the\u0020rule\nis\u0020possible\u0020to\u0020score\u0020without\u0020the\u0020dealt\u0020card\nin\u0020an\u0020empty\u0020hand.",
             "url": "classes/App-ProjectRules-SameOfAKindTrait3.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait3\u003A\u003AcountByRank\u0028\u0029",
@@ -3578,7 +3578,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightFlushScoredTrait",
             "name": "StraightFlushScoredTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020a\u0020Straight\u0020Flush\u0020rule\u0020has\u0020been\u0020scored.",
             "url": "classes/App-ProjectRules-StraightFlushScoredTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightFlushScoredTrait\u003A\u003AcountSuitAndRank\u0028\u0029",
@@ -3593,7 +3593,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightFlushTrait",
             "name": "StraightFlushTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020a\u0020Straight\u0020Flush\nis\u0020possible\u0020to\u0020score\u0020in\u0020a\u0020partially\u0020filled\u0020hand,\nwithout\u0020the\u0020dealt\u0020card.",
             "url": "classes/App-ProjectRules-StraightFlushTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightFlushTrait\u003A\u003AcheckAllPossible\u0028\u0029",
@@ -3613,7 +3613,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightFlushTrait3",
             "name": "StraightFlushTrait3",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020a\u0020Straight\u0020Flush\u0020rule\u0020can\nbe\u0020scored\u0020in\u0020an\u0020emtpy\u0020hand\u0020without\u0020the\u0020dealt\u0020card.",
             "url": "classes/App-ProjectRules-StraightFlushTrait3.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightFlushTrait3\u003A\u003AcheckAllPossible\u0028\u0029",
@@ -3633,7 +3633,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightScoredTrait",
             "name": "StraightScoredTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020a\u0020Straight\u0020has\u0020been\u0020scored\u0020in\u0020a\u0020hand.",
             "url": "classes/App-ProjectRules-StraightScoredTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightScoredTrait\u003A\u003AcountByRank\u0028\u0029",
@@ -3648,7 +3648,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightTrait",
             "name": "StraightTrait",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020a\u0020Straight\u0020can\u0020be\u0020scored\u0020in\u0020a\u0020partially\nfilled\u0020or\u0020an\u0020empty\u0020hand\u0020\u0028separate\u0020methods\u0029\u0020without\u0020the\u0020dealt\u0020card.",
             "url": "classes/App-ProjectRules-StraightTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightTrait\u003A\u003AcountByRank\u0028\u0029",
@@ -3668,7 +3668,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightTrait2",
             "name": "StraightTrait2",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020an\u0020array\u0020of\u0020numbers\u0020contains\u00205\u0020consequent\u0020digits\u0020starting\u0020with\u0020\u0024minRank.\u0020Used\nfor\u0020checking\u0020if\u0020a\u0020Straight\u0020is\u0020possible\u0020to\u0020score\ngiven\u0020an\u0020array\u0020of\u0020ranks",
             "url": "classes/App-ProjectRules-StraightTrait2.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightTrait2\u003A\u003AcheckForRanks\u0028\u0029",
@@ -3678,7 +3678,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightTrait3",
             "name": "StraightTrait3",
-            "summary": "",
+            "summary": "Used\u0020for\u0020determining\u0020if\u0020a\u0020Straight\u0020is\u0020possible\u0020to\u0020score.\u0020Contains\u0020method\u0020for\u0020checking\u0020all\u0020possible\u0020combinations.",
             "url": "classes/App-ProjectRules-StraightTrait3.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\StraightTrait3\u003A\u003AcheckAllPossible\u0028\u0029",
@@ -3688,7 +3688,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsScoredTrait",
             "name": "TwoPairsScoredTrait",
-            "summary": "",
+            "summary": "Checks\u0020if\u0020Two\u0020Pairs\u0020rule\u0020has\u0020been\u0020scored\u0020in\u0020a\u0020hand.",
             "url": "classes/App-ProjectRules-TwoPairsScoredTrait.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsScoredTrait\u003A\u003AcountByRank\u0028\u0029",
@@ -3703,7 +3703,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait10",
             "name": "TwoPairsTrait10",
-            "summary": "",
+            "summary": "Part\u0020of\u0020the\u0020logic\u0020for\u0020checking\u0020in\u0020a\u0020Two\u0020Pairs\u0020rule\nis\u0020possible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-TwoPairsTrait10.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait10\u003A\u003AoneCardTwoPairs\u0028\u0029",
@@ -3713,7 +3713,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait11",
             "name": "TwoPairsTrait11",
-            "summary": "",
+            "summary": "Part\u0020of\u0020the\u0020logic\u0020for\u0020checking\u0020in\u0020a\u0020Two\u0020Pairs\u0020rule\nis\u0020possible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-TwoPairsTrait11.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait11\u003A\u003Acheck4\u0028\u0029",
@@ -3723,7 +3723,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait12",
             "name": "TwoPairsTrait12",
-            "summary": "",
+            "summary": "Part\u0020of\u0020the\u0020logic\u0020for\u0020checking\u0020in\u0020a\u0020Two\u0020Pairs\u0020rule\nis\u0020possible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-TwoPairsTrait12.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait12\u003A\u003AmatchOneInDeck\u0028\u0029",
@@ -3738,7 +3738,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait13",
             "name": "TwoPairsTrait13",
-            "summary": "",
+            "summary": "Part\u0020of\u0020the\u0020logic\u0020for\u0020checking\u0020in\u0020a\u0020Two\u0020Pairs\u0020rule\nis\u0020possible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-TwoPairsTrait13.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait13\u003A\u003AmatchOneInDeck\u0028\u0029",
@@ -3753,7 +3753,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait14",
             "name": "TwoPairsTrait14",
-            "summary": "",
+            "summary": "Part\u0020of\u0020the\u0020logic\u0020for\u0020checking\u0020in\u0020a\u0020Two\u0020Pairs\u0020rule\nis\u0020possible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-TwoPairsTrait14.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait14\u003A\u003AthreeCardsTwoPairs\u0028\u0029",
@@ -3763,7 +3763,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait3",
             "name": "TwoPairsTrait3",
-            "summary": "",
+            "summary": "Trait\u0020for\u0020checking\u0020if\u0020Two\u0020Pairs\u0020rule\u0020is\u0020possibel\u0020to\u0020achieve\nin\u0020an\u0020empty\u0020hand\u0020without\u0020the\u0020dealt\u0020card\u0020\u0028i.e.\u0020with\u0020only\nthe\u0020cards\u0020that\u0020the\u0020user\u0020will\u0020be\u0020dealt\u0020from\u0020the\u0020deck\u0020during\u0020the\u0020remaining\u0020game\u0029.",
             "url": "classes/App-ProjectRules-TwoPairsTrait3.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait3\u003A\u003AcountByRank\u0028\u0029",
@@ -3778,7 +3778,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait4",
             "name": "TwoPairsTrait4",
-            "summary": "",
+            "summary": "Part\u0020of\u0020the\u0020logic\u0020for\u0020checking\u0020in\u0020a\u0020Two\u0020Pairs\u0020rule\nis\u0020possible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-TwoPairsTrait4.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait4\u003A\u003Acheck1\u0028\u0029",
@@ -3788,7 +3788,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait5",
             "name": "TwoPairsTrait5",
-            "summary": "",
+            "summary": "Part\u0020of\u0020the\u0020logic\u0020for\u0020checking\u0020in\u0020a\u0020Two\u0020Pairs\u0020rule\nis\u0020possible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-TwoPairsTrait5.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait5\u003A\u003AcheckForTwoPairs1\u0028\u0029",
@@ -3813,7 +3813,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait6",
             "name": "TwoPairsTrait6",
-            "summary": "",
+            "summary": "Part\u0020of\u0020the\u0020logic\u0020for\u0020checking\u0020in\u0020a\u0020Two\u0020Pairs\u0020rule\nis\u0020possible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-TwoPairsTrait6.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait6\u003A\u003AmatchOneInDeck\u0028\u0029",
@@ -3838,7 +3838,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait7",
             "name": "TwoPairsTrait7",
-            "summary": "",
+            "summary": "Part\u0020of\u0020the\u0020logic\u0020for\u0020checking\u0020in\u0020a\u0020Two\u0020Pairs\u0020rule\nis\u0020possible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-TwoPairsTrait7.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait7\u003A\u003AfourCardsTwoPairs\u0028\u0029",
@@ -3853,7 +3853,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait8",
             "name": "TwoPairsTrait8",
-            "summary": "",
+            "summary": "Part\u0020of\u0020the\u0020logic\u0020for\u0020checking\u0020in\u0020a\u0020Two\u0020Pairs\u0020rule\nis\u0020possible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-TwoPairsTrait8.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait8\u003A\u003AmatchOneInDeck\u0028\u0029",
@@ -3863,7 +3863,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait9",
             "name": "TwoPairsTrait9",
-            "summary": "",
+            "summary": "Part\u0020of\u0020the\u0020logic\u0020for\u0020checking\u0020in\u0020a\u0020Two\u0020Pairs\u0020rule\nis\u0020possible\u0020to\u0020score.",
             "url": "classes/App-ProjectRules-TwoPairsTrait9.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\TwoPairsTrait9\u003A\u003AthreeCardsTwoPairsAlt\u0028\u0029",
@@ -3903,7 +3903,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\Game21InitController",
             "name": "Game21InitController",
-            "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game",
+            "summary": "Controller\u0020for\u0020the\u002021\u0020card\u0020game,\u0020contains\u0020route\u0020for\u0020initating\u0020a\u002021\u0020Game,\u0020from\u0020kmom03\u002Dkmom04",
             "url": "classes/App-Controller-Game21InitController.html"
         },                {
             "fqsen": "\\App\\Controller\\Game21InitController\u003A\u003Ainit\u0028\u0029",

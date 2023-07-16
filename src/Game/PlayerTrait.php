@@ -6,7 +6,7 @@ use App\Cards\DeckOfCards;
 use App\Cards\CardHand;
 
 /**
- * Trate for base methods for a 21 player
+ * Trate for base methods for a 21 player, from kmom03-04
  */
 trait PlayerTrait
 {

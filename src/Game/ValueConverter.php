@@ -3,7 +3,7 @@
 namespace App\Game;
 
 /**
- * Class for contering the value of Ace from 14 to 1 when a hand reaches over 21 points
+ * Class for contering the value of Ace from 14 to 1 when a hand reaches over 21 points, from kmom03-04
  */
 class ValueConverter
 {
