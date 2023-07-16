@@ -297,4 +297,134 @@ class FinalResultsTraitTest extends TestCase
         $res = $this->results($grid);
         $this->assertEquals($exp, $res);
     }
+
+    public function testResults4(): void
+    {
+        $grid = $this->createMock(Grid::class);
+
+        $rows = [
+            ["10C","14S","11C","12H","13C"],
+            ["7H","9C","5H","14H","7S"],
+            ["8H","6C","8D","3D","3H"],
+            ["10S","14D","13D","12D","12S"],
+            ["4S","2C","2S","2D","4C"]
+        ];
+        $grid->method('getRows')->willReturn($rows);
+
+        $total = 15 + 2 + 5 + 2 + 25 + 2 + 2 + 0 + 2 + 0;
+        $exp = [
+            "rows" => [
+                0 => [
+                    "name" => "Straight",
+                    "points" => 15
+                ],
+                1 => [
+                    "name" => "One Pair",
+                    "points" => 2
+                ],
+                2 => [
+                    "name" => "Two Pairs",
+                    "points" => 5
+                ],
+                3 => [
+                    "name" => "One Pair",
+                    "points" => 2
+                ],
+                4 => [
+                    "name" => "Full House",
+                    "points" => 25
+                ]
+              ],
+            "cols" => [
+                0 => [
+                    "name" => "One Pair",
+                    "points" => 2
+                ],
+                1 => [
+                    "name" => "One Pair",
+                    "points" => 2
+                ],
+                2 => [
+                    "name" => "None",
+                    "points" => 0
+                ],
+                3 => [
+                    "name" => "One Pair",
+                    "points" => 2
+                ],
+                4 => [
+                    "name" => "None",
+                    "points" => 0
+                ]
+            ],
+            "total" => $total
+        ];
+        $res = $this->results($grid);
+        $this->assertEquals($exp, $res);
+    }
+
+    public function testResults5(): void
+    {
+        $grid = $this->createMock(Grid::class);
+
+        $rows = [
+            ["6S","8C","7D","6H","6D"],
+            ["13S","12C","11D","10H","9S"],
+            ["5S","5C","4D","4H","5D"],
+            ["3S","3C","10D","2H","9H"],
+            ["8S","7C","11S","13H","9D"]
+        ];
+        $grid->method('getRows')->willReturn($rows);
+
+        $total = 10 + 15 + 25 + 2 + 0 + 20 + 20 + 2 + 20 + 10;
+        $exp = [
+            "rows" => [
+                0 => [
+                    "name" => "Three Of A Kind",
+                    "points" => 10
+                ],
+                1 => [
+                    "name" => "Straight",
+                    "points" => 15
+                ],
+                2 => [
+                    "name" => "Full House",
+                    "points" => 25
+                ],
+                3 => [
+                    "name" => "One Pair",
+                    "points" => 2
+                ],
+                4 => [
+                    "name" => "None",
+                    "points" => 0
+                ]
+              ],
+            "cols" => [
+                0 => [
+                    "name" => "Flush",
+                    "points" => 20
+                ],
+                1 => [
+                    "name" => "Flush",
+                    "points" => 20
+                ],
+                2 => [
+                    "name" => "One Pair",
+                    "points" => 2
+                ],
+                3 => [
+                    "name" => "Flush",
+                    "points" => 20
+                ],
+                4 => [
+                    "name" => "Three Of A Kind",
+                    "points" => 10
+                ]
+            ],
+            "total" => $total
+        ];
+        $res = $this->results($grid);
+        $this->assertEquals($exp, $res);
+    }
 }
