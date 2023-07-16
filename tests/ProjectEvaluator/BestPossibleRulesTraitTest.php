@@ -53,6 +53,17 @@ class BestPossibleRulesTraitTest extends TestCase
         $this->assertEquals($exp, $res);
     }
 
+    public function testAdjustPriorityNotOk3(): void
+    {
+        $ruleWithCard = "Straight Flush";
+        $ruleWithoutCard = "Royal Flush";
+        $weightPoints = 75;
+        $handNotEmpty = true;
+        $res = $this->adjustPriority($ruleWithCard, $ruleWithoutCard, $weightPoints, $handNotEmpty);
+        $exp = -1.0;
+        $this->assertEquals($exp, $res);
+    }
+
     public function testAdjustPriorityNotOk2(): void
     {
         $ruleWithCard = "One Pair";
