@@ -57,7 +57,7 @@ class ProjectPickCardControllerTest extends WebTestCase
         $this->assertEquals($expectedFlashbag, $bag->peekAll());
     }
 
-        /**
+    /**
      * Tests that the pick-card route works and correct template is generated if the
      * user has enough money to pay for the cheat
      */
