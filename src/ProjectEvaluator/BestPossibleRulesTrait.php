@@ -38,7 +38,7 @@ trait BestPossibleRulesTrait
             'Straight' => 15,
             'Three Of A Kind' => 10
         ];
-        if($weightPoints >= 0 && (in_array($ruleWithCard, $notPrioritized, true) && !in_array($ruleWithoutCard, $notPrioritized, true)) || ($ruleWithCard != "Royal Flush" && $ruleWithoutCard === "Royal Flush")) {
+        if ($weightPoints >= 0 && in_array($ruleWithCard, $notPrioritized, true) && !in_array($ruleWithoutCard, $notPrioritized, true)) {
             $weightPoints = 0.5 - 0.01 * $points[$ruleWithoutCard];
             if ($handNotEmpty) {
                 /**
@@ -47,6 +47,9 @@ trait BestPossibleRulesTrait
                  */
                 $weightPoints -= 0.5;
             }
+        }
+        if ($ruleWithCard != "Royal Flush" && $ruleWithoutCard === "Royal Flush") {
+            $weightPoints = - 100;
         }
         return round($weightPoints, 2);
     }

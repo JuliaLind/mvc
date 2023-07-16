@@ -60,7 +60,7 @@ class BestPossibleRulesTraitTest extends TestCase
         $weightPoints = 75;
         $handNotEmpty = true;
         $res = $this->adjustPriority($ruleWithCard, $ruleWithoutCard, $weightPoints, $handNotEmpty);
-        $exp = -1.0;
+        $exp = -100;
         $this->assertEquals($exp, $res);
     }
 

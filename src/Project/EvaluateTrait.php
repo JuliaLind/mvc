@@ -77,7 +77,7 @@ trait EvaluateTrait
         $winner = "House";
         $lastPart = "";
 
-        if ($playerTotal >= $houseTotal) {
+        if ($playerTotal > $houseTotal) {
             $winner = "You";
             $amount = $this->pot * 2;
             $lastPart = " and received {$amount} coins";
