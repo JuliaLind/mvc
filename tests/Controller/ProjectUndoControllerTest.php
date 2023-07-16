@@ -55,7 +55,7 @@ class ProjectUndoControllerTest extends WebTestCase
         $this->assertEquals($expectedFlashbag, $bag->peekAll());
     }
 
-        /**
+    /**
      * Tests that the only last move is reversed and that coordinates
      */
     public function testUndoOk(): void

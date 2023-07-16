@@ -8466,3 +8466,6 @@ e84349,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1689505960,,200
 b3b853,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/purchase-suggestion,1689505969,,302
 1b5c35,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/show-suggestion,1689505969,,200
 64241b,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api/game-state,1689506200,,200
+d47ac1,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/one-round/2/1,1689506490,,302
+51a4b9,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/play,1689506490,,200
+f81c92,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1689506490,,200
