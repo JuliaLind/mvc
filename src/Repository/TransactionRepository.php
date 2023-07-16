@@ -8,6 +8,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
+ * Repository for Transaction class, from kmom10/Project
  * @extends ServiceEntityRepository<Transaction>
  * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  *

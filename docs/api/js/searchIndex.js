@@ -438,7 +438,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Book",
             "name": "Book",
-            "summary": "",
+            "summary": "Represents\u0020a\u0020book\u0020in\u0020the\u0020Library,\u0020from\u0020kmom05",
             "url": "classes/App-Entity-Book.html"
         },                {
             "fqsen": "\\App\\Entity\\Book\u003A\u003AgetId\u0028\u0029",
@@ -513,7 +513,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\BookRepository",
             "name": "BookRepository",
-            "summary": "",
+            "summary": "Repository\u0020for\u0020book\u0020class,\u0020from\u0020kmom05",
             "url": "classes/App-Repository-BookRepository.html"
         },                {
             "fqsen": "\\App\\Repository\\BookRepository\u003A\u003A__construct\u0028\u0029",
@@ -1003,7 +1003,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Score",
             "name": "Score",
-            "summary": "",
+            "summary": "If\u0020player\u0020wins\u0020agains\u0020the\u0020house\u0020then\u0020playerid\n\u002B\u0020number\u0020of\u0020points\u0020\u002B\u0020date\u0020for\u0020the\u0020win\u0020is\u0020registered\nin\u0020the\u0020score\u002Dtable,\u0020from\u0020kmom10\/project",
             "url": "classes/App-Entity-Score.html"
         },                {
             "fqsen": "\\App\\Entity\\Score\u003A\u003AgetId\u0028\u0029",
@@ -2203,7 +2203,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\Register",
             "name": "Register",
-            "summary": "Registers\u0020user\u0020score\u0020and\u0020transactions.",
+            "summary": "Registers\u0020user\u0020score\u0020and\u0020transactions.\u0020Gets\u0020users\u0020balance\u0020\u0028sum\u0020of\u0020transactions\u0029,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Project-Register.html"
         },                {
             "fqsen": "\\App\\Project\\Register\u003A\u003A__construct\u0028\u0029",
@@ -2223,7 +2223,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\Register\u003A\u003Adebit\u0028\u0029",
             "name": "debit",
-            "summary": "Registers\u0020a\u0020negative\u0020transaction\u0020tot\u0020he\u0020database.",
+            "summary": "Registers\u0020a\u0020negative\u0020transaction\u0020to\u0020the\u0020database.",
             "url": "classes/App-Project-Register.html#method_debit"
         },                {
             "fqsen": "\\App\\Project\\Register\u003A\u003Ascore\u0028\u0029",
@@ -2498,7 +2498,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\RuleInterface",
             "name": "RuleInterface",
-            "summary": "Interface\u0020to\u0020be\u0020implemented\u0020by\u0020the\u0020Poker\u0020Sqares\u0020rules\u0020classes.",
+            "summary": "Interface\u0020to\u0020be\u0020implemented\u0020by\u0020the\u0020Poker\u0020Squares\u0020rules\u0020classes.",
             "url": "classes/App-ProjectRules-RuleInterface.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\RuleInterface\u003A\u003AgetName\u0028\u0029",
@@ -2638,7 +2638,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\ScoreRepository",
             "name": "ScoreRepository",
-            "summary": "",
+            "summary": "Repository\u0020for\u0020Score\u0020class,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Repository-ScoreRepository.html"
         },                {
             "fqsen": "\\App\\Repository\\ScoreRepository\u003A\u003A__construct\u0028\u0029",
@@ -2658,7 +2658,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\TransactionRepository",
             "name": "TransactionRepository",
-            "summary": "",
+            "summary": "Repository\u0020for\u0020Transaction\u0020class,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Repository-TransactionRepository.html"
         },                {
             "fqsen": "\\App\\Repository\\TransactionRepository\u003A\u003A__construct\u0028\u0029",
@@ -2678,7 +2678,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\UserRepository",
             "name": "UserRepository",
-            "summary": "",
+            "summary": "Repository\u0020for\u0020User\u0020class,\u0020from\u0020kmom10\/Project",
             "url": "classes/App-Repository-UserRepository.html"
         },                {
             "fqsen": "\\App\\Repository\\UserRepository\u003A\u003A__construct\u0028\u0029",
@@ -3023,7 +3023,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\CheckWithCardTrait",
             "name": "CheckWithCardTrait",
-            "summary": "",
+            "summary": "Used\u0020in\u0020BestPossibleRulesTrait",
             "url": "classes/App-ProjectEvaluator-CheckWithCardTrait.html"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\CheckWithCardTrait\u003A\u003AcheckSingleRuleWith\u0028\u0029",
@@ -3053,7 +3053,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\CheckWithoutCardTrait\u003A\u003AhandRuleWithout\u0028\u0029",
             "name": "handRuleWithout",
-            "summary": "",
+            "summary": "Used\u0020in\u003A\nRulesWithoutCardTrait,\nCheckEmptyGridTrait",
             "url": "classes/App-ProjectEvaluator-CheckWithoutCardTrait.html#method_handRuleWithout"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\CheckWithoutCardTrait\u003A\u003A\u0024rules",
@@ -3068,7 +3068,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\EmptyCellsTrait\u003A\u003AsingleHand\u0028\u0029",
             "name": "singleHand",
-            "summary": "",
+            "summary": "Used\u0020in\u003A\nSlotTrait,\nEmptyCellTrait",
             "url": "classes/App-ProjectEvaluator-EmptyCellsTrait.html#method_singleHand"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\EmptyCellTrait",
@@ -3188,7 +3188,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\SlotTrait\u003A\u003AsingleHand\u0028\u0029",
             "name": "singleHand",
-            "summary": "",
+            "summary": "From\u0020EmptyCellsTrait",
             "url": "classes/App-ProjectEvaluator-SlotTrait.html#method_singleHand"
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\SlotTrait\u003A\u003AbestSlot\u0028\u0029",
@@ -3208,7 +3208,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectEvaluator\\SuggestionTrait\u003A\u003Asuggestion\u0028\u0029",
             "name": "suggestion",
-            "summary": "",
+            "summary": "The\u0020main\u0020method\u0020for\u0020generating\u0020the\u0020statistics\u0020of\u0020possible\u0020rules\u0020for\u0020all\u0020ten\u0020hands\nwith\u0020and\u0020without\u0020the\u0020dealt\u0020card\u0020and\u0020a\u0020suggestion\u0020of\u0020the\u0020best\u0020slot\u0020to\u0020place\u0020the\u0020dealt\u0020card",
             "url": "classes/App-ProjectEvaluator-SuggestionTrait.html#method_suggestion"
         },                {
             "fqsen": "\\App\\ProjectGrid\\RowsTrait",
@@ -3558,7 +3558,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait4",
             "name": "SameOfAKindTrait4",
-            "summary": "",
+            "summary": "Part\u0020of\u0020the\u0020logic\u0020for\u0020rules\u0020One\u0020Pair,\u0020Three\u0020Of\u0020A\u0020Kind\nand\u0020Four\u0020Of\u0020A\u0020Kind,\u0020for\u0020determining\u0020if\u0020the\u0020rule\u0020is\u0020possible\nto\u0020score\u0020in\u0020a\u0020hand",
             "url": "classes/App-ProjectRules-SameOfAKindTrait4.html"
         },                {
             "fqsen": "\\App\\ProjectRules\\SameOfAKindTrait4\u003A\u003AenoughSpaceInHand\u0028\u0029",
@@ -3873,17 +3873,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\BookNotFoundException",
             "name": "BookNotFoundException",
-            "summary": "Exception\u0020class\u0020trhown\u0020when\u0020isbn\u0020number\u0020is\u0020alerady\u0020in\u0020use",
+            "summary": "Exception\u0020class\u0020trhown\u0020when\u0020isbn\u0020number\u0020is\u0020alerady\u0020in\u0020use,\nfrom\u0020kmom05",
             "url": "classes/App-Repository-BookNotFoundException.html"
         },                {
             "fqsen": "\\App\\Repository\\IsbnAlreadyInUseException",
             "name": "IsbnAlreadyInUseException",
-            "summary": "Exception\u0020class\u0020trhown\u0020when\u0020isbn\u0020number\u0020is\u0020alerady\u0020in\u0020use",
+            "summary": "Exception\u0020class\u0020trhown\u0020when\u0020isbn\u0020number\u0020is\u0020already\u0020in\u0020use,\u0020from\u0020kmom05",
             "url": "classes/App-Repository-IsbnAlreadyInUseException.html"
         },                {
             "fqsen": "\\App\\Repository\\LibraryException",
             "name": "LibraryException",
-            "summary": "Exception\u0020class\u0020for\u0020Library",
+            "summary": "Exception\u0020class\u0020for\u0020Library,\u0020from\u0020kmom05",
             "url": "classes/App-Repository-LibraryException.html"
         },                {
             "fqsen": "\\App\\Controller\\ProjectPickCardController",

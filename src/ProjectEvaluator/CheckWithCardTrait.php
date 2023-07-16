@@ -5,11 +5,11 @@ namespace App\ProjectEvaluator;
 use App\ProjectRules\RuleInterface;
 
 /**
- * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  * Used in BestPossibleRulesTrait
  *
  * Checks a hand for the best possible rule
  * to achieve with the dealt card, from kmom10/Project
+ * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  */
 trait CheckWithCardTrait
 {

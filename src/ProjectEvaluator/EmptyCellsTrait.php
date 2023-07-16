@@ -11,7 +11,6 @@ require __DIR__ . "/../../vendor/autoload.php";
 trait EmptyCellsTrait
 {
     /**
-     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      * Used in:
      * SlotTrait,
      * EmptyCellTrait
@@ -20,6 +19,7 @@ trait EmptyCellsTrait
      * for all empty slots in a hand
      * @param array<string> $hand
      * @return array<array<int,int>>
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
     */
     private function singleHand(array $hand, int $index, bool $one = false): array
     {

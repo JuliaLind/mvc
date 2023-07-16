@@ -3,7 +3,7 @@
 namespace App\ProjectRules;
 
 /**
- * Interface to be implemented by the Poker Sqares rules classes.
+ * Interface to be implemented by the Poker Squares rules classes.
  * From kmom10/Project
  */
 interface RuleInterface

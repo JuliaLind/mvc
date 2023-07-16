@@ -4,7 +4,11 @@ namespace App\ProjectRules;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
-
+/**
+ * Part of the logic for rules One Pair, Three Of A Kind
+ * and Four Of A Kind, for determining if the rule is possible
+ * to score in a hand
+ */
 trait SameOfAKindTrait4
 {
     /**

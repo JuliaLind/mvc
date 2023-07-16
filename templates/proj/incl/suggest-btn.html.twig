@@ -1,4 +1,4 @@
-{% if placedCards < 24 %}
+{% if placedCards < 24 and fromSlot == [] and url != "move-card"%}
 <form method="post" action="{{ path('purchase-suggestion') }}">
 <button type="submit" class="btn active-btn">
 Suggestion | 30 coins

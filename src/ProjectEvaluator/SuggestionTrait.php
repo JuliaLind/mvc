@@ -29,9 +29,11 @@ trait SuggestionTrait
     abstract private function getCols($rows): array;
 
     /**
-     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     * The main method for generating the statistics of possible rules for all ten hands
+     * with and without the dealt card and a suggestion of the best slot to place the dealt card
      * @param array<string> $deck - ranks of the cards from the deck that will be dealt to the player in the remaining game
      * @return array<string,array<int,array<string,float|int|string>|int>|int|string>
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      */
     public function suggestion(Grid $grid, string $card, array $deck): array
     {

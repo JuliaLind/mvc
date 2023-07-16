@@ -7,6 +7,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
+ * Repository for book class, from kmom05
  * @extends ServiceEntityRepository<Book>
  * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  *

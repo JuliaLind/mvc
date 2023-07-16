@@ -31,7 +31,7 @@ trait SameOfAKindTrait3
     abstract private function countByRank($cards): array;
 
     /**
-     * @param array<string> $deck
+     * @param array<string> $deck - cards from the deck that will be dealt to the player in the remaining game
      */
     public function possibleDeckOnly(array $deck): bool
     {

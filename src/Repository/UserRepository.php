@@ -7,6 +7,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
+ * Repository for User class, from kmom10/Project
  * @extends ServiceEntityRepository<User>
  * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  *

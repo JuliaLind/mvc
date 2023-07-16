@@ -6,8 +6,8 @@ use App\Repository\BookRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @SuppressWarnings(PHPMD.ShortVariable)
  * Represents a book in the Library, from kmom05
+ * @SuppressWarnings(PHPMD.ShortVariable)
  */
 #[ORM\Entity(repositoryClass: BookRepository::class)]
 class Book

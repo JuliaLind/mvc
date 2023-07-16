@@ -9,24 +9,24 @@ namespace App\ProjectEvaluator;
 trait SlotTrait
 {
     /**
-     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      * From EmptyCellsTrait
      *
      * Returns an array with coordinates [row,col]
      * for all empty slots in a hand
      * @param array<string> $hand
      * @return array<array<int,int>>
-    */
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     */
     abstract private function singleHand(array $hand, int $index, bool $one = false): array;
 
     /**
      * Used in SuggestionTrait
      *
-     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      * @param array<int,array<string,float|int|string>> $pointsRows
      * @param array<int,array<string,float|int|string>> $pointsCols
      * @param array<array<string>> $rows
      * @return array<string,array<int,int>|int|string>
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      */
     private function bestSlot(array $pointsRows, array $pointsCols, int $bestRow, array $rows, bool $inverted=false): array
     {

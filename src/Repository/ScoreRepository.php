@@ -7,6 +7,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
+ * Repository for Score class, from kmom10/Project
  * @extends ServiceEntityRepository<Score>
  * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  *

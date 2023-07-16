@@ -12,8 +12,7 @@ use App\Repository\TransactionRepository;
 use App\Entity\Score;
 
 /**
- * Registers user score and transactions.
- * Gets users balance (sum of transactions), from kmom10/Project
+ * Registers user score and transactions. Gets users balance (sum of transactions), from kmom10/Project
  */
 class Register
 {
@@ -75,7 +74,7 @@ class Register
     }
 
     /**
-     * Registers a negative transaction tot he database.
+     * Registers a negative transaction to the database.
      * Note! amount number should be a positive number
      * and represent the amount to be debited.
      * Checks users balance before registering transaction

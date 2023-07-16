@@ -1,0 +1,9 @@
+<span class="balance balance-alt">Pot: {{ bet * 2 }} coins</span>
+{{ include('proj/incl/undo-btn.html.twig') }}
+{{ include('proj/incl/move-card-btn.html.twig') }}
+<form method="get" action="{{ path('proj-play') }}">
+<button disabled="disabled" type="submit" class="btn active-btn">
+Suggestion | 30 coins
+</button>
+</form>
+{# <a class="return-arr" href="{{ path('proj') }}">Return home<span class="material-symbols-outlined">arrow_forward</span></a> #}

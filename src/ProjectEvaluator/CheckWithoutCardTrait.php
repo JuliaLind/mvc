@@ -38,7 +38,6 @@ trait CheckWithoutCardTrait
     }
 
     /**
-     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      * Used in:
      * RulesWithoutCardTrait,
      * CheckEmptyGridTrait
@@ -47,6 +46,7 @@ trait CheckWithoutCardTrait
      * without the dealt card
      * @param array<array<string>> $hands
      * @param array<string> $deck - the remaining cards to be dealt to the player from the deck
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      */
     private function handRuleWithout(array $hands, int $index, array $deck): string
     {
