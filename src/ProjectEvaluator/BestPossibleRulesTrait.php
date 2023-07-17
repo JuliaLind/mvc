@@ -13,6 +13,17 @@ trait BestPossibleRulesTrait
     use CheckWithoutCardTrait;
 
     /**
+     * Adjusts weight to -100 if Royal Flush can be scored without card but not with card
+     */
+    private function adjustPriority2(string $ruleWithCard, string $ruleWithoutCard, float $weightPoints): float
+    {
+        if ($ruleWithCard != "Royal Flush" && $ruleWithoutCard === "Royal Flush") {
+            $weightPoints = - 100;
+        }
+        return round($weightPoints, 2);
+    }
+
+    /**
      * If the best rule to achieve with card is One Pair,
      * Two Pairs or none, and one of the better rules
      * can be scored in the hand without card, the
@@ -48,9 +59,6 @@ trait BestPossibleRulesTrait
                 $weightPoints -= 0.5;
             }
         }
-        if ($ruleWithCard != "Royal Flush" && $ruleWithoutCard === "Royal Flush") {
-            $weightPoints = - 100;
-        }
         return round($weightPoints, 2);
     }
 
@@ -84,6 +92,7 @@ trait BestPossibleRulesTrait
             $handRuleWithout = $this->handRuleWithout($hands, $j, $deck);
 
             $handPoints = $this->adjustPriority($handRule, $handRuleWithout, $handPoints, array_key_exists($j, $hands));
+            $handPoints = $this->adjustPriority2($handRule, $handRuleWithout, $handPoints);
             if ($handPoints >= $maxPoints) {
                 $maxPoints = $handPoints;
                 $bestHand = $j;

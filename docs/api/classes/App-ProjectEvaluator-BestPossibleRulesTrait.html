@@ -187,6 +187,13 @@ the points a rule can give (in this case not taking into account how many of the
 cards already in hand contribute to the better rule)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-ProjectEvaluator-BestPossibleRulesTrait.html#method_adjustPriority2">adjustPriority2()</a>
+    <span>
+                                &nbsp;: float    </span>
+</dt>
+<dd>Adjusts weight to -100 if Royal Flush can be scored without card but not with card</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/App-ProjectEvaluator-BestPossibleRulesTrait.html#method_rulesHands">rulesHands()</a>
     <span>
                                 &nbsp;: array&lt;string, array<int,array<string,float|int|string>>|float|int|string&gt;    </span>
@@ -219,7 +226,7 @@ the dealt card and the &quot;weight&quot; of the hand to be used when a slot sug
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/BestPossibleRulesTrait.php"><a href="files/src-projectevaluator-bestpossiblerulestrait.html"><abbr title="src/ProjectEvaluator/BestPossibleRulesTrait.php">BestPossibleRulesTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
@@ -285,6 +292,66 @@ cards already in hand contribute to the better rule)</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_adjustPriority2">
+        adjustPriority2()
+        <a href="classes/App-ProjectEvaluator-BestPossibleRulesTrait.html#method_adjustPriority2" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/BestPossibleRulesTrait.php"><a href="files/src-projectevaluator-bestpossiblerulestrait.html"><abbr title="src/ProjectEvaluator/BestPossibleRulesTrait.php">BestPossibleRulesTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">18</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Adjusts weight to -100 if Royal Flush can be scored without card but not with card</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">adjustPriority2</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ruleWithCard</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ruleWithoutCard</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$weightPoints</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$ruleWithCard</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$ruleWithoutCard</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$weightPoints</span>
+                : <span class="phpdocumentor-signature__argument__return-type">float</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">float</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_rulesHands">
         rulesHands()
         <a href="classes/App-ProjectEvaluator-BestPossibleRulesTrait.html#method_rulesHands" class="headerlink"><i class="fas fa-link"></i></a>
@@ -292,7 +359,7 @@ cards already in hand contribute to the better rule)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/BestPossibleRulesTrait.php"><a href="files/src-projectevaluator-bestpossiblerulestrait.html"><abbr title="src/ProjectEvaluator/BestPossibleRulesTrait.php">BestPossibleRulesTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 
     </aside>
 

@@ -2976,6 +2976,11 @@ Search.appendIndex(
             "summary": "Evaluates\u0020an\u0020array\u0020with\u0020hands\u0020\u0028one\u0020direction\u0029\u0020for\u0020the\u0020best\u0020hand.",
             "url": "classes/App-ProjectEvaluator-BestPossibleRulesTrait.html"
         },                {
+            "fqsen": "\\App\\ProjectEvaluator\\BestPossibleRulesTrait\u003A\u003AadjustPriority2\u0028\u0029",
+            "name": "adjustPriority2",
+            "summary": "Adjusts\u0020weight\u0020to\u0020\u002D100\u0020if\u0020Royal\u0020Flush\u0020can\u0020be\u0020scored\u0020without\u0020card\u0020but\u0020not\u0020with\u0020card",
+            "url": "classes/App-ProjectEvaluator-BestPossibleRulesTrait.html#method_adjustPriority2"
+        },                {
             "fqsen": "\\App\\ProjectEvaluator\\BestPossibleRulesTrait\u003A\u003AadjustPriority\u0028\u0029",
             "name": "adjustPriority",
             "summary": "If\u0020the\u0020best\u0020rule\u0020to\u0020achieve\u0020with\u0020card\u0020is\u0020One\u0020Pair,\nTwo\u0020Pairs\u0020or\u0020none,\u0020and\u0020one\u0020of\u0020the\u0020better\u0020rules\ncan\u0020be\u0020scored\u0020in\u0020the\u0020hand\u0020without\u0020card,\u0020the\nweighted\u0020points\u0020are\u0020adjusted\u0020to\u0020prioritize\u0020down\u0020the\u0020hand\u0020in\u0020relation\u0020to\nthe\u0020points\u0020a\u0020rule\u0020can\u0020give\u0020\u0028in\u0020this\u0020case\u0020not\u0020taking\u0020into\u0020account\u0020how\u0020many\u0020of\u0020the\ncards\u0020already\u0020in\u0020hand\u0020contribute\u0020to\u0020the\u0020better\u0020rule\u0029",
