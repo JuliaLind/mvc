@@ -64,3 +64,9 @@ main.proj form {
         border: 0;
     }
 }
+
+@media (max-width: 500px) {
+    main.proj img {
+        max-width: 100%;
+    }
+}

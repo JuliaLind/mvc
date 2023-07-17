@@ -14,7 +14,9 @@
     border-radius: 5px;
 }
 
-
+.api-grid {
+    justify-content: center;
+}
 
 .api .slot {
     background-color: #333;
@@ -371,6 +373,22 @@
     .game-grid .slot {
         height: 14vh;
     }
+
+    .game-grid {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .game-grid .slot,
+    .api .slot {
+        height: 14vmin;
+    }
+
+    .game-grid .slot {
+        font-size: 0.5rem;
+    }
 }
 
 @media (min-width: 1600px) {
@@ -380,6 +398,10 @@
     }
     .api-grid {
         align-items: center;
+    }
+
+    .api-grid .slot {
+        height: 100px;
     }
 
     .outer-grid-container {

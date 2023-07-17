@@ -267,6 +267,14 @@ button.return-arr {
     }
 }
 
+@media (max-width: 600px) {
+    .profile-btns {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 @media (min-width: 801px) {
     .project .return-arr .material-symbols-outlined {
         font-size: 3rem;
