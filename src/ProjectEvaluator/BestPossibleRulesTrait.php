@@ -18,7 +18,7 @@ trait BestPossibleRulesTrait
     private function adjustPriority2(string $ruleWithCard, string $ruleWithoutCard, float $weightPoints): float
     {
         if ($ruleWithCard != "Royal Flush" && $ruleWithoutCard === "Royal Flush") {
-            $weightPoints = - 100;
+            $weightPoints = -90;
         }
         return round($weightPoints, 2);
     }

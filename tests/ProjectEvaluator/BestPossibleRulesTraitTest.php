@@ -59,7 +59,7 @@ class BestPossibleRulesTraitTest extends TestCase
         $ruleWithoutCard = "Royal Flush";
         $weightPoints = 75;
         $res = $this->adjustPriority2($ruleWithCard, $ruleWithoutCard, $weightPoints);
-        $exp = -100;
+        $exp = -90;
         $this->assertEquals($exp, $res);
     }
 

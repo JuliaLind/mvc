@@ -35,15 +35,15 @@ class ApiGame1OneRoundTraitTest extends TestCase
            "tot-weight-slot" => 43.0,
            "row-rules" => [
                 ["rule-with-card" => "Two Pairs","weight" => -0.25,"rule-without-card" => "Full House"],
-                ["rule-with-card" => "Full House","weight" => -100,"rule-without-card" => "Royal Flush"],
-                ["rule-with-card" => "Full House","weight" => -100,"rule-without-card" => "Royal Flush"],
+                ["rule-with-card" => "Full House","weight" => -90,"rule-without-card" => "Royal Flush"],
+                ["rule-with-card" => "Full House","weight" => -90,"rule-without-card" => "Royal Flush"],
                 ["rule-with-card" => "Three Of A Kind","weight" => 11,"rule-without-card" => "Straight Flush"],
                 ["rule-with-card" => "Full House","weight" => 27,"rule-without-card" => "Three Of A Kind"]
             ],
             "col-rules" => [
                 ["rule-with-card" => "Two Pairs","weight" => -0.25,"rule-without-card" => "Full House"],
-                ["rule-with-card" => "Full House","weight" => -100,"rule-without-card" => "Royal Flush"],
-                ["rule-with-card" => "Full House","weight" => -100,"rule-without-card" => "Royal Flush"],
+                ["rule-with-card" => "Full House","weight" => -90,"rule-without-card" => "Royal Flush"],
+                ["rule-with-card" => "Full House","weight" => -90,"rule-without-card" => "Royal Flush"],
                 ["rule-with-card" => "Straight","weight" => 16,"rule-without-card" => "Flush"],
                 ["rule-with-card" => "Four Of A Kind","weight" => 52,"rule-without-card" => "Full House"]
             ]
