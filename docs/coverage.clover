@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1690897871">
-  <project timestamp="1690897871">
+<coverage generated="1690898855">
+  <project timestamp="1690898855">
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="8" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="44" coveredelements="44"/>
@@ -1608,11 +1608,11 @@
       <line num="44" type="stmt" count="5"/>
       <line num="45" type="stmt" count="5"/>
       <line num="47" type="stmt" count="5"/>
-      <line num="48" type="stmt" count="1"/>
-      <line num="49" type="stmt" count="1"/>
-      <line num="52" type="stmt" count="4"/>
-      <line num="53" type="stmt" count="3"/>
-      <line num="54" type="stmt" count="3"/>
+      <line num="48" type="stmt" count="2"/>
+      <line num="49" type="stmt" count="2"/>
+      <line num="52" type="stmt" count="3"/>
+      <line num="53" type="stmt" count="2"/>
+      <line num="54" type="stmt" count="2"/>
       <line num="56" type="stmt" count="1"/>
       <line num="57" type="stmt" count="1"/>
       <metrics loc="60" ncloc="42" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="13" coveredelements="13"/>
@@ -1621,14 +1621,14 @@
       <class name="App\Game\EvaluateBankTrait2" namespace="global">
         <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
       </class>
-      <line num="18" type="method" name="bankWinsOnEqual" visibility="protected" complexity="2" crap="2" count="3"/>
-      <line num="20" type="stmt" count="3"/>
+      <line num="18" type="method" name="bankWinsOnEqual" visibility="protected" complexity="2" crap="2" count="2"/>
+      <line num="20" type="stmt" count="2"/>
       <line num="26" type="method" name="hasBankMoreThan21" visibility="protected" complexity="1" crap="1" count="2"/>
       <line num="28" type="stmt" count="2"/>
-      <line num="35" type="method" name="hasBankBestScore" visibility="protected" complexity="1" crap="1" count="2"/>
-      <line num="37" type="stmt" count="2"/>
-      <line num="38" type="stmt" count="2"/>
-      <line num="39" type="stmt" count="2"/>
+      <line num="35" type="method" name="hasBankBestScore" visibility="protected" complexity="1" crap="1" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="39" type="stmt" count="1"/>
       <metrics loc="42" ncloc="28" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/Game/EvaluatePlayerTrait.php">
@@ -1710,7 +1710,7 @@
       <line num="23" type="method" name="messageType" visibility="protected" complexity="2" crap="2" count="2"/>
       <line num="25" type="stmt" count="2"/>
       <line num="26" type="stmt" count="2"/>
-      <line num="27" type="stmt" count="2"/>
+      <line num="27" type="stmt" count="1"/>
       <line num="29" type="stmt" count="2"/>
       <line num="37" type="method" name="generateFlash" visibility="protected" complexity="3" crap="3" count="2"/>
       <line num="39" type="stmt" count="2"/>
@@ -1905,7 +1905,7 @@
       </class>
       <line num="18" type="method" name="adjAceValue" visibility="public" complexity="3" crap="3" count="3"/>
       <line num="20" type="stmt" count="3"/>
-      <line num="21" type="stmt" count="1"/>
+      <line num="21" type="stmt" count="2"/>
       <line num="23" type="stmt" count="3"/>
       <metrics loc="26" ncloc="17" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
     </file>
@@ -2504,7 +2504,7 @@
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectEvaluator/HouseColSuggestionTrait.php">
       <class name="App\ProjectEvaluator\HouseColSuggestionTrait" namespace="global">
-        <metrics complexity="12" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="41" coveredstatements="41" elements="45" coveredelements="45"/>
+        <metrics complexity="12" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="40" coveredstatements="40" elements="44" coveredelements="44"/>
       </class>
       <line num="35" type="method" name="addWeight" visibility="private" complexity="3" crap="3" count="17"/>
       <line num="37" type="stmt" count="17"/>
@@ -2522,7 +2522,7 @@
       <line num="51" type="stmt" count="17"/>
       <line num="58" type="method" name="adjustWeight" visibility="private" complexity="2" crap="2" count="17"/>
       <line num="60" type="stmt" count="17"/>
-      <line num="61" type="stmt" count="13"/>
+      <line num="61" type="stmt" count="14"/>
       <line num="63" type="stmt" count="17"/>
       <line num="71" type="method" name="getColWeight" visibility="private" complexity="4" crap="4" count="17"/>
       <line num="73" type="stmt" count="17"/>
@@ -2534,24 +2534,23 @@
       <line num="80" type="stmt" count="17"/>
       <line num="81" type="stmt" count="17"/>
       <line num="82" type="stmt" count="17"/>
-      <line num="83" type="stmt" count="16"/>
-      <line num="84" type="stmt" count="16"/>
-      <line num="85" type="stmt" count="16"/>
-      <line num="86" type="stmt" count="16"/>
-      <line num="87" type="stmt" count="16"/>
-      <line num="88" type="stmt" count="16"/>
+      <line num="83" type="stmt" count="15"/>
+      <line num="84" type="stmt" count="15"/>
+      <line num="85" type="stmt" count="15"/>
+      <line num="86" type="stmt" count="15"/>
+      <line num="87" type="stmt" count="15"/>
+      <line num="88" type="stmt" count="15"/>
       <line num="93" type="stmt" count="17"/>
       <line num="94" type="stmt" count="17"/>
       <line num="104" type="method" name="getCol" visibility="private" complexity="3" crap="3" count="17"/>
       <line num="106" type="stmt" count="17"/>
-      <line num="107" type="stmt" count="17"/>
+      <line num="108" type="stmt" count="17"/>
       <line num="109" type="stmt" count="17"/>
       <line num="110" type="stmt" count="17"/>
       <line num="111" type="stmt" count="17"/>
-      <line num="112" type="stmt" count="17"/>
+      <line num="117" type="stmt" count="17"/>
       <line num="118" type="stmt" count="17"/>
-      <line num="119" type="stmt" count="17"/>
-      <metrics loc="122" ncloc="83" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="41" coveredstatements="41" elements="45" coveredelements="45"/>
+      <metrics loc="121" ncloc="82" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="40" coveredstatements="40" elements="44" coveredelements="44"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectEvaluator/HouseRowSuggestionTrait.php">
       <class name="App\ProjectEvaluator\HouseRowSuggestionTrait" namespace="global">
@@ -2561,8 +2560,8 @@
       <line num="26" type="stmt" count="17"/>
       <line num="27" type="stmt" count="17"/>
       <line num="28" type="stmt" count="17"/>
-      <line num="29" type="stmt" count="9"/>
-      <line num="30" type="stmt" count="9"/>
+      <line num="29" type="stmt" count="8"/>
+      <line num="30" type="stmt" count="8"/>
       <line num="32" type="stmt" count="17"/>
       <line num="33" type="stmt" count="17"/>
       <line num="34" type="stmt" count="17"/>
@@ -2701,7 +2700,7 @@
       <line num="41" type="stmt" count="15"/>
       <line num="42" type="stmt" count="15"/>
       <line num="43" type="stmt" count="15"/>
-      <line num="44" type="stmt" count="13"/>
+      <line num="44" type="stmt" count="12"/>
       <line num="46" type="stmt" count="15"/>
       <line num="47" type="stmt" count="15"/>
       <line num="52" type="stmt" count="15"/>
@@ -2925,7 +2924,7 @@
       <line num="46" type="stmt" count="46"/>
       <line num="47" type="stmt" count="36"/>
       <line num="48" type="stmt" count="36"/>
-      <line num="50" type="stmt" count="35"/>
+      <line num="50" type="stmt" count="34"/>
       <metrics loc="54" ncloc="24" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/Flush.php">
@@ -2970,9 +2969,9 @@
       <class name="App\ProjectRules\FlushTrait3" namespace="global">
         <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
       </class>
-      <line num="37" type="method" name="checkInDeck" visibility="private" complexity="2" crap="2" count="17"/>
-      <line num="39" type="stmt" count="17"/>
-      <line num="41" type="stmt" count="17"/>
+      <line num="37" type="method" name="checkInDeck" visibility="private" complexity="2" crap="2" count="18"/>
+      <line num="39" type="stmt" count="18"/>
+      <line num="41" type="stmt" count="18"/>
       <metrics loc="44" ncloc="19" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/FullHouse.php">
@@ -3000,14 +2999,14 @@
       <line num="36" type="method" name="possibleWithoutCard" visibility="public" complexity="6" crap="6" count="55"/>
       <line num="41" type="stmt" count="55"/>
       <line num="42" type="stmt" count="55"/>
-      <line num="43" type="stmt" count="24"/>
+      <line num="43" type="stmt" count="25"/>
       <line num="48" type="stmt" count="50"/>
       <line num="50" type="stmt" count="50"/>
       <line num="54" type="stmt" count="50"/>
       <line num="56" type="stmt" count="50"/>
       <line num="57" type="stmt" count="39"/>
       <line num="58" type="stmt" count="39"/>
-      <line num="61" type="stmt" count="38"/>
+      <line num="61" type="stmt" count="37"/>
       <metrics loc="64" ncloc="33" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/FullHouseTrait3.php">
@@ -3025,48 +3024,48 @@
       <line num="44" type="stmt" count="46"/>
       <line num="46" type="stmt" count="48"/>
       <line num="47" type="stmt" count="38"/>
-      <line num="50" type="stmt" count="13"/>
+      <line num="50" type="stmt" count="14"/>
       <metrics loc="53" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="12" coveredelements="12"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/FullHouseTrait4.php">
       <class name="App\ProjectRules\FullHouseTrait4" namespace="global">
         <metrics complexity="6" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
       </class>
-      <line num="22" type="method" name="check3" visibility="private" complexity="6" crap="6" count="41"/>
-      <line num="24" type="stmt" count="41"/>
-      <line num="25" type="stmt" count="41"/>
-      <line num="26" type="stmt" count="41"/>
-      <line num="27" type="stmt" count="41"/>
+      <line num="22" type="method" name="check3" visibility="private" complexity="6" crap="6" count="40"/>
+      <line num="24" type="stmt" count="40"/>
+      <line num="25" type="stmt" count="40"/>
+      <line num="26" type="stmt" count="40"/>
+      <line num="27" type="stmt" count="40"/>
       <line num="28" type="stmt" count="36"/>
-      <line num="29" type="stmt" count="40"/>
-      <line num="30" type="stmt" count="39"/>
-      <line num="32" type="stmt" count="41"/>
-      <line num="33" type="stmt" count="31"/>
-      <line num="36" type="stmt" count="29"/>
+      <line num="29" type="stmt" count="39"/>
+      <line num="30" type="stmt" count="37"/>
+      <line num="32" type="stmt" count="40"/>
+      <line num="33" type="stmt" count="30"/>
+      <line num="36" type="stmt" count="27"/>
       <metrics loc="39" ncloc="24" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/FullHouseTrait5.php">
       <class name="App\ProjectRules\FullHouseTrait5" namespace="global">
         <metrics complexity="7" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="10" coveredelements="10"/>
       </class>
-      <line num="18" type="method" name="check1SubCheck" visibility="private" complexity="5" crap="5" count="21"/>
-      <line num="20" type="stmt" count="21"/>
-      <line num="21" type="stmt" count="15"/>
-      <line num="23" type="stmt" count="7"/>
-      <line num="38" type="method" name="check1" visibility="private" complexity="2" crap="2" count="45"/>
-      <line num="40" type="stmt" count="45"/>
-      <line num="44" type="stmt" count="14"/>
-      <line num="48" type="stmt" count="14"/>
-      <line num="49" type="stmt" count="14"/>
-      <line num="51" type="stmt" count="36"/>
+      <line num="18" type="method" name="check1SubCheck" visibility="private" complexity="5" crap="5" count="20"/>
+      <line num="20" type="stmt" count="20"/>
+      <line num="21" type="stmt" count="14"/>
+      <line num="23" type="stmt" count="8"/>
+      <line num="38" type="method" name="check1" visibility="private" complexity="2" crap="2" count="44"/>
+      <line num="40" type="stmt" count="44"/>
+      <line num="44" type="stmt" count="13"/>
+      <line num="48" type="stmt" count="13"/>
+      <line num="49" type="stmt" count="13"/>
+      <line num="51" type="stmt" count="35"/>
       <metrics loc="54" ncloc="25" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="10" coveredelements="10"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/FullHouseTrait6.php">
       <class name="App\ProjectRules\FullHouseTrait6" namespace="global">
         <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </class>
-      <line num="19" type="method" name="check2" visibility="private" complexity="2" crap="2" count="42"/>
-      <line num="21" type="stmt" count="42"/>
+      <line num="19" type="method" name="check2" visibility="private" complexity="2" crap="2" count="41"/>
+      <line num="21" type="stmt" count="41"/>
       <metrics loc="24" ncloc="12" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/GroupBySuitTrait.php">
@@ -3091,10 +3090,10 @@
       <line num="26" type="method" name="minRankLimits" visibility="private" complexity="3" crap="3" count="39"/>
       <line num="28" type="stmt" count="39"/>
       <line num="29" type="stmt" count="39"/>
-      <line num="30" type="stmt" count="8"/>
+      <line num="30" type="stmt" count="9"/>
       <line num="32" type="stmt" count="39"/>
       <line num="33" type="stmt" count="39"/>
-      <line num="34" type="stmt" count="15"/>
+      <line num="34" type="stmt" count="13"/>
       <line num="36" type="stmt" count="39"/>
       <line num="37" type="stmt" count="39"/>
       <line num="38" type="stmt" count="39"/>
@@ -3151,11 +3150,11 @@
       <class name="App\ProjectRules\RoyalFlushTrait3" namespace="global">
         <metrics complexity="3" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
       </class>
-      <line num="31" type="method" name="checkForCards" visibility="private" complexity="3" crap="3" count="24"/>
-      <line num="33" type="stmt" count="24"/>
-      <line num="35" type="stmt" count="24"/>
-      <line num="36" type="stmt" count="24"/>
-      <line num="37" type="stmt" count="17"/>
+      <line num="31" type="method" name="checkForCards" visibility="private" complexity="3" crap="3" count="23"/>
+      <line num="33" type="stmt" count="23"/>
+      <line num="35" type="stmt" count="23"/>
+      <line num="36" type="stmt" count="23"/>
+      <line num="37" type="stmt" count="16"/>
       <line num="40" type="stmt" count="7"/>
       <metrics loc="43" ncloc="27" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
     </file>
@@ -3207,8 +3206,8 @@
       <line num="81" type="stmt" count="44"/>
       <line num="83" type="stmt" count="44"/>
       <line num="84" type="stmt" count="44"/>
-      <line num="85" type="stmt" count="23"/>
-      <line num="86" type="stmt" count="23"/>
+      <line num="85" type="stmt" count="22"/>
+      <line num="86" type="stmt" count="22"/>
       <line num="89" type="stmt" count="44"/>
       <metrics loc="92" ncloc="39" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
     </file>
@@ -3216,17 +3215,17 @@
       <class name="App\ProjectRules\SameOfAKindTrait2" namespace="global">
         <metrics complexity="6" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
       </class>
-      <line num="59" type="method" name="possibleWithoutCard" visibility="public" complexity="6" crap="6" count="42"/>
-      <line num="64" type="stmt" count="42"/>
-      <line num="69" type="stmt" count="42"/>
-      <line num="73" type="stmt" count="42"/>
-      <line num="75" type="stmt" count="42"/>
-      <line num="76" type="stmt" count="42"/>
+      <line num="59" type="method" name="possibleWithoutCard" visibility="public" complexity="6" crap="6" count="41"/>
+      <line num="64" type="stmt" count="41"/>
+      <line num="69" type="stmt" count="41"/>
+      <line num="73" type="stmt" count="41"/>
+      <line num="75" type="stmt" count="41"/>
+      <line num="76" type="stmt" count="41"/>
       <line num="77" type="stmt" count="24"/>
-      <line num="80" type="stmt" count="38"/>
-      <line num="81" type="stmt" count="38"/>
+      <line num="80" type="stmt" count="36"/>
+      <line num="81" type="stmt" count="36"/>
       <line num="82" type="stmt" count="13"/>
-      <line num="85" type="stmt" count="34"/>
+      <line num="85" type="stmt" count="32"/>
       <metrics loc="88" ncloc="38" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/SameOfAKindTrait3.php">
@@ -3252,11 +3251,11 @@
       <class name="App\ProjectRules\SearchSpecificCardTrait" namespace="global">
         <metrics complexity="3" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
       </class>
-      <line num="20" type="method" name="searchSpecificCard" visibility="private" complexity="3" crap="3" count="28"/>
-      <line num="22" type="stmt" count="28"/>
-      <line num="23" type="stmt" count="28"/>
-      <line num="24" type="stmt" count="22"/>
-      <line num="27" type="stmt" count="19"/>
+      <line num="20" type="method" name="searchSpecificCard" visibility="private" complexity="3" crap="3" count="27"/>
+      <line num="22" type="stmt" count="27"/>
+      <line num="23" type="stmt" count="27"/>
+      <line num="24" type="stmt" count="21"/>
+      <line num="27" type="stmt" count="18"/>
       <metrics loc="30" ncloc="17" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/Straight.php">
@@ -3347,12 +3346,12 @@
       <line num="39" type="stmt" count="21"/>
       <line num="41" type="stmt" count="21"/>
       <line num="42" type="stmt" count="16"/>
-      <line num="45" type="stmt" count="16"/>
-      <line num="46" type="stmt" count="16"/>
-      <line num="47" type="stmt" count="16"/>
-      <line num="48" type="stmt" count="16"/>
-      <line num="52" type="stmt" count="16"/>
-      <line num="53" type="stmt" count="16"/>
+      <line num="45" type="stmt" count="17"/>
+      <line num="46" type="stmt" count="17"/>
+      <line num="47" type="stmt" count="17"/>
+      <line num="48" type="stmt" count="17"/>
+      <line num="52" type="stmt" count="17"/>
+      <line num="53" type="stmt" count="17"/>
       <line num="59" type="method" name="possibleDeckOnly" visibility="public" complexity="1" crap="1" count="5"/>
       <line num="61" type="stmt" count="5"/>
       <line num="62" type="stmt" count="5"/>
@@ -3369,7 +3368,7 @@
       <line num="28" type="stmt" count="49"/>
       <line num="29" type="stmt" count="49"/>
       <line num="30" type="stmt" count="43"/>
-      <line num="33" type="stmt" count="24"/>
+      <line num="33" type="stmt" count="25"/>
       <metrics loc="36" ncloc="21" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/StraightTrait3.php">
@@ -3381,7 +3380,7 @@
       <line num="29" type="stmt" count="39"/>
       <line num="30" type="stmt" count="39"/>
       <line num="31" type="stmt" count="39"/>
-      <line num="32" type="stmt" count="18"/>
+      <line num="32" type="stmt" count="19"/>
       <line num="35" type="stmt" count="28"/>
       <metrics loc="38" ncloc="23" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
     </file>
@@ -3420,15 +3419,15 @@
       <class name="App\ProjectRules\TwoPairsTrait" namespace="global">
         <metrics complexity="5" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="10" coveredelements="10"/>
       </class>
-      <line num="37" type="method" name="possibleWithCard" visibility="public" complexity="5" crap="5" count="36"/>
-      <line num="39" type="stmt" count="36"/>
-      <line num="41" type="stmt" count="36"/>
-      <line num="46" type="stmt" count="36"/>
-      <line num="50" type="stmt" count="36"/>
-      <line num="52" type="stmt" count="36"/>
+      <line num="37" type="method" name="possibleWithCard" visibility="public" complexity="5" crap="5" count="34"/>
+      <line num="39" type="stmt" count="34"/>
+      <line num="41" type="stmt" count="34"/>
+      <line num="46" type="stmt" count="34"/>
+      <line num="50" type="stmt" count="34"/>
+      <line num="52" type="stmt" count="34"/>
       <line num="53" type="stmt" count="17"/>
-      <line num="56" type="stmt" count="31"/>
-      <line num="58" type="stmt" count="22"/>
+      <line num="56" type="stmt" count="29"/>
+      <line num="58" type="stmt" count="20"/>
       <line num="60" type="stmt" count="20"/>
       <metrics loc="63" ncloc="33" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="10" coveredelements="10"/>
     </file>
@@ -3509,11 +3508,11 @@
       </class>
       <line num="24" type="method" name="check1" visibility="private" complexity="4" crap="4" count="20"/>
       <line num="26" type="stmt" count="20"/>
-      <line num="27" type="stmt" count="7"/>
-      <line num="28" type="stmt" count="7"/>
+      <line num="27" type="stmt" count="9"/>
+      <line num="28" type="stmt" count="9"/>
       <line num="30" type="stmt" count="17"/>
-      <line num="31" type="stmt" count="7"/>
-      <line num="32" type="stmt" count="7"/>
+      <line num="31" type="stmt" count="6"/>
+      <line num="32" type="stmt" count="6"/>
       <line num="34" type="stmt" count="14"/>
       <metrics loc="37" ncloc="22" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
@@ -3521,32 +3520,32 @@
       <class name="App\ProjectRules\TwoPairsTrait5" namespace="global">
         <metrics complexity="9" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
       </class>
-      <line num="25" type="method" name="checkForTwoPairs1" visibility="private" complexity="4" crap="4" count="31"/>
-      <line num="30" type="stmt" count="31"/>
-      <line num="31" type="stmt" count="31"/>
-      <line num="32" type="stmt" count="4"/>
-      <line num="33" type="stmt" count="4"/>
-      <line num="35" type="stmt" count="27"/>
-      <line num="48" type="method" name="checkForTwoPairs3" visibility="private" complexity="2" crap="2" count="19"/>
-      <line num="50" type="stmt" count="19"/>
-      <line num="68" type="method" name="check2" visibility="private" complexity="3" crap="3" count="27"/>
-      <line num="70" type="stmt" count="27"/>
+      <line num="25" type="method" name="checkForTwoPairs1" visibility="private" complexity="4" crap="4" count="30"/>
+      <line num="30" type="stmt" count="30"/>
+      <line num="31" type="stmt" count="30"/>
+      <line num="32" type="stmt" count="5"/>
+      <line num="33" type="stmt" count="5"/>
+      <line num="35" type="stmt" count="26"/>
+      <line num="48" type="method" name="checkForTwoPairs3" visibility="private" complexity="2" crap="2" count="18"/>
+      <line num="50" type="stmt" count="18"/>
+      <line num="68" type="method" name="check2" visibility="private" complexity="3" crap="3" count="26"/>
+      <line num="70" type="stmt" count="26"/>
       <metrics loc="73" ncloc="29" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/TwoPairsTrait6.php">
       <class name="App\ProjectRules\TwoPairsTrait6" namespace="global">
         <metrics complexity="7" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="10" coveredelements="10"/>
       </class>
-      <line num="42" type="method" name="matchRank" visibility="private" complexity="5" crap="5" count="35"/>
-      <line num="44" type="stmt" count="35"/>
+      <line num="42" type="method" name="matchRank" visibility="private" complexity="5" crap="5" count="33"/>
+      <line num="44" type="stmt" count="33"/>
       <line num="45" type="stmt" count="9"/>
       <line num="46" type="stmt" count="9"/>
-      <line num="48" type="stmt" count="31"/>
+      <line num="48" type="stmt" count="29"/>
       <line num="49" type="stmt" count="14"/>
       <line num="50" type="stmt" count="14"/>
-      <line num="52" type="stmt" count="22"/>
-      <line num="69" type="method" name="check3" visibility="private" complexity="2" crap="2" count="38"/>
-      <line num="71" type="stmt" count="38"/>
+      <line num="52" type="stmt" count="21"/>
+      <line num="69" type="method" name="check3" visibility="private" complexity="2" crap="2" count="36"/>
+      <line num="71" type="stmt" count="36"/>
       <metrics loc="74" ncloc="29" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="10" coveredelements="10"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/TwoPairsTrait7.php">
@@ -3563,11 +3562,11 @@
       <class name="App\ProjectRules\TwoPairsTrait8" namespace="global">
         <metrics complexity="3" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
       </class>
-      <line num="24" type="method" name="matchOneInDeck" visibility="private" complexity="3" crap="3" count="46"/>
-      <line num="26" type="stmt" count="46"/>
-      <line num="27" type="stmt" count="44"/>
-      <line num="28" type="stmt" count="36"/>
-      <line num="31" type="stmt" count="24"/>
+      <line num="24" type="method" name="matchOneInDeck" visibility="private" complexity="3" crap="3" count="44"/>
+      <line num="26" type="stmt" count="44"/>
+      <line num="27" type="stmt" count="42"/>
+      <line num="28" type="stmt" count="34"/>
+      <line num="31" type="stmt" count="23"/>
       <metrics loc="34" ncloc="17" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
     </file>
     <file name="/home/juli22/dbwebb-kurser/mvc/me/report/src/ProjectRules/TwoPairsTrait9.php">
@@ -3686,6 +3685,6 @@
       <line num="40" type="stmt" count="1"/>
       <metrics loc="69" ncloc="36" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
     </file>
-    <metrics files="214" loc="10939" ncloc="7064" classes="197" methods="331" coveredmethods="331" conditionals="0" coveredconditionals="0" statements="2076" coveredstatements="2076" elements="2407" coveredelements="2407"/>
+    <metrics files="214" loc="10938" ncloc="7063" classes="197" methods="331" coveredmethods="331" conditionals="0" coveredconditionals="0" statements="2075" coveredstatements="2075" elements="2406" coveredelements="2406"/>
   </project>
 </coverage>
