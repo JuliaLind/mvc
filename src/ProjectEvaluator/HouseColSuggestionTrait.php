@@ -27,7 +27,34 @@ trait HouseColSuggestionTrait
      */
     abstract private function getCols($rows): array;
 
+    /**
+     * Returns additiona weight to column if a rule can be scored with the dealt card
+     * @param array<string> $hand
+     * @param array<string> $deck
+     */
+    private function addWeight(array $hand, array $deck, string $card): int
+    {
+        $rules = [
+            new SameOfAKind(4),
+            new FullHouse(),
+            new SameOfAKind(3),
+            new TwoPairs(),
+            new SameOfAKind(2)
+        ];
+        $weight = 0;
+        foreach($rules as $rule) {
+            if ($rule->possibleWithCard($hand, $deck, $card)) {
+                $weight += ($rule->getPoints() + $rule->getAdditionalValue());
+                break;
+            }
+        };
+        return $weight;
+    }
 
+    /**
+     * Adjusts down the weight if one of the prioritized rules can be scored
+     * without the dealt card and the not as good rule with the dealt card
+     */
     private function adjustWeight(float $pointsWithout, float $weightCol): float
     {
         if ($pointsWithout > $weightCol) {
@@ -46,31 +73,24 @@ trait HouseColSuggestionTrait
         $hand = [];
         $weightCol = 0.5;
 
-        $rules = [
+        $prioRules = [
             new SameOfAKind(4),
             new FullHouse(),
             new SameOfAKind(3),
-            new TwoPairs(),
-            new SameOfAKind(2)
         ];
         $pointsWithout = 0;
         if (array_key_exists($col, $cols)) {
             $hand = $cols[$col];
             $weightCol -= 0.5;
-            foreach($rules as $rule) {
+            foreach($prioRules as $rule) {
                 if ($rule->possibleWithOutCard($hand, $deck)) {
                     $pointsWithout = $rule->getPoints();
                     break;
                 }
             };
         }
-        foreach($rules as $rule) {
-            if ($rule->possibleWithCard($hand, $deck, $card)) {
-                $weightCol += ($rule->getPoints() + $rule->getAdditionalValue());
-                break;
-            }
-        };
 
+        $weightCol += $this->addWeight($hand, $deck, $card);
         return $this->adjustWeight($pointsWithout, $weightCol);
     }
 
@@ -89,35 +109,6 @@ trait HouseColSuggestionTrait
         $weightCols = [];
         for ($i = 0; $i <= 4; $i++) {
             if (!array_key_exists($i, $rowHand)) {
-                // $col = $i;
-                // $hand = [];
-                // $weightCol = 0.5;
-
-                // $rules = [
-                //     new SameOfAKind(4),
-                //     new FullHouse(),
-                //     new SameOfAKind(3),
-                //     new TwoPairs(),
-                //     new SameOfAKind(2)
-                // ];
-                // $pointsWithout = 0;
-                // if (array_key_exists($i, $cols)) {
-                //     $hand = $cols[$i];
-                //     $weightCol -= 0.5;
-                //     foreach($rules as $rule) {
-                //         if ($rule->possibleWithOutCard($hand, $deck)) {
-                //             $pointsWithout = $rule->getPoints();
-                //             break;
-                //         }
-                //     };
-                // }
-                // foreach($rules as $rule) {
-                //     if ($rule->possibleWithCard($hand, $deck, $card)) {
-                //         $weightCol += ($rule->getPoints() + $rule->getAdditionalValue());
-                //         break;
-                //     }
-                // };
-
                 $weightCols[$i] = $this->getColWeight($i, $cols, $card, $deck);
             }
         }
