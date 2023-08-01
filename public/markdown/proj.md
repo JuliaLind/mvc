@@ -4,7 +4,7 @@ Följande cheats finns:
 
 ## Show suggestion:
 
-Visar för samtliga 10 händer vilken regel som kan uppnås som bäst med det tilldelade kortet, vilket regel som kan uppnås som bäst utan kortet och förslag på ruta (slot) att placera kortet i. Du får även se alla återstående kort som du kommer att bli tilldelad från däcket (varannat kort förutom de två sista som varken kommer att bli tilldelade dig eller huset). Förslaget på slot räknas fram med hjälp av samma logik som huset använder när denne väljer placering av sitt kort.
+Visar för samtliga 10 händer vilken regel som kan uppnås som bäst med det tilldelade kortet, vilket regel som kan uppnås som bäst utan kortet och förslag på ruta (slot) att placera kortet i. Du får även se alla återstående kort som du kommer att bli tilldelad från däcket (varannat kort förutom de två sista som varken kommer att bli tilldelade dig eller huset). Förslaget på slot räknas fram med annan logik än den som huset använder när denne väljer placering av sitt kort.
 
 ## Move a card:
 Du kan ”lyfta” vilket som helst av korten som du redan placerat och flytta till en annan tom ruta
