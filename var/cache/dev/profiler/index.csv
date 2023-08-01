@@ -15335,3 +15335,12 @@ eaf865,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/play,1690899993
 934fa4,::1,GET,http://localhost/dbwebb/mvc/me/report/public/,1690899993,,200
 5ea392,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/one-round/0/3,1690899994,,302
 732861,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/play,1690899994,,200
+d979d6,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/about,1690900227,,200
+9966cc,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/about/database,1690900228,,200
+b35109,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/reset,1690900231,,302
+860e4a,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/about/database,1690900231,,200
+892465,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/api,1690900302,,200
+e007d9,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/about,1690900473,,200
+b41b27,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/about/database,1690900475,,200
+72ec28,::1,POST,http://localhost/dbwebb/mvc/me/report/public/proj/reset,1690900478,,302
+7e2747,::1,GET,http://localhost/dbwebb/mvc/me/report/public/proj/about/database,1690900478,,200

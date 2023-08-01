@@ -13,7 +13,7 @@
 <h2>[POST] /project/api/bot-plays</h2>
 
 <div class="register-link">
-<p>Each time the route is entered bot picks top card from a shuffled deck and places into 5x5 grid based on generated (auto-calculated) suggestion. Grid is saved in session and reset after the grid gets full. Json object displays the picked card, the grid (with the card placed in the suggested slot) and the suggestion (suggested slot and for all 10 hands best possible rule with the dealt card, best possible rule without the dealt card and the calculated priority "weight").</p>
+<p>Each time the route is entered bot picks top card from a shuffled deck and places into 5x5 grid based on generated (auto-calculated) suggestion, based on same logic as player suggestion cheat. Grid is saved in session and reset after the grid gets full. Json object displays the picked card, the grid (with the card placed in the suggested slot) and the suggestion (suggested slot and for all 10 hands best possible rule with the dealt card, best possible rule without the dealt card and the calculated priority "weight").</p>
 </div>
 <button class="form-btn" type="submit">Go to route</button>
 
@@ -25,7 +25,7 @@
 <h2>[POST] /project/api/results</h2>
 
 <div class="register-link">
-<p>A new grid is filled completely based on automatically calculated suggestions. Then, all ten hands are evaluated and the best scored rule/points for each hand and total are displayed. </p>
+<p>A new grid is filled completely based on automatically calculated suggestions, based on same logic as player suggestion cheat. Then, all ten hands are evaluated and the best scored rule/points for each hand and total are displayed. </p>
 </div>
 <button class="form-btn" type="submit">Go to route</button>
 
