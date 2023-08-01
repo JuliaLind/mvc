@@ -103,7 +103,6 @@ trait HouseColSuggestionTrait
      */
     private function getCol(string $card, array $rowHand, array $rows, array $deck): int
     {
-        $col = 0;
         $cols = $this->getCols($rows);
 
         $weightCols = [];

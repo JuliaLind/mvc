@@ -3926,6 +3926,21 @@ Search.appendIndex(
             "summary": "From\u0020RowsToColsTrait",
             "url": "classes/App-ProjectEvaluator-HouseColSuggestionTrait.html#method_getCols"
         },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseColSuggestionTrait\u003A\u003AaddWeight\u0028\u0029",
+            "name": "addWeight",
+            "summary": "Returns\u0020additiona\u0020weight\u0020to\u0020column\u0020if\u0020a\u0020rule\u0020can\u0020be\u0020scored\u0020with\u0020the\u0020dealt\u0020card",
+            "url": "classes/App-ProjectEvaluator-HouseColSuggestionTrait.html#method_addWeight"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseColSuggestionTrait\u003A\u003AadjustWeight\u0028\u0029",
+            "name": "adjustWeight",
+            "summary": "Adjusts\u0020down\u0020the\u0020weight\u0020if\u0020one\u0020of\u0020the\u0020prioritized\u0020rules\u0020can\u0020be\u0020scored\nwithout\u0020the\u0020dealt\u0020card\u0020and\u0020the\u0020not\u0020as\u0020good\u0020rule\u0020with\u0020the\u0020dealt\u0020card",
+            "url": "classes/App-ProjectEvaluator-HouseColSuggestionTrait.html#method_adjustWeight"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseColSuggestionTrait\u003A\u003AgetColWeight\u0028\u0029",
+            "name": "getColWeight",
+            "summary": "returns\u0020the\u0020\u0022weight\u0022\u0020of\u0020the\u0020column",
+            "url": "classes/App-ProjectEvaluator-HouseColSuggestionTrait.html#method_getColWeight"
+        },                {
             "fqsen": "\\App\\ProjectEvaluator\\HouseColSuggestionTrait\u003A\u003AgetCol\u0028\u0029",
             "name": "getCol",
             "summary": "Returns\u0020the\u0020best\u0020column\u0020in\u0020the\u0020row\u0020to\u0020place\u0020the\u0020card,\nprioritizes\u0020same\u0020rank",
