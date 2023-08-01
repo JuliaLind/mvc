@@ -40,8 +40,6 @@ trait HouseSuggestionTrait
     public function houseSuggestion(Grid $grid, string $card, array $deck): array
     {
         $rows = $grid->getRows();
-        $row = 0;
-        $col = 0;
         if ($rows === []) {
             return [0, 0];
         }

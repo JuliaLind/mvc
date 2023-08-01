@@ -32,7 +32,11 @@ trait HouseRowSuggestionTrait
             $hand = $rows[$i];
             if (count($hand) < 5) {
                 $row = $i;
-                $suits = $this->countBySuit([...$hand, $card]);
+                /**
+                 * @var array<string> $newHand
+                 */
+                $newHand = [...$hand, $card];
+                $suits = $this->countBySuit($newHand);
                 if (count($suits) === 1) {
                     break;
                 }
