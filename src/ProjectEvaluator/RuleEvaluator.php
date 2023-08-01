@@ -24,6 +24,10 @@ class RuleEvaluator
     use SuggestionTrait;
     use RowsToColsTrait;
 
+    use HouseSuggestionTrait;
+    use HouseColSuggestionTrait;
+    use HouseRowSuggestionTrait;
+
     /**
      * @var array<RuleInterface> $rules
      */

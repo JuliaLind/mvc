@@ -35,11 +35,14 @@ trait HousePlaceCardTrait
     private function housePlaceCard(): void
     {
         $card = $this->deck->deal();
-        $suggestion = $this->evaluator->suggestion($this->house, $card, $this->deck->possibleCards());
-        /**
-         * @var array<int> $slot
-         */
-        $slot = $suggestion['slot'];
+        // $suggestion = $this->evaluator->suggestion($this->house, $card, $this->deck->possibleCards());
+        // /**
+        //  * @var array<int> $slot
+        //  */
+        // $slot = $suggestion['slot'];
+
+        $slot = $this->evaluator->houseSuggestion($this->house, $card, $this->deck->possibleCards());
+
         array_push($this->lastRound['house'], $slot);
         $this->house->addCard($slot[0], $slot[1], $card);
     }

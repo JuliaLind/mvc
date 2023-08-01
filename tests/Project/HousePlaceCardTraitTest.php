@@ -22,67 +22,8 @@ class HousePlaceCardTraitTest extends TestCase
         $deck->method('deal')->willReturn($card);
         $deck->method('possibleCards')->willReturn($possibleCards);
 
-        $evaluator->expects($this->once())->method('suggestion')->with($this->equalTo($house), $this->equalTo($card), $this->equalTo($possibleCards))->willReturn(
-            [
-                'row-rule' => "One Pair",
-                'col-rule' => "Two Pairs",
-                'slot' => [$row, $col],
-                'row-rules' => [
-                    [
-                        'rule-with-card' => "",
-                        'weight' => -0.25,
-                        'rule-without-card' => "Full House"
-                    ],
-                    [
-                        'rule-with-card' => "",
-                        'weight' => -200,
-                        'rule-without-card' => ""
-                    ],
-                    [
-                        'rule-with-card' => "One Pair",
-                        'weight' => 2.5,
-                        'rule-without-card' => "One Pair"
-                    ],
-                    [
-                        'rule-with-card' => "",
-                        'weight' => -0.1,
-                        'rule-without-card' => "Three Of A Kind"
-                    ],
-                    [
-                        'rule-with-card' => "One Pair",
-                        'weight' => 2,
-                        'rule-without-card' => "One Pair"
-                    ],
-                ],
-                'col-rules' => [
-                    [
-                        'rule-with-card' => "",
-                        'weight' => 0,
-                        'rule-without-card' => "One Pair"
-                    ],
-                    [
-                        'rule-with-card' => "Two Pairs",
-                        'weight' => 6,
-                        'rule-without-card' => "Two Pairs"
-                    ],
-                    [
-                        'rule-with-card' => "One Pair",
-                        'weight' => 2,
-                        'rule-without-card' => "One Pair"
-                    ],
-                    [
-                        'rule-with-card' => "One Pair",
-                        'weight' => 2,
-                        'rule-without-card' => "One Pair"
-                    ],
-                    [
-                        'rule-with-card' => "",
-                        'weight' => -0.2,
-                        'rule-without-card' => "Flush"
-                    ],
-                ],
-                'tot-weight-slot' => 2.5 + 6
-            ]
+        $evaluator->expects($this->once())->method('houseSuggestion')->with($this->equalTo($house), $this->equalTo($card), $this->equalTo($possibleCards))->willReturn(
+            [$row, $col]
         );
 
         $house->expects($this->once())->method('addCard')->with($row, $col, $card);

@@ -144,7 +144,7 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="classes/App-ProjectEvaluator-FinalResultsTrait.html"><abbr title="\App\ProjectEvaluator\FinalResultsTrait">FinalResultsTrait</abbr></a>,                             <a href="classes/App-ProjectEvaluator-SuggestionTrait.html"><abbr title="\App\ProjectEvaluator\SuggestionTrait">SuggestionTrait</abbr></a>,                             <a href="classes/App-ProjectEvaluator-RowsToColsTrait.html"><abbr title="\App\ProjectEvaluator\RowsToColsTrait">RowsToColsTrait</abbr></a>                    </span>
+                            <a href="classes/App-ProjectEvaluator-FinalResultsTrait.html"><abbr title="\App\ProjectEvaluator\FinalResultsTrait">FinalResultsTrait</abbr></a>,                             <a href="classes/App-ProjectEvaluator-SuggestionTrait.html"><abbr title="\App\ProjectEvaluator\SuggestionTrait">SuggestionTrait</abbr></a>,                             <a href="classes/App-ProjectEvaluator-RowsToColsTrait.html"><abbr title="\App\ProjectEvaluator\RowsToColsTrait">RowsToColsTrait</abbr></a>,                             <a href="classes/App-ProjectEvaluator-HouseSuggestionTrait.html"><abbr title="\App\ProjectEvaluator\HouseSuggestionTrait">HouseSuggestionTrait</abbr></a>,                             <a href="classes/App-ProjectEvaluator-HouseColSuggestionTrait.html"><abbr title="\App\ProjectEvaluator\HouseColSuggestionTrait">HouseColSuggestionTrait</abbr></a>,                             <a href="classes/App-ProjectEvaluator-HouseRowSuggestionTrait.html"><abbr title="\App\ProjectEvaluator\HouseRowSuggestionTrait">HouseRowSuggestionTrait</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
@@ -201,6 +201,14 @@ from kmom10/Project</p>
 <dd>For testing purposes</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-ProjectEvaluator-HouseSuggestionTrait.html#method_houseSuggestion">houseSuggestion()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, int&gt;    </span>
+</dt>
+<dd>The main method for generating the statistics of possible rules for all ten hands
+with and without the dealt card and a suggestion of the best slot to place the dealt card</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-ProjectEvaluator-FinalResultsTrait.html#method_results">results()</a>
     <span>
                                 &nbsp;: array&lt;string, array<string,int|string>[]|int&gt;    </span>
@@ -218,13 +226,27 @@ for all the ten hands</dd>
 with and without the dealt card and a suggestion of the best slot to place the dealt card</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/App-ProjectEvaluator-RowsToColsTrait.html#method_getCols">getCols()</a>
+    <a href="classes/App-ProjectEvaluator-HouseColSuggestionTrait.html#method_getCol">getCol()</a>
+    <span>
+                                &nbsp;: int    </span>
+</dt>
+<dd>Returns the best column in the row to place the card,
+prioritizes same rank</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-ProjectEvaluator-HouseColSuggestionTrait.html#method_getCols">getCols()</a>
     <span>
                                 &nbsp;: array&lt;string|int, array&lt;string|int, string&gt;&gt;    </span>
 </dt>
-<dd>Used in:
-FinalResultsTrait,
-RowsToColsTrait</dd>
+<dd>From RowsToColsTrait</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-ProjectEvaluator-HouseRowSuggestionTrait.html#method_getRow">getRow()</a>
+    <span>
+                                &nbsp;: int    </span>
+</dt>
+<dd>Returns the best row to place the card,
+prioritizes same suit</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/App-ProjectEvaluator-FinalResultsTrait.html#method_resultsOneDirection">resultsOneDirection()</a>
@@ -294,7 +316,7 @@ or vetical)</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/RuleEvaluator.php"><a href="files/src-projectevaluator-ruleevaluator.html"><abbr title="src/ProjectEvaluator/RuleEvaluator.php">RuleEvaluator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
@@ -330,7 +352,7 @@ or vetical)</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/RuleEvaluator.php"><a href="files/src-projectevaluator-ruleevaluator.html"><abbr title="src/ProjectEvaluator/RuleEvaluator.php">RuleEvaluator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
@@ -363,7 +385,7 @@ or vetical)</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/RuleEvaluator.php"><a href="files/src-projectevaluator-ruleevaluator.html"><abbr title="src/ProjectEvaluator/RuleEvaluator.php">RuleEvaluator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -383,6 +405,85 @@ or vetical)</dd>
             <section class="phpdocumentor-description"><p>$rules</p>
 </section>
 
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_houseSuggestion">
+        houseSuggestion()
+        <a href="classes/App-ProjectEvaluator-HouseSuggestionTrait.html#method_houseSuggestion" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/HouseSuggestionTrait.php"><a href="files/src-projectevaluator-housesuggestiontrait.html"><abbr title="src/ProjectEvaluator/HouseSuggestionTrait.php">HouseSuggestionTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">40</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The main method for generating the statistics of possible rules for all ten hands
+with and without the dealt card and a suggestion of the best slot to place the dealt card</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">houseSuggestion</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-ProjectGrid-Grid.html"><abbr title="\App\ProjectGrid\Grid">Grid</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$grid</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$card</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$grid</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-ProjectGrid-Grid.html"><abbr title="\App\ProjectGrid\Grid">Grid</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$card</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$deck</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><ul>
+<li>ranks of the cards from the deck that will be dealt to the player in the remaining game</li>
+</ul>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">SuppressWarnings</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>(PHPMD.BooleanArgumentFlag)</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span>
+            &mdash;
+        
     
 </article>
                     <article
@@ -516,24 +617,88 @@ with and without the dealt card and a suggestion of the best slot to place the d
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getCols">
-        getCols()
-        <a href="classes/App-ProjectEvaluator-RowsToColsTrait.html#method_getCols" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getCol">
+        getCol()
+        <a href="classes/App-ProjectEvaluator-HouseColSuggestionTrait.html#method_getCol" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/RowsToColsTrait.php"><a href="files/src-projectevaluator-rowstocolstrait.html"><abbr title="src/ProjectEvaluator/RowsToColsTrait.php">RowsToColsTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/HouseColSuggestionTrait.php"><a href="files/src-projectevaluator-housecolsuggestiontrait.html"><abbr title="src/ProjectEvaluator/HouseColSuggestionTrait.php">HouseColSuggestionTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used in:
-FinalResultsTrait,
-RowsToColsTrait</p>
+        <p class="phpdocumentor-summary">Returns the best column in the row to place the card,
+prioritizes same rank</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">getCols</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, array&lt;string|int, string&gt;&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rows</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, string&gt;&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getCol</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$card</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rowHand</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, array&lt;string|int, string&gt;&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rows</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$card</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$rowHand</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$rows</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, array&lt;string|int, string&gt;&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$deck</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                        -abstract                                "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getCols">
+        getCols()
+        <a href="classes/App-ProjectEvaluator-HouseColSuggestionTrait.html#method_getCols" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/HouseColSuggestionTrait.php"><a href="files/src-projectevaluator-housecolsuggestiontrait.html"><abbr title="src/ProjectEvaluator/HouseColSuggestionTrait.php">HouseColSuggestionTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">28</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">From RowsToColsTrait</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">getCols</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, array&lt;string|int, string&gt;&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rows</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, string&gt;&gt;</span></code>
 
         <section class="phpdocumentor-description"><p>Returns a two-dimensional array
 wich correspons to an &quot;inverted version&quot; of the grid,
@@ -555,6 +720,58 @@ wich correspons to an &quot;inverted version&quot; of the grid,
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, string&gt;&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getRow">
+        getRow()
+        <a href="classes/App-ProjectEvaluator-HouseRowSuggestionTrait.html#method_getRow" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ProjectEvaluator/HouseRowSuggestionTrait.php"><a href="files/src-projectevaluator-houserowsuggestiontrait.html"><abbr title="src/ProjectEvaluator/HouseRowSuggestionTrait.php">HouseRowSuggestionTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns the best row to place the card,
+prioritizes same suit</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">getRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$card</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, array&lt;string|int, string&gt;&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rows</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$card</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$rows</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, array&lt;string|int, string&gt;&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
             &mdash;
         
     

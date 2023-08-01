@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-07-17 00:24:29        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-08-01 10:37:49        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -1177,6 +1177,36 @@
         ]
     },
     {
+        "name": "\\App\\ProjectEvaluator\\HouseColSuggestionTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\SameOfAKind",
+            "\\App\\ProjectRules\\FullHouse",
+            "\\App\\ProjectRules\\TwoPairs"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\SameOfAKind",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\FullHouse",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\TwoPairs",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
         "name": "\\App\\ProjectEvaluator\\PointsAndRuleNameTrait",
         "size": 3000,
         "relations": [
@@ -1190,6 +1220,11 @@
     },
     {
         "name": "\\App\\ProjectEvaluator\\CheckEmptyGridTrait",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\HouseRowSuggestionTrait",
         "size": 3000,
         "relations": []
     },
@@ -1218,20 +1253,6 @@
         ]
     },
     {
-        "name": "\\App\\ProjectRules\\SameOfAKind",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\FullHouse",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface"
-        ]
-    },
-    {
         "name": "\\App\\ProjectRules\\Flush",
         "size": 3000,
         "relations": [
@@ -1240,13 +1261,6 @@
     },
     {
         "name": "\\App\\ProjectRules\\Straight",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\TwoPairs",
         "size": 3000,
         "relations": [
             "\\App\\ProjectRules\\RuleInterface"
@@ -1268,6 +1282,13 @@
         "name": "\\App\\ProjectEvaluator\\BestPossibleRulesTrait",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\HouseSuggestionTrait",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectGrid\\Grid"
+        ]
     },
     {
         "name": "\\App\\ProjectRules\\StraightScoredTrait",

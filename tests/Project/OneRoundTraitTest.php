@@ -35,15 +35,10 @@ class OneRoundTraitTest extends TestCase
         $house->expects($this->once())
         ->method('addCard')->with(2, 1, "10D");
 
-        $houseSuggestion = [
-            'row-rule' => "One Pair",
-            'col-rule' => "Two Pairs",
-            'slot' => [2, 1],
-            //.... rest not needed in this test
-        ];
+        $houseSuggestion = [2, 1];
         $evaluator = $this->createMock(RuleEvaluator::class);
         $evaluator->expects($this->exactly(2))->method('results');
-        $evaluator->expects($this->once())->method('suggestion')->with($this->equalTo($house), $this->equalTo("10D"), $this->equalTo($housePossible))->willReturn($houseSuggestion);
+        $evaluator->expects($this->once())->method('houseSuggestion')->with($this->equalTo($house), $this->equalTo("10D"), $this->equalTo($housePossible))->willReturn($houseSuggestion);
 
         $this->card = $card;
         $this->evaluator = $evaluator;
@@ -80,16 +75,11 @@ class OneRoundTraitTest extends TestCase
         $house->expects($this->once())
         ->method('addCard')->with(2, 1, "10D");
 
-        $houseSuggestion = [
-            'row-rule' => "One Pair",
-            'col-rule' => "Two Pairs",
-            'slot' => [2, 1],
-            //.... rest not needed in this test
-        ];
+        $houseSuggestion = [2, 1];
 
 
         $evaluator = $this->createMock(RuleEvaluator::class);
-        $evaluator->expects($this->once())->method('suggestion')->willReturn($houseSuggestion);
+        $evaluator->expects($this->once())->method('houseSuggestion')->willReturn($houseSuggestion);
 
         $this->card = $card;
         $this->evaluator = $evaluator;

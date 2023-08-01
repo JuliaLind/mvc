@@ -3916,6 +3916,51 @@ Search.appendIndex(
             "summary": "Route\u0020for\u0020initiating\u0020the\u0020game.\u0020Creates\u0020an\u0020object\u0020of\u0020class\nGame21Easy\u0020or\u0020Game21Hard,\u0020samves\u0020to\u0020session\u0020and\u0020redirects\nto\u0020route\u0020for\u0020selecting\u0020amount\u0020to\u0020bet",
             "url": "classes/App-Controller-Game21InitController.html#method_init"
         },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseColSuggestionTrait",
+            "name": "HouseColSuggestionTrait",
+            "summary": "Trait\u0020for\u0020generating\u0020a\u0020suggestion\u0020on\u0020best\u0020slot\u0020to\u0020place\u0020the\u0020dealt\u0020card.",
+            "url": "classes/App-ProjectEvaluator-HouseColSuggestionTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseColSuggestionTrait\u003A\u003AgetCols\u0028\u0029",
+            "name": "getCols",
+            "summary": "From\u0020RowsToColsTrait",
+            "url": "classes/App-ProjectEvaluator-HouseColSuggestionTrait.html#method_getCols"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseColSuggestionTrait\u003A\u003AgetCol\u0028\u0029",
+            "name": "getCol",
+            "summary": "Returns\u0020the\u0020best\u0020column\u0020in\u0020the\u0020row\u0020to\u0020place\u0020the\u0020card,\nprioritizes\u0020same\u0020rank",
+            "url": "classes/App-ProjectEvaluator-HouseColSuggestionTrait.html#method_getCol"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseRowSuggestionTrait",
+            "name": "HouseRowSuggestionTrait",
+            "summary": "Trait\u0020for\u0020generating\u0020a\u0020suggestion\u0020on\u0020best\u0020slot\u0020to\u0020place\u0020the\u0020dealt\u0020card.",
+            "url": "classes/App-ProjectEvaluator-HouseRowSuggestionTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseRowSuggestionTrait\u003A\u003AgetRow\u0028\u0029",
+            "name": "getRow",
+            "summary": "Returns\u0020the\u0020best\u0020row\u0020to\u0020place\u0020the\u0020card,\nprioritizes\u0020same\u0020suit",
+            "url": "classes/App-ProjectEvaluator-HouseRowSuggestionTrait.html#method_getRow"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseSuggestionTrait",
+            "name": "HouseSuggestionTrait",
+            "summary": "Trait\u0020for\u0020generating\u0020a\u0020suggestion\u0020on\u0020best\u0020slot\u0020to\u0020place\u0020the\u0020dealt\u0020card.",
+            "url": "classes/App-ProjectEvaluator-HouseSuggestionTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseSuggestionTrait\u003A\u003AgetRow\u0028\u0029",
+            "name": "getRow",
+            "summary": "Returns\u0020the\u0020best\u0020row\u0020to\u0020place\u0020the\u0020card,\nprioritizes\u0020same\u0020suit",
+            "url": "classes/App-ProjectEvaluator-HouseSuggestionTrait.html#method_getRow"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseSuggestionTrait\u003A\u003AgetCol\u0028\u0029",
+            "name": "getCol",
+            "summary": "Returns\u0020the\u0020best\u0020column\u0020in\u0020the\u0020row\u0020to\u0020place\u0020the\u0020card,\nprioritizes\u0020same\u0020rank",
+            "url": "classes/App-ProjectEvaluator-HouseSuggestionTrait.html#method_getCol"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseSuggestionTrait\u003A\u003AhouseSuggestion\u0028\u0029",
+            "name": "houseSuggestion",
+            "summary": "The\u0020main\u0020method\u0020for\u0020generating\u0020the\u0020statistics\u0020of\u0020possible\u0020rules\u0020for\u0020all\u0020ten\u0020hands\nwith\u0020and\u0020without\u0020the\u0020dealt\u0020card\u0020and\u0020a\u0020suggestion\u0020of\u0020the\u0020best\u0020slot\u0020to\u0020place\u0020the\u0020dealt\u0020card",
+            "url": "classes/App-ProjectEvaluator-HouseSuggestionTrait.html#method_houseSuggestion"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
