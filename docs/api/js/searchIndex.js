@@ -3926,16 +3926,6 @@ Search.appendIndex(
             "summary": "From\u0020RowsToColsTrait",
             "url": "classes/App-ProjectEvaluator-HouseColSuggestionTrait.html#method_getCols"
         },                {
-            "fqsen": "\\App\\ProjectEvaluator\\HouseColSuggestionTrait\u003A\u003AaddWeight\u0028\u0029",
-            "name": "addWeight",
-            "summary": "Returns\u0020additiona\u0020weight\u0020to\u0020column\u0020if\u0020a\u0020rule\u0020can\u0020be\u0020scored\u0020with\u0020the\u0020dealt\u0020card",
-            "url": "classes/App-ProjectEvaluator-HouseColSuggestionTrait.html#method_addWeight"
-        },                {
-            "fqsen": "\\App\\ProjectEvaluator\\HouseColSuggestionTrait\u003A\u003AadjustWeight\u0028\u0029",
-            "name": "adjustWeight",
-            "summary": "Adjusts\u0020down\u0020the\u0020weight\u0020if\u0020one\u0020of\u0020the\u0020prioritized\u0020rules\u0020can\u0020be\u0020scored\nwithout\u0020the\u0020dealt\u0020card\u0020and\u0020the\u0020not\u0020as\u0020good\u0020rule\u0020with\u0020the\u0020dealt\u0020card",
-            "url": "classes/App-ProjectEvaluator-HouseColSuggestionTrait.html#method_adjustWeight"
-        },                {
             "fqsen": "\\App\\ProjectEvaluator\\HouseColSuggestionTrait\u003A\u003AgetColWeight\u0028\u0029",
             "name": "getColWeight",
             "summary": "returns\u0020the\u0020\u0022weight\u0022\u0020of\u0020the\u0020column",
@@ -3975,6 +3965,36 @@ Search.appendIndex(
             "name": "houseSuggestion",
             "summary": "The\u0020main\u0020method\u0020for\u0020generating\u0020the\u0020statistics\u0020of\u0020possible\u0020rules\u0020for\u0020all\u0020ten\u0020hands\nwith\u0020and\u0020without\u0020the\u0020dealt\u0020card\u0020and\u0020a\u0020suggestion\u0020of\u0020the\u0020best\u0020slot\u0020to\u0020place\u0020the\u0020dealt\u0020card",
             "url": "classes/App-ProjectEvaluator-HouseSuggestionTrait.html#method_houseSuggestion"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseLogicTrait",
+            "name": "HouseLogicTrait",
+            "summary": "Trait\u0020for\u0020generating\u0020a\u0020suggestion\u0020on\u0020best\u0020slot\u0020to\u0020place\u0020the\u0020dealt\u0020card.",
+            "url": "classes/App-ProjectEvaluator-HouseLogicTrait.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseLogicTrait\u003A\u003AaddWeight\u0028\u0029",
+            "name": "addWeight",
+            "summary": "Returns\u0020additiona\u0020weight\u0020to\u0020column\u0020if\u0020a\u0020rule\u0020can\u0020be\u0020scored\u0020with\u0020the\u0020dealt\u0020card",
+            "url": "classes/App-ProjectEvaluator-HouseLogicTrait.html#method_addWeight"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseLogicTrait2",
+            "name": "HouseLogicTrait2",
+            "summary": "Trait\u0020for\u0020generating\u0020a\u0020suggestion\u0020on\u0020best\u0020slot\u0020to\u0020place\u0020the\u0020dealt\u0020card.",
+            "url": "classes/App-ProjectEvaluator-HouseLogicTrait2.html"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseLogicTrait2\u003A\u003AaddWeight\u0028\u0029",
+            "name": "addWeight",
+            "summary": "Returns\u0020additiona\u0020weight\u0020to\u0020column\u0020if\u0020a\u0020rule\u0020can\u0020be\u0020scored\u0020with\u0020the\u0020dealt\u0020card",
+            "url": "classes/App-ProjectEvaluator-HouseLogicTrait2.html#method_addWeight"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseLogicTrait2\u003A\u003AadjustWeight\u0028\u0029",
+            "name": "adjustWeight",
+            "summary": "Adjusts\u0020down\u0020the\u0020weight\u0020if\u0020one\u0020of\u0020the\u0020prioritized\u0020rules\u0020can\u0020be\u0020scored\nwithout\u0020the\u0020dealt\u0020card\u0020and\u0020the\u0020not\u0020as\u0020good\u0020rule\u0020with\u0020the\u0020dealt\u0020card",
+            "url": "classes/App-ProjectEvaluator-HouseLogicTrait2.html#method_adjustWeight"
+        },                {
+            "fqsen": "\\App\\ProjectEvaluator\\HouseLogicTrait2\u003A\u003AgetColWeight\u0028\u0029",
+            "name": "getColWeight",
+            "summary": "returns\u0020the\u0020\u0022weight\u0022\u0020of\u0020the\u0020column",
+            "url": "classes/App-ProjectEvaluator-HouseLogicTrait2.html#method_getColWeight"
         },                {
             "fqsen": "\\",
             "name": "\\",

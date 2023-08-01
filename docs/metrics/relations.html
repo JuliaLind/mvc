@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-08-01 13:54:22        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-08-01 14:26:08        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -1127,6 +1127,28 @@
         "relations": []
     },
     {
+        "name": "\\App\\ProjectEvaluator\\HouseLogicTrait2",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\SameOfAKind",
+            "\\App\\ProjectRules\\FullHouse"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\SameOfAKind",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
+        "name": "\\App\\ProjectRules\\FullHouse",
+        "size": 3000,
+        "relations": [
+            "\\App\\ProjectRules\\RuleInterface"
+        ]
+    },
+    {
         "name": "\\App\\ProjectEvaluator\\FinalResultsTrait",
         "size": 3000,
         "relations": [
@@ -1177,7 +1199,7 @@
         ]
     },
     {
-        "name": "\\App\\ProjectEvaluator\\HouseColSuggestionTrait",
+        "name": "\\App\\ProjectEvaluator\\HouseLogicTrait",
         "size": 3000,
         "relations": [
             "\\App\\ProjectRules\\SameOfAKind",
@@ -1186,25 +1208,16 @@
         ]
     },
     {
-        "name": "\\App\\ProjectRules\\SameOfAKind",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface"
-        ]
-    },
-    {
-        "name": "\\App\\ProjectRules\\FullHouse",
-        "size": 3000,
-        "relations": [
-            "\\App\\ProjectRules\\RuleInterface"
-        ]
-    },
-    {
         "name": "\\App\\ProjectRules\\TwoPairs",
         "size": 3000,
         "relations": [
             "\\App\\ProjectRules\\RuleInterface"
         ]
+    },
+    {
+        "name": "\\App\\ProjectEvaluator\\HouseColSuggestionTrait",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\ProjectEvaluator\\PointsAndRuleNameTrait",

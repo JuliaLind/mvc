@@ -24,6 +24,8 @@ class RuleEvaluator
     use SuggestionTrait;
     use RowsToColsTrait;
 
+    use HouseLogicTrait;
+    use HouseLogicTrait2;
     use HouseSuggestionTrait;
     use HouseColSuggestionTrait;
     use HouseRowSuggestionTrait;

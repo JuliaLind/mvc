@@ -14,6 +14,8 @@ use PHPUnit\Framework\TestCase;
 
 class HouseSuggestionTraitPt2Test extends TestCase
 {
+    use HouseLogicTrait;
+    use HouseLogicTrait2;
     use HouseSuggestionTrait;
     use HouseColSuggestionTrait;
     use HouseRowSuggestionTrait;
