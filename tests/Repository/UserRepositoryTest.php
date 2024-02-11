@@ -37,7 +37,7 @@ class UserRepositoryTest extends KernelTestCase
         /**
          * @var User $user
          */
-        $user= new User();
+        $user = new User();
 
         $email = 'user@bth.se';
         $acronym = 'User1';

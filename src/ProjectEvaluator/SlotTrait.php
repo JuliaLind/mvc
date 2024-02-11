@@ -28,7 +28,7 @@ trait SlotTrait
      * @return array<string,array<int,int>|int|string>
      * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      */
-    private function bestSlot(array $pointsRows, array $pointsCols, int $bestRow, array $rows, bool $inverted=false): array
+    private function bestSlot(array $pointsRows, array $pointsCols, int $bestRow, array $rows, bool $inverted = false): array
     {
         /**
          * @var string $rowRule

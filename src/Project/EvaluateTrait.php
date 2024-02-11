@@ -19,7 +19,7 @@ trait EvaluateTrait
 {
     private Grid $player;
     private Grid $house;
-    private int $pot=0;
+    private int $pot = 0;
 
 
     /**

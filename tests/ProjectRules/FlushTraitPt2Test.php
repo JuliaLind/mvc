@@ -13,7 +13,7 @@ class FlushTraitPt2Test extends TestCase
     public function testPossibleWithoutCardNotOk(): void
     {
         $deck = ["14C", "8D", "5H"];
-        $hand= ["8H", "2S", "4H", "7H"];
+        $hand = ["8H", "2S", "4H", "7H"];
 
         $res = $this->possibleWithoutCard($hand, $deck);
         $this->assertFalse($res);
@@ -40,7 +40,7 @@ class FlushTraitPt2Test extends TestCase
     public function testPossibleWithoutCardOk2(): void
     {
         $deck = ["14C", "9H", "5D", "2H", "4H", "7H"];
-        $hand= ["8H"];
+        $hand = ["8H"];
 
         $res = $this->possibleWithoutCard($hand, $deck);
         $this->assertTrue($res);

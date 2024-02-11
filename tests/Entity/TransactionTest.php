@@ -19,7 +19,7 @@ class TransactionTest extends TestCase
         $transaction = new Transaction();
         $this->assertInstanceOf("\App\Entity\Transaction", $transaction);
 
-        $date= new DateTime('2023-06-30');
+        $date = new DateTime('2023-06-30');
         $amount = -40;
         $descr = 'Bet';
         $user = $this->createMock(User::class);

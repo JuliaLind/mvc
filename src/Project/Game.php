@@ -60,7 +60,7 @@ class Game
     public function __construct(
         array $grids,
         Deck $deck = new Deck(),
-        RuleEvaluator $evaluator=new RuleEvaluator(),
+        RuleEvaluator $evaluator = new RuleEvaluator(),
     ) {
         $this->house = $grids['house'];
         $this->player = $grids['player'];

@@ -27,7 +27,7 @@ trait SameOfAKindTrait2
      * the cards and the values are the count of
      * each rank
      * @param array<string> $cards
-     * @return  array<array<int|string,int>>
+     * @return array<array<int|string,int>>
      */
     abstract private function countByRank($cards): array;
 
@@ -70,7 +70,7 @@ trait SameOfAKindTrait2
         /**
          * @var array<int,int> $ranksAll
          */
-        $ranksAll= $this->countByRank($allCards);
+        $ranksAll = $this->countByRank($allCards);
 
         $countHand = count($hand);
         if (5 - count($hand) >= $this->minCountRank && max($ranksAll) >= $this->minCountRank) {

@@ -21,7 +21,7 @@ class ProjectResetController extends AbstractController
     public function resetProj(
         Connection $connection,
         SessionInterface $session,
-        SqlFileLoader $loader=new SqlFileLoader()
+        SqlFileLoader $loader = new SqlFileLoader()
     ): Response {
         $session->clear();
         $loader->load("sql/reset-proj.sql", $connection);

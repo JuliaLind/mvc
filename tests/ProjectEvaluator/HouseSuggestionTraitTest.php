@@ -26,7 +26,7 @@ class HouseSuggestionTraitTest extends TestCase
         $grid = $this->createMock(Grid::class);
         $rows = [
             0 => [0 => "7D",                         3 => "7S", 4 => "10C"],
-            2 => [                       2 =>"11H",  3 => "3H"            ],
+            2 => [                       2 => "11H",  3 => "3H"            ],
             3 => [0 => "8D",                         3 => "7C"            ],
             4 => [0 => "6D", 1 => "13S", 2 => "13H", 3 => "6H", 4 => "6C" ]
         ];

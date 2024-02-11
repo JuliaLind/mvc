@@ -16,7 +16,7 @@ class OneRoundTraitTest extends TestCase
     public function testOneRoundNotFinished(): void
     {
         $housePossible = ["5C","7H","8D","8H","9C","10S","10H","11H","11C","13D","14D","14S"];
-        $card ="5H";
+        $card = "5H";
         $row = 1;
         $col = 3;
 
@@ -58,7 +58,7 @@ class OneRoundTraitTest extends TestCase
     public function testOneRoundFinished(): void
     {
         $housePossible = ["5C","7H","8D","8H","9C","10S","10H","11H","11C","13D","14D","14S"];
-        $card ="5H";
+        $card = "5H";
         $row = 1;
         $col = 3;
 

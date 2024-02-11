@@ -20,7 +20,7 @@ trait OneRoundTrait
     private string $card;
     private Deck $deck;
     private RuleEvaluator $evaluator;
-    private bool $finished=false;
+    private bool $finished = false;
     private Grid $house;
 
     /**

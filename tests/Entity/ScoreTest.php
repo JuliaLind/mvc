@@ -19,7 +19,7 @@ class ScoreTest extends TestCase
         $score = new Score();
         $this->assertInstanceOf("\App\Entity\Score", $score);
 
-        $date= new DateTime('2023-06-30');
+        $date = new DateTime('2023-06-30');
         $points = 49;
         $user = $this->createMock(User::class);
         $score->setRegistered($date);

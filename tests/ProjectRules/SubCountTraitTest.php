@@ -28,7 +28,7 @@ class SubCountTraitTest extends TestCase
         $this->assertEquals($exp, $arr);
 
         $exp = ["D" => 2, "H" => 1, "S" => 2];
-        $arr= $this->subCount("S", $arr);
+        $arr = $this->subCount("S", $arr);
         $this->assertEquals($exp, $arr);
     }
 

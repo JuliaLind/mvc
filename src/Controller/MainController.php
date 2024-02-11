@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Controller contains routes for some of the
- * "ordinary" pages kmom01-kmom06
+ * "ordinary" pages
  */
 class MainController extends AbstractController
 {
@@ -45,19 +45,6 @@ class MainController extends AbstractController
     ): Response {
         $data = $helper->reportData();
         return $this->render('report.html.twig', $data);
-    }
-
-    /**
-     * Route displays a forest with monkey where
-     * the monkeys location in the forest randomly changes
-     * each time page is loaded/re-loaded
-     */
-    #[Route("/lucky", name: "lucky")]
-    public function number(
-        LuckyMonkey $monkey=new LuckyMonkey()
-    ): Response {
-        $data = $monkey->data();
-        return $this->render('lucky.html.twig', $data);
     }
 
     /**

@@ -37,7 +37,7 @@ class SuggestionTraitPt2Test extends TestCase
         $grid = $this->createMock(Grid::class);
         $rows = [
             0 => [0 => "7D",                         3 => "7S", 4 => "10C"],
-            2 => [                       2 =>"11H",  3 => "3H"            ],
+            2 => [                       2 => "11H",  3 => "3H"            ],
             3 => [0 => "8D",                         3 => "7C"            ],
             4 => [0 => "6D", 1 => "13S", 2 => "13H", 3 => "6H", 4 => "6C" ]
         ];
@@ -166,7 +166,7 @@ class SuggestionTraitPt2Test extends TestCase
             'col-rule' => "Full House",
             'row-rule' => "Full House",
             'slot' => [0, 4],
-            'row-rules' =>  [
+            'row-rules' => [
                 0 => [
                     'rule-with-card' => 'Full House',
                     'weight' => 27,
@@ -245,7 +245,7 @@ class SuggestionTraitPt2Test extends TestCase
             'col-rule' => "Flush",
             'row-rule' => "Three Of A Kind",
             'slot' => [2, 1],
-            'row-rules' =>  [
+            'row-rules' => [
                 0 => [
                     'rule-with-card' => 'Two Pairs',
                     'weight' => -0.25,

@@ -13,9 +13,9 @@ RewriteRule (.*) - [NC,L]
 
 # Rewrite 1 - For request via www.student.bth.se
 RewriteCond %{HTTP_HOST} ^www\.student\.bth\.se$ [NC]
-RewriteRule (.*) /~juli22/dbwebb-kurser/mvc/me/report/public/index.php/$1 [NC,L]
+RewriteRule (.*) /~juli22/dbwebb-kurser/mvc-proj/public/index.php/$1 [NC,L]
 
 # Rewrite 2 - For other requests
 RewriteCond %{HTTP_HOST} !^www\.student\.bth\.se$ [NC]
-RewriteRule (.*) /dbwebb/mvc/me/report/public/index.php/$1 [NC,L]
+RewriteRule (.*) /dbwebb/mvc-proj/public/index.php/$1 [NC,L]
 # RewriteRule (.*) index.php/$1 [NC,L]

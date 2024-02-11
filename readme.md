@@ -32,5 +32,7 @@ sudo service apache2 reload
 
 Skriv 'sudo service apache2 start' stående i mvc katalogen för att starta igång den lokala servern och därefter går du in på motsvarande sökväg via browser. 
 
+Den nuvarande .htaccess filen är inställd så att du når applikationen via http://localhost/dbwebb/mvc-proj/public/ och projektet via http://localhost/dbwebb/mvc-proj/public/proj
+
 I filerna composer.json respektive package.json hittar du tillgängliga "kortkommandon". Du kör scripterna från roten av report, för composer scripten skriver du "composer" och kortkommando - t ex "composer phpunit" för att köra testerna. Scripterna i packade.json kör du genom att skriva "npm run" och kortkommando, exempelvis npm run watch om du vill göra ändringar i css stylesheet och vill att dessa uppdateras "automatiskt".
 

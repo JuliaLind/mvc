@@ -28,7 +28,7 @@ class MdParserTest extends TestCase
      */
     public function testCreateObject(): void
     {
-        $parser= new MdParser();
+        $parser = new MdParser();
         $this->assertInstanceOf("\App\Controller\MdParser", $parser);
     }
 

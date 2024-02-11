@@ -17,7 +17,7 @@ class UserTest extends TestCase
      */
     public function testCreateObject(): void
     {
-        $date= new DateTime('2023-06-30');
+        $date = new DateTime('2023-06-30');
         $amount = -40;
         $descr = 'Bet';
         $user = new User();

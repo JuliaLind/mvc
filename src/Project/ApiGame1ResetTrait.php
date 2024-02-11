@@ -19,7 +19,7 @@ trait ApiGame1ResetTrait
     /**
      * Resets the game with new full deck and new empty grid
      */
-    public function reset(Grid $grid=new Grid(), Deck $deck=new Deck()): void
+    public function reset(Grid $grid = new Grid(), Deck $deck = new Deck()): void
     {
         $this->grid = $grid;
         $this->deck = $deck;

@@ -14,7 +14,7 @@ trait CurrentStateTrait
     /**
      * Contains the money the player has bet in the current game
      */
-    private int $pot=0;
+    private int $pot = 0;
     private string $card;
 
     /**
