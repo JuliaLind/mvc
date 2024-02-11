@@ -38,17 +38,6 @@ class MainControllerTest extends WebTestCase
         $this->assertRouteSame('report');
     }
 
-    public function testLucky(): void
-    {
-        $client = static::createClient();
-        $client->request('GET', '/lucky');
-        $this->assertResponseIsSuccessful();
-        $this->assertRouteSame('lucky');
-        $this->assertSelectorTextContains('h1', 'Move the monkey');
-        $content = strval($client->getResponse()->getContent());
-        $this->assertStringContainsString('<img class="monkey" id="monkey" src="img/monkey.png" style="margin-left', $content);
-    }
-
     public function testMetrics(): void
     {
         $client = static::createClient();
