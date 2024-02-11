@@ -19,7 +19,7 @@ class MainController extends AbstractController
      */
     #[Route("/", name: "home")]
     public function home(
-        MainControllerHelper $helper=new MainControllerHelper()
+        MainControllerHelper $helper = new MainControllerHelper()
     ): Response {
         $data = $helper->standardData('home');
         return $this->render('standard.html.twig', $data);
@@ -30,7 +30,7 @@ class MainController extends AbstractController
      */
     #[Route("/about", name: "about")]
     public function about(
-        MainControllerHelper $helper=new MainControllerHelper()
+        MainControllerHelper $helper = new MainControllerHelper()
     ): Response {
         $data = $helper->standardData('about');
         return $this->render('about.html.twig', $data);
@@ -41,7 +41,7 @@ class MainController extends AbstractController
      */
     #[Route("/report", name: "report")]
     public function report(
-        MainControllerHelper $helper=new MainControllerHelper()
+        MainControllerHelper $helper = new MainControllerHelper()
     ): Response {
         $data = $helper->reportData();
         return $this->render('report.html.twig', $data);
@@ -54,7 +54,7 @@ class MainController extends AbstractController
      */
     #[Route("/metrics", name: "metrics")]
     public function metrics(
-        MainControllerHelper $helper=new MainControllerHelper()
+        MainControllerHelper $helper = new MainControllerHelper()
     ): Response {
         $data = $helper->standardData('metrics');
         return $this->render('standard.html.twig', $data);

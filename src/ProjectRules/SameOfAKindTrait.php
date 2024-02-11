@@ -78,7 +78,7 @@ trait SameOfAKindTrait
         /**
          * @var array<int,int> $ranksAll
          */
-        $ranksAll= $this->countByRank($allCards);
+        $ranksAll = $this->countByRank($allCards);
 
         $countRank = 0;
         if (array_key_exists($rank, $ranksHand)) {

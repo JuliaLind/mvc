@@ -113,7 +113,7 @@ class CheckFullHandTraitTest extends TestCase
         $royalFlush = $this->createMock(RoyalFlush::class);
         $straightFlush = $this->createMock(StraightFlush::class);
         $fourOfAKind = $this->createMock(SameOfAKind::class);
-        $fullHouse =$this->createMock(FullHouse::class);
+        $fullHouse = $this->createMock(FullHouse::class);
         $flush = $this->createMock(Flush::class);
         $straight = $this->createMock(Straight::class);
         $threeOfAKind = $this->createMock(SameOfAKind::class);

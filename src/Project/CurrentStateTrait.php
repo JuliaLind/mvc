@@ -103,7 +103,7 @@ trait CurrentStateTrait
             'house' => $this->house,
             'player' => $this->player,
             'placedCardsPlayer' => $this->player->getCardCount(),
-            'placedCardsHouse' =>$this->house->getCardCount(),
+            'placedCardsHouse' => $this->house->getCardCount(),
             'deckCardCount' => count($deck),
             'playerPossibleCards' => $this->deck->possibleCards(),
             'housePossibleCards' => $this->deck->possibleCards(0),
